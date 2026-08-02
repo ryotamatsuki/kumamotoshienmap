@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/build.mjs"
+    "build": "vinext build",
+    "postbuild": "node scripts/finalize-build.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-server-dom-webpack": "^19.2.6",
+    "vinext": "latest",
+    "vite": "^8.0.0"
   }
 }
