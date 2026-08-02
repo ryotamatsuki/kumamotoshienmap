@@ -12,5 +12,8 @@
     "react-server-dom-webpack": "^19.2.6",
     "vinext": "latest",
     "vite": "^8.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-rsc": "latest"
   }
 }
