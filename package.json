@@ -2,18 +2,8 @@
   "name": "ehime-kumamoto-support-dashboard",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "vinext build",
-    "postbuild": "node scripts/finalize-build.mjs"
-  },
-  "dependencies": {
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
-    "react-server-dom-webpack": "^19.2.6",
-    "vinext": "latest",
-    "vite": "^8.0.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-rsc": "latest"
+    "build": "node scripts/build-sites.mjs"
   }
 }
