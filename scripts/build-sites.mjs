@@ -51,6 +51,13 @@ export default {
       "/volunteer.js": [volunteerApp, "text/javascript; charset=utf-8"],
     };
 
+    if (url.pathname === "/favicon.ico") {
+      return new Response(null, {
+        status: 204,
+        headers: { ...htmlHeaders, "Cache-Control": "public, max-age=86400" },
+      });
+    }
+
     if (!isDashboard && !assets[url.pathname]) {
       return new Response("Not Found", { status: 404 });
     }
