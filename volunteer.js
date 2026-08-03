@@ -489,10 +489,18 @@ function commonMarkup(){
 }
 function changesMarkup(){
   if(sourceData.meta.initial_snapshot === true) return '<div class="vol-empty"><strong>初回確認のため比較履歴なし</strong><br>次回更新から、募集開始・日程追加・対象地域変更・休止・終了等を差分表示します。</div>';
-  if(!sourceData.changes || !sourceData.changes.length) return '<div class="vol-empty">前回確認時からの変更はありません。</div>';
-  return '<div class="vol-history">'+sourceData.changes.map(function(change){
+  var rechecks = Array.isArray(sourceData.rechecks) ? sourceData.rechecks : [];
+  var recheckMarkup = rechecks.length ? '<div class="vol-recheck-grid">'+rechecks.map(function(item){
+    var statusClass = item.status === "差分あり" ? "vol-recheck-change" : item.status === "確認できず" ? "vol-recheck-unknown" : "vol-recheck-same";
+    var beforeAfter = item.status === "差分あり" ? '<div class="vol-recheck-values"><span><b>前回</b>'+display(item.before,"記録なし")+'</span><span><b>今回</b>'+display(item.after,"公表なし・要確認")+'</span></div>' : '<div class="vol-recheck-values"><span><b>今回の状態</b>'+display(item.after,"公表なし・要確認")+'</span></div>';
+    var officialTime = item.source_updated_at ? "公式更新 "+formatDateTime(item.source_updated_at) : "公式更新日時：記載確認できず";
+    return '<article class="vol-recheck-item '+statusClass+'"><div class="vol-recheck-top"><strong>'+esc(item.municipality)+'</strong><span class="vol-recheck-status">'+esc(item.status)+'</span></div><p>'+esc(item.note || "")+'</p>'+beforeAfter+'<div class="vol-recheck-meta">再確認 '+esc(formatDateTime(item.checked_at))+'／'+esc(officialTime)+'<br>'+sourceLinkMarkup({url:item.url},item.publisher)+'</div></article>';
+  }).join("")+'</div>' : '<div class="vol-empty">今回の再確認記録はありません。</div>';
+  if(!sourceData.changes || !sourceData.changes.length) return recheckMarkup+'<div class="vol-empty">今回確認した範囲では、前回確認時からの確定差分はありません。各市町の「変更なし／確認できず」を含む再確認記録を上に表示しています。</div>';
+  return recheckMarkup+'<h4 class="vol-diff-heading">確定した差分</h4><div class="vol-history">'+sourceData.changes.map(function(change){
     var officialTime = change.source_updated_at ? "公式更新 "+formatDateTime(change.source_updated_at) : "公式更新日時：記載確認できず";
-    return '<div class="vol-history-item"><span class="vol-history-time">確認 '+esc(formatDateTime(change.checked_at))+'<br>'+esc(officialTime)+'</span><span class="vol-history-place">'+esc(change.municipality)+'</span><span class="vol-history-change"><b>'+esc(change.category)+'</b>'+esc(change.description)+"</span><span class=\"vol-history-source\">"+sourceLinkMarkup({url:change.url},change.publisher)+"</span></div>";
+    var beforeAfter = '<div class="vol-diff-values"><span><b>変更前</b>'+display(change.before,"記録なし")+'</span><span><b>変更後</b>'+display(change.after,"公表なし・要確認")+'</span></div>';
+    return '<div class="vol-history-item"><span class="vol-history-time">確認 '+esc(formatDateTime(change.checked_at))+'<br>'+esc(officialTime)+'</span><span class="vol-history-place">'+esc(change.municipality)+'</span><span class="vol-history-change"><b>'+esc(change.category)+'</b>'+esc(change.description)+beforeAfter+'</span><span class="vol-history-source">'+sourceLinkMarkup({url:change.url},change.publisher)+'</span></div>';
   }).join("")+"</div>";
 }
 
@@ -827,7 +835,7 @@ function shellMarkup(){
     '<div class="vol-summary">'+summaryMarkup()+"</div>"+
     '<section class="vol-summary-detail" id="volSummaryDetail" aria-live="polite" aria-label="選択した集計の詳細">'+summaryDetailMarkup()+"</section>"+
     '<div class="vol-alerts" id="volAlerts">'+alertMarkup()+"</div>"+
-    section("重要な変更","前回確認時からの募集条件・日程・受付方法等の差分","差分管理",changesMarkup(),"volChanges")+
+     section("最新の再確認・差分","直近の公式再確認で確認できた状態、変更なし、確認できない項目を分けて表示","差分管理",changesMarkup(),"volChanges")+
     section("熊本県全体の共通案内","事前登録、保険、高速道路無料措置及び安全確認","公式情報",'<div class="vol-common-grid">'+commonMarkup()+"</div>","volCommon")+
     section("市町別比較表","募集条件を比較し、詳細をアコーディオンで確認","中心コンテンツ",comparisonMarkup(),"volComparison")+
     section("基準日から14日間の募集カレンダー","情報基準日から14日間。明確な活動日だけを活動可能として表示","14日間",calendarMarkup(),"volCalendarSection")+

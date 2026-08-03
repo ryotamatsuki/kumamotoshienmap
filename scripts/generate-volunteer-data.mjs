@@ -23,7 +23,7 @@ const optionalFields = [
   "outside_kyushu_allowed","ehime_participation_allowed","outside_prefecture_note","application_form_status",
   "safety_note","infrastructure_note","priority_note","needs_reconfirmation","information_confidence",
   "change_from_previous","changes_from_previous","previous_known_state","application_urls","activity_windows",
-  "official_information_conflict","portal_coverage_checked_at"
+  "official_information_conflict","portal_coverage_checked_at","recheck_status","recheck_note"
 ];
 const activityAliases = new Map([
   ["災害ごみの運搬","災害ごみの分別・運搬"],["災害ごみの分別","災害ごみの分別・運搬"],
@@ -67,20 +67,21 @@ uto.ehime_participation_allowed = false;
 uto.outside_prefecture_note = "熊本県外の九州各県は対象。愛媛県は一般募集対象外。";
 const calendarOverrides = {
   "熊本市":Object.fromEntries(Array.from({length:14},(_,index)=>{
-    const date = new Date(Date.UTC(2026,7,3+index)).toISOString().slice(0,10);
-    return [date,{key:"preparing",label:index === 0 ? "センター開設・募集準備中" : "被災者支援・募集準備中",countable:false}];
+    const date = new Date(Date.UTC(2026,7,4+index)).toISOString().slice(0,10);
+    return [date,{key:"preparing",label:index === 0 ? "被災者支援開始・募集準備中" : "被災者支援・募集準備中",countable:false}];
   })),
   "宇城市":{
-    "2026-08-03":{key:"full",label:"定数到達",countable:false},
-    "2026-08-04":{key:"full",label:"定数到達",countable:false},
-    "2026-08-05":{key:"full",label:"定数到達",countable:false}
+    "2026-08-04":{key:"unknown",label:"事前登録受付・活動内容要確認",countable:false},
+    "2026-08-05":{key:"limited",label:"家屋支援・限定募集",countable:true},
+    "2026-08-06":{key:"limited",label:"家屋支援・限定募集",countable:true},
+    "2026-08-07":{key:"limited",label:"家屋支援・限定募集",countable:true},
+    "2026-08-08":{key:"limited",label:"家屋支援・限定募集",countable:true}
   },
   "美里町":{
-    "2026-08-03":{key:"planned",label:"申込受付中",countable:false},
     "2026-08-04":{key:"full",label:"定員到達",countable:false},
-    "2026-08-05":{key:"recruiting",label:"受付中",countable:true},
-    "2026-08-06":{key:"recruiting",label:"受付中",countable:true},
-    "2026-08-07":{key:"recruiting",label:"受付中",countable:true},
+    "2026-08-05":{key:"full",label:"定員到達",countable:false},
+    "2026-08-06":{key:"full",label:"定員到達",countable:false},
+    "2026-08-07":{key:"full",label:"定員到達",countable:false},
     "2026-08-08":{key:"recruiting",label:"受付中",countable:true},
     "2026-08-09":{key:"recruiting",label:"受付中",countable:true}
   },
@@ -164,16 +165,39 @@ function unknownCenter(name){
 }
 const researchedByName = new Map(centers.map((center)=>[center.municipality,center]));
 const allCenters = allMunicipalities.map((name)=>researchedByName.get(name) || unknownCenter(name));
+const rechecks = centers.map((center)=>({
+  municipality:center.municipality,
+  status:center.recheck_status || (center.change_from_previous ? "差分あり" : "変更なし"),
+  note:center.recheck_note || (center.change_from_previous || "今回確認した公式情報で新たな変更を確認できず。既存状態を維持"),
+  checked_at:center.checked_at,
+  source_updated_at:center.source_updated_at,
+  publisher:center.official_source_name,
+  url:center.official_source_url,
+  before:center.previous_known_state ?? null,
+  after:center.recruitment_status
+}));
 const changes = centers.filter((center)=>
-  center.change_from_previous && center.change_status && !["変更確認できず","変更なし","初回登録"].includes(center.change_status)
+  center.recheck_status === "差分あり" && center.change_from_previous && center.change_status
 ).map((center)=>({
   municipality:center.municipality,category:center.change_status,description:center.change_from_previous,
+  before:center.previous_known_state ?? null,after:center.recruitment_status,
   checked_at:center.checked_at,source_updated_at:center.source_updated_at,publisher:center.official_source_name,
   url:center.official_source_url
 })).sort((a,b)=>String(b.source_updated_at || b.checked_at).localeCompare(String(a.source_updated_at || a.checked_at)));
-const changeHistory = centers.map((center)=>({
-  changed_at:center.checked_at,municipality:center.municipality,before:center.previous_known_state ?? null,
-  after:center.recruitment_status,change_type:center.change_status || "初回登録",
+const currentCheckHistory = centers.map((center)=>({
+  changed_at:center.checked_at,municipality:center.municipality,
+  before:center.recheck_status === "差分あり" ? (center.previous_known_state ?? null) : center.recruitment_status,
+  after:center.recruitment_status,
+  change_type:center.recheck_status === "差分あり" ? (center.change_status || "差分あり") : center.recheck_status === "確認できず" ? "再確認・確認できず" : "再確認・変更なし",
+  publisher:center.official_source_name || "公式情報を確認できず",
+  official_updated_at:center.source_updated_at,official_url:center.official_source_url
+}));
+const historicalChangeHistory = centers.filter((center)=>
+  center.change_from_previous && center.recheck_status !== "差分あり"
+).map((center)=>({
+  changed_at:center.source_updated_at || center.checked_at,municipality:center.municipality,
+  before:center.previous_known_state ?? null,after:center.recruitment_status,
+  change_type:center.change_status || "過去の差分",
   publisher:center.official_source_name || "公式情報を確認できず",
   official_updated_at:center.source_updated_at,official_url:center.official_source_url
 }));
@@ -182,7 +206,7 @@ const registrationHistory = centers.map((center)=>({
   change_type:"初回登録",publisher:center.official_source_name || "公式情報を確認できず",
   official_updated_at:center.source_updated_at,official_url:center.official_source_url
 }));
-const updateHistory = [...changeHistory,...registrationHistory].sort((a,b)=>
+const updateHistory = [...currentCheckHistory,...historicalChangeHistory,...registrationHistory].sort((a,b)=>
   String(b.changed_at).localeCompare(String(a.changed_at)) || (a.change_type === "初回登録" ? 1 : -1)
 );
 
@@ -246,7 +270,7 @@ const data = {
     "物資の仕分け・運搬","避難所支援","仮設住宅関連","被災者訪問・ニーズ調査",
     "高齢者・福祉施設等の支援","災害ボランティアセンター運営支援","交流活動","その他"
   ],
-  centers,changes,
+  centers,changes,rechecks,
   statewide:{
     linked_center_count:statewideResearch.statewide_facts.linked_municipal_centers.length,
     toll:{confirmed:true,end_date:statewideResearch.statewide_facts.toll_exemption_end_date},

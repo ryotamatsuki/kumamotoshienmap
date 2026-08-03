@@ -148,6 +148,7 @@
 .vol-cost-panel{border:1px solid var(--line);border-radius:10px;background:#fff}.vol-cost-panel>summary{cursor:pointer;padding:11px 12px;font-size:12px;font-weight:900}.vol-cost-panel[open]>summary{border-bottom:1px solid var(--line)}.vol-cost-body{padding:11px}.vol-cost-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.vol-cost-row{display:grid;grid-template-columns:minmax(130px,1fr) 135px 130px;gap:7px;align-items:end;border:1px solid #e3e8eb;border-radius:9px;padding:8px}.vol-cost-name{font-size:10px;font-weight:850;align-self:center}.vol-cost-total{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:10px;padding-top:10px}.vol-cost-total strong{font-size:17px}.vol-cost-total span{color:var(--muted);font-size:9px;line-height:1.45;text-align:right}
 
 .vol-history{display:grid;gap:6px}.vol-history-item{display:grid;grid-template-columns:155px 105px 1fr 165px;gap:9px;border-bottom:1px solid #e7ecef;padding:8px 2px;font-size:10px;line-height:1.45}.vol-history-time{font-variant-numeric:tabular-nums;color:#42535d}.vol-history-place{font-weight:900}.vol-history-change b{display:block;margin-bottom:2px}.vol-history-source{text-align:right}
+.vol-recheck-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:12px}.vol-recheck-item{border:1px solid #d9e1e5;border-radius:10px;background:#fff;padding:9px;min-width:0}.vol-recheck-item.vol-recheck-change{border-color:#aac6df;background:#f6fbff}.vol-recheck-item.vol-recheck-unknown{border-color:#efc592;background:#fffaf0}.vol-recheck-item p{margin:6px 0;color:#42535d;font-size:10px;line-height:1.5}.vol-recheck-top{display:flex;align-items:center;justify-content:space-between;gap:7px}.vol-recheck-top strong{font-size:12px}.vol-recheck-status{border-radius:999px;padding:3px 6px;font-size:9px;font-weight:900}.vol-recheck-same .vol-recheck-status{background:var(--vol-green-soft);color:var(--vol-green)}.vol-recheck-change .vol-recheck-status{background:var(--vol-blue-soft);color:var(--vol-blue)}.vol-recheck-unknown .vol-recheck-status{background:var(--vol-orange-soft);color:var(--vol-orange)}.vol-recheck-values{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:7px}.vol-recheck-values>span{display:block;border-top:1px solid #e7ecef;padding-top:5px;font-size:10px;line-height:1.45}.vol-recheck-values b,.vol-diff-values b{display:block;color:var(--muted);font-size:9px}.vol-recheck-meta{margin-top:7px;color:var(--muted);font-size:9px;line-height:1.45}.vol-recheck-meta .vol-link{margin-top:3px}.vol-diff-heading{margin:9px 0 5px;font-size:12px}.vol-diff-values{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:7px}.vol-diff-values>span{display:block;border-top:1px solid #e7ecef;padding-top:4px;font-size:10px;line-height:1.45}
 .vol-source-groups{display:grid;gap:12px}.vol-source-group h4{margin:0 0 5px;font-size:11px}.vol-source-item{display:grid;grid-template-columns:minmax(150px,.65fr) minmax(250px,1.35fr) 260px;gap:9px;border-top:1px solid #e7ecef;padding:8px 0;font-size:10px;line-height:1.45}.vol-source-item:first-of-type{border-top:0}.vol-source-title{font-weight:850}.vol-source-meta{color:var(--muted)}
 
 #volunteerApp button:focus-visible,#volunteerApp a:focus-visible,#volunteerApp input:focus-visible,#volunteerApp select:focus-visible,#volunteerApp summary:focus-visible{outline:3px solid #2b6ba8;outline-offset:2px}
@@ -173,6 +174,7 @@
   .vol-table-wrap{display:none}.vol-cards{display:block}
   #volunteerMap{height:460px}
   .vol-history-item{grid-template-columns:125px 95px 1fr}.vol-history-source{grid-column:2/-1;text-align:left}
+  .vol-recheck-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .vol-source-item{grid-template-columns:1fr 1.6fr}.vol-source-meta{grid-column:1/-1}
 }
 @media(max-width:650px){
@@ -186,6 +188,7 @@
   .vol-planning-head{grid-template-columns:1fr}.vol-planning-summary{text-align:left}
   .vol-cost-row{grid-template-columns:1fr 1fr}.vol-cost-name{grid-column:1/-1}
   .vol-history-item{grid-template-columns:1fr}.vol-history-source{grid-column:auto}
+  .vol-recheck-grid{grid-template-columns:1fr}.vol-recheck-values,.vol-diff-values{grid-template-columns:1fr}
   .vol-source-item{grid-template-columns:1fr}
   .vol-card-grid{grid-template-columns:1fr}
   #volunteerMap{height:390px}

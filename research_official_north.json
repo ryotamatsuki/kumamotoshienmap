@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "scope": "令和8年熊本地震・災害ボランティア公式一次情報（熊本市、宇土市、宇城市、美里町、御船町、嘉島町）",
-  "checked_at": "2026-08-03T15:40:59+09:00",
+  "checked_at": "2026-08-04T08:28:44+09:00",
   "verification_policy": {
     "official_sources_only": true,
     "unknown_values_are_null": true,
@@ -12,33 +12,13 @@
   "key_changes_from_previous": [
     {
       "municipality": "宇城市",
-      "change_status": "定員到達",
-      "detail": "8月3日、4日、5日の全日別申込フォームが『定数に達したため締め切り』と表示。先行募集は現時点で受付終了。"
+      "change_status": "活動日・活動内容更新",
+      "detail": "8月4日～8日の活動日別事前登録フォーム、8月5日の家屋支援受付開始、8月6日からの本格活動を確認。"
     },
     {
       "municipality": "美里町",
-      "change_status": "募集日追加・一部定員到達",
-      "detail": "個人・団体フォームで8月8日、9日が追加。8月4日は定員到達、8月5日～9日は受付中。8月8日、9日は台風により中止となる可能性を明記。"
-    },
-    {
-      "municipality": "御船町",
-      "change_status": "日別受付状況確認・団体受付確認",
-      "detail": "日別フォームは個人・団体共通。8月3日、6日、7日は受付可能、8月4日、5日、8日は回答受付終了。終了理由は公表なし。"
-    },
-    {
-      "municipality": "嘉島町",
-      "change_status": "募集条件確認",
-      "detail": "1日30人程度、熊本県内在住者限定、8月1日～7日の事前受付を確認。8月3日は受付終了、8月4日～7日は受付中。"
-    },
-    {
-      "municipality": "宇土市",
-      "change_status": "団体申込選択肢確認",
-      "detail": "公式活動仮予約フォームに個人・団体の選択肢を確認。ただし九州各県在住者限定のため、愛媛県からの一般参加・団体派遣は対象外。"
-    },
-    {
-      "municipality": "熊本市",
-      "change_status": "変更なし",
-      "detail": "8月4日に被災者支援開始。一般ボランティア募集は現地調査後に開始予定のまま。"
+      "change_status": "8月4日～7日定員到達を確認",
+      "detail": "公式ページで8月4日～7日は必要な人数に達したため締切と確認。8月8日・9日の現行受付状況は本文に明記がないため前回値を維持し要再確認。"
     }
   ],
   "municipalities": [
@@ -99,7 +79,9 @@
       "official_source_url": "https://www.kumamoto-city-csw.or.jp/%E7%86%8A%E6%9C%AC%E5%B8%82%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AB%E3%82%88%E3%82%8B%E6%94%AF%E6%8F%B4%E9%96%8B%E5%A7%8B/",
       "source_published_at": "2026-08-03",
       "source_updated_at": null,
-      "checked_at": "2026-08-03T15:40:59+09:00",
+      "checked_at": "2026-08-04T08:28:44+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "2026年8月4日に熊本市社会福祉協議会の公式情報を再確認。一般ボランティア募集は準備中のままで、新たな募集条件は確認できず。",
       "change_status": "変更なし",
       "changes_from_previous": [
         "前回既知情報の『募集準備中』を公式ページで再確認"
@@ -173,7 +155,9 @@
       "official_source_url": "https://www.utoshakyou.jp/volunteer_2026.html",
       "source_published_at": null,
       "source_updated_at": null,
-      "checked_at": "2026-08-03T15:40:59+09:00",
+      "checked_at": "2026-08-04T08:28:44+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "2026年8月4日に宇土市社会福祉協議会の公式募集ページを再確認。8月3日〜11日、1日20人程度、九州各県在住の高校生以上という条件に新たな変更は確認できず。",
       "change_status": "団体申込選択肢確認",
       "changes_from_previous": [
         "公式活動仮予約フォームで個人・団体の選択肢を確認",
@@ -185,35 +169,39 @@
     {
       "municipality": "宇城市",
       "district": "避難所等",
-      "center_status": "開設・先行活動",
-      "recruitment_status": "定員到達",
-      "activity_start_date": "2026-08-03",
-      "activity_end_date": "2026-08-05",
-      "activity_dates_text": "8月3日～5日の避難所・物資支援等の先行募集は、全日程の申込フォームが定数到達により受付終了",
+      "center_status": "開設・限定募集（本格活動8月6日）",
+      "recruitment_status": "限定募集",
+      "activity_start_date": "2026-08-05",
+      "activity_end_date": "2026-08-08",
+      "activity_dates_text": "8月4日～8日の活動日別事前登録を掲載。家屋支援は8月5日受付開始、8月6日から本格活動。一般募集はニーズ集約・準備中",
       "activity_windows": [
-        {
-          "start_date": "2026-08-03",
-          "end_date": "2026-08-03",
-          "status": "定員到達",
-          "capacity": null,
-          "form_status": "定数到達のため締切",
-          "application_url": "https://forms.gle/tbhe6VGCivvZY9Qh9"
-        },
         {
           "start_date": "2026-08-04",
           "end_date": "2026-08-04",
-          "status": "定員到達",
+          "status": "事前登録受付・活動内容要確認",
           "capacity": null,
-          "form_status": "定数到達のため締切",
+          "form_status": "公式事前登録フォーム掲載。実活動の内容は要確認",
           "application_url": "https://forms.gle/sdPtGs8EhzcgCJjh7"
         },
         {
           "start_date": "2026-08-05",
           "end_date": "2026-08-05",
-          "status": "定員到達",
+          "status": "限定募集",
           "capacity": null,
-          "form_status": "定数到達のため締切",
+          "form_status": "家屋支援の受付開始。公式事前登録フォーム",
           "application_url": "https://forms.gle/ayG1nfdUc6REXG6z7"
+        },
+        {
+          "start_date": "2026-08-06",
+          "end_date": "2026-08-08",
+          "status": "限定募集",
+          "capacity": null,
+          "form_status": "災害ボランティア活動本格始動。公式日別事前登録フォーム",
+          "application_urls": [
+            "https://forms.gle/KjYmRAQCjo5BPux67",
+            "https://forms.gle/H5w1aeeMmkeoks217",
+            "https://forms.gle/mwa6FEs3JPKmTdHF9"
+          ]
         }
       ],
       "daily_capacity": null,
@@ -230,13 +218,15 @@
       "age_conditions": "中学生は保護者同伴、高校生は保護者の参加同意書が必要",
       "activity_types": [
         "避難所支援",
-        "物資の仕分け・運搬"
+        "物資の仕分け・運搬",
+        "家屋内の片付け",
+        "災害ごみの分別・運搬"
       ],
-      "activity_description": "8月3日は避難所の段ボールベッド組立て、物資の受入れ・運搬。一般家屋の支援ニーズは集約中",
+      "activity_description": "避難所支援・物資の受入れ及び搬送を先行募集。家屋（母屋）の片づけは8月5日受付開始、8月6日から本格活動。主な活動は住居内の片付けと住居・敷地内のがれき撤去",
       "application_required": true,
-      "application_method": "活動日別の公式事前登録フォーム（現在は全日程締切）",
+      "application_method": "活動日別の公式事前登録フォーム",
       "application_url": "https://www.shakyou-uki.jp/oshirase/12239/",
-      "application_deadline": "全日程定数到達により受付終了",
+      "application_deadline": "日別フォームの受付状況による",
       "meeting_place": "熊本県博物館ネットワークセンター",
       "address": "熊本県宇城市松橋町豊福1695",
       "reception_time": "9:00～10:00及び12:30～13:00",
@@ -254,19 +244,25 @@
       "toll_exemption_information": "高速道路料金無料制度あり。事前手続が必要。活動後にセンター本部で確認印対応",
       "contact": "080-5063-9672／080-5063-9989",
       "email": null,
-      "group_dispatch_assessment": "先行募集3日間は定員到達。一般家屋支援、今後の日程、団体・県外団体、大型バスは要確認",
-      "ehime_dispatch_status": "先行募集定員到達・団体受入未確認",
+      "group_dispatch_assessment": "限定募集・個人事前登録段階。団体、県外団体、大型バス及び1団体当たり人数は要確認",
+      "ehime_dispatch_status": "受入未確認",
       "official_source_name": "宇城市社会福祉協議会",
       "official_source_title": "宇城市災害ボランティアセンター開設について",
       "official_source_url": "https://www.shakyou-uki.jp/oshirase/12239/",
       "source_published_at": "2026-08-03",
       "source_updated_at": "2026-08-03",
-      "checked_at": "2026-08-03T15:40:59+09:00",
-      "change_status": "定員到達",
+      "checked_at": "2026-08-04T08:28:44+09:00",
+      "recheck_status": "差分あり",
+      "recheck_note": "宇城市社会福祉協議会の8月3日付公式ページで、8月4日〜8日の日別事前登録フォーム、8月5日の家屋支援受付開始、8月6日からの本格活動を確認。前回の8月3日〜5日定員到達表示から更新。",
+      "change_status": "活動日・活動内容更新",
+      "previous_known_state": "8月3日～5日の避難所・物資支援等は定員到達として表示",
       "changes_from_previous": [
-        "前回の限定募集から、8月3日～5日の全フォームが定数到達による締切へ変更"
+        "8月4日～8日の活動日別事前登録フォーム掲載を確認",
+        "家屋支援は8月5日受付開始、8月6日から本格活動へ更新",
+        "住居内の片付け、住居・敷地内のがれき撤去を活動内容として確認"
       ],
       "information_confidence": "高",
+      "official_information_conflict": "熊本県社会福祉協議会の市町一覧（2026年8月2日）は宇城市を『準備中』と表示。一方、宇城市社会福祉協議会（2026年8月3日）は避難所・物資支援の先行募集、8月4日～8日の事前登録、8月5日以降の家屋支援を掲載。一般募集と限定募集の範囲が異なるため、日別フォームの最新受付状況を優先確認する。",
       "remarks": "定数の数値は非公表。定員到達を募集人数0人又は募集人数として表示しない"
     },
     {
@@ -276,7 +272,7 @@
       "recruitment_status": "募集中（一部日定員到達）",
       "activity_start_date": "2026-08-04",
       "activity_end_date": "2026-08-09",
-      "activity_dates_text": "8月4日は定員到達。8月5日～9日は個人・団体フォームで受付中。8月8日、9日は台風状況により中止の場合あり",
+      "activity_dates_text": "8月4日～7日は必要人数に達したため締切。8月8日、9日の現行受付状況は公式ページ本文で明記されていないため前回値を維持し要再確認。8月9日以降は随時日程追加予定",
       "activity_windows": [
         {
           "start_date": "2026-08-04",
@@ -288,9 +284,9 @@
         {
           "start_date": "2026-08-05",
           "end_date": "2026-08-07",
-          "status": "募集中",
+          "status": "定員到達",
           "capacity": null,
-          "form_status": "個人・団体フォームで選択可"
+          "form_status": "必要な人数に達したため締切"
         },
         {
           "start_date": "2026-08-08",
@@ -350,16 +346,17 @@
       "official_source_url": "https://misatoshakyo.or.jp/pages/455/",
       "source_published_at": null,
       "source_updated_at": "2026-08-03T14:49:12+09:00",
-      "checked_at": "2026-08-03T15:40:59+09:00",
-      "change_status": "募集日追加・一部定員到達",
+      "checked_at": "2026-08-04T08:28:44+09:00",
+      "recheck_status": "差分あり",
+      "recheck_note": "美里町社会福祉協議会の公式ページで、8月4日〜7日の募集は必要人数到達により締切と再確認。8月8日・9日の現行受付状況は本文に明記がないため前回値を維持し、要再確認とした。",
+      "change_status": "8月4日～7日定員到達を確認",
+      "previous_known_state": "8月4日定員到達、8月5日～7日受付中",
       "changes_from_previous": [
-        "8月8日、9日の募集日程を追加",
-        "8月4日は定員到達",
-        "当日参加可能を確認",
-        "ヘルメット・ゴム手袋の持参を確認",
-        "マイクロバス利用時の事前連絡を確認"
+        "8月5日～7日も必要な人数に達したため締切を確認",
+        "8月8日、9日の現行受付状況は本文に明記がなく、前回値を維持して要再確認"
       ],
       "information_confidence": "高",
+      "official_information_conflict": "熊本県社会福祉協議会の市町一覧（2026年8月2日）は美里町を『準備中』と表示。美里町社会福祉協議会（2026年8月3日）は8月4日～9日の一次募集と個人・団体フォームを掲載しているため、日別フォームの受付状況を優先確認する。",
       "remarks": "公式フォーム内の8月4日の曜日表記に月曜日とあるが、2026年8月4日は火曜日。日付を優先し、公式表記揺れとして扱う。団体フォームは愛媛県団体の受入確定を意味しない"
     },
     {
@@ -457,7 +454,9 @@
       "official_source_url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D53",
       "source_published_at": null,
       "source_updated_at": "2026-08-03T15:26:14+09:00",
-      "checked_at": "2026-08-03T15:40:59+09:00",
+      "checked_at": "2026-08-04T08:28:44+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "2026年8月4日に御船町社会福祉協議会の公式ページを再確認。8月3日〜8日の募集、日別フォーム、軽トラック等の車両協力依頼に新たな変更は確認できず。",
       "change_status": "日別受付状況確認・団体受付確認",
       "changes_from_previous": [
         "8月3日、6日、7日の個人・団体申込フォーム受付可を確認",
@@ -547,7 +546,9 @@
       "official_source_url": "http://kashima-shakyo.or.jp/publics/index/1/detail=1/b_id=1/r_id=121#block1-121",
       "source_published_at": "2026-07-31",
       "source_updated_at": "2026-08-03T15:02:19+09:00",
-      "checked_at": "2026-08-03T15:40:59+09:00",
+      "checked_at": "2026-08-04T08:28:44+09:00",
+      "recheck_status": "確認できず",
+      "recheck_note": "嘉島町公式ページは証明書検証エラーで今回の本文再取得ができなかったため、前回の公式確認値を変更せず保持。日別受付状況は要再確認。",
       "change_status": "募集条件確認",
       "changes_from_previous": [
         "1日30人程度を確認",
@@ -567,7 +568,7 @@
       "url": "https://www.kumamoto-city-csw.or.jp/%E7%86%8A%E6%9C%AC%E5%B8%82%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AB%E3%82%88%E3%82%8B%E6%94%AF%E6%8F%B4%E9%96%8B%E5%A7%8B/",
       "published_at": "2026-08-03",
       "updated_at": null,
-      "checked_at": "2026-08-03T15:40:59+09:00"
+      "checked_at": "2026-08-04T08:28:44+09:00"
     },
     {
       "publisher": "宇土市社会福祉協議会",
@@ -575,7 +576,7 @@
       "url": "https://www.utoshakyou.jp/volunteer_2026.html",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-03T15:40:59+09:00"
+      "checked_at": "2026-08-04T08:28:44+09:00"
     },
     {
       "publisher": "宇城市社会福祉協議会",
@@ -583,7 +584,15 @@
       "url": "https://www.shakyou-uki.jp/oshirase/12239/",
       "published_at": "2026-08-03",
       "updated_at": "2026-08-03",
-      "checked_at": "2026-08-03T15:40:59+09:00"
+      "checked_at": "2026-08-04T08:28:44+09:00"
+    },
+    {
+      "publisher": "宇城市社会福祉協議会",
+      "title": "宇城市災害ボランティアセンターの受付について",
+      "url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
+      "published_at": "2026-08-03",
+      "updated_at": "2026-08-03",
+      "checked_at": "2026-08-04T08:28:44+09:00"
     },
     {
       "publisher": "美里町社会福祉協議会",
@@ -591,7 +600,7 @@
       "url": "https://misatoshakyo.or.jp/pages/455/",
       "published_at": null,
       "updated_at": "2026-08-03T14:49:12+09:00",
-      "checked_at": "2026-08-03T15:40:59+09:00"
+      "checked_at": "2026-08-04T08:28:44+09:00"
     },
     {
       "publisher": "御船町社会福祉協議会",
@@ -599,7 +608,7 @@
       "url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D53",
       "published_at": null,
       "updated_at": "2026-08-03T15:26:14+09:00",
-      "checked_at": "2026-08-03T15:40:59+09:00"
+      "checked_at": "2026-08-04T08:28:44+09:00"
     },
     {
       "publisher": "嘉島町社会福祉協議会",
@@ -623,7 +632,7 @@
       "url": "https://www.fukushi-kumamoto.or.jp/pages/291/detail=1/b_id=4334/r_id=2215#block4334-2215",
       "published_at": "2026-08-02",
       "updated_at": null,
-      "checked_at": "2026-08-03T15:40:59+09:00"
+      "checked_at": "2026-08-04T08:28:44+09:00"
     }
   ]
 }

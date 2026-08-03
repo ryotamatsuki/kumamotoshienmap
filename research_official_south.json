@@ -1,6 +1,6 @@
 {
   "research_scope": "令和8年熊本地震に伴う災害ボランティアセンター・募集情報（南部担当）",
-  "checked_at": "2026-08-03T15:33:13+09:00",
+  "checked_at": "2026-08-04T08:28:44+09:00",
   "timezone": "Asia/Tokyo",
   "source_policy": "熊本県、熊本県社会福祉協議会、市町、市町社会福祉協議会、災害ボランティアセンターの公式Webページおよび公式SNSのみ。報道、まとめサイト、非公式SNS、過去災害資料は現状判定に使用していない。",
   "null_policy": {
@@ -14,7 +14,7 @@
       "publisher": "熊本県社会福祉協議会（熊本県災害ボランティアセンター）",
       "title": "熊本県災害ボランティア情報",
       "url": "https://www.fukushi-kumamoto.or.jp/kvc/",
-      "checked_at": "2026-08-03T15:33:13+09:00"
+      "checked_at": "2026-08-04T08:28:44+09:00"
     },
     "municipalities_linked_as_current_centers_on_prefectural_portal": [
       "八代市",
@@ -89,7 +89,9 @@
       "official_source_url": "https://www.mashiki-shakyo.or.jp/news/1968/",
       "source_published_at": "2026-08-01T13:50:04+09:00",
       "source_updated_at": "2026-08-01T13:52:20+09:00",
-      "checked_at": "2026-08-03T15:33:13+09:00",
+      "checked_at": "2026-08-04T08:28:44+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "2026年8月4日に益城町社会福祉協議会の公式告知を再確認。8月1日〜10日の第1期は必要人数到達で締切、8月11日以降はニーズを踏まえて再募集予定のまま。",
       "change_status": "定員到達",
       "previous_known_state": "募集中・人数非公表・当日受付との初期認識",
       "change_from_previous": "第1期8月1日～10日は必要人数到達で募集締切。直前の公式募集ページでは1日30人程度、事前フォーム、軽トラック歓迎、保険加入必須を公表。",
@@ -103,7 +105,7 @@
           "url": "https://www.mashiki-shakyo.or.jp/news/1968/",
           "published_at": "2026-08-01T13:50:04+09:00",
           "updated_at": "2026-08-01T13:52:20+09:00",
-          "checked_at": "2026-08-03T15:33:13+09:00",
+          "checked_at": "2026-08-04T08:28:44+09:00",
           "facts_used": "第1期8月1日～10日は必要人数到達で締切、8月11日以降は改めて募集予定"
         },
         {
@@ -112,7 +114,7 @@
           "url": "https://www.mashiki-shakyo.or.jp/news/1964/",
           "published_at": "2026-07-31T13:35:40+09:00",
           "updated_at": "2026-07-31T13:35:45+09:00",
-          "checked_at": "2026-08-03T15:33:13+09:00",
+          "checked_at": "2026-08-04T08:28:44+09:00",
           "facts_used": "第1期日程、1日30人程度、活動内容、軽トラック歓迎、受付・活動時間、仮予約フォーム"
         },
         {
@@ -121,7 +123,7 @@
           "url": "https://www.mashiki-shakyo.or.jp/news/1959/",
           "published_at": "2026-07-30",
           "updated_at": null,
-          "checked_at": "2026-08-03T15:33:13+09:00",
+          "checked_at": "2026-08-04T08:28:44+09:00",
           "facts_used": "ボランティア活動保険への事前加入必須"
         },
         {
@@ -130,7 +132,7 @@
           "url": "https://www.town.mashiki.lg.jp/bousai/kiji0038077/index.html",
           "published_at": null,
           "updated_at": "2026-07-31",
-          "checked_at": "2026-08-03T15:33:13+09:00",
+          "checked_at": "2026-08-04T08:28:44+09:00",
           "facts_used": "8月1日開設、場所、開設時間、家財搬出・屋内外片付け"
         }
       ]
@@ -193,7 +195,9 @@
       "official_source_url": "https://kosa-shakyo.or.jp/pages/50/",
       "source_published_at": null,
       "source_updated_at": "2026-08-03T13:52:16+09:00",
-      "checked_at": "2026-08-03T15:33:13+09:00",
+      "checked_at": "2026-08-04T08:28:44+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "2026年8月4日に甲佐町社会福祉協議会の公式ページを再確認。九州圏内の個人募集、1日20名程度、受付方法・時間に新たな変更は確認できず。団体受入は要照会のまま。",
       "change_status": "募集条件更新",
       "previous_known_state": "九州地域在住者を対象、来所又は電話受付、人数・日程・保険は未公表",
       "change_from_previous": "九州圏内の個人募集を継続。公式個人フォーム、1日20人程度、当日9:30締切、8月5日～7日の活動希望日、活動日前日までの保険加入を確認。",
@@ -207,7 +211,7 @@
           "url": "https://kosa-shakyo.or.jp/pages/50/",
           "published_at": null,
           "updated_at": "2026-08-03T13:52:16+09:00",
-          "checked_at": "2026-08-03T15:33:13+09:00",
+          "checked_at": "2026-08-04T08:28:44+09:00",
           "facts_used": "九州圏内、電話・来所・Googleフォーム、1日20人程度、当日9:30締切、活動内容、連絡先"
         },
         {
@@ -216,7 +220,7 @@
           "url": "https://docs.google.com/forms/d/1dEs0KDWp-IG7vlaTTBjO70vhPWiLu20I0xAG9YQ4Wew/viewform",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-03T15:33:13+09:00",
+          "checked_at": "2026-08-04T08:28:44+09:00",
           "facts_used": "個人受付、フォーム稼働、8月5日～7日、保険加入（天災・地震補償プラン）、活動日前日までの加入"
         }
       ]
@@ -274,7 +278,9 @@
       "official_source_url": "https://www.facebook.com/yatsushiroshakyo/posts/pfbid03578BuBBiSMQ2G4RyUzP9WdYgA7tf1ehSau5mv7XHw1gbUfnnzdPEmJdoxdRdNnqxl",
       "source_published_at": null,
       "source_updated_at": null,
-      "checked_at": "2026-08-03T15:33:13+09:00",
+      "checked_at": "2026-08-04T08:28:44+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "2026年8月4日に八代市社会福祉協議会公式Webと県社協ポータルを再確認。災害ボランティアセンター設置準備中で、募集開始は確認できず。",
       "change_status": "募集準備中を確認",
       "previous_known_state": "今回の市町別募集情報を確認できず",
       "change_from_previous": "公式Facebookの最新投稿で、八代市社会福祉協議会が災害ボランティアセンター設置へ向け準備中であることを確認。募集開始は未確認。",
@@ -288,7 +294,7 @@
           "url": "https://www.facebook.com/yatsushiroshakyo/posts/pfbid03578BuBBiSMQ2G4RyUzP9WdYgA7tf1ehSau5mv7XHw1gbUfnnzdPEmJdoxdRdNnqxl",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-03T15:33:13+09:00",
+          "checked_at": "2026-08-04T08:28:44+09:00",
           "facts_used": "災害VC設置へ向け準備中、災害時特例Web保険加入開始の案内"
         },
         {
@@ -297,7 +303,7 @@
           "url": "https://www.facebook.com/yatsushiroshakyo/posts/pfbid02jhH1hQLtCYBrcqDzJDtjQrp1Y4kZ9jEQM5McLAPxhs7M7MBWKrVxwwHFtikTwKFUl",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-03T15:33:13+09:00",
+          "checked_at": "2026-08-04T08:28:44+09:00",
           "facts_used": "通信環境復旧と災害VC始動の準備中、電話開通後に公式SNS・Webで発信"
         }
       ]
@@ -363,7 +369,9 @@
       "official_source_url": "https://hikawa-syakyo.jp/news/%e3%80%90%e5%a4%a7%e5%88%87%e3%81%aa%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b%e3%80%91%e5%9c%b0%e9%9c%87%e3%81%ab%e3%82%88%e3%82%8a%e8%a2%ab%e7%81%bd%e3%81%95%e3%82%8c%e3%81%9f%e7%9a%86%e6%a7%98%e3%81%b8/",
       "source_published_at": "2026-08-03T14:07:00+09:00",
       "source_updated_at": "2026-08-03T14:09:14+09:00",
-      "checked_at": "2026-08-03T15:33:13+09:00",
+      "checked_at": "2026-08-04T08:28:44+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "2026年8月4日に氷川町社会福祉協議会の公式記事を再確認。被災者からの片付け依頼受付は開始済みだが、参加者募集条件は未公表のまま。",
       "change_status": "センター開設・ニーズ受付開始",
       "previous_known_state": "市町別の具体的募集情報を確認できず",
       "change_from_previous": "8月1日のセンター開設と、8月3日の被災者向け片付け・手伝い依頼受付開始を確認。ただし参加者募集は引き続き準備段階。",
@@ -377,7 +385,7 @@
           "url": "https://hikawa-syakyo.jp/news/%e3%80%90%e5%a4%a7%e5%88%87%e3%81%aa%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b%e3%80%91%e5%9c%b0%e9%9c%87%e3%81%ab%e3%82%88%e3%82%8a%e8%a2%ab%e7%81%bd%e3%81%95%e3%82%8c%e3%81%9f%e7%9a%86%e6%a7%98%e3%81%b8/",
           "published_at": "2026-08-03T14:07:00+09:00",
           "updated_at": "2026-08-03T14:09:14+09:00",
-          "checked_at": "2026-08-03T15:33:13+09:00",
+          "checked_at": "2026-08-04T08:28:44+09:00",
           "facts_used": "被災者ニーズ受付開始、支援例、センター所在地、依頼受付時間、連絡先"
         },
         {
@@ -386,7 +394,7 @@
           "url": "https://hikawa-syakyo.jp/news/%e6%b0%b7%e5%b7%9d%e7%94%ba%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e3%82%bb%e3%83%b3%e3%82%bf%e3%83%bc%e3%82%92%e9%96%8b%e8%a8%ad%e3%81%97%e3%81%be%e3%81%97%e3%81%9f/",
           "published_at": "2026-08-01",
           "updated_at": null,
-          "checked_at": "2026-08-03T15:33:13+09:00",
+          "checked_at": "2026-08-04T08:28:44+09:00",
           "facts_used": "8月1日開設、参加者募集・受入れ・問合せは準備段階、募集範囲・受付方法・活動日程は後日公表"
         }
       ]
@@ -444,7 +452,9 @@
       "official_source_url": "https://www.ashikita-shakyo.com/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E6%83%85%E5%A0%B1%EF%BC%9A%E4%BB%A4%E5%92%8C8%E5%B9%B47%E6%9C%8828%E6%97%A5%E7%99%BA%E7%94%9F%E3%81%AE%E5%9C%B0%E9%9C%87/",
       "source_published_at": "2026-07-29",
       "source_updated_at": null,
-      "checked_at": "2026-08-03T15:33:13+09:00",
+      "checked_at": "2026-08-04T08:28:44+09:00",
+      "recheck_status": "確認できず",
+      "recheck_note": "2026年8月4日に芦北町社会福祉協議会の公式記事を再確認したが、7月29日付の案内以降、町固有の開設・募集条件を確認できず。既存状態を変更せず、要再確認とした。",
       "change_status": "変更確認できず",
       "previous_known_state": "市町別の具体的募集情報を確認できず",
       "change_from_previous": "町社協の最新地震関連記事は7月29日付で、芦北町固有の開設・募集条件は公表していない。8月3日の県社協ポータルにも芦北町センターリンクなし。",
@@ -458,7 +468,7 @@
           "url": "https://www.ashikita-shakyo.com/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E6%83%85%E5%A0%B1%EF%BC%9A%E4%BB%A4%E5%92%8C8%E5%B9%B47%E6%9C%8828%E6%97%A5%E7%99%BA%E7%94%9F%E3%81%AE%E5%9C%B0%E9%9C%87/",
           "published_at": "2026-07-29",
           "updated_at": null,
-          "checked_at": "2026-08-03T15:33:13+09:00",
+          "checked_at": "2026-08-04T08:28:44+09:00",
           "facts_used": "芦北町内で数件の被害、県内各市町村でセンター設置検討中との一般案内、保険事前加入案内。芦北町固有の募集条件なし"
         }
       ]

@@ -54,7 +54,8 @@ assert(JSON.stringify(dailyCapacity) === JSON.stringify({"宇土市":20,"嘉島�
 assert(data.centers.filter((center)=>center.ehime_dispatch_status === "団体派遣可能と公式確認").length === 0,"愛媛県からの団体受入れを過大判定しています");
 assert(data.centers.find((center)=>center.municipality === "宇土市")?.ehime_participation_allowed === false,"宇土市の地域制限が欠落しています");
 assert(data.centers.find((center)=>center.municipality === "甲佐町")?.ehime_participation_allowed === false,"甲佐町の地域制限が欠落しています");
-assert(data.centers.find((center)=>center.municipality === "宇城市")?.recruitment_status.includes("定員"),"宇城市の定員到達が反映されていません");
+assert(data.centers.find((center)=>center.municipality === "宇城市")?.recruitment_status === "限定募集","宇城市の最新の限定募集状態が反映されていません");
+assert(data.centers.every((center)=>typeof center.recheck_status === "string"),"全市町の再確認状態がありません");
 assert(!/予算資料|内部資料|添付資料|参考資料|過去災害/.test(source),"公開データに禁止表現があります");
 assert(Array.isArray(data.sources) && data.sources.length > 0,"公式情報源がありません");
 for(const item of data.sources){
