@@ -21,6 +21,7 @@ window.hideVolunteerMainLayer = function(){
   }
 };
 var selectedMunicipality = null;
+var selectedSummary = "opened";
 var searchTimer = null;
 var state = {
   query: "",
@@ -409,22 +410,61 @@ function summaryData(){
   var researched = sourceData.centers;
   var checks = researched.map(function(center){return center.checked_at;}).filter(Boolean).sort();
   return [
-    ["災害VC開設市町",researched.filter(function(c){return c.center_status && !/準備中|情報未確認/.test(c.center_status) && /開設|活動|受付/.test(c.center_status);}).length,"市町","公式情報で開設又は活動・受付を確認した市町を集計。設置準備中は含めない"],
-    ["現在募集中",researched.filter(isRecruiting).length,"市町","募集中、限定募集、活動受付中を集計。日別条件の要確認を含む"],
-    ["募集準備中",researched.filter(isPreparing).length,"市町","募集予定又は募集準備中を集計"],
-    ["募集人数公表",researched.filter(function(c){return c.capacity_disclosed === true;}).length,"市町","具体的な募集定員・目安人数の公表を確認した市町のみ"],
-    ["県外参加可（地域限定含む）",researched.filter(function(c){return c.outside_prefecture_allowed === true;}).length,"市町","熊本県外から参加可能と公式に明示された市町。九州限定を含み、愛媛県からの参加可を意味しない"],
-    ["団体参加可を明示",researched.filter(function(c){return c.group_allowed === true;}).length,"市町","団体参加可能と公式に明示された市町のみ。申込フォームだけでは判定しない"],
-    ["愛媛団体受入確認済み",researched.filter(function(c){return c.ehime_dispatch_status === "団体派遣可能と公式確認";}).length,"市町","愛媛県からの団体派遣受入れが公式に確認できた市町のみ"],
-    ["車両ニーズあり",researched.filter(function(c){return present(c.vehicle_need);}).length,"市町","軽トラック等の車両協力を公式情報で確認した市町"],
-    ["最終確認",checks.length ? formatDateTime(checks[checks.length-1]) : "要確認","","市町別公式情報をサイト側で最後に確認した日時"]
+    {key:"opened",label:"災害VC開設市町",unit:"市町",rule:"公式情報で開設又は活動・受付を確認した市町を集計。設置準備中は含めない",match:function(c){return c.center_status && !/準備中|情報未確認/.test(c.center_status) && /開設|活動|受付/.test(c.center_status);}},
+    {key:"recruiting",label:"現在募集中",unit:"市町",rule:"募集中、限定募集、活動受付中を集計。日別条件の要確認を含む",match:isRecruiting},
+    {key:"preparing",label:"募集準備中",unit:"市町",rule:"募集予定又は募集準備中を集計",match:isPreparing},
+    {key:"capacity",label:"募集人数公表",unit:"市町",rule:"具体的な募集定員・目安人数の公表を確認した市町のみ",match:function(c){return c.capacity_disclosed === true;}},
+    {key:"outside",label:"県外参加可（地域限定含む）",unit:"市町",rule:"熊本県外から参加可能と公式に明示された市町。九州限定を含み、愛媛県からの参加可を意味しない",match:function(c){return c.outside_prefecture_allowed === true;}},
+    {key:"group",label:"団体参加可を明示",unit:"市町",rule:"団体参加可能と公式に明示された市町のみ。申込フォームだけでは判定しない",match:function(c){return c.group_allowed === true;}},
+    {key:"ehime",label:"愛媛団体受入確認済み",unit:"市町",rule:"愛媛県からの団体派遣受入れが公式に確認できた市町のみ",match:function(c){return c.ehime_dispatch_status === "団体派遣可能と公式確認";}},
+    {key:"vehicle",label:"車両ニーズあり",unit:"市町",rule:"軽トラック等の車両協力を公式情報で確認した市町",match:function(c){return present(c.vehicle_need);}},
+    {key:"checked",label:"最終確認",value:checks.length ? formatDateTime(checks[checks.length-1]) : "要確認",unit:"",rule:"市町別公式情報をサイト側で最後に確認した日時",interactive:false}
   ];
+}
+function summaryValue(item){
+  return present(item.value) ? item.value : sourceData.centers.filter(item.match).length;
+}
+function summaryFact(item,center){
+  if(item.key === "opened") return center.center_status;
+  if(item.key === "recruiting" || item.key === "preparing") return [center.recruitment_status,center.activity_dates_text].filter(Boolean).join("｜");
+  if(item.key === "capacity"){
+    if(present(center.daily_capacity)) return Number(center.daily_capacity).toLocaleString("ja-JP")+(center.capacity_unit || "人／日");
+    if(present(center.total_capacity)) return Number(center.total_capacity).toLocaleString("ja-JP")+(center.capacity_unit || "人");
+    return "人数公表あり（具体的な数値は公式情報を確認）";
+  }
+  if(item.key === "outside") return [center.recruitment_area,center.ehime_participation_allowed === false ? "愛媛県は一般募集対象外" : null].filter(Boolean).join("｜");
+  if(item.key === "group") return [center.group_application_available === true ? "団体申込あり" : "団体参加可",center.group_dispatch_assessment].filter(Boolean).join("｜");
+  if(item.key === "ehime") return center.ehime_dispatch_status;
+  if(item.key === "vehicle") return center.vehicle_need;
+  return center.recruitment_status;
 }
 function summaryMarkup(){
   return summaryData().map(function(item,index){
     var tipId = "volSummaryTip"+index;
-    return '<article class="vol-summary-card"><button class="vol-summary-help" type="button" aria-describedby="'+tipId+'" aria-label="'+attr(item[0]+"の集計条件")+'">?</button><span class="vol-summary-tooltip" id="'+tipId+'" role="tooltip">'+esc(item[3])+'</span><div class="vol-summary-label">'+esc(item[0])+'</div><div class="vol-summary-value">'+esc(item[1])+(item[2] ? '<span class="vol-summary-unit">'+esc(item[2])+"</span>" : "")+"</div></article>";
+    var value = summaryValue(item);
+    if(item.interactive === false){
+      return '<article class="vol-summary-card vol-summary-static"><button class="vol-summary-help" type="button" aria-describedby="'+tipId+'" aria-label="'+attr(item.label+"の集計条件")+'">?</button><span class="vol-summary-tooltip" id="'+tipId+'" role="tooltip">'+esc(item.rule)+'</span><div class="vol-summary-label">'+esc(item.label)+'</div><div class="vol-summary-value">'+esc(value)+(item.unit ? '<span class="vol-summary-unit">'+esc(item.unit)+"</span>" : "")+"</div></article>";
+    }
+    var selected = item.key === selectedSummary;
+    return '<button class="vol-summary-card vol-summary-action'+(selected?' selected':'')+'" data-vol-summary="'+attr(item.key)+'" type="button" aria-expanded="'+(selected?'true':'false')+'" aria-controls="volSummaryDetail" aria-describedby="'+tipId+'"><span class="vol-summary-help" aria-hidden="true">?</span><span class="vol-summary-tooltip" id="'+tipId+'" role="tooltip">'+esc(item.rule)+'</span><span class="vol-summary-label">'+esc(item.label)+'</span><span class="vol-summary-value">'+esc(value)+(item.unit ? '<span class="vol-summary-unit">'+esc(item.unit)+"</span>" : "")+'</span><span class="vol-summary-open">詳細を見る</span></button>';
   }).join("");
+}
+function summaryDetailMarkup(){
+  var item = summaryData().find(function(entry){return entry.key === selectedSummary && entry.interactive !== false;}) || summaryData()[0];
+  var centers = sourceData.centers.filter(item.match);
+  var body = centers.length ? '<div class="vol-summary-detail-grid">'+centers.map(function(center){
+    return '<article class="vol-summary-detail-item"><div class="vol-summary-detail-top"><strong>'+esc(center.municipality)+'</strong>'+statusMarkup(center)+'</div><p>'+display(summaryFact(item,center),"公表なし・要確認")+'</p><div class="vol-summary-detail-actions"><button class="vol-summary-jump" data-vol-select="'+attr(center.municipality)+'" type="button">市町詳細を開く</button>'+officialLink(center)+'</div></article>';
+  }).join("")+'</div>' : '<div class="vol-summary-none"><strong>該当する市町はありません。</strong><p>公表情報だけでは愛媛県からの団体受入れを確認できません。熊本県社会福祉協議会及び派遣先候補の災害ボランティアセンターへ事前照会が必要です。</p><a class="vol-link" href="#volDispatch">団体派遣判断を確認する ↓</a></div>';
+  return '<div class="vol-summary-detail-head"><div><h3 tabindex="-1">'+esc(item.label)+'の詳細</h3><p>'+esc(item.rule)+'</p></div><span>'+centers.length+'市町</span></div>'+body;
+}
+function renderSummaryDetail(){
+  document.querySelectorAll("[data-vol-summary]").forEach(function(button){
+    var active = button.dataset.volSummary === selectedSummary;
+    button.classList.toggle("selected",active);
+    button.setAttribute("aria-expanded",active ? "true" : "false");
+  });
+  var detail = document.getElementById("volSummaryDetail");
+  if(detail) detail.innerHTML = summaryDetailMarkup();
 }
 function alertMarkup(){
   var restricted = sourceData.centers.filter(hasRegionalLimit).map(function(c){return c.municipality;});
@@ -785,6 +825,7 @@ function shellMarkup(){
   return '<div class="vol-hero"><div class="vol-title"><h2>災害ボランティア</h2><p>一般参加の条件と、愛媛県・愛媛県社会福祉協議会が団体派遣を判断するための未確認事項を、同じ市町別データから表示します。</p></div><div class="vol-meta"><strong>情報管理</strong><div class="vol-meta-line"><span>情報基準日時</span><span>'+esc(formatDateTime(sourceData.meta.reference_at))+'</span></div><div class="vol-meta-line"><span>サイト最終確認</span><span>'+esc(formatDateTime(sourceData.meta.checked_at))+'</span></div><div class="vol-meta-line"><span>次回確認</span><span>'+(sourceData.meta.next_review_required ? "必要" : "現時点なし")+"</span></div>"+freshnessMarkup()+"</div></div>"+
     '<div class="vol-caution">'+esc(sourceData.meta.caution)+"</div>"+
     '<div class="vol-summary">'+summaryMarkup()+"</div>"+
+    '<section class="vol-summary-detail" id="volSummaryDetail" aria-live="polite" aria-label="選択した集計の詳細">'+summaryDetailMarkup()+"</section>"+
     '<div class="vol-alerts" id="volAlerts">'+alertMarkup()+"</div>"+
     section("重要な変更","前回確認時からの募集条件・日程・受付方法等の差分","差分管理",changesMarkup(),"volChanges")+
     section("熊本県全体の共通案内","事前登録、保険、高速道路無料措置及び安全確認","公式情報",'<div class="vol-common-grid">'+commonMarkup()+"</div>","volCommon")+
@@ -879,6 +920,8 @@ function bindEvents(){
   app.addEventListener("click",function(event){
     var dismiss = event.target.closest("[data-vol-dismiss]");
     if(dismiss){ var alert = dismiss.closest("[data-vol-alert]"); if(alert) alert.remove(); return; }
+    var summary = event.target.closest("[data-vol-summary]");
+    if(summary){ selectedSummary = summary.dataset.volSummary; renderSummaryDetail(); return; }
     var select = event.target.closest("[data-vol-select]");
     if(select){ selectMunicipality(select.dataset.volSelect,true); return; }
     if(event.target.id === "volReset"){
