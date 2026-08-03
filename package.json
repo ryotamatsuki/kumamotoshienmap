@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-sites.mjs"
+    "generate:volunteer": "node scripts/generate-volunteer-data.mjs",
+    "validate:volunteer": "node scripts/validate-volunteer-data.mjs",
+    "validate:shelters": "node scripts/validate-shelter-coordinates.mjs",
+    "build": "npm run generate:volunteer && npm run validate:volunteer && npm run validate:shelters && node scripts/build-sites.mjs"
   }
 }

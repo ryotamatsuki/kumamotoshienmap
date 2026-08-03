@@ -16,6 +16,9 @@ const originalPath = join(
 const publicPath = join(root, "public", "dashboard.html");
 const original = readFileSync(originalPath);
 const dashboard = readFileSync(publicPath);
+const volunteerCss = readFileSync(join(root, "volunteer.css"), "utf8");
+const volunteerData = readFileSync(join(root, "volunteer-data.js"), "utf8");
+const volunteerApp = readFileSync(join(root, "volunteer.js"), "utf8");
 
 if (!original.equals(dashboard)) {
   throw new Error("The published dashboard does not match the reviewed source.");
@@ -26,6 +29,9 @@ const serverDirectory = join(output, "server");
 const metadataDirectory = join(output, ".openai");
 const dashboardText = dashboard.toString("utf8");
 const workerSource = `const dashboard = ${JSON.stringify(dashboardText)};
+const volunteerCss = ${JSON.stringify(volunteerCss)};
+const volunteerData = ${JSON.stringify(volunteerData)};
+const volunteerApp = ${JSON.stringify(volunteerApp)};
 
 const htmlHeaders = {
   "Content-Type": "text/html; charset=utf-8",
@@ -39,9 +45,25 @@ export default {
   async fetch(request) {
     const url = new URL(request.url);
     const isDashboard = url.pathname === "/" || url.pathname === "/dashboard.html";
+    const assets = {
+      "/volunteer.css": [volunteerCss, "text/css; charset=utf-8"],
+      "/volunteer-data.js": [volunteerData, "text/javascript; charset=utf-8"],
+      "/volunteer.js": [volunteerApp, "text/javascript; charset=utf-8"],
+    };
 
-    if (!isDashboard) {
+    if (!isDashboard && !assets[url.pathname]) {
       return new Response("Not Found", { status: 404 });
+    }
+
+    if (assets[url.pathname]) {
+      const [body, contentType] = assets[url.pathname];
+      if (request.method === "HEAD") {
+        return new Response(null, { status: 200, headers: { ...htmlHeaders, "Content-Type": contentType } });
+      }
+      if (request.method !== "GET") {
+        return new Response("Method Not Allowed", { status: 405, headers: { Allow: "GET, HEAD" } });
+      }
+      return new Response(body, { status: 200, headers: { ...htmlHeaders, "Content-Type": contentType } });
     }
 
     if (request.method === "HEAD") {
@@ -65,6 +87,9 @@ mkdirSync(serverDirectory, { recursive: true });
 mkdirSync(metadataDirectory, { recursive: true });
 writeFileSync(join(serverDirectory, "index.js"), workerSource, "utf8");
 copyFileSync(publicPath, join(output, "dashboard.html"));
+copyFileSync(join(root, "volunteer.css"), join(output, "volunteer.css"));
+copyFileSync(join(root, "volunteer-data.js"), join(output, "volunteer-data.js"));
+copyFileSync(join(root, "volunteer.js"), join(output, "volunteer.js"));
 copyFileSync(
   join(root, ".openai", "hosting.json"),
   join(metadataDirectory, "hosting.json"),

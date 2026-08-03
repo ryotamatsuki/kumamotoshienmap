@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "expected_count": 206,
+  "crs": "EPSG:4326",
+  "source_url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+  "source_as_of": "2026-08-02T23:21:09+09:00",
+  "hash_algorithm": "sha256",
+  "sha256": "95f9f0f13e51d374054122cf10247e3841a3f00bb2802bb397f73f110afa9731",
+  "bounds": {
+    "lat_min": 31.9,
+    "lat_max": 33.3,
+    "lng_min": 129.85,
+    "lng_max": 131.35
+  },
+  "municipalities": {
+    "431001": { "name": "熊本市", "count": 56 },
+    "432024": { "name": "八代市", "count": 44 },
+    "432059": { "name": "水俣市", "count": 7 },
+    "432067": { "name": "玉名市", "count": 1 },
+    "432083": { "name": "山鹿市", "count": 5 },
+    "432105": { "name": "菊池市", "count": 3 },
+    "432113": { "name": "宇土市", "count": 9 },
+    "432121": { "name": "上天草市", "count": 4 },
+    "432130": { "name": "宇城市", "count": 11 },
+    "432156": { "name": "天草市", "count": 29 },
+    "432164": { "name": "合志市", "count": 4 },
+    "433489": { "name": "美里町", "count": 4 },
+    "434035": { "name": "大津町", "count": 3 },
+    "434043": { "name": "菊陽町", "count": 2 },
+    "434418": { "name": "御船町", "count": 5 },
+    "434426": { "name": "嘉島町", "count": 2 },
+    "434434": { "name": "益城町", "count": 1 },
+    "434442": { "name": "甲佐町", "count": 5 },
+    "434680": { "name": "氷川町", "count": 4 },
+    "434825": { "name": "芦北町", "count": 6 },
+    "434841": { "name": "津奈木町", "count": 1 }
+  }
+}
