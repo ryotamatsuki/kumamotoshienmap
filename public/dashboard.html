@@ -47,6 +47,20 @@
 .overview-title h2{margin:0;font-size:22px;line-height:1.3}.overview-title p{margin:5px 0 0;color:var(--muted);font-size:11px;line-height:1.55}
 .overview-phase{margin-top:8px;display:inline-flex;align-items:center;gap:7px;border-left:4px solid var(--national);border-radius:7px;background:#f1f6fb;padding:8px 10px;color:#294d6a;font-size:11px;font-weight:800;line-height:1.45}
 .overview-update{flex:0 0 auto;border:1px solid #bfd5e6;border-radius:9px;background:#f2f8fc;padding:8px 10px;color:#31556e;font-size:10px;line-height:1.5}
+.page-recheck-section{border-left:4px solid #2d718d}
+.page-recheck-meta{display:flex;gap:6px;flex-wrap:wrap;margin:2px 0 10px}
+.page-recheck-meta span{border-radius:999px;background:#eef6fb;color:#31556e;padding:5px 8px;font-size:9px;font-weight:850}
+.page-recheck-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.page-recheck-card{border:1px solid #dce4e8;border-radius:10px;background:#fbfcfd;padding:10px;min-width:0}
+.page-recheck-card.changed{border-color:#d6b15c;background:#fffaf0}
+.page-recheck-card.review{border-color:#d2a6a0;background:#fff8f7}
+.page-recheck-card h4{margin:0;font-size:11px;line-height:1.4}
+.page-recheck-status{display:inline-flex;margin-top:5px;border-radius:999px;background:#edf2f5;color:#445963;padding:3px 6px;font-size:8px;font-weight:900}
+.page-recheck-card.changed .page-recheck-status{background:#fff0d7;color:#865100}
+.page-recheck-card.review .page-recheck-status{background:#fbe5e3;color:#92251e}
+.page-recheck-line{margin-top:6px;font-size:9px;line-height:1.5;color:#52616b}
+.page-recheck-line b{color:#2f454f}
+.page-recheck-source{display:block;margin-top:7px;font-size:9px;line-height:1.4;word-break:break-all}
 .decision-board{margin-bottom:12px;border:1px solid #c9d6dd;border-radius:14px;background:#fff;padding:12px;box-shadow:0 5px 16px rgba(17,40,54,.06)}
 .decision-board-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:9px}.decision-board-head h3{margin:0;font-size:15px}.decision-board-head p{margin:3px 0 0;color:var(--muted);font-size:10px;line-height:1.45}.decision-day{border-radius:999px;background:#244f6b;color:#fff;padding:6px 9px;font-size:10px;font-weight:900;white-space:nowrap}
 .decision-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.decision-card{min-width:0;border:1px solid #dce4e8;border-top:4px solid #7b8d97;border-radius:10px;background:#fbfcfd;padding:10px;text-align:left;font:inherit}.decision-card:is(button){cursor:pointer}.decision-card:is(button):hover{border-color:#9eb1bc;transform:translateY(-1px)}.decision-card.urgent{border-top-color:#b42318;background:#fff8f7}.decision-card.high{border-top-color:#d07a00;background:#fffaf1}.decision-card.info{border-top-color:#3479a2;background:#f5faff}.decision-status{display:flex;align-items:center;justify-content:space-between;gap:6px;color:#5b6b74;font-size:9px;font-weight:900}.decision-status b{border-radius:999px;background:#edf2f5;padding:3px 6px;color:#314a58}.decision-card.urgent .decision-status b{background:#fbe5e3;color:#92251e}.decision-card.high .decision-status b{background:#fff0d7;color:#865100}.decision-card.info .decision-status b{background:#e3f0f8;color:#275f81}.decision-title{margin-top:7px;font-size:12px;font-weight:900;line-height:1.4}.decision-evidence{margin-top:6px;color:#53646d;font-size:10px;line-height:1.5}.decision-next{margin-top:7px;border-top:1px solid rgba(82,100,110,.15);padding-top:6px;font-size:10px;font-weight:850;line-height:1.45}.decision-next span{color:var(--muted);font-weight:700}
@@ -64,8 +78,8 @@
 .overview-detail{position:sticky;top:12px;max-height:calc(100vh - var(--head) - 36px);overflow:auto;padding:12px}.overview-detail-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;padding-bottom:9px;border-bottom:1px solid #e7ecef}.overview-detail-sub{margin-top:4px;font-size:9px;color:var(--muted);line-height:1.45}.overview-detail-count{flex:0 0 auto;border-radius:999px;background:#edf5fb;color:#174f91;padding:5px 7px;font-size:9px;font-weight:850}.overview-summary-list{margin:10px 0 0;padding-left:18px;font-size:10px;line-height:1.65}.overview-summary-list li+li{margin-top:4px}.overview-detail-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.overview-detail-btn{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:7px;background:#fff;padding:6px 8px;font-size:9px;font-weight:850;cursor:pointer;color:#174f91}.overview-impact-list{margin-top:9px;border-top:1px solid #e8edef}.overview-impact-row{display:grid;grid-template-columns:1fr auto auto;gap:8px;padding:7px 0;border-bottom:1px solid #edf1f3;font-size:9px}.overview-impact-row strong{font-size:10px}.overview-caution{margin-top:9px;border-left:3px solid #d1a321;background:#fff9e8;border-radius:6px;padding:7px 8px;font-size:9px;line-height:1.5;color:#705b13}
 @media(max-width:1150px){.overview-layout{grid-template-columns:minmax(0,1fr) 340px}.overview-role-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:1150px){.decision-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:950px){.overview-shell{padding:12px 10px 22px}.overview-hero{display:block}.overview-update{margin-top:8px}.overview-layout{grid-template-columns:1fr}.overview-detail{position:static;max-height:none}.overview-actor-grid{grid-template-columns:1fr}.overview-resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.overview-role-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.overview-region-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.overview-view{min-height:calc(100vh - 100px)}}
-@media(max-width:520px){.decision-grid{grid-template-columns:1fr}.decision-board-head{display:block}.decision-day{display:inline-block;margin-top:7px}.overview-kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.overview-kpi-value{font-size:21px}.overview-resource-grid,.overview-role-grid,.overview-region-grid{grid-template-columns:1fr}.overview-title h2{font-size:18px}.overview-timeline-item{grid-template-columns:48px 1fr}.overview-arrow{display:none}}
+@media(max-width:950px){.overview-shell{padding:12px 10px 22px}.overview-hero{display:block}.overview-update{margin-top:8px}.overview-layout{grid-template-columns:1fr}.overview-detail{position:static;max-height:none}.overview-actor-grid{grid-template-columns:1fr}.overview-resource-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.overview-role-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.overview-region-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.page-recheck-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.overview-view{min-height:calc(100vh - 100px)}}
+@media(max-width:520px){.decision-grid{grid-template-columns:1fr}.decision-board-head{display:block}.decision-day{display:inline-block;margin-top:7px}.overview-kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.overview-kpi-value{font-size:21px}.overview-resource-grid,.overview-role-grid,.overview-region-grid{grid-template-columns:1fr}.page-recheck-grid{grid-template-columns:1fr}.overview-title h2{font-size:18px}.overview-timeline-item{grid-template-columns:48px 1fr}.overview-arrow{display:none}}
 
 @media(max-width:1150px){.dashboard-layout{grid-template-columns:minmax(0,1fr) 330px}.region-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:950px){header{flex-wrap:wrap}.view-switch{order:3;width:100%;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.view-tab{flex:0 0 auto}.dashboard-shell{padding:12px 10px 22px}.dashboard-hero{display:block}.dashboard-update{margin-top:8px}.dashboard-filterbar{grid-template-columns:1fr 1fr}.dashboard-filterbar .dashboard-field:first-child{grid-column:1/-1}.dashboard-layout{grid-template-columns:1fr}.dashboard-detail{position:static;max-height:none}.dashboard-provider-grid{grid-template-columns:1fr}.dashboard-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-view{min-height:calc(100vh - 100px)}.head-actions{margin-left:auto}}
@@ -215,7 +229,7 @@ body.shelter-layer-open .legend{bottom:122px}
 <body>
 <div class="app">
 <header>
-<div style="min-width:0"><h1>令和8年熊本地震 支援・受援状況</h1><div class="subtitle">愛媛県職員向け俯瞰版｜公式HP掲載情報＋過去災害の公式検証｜確認基準：2026年8月2日 19:00</div></div>
+<div style="min-width:0"><h1>令和8年熊本地震 支援・受援状況</h1><div class="subtitle">愛媛県職員向け俯瞰版｜今回の地震に関する公式資料の再整理｜ページ全体の再確認：2026年8月4日 08:55（JST）</div></div>
 <nav aria-label="表示モード" class="view-switch" role="tablist">
 <button aria-controls="overviewView" aria-selected="true" class="view-tab active" data-view="overview" id="overviewViewTab" role="tab" tabindex="0" type="button">概要</button>
 <button aria-controls="needsView" aria-selected="false" class="view-tab" data-view="needs" id="needsViewTab" role="tab" tabindex="-1" type="button">支援ニーズ見通し</button>
@@ -224,7 +238,7 @@ body.shelter-layer-open .legend{bottom:122px}
 <button aria-controls="volunteerView" aria-selected="false" class="view-tab" data-view="volunteer" id="volunteerViewTab" role="tab" tabindex="-1" type="button">災害ボランティア</button>
 <button aria-controls="mapView" aria-selected="false" class="view-tab" data-view="map" id="mapViewTab" role="tab" tabindex="-1" type="button">地図</button>
 </nav>
-<div class="head-actions"><span class="badge">公式資料を再整理・推定を含む</span><button class="btn" id="csvBtn" type="button">CSV</button><button class="btn" id="printBtn" type="button">印刷</button><button class="btn mobile-toggle" id="mobileToggle" type="button">情報欄</button></div>
+<div class="head-actions"><span class="badge">ページ全体再確認：2026年8月4日08:55</span><button class="btn" id="csvBtn" type="button">CSV</button><button class="btn" id="printBtn" type="button">印刷</button><button class="btn mobile-toggle" id="mobileToggle" type="button">情報欄</button></div>
 </header>
 <div aria-labelledby="overviewViewTab" class="overview-view" id="overviewView" role="tabpanel">
 <div class="overview-shell">
@@ -232,12 +246,17 @@ body.shelter-layer-open .legend{bottom:122px}
 <div class="overview-title">
 <h2>知事・幹部向け 意思決定サマリー</h2>
 <p>最初に「本日確認・判断する事項」を示し、その後に被害、投入済み支援、地域別の根拠を確認できる構成です。公開資料で分からない事項はゼロ扱いせず「未取得」と表示します。</p>
-<div class="overview-phase"><span>現在の対応段階 D+5</span>救命・救急を維持しながら、避難生活の長期化、交代要員、被害認定・罹災証明、インフラ復旧へ重点を移す段階</div>
+<div class="overview-phase"><span>経過日 D+7（公表値は8月2日まで）</span>救命・救急を維持しながら、避難生活の長期化、交代要員、被害認定・罹災証明、インフラ復旧へ重点を移す段階。8月4日時点で新しい根拠を確認できない数値は前回公表値を保持しています。</div>
 </div>
-<div class="overview-update"><strong>情報基準</strong><br/>被害・支援 8月2日19:00確認<br/>避難所 8月2日23:21公式スナップショット<br/>公式資料を再整理・推定を含む</div>
+<div class="overview-update"><strong>ページ全体の再確認</strong><br/>2026年8月4日 08:55（JST）<br/>避難所公式ポータル表示：8月4日08:53<br/>新しい根拠を確認できない値は変更せず保持</div>
 </div>
+<section aria-labelledby="pageRecheckTitle" class="overview-section page-recheck-section">
+<div class="overview-section-head"><div><h3 id="pageRecheckTitle">ページ全体の最新確認・前回との差分</h3><p>各タブの直近状態と、今回の再確認で確定できた差分を分けて表示します。確認できない項目は前回値を変更していません。</p></div><span class="overview-section-tag">2026年8月4日確認</span></div>
+<div class="page-recheck-meta"><span>サイト確認：2026年8月4日 08:55（JST）</span><span>避難所ポータル表示：08:53</span><span>ボランティア個別確認：08:28</span></div>
+<div class="page-recheck-grid" id="pageRecheckGrid"></div>
+</section>
 <section aria-labelledby="decisionBoardTitle" class="decision-board">
-<div class="decision-board-head"><div><h3 id="decisionBoardTitle">本日の判断・確認</h3><p>公開情報から直ちに確認できる論点。実際の追加派遣は熊本県・現地連絡員の要請と突合して決定します。</p></div><span class="decision-day">発災 D+5</span></div>
+<div class="decision-board-head"><div><h3 id="decisionBoardTitle">本日の判断・確認</h3><p>公開情報から直ちに確認できる論点。実際の追加派遣は熊本県・現地連絡員の要請と突合して決定します。</p></div><span class="decision-day">発災 D+7</span></div>
 <div class="decision-grid">
 <button class="decision-card urgent" data-overview-records="ehime-dmat" type="button"><div class="decision-status"><span>交代・継続</span><b>本日確認</b></div><div class="decision-title">愛媛DMATの帰任・引継ぎを確認</div><div class="decision-evidence">4チームの公表活動期間は8月2日又は3日まで。</div><div class="decision-next"><span>確認先：</span>保健医療調整本部／派遣元病院</div></button>
 <button class="decision-card high" data-overview-impact="evacuees" type="button"><div class="decision-status"><span>支援集中</span><b>優先確認</b></div><div class="decision-title">八代市・宇城市の生活支援を継続評価</div><div class="decision-evidence">2市で避難者6,764人、県全体の約79%。給水・保健・避難所運営の交代需要を確認。</div><div class="decision-next"><span>確認指標：</span>避難者推移、断水、暑熱・衛生、現班の終了日</div></button>
@@ -268,7 +287,7 @@ body.shelter-layer-open .legend{bottom:122px}
 <div class="geo-quick"><div><strong>熊本県内の市町村境界も地図で確認できます</strong><span>熊本県内45市町村の位置関係と、支援先6市町の県内での広がりを把握できます。地図左下には距離スケールも表示します。</span></div></div>
 </section>
 <section class="overview-section">
-<div class="overview-section-head"><div><h3>主要な投入資源</h3><p>単位が異なるため合算せず、公式資料上の代表値を並列表示</p></div><span class="overview-section-tag">8月2日時点</span></div>
+<div class="overview-section-head"><div><h3>主要な投入資源</h3><p>単位が異なるため合算せず、公式資料上の代表値を並列表示</p></div><span class="overview-section-tag">公表値：8月2日</span></div>
 <div class="overview-resource-grid">
 <button class="overview-resource" data-overview-records="national-water" type="button"><div class="overview-resource-label">応急給水</div><div class="overview-resource-value">84台</div><div class="overview-resource-sub">国14・水道協会66・民間4</div></button>
 <button class="overview-resource" data-overview-records="national-tec" type="button"><div class="overview-resource-label">TEC-FORCE</div><div class="overview-resource-value">19班・83人</div><div class="overview-resource-sub">県内5市町で調査・技術支援</div></button>
@@ -311,7 +330,7 @@ body.shelter-layer-open .legend{bottom:122px}
 <div class="needs-shell">
 <div class="needs-hero"><div class="needs-intro"><h2>支援ニーズ見通し</h2><p>熊本県等の公表資料から確認できる被害・避難・断水・施設被害・既投入支援を、過去災害の政府検証で顕在化した需要パターンと照合し、次に必要となり得る支援を推定します。</p><div class="needs-formula"><span>現在の公表シグナル</span><b>×</b><span>過去災害の教訓</span><b>→</b><span>次の支援候補・確認指標</span></div></div><div class="needs-caution"><strong>推定値の位置付け</strong><p>公式な支援要請ではなく、「現在の支援が不足している」という判定でもありません。既に支援が投入されている場合は、需要規模に応じた継続・交代の可能性を示します。情報が少ない自治体は低需要ではなく「判断材料が限定的」です。</p></div></div>
 <div class="needs-kpis"><div class="needs-kpi"><div class="needs-kpi-label">避難生活</div><div class="needs-kpi-value">8,556人</div><div class="needs-kpi-note">206避難所。避難所以外は別途把握が必要</div></div><div class="needs-kpi"><div class="needs-kpi-label">断水</div><div class="needs-kpi-value">約46,700戸</div><div class="needs-kpi-note">5市町、給水所81か所</div></div><div class="needs-kpi"><div class="needs-kpi-label">住家被害</div><div class="needs-kpi-value">4,042棟</div><div class="needs-kpi-note">うち分類未確定1,896棟</div></div><div class="needs-kpi"><div class="needs-kpi-label">災害廃棄物</div><div class="needs-kpi-value">12市町村</div><div class="needs-kpi-note">仮置場を設置済み・予定</div></div></div>
-<div class="needs-phasebar"><button data-needs-phase="now" type="button">初動～72時間（経過確認）</button><button class="active" data-needs-phase="next" type="button">現在 D+5：今後1～2週間</button><button data-needs-phase="recovery" type="button">その後の復旧・生活再建</button><div class="needs-phase-desc" id="needsPhaseDesc"></div></div>
+<div class="needs-phasebar"><button data-needs-phase="now" type="button">初動～72時間（経過確認）</button><button class="active" data-needs-phase="next" type="button">現在 D+7：今後1～2週間</button><button data-needs-phase="recovery" type="button">その後の復旧・生活再建</button><div class="needs-phase-desc" id="needsPhaseDesc"></div></div>
 <section class="needs-section"><div class="needs-section-head"><div><h3>熊本県全体で顕在化し得る支援</h3><p>現在の公表状況と過去災害の教訓を結び付けて表示します。</p></div><span class="needs-section-tag">カードをクリック</span></div><div class="province-needs-grid" id="provinceNeedsGrid"></div></section>
 <div class="needs-main"><section class="needs-list-panel"><div class="needs-section-head"><div><h3>市町村別の観測負荷シグナル</h3><p>未充足ニーズや支援配分順位ではなく、公表資料から読み取れる相対的な負荷です。</p></div><span class="needs-section-tag" id="needsMunicipalCount">－</span></div><div class="needs-tools"><div class="needs-field"><label for="needsSearch">市町村・根拠を検索</label><input id="needsSearch" placeholder="例：八代、断水、学校、農業用水" type="search"/></div><div class="needs-field"><label for="needsCategory">支援分野</label><select id="needsCategory"><option value="all">すべて</option></select></div><div class="needs-field"><label for="needsThreshold">表示する強さ</label><select id="needsThreshold"><option value="watch">注視以上</option><option selected="" value="medium">中以上</option><option value="high">強以上</option><option value="all">全件</option></select></div><button class="btn" id="needsCsvBtn" type="button">CSV</button></div><div class="municipal-needs-grid" id="municipalNeedsGrid"></div></section><aside class="needs-detail" id="needsDetail"><div class="needs-detail-empty"><strong>確認する項目を選択してください。</strong>県全体、市町村、過去災害の教訓、準備資源をクリックすると、推定の連鎖と根拠を表示します。</div></aside></div>
 <section class="needs-section"><div class="needs-section-head"><div><h3>過去災害の教訓をどう反映したか</h3><p>政府・復興庁・環境省・農林水産省の検証・教訓資料を参照しています。</p></div><span class="needs-section-tag">公式検証資料</span></div><div class="lesson-grid" id="lessonGrid"></div></section>
@@ -330,7 +349,7 @@ body.shelter-layer-open .legend{bottom:122px}
 <span><i class="lg-initial"></i>発災・初動</span><span><i class="lg-rescue"></i>救命・救急</span><span><i class="lg-lifeline"></i>避難・生活基盤</span><span><i class="lg-support"></i>広域・愛媛支援</span><span><i class="lg-recovery"></i>復旧・行政</span><span><i class="lg-planned"></i>今後の予定</span>
 </div>
 </div>
-<div class="timeline-update"><strong>整理基準</strong><br/>2026年8月2日 19:00確認<br/>日時は公式資料の記載を優先<br/>予定は実施済みと区別して表示</div>
+<div class="timeline-update"><strong>ページ全体再確認</strong><br/>2026年8月4日 08:55（JST）<br/>イベントの公表時点は各一次資料を保持<br/>新しい一次資料を確認できないイベントは変更なし</div>
 </div>
 <div aria-label="タイムライン指標" class="timeline-metrics">
 <div class="timeline-metric"><div class="timeline-metric-label">収録した主要事項</div><div class="timeline-metric-value" id="timelineMetricAll">－</div><div class="timeline-metric-note">重複する会議・部隊移動は主要節目に集約</div></div>
@@ -353,7 +372,7 @@ body.shelter-layer-open .legend{bottom:122px}
 <div aria-labelledby="mapViewTab" class="main" hidden="" id="mapView" role="tabpanel">
 <aside id="sidebar">
 <div class="summary">
-<div class="notice"><strong>読み方：</strong>支援情報は市町村等の<strong>支援ハブ</strong>に集約しています。「開設避難所」を押すと、熊本県公式ポータルから事前取得した施設代表点（8月2日23:21時点）を表示します。</div>
+<div class="notice"><strong>読み方：</strong>支援情報は市町村等の<strong>支援ハブ</strong>に集約しています。「開設避難所」を押すと、同梱した施設代表点（8月2日23:21スナップショット）を表示します。公式ポータルの最新一覧は8月4日08:53表示を確認していますが、全件再取得前のため同梱データは変更していません。</div>
 <div class="metrics">
 <div class="metric"><div class="metric-label">避難者</div><div class="metric-value">8,556<span class="metric-unit">人</span></div></div>
 <div class="metric"><div class="metric-label">避難所</div><div class="metric-value">206<span class="metric-unit">か所</span></div></div>
@@ -384,7 +403,7 @@ body.shelter-layer-open .legend{bottom:122px}
 <section class="panel active" id="panel-overview"><div class="callout">愛媛県の支援を主軸に、対口支援、国の医療・救助・給水・インフラ・財政支援を同一画面で確認できます。各地点を押すと、支援主体別に整理した詳細と公式資料を表示します。</div><div class="provider-strip"><div class="provider-card"><b><i class="dot ehime"></i>愛媛県</b><p>氷川町への対口支援、保健師、DMAT、県職員、警察、技術職員等。</p></div><div class="provider-card"><b><i class="dot municipal"></i>他自治体等</b><p>6市町への対口支援、熊本県内応援、モバイルファーマシー等。</p></div><div class="provider-card"><b><i class="dot national"></i>国・関係機関</b><p>現地対策本部、救助、医療、給水、TEC-FORCE、物資、財政等。</p></div></div><div class="section-head"><div class="section-title">支援ハブ別の全体像</div><div class="section-note">地図と連動</div></div><div id="hubOverview"></div></section>
 <section class="panel" id="panel-ehime"><div class="section-head"><div class="section-title">愛媛県の支援</div><div class="section-note">公式公表時点を明記</div></div><div id="list-ehime"></div></section>
 <section class="panel" id="panel-municipal"><div class="section-head"><div class="section-title">他自治体・地域機関の支援</div><div class="section-note">対口支援を中心に整理</div></div><div id="list-municipal"></div></section>
-<section class="panel block-sidebar" id="panel-blocks"><div class="callout">熊本県公表の対口支援団体を地域ブロック別に整理しています。カードを押すと、派遣元と支援先を地図で強調します。</div><div class="section-head"><div class="section-title">地域ブロック別の割当て</div><div class="section-note">8月2日14時時点</div></div><div class="block-grid" id="mapBlockGrid"></div></section>
+<section class="panel block-sidebar" id="panel-blocks"><div class="callout">熊本県公表の対口支援団体を地域ブロック別に整理しています。カードを押すと、派遣元と支援先を地図で強調します。</div><div class="section-head"><div class="section-title">地域ブロック別の割当て</div><div class="section-note">公表値：8月2日14時</div></div><div class="block-grid" id="mapBlockGrid"></div></section>
 <section class="panel" id="panel-national"><div class="section-head"><div class="section-title">国・関係機関の支援</div><div class="section-note">分野別に集約</div></div><div id="list-national"></div></section>
 
 <section class="panel" id="panel-impact">
@@ -413,7 +432,7 @@ body.shelter-layer-open .legend{bottom:122px}
   </div>
   <div class="shelter-list" id="shelterList"></div>
   <div class="shelter-method">
-    状態・座標：熊本県「防災情報くまもと」避難所マスター（2026年8月2日23:21最終更新）。座標系：WGS84 / EPSG:4326。
+    状態・座標：同梱データは熊本県「防災情報くまもと」避難所マスター（2026年8月2日23:21最終更新）。公式ポータルの最新一覧は2026年8月4日08:53表示を確認していますが、全件再取得・座標検証が未完了のため同梱データは変更していません。座標系：WGS84 / EPSG:4326。
     表示点は施設代表点で、物資搬入車両の入口を保証するものではありません。Google Mapsは確認・経路検索にのみ利用し、座標マスターの取得元にはしていません。
     施設別避難者数は一律公表されていないため、マーカーの大きさは人数を表しません。
   </div>
@@ -433,7 +452,7 @@ body.shelter-layer-open .legend{bottom:122px}
   <div class="shelter-toolbar-top">
     <div class="shelter-toolbar-title">
       <strong id="shelterToolbarTitle">開設避難所 206か所</strong>
-      <span id="shelterToolbarNote">公式施設代表点を事前同梱｜8月2日23:21時点</span>
+      <span id="shelterToolbarNote">公式施設代表点を事前同梱｜8月2日23:21スナップショット｜公式一覧表示8月4日08:53</span>
     </div>
     <div class="shelter-toolbar-actions">
       <a class="primary" href="https://portal.bousai.pref.kumamoto.jp/sp.html?p=evacuation%2Fshelter" rel="noopener" target="_blank">公式一覧</a>
@@ -457,7 +476,7 @@ body.shelter-layer-open .legend{bottom:122px}
 <h2>支援内容の全体像</h2>
 <p>公式資料から抽出した支援を、主体・分野・地域の3方向から俯瞰します。件数は支援規模ではなく、資料上で識別できる「支援項目数」です。</p>
 </div>
-<div class="dashboard-update"><strong>情報基準</strong><br/>2026年8月2日 19:00確認<br/>詳細は各項目の公式資料を参照</div>
+<div class="dashboard-update"><strong>ページ全体再確認</strong><br/>2026年8月4日 08:55（JST）<br/>新しい根拠を確認できない支援記録は変更なし</div>
 </div>
 <div aria-label="支援全体指標" class="dashboard-metrics">
 <div class="dashboard-metric"><div class="dashboard-metric-label">表示中の支援項目</div><div class="dashboard-metric-value" id="dashMetricRecords">－</div><div class="dashboard-metric-note">公式資料から識別した項目</div></div>
@@ -539,7 +558,17 @@ const BLOCK_SOURCE_URL='https://www.pref.kumamoto.jp/uploaded/attachment/315809.
 const BLOCK_FRAMEWORK_URL='https://www.nga.gr.jp/committee_pt/honbu/reconstruction/h24/post_853.html';
 
 const SOURCES=[{"group":"地理情報","name":"国土地理院 住所検索API","asOf":"開設避難所住所の座標確認に利用","url":"https://msearch.gsi.go.jp/address-search/AddressSearch"},{"group":"熊本県","name":"防災情報くまもと（開設避難所マップ）","asOf":"開設施設名・住所を取得し、市町村別公表数と照合","url":"https://portal.bousai.pref.kumamoto.jp/sp.html?p=evacuation%2Fshelter"},{"group":"愛媛県","name":"令和8年熊本地震被災地への支援について","asOf":"特設ページ。第2報は7月31日12時、保健師等派遣は8月1日更新","url":"https://www.pref.ehime.jp/page/154856.html"},{"group":"愛媛県","name":"本県の支援状況について（第2報）","asOf":"2026年7月31日12時","url":"https://www.pref.ehime.jp/uploaded/attachment/187214.pdf"},{"group":"愛媛県","name":"保健師等の派遣について","asOf":"2026年8月1日更新","url":"https://www.pref.ehime.jp/page/154879.html"},{"group":"愛媛県","name":"愛媛DMATの派遣について","asOf":"2026年7月29日公表","url":"https://www.pref.ehime.jp/uploaded/attachment/187153.pdf"},{"group":"愛媛県","name":"被災地支援に係る職員派遣について","asOf":"2026年7月30日公表","url":"https://www.pref.ehime.jp/uploaded/attachment/187132.pdf"},{"group":"熊本県","name":"災害対策本部会議資料一覧","asOf":"第12回会議：2026年8月2日16時開催","url":"https://www.pref.kumamoto.jp/soshiki/222/274487.html"},{"group":"熊本県","name":"第12回災害対策本部会議 各部説明資料","asOf":"2026年8月2日14時時点","url":"https://www.pref.kumamoto.jp/uploaded/attachment/315809.pdf"},{"group":"熊本県","name":"人的被害等の状況","asOf":"2026年8月2日14時時点","url":"https://www.pref.kumamoto.jp/uploaded/attachment/315813.pdf"},{"group":"国・関係機関","name":"国土交通省（現地対策本部）からの報告","asOf":"2026年8月2日14時30分時点","url":"https://www.pref.kumamoto.jp/uploaded/attachment/315808.pdf"},{"group":"国・関係機関","name":"消防庁 被害及び消防機関等の対応状況（第30報）","asOf":"2026年8月2日12時","url":"https://www.fdma.go.jp/disaster/info/items/20260728kumamotojishin30.pdf"},{"group":"国・関係機関","name":"内閣府 令和8年熊本地震に係る被害状況等について","asOf":"2026年8月1日7時","url":"https://www.bousai.go.jp/updates/r8kumamoto_jishin/pdf/r8kumamoto_jishin_20260801.pdf"},{"group":"国・関係機関","name":"罹災証明書コーディネーターの派遣","asOf":"2026年7月31日公表","url":"https://www.bousai.go.jp/pdf/260731_1900-1.pdf"},{"group":"国・関係機関","name":"行政書士による被災者支援","asOf":"2026年7月31日公表","url":"https://www.bousai.go.jp/pdf/260731_1900-2.pdf"},{"group":"自治体広域応援","name":"全国都道府県における災害時等の広域応援に関する協定","asOf":"地域ブロックを基本とする広域応援の枠組み","url":"https://www.nga.gr.jp/committee_pt/honbu/reconstruction/h24/post_853.html"},{"group":"愛媛県","name":"地域防災計画（資料編）広域応援協定一覧","asOf":"四国4県、中国・四国、全国知事会等の協定を掲載","url":"https://www.pref.ehime.jp/page/18013.html"},{"group":"行政界","name":"国土数値情報 行政区域データ","asOf":"2026年1月1日時点・市区町村名と行政界","url":"https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html"},{"group":"行政界","name":"地理院地図Vector提供実験","asOf":"行政界コード1211・1212・51212を標準スタイルに準じて利用","url":"https://github.com/gsi-cyberjapan/gsimaps-vector-experiment"},{"group":"背景地図","name":"国土地理院タイル一覧・利用上の注意","asOf":"標準地図、全国最新写真（シームレス）","url":"https://maps.gsi.go.jp/development/ichiran.html"},{"group":"背景地図","name":"OpenStreetMap 著作権・ライセンス","asOf":"© OpenStreetMap contributors","url":"https://www.openstreetmap.org/copyright"},{"group":"背景地図","name":"OpenStreetMap タイル利用ポリシー","asOf":"標準タイルの利用条件","url":"https://operations.osmfoundation.org/policies/tiles/"}];
-SOURCES.splice(0,1,{group:'熊本県',name:'防災情報くまもと 避難所マスター',asOf:'2026年8月2日23時21分時点。施設ID・住所・公式施設代表点を同梱',url:SHELTER_SNAPSHOT_META.sourceUrl});
+SOURCES.splice(0,1,{group:'熊本県',name:'防災情報くまもと 避難所マスター',asOf:'同梱スナップショット：2026年8月2日23時21分。公式ポータル表示は2026年8月4日08時53分に確認（同梱データは未更新）',url:SHELTER_SNAPSHOT_META.sourceUrl});
+const PAGE_RECHECK_META={checkedAt:'2026-08-04T08:55:47+09:00',portalObservedAt:'2026-08-04T08:53:00+09:00',volunteerCheckedAt:'2026-08-04T08:28:44+09:00',rows:[
+ {section:'被害・支援',status:'変更なし',current:'前回公表値を保持',previous:'熊本県資料：2026年8月2日14時／19時',difference:'2026年8月4日時点で新しい市町村別数値を確認できず、値を変更していません。',source:'熊本県 第12回災害対策本部会議資料',url:'https://www.pref.kumamoto.jp/uploaded/attachment/315809.pdf'},
+ {section:'避難所',status:'要再確認',current:'同梱206件・公式座標を保持',previous:'公式スナップショット：2026年8月2日23時21分',difference:'公式ポータルは8月4日08時53分表示を確認。最新一覧の全件再取得・座標検証が未完了のため、同梱データは変更していません。',source:'防災情報くまもと（最新一覧）',url:'https://portal.bousai.pref.kumamoto.jp/sp.html?p=evacuation%2Fshelter'},
+ {section:'支援ニーズ見通し',status:'変更なし',current:'観測負荷シグナルを保持',previous:'熊本県資料：2026年8月2日14時時点',difference:'新しい市町村別一次数値を確認できず、推定シグナルを変更していません。',source:'熊本県 人的被害等の状況',url:'https://www.pref.kumamoto.jp/uploaded/attachment/315813.pdf'},
+ {section:'発災後タイムライン',status:'要再確認',current:'8月2日までの確認済みイベントを保持',previous:'各イベントに記載した公式公表時点',difference:'8月4日に追加できる一次資料を確認できず、既存イベントと予定表示を変更していません。',source:'熊本県 災害対策本部会議資料一覧',url:'https://www.pref.kumamoto.jp/soshiki/222/274487.html'},
+ {section:'支援ダッシュボード',status:'変更なし',current:'既存の支援記録を保持',previous:'各レコードに記載した公式公表時点',difference:'新しい人数・期間の根拠を確認できず、既存記録を変更していません。',source:'熊本県 第12回災害対策本部会議資料',url:'https://www.pref.kumamoto.jp/uploaded/attachment/315809.pdf'},
+ {section:'災害ボランティア',status:'差分あり',current:'宇城市・美里町を更新',previous:'2026年8月3日14時26分確認',difference:'宇城市は8月5日受付・8月6日から本格活動、美里町は8月4日〜7日が必要人数到達。その他は変更なし又は確認できず。',source:'熊本県社会福祉協議会 災害ボランティア情報',url:'https://www.fukushi-kumamoto.or.jp/kvc/'},
+ {section:'地図・境界',status:'変更なし',current:'既存境界・背景・同梱座標を保持',previous:'既存の検証済みデータ',difference:'新しい境界・座標データは検索せず、地理院淡色地図と既存レイヤーを変更していません。',source:'国土地理院タイル一覧',url:'https://maps.gsi.go.jp/development/ichiran.html'}
+]};
+function renderPageRecheck(){const el=document.getElementById('pageRecheckGrid');if(!el)return;el.innerHTML=PAGE_RECHECK_META.rows.map(row=>{const cls=row.status==='差分あり'?'changed':row.status==='要再確認'?'review':'';return `<article class="page-recheck-card ${cls}"><h4>${esc(row.section)}</h4><span class="page-recheck-status">${esc(row.status)}</span><div class="page-recheck-line"><b>直近：</b>${esc(row.current)}</div><div class="page-recheck-line"><b>前回：</b>${esc(row.previous)}</div><div class="page-recheck-line"><b>差分：</b>${esc(row.difference)}</div><a class="page-recheck-source" href="${row.url}" target="_blank" rel="noopener">${esc(row.source)} ↗</a></article>`}).join('')}
 const PROVIDER_LABEL={ehime:'愛媛県',municipal:'他自治体等',national:'国・関係機関'};
 const CATEGORY_LABEL={administration:'行政・人的支援',medical:'保健・医療・福祉',rescue:'救助・消防・警察',water:'給水・生活支援',infrastructure:'インフラ復旧',certificates:'罹災証明・申請',finance:'財政支援'};
 function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
@@ -722,7 +751,7 @@ function renderShelterStatus(){
  const status=document.getElementById('shelterPanelStatus');
  status.className='shelter-panel-status '+(exact?'shelter-status-good':retrieved?'shelter-status-warn':'shelter-status-error');
  if(exact){
-  status.innerHTML=`<strong>公式施設ID・座標・市町村別件数を検証済み：${retrieved}か所</strong><p>公式施設代表点 ${coordinateCount}か所、未配置 ${unresolved}か所。出典更新：2026年8月2日23時21分（JST）</p>`;
+  status.innerHTML=`<strong>同梱スナップショットの施設ID・座標・市町村別件数を検証済み：${retrieved}か所</strong><p>公式施設代表点 ${coordinateCount}か所、未配置 ${unresolved}か所。スナップショット：2026年8月2日23時21分（JST）／公式一覧表示：8月4日08時53分（全件再取得前）</p>`;
  }else if(retrieved){
   const details=mismatches.slice(0,8).map(x=>`${x.name} ${x.actual}/${x.expected}`).join('、');
   const validationIssues=[retrieved!==SHELTER_EXPECTED_TOTAL?'総件数':null,mismatches.length?'市町村別件数':null,!uniqueFacilityIds?'施設ID重複':null,!inBounds?'座標範囲':null,!officialCoordinates?'座標出典':null].filter(Boolean).join('・');
@@ -731,7 +760,7 @@ function renderShelterStatus(){
   status.innerHTML='<strong>同梱した公式避難所データを読み込めません</strong><p>ファイルの破損を確認し、検証済みスナップショットへ差し替えてください。</p>';
  }
  document.getElementById('shelterToolbarTitle').textContent=exact?`開設避難所 ${retrieved}か所（公式座標・検証済み）`:`開設避難所 ${retrieved}/${SHELTER_EXPECTED_TOTAL}か所`;
- document.getElementById('shelterToolbarNote').textContent=`公式施設代表点 ${coordinateCount}か所｜未配置 ${unresolved}か所｜スナップショット 8月2日23:21`;
+ document.getElementById('shelterToolbarNote').textContent=`公式施設代表点 ${coordinateCount}か所｜未配置 ${unresolved}か所｜同梱8月2日23:21｜公式一覧表示8月4日08:53`;
 }
 function renderShelters(){
  renderShelterStatus();
@@ -948,7 +977,7 @@ function setPrimaryView(view){
 const KUMAMOTO_MUNICIPALITY_NAMES=["熊本市","八代市","人吉市","荒尾市","水俣市","玉名市","山鹿市","菊池市","宇土市","上天草市","宇城市","阿蘇市","天草市","合志市","美里町","玉東町","南関町","長洲町","和水町","大津町","菊陽町","南小国町","小国町","産山村","高森町","西原村","南阿蘇村","御船町","嘉島町","益城町","甲佐町","山都町","氷川町","芦北町","津奈木町","錦町","多良木町","湯前町","水上村","相良村","五木村","山江村","球磨村","あさぎり町","苓北町"];
 const NEED_LEVEL_LABEL={"very-high":"非常に強い",high:"強い",medium:"中",watch:"注視",limited:"情報限定"};
 const NEED_LEVEL_RANK={limited:0,watch:1,medium:2,high:3,"very-high":4};
-const NEED_PHASE_DESC={now:"初動～72時間に生じた給水、避難所、保健福祉、道路・上下水道、仮置場対応を遡って確認します。現在フェーズではありません。",next:"D+5の現在フェーズです。住家被害認定、罹災証明、応急住宅、学校再開、廃棄物処理、交代要員・技術職の中期派遣を中心に表示します。",recovery:"住まい再建、見守り、営農・事業再開、本復旧に移る需要を中心に表示します。"};
+const NEED_PHASE_DESC={now:"初動～72時間に生じた給水、避難所、保健福祉、道路・上下水道、仮置場対応を遡って確認します。現在フェーズではありません。",next:"D+7の現在フェーズです。住家被害認定、罹災証明、応急住宅、学校再開、廃棄物処理、交代要員・技術職の中期派遣を中心に表示します。市町村別の数値は新しい根拠を確認できないため前回公表値を保持しています。",recovery:"住まい再建、見守り、営農・事業再開、本復旧に移る需要を中心に表示します。"};
 const NEED_PHASE_CATS={now:["water","shelter","health","infrastructure","waste"],next:["administration","housing","waste","education","health","infrastructure","agriculture"],recovery:["housing","administration","health","education","agriculture","infrastructure"]};
 const needState={phase:"next",category:"all",threshold:"medium",query:"",selectedType:null,selectedId:null};
 function needCats(){return NEED_PHASE_CATS[needState.phase]||Object.keys(NEED_CATEGORY_LABEL)}
@@ -959,7 +988,7 @@ function provinceCard(x){return `<button class="province-need-card${needState.se
 function municipalCard(x){const cats=itemCats(x);return `<button class="municipal-need-card${needState.selectedType==='municipal'&&needState.selectedId===x.name?' selected':''}" type="button" data-municipal-need="${x.name}"><div class="municipal-card-head"><span class="municipal-name">${esc(x.name)}</span><span class="municipal-stats">避難${x.raw.evacuees.toLocaleString('ja-JP')}人<br>${x.raw.waterOutage?`断水${x.raw.waterOutage.toLocaleString('ja-JP')}戸`:`住家${x.raw.housingTotal.toLocaleString('ja-JP')}棟`}</span></div><div class="municipal-tags">${cats.map(c=>`<span class="municipal-tag ${x.levels[c]}">${esc(NEED_CATEGORY_LABEL[c])}</span>`).join('')}</div><div class="municipal-support-line">${x.currentSupport.length?`<b>投入済：</b>${esc(x.currentSupport.slice(0,2).join('・'))}`:'公表資料上の個別支援情報は限定的'}</div></button>`}
 function lessonsByIds(ids){return ids.map(id=>NEED_LESSONS.find(x=>x.id===id)).filter(Boolean)}
 function supportCandidates(item,cats){const out=[];cats.forEach(c=>(NEED_ASSETS[c]||[]).forEach(v=>{if(!out.includes(v))out.push(v)}));return out.slice(0,7)}
-function renderProvinceDetail(x){const ls=lessonsByIds(x.lessonIds);needsDetail.innerHTML=`<div class="needs-detail-head"><div><h3>${esc(x.title)}</h3><div class="needs-detail-sub">熊本県全体｜${needState.phase==='now'?'初動～72時間（経過確認）':needState.phase==='next'?'現在 D+5：今後1～2週間':'復旧・生活再建'}</div></div><span class="needs-confidence">推定確度 ${x.confidence}</span></div><div class="reason-chain"><div class="reason-step observed"><b>現在の公表データ</b>${esc(x.observed)}</div><div class="reason-step history"><b>過去災害の教訓</b>${esc(x.history)}</div><div class="reason-step inference"><b>今回への推定</b>${esc(x.inference)}</div></div><div class="needs-detail-block"><h4>追加・継続を検討し得る支援</h4><div class="needs-chip-row">${x.candidates.map(v=>`<span class="needs-chip">${esc(v)}</span>`).join('')}</div></div><div class="needs-detail-block"><h4>次の公表資料で確認する指標</h4><div class="needs-watch">${esc(x.watch)}</div></div><div class="needs-detail-block"><h4>参照した過去災害</h4><ul class="needs-detail-list">${ls.map(v=>`<li><a href="${v.url}" target="_blank" rel="noopener">${esc(v.disaster)}：${esc(v.title)}</a></li>`).join('')}</ul></div><div class="needs-actions"><a href="https://www.pref.kumamoto.jp/uploaded/attachment/315809.pdf" target="_blank" rel="noopener">熊本県本部資料</a><a href="https://www.pref.kumamoto.jp/uploaded/attachment/315813.pdf" target="_blank" rel="noopener">市町村別被害表</a></div>`}
+function renderProvinceDetail(x){const ls=lessonsByIds(x.lessonIds);needsDetail.innerHTML=`<div class="needs-detail-head"><div><h3>${esc(x.title)}</h3><div class="needs-detail-sub">熊本県全体｜${needState.phase==='now'?'初動～72時間（経過確認）':needState.phase==='next'?'現在 D+7：今後1～2週間':'復旧・生活再建'}</div></div><span class="needs-confidence">推定確度 ${x.confidence}</span></div><div class="reason-chain"><div class="reason-step observed"><b>現在の公表データ</b>${esc(x.observed)}</div><div class="reason-step history"><b>過去災害の教訓</b>${esc(x.history)}</div><div class="reason-step inference"><b>今回への推定</b>${esc(x.inference)}</div></div><div class="needs-detail-block"><h4>追加・継続を検討し得る支援</h4><div class="needs-chip-row">${x.candidates.map(v=>`<span class="needs-chip">${esc(v)}</span>`).join('')}</div></div><div class="needs-detail-block"><h4>次の公表資料で確認する指標</h4><div class="needs-watch">${esc(x.watch)}</div></div><div class="needs-detail-block"><h4>参照した過去災害</h4><ul class="needs-detail-list">${ls.map(v=>`<li><a href="${v.url}" target="_blank" rel="noopener">${esc(v.disaster)}：${esc(v.title)}</a></li>`).join('')}</ul></div><div class="needs-actions"><a href="https://www.pref.kumamoto.jp/uploaded/attachment/315809.pdf" target="_blank" rel="noopener">熊本県本部資料</a><a href="https://www.pref.kumamoto.jp/uploaded/attachment/315813.pdf" target="_blank" rel="noopener">市町村別被害表</a></div>`}
 function renderMunicipalDetail(x){const cats=itemCats(x);const lessonIds=[...new Set(cats.flatMap(c=>NEED_CATEGORY_LESSONS[c]||[]))];const ls=lessonsByIds(lessonIds);const candidates=supportCandidates(x,cats);const watchItems=[...new Set(cats.map(c=>NEED_WATCH[c]).filter(Boolean))].slice(0,4);const top=cats[0]||x.topNeeds[0];const hist=ls.length?`${cats.map(c=>NEED_CATEGORY_LABEL[c]).join('・')}について、${ls.map(v=>v.disaster).join('、')}で同種の需要が時間差で顕在化しました。`:'類似災害の公式検証から追加推定できる情報は限定的です。';needsDetail.innerHTML=`<div class="needs-detail-head"><div><h3>${esc(x.name)}</h3><div class="needs-detail-sub">市町村別シグナル｜最も強い分野：${top?esc(NEED_CATEGORY_LABEL[top]):'情報限定'}</div></div><span class="need-level ${top?x.levels[top]:'limited'}">${NEED_LEVEL_LABEL[top?x.levels[top]:'limited']}</span></div><div class="reason-chain"><div class="reason-step observed"><b>現在の公表データ</b>${x.evidence.length?x.evidence.map(esc).join('。')+'。':'市町村別の公表情報が限定的です。'}</div><div class="reason-step history"><b>過去災害の教訓</b>${esc(hist)}</div><div class="reason-step inference"><b>今回への推定</b>${cats.length?`${cats.map(c=>NEED_CATEGORY_LABEL[c]).join('、')}を中心に、既投入支援の継続・交代又は専門職支援が必要になり得ます。`:'現時点では具体的な推定材料が限られます。'}</div></div><div class="needs-detail-block"><h4>現在、公表資料で確認できる支援</h4>${x.currentSupport.length?`<div class="needs-chip-row">${x.currentSupport.map(v=>`<span class="needs-chip support">${esc(v)}</span>`).join('')}</div>`:'<div class="needs-watch">個別の投入支援が公表されていないか、広域支援として整理されています。</div>'}</div><div class="needs-detail-block"><h4>追加・継続を検討し得る支援</h4><div class="needs-chip-row">${candidates.map(v=>`<span class="needs-chip">${esc(v)}</span>`).join('')}</div></div><div class="needs-detail-block"><h4>次の公表資料で確認する指標</h4><ul class="needs-detail-list">${watchItems.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></div><div class="needs-detail-block"><h4>推定に用いた過去災害</h4><ul class="needs-detail-list">${ls.map(v=>`<li><a href="${v.url}" target="_blank" rel="noopener">${esc(v.disaster)}：${esc(v.title)}</a></li>`).join('')}</ul></div><div class="needs-actions"><button type="button" data-needs-map="${esc(x.name)}">地図で位置を確認</button><a href="${x.sourceUrl}" target="_blank" rel="noopener">市町村別被害表</a><a href="${x.detailSourceUrl}" target="_blank" rel="noopener">部局別被害・対応</a></div>`}
 function renderLessonDetail(x){needsDetail.innerHTML=`<div class="needs-detail-head"><div><h3>${esc(x.disaster)}</h3><div class="needs-detail-sub">過去災害の公式検証・教訓</div></div><span class="needs-confidence">経験則</span></div><div class="needs-detail-block"><h4>${esc(x.title)}</h4><ul class="needs-detail-list">${x.points.map(v=>`<li>${esc(v)}</li>`).join('')}</ul></div><div class="reason-chain"><div class="reason-step history"><b>今回への反映</b>${esc(x.applied)}</div></div><div class="needs-actions"><a href="${x.url}" target="_blank" rel="noopener">公式資料を開く</a></div>`}
 function renderReadinessDetail(x){needsDetail.innerHTML=`<div class="needs-detail-head"><div><h3>${esc(x.title)}</h3><div class="needs-detail-sub">愛媛県内の事前確認候補｜想定時期：${esc(x.phase)}</div></div><span class="needs-confidence">派遣決定ではない</span></div><div class="reason-chain"><div class="reason-step observed"><b>現在のシグナル</b>${esc(x.target.join('、'))}等で関連する被害・対応が公表されています。</div><div class="reason-step history"><b>過去災害の教訓</b>要請が具体化してから人選すると派遣が遅れるため、職種、経験、交代可能期間、自己完結性を事前確認します。</div><div class="reason-step inference"><b>愛媛県での準備</b>${esc(x.prepare)}</div></div><div class="needs-detail-block"><h4>主な注視先</h4><div class="needs-chip-row">${x.target.map(v=>`<button class="needs-chip" type="button" data-needs-municipal="${esc(v)}">${esc(v)}</button>`).join('')}</div></div>`}
@@ -1076,7 +1105,7 @@ document.querySelector('.view-switch').addEventListener('keydown',event=>{if(!['
 document.getElementById('dashReset').addEventListener('click',()=>{document.getElementById('dashSearch').value='';document.getElementById('dashProvider').value='all';document.getElementById('dashCategory').value='all';document.getElementById('dashRegion').value='all';syncDashboardFilters();});
 renderBlockGrid('overviewBlockGrid');renderBlockGrid('mapBlockGrid');bindBlockGrid('dashboardBlockGrid','dashboardDetail');document.getElementById('mapBlockGrid').addEventListener('click',e=>{const card=e.target.closest('[data-support-block]');if(card)highlightBlockOnMap(card.dataset.supportBlock);});
 populateDashboardRegions();populateNeedsCategory();populateShelterMunicipalities();
-renderDashboard();renderNeeds();renderTimeline();renderOverview();renderShelters();
+renderDashboard();renderNeeds();renderTimeline();renderOverview();renderPageRecheck();renderShelters();
 resetShelterSnapshot();
 setPrimaryView('overview');
 
