@@ -93,13 +93,13 @@ export default {
 rmSync(output, { recursive: true, force: true });
 mkdirSync(serverDirectory, { recursive: true });
 mkdirSync(metadataDirectory, { recursive: true });
-writeFileSync(join(serverDirectory, "index.js"), workerSource, "utf8");
+writeFileSync(join(serverDirectory, "index.mjs"), workerSource, "utf8");
 writeFileSync(
   workerConfigPath,
   `${JSON.stringify(
     {
       $schema: "node_modules/wrangler/config-schema.json",
-      main: "server/index.js",
+      main: "server/index.mjs",
       compatibility_date: "2026-08-03",
       compatibility_flags: ["no_nodejs_compat"],
     },
