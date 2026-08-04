@@ -82,8 +82,8 @@ const calendarOverrides = {
     "2026-08-05":{key:"full",label:"定員到達",countable:false},
     "2026-08-06":{key:"full",label:"定員到達",countable:false},
     "2026-08-07":{key:"full",label:"定員到達",countable:false},
-    "2026-08-08":{key:"recruiting",label:"受付中",countable:true},
-    "2026-08-09":{key:"recruiting",label:"受付中",countable:true}
+    "2026-08-08":{key:"unknown",label:"受付状況要確認",countable:false},
+    "2026-08-09":{key:"unknown",label:"受付状況要確認",countable:false}
   },
   "御船町":{
     "2026-08-03":{key:"recruiting",label:"受付可",countable:true},

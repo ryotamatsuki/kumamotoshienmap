@@ -1349,9 +1349,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
         {
           "start_date": "2026-08-08",
           "end_date": "2026-08-09",
-          "status": "募集中・天候要確認",
+          "status": "受付状況要確認",
           "capacity": null,
-          "form_status": "個人・団体フォームで選択可。台風状況により中止の場合あり"
+          "form_status": "公式本文に現行受付状況の記載なし。個人・団体フォームの案内はあるが、8月8日・9日の受付可否は要照会"
         }
       ],
       "official_information_conflict": "熊本県社会福祉協議会の市町一覧（2026年8月2日）は美里町を『準備中』と表示。美里町社会福祉協議会（2026年8月3日）は8月4日～9日の一次募集と個人・団体フォームを掲載しているため、日別フォームの受付状況を優先確認する。",
@@ -1382,14 +1382,14 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "countable": false
         },
         "2026-08-08": {
-          "key": "recruiting",
-          "label": "受付中",
-          "countable": true
+          "key": "unknown",
+          "label": "受付状況要確認",
+          "countable": false
         },
         "2026-08-09": {
-          "key": "recruiting",
-          "label": "受付中",
-          "countable": true
+          "key": "unknown",
+          "label": "受付状況要確認",
+          "countable": false
         }
       }
     },
@@ -4266,9 +4266,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
         {
           "start_date": "2026-08-08",
           "end_date": "2026-08-09",
-          "status": "募集中・天候要確認",
+          "status": "受付状況要確認",
           "capacity": null,
-          "form_status": "個人・団体フォームで選択可。台風状況により中止の場合あり"
+          "form_status": "公式本文に現行受付状況の記載なし。個人・団体フォームの案内はあるが、8月8日・9日の受付可否は要照会"
         }
       ],
       "official_information_conflict": "熊本県社会福祉協議会の市町一覧（2026年8月2日）は美里町を『準備中』と表示。美里町社会福祉協議会（2026年8月3日）は8月4日～9日の一次募集と個人・団体フォームを掲載しているため、日別フォームの受付状況を優先確認する。",
@@ -4299,14 +4299,14 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "countable": false
         },
         "2026-08-08": {
-          "key": "recruiting",
-          "label": "受付中",
-          "countable": true
+          "key": "unknown",
+          "label": "受付状況要確認",
+          "countable": false
         },
         "2026-08-09": {
-          "key": "recruiting",
-          "label": "受付中",
-          "countable": true
+          "key": "unknown",
+          "label": "受付状況要確認",
+          "countable": false
         }
       }
     },
