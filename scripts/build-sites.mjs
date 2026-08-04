@@ -101,6 +101,7 @@ writeFileSync(
       $schema: "node_modules/wrangler/config-schema.json",
       main: "server/index.js",
       compatibility_date: "2026-08-03",
+      compatibility_flags: ["no_nodejs_compat"],
     },
     null,
     2,
