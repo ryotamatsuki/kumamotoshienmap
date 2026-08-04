@@ -27,7 +27,6 @@ if (!original.equals(dashboard)) {
 const output = join(root, "dist");
 const serverDirectory = join(output, "server");
 const metadataDirectory = join(output, ".openai");
-const workerConfigPath = join(output, "wrangler.json");
 const dashboardText = dashboard.toString("utf8");
 const workerSource = `const dashboard = ${JSON.stringify(dashboardText)};
 const volunteerCss = ${JSON.stringify(volunteerCss)};
@@ -93,20 +92,7 @@ export default {
 rmSync(output, { recursive: true, force: true });
 mkdirSync(serverDirectory, { recursive: true });
 mkdirSync(metadataDirectory, { recursive: true });
-writeFileSync(join(serverDirectory, "index.mjs"), workerSource, "utf8");
-writeFileSync(
-  workerConfigPath,
-  `${JSON.stringify(
-    {
-      $schema: "node_modules/wrangler/config-schema.json",
-      main: "server/index.mjs",
-      compatibility_date: "2026-08-04",
-    },
-    null,
-    2,
-  )}\n`,
-  "utf8",
-);
+writeFileSync(join(serverDirectory, "index.js"), workerSource, "utf8");
 copyFileSync(publicPath, join(output, "dashboard.html"));
 copyFileSync(join(root, "volunteer.css"), join(output, "volunteer.css"));
 copyFileSync(join(root, "volunteer-data.js"), join(output, "volunteer-data.js"));
