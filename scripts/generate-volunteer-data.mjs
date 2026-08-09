@@ -23,7 +23,7 @@ const optionalFields = [
   "outside_kyushu_allowed","ehime_participation_allowed","outside_prefecture_note","application_form_status",
   "safety_note","infrastructure_note","priority_note","needs_reconfirmation","information_confidence",
   "change_from_previous","changes_from_previous","previous_known_state","application_urls","activity_windows",
-  "official_information_conflict","portal_coverage_checked_at","recheck_status","recheck_note"
+  "district_capacities","official_information_conflict","portal_coverage_checked_at","recheck_status","recheck_note"
 ];
 const activityAliases = new Map([
   ["災害ごみの運搬","災害ごみの分別・運搬"],["災害ごみの分別","災害ごみの分別・運搬"],
@@ -60,45 +60,103 @@ const centers = order.map((name)=>{
   if(!center) throw new Error("Missing researched municipality: "+name);
   return normalizeCenter(center);
 });
-const uto = centers.find((center)=>center.municipality === "宇土市");
-uto.outside_prefecture_allowed = true;
-uto.outside_kyushu_allowed = false;
-uto.ehime_participation_allowed = false;
-uto.outside_prefecture_note = "熊本県外の九州各県は対象。愛媛県は一般募集対象外。";
 const calendarOverrides = {
-  "熊本市":Object.fromEntries(Array.from({length:14},(_,index)=>{
-    const date = new Date(Date.UTC(2026,7,4+index)).toISOString().slice(0,10);
-    return [date,{key:"preparing",label:index === 0 ? "被災者支援開始・募集準備中" : "被災者支援・募集準備中",countable:false}];
-  })),
+  "熊本市":{
+    "2026-08-09":{key:"full",label:"第1期定員到達",countable:false},
+    "2026-08-10":{key:"full",label:"本部・南区とも定員到達",countable:false},
+    "2026-08-11":{key:"full",label:"本部・南区とも定員到達",countable:false},
+    "2026-08-12":{key:"full",label:"本部・南区とも定員到達",countable:false},
+    "2026-08-13":{key:"full",label:"本部・南区とも定員到達",countable:false},
+    "2026-08-14":{key:"full",label:"本部・南区とも定員到達",countable:false},
+    "2026-08-15":{key:"unknown",label:"以降は再告知待ち",countable:false}
+  },
+  "八代市":{
+    "2026-08-09":{key:"planned",label:"募集受付中・活動開始前",countable:false},
+    "2026-08-10":{key:"recruiting",label:"募集中",countable:true},
+    "2026-08-11":{key:"recruiting",label:"募集中",countable:true},
+    "2026-08-12":{key:"recruiting",label:"募集中",countable:true},
+    "2026-08-13":{key:"recruiting",label:"募集中",countable:true},
+    "2026-08-14":{key:"recruiting",label:"募集中",countable:true},
+    "2026-08-15":{key:"recruiting",label:"募集中",countable:true},
+    "2026-08-16":{key:"recruiting",label:"募集中",countable:true}
+  },
+  "宇土市":{
+    "2026-08-09":{key:"unknown",label:"第1期の現行受付状況要確認",countable:false},
+    "2026-08-10":{key:"unknown",label:"第1期の現行受付状況要確認",countable:false},
+    "2026-08-11":{key:"unknown",label:"第1期の現行受付状況要確認",countable:false},
+    "2026-08-12":{key:"none",label:"活動なし",countable:false},
+    "2026-08-13":{key:"recruiting",label:"第2期募集中・50人程度",capacity:"50人程度／日",countable:true},
+    "2026-08-14":{key:"recruiting",label:"第2期募集中・50人程度",capacity:"50人程度／日",countable:true},
+    "2026-08-15":{key:"recruiting",label:"第2期募集中・50人程度",capacity:"50人程度／日",countable:true},
+    "2026-08-16":{key:"recruiting",label:"第2期募集中・50人程度",capacity:"50人程度／日",countable:true},
+    "2026-08-17":{key:"recruiting",label:"第2期募集中・50人程度",capacity:"50人程度／日",countable:true},
+    "2026-08-18":{key:"recruiting",label:"第2期募集中・50人程度",capacity:"50人程度／日",countable:true},
+    "2026-08-19":{key:"recruiting",label:"第2期募集中・50人程度",capacity:"50人程度／日",countable:true}
+  },
   "宇城市":{
-    "2026-08-04":{key:"unknown",label:"事前登録受付・活動内容要確認",countable:false},
-    "2026-08-05":{key:"limited",label:"家屋支援・限定募集",countable:true},
-    "2026-08-06":{key:"limited",label:"家屋支援・限定募集",countable:true},
-    "2026-08-07":{key:"limited",label:"家屋支援・限定募集",countable:true},
-    "2026-08-08":{key:"limited",label:"家屋支援・限定募集",countable:true}
+    "2026-08-09":{key:"unknown",label:"現行受付可否を確認できず",countable:false},
+    "2026-08-10":{key:"unknown",label:"現行受付可否を確認できず",countable:false},
+    "2026-08-11":{key:"unknown",label:"現行受付可否を確認できず",countable:false},
+    "2026-08-12":{key:"unknown",label:"現行受付可否を確認できず",countable:false},
+    "2026-08-13":{key:"unknown",label:"現行受付可否を確認できず",countable:false},
+    "2026-08-14":{key:"unknown",label:"現行受付可否を確認できず",countable:false},
+    "2026-08-15":{key:"full",label:"受付終了",countable:false},
+    "2026-08-16":{key:"recruiting",label:"受付中",countable:true},
+    "2026-08-17":{key:"unknown",label:"日別フォーム要確認",countable:false},
+    "2026-08-18":{key:"unknown",label:"日別フォーム要確認",countable:false},
+    "2026-08-19":{key:"unknown",label:"日別フォーム要確認",countable:false},
+    "2026-08-20":{key:"unknown",label:"日別フォーム要確認",countable:false},
+    "2026-08-21":{key:"unknown",label:"日別フォーム要確認",countable:false},
+    "2026-08-22":{key:"unknown",label:"日別フォーム要確認",countable:false}
   },
   "美里町":{
-    "2026-08-04":{key:"full",label:"定員到達",countable:false},
-    "2026-08-05":{key:"full",label:"定員到達",countable:false},
-    "2026-08-06":{key:"full",label:"定員到達",countable:false},
-    "2026-08-07":{key:"full",label:"定員到達",countable:false},
-    "2026-08-08":{key:"unknown",label:"受付状況要確認",countable:false},
-    "2026-08-09":{key:"unknown",label:"受付状況要確認",countable:false}
+    "2026-08-09":{key:"paused",label:"募集休止・再開日未公表",countable:false}
   },
   "御船町":{
-    "2026-08-03":{key:"recruiting",label:"受付可",countable:true},
-    "2026-08-04":{key:"unknown",label:"受付終了・理由要確認",countable:false},
-    "2026-08-05":{key:"unknown",label:"受付終了・理由要確認",countable:false},
-    "2026-08-06":{key:"recruiting",label:"受付可",countable:true},
-    "2026-08-07":{key:"recruiting",label:"受付可",countable:true},
-    "2026-08-08":{key:"unknown",label:"受付終了・理由要確認",countable:false}
+    "2026-08-09":{key:"unknown",label:"追加日程を確認できず",countable:false}
   },
   "嘉島町":{
-    "2026-08-03":{key:"ended",label:"当日分終了",countable:false},
-    "2026-08-04":{key:"recruiting",label:"受付中",countable:true},
-    "2026-08-05":{key:"recruiting",label:"受付中",countable:true},
-    "2026-08-06":{key:"recruiting",label:"受付中",countable:true},
-    "2026-08-07":{key:"recruiting",label:"受付中",countable:true}
+    "2026-08-09":{key:"full",label:"受付終了・30人程度",capacity:"30人程度／日",countable:false},
+    "2026-08-10":{key:"full",label:"受付終了・30人程度",capacity:"30人程度／日",countable:false},
+    "2026-08-11":{key:"paused",label:"活動休止",countable:false},
+    "2026-08-12":{key:"paused",label:"活動休止",countable:false},
+    "2026-08-13":{key:"paused",label:"活動休止",countable:false},
+    "2026-08-14":{key:"paused",label:"活動休止",countable:false},
+    "2026-08-15":{key:"paused",label:"活動休止",countable:false},
+    "2026-08-16":{key:"paused",label:"活動休止",countable:false}
+  },
+  "益城町":{
+    "2026-08-09":{key:"recruiting",label:"募集中・70人程度",capacity:"70人程度／日",countable:true},
+    "2026-08-10":{key:"recruiting",label:"募集中・70人程度",capacity:"70人程度／日",countable:true},
+    "2026-08-11":{key:"paused",label:"活動休止",countable:false},
+    "2026-08-12":{key:"paused",label:"活動休止",countable:false},
+    "2026-08-13":{key:"paused",label:"活動休止",countable:false},
+    "2026-08-14":{key:"paused",label:"活動休止",countable:false},
+    "2026-08-15":{key:"paused",label:"活動休止",countable:false},
+    "2026-08-16":{key:"paused",label:"活動休止",countable:false},
+    "2026-08-17":{key:"unknown",label:"以降は再告知待ち",countable:false}
+  },
+  "甲佐町":{
+    "2026-08-09":{key:"full",label:"定員到達",countable:false},
+    "2026-08-10":{key:"full",label:"定員到達",countable:false},
+    "2026-08-11":{key:"full",label:"定員到達",countable:false},
+    "2026-08-12":{key:"full",label:"定員到達",countable:false},
+    "2026-08-13":{key:"planned",label:"近日募集予定・日程要確認",countable:false}
+  },
+  "氷川町":{
+    "2026-08-09":{key:"recruiting",label:"全国募集中",countable:true},
+    "2026-08-10":{key:"recruiting",label:"全国募集中",countable:true},
+    "2026-08-11":{key:"recruiting",label:"全国募集中",countable:true},
+    "2026-08-12":{key:"recruiting",label:"全国募集中",countable:true}
+  },
+  "芦北町":{
+    "2026-08-09":{key:"recruiting",label:"地域限定・受付中",countable:true},
+    "2026-08-10":{key:"recruiting",label:"地域限定・受付中",countable:true},
+    "2026-08-11":{key:"recruiting",label:"地域限定・受付中",countable:true},
+    "2026-08-12":{key:"recruiting",label:"地域限定・受付中",countable:true},
+    "2026-08-13":{key:"recruiting",label:"地域限定・受付中",countable:true},
+    "2026-08-14":{key:"recruiting",label:"地域限定・受付中",countable:true},
+    "2026-08-15":{key:"unknown",label:"以降は未公表",countable:false}
   }
 };
 for(const center of centers) if(calendarOverrides[center.municipality]) center.calendar_overrides = calendarOverrides[center.municipality];

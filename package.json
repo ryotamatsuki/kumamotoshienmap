@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "generate:volunteer": "node scripts/generate-volunteer-data.mjs",
+    "validate:dashboard": "node scripts/validate-dashboard-current.mjs",
+    "validate:dist": "node scripts/validate-built-site.mjs",
     "validate:volunteer": "node scripts/validate-volunteer-data.mjs",
     "validate:shelters": "node scripts/validate-shelter-coordinates.mjs",
-    "build": "npm run generate:volunteer && npm run validate:volunteer && npm run validate:shelters && node scripts/build-sites.mjs"
+    "build": "npm run generate:volunteer && npm run validate:dashboard && npm run validate:volunteer && npm run validate:shelters && node scripts/build-sites.mjs && npm run validate:dist"
   }
 }

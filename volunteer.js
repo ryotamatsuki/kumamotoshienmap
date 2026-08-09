@@ -66,6 +66,9 @@ function outsideParticipationMarkup(center){
     if(center.ehime_participation_allowed === false){
       return '<span class="vol-value-partial">県外可（地域限定）・愛媛県は一般募集対象外</span>';
     }
+    if(hasRegionalLimit(center)){
+      return '<span class="vol-value-partial">県外可（地域限定）・愛媛県は要確認</span>';
+    }
     return '<span class="vol-value-known">県外可（公式明示）</span>';
   }
   if(center.outside_prefecture_allowed === false){
@@ -141,7 +144,7 @@ function isEnded(center){
 }
 function hasRegionalLimit(center){
   if(center.outside_prefecture_allowed === false || center.outside_kyushu_allowed === false || center.ehime_participation_allowed === false) return true;
-  return present(center.recruitment_area) && /九州|熊本県内|在住|居住/.test(center.recruitment_area);
+  return present(center.recruitment_area) && !/全国/.test(center.recruitment_area);
 }
 function highSchoolAllowed(center){
   var value = String(center.minimum_age || "")+" "+String(center.age_conditions || "");
@@ -159,7 +162,30 @@ function capacityText(center){
   if(center.capacity_disclosed !== true) return '<span class="vol-value-missing">非公表</span>';
   if(present(center.daily_capacity)) return '<span class="vol-value-known">'+Number(center.daily_capacity).toLocaleString("ja-JP")+esc(center.capacity_unit || "人／日")+"</span>";
   if(present(center.total_capacity)) return '<span class="vol-value-known">'+Number(center.total_capacity).toLocaleString("ja-JP")+esc(center.capacity_unit || "人")+"</span>";
+  if(Array.isArray(center.district_capacities) && center.district_capacities.length){
+    return '<span class="vol-value-known">'+center.district_capacities.map(function(item){return esc(item.district)+" "+Number(item.daily_capacity).toLocaleString("ja-JP")+esc(item.capacity_unit || "人／日");}).join("／")+"</span>";
+  }
   return '<span class="vol-value-partial">人数公表あり・数値要確認</span>';
+}
+function capacitySortValue(center){
+  if(center.capacity_disclosed !== true) return null;
+  if(present(center.daily_capacity) && Number.isFinite(Number(center.daily_capacity))) return Number(center.daily_capacity);
+  if(present(center.total_capacity) && Number.isFinite(Number(center.total_capacity))) return Number(center.total_capacity);
+  if(Array.isArray(center.district_capacities) && center.district_capacities.length){
+    var values = center.district_capacities.map(function(item){return Number(item.daily_capacity);}).filter(Number.isFinite);
+    if(values.length) return Math.max.apply(Math,values);
+  }
+  return 0;
+}
+function capacityMarkerLabel(center){
+  if(center.capacity_disclosed !== true) return "●";
+  if(present(center.daily_capacity)) return String(center.daily_capacity);
+  if(present(center.total_capacity)) return String(center.total_capacity);
+  if(Array.isArray(center.district_capacities) && center.district_capacities.length){
+    var values = center.district_capacities.map(function(item){return Number(item.daily_capacity);}).filter(Number.isFinite);
+    if(values.length) return values.join("/");
+  }
+  return "●";
 }
 function activityText(center){
   return Array.isArray(center.activity_types) && center.activity_types.length ? center.activity_types.map(esc).join("・") : '<span class="vol-value-missing">公表なし・要確認</span>';
@@ -260,11 +286,11 @@ function filteredCenters(){
   result.sort(function(a,b){
     if(state.sort === "municipality") return a.municipality.localeCompare(b.municipality,"ja");
     if(state.sort === "capacity"){
-      var av = a.capacity_disclosed === true ? (a.daily_capacity == null ? a.total_capacity : a.daily_capacity) : null;
-      var bv = b.capacity_disclosed === true ? (b.daily_capacity == null ? b.total_capacity : b.daily_capacity) : null;
+      var av = capacitySortValue(a);
+      var bv = capacitySortValue(b);
       if(av === null && bv !== null) return 1;
       if(av !== null && bv === null) return -1;
-      return (bv || 0)-(av || 0);
+      return (bv || 0)-(av || 0) || a.municipality.localeCompare(b.municipality,"ja");
     }
     if(state.sort === "activity"){
       var ad = a.activity_start_date || "9999-12-31";
@@ -285,7 +311,7 @@ function plainOutsideParticipation(center){
 window.exportVolunteerCsv = function(){
   var header = ["市町","地区","現在の状態","活動日・募集期間","募集人数","対象地域","県外参加","個人参加","団体参加","年齢条件","主な活動","申込方法","車両ニーズ","保険","愛媛県からの派遣判断","公式URL","確認日時"];
   var rows = filteredCenters().map(function(center){
-    var capacity = center.capacity_disclosed === true && present(center.daily_capacity) ? String(center.daily_capacity)+(center.capacity_unit || "人／日") : center.capacity_disclosed === true && present(center.total_capacity) ? String(center.total_capacity)+(center.capacity_unit || "人") : center.researched === false ? "情報未確認" : "非公表";
+    var capacity = center.capacity_disclosed === true && present(center.daily_capacity) ? String(center.daily_capacity)+(center.capacity_unit || "人／日") : center.capacity_disclosed === true && present(center.total_capacity) ? String(center.total_capacity)+(center.capacity_unit || "人") : center.capacity_disclosed === true && Array.isArray(center.district_capacities) && center.district_capacities.length ? center.district_capacities.map(function(item){return item.district+" "+item.daily_capacity+(item.capacity_unit || "人／日");}).join("／") : center.researched === false ? "情報未確認" : "非公表";
     return [center.municipality,center.district,center.recruitment_status,center.activity_dates_text,capacity,center.recruitment_area,plainOutsideParticipation(center),plainBoolean(center.individual_allowed),plainBoolean(center.group_allowed),[center.minimum_age,center.age_conditions].filter(Boolean).join(" / "),(center.activity_types || []).join("・"),center.application_method,center.vehicle_need,center.insurance_requirement,center.ehime_dispatch_status,center.official_source_url,center.checked_at ? formatDateTime(center.checked_at) : "情報未確認"];
   });
   function quote(value){ return '"'+String(value == null ? "" : value).replace(/"/g,'""')+'"'; }
@@ -430,6 +456,7 @@ function summaryFact(item,center){
   if(item.key === "capacity"){
     if(present(center.daily_capacity)) return Number(center.daily_capacity).toLocaleString("ja-JP")+(center.capacity_unit || "人／日");
     if(present(center.total_capacity)) return Number(center.total_capacity).toLocaleString("ja-JP")+(center.capacity_unit || "人");
+    if(Array.isArray(center.district_capacities) && center.district_capacities.length) return center.district_capacities.map(function(entry){return entry.district+" "+Number(entry.daily_capacity).toLocaleString("ja-JP")+(entry.capacity_unit || "人／日");}).join("／");
     return "人数公表あり（具体的な数値は公式情報を確認）";
   }
   if(item.key === "outside") return [center.recruitment_area,center.ehime_participation_allowed === false ? "愛媛県は一般募集対象外" : null].filter(Boolean).join("｜");
@@ -578,7 +605,7 @@ function centerPopup(center){
 function mapMarkerIcon(center){
   var key = statusKey(center);
   var extras = (center.group_allowed === true ? "複" : "")+(present(center.vehicle_need) ? "車" : "")+(hasRegionalLimit(center) ? "限" : "");
-  var label = center.capacity_disclosed === true && present(center.daily_capacity) ? String(center.daily_capacity) : "●";
+  var label = capacityMarkerLabel(center);
   return L.divIcon({className:"",html:'<div class="vol-map-marker '+key+(center.outside_prefecture_allowed===true?" outside":"")+'" title="'+attr(center.municipality+" "+(center.recruitment_status || "情報未確認"))+'"><span>'+esc(label)+'</span>'+(extras ? '<small>'+esc(extras)+'</small>' : '')+"</div>",iconSize:[46,46],iconAnchor:[23,23],popupAnchor:[0,-19]});
 }
 function clusterIcon(centers){
