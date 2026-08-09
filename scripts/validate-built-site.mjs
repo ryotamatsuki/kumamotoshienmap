@@ -8,6 +8,12 @@ const workerPath = resolve(root, "dist", "server", "index.js");
 const worker = (await import(`${pathToFileURL(workerPath).href}?v=${Date.now()}`)).default;
 assert.equal(typeof worker?.fetch, "function", "配信ワーカーのfetch関数がありません");
 
+const pagesIndex = await readFile(resolve(root, "index.html"), "utf8");
+assert.ok(
+  pagesIndex.includes("./ehime_kumamoto_support_geocoded_shelters_20260802.html"),
+  "GitHub Pagesのルート入口がダッシュボード本体を参照していません",
+);
+
 async function request(path, options = {}) {
   return worker.fetch(new Request(`https://example.invalid${path}`, options));
 }
