@@ -36,6 +36,10 @@ const requiredText = [
   'data-view="volunteer"',
   'data-view="map"',
   'id="volunteerLayerToggle"',
+  "3,294件、約952億円",
+  "7市町への対口支援",
+  "計10市町へ行政応援",
+  "8月11日までの確定支援",
   '@media(max-width:760px)',
 ];
 for (const value of requiredText) {
@@ -122,6 +126,27 @@ assert.equal(finance.status, "繰上げ交付決定・実施確認なし");
 const admin = runtime.RECORDS.find((record) => record.id === "kumamoto-internal");
 assert.equal(admin.hubIds.length, 10, "行政応援職員の当日派遣先数が一致しません");
 assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-payment").phase, "recovery", "過去の未確認予定を今後予定に含めています");
+
+assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-agri").observed.includes("3,294件、約952億円"), "8月11日商工業被害の最新値が反映されていません");
+assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-hq18").summary, "8月8日14時時点：避難者6,355人、断水34,780戸、住家被害18,791棟。", "第18回会議イベントに時点の異なる値が混在しています");
+
+const extendedEnd = html.indexOf("const PAGE_RECHECK_META=");
+assert.ok(extendedEnd > dataStart, "追加の支援割当データを検証できません");
+const extendedSandbox = {};
+runInNewContext(
+  `${html.slice(dataStart, extendedEnd)}\nglobalThis.__extended={NEED_MUNICIPALITIES,RECORDS,SUPPORT_BLOCKS};`,
+  extendedSandbox,
+  { timeout: 5_000 },
+);
+const extended = extendedSandbox.__extended;
+assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "熊本市").currentSupport.includes("対口支援20団体"), "熊本市の対口支援20団体が反映されていません");
+assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "嘉島町").currentSupport.includes("対口支援4団体"), "嘉島町の対口支援が反映されていません");
+assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "御船町").currentSupport.some((value) => value.includes("県内調整分")), "県内調整分の表示がありません");
+assert.equal(extended.RECORDS.find((record) => record.id === "pair-kumamoto").scale, "20団体", "熊本市の対口支援団体数が8月11日値ではありません");
+assert.equal(extended.RECORDS.find((record) => record.id === "pair-yatsushiro").scale, "9団体", "八代市の対口支援団体数が8月11日値ではありません");
+assert.equal(extended.RECORDS.find((record) => record.id === "pair-hikawa").scale, "7団体", "氷川町の対口支援団体数が8月11日値ではありません");
+assert.ok(extended.RECORDS.some((record) => record.id === "pair-kashima" && record.scale === "4団体"), "嘉島町の対口支援レコードがありません");
+assert.ok(extended.SUPPORT_BLOCKS.some((block) => block.id === "internal-coordination" && block.destinations.includes("御船町")), "県内調整分ブロックがありません");
 
 console.log(JSON.stringify({
   currentAsOf: "2026-08-11T14:00:00+09:00",
