@@ -159,7 +159,192 @@ const calendarOverrides = {
     "2026-08-15":{key:"unknown",label:"以降は未公表",countable:false}
   }
 };
-for(const center of centers) if(calendarOverrides[center.municipality]) center.calendar_overrides = calendarOverrides[center.municipality];
+// Current-date overrides are kept separately from the original snapshot rules.
+// They are intentionally conservative: a closed form is not treated as a
+// capacity reached state unless the official page says so, and planned dates
+// are never counted as activity dates.
+const currentCalendarOverrides = {
+  "熊本市": {
+    "2026-08-11": {key:"full",label:"第1期募集締切",countable:false},
+    "2026-08-12": {key:"full",label:"第1期募集締切",countable:false},
+    "2026-08-13": {key:"full",label:"第1期募集締切",countable:false},
+    "2026-08-14": {key:"full",label:"第1期募集締切",countable:false},
+    "2026-08-15": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
+    "2026-08-16": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
+    "2026-08-17": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
+    "2026-08-18": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
+    "2026-08-19": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
+    "2026-08-20": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
+    "2026-08-21": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
+    "2026-08-22": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
+    "2026-08-23": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
+    "2026-08-24": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false}
+  },
+  "八代市": {
+    "2026-08-11": {key:"recruiting",label:"団体申込フォームで事前調整",countable:true},
+    "2026-08-12": {key:"recruiting",label:"団体申込フォームで事前調整",countable:true},
+    "2026-08-13": {key:"recruiting",label:"団体申込フォームで事前調整",countable:true},
+    "2026-08-14": {key:"recruiting",label:"団体申込フォームで事前調整",countable:true},
+    "2026-08-15": {key:"recruiting",label:"団体申込フォームで事前調整",countable:true},
+    "2026-08-16": {key:"recruiting",label:"団体申込フォームで事前調整",countable:true},
+    "2026-08-17": {key:"unknown",label:"第1弾終了後の日程は要確認",countable:false},
+    "2026-08-18": {key:"unknown",label:"第1弾終了後の日程は要確認",countable:false},
+    "2026-08-19": {key:"unknown",label:"第1弾終了後の日程は要確認",countable:false},
+    "2026-08-20": {key:"unknown",label:"第1弾終了後の日程は要確認",countable:false},
+    "2026-08-21": {key:"unknown",label:"第1弾終了後の日程は要確認",countable:false},
+    "2026-08-22": {key:"unknown",label:"第1弾終了後の日程は要確認",countable:false},
+    "2026-08-23": {key:"unknown",label:"第1弾終了後の日程は要確認",countable:false},
+    "2026-08-24": {key:"unknown",label:"第1弾終了後の日程は要確認",countable:false}
+  },
+  "宇土市": {
+    "2026-08-11": {key:"unknown",label:"申込フォーム受付終了・理由未公表",countable:false},
+    "2026-08-12": {key:"none",label:"ニーズ整理・調整のため活動なし",countable:false},
+    "2026-08-13": {key:"unknown",label:"申込フォーム受付終了・理由未公表",countable:false},
+    "2026-08-14": {key:"unknown",label:"申込フォーム受付終了・理由未公表",countable:false},
+    "2026-08-15": {key:"unknown",label:"申込フォーム受付終了・理由未公表",countable:false},
+    "2026-08-16": {key:"unknown",label:"申込フォーム受付終了・理由未公表",countable:false},
+    "2026-08-17": {key:"unknown",label:"申込フォーム受付終了・理由未公表",countable:false},
+    "2026-08-18": {key:"unknown",label:"申込フォーム受付終了・理由未公表",countable:false},
+    "2026-08-19": {key:"unknown",label:"申込フォーム受付終了・理由未公表",countable:false},
+    "2026-08-20": {key:"unknown",label:"第2期後の日程は要確認",countable:false},
+    "2026-08-21": {key:"unknown",label:"第2期後の日程は要確認",countable:false},
+    "2026-08-22": {key:"unknown",label:"第2期後の日程は要確認",countable:false},
+    "2026-08-23": {key:"unknown",label:"第2期後の日程は要確認",countable:false},
+    "2026-08-24": {key:"unknown",label:"第2期後の日程は要確認",countable:false}
+  },
+  "宇城市": {
+    "2026-08-11": {key:"unknown",label:"日別受付状況を要確認",countable:false},
+    "2026-08-12": {key:"unknown",label:"日別受付状況を要確認",countable:false},
+    "2026-08-13": {key:"unknown",label:"日別受付状況を要確認",countable:false},
+    "2026-08-14": {key:"unknown",label:"日別受付状況を要確認",countable:false},
+    "2026-08-15": {key:"full",label:"定数到達",countable:false},
+    "2026-08-16": {key:"unknown",label:"受付中（公式フォーム）",countable:true},
+    "2026-08-17": {key:"full",label:"定数到達",countable:false},
+    "2026-08-18": {key:"full",label:"定数到達",countable:false},
+    "2026-08-19": {key:"full",label:"定数到達",countable:false},
+    "2026-08-20": {key:"recruiting",label:"受付中",countable:true},
+    "2026-08-21": {key:"recruiting",label:"受付中",countable:true},
+    "2026-08-22": {key:"full",label:"定数到達",countable:false},
+    "2026-08-23": {key:"full",label:"定数到達",countable:false},
+    "2026-08-24": {key:"unknown",label:"8月24日以降は要確認",countable:false}
+  },
+  "美里町": {
+    "2026-08-11": {key:"paused",label:"募集休止（定員到達）",countable:false},
+    "2026-08-12": {key:"paused",label:"募集休止（定員到達）",countable:false},
+    "2026-08-13": {key:"paused",label:"募集休止（定員到達）",countable:false},
+    "2026-08-14": {key:"paused",label:"募集休止（定員到達）",countable:false},
+    "2026-08-15": {key:"paused",label:"募集休止（定員到達）",countable:false},
+    "2026-08-16": {key:"paused",label:"募集休止（定員到達）",countable:false},
+    "2026-08-17": {key:"unknown",label:"再開日未公表",countable:false},
+    "2026-08-18": {key:"unknown",label:"再開日未公表",countable:false},
+    "2026-08-19": {key:"unknown",label:"再開日未公表",countable:false},
+    "2026-08-20": {key:"unknown",label:"再開日未公表",countable:false},
+    "2026-08-21": {key:"unknown",label:"再開日未公表",countable:false},
+    "2026-08-22": {key:"unknown",label:"再開日未公表",countable:false},
+    "2026-08-23": {key:"unknown",label:"再開日未公表",countable:false},
+    "2026-08-24": {key:"unknown",label:"再開日未公表",countable:false}
+  },
+  "御船町": {
+    "2026-08-11": {key:"full",label:"定員到達",countable:false},
+    "2026-08-12": {key:"full",label:"定員到達",countable:false},
+    "2026-08-13": {key:"full",label:"定員到達",countable:false},
+    "2026-08-14": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-15": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-16": {key:"full",label:"定員到達",countable:false},
+    "2026-08-17": {key:"full",label:"定員到達",countable:false},
+    "2026-08-18": {key:"full",label:"定員到達",countable:false},
+    "2026-08-19": {key:"full",label:"定員到達",countable:false},
+    "2026-08-20": {key:"full",label:"定員到達",countable:false},
+    "2026-08-21": {key:"full",label:"定員到達",countable:false},
+    "2026-08-22": {key:"full",label:"定員到達",countable:false},
+    "2026-08-23": {key:"unknown",label:"8月23日以降は要確認",countable:false},
+    "2026-08-24": {key:"unknown",label:"8月23日以降は要確認",countable:false}
+  },
+  "嘉島町": {
+    "2026-08-11": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-12": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-13": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-14": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-15": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-16": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-17": {key:"unknown",label:"8月17日以降は要確認",countable:false},
+    "2026-08-18": {key:"unknown",label:"8月17日以降は要確認",countable:false},
+    "2026-08-19": {key:"unknown",label:"8月17日以降は要確認",countable:false},
+    "2026-08-20": {key:"unknown",label:"8月17日以降は要確認",countable:false},
+    "2026-08-21": {key:"unknown",label:"8月17日以降は要確認",countable:false},
+    "2026-08-22": {key:"unknown",label:"8月17日以降は要確認",countable:false},
+    "2026-08-23": {key:"unknown",label:"8月17日以降は要確認",countable:false},
+    "2026-08-24": {key:"unknown",label:"8月17日以降は要確認",countable:false}
+  },
+  "益城町": {
+    "2026-08-11": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-12": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-13": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-14": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-15": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-16": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-17": {key:"planned",label:"再開予定・募集詳細未公表",countable:false},
+    "2026-08-18": {key:"planned",label:"再開予定・募集詳細未公表",countable:false},
+    "2026-08-19": {key:"planned",label:"再開予定・募集詳細未公表",countable:false},
+    "2026-08-20": {key:"planned",label:"再開予定・募集詳細未公表",countable:false},
+    "2026-08-21": {key:"planned",label:"再開予定・募集詳細未公表",countable:false},
+    "2026-08-22": {key:"planned",label:"再開予定・募集詳細未公表",countable:false},
+    "2026-08-23": {key:"planned",label:"再開予定・募集詳細未公表",countable:false},
+    "2026-08-24": {key:"planned",label:"再開予定・募集詳細未公表",countable:false}
+  },
+  "甲佐町": {
+    "2026-08-11": {key:"unknown",label:"8月13日以降の募集日を確認",countable:false},
+    "2026-08-12": {key:"unknown",label:"8月13日以降の募集日を確認",countable:false},
+    "2026-08-13": {key:"unknown",label:"個人受付終了・団体は要調整",countable:false},
+    "2026-08-14": {key:"unknown",label:"個人受付終了・団体は要調整",countable:false},
+    "2026-08-15": {key:"none",label:"活動日なし",countable:false},
+    "2026-08-16": {key:"none",label:"活動日なし",countable:false},
+    "2026-08-17": {key:"unknown",label:"個人受付終了・団体は要調整",countable:false},
+    "2026-08-18": {key:"unknown",label:"個人受付終了・団体は要調整",countable:false},
+    "2026-08-19": {key:"recruiting",label:"受付中（個人フォーム）",capacity:"30人／日",countable:true},
+    "2026-08-20": {key:"recruiting",label:"受付中（個人フォーム）",capacity:"30人／日",countable:true},
+    "2026-08-21": {key:"recruiting",label:"受付中（個人フォーム）",capacity:"30人／日",countable:true},
+    "2026-08-22": {key:"unknown",label:"活動日なし・要確認",countable:false},
+    "2026-08-23": {key:"unknown",label:"活動日なし・要確認",countable:false},
+    "2026-08-24": {key:"unknown",label:"8月24日以降は要確認",countable:false}
+  },
+  "氷川町": {
+    "2026-08-11": {key:"unknown",label:"フォーム受付終了・理由未公表",countable:false},
+    "2026-08-12": {key:"unknown",label:"フォーム受付終了・理由未公表",countable:false},
+    "2026-08-13": {key:"none",label:"活動日なし",countable:false},
+    "2026-08-14": {key:"unknown",label:"フォーム受付終了・理由未公表",countable:false},
+    "2026-08-15": {key:"unknown",label:"フォーム受付終了・理由未公表",countable:false},
+    "2026-08-16": {key:"unknown",label:"フォーム受付終了・理由未公表",countable:false},
+    "2026-08-17": {key:"none",label:"活動休止",countable:false},
+    "2026-08-18": {key:"unknown",label:"フォーム受付終了・理由未公表",countable:false},
+    "2026-08-19": {key:"unknown",label:"フォーム受付終了・理由未公表",countable:false},
+    "2026-08-20": {key:"unknown",label:"フォーム受付終了・理由未公表",countable:false},
+    "2026-08-21": {key:"unknown",label:"8月21日以降は要確認",countable:false},
+    "2026-08-22": {key:"unknown",label:"8月21日以降は要確認",countable:false},
+    "2026-08-23": {key:"unknown",label:"8月21日以降は要確認",countable:false},
+    "2026-08-24": {key:"unknown",label:"8月21日以降は要確認",countable:false}
+  },
+  "芦北町": {
+    "2026-08-11": {key:"paused",label:"事前登録団体のみ",countable:false},
+    "2026-08-12": {key:"paused",label:"事前登録団体のみ",countable:false},
+    "2026-08-13": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-14": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-15": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-16": {key:"paused",label:"活動休止",countable:false},
+    "2026-08-17": {key:"planned",label:"通常VC移行予定",countable:false},
+    "2026-08-18": {key:"planned",label:"通常VC移行後の条件要確認",countable:false},
+    "2026-08-19": {key:"planned",label:"通常VC移行後の条件要確認",countable:false},
+    "2026-08-20": {key:"planned",label:"通常VC移行後の条件要確認",countable:false},
+    "2026-08-21": {key:"planned",label:"通常VC移行後の条件要確認",countable:false},
+    "2026-08-22": {key:"planned",label:"通常VC移行後の条件要確認",countable:false},
+    "2026-08-23": {key:"planned",label:"通常VC移行後の条件要確認",countable:false},
+    "2026-08-24": {key:"planned",label:"通常VC移行後の条件要確認",countable:false}
+  }
+};
+for(const center of centers){
+  const override = currentCalendarOverrides[center.municipality] || calendarOverrides[center.municipality];
+  if(override) center.calendar_overrides = override;
+}
 
 const allMunicipalities = ["熊本市","八代市","人吉市","荒尾市","水俣市","玉名市","山鹿市","菊池市","宇土市","上天草市","宇城市","阿蘇市","天草市","合志市","美里町","玉東町","南関町","長洲町","和水町","大津町","菊陽町","南小国町","小国町","産山村","高森町","西原村","南阿蘇村","御船町","嘉島町","益城町","甲佐町","山都町","氷川町","芦北町","津奈木町","錦町","多良木町","湯前町","水上村","相良村","五木村","山江村","球磨村","あさぎり町","苓北町"];
 function sourceGroup(publisher){

@@ -1,14 +1,13 @@
 {
-  "checked_at": "2026-08-09T10:48:11+09:00",
+  "checked_at": "2026-08-11T19:17:17+09:00",
   "sources": [
     {
       "publisher": "熊本県",
-      "title": "市町村災害ボランティアセンターの設置状況等について",
+      "title": "災害ボランティアへの積極的な参加をお願いします",
       "url": "https://www.pref.kumamoto.jp/soshiki/27/275523.html",
       "published_at": null,
-      "updated_at": "2026-08-06",
-      "checked_at": "2026-08-09T10:48:11+09:00",
-      "facts_used": "11市町のセンター及び募集・活動開始日"
+      "updated_at": "2026-08-10",
+      "checked_at": "2026-08-11T19:17:17+09:00"
     },
     {
       "publisher": "熊本県社会福祉協議会（熊本県災害ボランティアセンター）",
@@ -16,7 +15,7 @@
       "url": "https://www.fukushi-kumamoto.or.jp/kvc/",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-09T10:48:11+09:00",
+      "checked_at": "2026-08-11T19:17:17+09:00",
       "facts_used": "市町センターへの現行リンク9市町、活動開始時期・募集範囲・受付方法は市町ごとに異なること"
     },
     {
@@ -25,7 +24,7 @@
       "url": "https://www.fukushi-kumamoto.or.jp/pages/291/detail=1/b_id=4334/r_id=2215#block4334-2215",
       "published_at": "2026-08-02",
       "updated_at": null,
-      "checked_at": "2026-08-09T10:48:11+09:00",
+      "checked_at": "2026-08-11T19:17:17+09:00",
       "facts_used": "センター開設済みでも受入準備中で募集開始前の場合があること"
     },
     {
@@ -34,7 +33,7 @@
       "url": "https://www.fukushi-kumamoto.or.jp/pages/291/detail=1/b_id=4334/r_id=2213#block4334-2213",
       "published_at": "2026-08-01",
       "updated_at": null,
-      "checked_at": "2026-08-09T10:48:11+09:00",
+      "checked_at": "2026-08-11T19:17:17+09:00",
       "facts_used": "県全体の事前登録受付。活動開始・活動先・参加確定を意味しないこと"
     },
     {
@@ -43,7 +42,7 @@
       "url": "https://www.fukushi-kumamoto.or.jp/pages/291/detail=1/b_id=4334/r_id=2212#block4334-2212",
       "published_at": "2026-07-31",
       "updated_at": null,
-      "checked_at": "2026-08-09T10:48:11+09:00",
+      "checked_at": "2026-08-11T19:17:17+09:00",
       "facts_used": "活動保険への加入案内と専用Web加入案内"
     },
     {
@@ -52,7 +51,7 @@
       "url": "https://www.saigaivc.com/r8kumamoto/",
       "published_at": null,
       "updated_at": "2026-07-31",
-      "checked_at": "2026-08-09T10:48:11+09:00",
+      "checked_at": "2026-08-11T19:17:17+09:00",
       "facts_used": "今回の地震専用Web加入、クレジットカード、即時適用後の取消不可、2027年3月末までの補償"
     },
     {
@@ -61,7 +60,7 @@
       "url": "https://www.pref.kumamoto.jp/soshiki/222/275364.html",
       "published_at": null,
       "updated_at": "2026-08-01",
-      "checked_at": "2026-08-09T10:48:11+09:00",
+      "checked_at": "2026-08-11T19:17:17+09:00",
       "facts_used": "適用期限2026年10月31日、被災自治体等の要請又は受入承諾、事前のボランティア車両証明書"
     }
   ],
@@ -84,6 +83,8 @@
     "insurance_web_application_available": true,
     "toll_exemption_end_date": "2026-10-31",
     "toll_requires_request_or_acceptance": true,
-    "toll_requires_prior_procedure": true
+    "toll_requires_prior_procedure": true,
+    "checked_at": "2026-08-11T19:17:17+09:00",
+    "latest_checked_at": "2026-08-11T19:17:17+09:00"
   }
 }

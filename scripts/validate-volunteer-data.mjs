@@ -51,9 +51,9 @@ for(const center of data.all_centers){
 }
 
 const dailyCapacity = Object.fromEntries(data.centers.filter((center)=>center.daily_capacity !== null).map((center)=>[center.municipality,center.daily_capacity]));
-assert(JSON.stringify(dailyCapacity) === JSON.stringify({"宇土市":50,"嘉島町":30,"益城町":70}),"公表済み市町別日別人数が検証値と一致しません");
+assert(JSON.stringify(dailyCapacity) === JSON.stringify({"宇土市":70,"嘉島町":30,"益城町":70,"甲佐町":30}),"公表済み市町別日別人数が検証値と一致しません");
 const disclosedCapacityMunicipalities = data.centers.filter((center)=>center.capacity_disclosed === true).map((center)=>center.municipality);
-assert(JSON.stringify(disclosedCapacityMunicipalities) === JSON.stringify(["熊本市","宇土市","嘉島町","益城町"]),"人数公表4市町が検証値と一致しません");
+assert(JSON.stringify(disclosedCapacityMunicipalities) === JSON.stringify(["熊本市","宇土市","嘉島町","益城町","甲佐町"]),"人数公表市町が検証値と一致しません");
 const kumamotoDistricts = data.centers.find((center)=>center.municipality === "熊本市")?.district_capacities;
 assert(JSON.stringify(kumamotoDistricts) === JSON.stringify([
   {"district":"本部センター","daily_capacity":20,"capacity_unit":"人程度／日"},
@@ -62,7 +62,7 @@ assert(JSON.stringify(kumamotoDistricts) === JSON.stringify([
 assert(data.centers.filter((center)=>center.ehime_dispatch_status === "団体派遣可能と公式確認").length === 0,"愛媛県からの団体受入れを過大判定しています");
 assert(data.centers.find((center)=>center.municipality === "宇土市")?.ehime_participation_allowed === true,"宇土市の全国募集が欠落しています");
 assert(data.centers.find((center)=>center.municipality === "甲佐町")?.ehime_participation_allowed === false,"甲佐町の地域制限が欠落しています");
-assert(data.centers.find((center)=>center.municipality === "甲佐町")?.application_form_status === "8月12日までの募集は締切。8月13日以降は再告知待ち","甲佐町の申込状態が募集締切と一致しません");
+assert(data.centers.find((center)=>center.municipality === "甲佐町")?.application_form_status === "8月13～18日は受付終了、8月19～21日は選択可能。団体フォームURLは未確認","甲佐町の申込状態が最新確認と一致しません");
 assert(data.centers.find((center)=>center.municipality === "芦北町")?.recruitment_area === "八代市を除く熊本県南地域及びそれより南の県（鹿児島県など）","芦北町の県外地域限定根拠が構造化データにありません");
 const regionalLimits = data.centers.filter((center)=>
   center.outside_prefecture_allowed === false ||
@@ -72,11 +72,16 @@ const regionalLimits = data.centers.filter((center)=>
 ).map((center)=>center.municipality);
 assert(regionalLimits.length === 3 && ["嘉島町","甲佐町","芦北町"].every((name)=>regionalLimits.includes(name)),"地域限定3市町の判定が一致しません");
 assert(data.centers.find((center)=>center.municipality === "宇城市")?.recruitment_status === "募集中（一部日定員到達）","宇城市の最新の日別募集状態が反映されていません");
-assert(data.centers.filter((center)=>/^募集中/.test(center.recruitment_status || "")).length === 6,"現在受付を確認した6市町が一致しません");
-assert(data.centers.filter((center)=>center.outside_prefecture_allowed === true).length === 4,"県外参加を明示した4市町が一致しません");
-assert(data.centers.filter((center)=>center.group_allowed === true).length === 3,"団体参加経路を明示した3市町が一致しません");
-assert(data.centers.filter((center)=>center.group_application_available === true).length === 1,"団体申込フォーム1町が一致しません");
+const isCurrentAccepting = (center)=>["募集中","限定募集"].some((prefix)=>String(center.recruitment_status || "").startsWith(prefix)) && center.eligibility_currently_applicable !== false;
+assert(data.centers.filter((center)=>isCurrentAccepting(center)).length === 3,"基準日時点で申込経路を確認できる3市町が一致しません");
+assert(data.centers.filter((center)=>center.outside_prefecture_allowed === true).length === 8,"県外参加条件を公表した市町が一致しません");
+assert(data.centers.filter((center)=>center.group_allowed === true).length === 4,"団体参加経路を明示した4市町が一致しません");
+assert(data.centers.filter((center)=>isCurrentAccepting(center) && center.group_allowed === true).length === 2,"基準日時点で団体参加経路を確認できる2市町が一致しません");
+assert(data.centers.filter((center)=>center.group_application_available === true).length === 3,"団体申込フォーム掲載3市町が一致しません");
 assert(data.centers.filter((center)=>typeof center.vehicle_need === "string" && center.vehicle_need.length > 0).length === 6,"車両ニーズ6市町が一致しません");
+assert(data.centers.filter((center)=>isCurrentAccepting(center) && typeof center.vehicle_need === "string" && center.vehicle_need.length > 0).length === 2,"基準日時点の車両ニーズ2市町が一致しません");
+assert(data.centers.filter((center)=>isCurrentAccepting(center) && center.capacity_disclosed === true).length === 1,"基準日時点の人数公表1市町が一致しません");
+assert(data.centers.filter((center)=>isCurrentAccepting(center) && center.outside_prefecture_allowed === true).length === 2,"基準日時点の県外参加明示2市町が一致しません");
 assert(data.centers.every((center)=>typeof center.recheck_status === "string"),"全市町の再確認状態がありません");
 assert(!/予算資料|内部資料|添付資料|参考資料|過去災害/.test(source),"公開データに禁止表現があります");
 assert(Array.isArray(data.sources) && data.sources.length > 0,"公式情報源がありません");
@@ -94,10 +99,10 @@ const summary = {
   allMunicipalities:data.all_municipalities.length,
   sources:data.sources.length,
   disclosedCapacityMunicipalities,
-  currentlyAccepting:6,
-  outsideParticipationExplicit:4,
-  groupParticipationPath:3,
-  vehicleNeeds:6,
+  currentlyAccepting:data.centers.filter((center)=>isCurrentAccepting(center)).length,
+  outsideParticipationExplicit:data.centers.filter((center)=>isCurrentAccepting(center) && center.outside_prefecture_allowed === true).length,
+  groupParticipationPath:data.centers.filter((center)=>isCurrentAccepting(center) && center.group_allowed === true).length,
+  vehicleNeeds:data.centers.filter((center)=>isCurrentAccepting(center) && typeof center.vehicle_need === "string" && center.vehicle_need.length > 0).length,
   ehimeGroupAcceptanceConfirmed:0
 };
 console.log(JSON.stringify(summary));

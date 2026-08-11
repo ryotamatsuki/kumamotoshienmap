@@ -136,6 +136,12 @@ function statusMarkup(center){
 function isRecruiting(center){
   return ["recruiting","limited","pending"].indexOf(statusKey(center)) >= 0;
 }
+// Count only an intake route that is open at the reference date. Historical
+// capacity, closed forms, pauses and future plans remain visible in details
+// but are not presented as current acceptance.
+function isCurrentAccepting(center){
+  return ["recruiting","limited"].indexOf(statusKey(center)) >= 0 && center.eligibility_currently_applicable !== false;
+}
 function isPreparing(center){
   return ["preparing","planned"].indexOf(statusKey(center)) >= 0;
 }
@@ -259,15 +265,15 @@ function filteredCenters(){
     if(isEnded(center) && !state.filters.includeEnded) return false;
     if(state.filters.today && !todayActive(center)) return false;
     if(state.filters.week && !weekActive(center)) return false;
-    if(state.filters.recruiting && !isRecruiting(center)) return false;
+    if(state.filters.recruiting && !isCurrentAccepting(center)) return false;
     if(state.filters.preparing && !isPreparing(center)) return false;
-    if(state.filters.capacity && center.capacity_disclosed !== true) return false;
-    if(state.filters.outside && center.outside_prefecture_allowed !== true) return false;
+    if(state.filters.capacity && !(isCurrentAccepting(center) && center.capacity_disclosed === true)) return false;
+    if(state.filters.outside && !(isCurrentAccepting(center) && center.outside_prefecture_allowed === true)) return false;
     if(state.filters.regional && !hasRegionalLimit(center)) return false;
     if(state.filters.individual && center.individual_allowed !== true) return false;
-    if(state.filters.group && center.group_allowed !== true) return false;
-    if(state.filters.groupForm && center.group_application_available !== true) return false;
-    if(state.filters.vehicle && !present(center.vehicle_need)) return false;
+    if(state.filters.group && !(isCurrentAccepting(center) && center.group_allowed === true)) return false;
+    if(state.filters.groupForm && !(isCurrentAccepting(center) && center.group_application_available === true)) return false;
+    if(state.filters.vehicle && !(isCurrentAccepting(center) && present(center.vehicle_need))) return false;
     if(state.filters.junior && !juniorAllowed(center)) return false;
     if(state.filters.highschool && !highSchoolAllowed(center)) return false;
     if(state.filters.preregistration && center.application_required !== true) return false;
@@ -437,13 +443,13 @@ function summaryData(){
   var checks = researched.map(function(center){return center.checked_at;}).filter(Boolean).sort();
   return [
     {key:"opened",label:"災害VC開設市町",unit:"市町",rule:"公式情報で開設又は活動・受付を確認した市町を集計。設置準備中は含めない",match:function(c){return c.center_status && !/準備中|情報未確認/.test(c.center_status) && /開設|活動|受付/.test(c.center_status);}},
-    {key:"recruiting",label:"現在募集中",unit:"市町",rule:"募集中、限定募集、活動受付中を集計。日別条件の要確認を含む",match:isRecruiting},
+    {key:"recruiting",label:"現在募集中",unit:"市町",rule:"基準日時点で申込経路が開いている募集中・限定募集を集計。受付終了、休止、終了、再開予定は含めない",match:isCurrentAccepting},
     {key:"preparing",label:"募集準備中",unit:"市町",rule:"募集予定又は募集準備中を集計",match:isPreparing},
-    {key:"capacity",label:"募集人数公表",unit:"市町",rule:"具体的な募集定員・目安人数の公表を確認した市町のみ",match:function(c){return c.capacity_disclosed === true;}},
-    {key:"outside",label:"県外参加可（地域限定含む）",unit:"市町",rule:"熊本県外から参加可能と公式に明示された市町。九州限定を含み、愛媛県からの参加可を意味しない",match:function(c){return c.outside_prefecture_allowed === true;}},
-    {key:"group",label:"団体参加可を明示",unit:"市町",rule:"団体参加可能と公式に明示された市町のみ。申込フォームだけでは判定しない",match:function(c){return c.group_allowed === true;}},
+    {key:"capacity",label:"募集人数公表",unit:"市町",rule:"基準日時点で受付中の市町のうち、具体的な募集定員・目安人数の公表を確認した市町のみ",match:function(c){return isCurrentAccepting(c) && c.capacity_disclosed === true;}},
+    {key:"outside",label:"県外参加可（地域限定含む）",unit:"市町",rule:"基準日時点で受付中かつ熊本県外から参加可能と公式に明示された市町。九州限定を含み、愛媛県からの参加可を意味しない",match:function(c){return isCurrentAccepting(c) && c.outside_prefecture_allowed === true;}},
+    {key:"group",label:"団体参加可を明示",unit:"市町",rule:"基準日時点で団体参加可能と公式に明示された市町のみ。申込フォームだけでは判定しない",match:function(c){return isCurrentAccepting(c) && c.group_allowed === true;}},
     {key:"ehime",label:"愛媛団体受入確認済み",unit:"市町",rule:"愛媛県からの団体派遣受入れが公式に確認できた市町のみ",match:function(c){return c.ehime_dispatch_status === "団体派遣可能と公式確認";}},
-    {key:"vehicle",label:"車両ニーズあり",unit:"市町",rule:"軽トラック等の車両協力を公式情報で確認した市町",match:function(c){return present(c.vehicle_need);}},
+    {key:"vehicle",label:"車両ニーズあり",unit:"市町",rule:"基準日時点で受付中かつ軽トラック等の車両協力を公式情報で確認した市町",match:function(c){return isCurrentAccepting(c) && present(c.vehicle_need);}},
     {key:"checked",label:"最終確認",value:checks.length ? formatDateTime(checks[checks.length-1]) : "要確認",unit:"",rule:"市町別公式情報をサイト側で最後に確認した日時",interactive:false}
   ];
 }
