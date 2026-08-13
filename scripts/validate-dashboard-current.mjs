@@ -16,18 +16,18 @@ const [html, publicHtml, volunteerCss] = await Promise.all([
 assert.equal(publicHtml, html, "公開用HTMLがレビュー元HTMLと一致していません");
 
 const requiredText = [
-  "経過日 D+14（主要公表値は8月11日14時）",
-  "3,714<span class=\"overview-kpi-unit\">人",
-  "89<span class=\"overview-kpi-unit\">か所",
-  "392<span class=\"overview-kpi-unit\">人",
-  "23,404<span class=\"overview-kpi-unit\">棟",
-  "約33,300戸",
-  "給水車173台",
+  "経過日 D+16（主要公表値は8月13日8時）",
+  "3,662<span class=\"overview-kpi-unit\">人",
+  "81<span class=\"overview-kpi-unit\">か所",
+  "393<span class=\"overview-kpi-unit\">人",
+  "27,872<span class=\"overview-kpi-unit\">棟",
+  "約28,400戸",
+  "給水車140台",
   "行政応援854人",
-  "TEC-FORCE 4市2町で約140人活動・累計約3,100人日",
-  "最新集計89か所／位置履歴206点",
+  "TEC-FORCE現在107人・累計3,389人日（予定含む）",
+  "最新集計81か所／位置履歴206点",
   "同梱206点は現在開設中の施設一覧として扱わない",
-  "checkedAt:'2026-08-11T19:20:30+09:00'",
+  "checkedAt:'2026-08-13T13:14:31+09:00'",
   "status:\"8月2日時点で開設\"",
   'data-view="overview"',
   'data-view="needs"',
@@ -69,8 +69,8 @@ function parseJsonConstant(name) {
 
 const impacts = parseJsonConstant("IMPACTS");
 assert.equal(impacts.length, 11, "開設避難所の市町数が公式集計と一致しません");
-assert.equal(impacts.reduce((sum, row) => sum + row.shelters, 0), 89);
-assert.equal(impacts.reduce((sum, row) => sum + row.evacuees, 0), 3_714);
+assert.equal(impacts.reduce((sum, row) => sum + row.shelters, 0), 81);
+assert.equal(impacts.reduce((sum, row) => sum + row.evacuees, 0), 3_662);
 
 const needs = parseJsonConstant("NEED_MUNICIPALITIES");
 assert.equal(needs.length, 24, "市町別被害表の収録数が想定外です");
@@ -87,20 +87,20 @@ const rawTotals = needs.reduce(
   { shelters: 0, evacuees: 0, waterOutage: 0, waterPoints: 0, housing: 0, human: 0 },
 );
 assert.deepEqual(rawTotals, {
-  shelters: 89,
-  evacuees: 3_714,
-  waterOutage: 33_300,
-  waterPoints: 43,
-  housing: 23_401,
-  human: 389,
+  shelters: 81,
+  evacuees: 3_662,
+  waterOutage: 28_381,
+  waterPoints: 0,
+  housing: 27_857,
+  human: 390,
 });
 
 assert.ok(
-  html.includes("24市町の人的被害合計389人と県計392人との差3人"),
+  html.includes("24市町の人的被害表内合計390人。県速報の人的被害内訳は393人相当"),
   "市町別人的被害と県合計の差分説明がありません",
 );
 assert.ok(
-  html.includes("住家被害23,401棟と県計23,404棟との差3棟"),
+  html.includes("住家被害27,857棟と県計27,872棟との差15棟"),
   "市町別住家被害と県合計の差分説明がありません",
 );
 
@@ -149,11 +149,11 @@ assert.ok(extended.RECORDS.some((record) => record.id === "pair-kashima" && reco
 assert.ok(extended.SUPPORT_BLOCKS.some((block) => block.id === "internal-coordination" && block.destinations.includes("御船町")), "県内調整分ブロックがありません");
 
 console.log(JSON.stringify({
-  currentAsOf: "2026-08-11T14:00:00+09:00",
-  siteCheckedAt: "2026-08-11T19:20:30+09:00",
+  currentAsOf: "2026-08-13T08:00:00+09:00",
+  siteCheckedAt: "2026-08-13T13:14:31+09:00",
   shelters: rawTotals.shelters,
   evacuees: rawTotals.evacuees,
   housingMunicipalRows: rawTotals.housing,
-  housingPrefectureTotal: 23_404,
+  housingPrefectureTotal: 27_872,
   shelterCoordinateSnapshot: 206,
 }));
