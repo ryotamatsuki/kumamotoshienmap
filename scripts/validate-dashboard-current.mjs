@@ -127,6 +127,11 @@ const admin = runtime.RECORDS.find((record) => record.id === "kumamoto-internal"
 assert.equal(admin.hubIds.length, 10, "行政応援職員の当日派遣先数が一致しません");
 assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-payment").phase, "recovery", "過去の未確認予定を今後予定に含めています");
 assert.ok(runtime.TIMELINE_EVENTS.every((event) => Array.isArray(event.tags)), "タイムラインの全イベントにtags配列が必要です");
+const ehimeDmat = runtime.RECORDS.find((record) => record.id === "ehime-dmat");
+assert.equal(ehimeDmat.scale, "調整員第2陣1人", "愛媛DMAT調整員の人数が8月12日公式発表と一致しません");
+assert.equal(JSON.stringify(ehimeDmat.hubIds), JSON.stringify(["yatsushiro"]), "愛媛DMAT調整員の派遣先が8月12日公式発表と一致しません");
+for (const id of ["ehime-redcross-medcoord", "ehime-redcross-mental", "ehime-jrat"]) assert.ok(runtime.RECORDS.some((record) => record.id === id), `${id}の愛媛県公式発表レコードがありません`);
+assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-ehime-aug12").summary, "DMAT調整員1人、保健師等第3班、DWAT、警察部隊、日赤・JRATの後続支援予定を更新。", "愛媛県8月12日更新イベントが最新公式発表と一致しません");
 
 assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-agri").observed.includes("3,294件、約952億円"), "8月11日商工業被害の最新値が反映されていません");
 assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-hq18").summary, "8月8日14時時点：避難者6,355人、断水34,780戸、住家被害18,791棟。", "第18回会議イベントに時点の異なる値が混在しています");
