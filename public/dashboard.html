@@ -565,7 +565,7 @@ refreshRecord("ehime-redcross",{status:"第1班活動期間中・第2班予定�
 refreshRecord("ehime-assessor",{status:"活動期間終了・帰県要確認",period:"8月7日出発／8月8日～10日活動期間",detail:"県職員2人の被災建築物応急危険度判定は8月10日までの活動期間を終えた。帰県は資料上で確認できない。",asOf:"愛媛県 8月12日12時",sourceLabel:"愛媛県 本県の支援状況",sourceUrl:"https://www.pref.ehime.jp/uploaded/attachment/187841.pdf"});
 refreshRecord("ehime-police",{status:"特別犯罪抑止部隊活動期間中（実働要確認）",scale:"4人",period:"8月11日～19日予定",detail:"愛媛県警の特別犯罪抑止部隊4人は8月11日～19日の活動予定。実働状況は最新の現地確認が必要。",asOf:"愛媛県 8月12日12時",sourceLabel:"愛媛県 本県の支援状況",sourceUrl:"https://www.pref.ehime.jp/uploaded/attachment/187841.pdf"});
 if(!RECORDS.some(item=>item.id==='ehime-dwat'))RECORDS.push({id:'ehime-dwat',provider:'ehime',category:'health',hubIds:['yatsushiro'],title:'愛媛DWATによる避難所福祉支援',providers:['愛媛県','愛媛県内福祉職'],status:'活動期間中（8月12日公表）',scale:'3人（介護支援専門員1・ソーシャルワーカー2）',period:'8月12日～14日／9月7日まで9陣予定',detail:'八代市の避難所で福祉支援。9月7日まで9陣の交代を予定。個別避難所の実働は現地確認が必要。',asOf:'愛媛県 8月12日12時',sourceLabel:'愛媛県 本県の支援状況',sourceUrl:'https://www.pref.ehime.jp/uploaded/attachment/187841.pdf'});
-if(!TIMELINE_EVENTS.some(event=>event.id==="t-kumamoto-aug11"))TIMELINE_EVENTS.push({id:"t-kumamoto-aug11",date:"2026-08-11",dateLabel:"8月11日",weekday:"火",time:"16:00",phase:"recovery",actor:"kumamoto",title:"第21回熊本県災害対策本部・第14回政府現地本部会議",summary:"避難所89か所・避難者3,714人、人的被害392人、住家被害23,404棟等の8月11日最新資料を公表。",detail:"給水車173台、行政応援854人、TEC-FORCE累計約3,100人日等を掲載した8月11日資料。",place:"熊本県庁",sourceLabel:"熊本県 第21回災害対策本部会議資料",sourceUrl:"https://www.pref.kumamoto.jp/uploaded/attachment/316600.pdf",recordIds:["national-coordination","national-water","national-tec","kumamoto-internal"],hubIds:["kumamoto-hq"]});
+if(!TIMELINE_EVENTS.some(event=>event.id==="t-kumamoto-aug11"))TIMELINE_EVENTS.push({id:"t-kumamoto-aug11",date:"2026-08-11",dateLabel:"8月11日",weekday:"火",time:"16:00",phase:"recovery",actor:"kumamoto",title:"第21回熊本県災害対策本部・第14回政府現地本部会議",summary:"避難所89か所・避難者3,714人、人的被害392人、住家被害23,404棟等の8月11日最新資料を公表。",detail:"給水車173台、行政応援854人、TEC-FORCE累計約3,100人日等を掲載した8月11日資料。",place:"熊本県庁",sourceLabel:"熊本県 第21回災害対策本部会議資料",sourceUrl:"https://www.pref.kumamoto.jp/uploaded/attachment/316600.pdf",recordIds:["national-coordination","national-water","national-tec","kumamoto-internal"],hubIds:["kumamoto-hq"],tags:[]});
 /* 2026-08-11 static-view corrections: keep dated history separate from current cards. */
 Object.assign(PROVINCE_NEEDS.find(item=>item.id==='p-agri'),{observed:'農林水産関係の被害調査と復旧を継続。商工業被害は3,294件、約952億円。',sourceUrl:'https://www.pref.kumamoto.jp/uploaded/attachment/316600.pdf',sourceLabel:'熊本県 第21回災害対策本部会議 各部報告資料（8月11日14時）'});
 const refreshTimeline=(id,values)=>Object.assign(TIMELINE_EVENTS.find(event=>event.id===id),values);
@@ -1088,11 +1088,11 @@ const TIMELINE_ACTOR_LABEL={kumamoto:'熊本県・被災市町村',national:'国
 const timelineState={phase:'all',actor:'all',query:'',selectedId:'t-earthquake'};
 function timelineFilteredEvents(){
  const q=timelineState.query.trim().toLowerCase();
- return TIMELINE_EVENTS.filter(item=>(timelineState.phase==='all'||item.phase===timelineState.phase)&&(timelineState.actor==='all'||item.actor===timelineState.actor)&&(!q||[item.title,item.summary,item.detail,item.place,...item.tags].join(' ').toLowerCase().includes(q)));
+ return TIMELINE_EVENTS.filter(item=>(timelineState.phase==='all'||item.phase===timelineState.phase)&&(timelineState.actor==='all'||item.actor===timelineState.actor)&&(!q||[item.title,item.summary,item.detail,item.place,...(item.tags||[])].join(' ').toLowerCase().includes(q)));
 }
 function timelineEventMarkup(item){
  const isSelected=timelineState.selectedId===item.id;
- const tags=[...item.tags];
+ const tags=[...(item.tags||[])];
  if(item.actor==='ehime'&&!tags.includes('愛媛県'))tags.unshift('愛媛県');
  return `<button class="timeline-event ${item.phase}${isSelected?' selected':''}" type="button" data-timeline-event="${item.id}"><div class="timeline-event-top"><span class="timeline-event-time">${esc(item.time)}</span><span class="timeline-event-title">${esc(item.title)}</span></div><div class="timeline-event-summary">${esc(item.summary)}</div><div class="timeline-event-tags">${tags.map(tag=>`<span class="timeline-tag${tag==='愛媛県'?' ehime':''}${item.phase==='planned'?' future':''}">${esc(tag)}</span>`).join('')}</div></button>`;
 }

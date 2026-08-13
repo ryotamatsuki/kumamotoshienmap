@@ -155,6 +155,9 @@ source = source.replace(
   '"本県の支援状況について","asOf":"2026年8月10日12時","url":"https://www.pref.ehime.jp/uploaded/attachment/187761.pdf"',
   '"本県の支援状況について","asOf":"2026年8月12日12時","url":"https://www.pref.ehime.jp/uploaded/attachment/187841.pdf"',
 );
+source = source.replace(/(\{id:["']t-kumamoto-aug11["'][\s\S]*?hubIds:\["kumamoto-hq"\])\}\);/, "$1,tags:[]});");
+source = source.replace("...item.tags]", "...(item.tags||[])]");
+source = source.replace("const tags=[...item.tags];", "const tags=[...(item.tags||[])];");
 
 source = source.replace(/^refreshRecord\("national-finance"[^\n]*\r?\n/gm, "");
 source = source.replace(/^refreshRecord\("kumamoto-internal"[^\n]*\r?\n/gm, "");
