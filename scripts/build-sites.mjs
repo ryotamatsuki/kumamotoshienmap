@@ -20,6 +20,21 @@ const volunteerCss = readFileSync(join(root, "volunteer.css"), "utf8");
 const volunteerData = readFileSync(join(root, "volunteer-data.js"), "utf8");
 const volunteerApp = readFileSync(join(root, "volunteer.js"), "utf8");
 const currentShelterData = readFileSync(join(root, "current-shelters.json"), "utf8");
+let currentShelterPayload;
+try {
+  currentShelterPayload = JSON.parse(currentShelterData);
+} catch (error) {
+  throw new Error(`current-shelters.jsonのJSONが不正です: ${error.message}`);
+}
+if (!Array.isArray(currentShelterPayload?.shelters)) {
+  throw new Error("current-shelters.jsonのsheltersが配列ではありません。");
+}
+if (currentShelterPayload.meta?.current_count !== currentShelterPayload.shelters.length) {
+  throw new Error(`current-shelters.jsonのmeta.current_countとshelters件数が不一致です（${currentShelterPayload.meta?.current_count}/${currentShelterPayload.shelters.length}）。`);
+}
+if (currentShelterPayload.shelters.some((row) => row?.coordinate_status === "conflict")) {
+  throw new Error("coordinate_status=conflictの現行避難所があるため、配信成果物を生成できません。");
+}
 
 if (!original.equals(dashboard)) {
   throw new Error("The published dashboard does not match the reviewed source.");

@@ -10,24 +10,17 @@ const startMarker = "/* CURRENT_SHELTER_DATA_START */";
 const endMarker = "/* CURRENT_SHELTER_DATA_END */";
 
 const data = JSON.parse(await readFile(dataPath, "utf8"));
-const rows = data.shelters.map((row) => ({
-  facility_id: row.facility_id,
-  municipality_code: row.municipality_code,
-  municipality: row.municipality,
-  name: row.name,
-  address: row.address,
-  status: row.status,
-  congestion: row.congestion,
-  opened_at: row.opened_at,
-  closed_at: row.closed_at,
-  coordinate_status: row.coordinate_status,
-  coordinate_match_method: row.coordinate_match_method,
-  coordinate_master_id: row.coordinate_master_id,
-  lat: row.lat,
-  lng: row.lng,
-  coordinate_source_as_of: row.coordinate_source_as_of,
-  candidate_master_ids: row.candidate_master_ids,
-}));
+if (!Array.isArray(data.shelters)) throw new Error("current-shelters.jsonのsheltersが配列ではありません。");
+if (!Number.isInteger(data.meta?.current_count) || data.meta.current_count !== data.shelters.length) {
+  throw new Error(`current-shelters.jsonのmeta.current_countとshelters件数が不一致です（${data.meta?.current_count}/${data.shelters.length}）。`);
+}
+// Keep the generated rows lossless. New provenance/cross-check fields added by
+// update-current-shelters.mjs must reach the reviewed HTML without another manual
+// mapping change.
+const rows = data.shelters.map((row) => ({ ...row }));
+const coordinateMasterSourceLabel = data.meta.coordinate_master_source_as_of
+  ? `${String(data.meta.coordinate_master_source_as_of).slice(0, 10)}_coordinate_master`
+  : "coordinate_master";
 const meta = {
   sourceLabel: "熊本県公式の現在開設避難所一覧",
   sourceAsOf: data.meta.source_last_modified || data.meta.fetched_at,
@@ -41,6 +34,9 @@ const meta = {
   coordinateMasterSourceAsOf: data.meta.coordinate_master_source_as_of,
   coordinateMasterExpectedCount: data.meta.coordinate_master_expected_count,
   coordinateMasterCrs: data.meta.coordinate_master_crs,
+  coordinateMasterSourceLabel,
+  coordinatePriority: data.meta.coordinate_priority ?? null,
+  coordinateConflictThresholdM: data.meta.coordinate_conflict_threshold_m ?? null,
   statusUrl: "https://portal.bousai.pref.kumamoto.jp/sp.html?p=evacuation%2Fshelter",
   crs: data.meta.coordinate_master_crs,
 };
@@ -61,8 +57,12 @@ const mappedRows = `CURRENT_SHELTER_ROWS.map((row) => ({
   lat: row.lat,
   lng: row.lng,
   crs: CURRENT_SHELTER_META.coordinateMasterCrs,
-  coordinateSource: row.coordinate_source_as_of ? "8月2日座標マスター" : null,
+  coordinateSource: row.coordinate_source
+    || (row.coordinate_master_id && row.coordinate_source_as_of === CURRENT_SHELTER_META.coordinateMasterSourceAsOf
+      ? CURRENT_SHELTER_META.coordinateMasterSourceLabel
+      : null),
   coordinateSourceAsOf: row.coordinate_source_as_of,
+  coordinateCrosscheck: row.coordinate_crosscheck ?? null,
   source: "current-official-list",
 }))`;
 const block = [
@@ -92,9 +92,15 @@ await writeFile(sourcePath, source, "utf8");
 await writeFile(publicPath, source, "utf8");
 
 console.log(JSON.stringify({
-  currentCount: data.meta.current_count,
+  currentCount: rows.length,
   confirmed: rows.filter((row) => row.coordinate_status === "confirmed").length,
   unresolved: rows.filter((row) => row.coordinate_status === "unresolved").length,
+  conflicts: rows.filter((row) => row.coordinate_status === "conflict").length,
+  coordinateSources: rows.reduce((result, row) => {
+    const source = row.coordinate_source || (row.coordinate_master_id ? coordinateMasterSourceLabel : "unresolved");
+    result[source] = (result[source] || 0) + 1;
+    return result;
+  }, {}),
   sourcePath,
   publicPath,
 }));

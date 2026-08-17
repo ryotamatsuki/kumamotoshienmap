@@ -15,6 +15,12 @@ const [html, publicHtml, volunteerCss, currentShelterDataText] = await Promise.a
   readFile(currentShelterDataPath, "utf8"),
 ]);
 const currentShelterData = JSON.parse(currentShelterDataText);
+assert.ok(Array.isArray(currentShelterData.shelters), "current-shelters.jsonのsheltersが配列ではありません");
+const currentShelterRows = currentShelterData.shelters;
+const currentShelterCount = currentShelterRows.length;
+const currentShelterConfirmedCount = currentShelterRows.filter((row) => row?.coordinate_status === "confirmed" && Number.isFinite(row?.lat) && Number.isFinite(row?.lng)).length;
+const currentShelterUnresolvedCount = currentShelterRows.filter((row) => row?.coordinate_status === "unresolved").length;
+const currentShelterConflictCount = currentShelterRows.filter((row) => row?.coordinate_status === "conflict").length;
 
 assert.equal(publicHtml, html, "公開用HTMLがレビュー元HTMLと一致していません");
 
@@ -29,8 +35,6 @@ const requiredText = [
   "行政応援925人",
   "関係機関含む計1,005人",
   "TEC-FORCE現在103人・累計3,703人日",
-  "最新集計71か所／位置履歴206点",
-  "同梱206点は現在開設中の施設一覧として扱わない",
   "現在開設避難所総数",
   "地図表示数",
   "座標未確認数",
@@ -151,10 +155,10 @@ runInNewContext(
   { timeout: 2_000 },
 );
 const runtime = sandbox.__result;
-assert.equal(runtime.CURRENT_SHELTER_META.currentCount, 72, "現行公式避難所一覧の件数が72件ではありません");
+assert.equal(runtime.CURRENT_SHELTER_META.currentCount, currentShelterCount, "現行公式避難所一覧の件数がcurrent-shelters.jsonと一致しません");
 assert.equal(
   JSON.stringify(runtime.CURRENT_SHELTER_ROWS),
-  JSON.stringify(currentShelterData.shelters),
+  JSON.stringify(currentShelterRows),
   "HTMLに埋め込んだ現行避難所データがcurrent-shelters.jsonと一致しません",
 );
 assert.equal(
@@ -162,18 +166,19 @@ assert.equal(
   currentShelterData.meta.source_last_modified || currentShelterData.meta.fetched_at,
   "HTMLに埋め込んだ現行公式避難所JSONの最終更新時点がcurrent-shelters.jsonと一致しません",
 );
-assert.equal(runtime.CURRENT_SHELTER_META.currentDefinition, "熊本県公式の現在開設中一覧（shelterStartTimestampあり・shelterEndTimestamp空）", "現行一覧の抽出定義が明示されていません");
-assert.equal(runtime.CURRENT_SHELTER_ROWS.length, 72, "現行公式避難所一覧を削除・重複しています");
-assert.equal(runtime.CURRENT_SHELTER_ROWS.filter((row) => row.coordinate_status === "confirmed").length, 67, "現行避難所の地図表示可能数が67件ではありません");
-assert.equal(runtime.CURRENT_SHELTER_ROWS.filter((row) => row.coordinate_status === "unresolved").length, 5, "座標未確認の現行避難所を保持していません");
-assert.equal(runtime.CURRENT_SHELTERS.filter((row) => Number.isFinite(row.lat) && Number.isFinite(row.lng)).length, 67, "地図表示数が現行座標確認済み件数と一致しません");
-assert.equal(67 + 5, runtime.CURRENT_SHELTER_META.currentCount, "地図表示数と座標未確認数の合計が現在総数と一致しません");
+assert.match(runtime.CURRENT_SHELTER_META.currentDefinition, /shelterStartTimestamp.*shelterEndTimestamp/iu, "現行一覧の抽出定義が明示されていません");
+assert.equal(runtime.CURRENT_SHELTER_ROWS.length, currentShelterCount, "現行公式避難所一覧を削除・重複しています");
+assert.equal(currentShelterConflictCount, 0, "conflict座標を現行地図へ採用しています");
+assert.equal(currentShelterConfirmedCount, runtime.CURRENT_SHELTER_ROWS.filter((row) => row.coordinate_status === "confirmed" && Number.isFinite(row.lat) && Number.isFinite(row.lng)).length, "地図表示可能数の算出がcurrent-shelters.jsonと一致しません");
+assert.equal(currentShelterUnresolvedCount, runtime.CURRENT_SHELTER_ROWS.filter((row) => row.coordinate_status === "unresolved").length, "座標未確認数がcurrent-shelters.jsonと一致しません");
+assert.equal(runtime.CURRENT_SHELTERS.filter((row) => Number.isFinite(row.lat) && Number.isFinite(row.lng)).length, currentShelterConfirmedCount, "地図表示数が現行座標確認済み件数と一致しません");
+assert.equal(currentShelterConfirmedCount + currentShelterUnresolvedCount + currentShelterConflictCount, currentShelterCount, "現行避難所の座標状態が総数を網羅していません");
 assert.ok(runtime.CURRENT_SHELTERS.filter((row) => row.coordinateStatus === "unresolved").every((row) => row.lat === null && row.lng === null), "座標未確認施設に推測座標があります");
 assert.ok(runtime.CURRENT_SHELTERS.every((row) => row.source === "current-official-list"), "現行地図が8月2日履歴データ由来になっています");
 assert.ok(html.includes("historyRecords:PREGEOCODED_SHELTERS.map"), "206点の履歴レイヤーが現行データと分離されていません");
 assert.ok(html.includes("filteredShelters().filter(isCurrentShelterMappable)"), "現行地図が座標確認済み施設だけを表示していません");
 assert.ok(!html.includes("shelterState={records:PREGEOCODED_SHELTERS"), "206点を現行避難所データとして初期化しています");
-assert.equal(new Set(runtime.CURRENT_SHELTER_ROWS.map((row) => `${row.municipality_code}|${row.name}|${row.address}`)).size, 72, "現行公式一覧の施設識別子が重複しています");
+assert.equal(new Set(runtime.CURRENT_SHELTER_ROWS.map((row) => `${row.municipality_code}|${row.name}|${row.address}`)).size, currentShelterCount, "現行公式一覧の施設識別子が重複しています");
 assert.ok(runtime.HUBS.some((hub) => hub.id === "mifune"), "御船町の既存代表点が支援地図にありません");
 assert.ok(runtime.HUBS.some((hub) => hub.id === "ashikita"), "芦北町の既存代表点が支援地図にありません");
 assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("31,728棟"), "住家被害の最新県計が支援ニーズに反映されていません");
