@@ -22,8 +22,9 @@ const requiredText = [
   "394<span class=\"overview-kpi-unit\">人",
   "31,728<span class=\"overview-kpi-unit\">棟",
   "約10,000戸",
-  "給水車131台",
+  "給水車131台（国交省第42報・8月16日6時～7時30分・表掲載値）",
   "行政応援925人",
+  "関係機関含む計1,005人",
   "TEC-FORCE現在103人・累計3,703人日",
   "最新集計71か所／位置履歴206点",
   "同梱206点は現在開設中の施設一覧として扱わない",
@@ -45,6 +46,35 @@ const requiredText = [
 for (const value of requiredText) {
   assert.ok(html.includes(value), `最新時点の必須表示がありません: ${value}`);
 }
+
+const runtimeScriptStart = html.indexOf('<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js">');
+assert.ok(runtimeScriptStart > 0, "公開HTMLの初期表示領域を特定できません");
+const currentDisplayHtml = html.slice(0, runtimeScriptStart);
+const requiredCurrentDisplay = [
+  "2026年8月17日確認",
+  "国交省第42報",
+  "給水車131台（国交省第42報・8月16日6時～7時30分・表掲載値）",
+  "計10市町へ行政応援925人（関係機関含む計1,005人）",
+  "<div class=\"snap\"><strong>925</strong>",
+  "<div class=\"snap\"><strong>131</strong>",
+];
+for (const value of requiredCurrentDisplay) {
+  assert.ok(currentDisplayHtml.includes(value), `初期表示の最新値がありません: ${value}`);
+}
+const forbiddenCurrentDisplay = [
+  "国交省第39報",
+  "行政応援854人",
+  "<strong>854</strong>",
+  "<strong>173</strong>",
+  "2026年8月11日確認",
+];
+for (const value of forbiddenCurrentDisplay) {
+  assert.ok(!currentDisplayHtml.includes(value), `旧値を現況表示に残しています: ${value}`);
+}
+assert.ok(
+  html.includes("8月11日14時資料の当時公表値として給水車173台を掲載。第42報（8月16日6時～7時30分）の表掲載131台とは対象時点・資料定義が異なるため、現況値には流用しない。"),
+  "173台の履歴値と第42報131台の定義差分が明示されていません",
+);
 
 assert.ok(volunteerCss.includes(".volunteer-view[hidden]"), "ボランティアタブのhidden制御がありません");
 assert.ok(volunteerCss.includes("@media(max-width:650px)"), "ボランティア画面のスマートフォン切替がありません");

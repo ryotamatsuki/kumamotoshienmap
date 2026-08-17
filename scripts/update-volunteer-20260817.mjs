@@ -91,6 +91,9 @@ Object.assign(kumamoto, {
   activity_end_date: "2026-08-23",
   activity_dates_text: "第2期（8月16日～23日）は本部センター・南区サテライトとも必要人数到達で締切。8月24日以降はニーズ状況を踏まえ再告知予定。",
   application_method: "第2期は締切。8月24日以降はニーズ状況を踏まえて再告知予定。",
+  application_url: sourceDefinitions["熊本市"].url,
+  application_urls: null,
+  application_deadline: "第2期（8月16日～23日）は必要人数到達で締切。8月24日以降は再告知予定。",
   application_form_status: "第2期締切（必要人数到達）",
   official_source_name: sourceDefinitions["熊本市"].publisher,
   official_source_title: sourceDefinitions["熊本市"].title,
@@ -102,11 +105,12 @@ Object.assign(kumamoto, {
   change_status: "第2期募集締切",
   previous_known_state: "定員到達（第1期）",
   change_from_previous: "第2期8月16～23日も両拠点が必要人数到達で締切。8月24日以降はニーズ状況を踏まえ再告知予定。",
-  remarks: "第2期の受付終了は公式告知に基づく。8月24日以降の再募集は未発表のため、募集中とは表示しない。",
-  district_capacities: [
-    { district: "本部センター", daily_capacity: 20, capacity_unit: "人程度／日" },
-    { district: "南区サテライト", daily_capacity: 40, capacity_unit: "人程度／日" },
+  changes_from_previous: [
+    "第2期8月16～23日は本部センター・南区サテライトとも必要人数到達で締切。8月24日以降は再告知予定で現況未確定。",
   ],
+  group_dispatch_assessment: "第2期は両拠点とも必要人数到達・締切。県外団体、愛媛県団体、1団体当たり人数及び大型バスの第2期受入条件は公表なし・要照会。8月24日以降は再告知待ち。",
+  remarks: "第2期締切は公式告知に基づく。第1期の受入目安は旧公式ソースに保持し、現況の受入可能人数とは扱わない。8月24日以降の再募集は未発表。",
+  district_capacities: null,
   activity_windows: [
     { start_date: "2026-08-16", end_date: "2026-08-23", status: "定員到達", form_status: "必要人数到達・締切" },
   ],

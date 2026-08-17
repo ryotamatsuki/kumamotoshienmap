@@ -74,8 +74,8 @@
       "activity_description": "倒れた家具や家財の搬出、住居周辺の片付け、災害ごみの分別、清掃、支援物資の仕分けを予定。高所・専門技術・危険作業、重機、解体・修繕は対象外",
       "application_required": true,
       "application_method": "第2期は締切。8月24日以降はニーズ状況を踏まえて再告知予定。",
-      "application_url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
-      "application_deadline": "第1期募集締切",
+      "application_url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
+      "application_deadline": "第2期（8月16日～23日）は必要人数到達で締切。8月24日以降は再告知予定。",
       "meeting_place": "熊本市社会福祉協議会",
       "address": "熊本市中央区新町2丁目4番27号 熊本市健康センター新町分室1階",
       "reception_time": "9:00～16:00",
@@ -93,7 +93,7 @@
       "toll_exemption_information": null,
       "contact": "080-1545-0531",
       "email": "volunteer@kumamoto-city-csw.or.jp",
-      "group_dispatch_assessment": "第1期は定員到達。県外団体、愛媛県団体、1団体当たり人数及び大型バスは公表なし・要照会",
+      "group_dispatch_assessment": "第2期は両拠点とも必要人数到達・締切。県外団体、愛媛県団体、1団体当たり人数及び大型バスの第2期受入条件は公表なし・要照会。8月24日以降は再告知待ち。",
       "ehime_dispatch_status": "定員到達・団体受入要確認",
       "official_source_name": "熊本市社会福祉協議会",
       "official_source_title": "８/１３時点での第２期ボランティア募集状況のお知らせ",
@@ -105,22 +105,11 @@
       "recheck_note": "8月14日掲載の公式告知で、第2期8月16～23日は本部・南区とも必要人数到達による締切を確認。8月24日以降は再告知予定。",
       "change_status": "第2期募集締切",
       "changes_from_previous": [
-        "募集準備中から募集開始後、本部・南区サテライトとも第1期定員到達へ変更"
+        "第2期8月16～23日は本部センター・南区サテライトとも必要人数到達で締切。8月24日以降は再告知予定で現況未確定。"
       ],
       "information_confidence": "高（公式一次情報を確認）",
-      "remarks": "第2期の受付終了は公式告知に基づく。8月24日以降の再募集は未発表のため、募集中とは表示しない。",
-      "district_capacities": [
-        {
-          "district": "本部センター",
-          "daily_capacity": 20,
-          "capacity_unit": "人程度／日"
-        },
-        {
-          "district": "南区サテライト",
-          "daily_capacity": 40,
-          "capacity_unit": "人程度／日"
-        }
-      ],
+      "remarks": "第2期締切は公式告知に基づく。第1期の受入目安は旧公式ソースに保持し、現況の受入可能人数とは扱わない。8月24日以降の再募集は未発表。",
+      "district_capacities": null,
       "change_from_previous": "第2期8月16～23日も両拠点が必要人数到達で締切。8月24日以降はニーズ状況を踏まえ再告知予定。",
       "previous_known_state": "定員到達（第1期）",
       "needs_reconfirmation": true,
@@ -143,7 +132,8 @@
           "checked_at": "2026-08-17T09:45:00+09:00"
         }
       ],
-      "application_form_status": "第2期締切（必要人数到達）"
+      "application_form_status": "第2期締切（必要人数到達）",
+      "application_urls": null
     },
     {
       "municipality": "宇土市",
