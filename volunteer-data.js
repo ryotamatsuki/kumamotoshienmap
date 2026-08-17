@@ -1,9 +1,9 @@
 globalThis.VOLUNTEER_DATA = Object.freeze({
   "meta": {
-    "reference_at": "2026-08-13T13:14:31+09:00",
-    "reference_date": "2026-08-13",
-    "checked_at": "2026-08-13T13:14:31+09:00",
-    "oldest_checked_at": "2026-08-11T19:17:17+09:00",
+    "reference_at": "2026-08-17T09:45:00+09:00",
+    "reference_date": "2026-08-17",
+    "checked_at": "2026-08-17T09:45:00+09:00",
+    "oldest_checked_at": "2026-08-17T09:45:00+09:00",
     "initial_snapshot": false,
     "next_review_required": true,
     "caution": "災害ボランティアの募集条件は随時変更されます。活動前には必ず各災害ボランティアセンターの最新の公式情報を確認してください。"
@@ -59,11 +59,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
     {
       "municipality": "熊本市",
       "district": "市内全域",
-      "center_status": "開設・活動中（南区サテライトは8月10日開設予定）",
-      "recruitment_status": "定員到達",
-      "activity_start_date": "2026-08-05",
-      "activity_end_date": "2026-08-14",
-      "activity_dates_text": "本部8月5日～14日、南区サテライト8月10日～14日。第1期はいずれも募集締切。8月15日以降は住民ニーズを踏まえて再告知予定",
+      "center_status": "開設・活動中",
+      "recruitment_status": "受付終了（第2期定員到達）・8月24日以降要再確認",
+      "activity_start_date": "2026-08-16",
+      "activity_end_date": "2026-08-23",
+      "activity_dates_text": "第2期（8月16日～23日）は本部センター・南区サテライトとも必要人数到達で締切。8月24日以降はニーズ状況を踏まえ再告知予定。",
       "daily_capacity": null,
       "total_capacity": null,
       "capacity_unit": null,
@@ -85,9 +85,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       ],
       "activity_description": "倒れた家具や家財の搬出、住居周辺の片付け、災害ごみの分別、清掃、支援物資の仕分けを予定。高所・専門技術・危険作業、重機、解体・修繕は対象外",
       "application_required": true,
-      "application_method": "第1期は募集締切。8月15日以降は公式の再告知を確認",
-      "application_url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
-      "application_deadline": "第1期募集締切",
+      "application_method": "第2期は締切。8月24日以降はニーズ状況を踏まえて再告知予定。",
+      "application_url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
+      "application_deadline": "第2期（8月16日～23日）は必要人数到達で締切。8月24日以降は再告知予定。",
       "meeting_place": "熊本市社会福祉協議会",
       "address": "熊本市中央区新町2丁目4番27号 熊本市健康センター新町分室1階",
       "reception_time": "9:00～16:00",
@@ -105,67 +105,63 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "toll_exemption_information": null,
       "contact": "080-1545-0531",
       "email": "volunteer@kumamoto-city-csw.or.jp",
-      "group_dispatch_assessment": "第1期は定員到達。県外団体、愛媛県団体、1団体当たり人数及び大型バスは公表なし・要照会",
+      "group_dispatch_assessment": "第2期は両拠点とも必要人数到達・締切。県外団体、愛媛県団体、1団体当たり人数及び大型バスの第2期受入条件は公表なし・要照会。8月24日以降は再告知待ち。",
       "ehime_dispatch_status": "定員到達・団体受入要確認",
       "official_source_name": "熊本市社会福祉協議会",
-      "official_source_title": "募集締切【第1期 ボランティア追加募集について】",
-      "official_source_url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
-      "source_published_at": "2026-08-07",
-      "source_updated_at": "2026-08-07",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "変更なし・要再確認",
-      "remarks": "本部20人程度／日、南区サテライト40人程度／日は地区別の受入目安であり、合算した市全体人数・空き人数ではない",
+      "official_source_title": "８/１３時点での第２期ボランティア募集状況のお知らせ",
+      "official_source_url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
+      "source_published_at": "2026-08-14",
+      "source_updated_at": "2026-08-14",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "第2期募集締切",
+      "remarks": "第2期締切は公式告知に基づく。第1期の受入目安は旧公式ソースに保持し、現況の受入可能人数とは扱わない。8月24日以降の再募集は未発表",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
-      "application_form_status": null,
+      "application_form_status": "第2期締切（必要人数到達）",
       "safety_note": null,
       "infrastructure_note": null,
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "第1期募集締切の状態を保持。8月15日以降の再募集は未確認",
+      "change_from_previous": "第2期8月16～23日も両拠点が必要人数到達で締切。8月24日以降はニーズ状況を踏まえ再告知予定。",
       "changes_from_previous": [
-        "募集準備中から募集開始後、本部・南区サテライトとも第1期定員到達へ変更"
+        "第2期8月16～23日は本部センター・南区サテライトとも必要人数到達で締切。8月24日以降は再告知予定で現況未確定。"
       ],
-      "previous_known_state": "定員到達",
+      "previous_known_state": "定員到達（第1期）",
       "application_urls": null,
       "activity_windows": [
         {
-          "district": "本部センター",
-          "start_date": "2026-08-05",
-          "end_date": "2026-08-14",
+          "start_date": "2026-08-16",
+          "end_date": "2026-08-23",
           "status": "定員到達",
-          "capacity": 20,
-          "capacity_unit": "人程度／日",
-          "form_status": "募集締切"
-        },
-        {
-          "district": "南区サテライト",
-          "start_date": "2026-08-10",
-          "end_date": "2026-08-14",
-          "status": "定員到達",
-          "capacity": 40,
-          "capacity_unit": "人程度／日",
-          "form_status": "募集締切"
+          "form_status": "必要人数到達・締切"
         }
       ],
-      "district_capacities": [
+      "sources": [
         {
-          "district": "本部センター",
-          "daily_capacity": 20,
-          "capacity_unit": "人程度／日"
+          "publisher": "熊本市社会福祉協議会",
+          "title": "８/１３時点での第２期ボランティア募集状況のお知らせ",
+          "url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
+          "published_at": "2026-08-14",
+          "updated_at": "2026-08-14",
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "第2期8月16～23日の本部・南区サテライトの必要人数到達と、8月24日以降の再告知予定"
         },
         {
-          "district": "南区サテライト",
-          "daily_capacity": 40,
-          "capacity_unit": "人程度／日"
+          "publisher": "熊本市社会福祉協議会",
+          "title": "募集締切【第1期 ボランティア追加募集について】",
+          "url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
+          "published_at": "2026-08-07",
+          "updated_at": "2026-08-07",
+          "checked_at": "2026-08-17T09:45:00+09:00"
         }
       ],
+      "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
-      "recheck_status": "変更なし・要再確認",
-      "recheck_note": "8月11日確認時点で第1期募集締切後の新しい募集記事を確認できず、8月15日以降は再告知予定",
+      "recheck_status": "差分あり",
+      "recheck_note": "8月14日掲載の公式告知で、第2期8月16～23日は本部・南区とも必要人数到達による締切を確認。8月24日以降は再告知予定。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -190,53 +186,88 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "countable": false
         },
         "2026-08-15": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第1期募集締切・第2期情報確認",
           "countable": false
         },
         "2026-08-16": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-17": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-18": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-19": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-20": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-21": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-22": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-23": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-24": {
           "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-25": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-26": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-27": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-28": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-29": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-30": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-31": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
           "countable": false
         }
       }
@@ -245,10 +276,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "municipality": "八代市",
       "district": null,
       "center_status": "開設・活動中",
-      "recruitment_status": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）",
-      "activity_start_date": "2026-08-10",
-      "activity_end_date": "2026-08-16",
-      "activity_dates_text": "第1弾：8月10日～16日。個人第1弾フォームは受付終了。5人以上の団体は団体申込フォームで事前調整",
+      "recruitment_status": "限定募集（団体・個別照会／8月17日以降の一般枠は要確認）",
+      "activity_start_date": "2026-08-17",
+      "activity_end_date": null,
+      "activity_dates_text": "8月15日時点で個人第1弾終了後の専用電話・団体申込ルートを確認。8月17日以降の一般枠・日別人数は追加の公式公表を確認できないため、団体・個別照会の受付だけを現行経路として表示する。",
       "daily_capacity": null,
       "total_capacity": null,
       "capacity_unit": null,
@@ -264,7 +295,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "activity_types": [],
       "activity_description": null,
       "application_required": true,
-      "application_method": "個人第1弾フォームは受付終了。5人以上の団体は団体申込フォーム入力後に災害ボランティアセンターと活動日を調整",
+      "application_method": "団体申込フォーム又は災害ボランティアセンター専用電話で事前照会。一般個人枠の日程・人数は要確認。",
       "application_url": "https://9c3d4cf9.form.kintoneapp.com/public/saigaivc-yoyaku-dantai-08-yatsushiro",
       "application_deadline": "日別の受付状況による",
       "meeting_place": null,
@@ -291,23 +322,23 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
       "source_published_at": "2026-08-10",
       "source_updated_at": "2026-08-10",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "団体申込方法変更・個人フォーム受付終了",
-      "remarks": "公式ページの『全国各地から問合せ』は参加対象地域の明示ではないため、県外参加可とは判定しない",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "募集経路更新",
+      "remarks": "団体・個別照会の経路があることと参加確定は別。一般個人枠の日程・人数は八代市災害ボランティアセンターへ照会する",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
-      "application_form_status": "団体申込フォーム受付中・個人第1弾フォーム受付終了",
+      "application_form_status": "団体申込・専用電話による個別照会を確認。一般個人枠は要確認",
       "safety_note": null,
       "infrastructure_note": null,
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "個人フォーム中心の案内から、5人以上の団体は団体申込フォームで事前調整へ変更",
+      "change_from_previous": "個人第1弾終了後の現行表示を団体・個別照会に限定し、一般個人枠は要確認に分離。",
       "changes_from_previous": [
         "設置準備中・募集準備中から、8月10日開始の第1弾募集へ変更"
       ],
-      "previous_known_state": "募集中（団体は電話で事前相談）",
+      "previous_known_state": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）",
       "application_urls": {
         "group": "https://9c3d4cf9.form.kintoneapp.com/public/saigaivc-yoyaku-dantai-08-yatsushiro"
       },
@@ -320,13 +351,23 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "application_url": "https://9c3d4cf9.form.kintoneapp.com/public/saigaivc-yoyaku-dantai-08-yatsushiro"
         }
       ],
+      "sources": [
+        {
+          "publisher": "八代市社会福祉協議会",
+          "title": "八代市災害ボランティアセンター／ボランティアの皆様へ（団体申込方法が変わります）",
+          "url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
+          "published_at": "2026-08-10",
+          "updated_at": "2026-08-10",
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
-      "recheck_status": "募集方法変更を確認",
-      "recheck_note": "8月10日付公式案内で、5人以上の団体は専用フォームによる事前調整へ変更。個人第1弾フォームは受付終了",
+      "recheck_status": "差分あり",
+      "recheck_note": "8月17日時点で、個人第1弾終了後も団体申込・専用電話による個別照会ルートを保持。一般個人枠の現行日程・人数は公表確認できず。",
       "researched": true,
-      "activity_dates_confirmed": true,
+      "activity_dates_confirmed": false,
       "calendar_overrides": {
         "2026-08-11": {
           "key": "recruiting",
@@ -467,9 +508,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -542,9 +584,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -617,9 +660,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -692,9 +736,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -767,9 +812,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -842,9 +888,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -853,11 +900,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
     {
       "municipality": "宇土市",
       "district": "市内全域",
-      "center_status": "開設・第2期活動予定",
-      "recruitment_status": "受付終了・詳細要確認",
+      "center_status": "開設・活動中",
+      "recruitment_status": "募集中（第2期・8月13日～19日・70人程度／日・全国）",
       "activity_start_date": "2026-08-13",
       "activity_end_date": "2026-08-19",
-      "activity_dates_text": "第2期：8月13日～19日、70人程度／日、全国募集。公式申込フォームは8月13日確認時に回答受付終了だが、理由は公表されていないため定員到達とは断定しない。5人以上の団体は個別照会。",
+      "activity_dates_text": "第2期は8月13日～19日。1日70人程度を目安に全国から募集。申込フォームは掲載中だが、定員到達時は受付終了となるため、公式ページとFacebookを申込前に再確認する。",
       "daily_capacity": 70,
       "total_capacity": null,
       "capacity_unit": "人程度／日",
@@ -878,7 +925,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       ],
       "activity_description": "家具類の移動・起こし、食器・衣類の整理等の屋内清掃、家周辺に落下した瓦の収集等",
       "application_required": true,
-      "application_method": "個人は公式活動申込フォーム。5人以上の団体はメール照会（前回確認値。現在の団体受入は再確認が必要）",
+      "application_method": "公式活動申込フォーム。定員到達時は受付終了となる場合があるため、公式ページ・Facebookで最新状況を確認。",
       "application_url": "https://forms.gle/FCwVAHmc4htUM5Au8",
       "application_deadline": "定員に達し次第終了の場合あり",
       "meeting_place": "宇土市旧教育委員会",
@@ -901,44 +948,61 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "group_dispatch_assessment": "全国募集で5人以上の団体照会経路あり。ただし1団体当たり人数、大型バス及び駐車条件は事前調整が必要",
       "ehime_dispatch_status": "全国募集・団体は個別調整",
       "official_source_name": "宇土市社会福祉協議会",
-      "official_source_title": "災害ボランティア第2期募集のお知らせ",
+      "official_source_title": "災害ボランティア第２期募集のお知らせ",
       "official_source_url": "https://www.utoshakyou.jp/volunteer_2026.html",
       "source_published_at": null,
       "source_updated_at": "2026-08-09",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "change_status": "募集状況更新",
-      "remarks": "70人程度／日は1日当たりの受入目安であり、期間合計・空き人数・不足人数ではない。フォーム受付終了を定員到達と表示しない",
+      "remarks": "申込フォーム掲載は参加確定を意味しない。定員到達時は受付終了となる場合があるため、参加前に公式ページ・Facebookを再確認する",
       "outside_kyushu_allowed": true,
       "ehime_participation_allowed": true,
       "outside_prefecture_note": "九州内に限定せず全国から受付。団体派遣は別途調整が必要。",
-      "application_form_status": "受付終了（理由未公表）",
+      "application_form_status": "公式申込フォーム掲載（定員到達時は受付終了）",
       "safety_note": null,
       "infrastructure_note": null,
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "受入目安を70人程度／日に更新。フォームは回答受付終了（理由未公表）。",
+      "change_from_previous": "公式ページ上の第2期募集と申込フォーム掲載を現況表示へ更新。定員到達とは断定しない。",
       "changes_from_previous": [
         "第1期8月3日～11日・20人程度／日・九州各県から、第2期8月13日～19日・50人程度／日・全国へ変更"
       ],
-      "previous_known_state": "募集中（第2期・50人程度／日）",
+      "previous_known_state": "受付終了・詳細要確認",
       "application_urls": null,
       "activity_windows": [
         {
           "start_date": "2026-08-13",
           "end_date": "2026-08-19",
-          "status": "受付終了・詳細要確認",
-          "capacity": 70,
-          "capacity_unit": "人程度／日",
-          "form_status": "受付終了（理由未公表）",
-          "application_url": "https://forms.gle/FCwVAHmc4htUM5Au8"
+          "status": "募集中",
+          "form_status": "公式申込フォーム掲載"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "宇土市社会福祉協議会",
+          "title": "災害ボランティア第２期募集のお知らせ",
+          "url": "https://www.utoshakyou.jp/volunteer_2026.html",
+          "published_at": null,
+          "updated_at": "2026-08-09",
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "第2期8月13～19日、1日70人程度、全国募集、申込フォーム掲載"
+        },
+        {
+          "publisher": "宇土市社会福祉協議会（公式申込）",
+          "title": "第2期活動申込フォーム",
+          "url": "https://forms.gle/FCwVAHmc4htUM5Au8",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "申込受付"
         }
       ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
       "recheck_status": "差分あり",
-      "recheck_note": "公式ページは第2期70人程度／日・全国募集を掲載。申込フォームは回答受付終了だが理由不明のため定員到達とは扱わない。",
+      "recheck_note": "公式ページを8月17日に再確認。第2期8月13～19日、70人程度／日、全国募集、申込フォーム掲載を確認。実際の残席はフォーム・Facebookで要確認。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -1088,9 +1152,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -1100,10 +1165,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "municipality": "宇城市",
       "district": "避難所等",
       "center_status": "開設・活動中",
-      "recruitment_status": "受付終了・次回日程要確認",
-      "activity_start_date": "2026-08-15",
-      "activity_end_date": "2026-08-23",
-      "activity_dates_text": "8月15日～23日の日別申込を掲載。8月13日確認時点で各公表日の定員到達・締切を確認。団体フォームは掲載されているが、参加確定ではない。",
+      "recruitment_status": "募集中（8月17日～24日・26日～31日・事前申込）",
+      "activity_start_date": "2026-08-17",
+      "activity_end_date": "2026-08-31",
+      "activity_dates_text": "8月17日～24日、26日～31日は日別の事前申込を受付。8月25日は災害ごみ仮置場の受入中止・ニーズ整理のため活動なし。団体フォームへの申込だけでは参加確定ではない。",
       "daily_capacity": null,
       "total_capacity": null,
       "capacity_unit": null,
@@ -1113,7 +1178,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "outside_prefecture_allowed": true,
       "individual_allowed": true,
       "group_allowed": null,
-      "group_application_available": null,
+      "group_application_available": true,
       "minimum_age": "中学生以上",
       "age_conditions": "中学生は保護者同伴、高校生は保護者の参加同意書が必要",
       "activity_types": [
@@ -1124,7 +1189,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       ],
       "activity_description": "避難所支援・物資の受入れ及び搬送を先行募集。家屋（母屋）の片づけは8月5日受付開始、8月6日から本格活動。主な活動は住居内の片付けと住居・敷地内のがれき撤去",
       "application_required": true,
-      "application_method": "日別の公式申込フォーム。受付状況は各日のフォームで確認",
+      "application_method": "日別の公式事前申込フォーム。団体はページ下部の団体受付フォームで事前申込するが、申込時点では参加確定ではない。",
       "application_url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
       "application_deadline": "日別フォームの受付状況による",
       "meeting_place": "熊本県博物館ネットワークセンター",
@@ -1149,63 +1214,62 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_name": "宇城市社会福祉協議会",
       "official_source_title": "ボランティア活動へ参加を希望される方へ",
       "official_source_url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
-      "source_published_at": "2026-08-08",
-      "source_updated_at": "2026-08-13",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "募集状況更新",
-      "remarks": "日別フォームの受付状態は変動するため、申込み前に公式フォームを再確認する",
+      "source_published_at": "2026-08-17",
+      "source_updated_at": "2026-08-16",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "募集日程更新",
+      "remarks": "日別フォームの受付状態は変動するため、申込み前に公式ページの最新フォームを再確認する",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
-      "application_form_status": null,
+      "application_form_status": "8月17～24日・26～31日の日別フォーム掲載（8月25日は活動なし）",
       "safety_note": null,
       "infrastructure_note": null,
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "8月13日確認で当日受付終了。公表済み日程は定員到達・締切として更新。",
+      "change_from_previous": "8月17～24日・26～31日の日別事前申込を再開。8月25日は活動なし。団体申込フォームを掲載するが参加確定とは扱わない。",
       "changes_from_previous": [
         "限定募集から家屋片付け等の本格活動へ移行し、8月15日～23日の日別申込と軽トラック協力を追加"
       ],
-      "previous_known_state": "募集中（一部日定員到達）",
+      "previous_known_state": "受付終了・次回日程要確認",
       "application_urls": null,
       "activity_windows": [
         {
-          "start_date": "2026-08-15",
-          "end_date": "2026-08-15",
-          "status": "定員到達",
-          "form_status": "定数到達"
-        },
-        {
-          "start_date": "2026-08-16",
-          "end_date": "2026-08-16",
-          "status": "募集中",
-          "form_status": "受付中"
-        },
-        {
           "start_date": "2026-08-17",
-          "end_date": "2026-08-19",
-          "status": "定員到達",
-          "form_status": "定数到達"
-        },
-        {
-          "start_date": "2026-08-20",
-          "end_date": "2026-08-21",
+          "end_date": "2026-08-24",
           "status": "募集中",
-          "form_status": "受付中"
+          "form_status": "日別事前申込"
         },
         {
-          "start_date": "2026-08-22",
-          "end_date": "2026-08-23",
-          "status": "定員到達",
-          "form_status": "定数到達"
+          "start_date": "2026-08-25",
+          "end_date": "2026-08-25",
+          "status": "活動なし",
+          "form_status": "災害ごみ仮置場の受入中止・ニーズ整理"
+        },
+        {
+          "start_date": "2026-08-26",
+          "end_date": "2026-08-31",
+          "status": "募集中",
+          "form_status": "日別事前申込"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "宇城市社会福祉協議会",
+          "title": "ボランティア活動へ参加を希望される方へ",
+          "url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-16",
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月17～24日・26～31日の日別事前申込、8月25日の活動なし、軽トラック協力、団体申込は参加確定ではない旨"
         }
       ],
       "district_capacities": null,
       "official_information_conflict": "熊本県社会福祉協議会の市町一覧（2026年8月2日）は宇城市を『準備中』と表示。一方、宇城市社会福祉協議会（2026年8月3日）は避難所・物資支援の先行募集、8月4日～8日の事前登録、8月5日以降の家屋支援を掲載。一般募集と限定募集の範囲が異なるため、日別フォームの最新受付状況を優先確認する。",
       "portal_coverage_checked_at": null,
       "recheck_status": "差分あり",
-      "recheck_note": "8月13日公式告知で当日受付終了を確認。8月15～23日の個人受付は各日定員到達・締切。次回日程は要確認。",
+      "recheck_note": "8月17日掲載の公式告知を確認。8月17～24日・26～31日の日別事前申込、8月25日の活動なし、軽トラック協力依頼、団体申込は参加確定ではない旨を反映。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -1348,9 +1412,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -1423,9 +1488,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -1498,9 +1564,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -1560,9 +1627,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://misatoshakyo.or.jp/pages/455/",
       "source_published_at": null,
       "source_updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "change_status": "変更なし・要再確認",
-      "remarks": "活動先までの移動・車両提供依頼は掲載情報として保持する",
+      "remarks": "募集休止は公式ページの記載に基づく。再開日・受入人数は不明のため、再開を推測しない",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
@@ -1579,11 +1646,21 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": "募集休止（定員到達）",
       "application_urls": null,
       "activity_windows": [],
+      "sources": [
+        {
+          "publisher": "美里町社会福祉協議会",
+          "title": "令和8年熊本地震に伴う美里町災害ボランティアセンターの受付について",
+          "url": "https://misatoshakyo.or.jp/pages/455/",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": "熊本県社会福祉協議会の市町一覧（2026年8月2日）は美里町を『準備中』と表示。美里町社会福祉協議会（2026年8月3日）は8月4日～9日の一次募集と個人・団体フォームを掲載しているため、日別フォームの受付状況を優先確認する。",
       "portal_coverage_checked_at": null,
       "recheck_status": "変更なし・要再確認",
-      "recheck_note": "8月13日公式ページで募集休止を再確認。再開日は未公表。",
+      "recheck_note": "公式ページを8月17日に再確認。申込定員到達による募集休止を継続表示しており、再開日は公表されていない。",
       "researched": true,
       "activity_dates_confirmed": false,
       "calendar_overrides": {
@@ -1726,9 +1803,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -1801,9 +1879,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -1876,9 +1955,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -1951,9 +2031,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -2026,9 +2107,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -2101,9 +2183,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -2176,9 +2259,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -2251,9 +2335,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -2326,9 +2411,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -2401,9 +2487,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -2476,9 +2563,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -2551,9 +2639,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -2563,7 +2652,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "municipality": "御船町",
       "district": "町内全域",
       "center_status": "開設・活動中（公表日程あり）",
-      "recruitment_status": "募集中（8月16日～22日・人数上限あり）",
+      "recruitment_status": "情報未確認（前回募集ページ・申込状況を保持）",
       "activity_start_date": "2026-08-11",
       "activity_end_date": "2026-08-22",
       "activity_dates_text": "8月14日～15日は活動休止。8月16日～22日は事前登録を受付。人数上限はあるが数値は未公表。",
@@ -2614,9 +2703,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D55#block269-55",
       "source_published_at": "2026-08-04",
       "source_updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "募集状況更新",
-      "remarks": "人数の数値は非公表。上限到達を0人とは表示しない。個人・団体の双方は各フォームの公式タイトルで確認。愛媛県団体、大型バス、1団体当たり人数は別途要調整",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "現行受付確認できず",
+      "remarks": "公式情報を取得できないことは募集なしを意味しない。現行の受入可否・残席・団体条件は御船町災害ボランティアセンターへ照会する",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
@@ -2626,11 +2715,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "8月16～22日を事前登録受付へ補正。8月14～15日は休止。",
+      "change_from_previous": "追加の現行告知を確認できないため、前回募集情報を履歴として保持し、現在募集中とは判定しない。",
       "changes_from_previous": [
         "8月3日～8日の募集期間が終了。8月9日以降の追加日程を確認できないため、募集中とは判定しない"
       ],
-      "previous_known_state": "定員到達",
+      "previous_known_state": "募集中（8月16日～22日・人数上限あり）",
       "application_urls": null,
       "activity_windows": [
         {
@@ -2652,11 +2741,30 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "form_status": "人数上限に達したため予約締切"
         }
       ],
+      "sources": [
+        {
+          "publisher": "御船町社会福祉協議会",
+          "title": "御船町災害ボランティアセンターよりお知らせです",
+          "url": "https://mifune-shakyo.jp/pages/51/detail=1/b_id=269/r_id=55#block269-55",
+          "published_at": "2026-08-04",
+          "updated_at": "2026-08-07",
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        },
+        {
+          "publisher": "御船町社会福祉協議会",
+          "title": "御船町災害ボランティアセンターの設置・開設について",
+          "url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D53",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "既知募集期間、8月9日以降の追加予定、軽トラック協力"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
-      "recheck_status": "差分あり",
-      "recheck_note": "8月13日確認で8月16～22日の事前登録を確認。8月14～15日は休止。団体・県外・大型バス・宿泊条件は要再確認。",
+      "recheck_status": "確認できず",
+      "recheck_note": "8月17日時点で追加の公式告知を確認できず。前回ページは8月16～22日の事前登録と人数上限を掲載する一方、申込フォームは公表日程の上限到達表示だったため、現行募集とは断定しない。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -2788,9 +2896,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D127",
       "source_published_at": "2026-08-05",
       "source_updated_at": "2026-08-05",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "change_status": "確認できず",
-      "remarks": "30人／日は8月8～10日の公表値で、現在の募集人数ではない。8月17日以降の再開を推測しない",
+      "remarks": "公式サイトの再取得不能。募集再開・団体・県外・大型バス・保険条件は要照会。募集なしとは判定していない",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
@@ -2822,11 +2930,30 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "form_status": "活動休止"
         }
       ],
+      "sources": [
+        {
+          "publisher": "嘉島町社会福祉協議会",
+          "title": "お盆期間中（8月11～16日）のボランティア活動休止について",
+          "url": "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D127",
+          "published_at": "2026-08-05",
+          "updated_at": "2026-08-05",
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        },
+        {
+          "publisher": "嘉島町社会福祉協議会",
+          "title": "嘉島町災害ボランティアセンターのボランティア事前受付（R8/8/8～8/10）について",
+          "url": "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D124",
+          "published_at": "2026-08-03",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月8日～10日、30人程度／日、熊本県内、中学生以上、フォーム終了"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": "7月31日の開設記事には『受け入れは今しばらくお待ちください』との記載が残る一方、同日付の事前受付記事と現在受付中の日別フォームがある。更新時刻が確認できる事前受付記事・フォームの現況を現在状態の根拠として採用",
       "portal_coverage_checked_at": null,
       "recheck_status": "確認できず",
-      "recheck_note": "公式サイトのTLSエラーで再取得できず。募集再開・団体・県外・大型バス・保険条件は要再確認。募集なしとは判定しない。",
+      "recheck_note": "8月17日時点で公式サイトの現行募集情報を取得できず。8月11～16日休止、8月17日以降未確認という前回値を保持し、募集なしとは判定しない。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -2906,7 +3033,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "municipality": "益城町",
       "district": "町内全域",
       "center_status": "開設・活動休止中",
-      "recruitment_status": "活動休止・8月17日以降要再確認",
+      "recruitment_status": "情報未確認（8月17日以降の再開条件要確認）",
       "activity_start_date": "2026-08-11",
       "activity_end_date": "2026-08-16",
       "activity_dates_text": "8月11日～16日は活動休止。8月17日以降は再開予定だが、募集日・申込方法・人数は8月13日確認時点で未公表。",
@@ -2957,9 +3084,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://www.mashiki-shakyo.or.jp/news/2010/",
       "source_published_at": "2026-08-06",
       "source_updated_at": "2026-08-06",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "確認できず",
-      "remarks": "70人／日は8月7～10日の公表値で現在の空き・募集人数ではない。再開予定を現在募集中とは表示しない",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "再開条件確認できず",
+      "remarks": "8月17日以降に再開予定とされたが、募集日・申込方法・人数の公式確認がないため、募集中とは表示しない",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
@@ -2969,11 +3096,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "8月17日以降は再開予定だが募集詳細未公表。",
+      "change_from_previous": "8月17日以降の募集詳細を確認できないため、休止後の現行受付を推測しない。",
       "changes_from_previous": [
         "第1期30人程度／日の定員到達後、8月7日～10日は追加40人を含む70人程度／日で再募集。8月11日～16日は休止"
       ],
-      "previous_known_state": "一時休止",
+      "previous_known_state": "活動休止・8月17日以降要再確認",
       "application_urls": null,
       "activity_windows": [
         {
@@ -2997,11 +3124,30 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "form_status": "詳細未公表"
         }
       ],
+      "sources": [
+        {
+          "publisher": "益城町社会福祉協議会",
+          "title": "【8/11〜8/16 ボランティア活動 一時休止のお知らせ】",
+          "url": "https://www.mashiki-shakyo.or.jp/news/2010/",
+          "published_at": "2026-08-06",
+          "updated_at": "2026-08-06",
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        },
+        {
+          "publisher": "益城町社会福祉協議会",
+          "title": "ボランティア募集を再開します",
+          "url": "https://www.mashiki-shakyo.or.jp/news/2000/",
+          "published_at": "2026-08-06",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月7日～10日、70人程度／日、軽トラック"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
       "recheck_status": "確認できず",
-      "recheck_note": "8月17日以降の募集詳細は未公表。前回の70人程度／日・全国募集は保持するが、現行受付とは扱わない。",
+      "recheck_note": "8月11～16日休止後の8月17日以降の再開条件・申込方法・人数を公式に確認できず。前回の休止情報を保持し、現行募集とは判定しない。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -3131,9 +3277,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://kosa-shakyo.or.jp/pages/50/",
       "source_published_at": null,
       "source_updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "change_status": "募集状況更新",
-      "remarks": "フォームの動的な残り枠は保存・表示・集計しない。九州圏内在住者の地域条件のため、愛媛県からの一般参加は対象外。団体フォームURL自体は公式ページで確認できず、推測しない",
+      "remarks": "九州圏内募集・団体個別調整の前回情報を保持。現行の個人枠・団体枠は申込前に公式ページへ照会する",
       "outside_kyushu_allowed": false,
       "ehime_participation_allowed": false,
       "outside_prefecture_note": "熊本県外の九州圏内は対象。愛媛県は一般募集対象外。",
@@ -3181,11 +3327,21 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "form_status": "個人フォーム受付中"
         }
       ],
+      "sources": [
+        {
+          "publisher": "甲佐町社会福祉協議会",
+          "title": "甲佐町災害ボランティアセンター",
+          "url": "https://kosa-shakyo.or.jp/pages/50/",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
-      "recheck_status": "差分あり",
-      "recheck_note": "8月13日確認で個人フォーム回答受付終了を確認。九州圏内募集、団体は個別調整。",
+      "recheck_status": "確認できず",
+      "recheck_note": "8月17日時点で、個人フォームの最新受付状態と団体調整の現行可否を公式ページ本文から確定できず。前回の活動日・地域条件を保持する。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -3331,9 +3487,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -3342,11 +3499,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
     {
       "municipality": "氷川町",
       "district": "町内全域",
-      "center_status": "開設・活動中（申込受付状況要確認）",
-      "recruitment_status": "受付終了・活動状況要確認",
+      "center_status": "開設・活動中",
+      "recruitment_status": "募集中（8月14日～20日・8月17日休止）",
       "activity_start_date": "2026-08-14",
-      "activity_end_date": "2026-08-20",
-      "activity_dates_text": "8月13日は休所、8月14～20日は募集日程（8月17日は休止）。フォームは8月13日確認時点で回答受付終了、理由は未公表。",
+      "activity_end_date": "2026-08-31",
+      "activity_dates_text": "8月14日～20日の公式募集を継続。8月17日・24日・31日は仮置場休業のため活動休止。それ以外の日は通常どおり活動予定。",
       "daily_capacity": null,
       "total_capacity": null,
       "capacity_unit": null,
@@ -3369,7 +3526,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       ],
       "activity_description": "被災者向けニーズ受付例として、倒れた家具・家財の移動整理、割れたガラスや小物の片付け清掃、壊れた家具・災害ごみの搬出、敷地内の瓦・ブロック片付け等を公表。参加者の活動日程は未公表。",
       "application_required": true,
-      "application_method": "公式Googleフォーム（現在は回答受付終了）",
+      "application_method": "公式Googleフォームによる事前登録。中学生以上。中学生は保護者同伴、高校生は同意書が必要。",
       "application_url": "https://forms.gle/qEg4x2XLFeRyLZF57",
       "application_deadline": "日別の受付状況による",
       "meeting_place": "氷川町災害ボランティアセンター（氷川町屋内ゲートボール場）",
@@ -3392,23 +3549,23 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "group_dispatch_assessment": "個人は全国募集。団体、1団体当たり人数及び大型バス条件は未公表・要照会",
       "ehime_dispatch_status": "個人は全国募集・団体受入要確認",
       "official_source_name": "氷川町社会福祉協議会",
-      "official_source_title": "災害ボランティア募集のお知らせ【8/14～20】",
-      "official_source_url": "https://hikawa-syakyo.jp/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%80%90%EF%BC%98-%EF%BC%91%EF%BC%94%EF%BD%9E%EF%BC%92%EF%BC%90%E3%80%91/",
-      "source_published_at": "2026-08-09",
-      "source_updated_at": "2026-08-09",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "募集状況更新",
-      "remarks": "公式記事の曜日表記は採用せず、日付のみ表示。受付終了を定員到達・募集終了とは推測しない",
+      "official_source_title": "氷川町災害ボランティアセンターの休所日のお知らせ",
+      "official_source_url": "https://hikawa-syakyo.jp/news/%E6%B0%B7%E5%B7%9D%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BC%91%E6%89%80%E6%97%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
+      "source_published_at": "2026-08-16",
+      "source_updated_at": "2026-08-16",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "休所日更新",
+      "remarks": "8月17・24・31日は活動休止。通常活動予定は実働完了を意味しない。熱中症警戒アラート時の変更・中止にも注意する",
       "outside_kyushu_allowed": true,
       "ehime_participation_allowed": true,
       "outside_prefecture_note": "全国募集。団体受入条件は別途確認が必要。",
-      "application_form_status": "回答受付終了（理由未公表）",
+      "application_form_status": "公式フォーム掲載（8月17日・24日・31日は活動休止）",
       "safety_note": "熱中症警戒アラート発表時は活動内容の変更又は中止の場合あり",
       "infrastructure_note": null,
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "8月13日休所を明記。フォーム受付終了は理由未公表のまま保持。",
+      "change_from_previous": "フォーム受付終了との前回表示を、公式ページ本文の募集フォーム掲載と休所日（8月17・24・31日）に更新。",
       "changes_from_previous": [
         "募集準備中から、8月8日～12日の全国募集へ変更"
       ],
@@ -3418,27 +3575,82 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
         {
           "start_date": "2026-08-14",
           "end_date": "2026-08-16",
-          "status": "受付終了・活動状況要確認",
-          "form_status": "回答受付終了"
+          "status": "募集中",
+          "form_status": "公式フォーム掲載"
         },
         {
           "start_date": "2026-08-17",
           "end_date": "2026-08-17",
           "status": "活動休止",
-          "form_status": null
+          "form_status": "仮置場休業"
         },
         {
           "start_date": "2026-08-18",
-          "end_date": "2026-08-20",
-          "status": "受付終了・活動状況要確認",
-          "form_status": "回答受付終了"
+          "end_date": "2026-08-23",
+          "status": "募集中",
+          "form_status": "通常活動予定"
+        },
+        {
+          "start_date": "2026-08-24",
+          "end_date": "2026-08-24",
+          "status": "活動休止",
+          "form_status": "仮置場休業"
+        },
+        {
+          "start_date": "2026-08-25",
+          "end_date": "2026-08-30",
+          "status": "募集中",
+          "form_status": "通常活動予定"
+        },
+        {
+          "start_date": "2026-08-31",
+          "end_date": "2026-08-31",
+          "status": "活動休止",
+          "form_status": "仮置場休業"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "氷川町社会福祉協議会",
+          "title": "災害ボランティア募集のお知らせ【8/14～20】",
+          "url": "https://hikawa-syakyo.jp/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%80%90%EF%BC%98-%EF%BC%91%EF%BC%94%EF%BD%9E%EF%BC%92%EF%BC%90%E3%80%91/",
+          "published_at": "2026-08-09",
+          "updated_at": "2026-08-09",
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月14～20日の募集フォーム、中学生以上等の参加条件"
+        },
+        {
+          "publisher": "氷川町社会福祉協議会",
+          "title": "氷川町災害ボランティアセンターの休所日のお知らせ",
+          "url": "https://hikawa-syakyo.jp/news/%E6%B0%B7%E5%B7%9D%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BC%91%E6%89%80%E6%97%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
+          "published_at": "2026-08-16",
+          "updated_at": "2026-08-16",
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月17・24・31日の活動休止と、それ以外は通常活動予定という8月16日告知"
+        },
+        {
+          "publisher": "氷川町社会福祉協議会",
+          "title": "災害ボランティア募集のお知らせ【8/14～20】",
+          "url": "https://hikawa-syakyo.jp/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8b%9f%e9%9b%86%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b%e3%80%90%ef%bc%98-%ef%bc%91%ef%bc%94%ef%bd%9e%ef%bc%92%ef%bc%90/",
+          "published_at": "2026-08-09",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        },
+        {
+          "publisher": "氷川町社会福祉協議会",
+          "title": "災害ボランティア募集のお知らせ（全国募集）",
+          "url": "https://hikawa-syakyo.jp/news/%E3%80%90%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%EF%BC%88%E5%85%A8%E5%9B%BD%E5%8B%9F%E9%9B%86%EF%BC%89/",
+          "published_at": "2026-08-05",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月8日～12日、全国募集、熱中症時の変更又は中止"
         }
       ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
       "recheck_status": "差分あり",
-      "recheck_note": "8月13日確認で8月13日休所とフォーム回答受付終了を確認。定員・団体・大型バス・宿泊・保険条件は要再確認。",
+      "recheck_note": "8月16日掲載の休所日告知と8月9日掲載の募集告知を再確認。8月17・24・31日は休止、それ以外は通常活動予定。募集フォームは公式ページに掲載されている。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -3518,7 +3730,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "municipality": "芦北町",
       "district": null,
       "center_status": "開設中（8月11～12日は事前登録団体のみ、8月13～16日休止、8月17日通常VC移行予定）",
-      "recruitment_status": "募集終了・8月17日以降要再確認",
+      "recruitment_status": "情報未確認（8月17日以降の通常VC移行条件要確認）",
       "activity_start_date": null,
       "activity_end_date": "2026-08-10",
       "activity_dates_text": "一般募集は8月10日で終了。8月11～12日は事前登録団体のみ、8月13～16日は活動休止、8月17日に通常VCへ移行予定。移行後の条件は未公表。",
@@ -3564,9 +3776,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://www.ashikita-shakyo.com/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8B%9F%E9%9B%86%E7%B5%82%E4%BA%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
       "source_published_at": "2026-08-10",
       "source_updated_at": "2026-08-10",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "募集状況更新",
-      "remarks": "県外対象地域は一般募集終了前の公表条件であり、現在参加可能を意味しない。8月17日以降を募集中とは表示しない。愛媛県団体受入は未確認",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "移行条件確認できず",
+      "remarks": "通常VC移行予定は実績・受入可能を意味しないため、現行条件は要照会",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": "公式に鹿児島県など県外居住者を明示。愛媛県を含むとは明示されていない。",
@@ -3576,11 +3788,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "8月13～16日の休止と8月17日通常VC移行予定を更新。",
+      "change_from_previous": "8月17日通常VC移行予定の後続条件を確認できないため、現行募集を推測しない。",
       "changes_from_previous": [
         "情報未確認から、8月7日活動開始、8月9日～14日の地域限定個人・団体募集へ変更"
       ],
-      "previous_known_state": "募集終了",
+      "previous_known_state": "募集終了・8月17日以降要再確認",
       "application_urls": {
         "individual": "https://forms.gle/eq2e9DF5WBhT8Xd48",
         "group": "https://forms.gle/MxJ1PGtwxKXFfLMd9"
@@ -3605,11 +3817,48 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "form_status": "通常VC移行予定・条件未公表"
         }
       ],
+      "sources": [
+        {
+          "publisher": "芦北町社会福祉協議会",
+          "title": "災害ボランティア募集終了のお知らせ",
+          "url": "https://www.ashikita-shakyo.com/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8b%9f%e9%9b%86%e7%b5%82%e4%ba%86%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
+          "published_at": "2026-08-10",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        },
+        {
+          "publisher": "芦北町社会福祉協議会",
+          "title": "災害ボランティア募集について",
+          "url": "https://www.ashikita-shakyo.com/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
+          "published_at": "2026-08-05",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "活動開始、対象地域、年齢、個人・団体フォーム"
+        },
+        {
+          "publisher": "芦北町社会福祉協議会（公式申込）",
+          "title": "個人申込フォーム",
+          "url": "https://forms.gle/eq2e9DF5WBhT8Xd48",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月9日～14日の受付と動的残枠"
+        },
+        {
+          "publisher": "芦北町社会福祉協議会（公式申込）",
+          "title": "団体申込フォーム",
+          "url": "https://forms.gle/MxJ1PGtwxKXFfLMd9",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月7日～14日、参加人数、交通手段"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
-      "recheck_status": "差分あり",
-      "recheck_note": "8月10日公式終了告知を再確認。8月13～16日休止、8月17日通常VC移行予定。移行後条件は要再確認。",
+      "recheck_status": "確認できず",
+      "recheck_note": "一般募集終了、8月17日通常VC移行予定という前回告知以降の現行条件を確認できず。移行予定を実績・募集中とは扱わない。",
       "researched": true,
       "activity_dates_confirmed": false,
       "calendar_overrides": {
@@ -3752,9 +4001,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -3827,9 +4077,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -3902,9 +4153,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -3977,9 +4229,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -4052,9 +4305,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -4127,9 +4381,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -4202,9 +4457,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -4277,9 +4533,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -4352,9 +4609,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -4427,9 +4685,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -4502,9 +4761,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": null,
       "application_urls": null,
       "activity_windows": null,
+      "sources": null,
       "district_capacities": null,
       "official_information_conflict": null,
-      "portal_coverage_checked_at": "2026-08-13T13:14:31+09:00",
+      "portal_coverage_checked_at": "2026-08-17T09:45:00+09:00",
       "recheck_status": null,
       "recheck_note": null,
       "researched": false,
@@ -4530,11 +4790,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
     {
       "municipality": "熊本市",
       "district": "市内全域",
-      "center_status": "開設・活動中（南区サテライトは8月10日開設予定）",
-      "recruitment_status": "定員到達",
-      "activity_start_date": "2026-08-05",
-      "activity_end_date": "2026-08-14",
-      "activity_dates_text": "本部8月5日～14日、南区サテライト8月10日～14日。第1期はいずれも募集締切。8月15日以降は住民ニーズを踏まえて再告知予定",
+      "center_status": "開設・活動中",
+      "recruitment_status": "受付終了（第2期定員到達）・8月24日以降要再確認",
+      "activity_start_date": "2026-08-16",
+      "activity_end_date": "2026-08-23",
+      "activity_dates_text": "第2期（8月16日～23日）は本部センター・南区サテライトとも必要人数到達で締切。8月24日以降はニーズ状況を踏まえ再告知予定。",
       "daily_capacity": null,
       "total_capacity": null,
       "capacity_unit": null,
@@ -4556,9 +4816,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       ],
       "activity_description": "倒れた家具や家財の搬出、住居周辺の片付け、災害ごみの分別、清掃、支援物資の仕分けを予定。高所・専門技術・危険作業、重機、解体・修繕は対象外",
       "application_required": true,
-      "application_method": "第1期は募集締切。8月15日以降は公式の再告知を確認",
-      "application_url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
-      "application_deadline": "第1期募集締切",
+      "application_method": "第2期は締切。8月24日以降はニーズ状況を踏まえて再告知予定。",
+      "application_url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
+      "application_deadline": "第2期（8月16日～23日）は必要人数到達で締切。8月24日以降は再告知予定。",
       "meeting_place": "熊本市社会福祉協議会",
       "address": "熊本市中央区新町2丁目4番27号 熊本市健康センター新町分室1階",
       "reception_time": "9:00～16:00",
@@ -4576,67 +4836,63 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "toll_exemption_information": null,
       "contact": "080-1545-0531",
       "email": "volunteer@kumamoto-city-csw.or.jp",
-      "group_dispatch_assessment": "第1期は定員到達。県外団体、愛媛県団体、1団体当たり人数及び大型バスは公表なし・要照会",
+      "group_dispatch_assessment": "第2期は両拠点とも必要人数到達・締切。県外団体、愛媛県団体、1団体当たり人数及び大型バスの第2期受入条件は公表なし・要照会。8月24日以降は再告知待ち。",
       "ehime_dispatch_status": "定員到達・団体受入要確認",
       "official_source_name": "熊本市社会福祉協議会",
-      "official_source_title": "募集締切【第1期 ボランティア追加募集について】",
-      "official_source_url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
-      "source_published_at": "2026-08-07",
-      "source_updated_at": "2026-08-07",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "変更なし・要再確認",
-      "remarks": "本部20人程度／日、南区サテライト40人程度／日は地区別の受入目安であり、合算した市全体人数・空き人数ではない",
+      "official_source_title": "８/１３時点での第２期ボランティア募集状況のお知らせ",
+      "official_source_url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
+      "source_published_at": "2026-08-14",
+      "source_updated_at": "2026-08-14",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "第2期募集締切",
+      "remarks": "第2期締切は公式告知に基づく。第1期の受入目安は旧公式ソースに保持し、現況の受入可能人数とは扱わない。8月24日以降の再募集は未発表",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
-      "application_form_status": null,
+      "application_form_status": "第2期締切（必要人数到達）",
       "safety_note": null,
       "infrastructure_note": null,
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "第1期募集締切の状態を保持。8月15日以降の再募集は未確認",
+      "change_from_previous": "第2期8月16～23日も両拠点が必要人数到達で締切。8月24日以降はニーズ状況を踏まえ再告知予定。",
       "changes_from_previous": [
-        "募集準備中から募集開始後、本部・南区サテライトとも第1期定員到達へ変更"
+        "第2期8月16～23日は本部センター・南区サテライトとも必要人数到達で締切。8月24日以降は再告知予定で現況未確定。"
       ],
-      "previous_known_state": "定員到達",
+      "previous_known_state": "定員到達（第1期）",
       "application_urls": null,
       "activity_windows": [
         {
-          "district": "本部センター",
-          "start_date": "2026-08-05",
-          "end_date": "2026-08-14",
+          "start_date": "2026-08-16",
+          "end_date": "2026-08-23",
           "status": "定員到達",
-          "capacity": 20,
-          "capacity_unit": "人程度／日",
-          "form_status": "募集締切"
-        },
-        {
-          "district": "南区サテライト",
-          "start_date": "2026-08-10",
-          "end_date": "2026-08-14",
-          "status": "定員到達",
-          "capacity": 40,
-          "capacity_unit": "人程度／日",
-          "form_status": "募集締切"
+          "form_status": "必要人数到達・締切"
         }
       ],
-      "district_capacities": [
+      "sources": [
         {
-          "district": "本部センター",
-          "daily_capacity": 20,
-          "capacity_unit": "人程度／日"
+          "publisher": "熊本市社会福祉協議会",
+          "title": "８/１３時点での第２期ボランティア募集状況のお知らせ",
+          "url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
+          "published_at": "2026-08-14",
+          "updated_at": "2026-08-14",
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "第2期8月16～23日の本部・南区サテライトの必要人数到達と、8月24日以降の再告知予定"
         },
         {
-          "district": "南区サテライト",
-          "daily_capacity": 40,
-          "capacity_unit": "人程度／日"
+          "publisher": "熊本市社会福祉協議会",
+          "title": "募集締切【第1期 ボランティア追加募集について】",
+          "url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
+          "published_at": "2026-08-07",
+          "updated_at": "2026-08-07",
+          "checked_at": "2026-08-17T09:45:00+09:00"
         }
       ],
+      "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
-      "recheck_status": "変更なし・要再確認",
-      "recheck_note": "8月11日確認時点で第1期募集締切後の新しい募集記事を確認できず、8月15日以降は再告知予定",
+      "recheck_status": "差分あり",
+      "recheck_note": "8月14日掲載の公式告知で、第2期8月16～23日は本部・南区とも必要人数到達による締切を確認。8月24日以降は再告知予定。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -4661,53 +4917,88 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "countable": false
         },
         "2026-08-15": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第1期募集締切・第2期情報確認",
           "countable": false
         },
         "2026-08-16": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-17": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-18": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-19": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-20": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-21": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-22": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-23": {
-          "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "key": "full",
+          "label": "第2期必要人数到達・締切",
           "countable": false
         },
         "2026-08-24": {
           "key": "unknown",
-          "label": "8月15日以降は再告知待ち",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-25": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-26": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-27": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-28": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-29": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-30": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
+          "countable": false
+        },
+        "2026-08-31": {
+          "key": "unknown",
+          "label": "再告知予定・現況未確認",
           "countable": false
         }
       }
@@ -4715,11 +5006,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
     {
       "municipality": "宇土市",
       "district": "市内全域",
-      "center_status": "開設・第2期活動予定",
-      "recruitment_status": "受付終了・詳細要確認",
+      "center_status": "開設・活動中",
+      "recruitment_status": "募集中（第2期・8月13日～19日・70人程度／日・全国）",
       "activity_start_date": "2026-08-13",
       "activity_end_date": "2026-08-19",
-      "activity_dates_text": "第2期：8月13日～19日、70人程度／日、全国募集。公式申込フォームは8月13日確認時に回答受付終了だが、理由は公表されていないため定員到達とは断定しない。5人以上の団体は個別照会。",
+      "activity_dates_text": "第2期は8月13日～19日。1日70人程度を目安に全国から募集。申込フォームは掲載中だが、定員到達時は受付終了となるため、公式ページとFacebookを申込前に再確認する。",
       "daily_capacity": 70,
       "total_capacity": null,
       "capacity_unit": "人程度／日",
@@ -4740,7 +5031,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       ],
       "activity_description": "家具類の移動・起こし、食器・衣類の整理等の屋内清掃、家周辺に落下した瓦の収集等",
       "application_required": true,
-      "application_method": "個人は公式活動申込フォーム。5人以上の団体はメール照会（前回確認値。現在の団体受入は再確認が必要）",
+      "application_method": "公式活動申込フォーム。定員到達時は受付終了となる場合があるため、公式ページ・Facebookで最新状況を確認。",
       "application_url": "https://forms.gle/FCwVAHmc4htUM5Au8",
       "application_deadline": "定員に達し次第終了の場合あり",
       "meeting_place": "宇土市旧教育委員会",
@@ -4763,44 +5054,61 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "group_dispatch_assessment": "全国募集で5人以上の団体照会経路あり。ただし1団体当たり人数、大型バス及び駐車条件は事前調整が必要",
       "ehime_dispatch_status": "全国募集・団体は個別調整",
       "official_source_name": "宇土市社会福祉協議会",
-      "official_source_title": "災害ボランティア第2期募集のお知らせ",
+      "official_source_title": "災害ボランティア第２期募集のお知らせ",
       "official_source_url": "https://www.utoshakyou.jp/volunteer_2026.html",
       "source_published_at": null,
       "source_updated_at": "2026-08-09",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "change_status": "募集状況更新",
-      "remarks": "70人程度／日は1日当たりの受入目安であり、期間合計・空き人数・不足人数ではない。フォーム受付終了を定員到達と表示しない",
+      "remarks": "申込フォーム掲載は参加確定を意味しない。定員到達時は受付終了となる場合があるため、参加前に公式ページ・Facebookを再確認する",
       "outside_kyushu_allowed": true,
       "ehime_participation_allowed": true,
       "outside_prefecture_note": "九州内に限定せず全国から受付。団体派遣は別途調整が必要。",
-      "application_form_status": "受付終了（理由未公表）",
+      "application_form_status": "公式申込フォーム掲載（定員到達時は受付終了）",
       "safety_note": null,
       "infrastructure_note": null,
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "受入目安を70人程度／日に更新。フォームは回答受付終了（理由未公表）。",
+      "change_from_previous": "公式ページ上の第2期募集と申込フォーム掲載を現況表示へ更新。定員到達とは断定しない。",
       "changes_from_previous": [
         "第1期8月3日～11日・20人程度／日・九州各県から、第2期8月13日～19日・50人程度／日・全国へ変更"
       ],
-      "previous_known_state": "募集中（第2期・50人程度／日）",
+      "previous_known_state": "受付終了・詳細要確認",
       "application_urls": null,
       "activity_windows": [
         {
           "start_date": "2026-08-13",
           "end_date": "2026-08-19",
-          "status": "受付終了・詳細要確認",
-          "capacity": 70,
-          "capacity_unit": "人程度／日",
-          "form_status": "受付終了（理由未公表）",
-          "application_url": "https://forms.gle/FCwVAHmc4htUM5Au8"
+          "status": "募集中",
+          "form_status": "公式申込フォーム掲載"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "宇土市社会福祉協議会",
+          "title": "災害ボランティア第２期募集のお知らせ",
+          "url": "https://www.utoshakyou.jp/volunteer_2026.html",
+          "published_at": null,
+          "updated_at": "2026-08-09",
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "第2期8月13～19日、1日70人程度、全国募集、申込フォーム掲載"
+        },
+        {
+          "publisher": "宇土市社会福祉協議会（公式申込）",
+          "title": "第2期活動申込フォーム",
+          "url": "https://forms.gle/FCwVAHmc4htUM5Au8",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "申込受付"
         }
       ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
       "recheck_status": "差分あり",
-      "recheck_note": "公式ページは第2期70人程度／日・全国募集を掲載。申込フォームは回答受付終了だが理由不明のため定員到達とは扱わない。",
+      "recheck_note": "公式ページを8月17日に再確認。第2期8月13～19日、70人程度／日、全国募集、申込フォーム掲載を確認。実際の残席はフォーム・Facebookで要確認。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -4887,10 +5195,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "municipality": "宇城市",
       "district": "避難所等",
       "center_status": "開設・活動中",
-      "recruitment_status": "受付終了・次回日程要確認",
-      "activity_start_date": "2026-08-15",
-      "activity_end_date": "2026-08-23",
-      "activity_dates_text": "8月15日～23日の日別申込を掲載。8月13日確認時点で各公表日の定員到達・締切を確認。団体フォームは掲載されているが、参加確定ではない。",
+      "recruitment_status": "募集中（8月17日～24日・26日～31日・事前申込）",
+      "activity_start_date": "2026-08-17",
+      "activity_end_date": "2026-08-31",
+      "activity_dates_text": "8月17日～24日、26日～31日は日別の事前申込を受付。8月25日は災害ごみ仮置場の受入中止・ニーズ整理のため活動なし。団体フォームへの申込だけでは参加確定ではない。",
       "daily_capacity": null,
       "total_capacity": null,
       "capacity_unit": null,
@@ -4900,7 +5208,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "outside_prefecture_allowed": true,
       "individual_allowed": true,
       "group_allowed": null,
-      "group_application_available": null,
+      "group_application_available": true,
       "minimum_age": "中学生以上",
       "age_conditions": "中学生は保護者同伴、高校生は保護者の参加同意書が必要",
       "activity_types": [
@@ -4911,7 +5219,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       ],
       "activity_description": "避難所支援・物資の受入れ及び搬送を先行募集。家屋（母屋）の片づけは8月5日受付開始、8月6日から本格活動。主な活動は住居内の片付けと住居・敷地内のがれき撤去",
       "application_required": true,
-      "application_method": "日別の公式申込フォーム。受付状況は各日のフォームで確認",
+      "application_method": "日別の公式事前申込フォーム。団体はページ下部の団体受付フォームで事前申込するが、申込時点では参加確定ではない。",
       "application_url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
       "application_deadline": "日別フォームの受付状況による",
       "meeting_place": "熊本県博物館ネットワークセンター",
@@ -4936,63 +5244,62 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_name": "宇城市社会福祉協議会",
       "official_source_title": "ボランティア活動へ参加を希望される方へ",
       "official_source_url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
-      "source_published_at": "2026-08-08",
-      "source_updated_at": "2026-08-13",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "募集状況更新",
-      "remarks": "日別フォームの受付状態は変動するため、申込み前に公式フォームを再確認する",
+      "source_published_at": "2026-08-17",
+      "source_updated_at": "2026-08-16",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "募集日程更新",
+      "remarks": "日別フォームの受付状態は変動するため、申込み前に公式ページの最新フォームを再確認する",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
-      "application_form_status": null,
+      "application_form_status": "8月17～24日・26～31日の日別フォーム掲載（8月25日は活動なし）",
       "safety_note": null,
       "infrastructure_note": null,
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "8月13日確認で当日受付終了。公表済み日程は定員到達・締切として更新。",
+      "change_from_previous": "8月17～24日・26～31日の日別事前申込を再開。8月25日は活動なし。団体申込フォームを掲載するが参加確定とは扱わない。",
       "changes_from_previous": [
         "限定募集から家屋片付け等の本格活動へ移行し、8月15日～23日の日別申込と軽トラック協力を追加"
       ],
-      "previous_known_state": "募集中（一部日定員到達）",
+      "previous_known_state": "受付終了・次回日程要確認",
       "application_urls": null,
       "activity_windows": [
         {
-          "start_date": "2026-08-15",
-          "end_date": "2026-08-15",
-          "status": "定員到達",
-          "form_status": "定数到達"
-        },
-        {
-          "start_date": "2026-08-16",
-          "end_date": "2026-08-16",
-          "status": "募集中",
-          "form_status": "受付中"
-        },
-        {
           "start_date": "2026-08-17",
-          "end_date": "2026-08-19",
-          "status": "定員到達",
-          "form_status": "定数到達"
-        },
-        {
-          "start_date": "2026-08-20",
-          "end_date": "2026-08-21",
+          "end_date": "2026-08-24",
           "status": "募集中",
-          "form_status": "受付中"
+          "form_status": "日別事前申込"
         },
         {
-          "start_date": "2026-08-22",
-          "end_date": "2026-08-23",
-          "status": "定員到達",
-          "form_status": "定数到達"
+          "start_date": "2026-08-25",
+          "end_date": "2026-08-25",
+          "status": "活動なし",
+          "form_status": "災害ごみ仮置場の受入中止・ニーズ整理"
+        },
+        {
+          "start_date": "2026-08-26",
+          "end_date": "2026-08-31",
+          "status": "募集中",
+          "form_status": "日別事前申込"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "宇城市社会福祉協議会",
+          "title": "ボランティア活動へ参加を希望される方へ",
+          "url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
+          "published_at": "2026-08-17",
+          "updated_at": "2026-08-16",
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月17～24日・26～31日の日別事前申込、8月25日の活動なし、軽トラック協力、団体申込は参加確定ではない旨"
         }
       ],
       "district_capacities": null,
       "official_information_conflict": "熊本県社会福祉協議会の市町一覧（2026年8月2日）は宇城市を『準備中』と表示。一方、宇城市社会福祉協議会（2026年8月3日）は避難所・物資支援の先行募集、8月4日～8日の事前登録、8月5日以降の家屋支援を掲載。一般募集と限定募集の範囲が異なるため、日別フォームの最新受付状況を優先確認する。",
       "portal_coverage_checked_at": null,
       "recheck_status": "差分あり",
-      "recheck_note": "8月13日公式告知で当日受付終了を確認。8月15～23日の個人受付は各日定員到達・締切。次回日程は要確認。",
+      "recheck_note": "8月17日掲載の公式告知を確認。8月17～24日・26～31日の日別事前申込、8月25日の活動なし、軽トラック協力依頼、団体申込は参加確定ではない旨を反映。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -5122,9 +5429,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://misatoshakyo.or.jp/pages/455/",
       "source_published_at": null,
       "source_updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "change_status": "変更なし・要再確認",
-      "remarks": "活動先までの移動・車両提供依頼は掲載情報として保持する",
+      "remarks": "募集休止は公式ページの記載に基づく。再開日・受入人数は不明のため、再開を推測しない",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
@@ -5141,11 +5448,21 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "previous_known_state": "募集休止（定員到達）",
       "application_urls": null,
       "activity_windows": [],
+      "sources": [
+        {
+          "publisher": "美里町社会福祉協議会",
+          "title": "令和8年熊本地震に伴う美里町災害ボランティアセンターの受付について",
+          "url": "https://misatoshakyo.or.jp/pages/455/",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": "熊本県社会福祉協議会の市町一覧（2026年8月2日）は美里町を『準備中』と表示。美里町社会福祉協議会（2026年8月3日）は8月4日～9日の一次募集と個人・団体フォームを掲載しているため、日別フォームの受付状況を優先確認する。",
       "portal_coverage_checked_at": null,
       "recheck_status": "変更なし・要再確認",
-      "recheck_note": "8月13日公式ページで募集休止を再確認。再開日は未公表。",
+      "recheck_note": "公式ページを8月17日に再確認。申込定員到達による募集休止を継続表示しており、再開日は公表されていない。",
       "researched": true,
       "activity_dates_confirmed": false,
       "calendar_overrides": {
@@ -5225,7 +5542,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "municipality": "御船町",
       "district": "町内全域",
       "center_status": "開設・活動中（公表日程あり）",
-      "recruitment_status": "募集中（8月16日～22日・人数上限あり）",
+      "recruitment_status": "情報未確認（前回募集ページ・申込状況を保持）",
       "activity_start_date": "2026-08-11",
       "activity_end_date": "2026-08-22",
       "activity_dates_text": "8月14日～15日は活動休止。8月16日～22日は事前登録を受付。人数上限はあるが数値は未公表。",
@@ -5276,9 +5593,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D55#block269-55",
       "source_published_at": "2026-08-04",
       "source_updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "募集状況更新",
-      "remarks": "人数の数値は非公表。上限到達を0人とは表示しない。個人・団体の双方は各フォームの公式タイトルで確認。愛媛県団体、大型バス、1団体当たり人数は別途要調整",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "現行受付確認できず",
+      "remarks": "公式情報を取得できないことは募集なしを意味しない。現行の受入可否・残席・団体条件は御船町災害ボランティアセンターへ照会する",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
@@ -5288,11 +5605,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "8月16～22日を事前登録受付へ補正。8月14～15日は休止。",
+      "change_from_previous": "追加の現行告知を確認できないため、前回募集情報を履歴として保持し、現在募集中とは判定しない。",
       "changes_from_previous": [
         "8月3日～8日の募集期間が終了。8月9日以降の追加日程を確認できないため、募集中とは判定しない"
       ],
-      "previous_known_state": "定員到達",
+      "previous_known_state": "募集中（8月16日～22日・人数上限あり）",
       "application_urls": null,
       "activity_windows": [
         {
@@ -5314,11 +5631,30 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "form_status": "人数上限に達したため予約締切"
         }
       ],
+      "sources": [
+        {
+          "publisher": "御船町社会福祉協議会",
+          "title": "御船町災害ボランティアセンターよりお知らせです",
+          "url": "https://mifune-shakyo.jp/pages/51/detail=1/b_id=269/r_id=55#block269-55",
+          "published_at": "2026-08-04",
+          "updated_at": "2026-08-07",
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        },
+        {
+          "publisher": "御船町社会福祉協議会",
+          "title": "御船町災害ボランティアセンターの設置・開設について",
+          "url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D53",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "既知募集期間、8月9日以降の追加予定、軽トラック協力"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
-      "recheck_status": "差分あり",
-      "recheck_note": "8月13日確認で8月16～22日の事前登録を確認。8月14～15日は休止。団体・県外・大型バス・宿泊条件は要再確認。",
+      "recheck_status": "確認できず",
+      "recheck_note": "8月17日時点で追加の公式告知を確認できず。前回ページは8月16～22日の事前登録と人数上限を掲載する一方、申込フォームは公表日程の上限到達表示だったため、現行募集とは断定しない。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -5450,9 +5786,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D127",
       "source_published_at": "2026-08-05",
       "source_updated_at": "2026-08-05",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "change_status": "確認できず",
-      "remarks": "30人／日は8月8～10日の公表値で、現在の募集人数ではない。8月17日以降の再開を推測しない",
+      "remarks": "公式サイトの再取得不能。募集再開・団体・県外・大型バス・保険条件は要照会。募集なしとは判定していない",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
@@ -5484,11 +5820,30 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "form_status": "活動休止"
         }
       ],
+      "sources": [
+        {
+          "publisher": "嘉島町社会福祉協議会",
+          "title": "お盆期間中（8月11～16日）のボランティア活動休止について",
+          "url": "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D127",
+          "published_at": "2026-08-05",
+          "updated_at": "2026-08-05",
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        },
+        {
+          "publisher": "嘉島町社会福祉協議会",
+          "title": "嘉島町災害ボランティアセンターのボランティア事前受付（R8/8/8～8/10）について",
+          "url": "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D124",
+          "published_at": "2026-08-03",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月8日～10日、30人程度／日、熊本県内、中学生以上、フォーム終了"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": "7月31日の開設記事には『受け入れは今しばらくお待ちください』との記載が残る一方、同日付の事前受付記事と現在受付中の日別フォームがある。更新時刻が確認できる事前受付記事・フォームの現況を現在状態の根拠として採用",
       "portal_coverage_checked_at": null,
       "recheck_status": "確認できず",
-      "recheck_note": "公式サイトのTLSエラーで再取得できず。募集再開・団体・県外・大型バス・保険条件は要再確認。募集なしとは判定しない。",
+      "recheck_note": "8月17日時点で公式サイトの現行募集情報を取得できず。8月11～16日休止、8月17日以降未確認という前回値を保持し、募集なしとは判定しない。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -5568,7 +5923,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "municipality": "益城町",
       "district": "町内全域",
       "center_status": "開設・活動休止中",
-      "recruitment_status": "活動休止・8月17日以降要再確認",
+      "recruitment_status": "情報未確認（8月17日以降の再開条件要確認）",
       "activity_start_date": "2026-08-11",
       "activity_end_date": "2026-08-16",
       "activity_dates_text": "8月11日～16日は活動休止。8月17日以降は再開予定だが、募集日・申込方法・人数は8月13日確認時点で未公表。",
@@ -5619,9 +5974,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://www.mashiki-shakyo.or.jp/news/2010/",
       "source_published_at": "2026-08-06",
       "source_updated_at": "2026-08-06",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "確認できず",
-      "remarks": "70人／日は8月7～10日の公表値で現在の空き・募集人数ではない。再開予定を現在募集中とは表示しない",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "再開条件確認できず",
+      "remarks": "8月17日以降に再開予定とされたが、募集日・申込方法・人数の公式確認がないため、募集中とは表示しない",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
@@ -5631,11 +5986,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "8月17日以降は再開予定だが募集詳細未公表。",
+      "change_from_previous": "8月17日以降の募集詳細を確認できないため、休止後の現行受付を推測しない。",
       "changes_from_previous": [
         "第1期30人程度／日の定員到達後、8月7日～10日は追加40人を含む70人程度／日で再募集。8月11日～16日は休止"
       ],
-      "previous_known_state": "一時休止",
+      "previous_known_state": "活動休止・8月17日以降要再確認",
       "application_urls": null,
       "activity_windows": [
         {
@@ -5659,11 +6014,30 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "form_status": "詳細未公表"
         }
       ],
+      "sources": [
+        {
+          "publisher": "益城町社会福祉協議会",
+          "title": "【8/11〜8/16 ボランティア活動 一時休止のお知らせ】",
+          "url": "https://www.mashiki-shakyo.or.jp/news/2010/",
+          "published_at": "2026-08-06",
+          "updated_at": "2026-08-06",
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        },
+        {
+          "publisher": "益城町社会福祉協議会",
+          "title": "ボランティア募集を再開します",
+          "url": "https://www.mashiki-shakyo.or.jp/news/2000/",
+          "published_at": "2026-08-06",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月7日～10日、70人程度／日、軽トラック"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
       "recheck_status": "確認できず",
-      "recheck_note": "8月17日以降の募集詳細は未公表。前回の70人程度／日・全国募集は保持するが、現行受付とは扱わない。",
+      "recheck_note": "8月11～16日休止後の8月17日以降の再開条件・申込方法・人数を公式に確認できず。前回の休止情報を保持し、現行募集とは判定しない。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -5793,9 +6167,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://kosa-shakyo.or.jp/pages/50/",
       "source_published_at": null,
       "source_updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "change_status": "募集状況更新",
-      "remarks": "フォームの動的な残り枠は保存・表示・集計しない。九州圏内在住者の地域条件のため、愛媛県からの一般参加は対象外。団体フォームURL自体は公式ページで確認できず、推測しない",
+      "remarks": "九州圏内募集・団体個別調整の前回情報を保持。現行の個人枠・団体枠は申込前に公式ページへ照会する",
       "outside_kyushu_allowed": false,
       "ehime_participation_allowed": false,
       "outside_prefecture_note": "熊本県外の九州圏内は対象。愛媛県は一般募集対象外。",
@@ -5843,11 +6217,21 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "form_status": "個人フォーム受付中"
         }
       ],
+      "sources": [
+        {
+          "publisher": "甲佐町社会福祉協議会",
+          "title": "甲佐町災害ボランティアセンター",
+          "url": "https://kosa-shakyo.or.jp/pages/50/",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
-      "recheck_status": "差分あり",
-      "recheck_note": "8月13日確認で個人フォーム回答受付終了を確認。九州圏内募集、団体は個別調整。",
+      "recheck_status": "確認できず",
+      "recheck_note": "8月17日時点で、個人フォームの最新受付状態と団体調整の現行可否を公式ページ本文から確定できず。前回の活動日・地域条件を保持する。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -5930,10 +6314,10 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "municipality": "八代市",
       "district": null,
       "center_status": "開設・活動中",
-      "recruitment_status": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）",
-      "activity_start_date": "2026-08-10",
-      "activity_end_date": "2026-08-16",
-      "activity_dates_text": "第1弾：8月10日～16日。個人第1弾フォームは受付終了。5人以上の団体は団体申込フォームで事前調整",
+      "recruitment_status": "限定募集（団体・個別照会／8月17日以降の一般枠は要確認）",
+      "activity_start_date": "2026-08-17",
+      "activity_end_date": null,
+      "activity_dates_text": "8月15日時点で個人第1弾終了後の専用電話・団体申込ルートを確認。8月17日以降の一般枠・日別人数は追加の公式公表を確認できないため、団体・個別照会の受付だけを現行経路として表示する。",
       "daily_capacity": null,
       "total_capacity": null,
       "capacity_unit": null,
@@ -5949,7 +6333,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "activity_types": [],
       "activity_description": null,
       "application_required": true,
-      "application_method": "個人第1弾フォームは受付終了。5人以上の団体は団体申込フォーム入力後に災害ボランティアセンターと活動日を調整",
+      "application_method": "団体申込フォーム又は災害ボランティアセンター専用電話で事前照会。一般個人枠の日程・人数は要確認。",
       "application_url": "https://9c3d4cf9.form.kintoneapp.com/public/saigaivc-yoyaku-dantai-08-yatsushiro",
       "application_deadline": "日別の受付状況による",
       "meeting_place": null,
@@ -5976,23 +6360,23 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
       "source_published_at": "2026-08-10",
       "source_updated_at": "2026-08-10",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "団体申込方法変更・個人フォーム受付終了",
-      "remarks": "公式ページの『全国各地から問合せ』は参加対象地域の明示ではないため、県外参加可とは判定しない",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "募集経路更新",
+      "remarks": "団体・個別照会の経路があることと参加確定は別。一般個人枠の日程・人数は八代市災害ボランティアセンターへ照会する",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": null,
-      "application_form_status": "団体申込フォーム受付中・個人第1弾フォーム受付終了",
+      "application_form_status": "団体申込・専用電話による個別照会を確認。一般個人枠は要確認",
       "safety_note": null,
       "infrastructure_note": null,
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "個人フォーム中心の案内から、5人以上の団体は団体申込フォームで事前調整へ変更",
+      "change_from_previous": "個人第1弾終了後の現行表示を団体・個別照会に限定し、一般個人枠は要確認に分離。",
       "changes_from_previous": [
         "設置準備中・募集準備中から、8月10日開始の第1弾募集へ変更"
       ],
-      "previous_known_state": "募集中（団体は電話で事前相談）",
+      "previous_known_state": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）",
       "application_urls": {
         "group": "https://9c3d4cf9.form.kintoneapp.com/public/saigaivc-yoyaku-dantai-08-yatsushiro"
       },
@@ -6005,13 +6389,23 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "application_url": "https://9c3d4cf9.form.kintoneapp.com/public/saigaivc-yoyaku-dantai-08-yatsushiro"
         }
       ],
+      "sources": [
+        {
+          "publisher": "八代市社会福祉協議会",
+          "title": "八代市災害ボランティアセンター／ボランティアの皆様へ（団体申込方法が変わります）",
+          "url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
+          "published_at": "2026-08-10",
+          "updated_at": "2026-08-10",
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
-      "recheck_status": "募集方法変更を確認",
-      "recheck_note": "8月10日付公式案内で、5人以上の団体は専用フォームによる事前調整へ変更。個人第1弾フォームは受付終了",
+      "recheck_status": "差分あり",
+      "recheck_note": "8月17日時点で、個人第1弾終了後も団体申込・専用電話による個別照会ルートを保持。一般個人枠の現行日程・人数は公表確認できず。",
       "researched": true,
-      "activity_dates_confirmed": true,
+      "activity_dates_confirmed": false,
       "calendar_overrides": {
         "2026-08-11": {
           "key": "recruiting",
@@ -6088,11 +6482,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
     {
       "municipality": "氷川町",
       "district": "町内全域",
-      "center_status": "開設・活動中（申込受付状況要確認）",
-      "recruitment_status": "受付終了・活動状況要確認",
+      "center_status": "開設・活動中",
+      "recruitment_status": "募集中（8月14日～20日・8月17日休止）",
       "activity_start_date": "2026-08-14",
-      "activity_end_date": "2026-08-20",
-      "activity_dates_text": "8月13日は休所、8月14～20日は募集日程（8月17日は休止）。フォームは8月13日確認時点で回答受付終了、理由は未公表。",
+      "activity_end_date": "2026-08-31",
+      "activity_dates_text": "8月14日～20日の公式募集を継続。8月17日・24日・31日は仮置場休業のため活動休止。それ以外の日は通常どおり活動予定。",
       "daily_capacity": null,
       "total_capacity": null,
       "capacity_unit": null,
@@ -6115,7 +6509,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       ],
       "activity_description": "被災者向けニーズ受付例として、倒れた家具・家財の移動整理、割れたガラスや小物の片付け清掃、壊れた家具・災害ごみの搬出、敷地内の瓦・ブロック片付け等を公表。参加者の活動日程は未公表。",
       "application_required": true,
-      "application_method": "公式Googleフォーム（現在は回答受付終了）",
+      "application_method": "公式Googleフォームによる事前登録。中学生以上。中学生は保護者同伴、高校生は同意書が必要。",
       "application_url": "https://forms.gle/qEg4x2XLFeRyLZF57",
       "application_deadline": "日別の受付状況による",
       "meeting_place": "氷川町災害ボランティアセンター（氷川町屋内ゲートボール場）",
@@ -6138,23 +6532,23 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "group_dispatch_assessment": "個人は全国募集。団体、1団体当たり人数及び大型バス条件は未公表・要照会",
       "ehime_dispatch_status": "個人は全国募集・団体受入要確認",
       "official_source_name": "氷川町社会福祉協議会",
-      "official_source_title": "災害ボランティア募集のお知らせ【8/14～20】",
-      "official_source_url": "https://hikawa-syakyo.jp/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%80%90%EF%BC%98-%EF%BC%91%EF%BC%94%EF%BD%9E%EF%BC%92%EF%BC%90%E3%80%91/",
-      "source_published_at": "2026-08-09",
-      "source_updated_at": "2026-08-09",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "募集状況更新",
-      "remarks": "公式記事の曜日表記は採用せず、日付のみ表示。受付終了を定員到達・募集終了とは推測しない",
+      "official_source_title": "氷川町災害ボランティアセンターの休所日のお知らせ",
+      "official_source_url": "https://hikawa-syakyo.jp/news/%E6%B0%B7%E5%B7%9D%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BC%91%E6%89%80%E6%97%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
+      "source_published_at": "2026-08-16",
+      "source_updated_at": "2026-08-16",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "休所日更新",
+      "remarks": "8月17・24・31日は活動休止。通常活動予定は実働完了を意味しない。熱中症警戒アラート時の変更・中止にも注意する",
       "outside_kyushu_allowed": true,
       "ehime_participation_allowed": true,
       "outside_prefecture_note": "全国募集。団体受入条件は別途確認が必要。",
-      "application_form_status": "回答受付終了（理由未公表）",
+      "application_form_status": "公式フォーム掲載（8月17日・24日・31日は活動休止）",
       "safety_note": "熱中症警戒アラート発表時は活動内容の変更又は中止の場合あり",
       "infrastructure_note": null,
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "8月13日休所を明記。フォーム受付終了は理由未公表のまま保持。",
+      "change_from_previous": "フォーム受付終了との前回表示を、公式ページ本文の募集フォーム掲載と休所日（8月17・24・31日）に更新。",
       "changes_from_previous": [
         "募集準備中から、8月8日～12日の全国募集へ変更"
       ],
@@ -6164,27 +6558,82 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
         {
           "start_date": "2026-08-14",
           "end_date": "2026-08-16",
-          "status": "受付終了・活動状況要確認",
-          "form_status": "回答受付終了"
+          "status": "募集中",
+          "form_status": "公式フォーム掲載"
         },
         {
           "start_date": "2026-08-17",
           "end_date": "2026-08-17",
           "status": "活動休止",
-          "form_status": null
+          "form_status": "仮置場休業"
         },
         {
           "start_date": "2026-08-18",
-          "end_date": "2026-08-20",
-          "status": "受付終了・活動状況要確認",
-          "form_status": "回答受付終了"
+          "end_date": "2026-08-23",
+          "status": "募集中",
+          "form_status": "通常活動予定"
+        },
+        {
+          "start_date": "2026-08-24",
+          "end_date": "2026-08-24",
+          "status": "活動休止",
+          "form_status": "仮置場休業"
+        },
+        {
+          "start_date": "2026-08-25",
+          "end_date": "2026-08-30",
+          "status": "募集中",
+          "form_status": "通常活動予定"
+        },
+        {
+          "start_date": "2026-08-31",
+          "end_date": "2026-08-31",
+          "status": "活動休止",
+          "form_status": "仮置場休業"
+        }
+      ],
+      "sources": [
+        {
+          "publisher": "氷川町社会福祉協議会",
+          "title": "災害ボランティア募集のお知らせ【8/14～20】",
+          "url": "https://hikawa-syakyo.jp/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%80%90%EF%BC%98-%EF%BC%91%EF%BC%94%EF%BD%9E%EF%BC%92%EF%BC%90%E3%80%91/",
+          "published_at": "2026-08-09",
+          "updated_at": "2026-08-09",
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月14～20日の募集フォーム、中学生以上等の参加条件"
+        },
+        {
+          "publisher": "氷川町社会福祉協議会",
+          "title": "氷川町災害ボランティアセンターの休所日のお知らせ",
+          "url": "https://hikawa-syakyo.jp/news/%E6%B0%B7%E5%B7%9D%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BC%91%E6%89%80%E6%97%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
+          "published_at": "2026-08-16",
+          "updated_at": "2026-08-16",
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月17・24・31日の活動休止と、それ以外は通常活動予定という8月16日告知"
+        },
+        {
+          "publisher": "氷川町社会福祉協議会",
+          "title": "災害ボランティア募集のお知らせ【8/14～20】",
+          "url": "https://hikawa-syakyo.jp/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8b%9f%e9%9b%86%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b%e3%80%90%ef%bc%98-%ef%bc%91%ef%bc%94%ef%bd%9e%ef%bc%92%ef%bc%90/",
+          "published_at": "2026-08-09",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        },
+        {
+          "publisher": "氷川町社会福祉協議会",
+          "title": "災害ボランティア募集のお知らせ（全国募集）",
+          "url": "https://hikawa-syakyo.jp/news/%E3%80%90%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%EF%BC%88%E5%85%A8%E5%9B%BD%E5%8B%9F%E9%9B%86%EF%BC%89/",
+          "published_at": "2026-08-05",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月8日～12日、全国募集、熱中症時の変更又は中止"
         }
       ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
       "recheck_status": "差分あり",
-      "recheck_note": "8月13日確認で8月13日休所とフォーム回答受付終了を確認。定員・団体・大型バス・宿泊・保険条件は要再確認。",
+      "recheck_note": "8月16日掲載の休所日告知と8月9日掲載の募集告知を再確認。8月17・24・31日は休止、それ以外は通常活動予定。募集フォームは公式ページに掲載されている。",
       "researched": true,
       "activity_dates_confirmed": true,
       "calendar_overrides": {
@@ -6264,7 +6713,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "municipality": "芦北町",
       "district": null,
       "center_status": "開設中（8月11～12日は事前登録団体のみ、8月13～16日休止、8月17日通常VC移行予定）",
-      "recruitment_status": "募集終了・8月17日以降要再確認",
+      "recruitment_status": "情報未確認（8月17日以降の通常VC移行条件要確認）",
       "activity_start_date": null,
       "activity_end_date": "2026-08-10",
       "activity_dates_text": "一般募集は8月10日で終了。8月11～12日は事前登録団体のみ、8月13～16日は活動休止、8月17日に通常VCへ移行予定。移行後の条件は未公表。",
@@ -6310,9 +6759,9 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_source_url": "https://www.ashikita-shakyo.com/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8B%9F%E9%9B%86%E7%B5%82%E4%BA%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
       "source_published_at": "2026-08-10",
       "source_updated_at": "2026-08-10",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "change_status": "募集状況更新",
-      "remarks": "県外対象地域は一般募集終了前の公表条件であり、現在参加可能を意味しない。8月17日以降を募集中とは表示しない。愛媛県団体受入は未確認",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "change_status": "移行条件確認できず",
+      "remarks": "通常VC移行予定は実績・受入可能を意味しないため、現行条件は要照会",
       "outside_kyushu_allowed": null,
       "ehime_participation_allowed": null,
       "outside_prefecture_note": "公式に鹿児島県など県外居住者を明示。愛媛県を含むとは明示されていない。",
@@ -6322,11 +6771,11 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "priority_note": null,
       "needs_reconfirmation": true,
       "information_confidence": "高（公式一次情報を確認）",
-      "change_from_previous": "8月13～16日の休止と8月17日通常VC移行予定を更新。",
+      "change_from_previous": "8月17日通常VC移行予定の後続条件を確認できないため、現行募集を推測しない。",
       "changes_from_previous": [
         "情報未確認から、8月7日活動開始、8月9日～14日の地域限定個人・団体募集へ変更"
       ],
-      "previous_known_state": "募集終了",
+      "previous_known_state": "募集終了・8月17日以降要再確認",
       "application_urls": {
         "individual": "https://forms.gle/eq2e9DF5WBhT8Xd48",
         "group": "https://forms.gle/MxJ1PGtwxKXFfLMd9"
@@ -6351,11 +6800,48 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "form_status": "通常VC移行予定・条件未公表"
         }
       ],
+      "sources": [
+        {
+          "publisher": "芦北町社会福祉協議会",
+          "title": "災害ボランティア募集終了のお知らせ",
+          "url": "https://www.ashikita-shakyo.com/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8b%9f%e9%9b%86%e7%b5%82%e4%ba%86%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
+          "published_at": "2026-08-10",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00"
+        },
+        {
+          "publisher": "芦北町社会福祉協議会",
+          "title": "災害ボランティア募集について",
+          "url": "https://www.ashikita-shakyo.com/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
+          "published_at": "2026-08-05",
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "活動開始、対象地域、年齢、個人・団体フォーム"
+        },
+        {
+          "publisher": "芦北町社会福祉協議会（公式申込）",
+          "title": "個人申込フォーム",
+          "url": "https://forms.gle/eq2e9DF5WBhT8Xd48",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月9日～14日の受付と動的残枠"
+        },
+        {
+          "publisher": "芦北町社会福祉協議会（公式申込）",
+          "title": "団体申込フォーム",
+          "url": "https://forms.gle/MxJ1PGtwxKXFfLMd9",
+          "published_at": null,
+          "updated_at": null,
+          "checked_at": "2026-08-17T09:45:00+09:00",
+          "facts_used": "8月7日～14日、参加人数、交通手段"
+        }
+      ],
       "district_capacities": null,
       "official_information_conflict": null,
       "portal_coverage_checked_at": null,
-      "recheck_status": "差分あり",
-      "recheck_note": "8月10日公式終了告知を再確認。8月13～16日休止、8月17日通常VC移行予定。移行後条件は要再確認。",
+      "recheck_status": "確認できず",
+      "recheck_note": "一般募集終了、8月17日通常VC移行予定という前回告知以降の現行条件を確認できず。移行予定を実績・募集中とは扱わない。",
       "researched": true,
       "activity_dates_confirmed": false,
       "calendar_overrides": {
@@ -6434,111 +6920,100 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
   ],
   "changes": [
     {
-      "municipality": "御船町",
-      "category": "募集状況更新",
-      "description": "8月16～22日を事前登録受付へ補正。8月14～15日は休止。",
-      "before": "定員到達",
-      "after": "募集中（8月16日～22日・人数上限あり）",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "source_updated_at": null,
-      "publisher": "御船町社会福祉協議会",
-      "url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D55#block269-55"
-    },
-    {
-      "municipality": "甲佐町",
-      "category": "募集状況更新",
-      "description": "個人フォームを受付終了（理由未公表）へ更新。",
-      "before": "募集中（一部日受付終了）",
-      "after": "受付終了・団体は要調整",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "source_updated_at": null,
-      "publisher": "甲佐町社会福祉協議会",
-      "url": "https://kosa-shakyo.or.jp/pages/50/"
-    },
-    {
       "municipality": "宇城市",
-      "category": "募集状況更新",
-      "description": "8月13日確認で当日受付終了。公表済み日程は定員到達・締切として更新。",
-      "before": "募集中（一部日定員到達）",
-      "after": "受付終了・次回日程要確認",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "source_updated_at": "2026-08-13",
+      "category": "募集日程更新",
+      "description": "8月17～24日・26～31日の日別事前申込を再開。8月25日は活動なし。団体申込フォームを掲載するが参加確定とは扱わない。",
+      "before": "受付終了・次回日程要確認",
+      "after": "募集中（8月17日～24日・26日～31日・事前申込）",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "source_updated_at": "2026-08-16",
       "publisher": "宇城市社会福祉協議会",
       "url": "https://www.shakyou-uki.jp/oshirase/12239-2/"
     },
     {
-      "municipality": "芦北町",
-      "category": "募集状況更新",
-      "description": "8月13～16日の休止と8月17日通常VC移行予定を更新。",
-      "before": "募集終了",
-      "after": "募集終了・8月17日以降要再確認",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "municipality": "氷川町",
+      "category": "休所日更新",
+      "description": "フォーム受付終了との前回表示を、公式ページ本文の募集フォーム掲載と休所日（8月17・24・31日）に更新。",
+      "before": "受付終了・活動状況要確認",
+      "after": "募集中（8月14日～20日・8月17日休止）",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "source_updated_at": "2026-08-16",
+      "publisher": "氷川町社会福祉協議会",
+      "url": "https://hikawa-syakyo.jp/news/%E6%B0%B7%E5%B7%9D%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BC%91%E6%89%80%E6%97%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/"
+    },
+    {
+      "municipality": "熊本市",
+      "category": "第2期募集締切",
+      "description": "第2期8月16～23日も両拠点が必要人数到達で締切。8月24日以降はニーズ状況を踏まえ再告知予定。",
+      "before": "定員到達（第1期）",
+      "after": "受付終了（第2期定員到達）・8月24日以降要再確認",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "source_updated_at": "2026-08-14",
+      "publisher": "熊本市社会福祉協議会",
+      "url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/"
+    },
+    {
+      "municipality": "八代市",
+      "category": "募集経路更新",
+      "description": "個人第1弾終了後の現行表示を団体・個別照会に限定し、一般個人枠は要確認に分離。",
+      "before": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）",
+      "after": "限定募集（団体・個別照会／8月17日以降の一般枠は要確認）",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "source_updated_at": "2026-08-10",
-      "publisher": "芦北町社会福祉協議会",
-      "url": "https://www.ashikita-shakyo.com/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8B%9F%E9%9B%86%E7%B5%82%E4%BA%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/"
+      "publisher": "八代市社会福祉協議会",
+      "url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html"
     },
     {
       "municipality": "宇土市",
       "category": "募集状況更新",
-      "description": "受入目安を70人程度／日に更新。フォームは回答受付終了（理由未公表）。",
-      "before": "募集中（第2期・50人程度／日）",
-      "after": "受付終了・詳細要確認",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "description": "公式ページ上の第2期募集と申込フォーム掲載を現況表示へ更新。定員到達とは断定しない。",
+      "before": "受付終了・詳細要確認",
+      "after": "募集中（第2期・8月13日～19日・70人程度／日・全国）",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "source_updated_at": "2026-08-09",
       "publisher": "宇土市社会福祉協議会",
       "url": "https://www.utoshakyou.jp/volunteer_2026.html"
-    },
-    {
-      "municipality": "氷川町",
-      "category": "募集状況更新",
-      "description": "8月13日休所を明記。フォーム受付終了は理由未公表のまま保持。",
-      "before": "受付終了・活動状況要確認",
-      "after": "受付終了・活動状況要確認",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "source_updated_at": "2026-08-09",
-      "publisher": "氷川町社会福祉協議会",
-      "url": "https://hikawa-syakyo.jp/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%80%90%EF%BC%98-%EF%BC%91%EF%BC%94%EF%BD%9E%EF%BC%92%EF%BC%90%E3%80%91/"
     }
   ],
   "rechecks": [
     {
       "municipality": "熊本市",
-      "status": "変更なし・要再確認",
-      "note": "8月11日確認時点で第1期募集締切後の新しい募集記事を確認できず、8月15日以降は再告知予定",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "source_updated_at": "2026-08-07",
+      "status": "差分あり",
+      "note": "8月14日掲載の公式告知で、第2期8月16～23日は本部・南区とも必要人数到達による締切を確認。8月24日以降は再告知予定。",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "source_updated_at": "2026-08-14",
       "publisher": "熊本市社会福祉協議会",
-      "url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
-      "before": "定員到達",
-      "after": "定員到達"
+      "url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
+      "before": "定員到達（第1期）",
+      "after": "受付終了（第2期定員到達）・8月24日以降要再確認"
     },
     {
       "municipality": "宇土市",
       "status": "差分あり",
-      "note": "公式ページは第2期70人程度／日・全国募集を掲載。申込フォームは回答受付終了だが理由不明のため定員到達とは扱わない。",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "note": "公式ページを8月17日に再確認。第2期8月13～19日、70人程度／日、全国募集、申込フォーム掲載を確認。実際の残席はフォーム・Facebookで要確認。",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "source_updated_at": "2026-08-09",
       "publisher": "宇土市社会福祉協議会",
       "url": "https://www.utoshakyou.jp/volunteer_2026.html",
-      "before": "募集中（第2期・50人程度／日）",
-      "after": "受付終了・詳細要確認"
+      "before": "受付終了・詳細要確認",
+      "after": "募集中（第2期・8月13日～19日・70人程度／日・全国）"
     },
     {
       "municipality": "宇城市",
       "status": "差分あり",
-      "note": "8月13日公式告知で当日受付終了を確認。8月15～23日の個人受付は各日定員到達・締切。次回日程は要確認。",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "source_updated_at": "2026-08-13",
+      "note": "8月17日掲載の公式告知を確認。8月17～24日・26～31日の日別事前申込、8月25日の活動なし、軽トラック協力依頼、団体申込は参加確定ではない旨を反映。",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "source_updated_at": "2026-08-16",
       "publisher": "宇城市社会福祉協議会",
       "url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
-      "before": "募集中（一部日定員到達）",
-      "after": "受付終了・次回日程要確認"
+      "before": "受付終了・次回日程要確認",
+      "after": "募集中（8月17日～24日・26日～31日・事前申込）"
     },
     {
       "municipality": "美里町",
       "status": "変更なし・要再確認",
-      "note": "8月13日公式ページで募集休止を再確認。再開日は未公表。",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "note": "公式ページを8月17日に再確認。申込定員到達による募集休止を継続表示しており、再開日は公表されていない。",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "source_updated_at": null,
       "publisher": "美里町社会福祉協議会",
       "url": "https://misatoshakyo.or.jp/pages/455/",
@@ -6547,20 +7022,20 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
     },
     {
       "municipality": "御船町",
-      "status": "差分あり",
-      "note": "8月13日確認で8月16～22日の事前登録を確認。8月14～15日は休止。団体・県外・大型バス・宿泊条件は要再確認。",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "status": "確認できず",
+      "note": "8月17日時点で追加の公式告知を確認できず。前回ページは8月16～22日の事前登録と人数上限を掲載する一方、申込フォームは公表日程の上限到達表示だったため、現行募集とは断定しない。",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "source_updated_at": null,
       "publisher": "御船町社会福祉協議会",
       "url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D55#block269-55",
-      "before": "定員到達",
-      "after": "募集中（8月16日～22日・人数上限あり）"
+      "before": "募集中（8月16日～22日・人数上限あり）",
+      "after": "情報未確認（前回募集ページ・申込状況を保持）"
     },
     {
       "municipality": "嘉島町",
       "status": "確認できず",
-      "note": "公式サイトのTLSエラーで再取得できず。募集再開・団体・県外・大型バス・保険条件は要再確認。募集なしとは判定しない。",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "note": "8月17日時点で公式サイトの現行募集情報を取得できず。8月11～16日休止、8月17日以降未確認という前回値を保持し、募集なしとは判定しない。",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "source_updated_at": "2026-08-05",
       "publisher": "嘉島町社会福祉協議会",
       "url": "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D127",
@@ -6570,19 +7045,19 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
     {
       "municipality": "益城町",
       "status": "確認できず",
-      "note": "8月17日以降の募集詳細は未公表。前回の70人程度／日・全国募集は保持するが、現行受付とは扱わない。",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "note": "8月11～16日休止後の8月17日以降の再開条件・申込方法・人数を公式に確認できず。前回の休止情報を保持し、現行募集とは判定しない。",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "source_updated_at": "2026-08-06",
       "publisher": "益城町社会福祉協議会",
       "url": "https://www.mashiki-shakyo.or.jp/news/2010/",
-      "before": "一時休止",
-      "after": "活動休止・8月17日以降要再確認"
+      "before": "活動休止・8月17日以降要再確認",
+      "after": "情報未確認（8月17日以降の再開条件要確認）"
     },
     {
       "municipality": "甲佐町",
-      "status": "差分あり",
-      "note": "8月13日確認で個人フォーム回答受付終了を確認。九州圏内募集、団体は個別調整。",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "status": "確認できず",
+      "note": "8月17日時点で、個人フォームの最新受付状態と団体調整の現行可否を公式ページ本文から確定できず。前回の活動日・地域条件を保持する。",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "source_updated_at": null,
       "publisher": "甲佐町社会福祉協議会",
       "url": "https://kosa-shakyo.or.jp/pages/50/",
@@ -6591,36 +7066,36 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
     },
     {
       "municipality": "八代市",
-      "status": "募集方法変更を確認",
-      "note": "8月10日付公式案内で、5人以上の団体は専用フォームによる事前調整へ変更。個人第1弾フォームは受付終了",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "status": "差分あり",
+      "note": "8月17日時点で、個人第1弾終了後も団体申込・専用電話による個別照会ルートを保持。一般個人枠の現行日程・人数は公表確認できず。",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "source_updated_at": "2026-08-10",
       "publisher": "八代市社会福祉協議会",
       "url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
-      "before": "募集中（団体は電話で事前相談）",
-      "after": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）"
+      "before": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）",
+      "after": "限定募集（団体・個別照会／8月17日以降の一般枠は要確認）"
     },
     {
       "municipality": "氷川町",
       "status": "差分あり",
-      "note": "8月13日確認で8月13日休所とフォーム回答受付終了を確認。定員・団体・大型バス・宿泊・保険条件は要再確認。",
-      "checked_at": "2026-08-13T13:14:31+09:00",
-      "source_updated_at": "2026-08-09",
+      "note": "8月16日掲載の休所日告知と8月9日掲載の募集告知を再確認。8月17・24・31日は休止、それ以外は通常活動予定。募集フォームは公式ページに掲載されている。",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "source_updated_at": "2026-08-16",
       "publisher": "氷川町社会福祉協議会",
-      "url": "https://hikawa-syakyo.jp/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%80%90%EF%BC%98-%EF%BC%91%EF%BC%94%EF%BD%9E%EF%BC%92%EF%BC%90%E3%80%91/",
+      "url": "https://hikawa-syakyo.jp/news/%E6%B0%B7%E5%B7%9D%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BC%91%E6%89%80%E6%97%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
       "before": "受付終了・活動状況要確認",
-      "after": "受付終了・活動状況要確認"
+      "after": "募集中（8月14日～20日・8月17日休止）"
     },
     {
       "municipality": "芦北町",
-      "status": "差分あり",
-      "note": "8月10日公式終了告知を再確認。8月13～16日休止、8月17日通常VC移行予定。移行後条件は要再確認。",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "status": "確認できず",
+      "note": "一般募集終了、8月17日通常VC移行予定という前回告知以降の現行条件を確認できず。移行予定を実績・募集中とは扱わない。",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "source_updated_at": "2026-08-10",
       "publisher": "芦北町社会福祉協議会",
       "url": "https://www.ashikita-shakyo.com/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8B%9F%E9%9B%86%E7%B5%82%E4%BA%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
-      "before": "募集終了",
-      "after": "募集終了・8月17日以降要再確認"
+      "before": "募集終了・8月17日以降要再確認",
+      "after": "情報未確認（8月17日以降の通常VC移行条件要確認）"
     }
   ],
   "statewide": {
@@ -6657,7 +7132,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "url": "https://www.fukushi-kumamoto.or.jp/pages/291/detail=1/b_id=4334/r_id=2213#block4334-2213",
           "published_at": "2026-08-01",
           "updated_at": null,
-          "checked_at": "2026-08-13T13:14:31+09:00",
+          "checked_at": "2026-08-17T09:45:00+09:00",
           "used_for_this_event": true
         }
       },
@@ -6688,7 +7163,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "url": "https://www.saigaivc.com/r8kumamoto/",
           "published_at": null,
           "updated_at": "2026-07-31",
-          "checked_at": "2026-08-13T13:14:31+09:00",
+          "checked_at": "2026-08-17T09:45:00+09:00",
           "used_for_this_event": true
         }
       },
@@ -6719,7 +7194,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "url": "https://www.pref.kumamoto.jp/soshiki/222/275364.html",
           "published_at": null,
           "updated_at": "2026-08-01",
-          "checked_at": "2026-08-13T13:14:31+09:00",
+          "checked_at": "2026-08-17T09:45:00+09:00",
           "used_for_this_event": true
         }
       },
@@ -6750,7 +7225,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
           "url": "https://www.fukushi-kumamoto.or.jp/pages/291/detail=1/b_id=4334/r_id=2215#block4334-2215",
           "published_at": "2026-08-02",
           "updated_at": null,
-          "checked_at": "2026-08-13T13:14:31+09:00",
+          "checked_at": "2026-08-17T09:45:00+09:00",
           "used_for_this_event": true
         }
       }
@@ -7067,47 +7542,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
   ],
   "update_history": [
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
-      "municipality": "美里町",
-      "before": "募集休止（定員到達）",
-      "after": "募集休止（定員到達）",
-      "change_type": "変更なし・要再確認",
-      "publisher": "美里町社会福祉協議会",
-      "official_updated_at": null,
-      "official_url": "https://misatoshakyo.or.jp/pages/455/"
-    },
-    {
-      "changed_at": "2026-08-13T13:14:31+09:00",
-      "municipality": "芦北町",
-      "before": "募集終了",
-      "after": "募集終了・8月17日以降要再確認",
-      "change_type": "募集状況更新",
-      "publisher": "芦北町社会福祉協議会",
-      "official_updated_at": "2026-08-10",
-      "official_url": "https://www.ashikita-shakyo.com/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8B%9F%E9%9B%86%E7%B5%82%E4%BA%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/"
-    },
-    {
-      "changed_at": "2026-08-13T13:14:31+09:00",
-      "municipality": "氷川町",
-      "before": "受付終了・活動状況要確認",
-      "after": "受付終了・活動状況要確認",
-      "change_type": "募集状況更新",
-      "publisher": "氷川町社会福祉協議会",
-      "official_updated_at": "2026-08-09",
-      "official_url": "https://hikawa-syakyo.jp/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%80%90%EF%BC%98-%EF%BC%91%EF%BC%94%EF%BD%9E%EF%BC%92%EF%BC%90%E3%80%91/"
-    },
-    {
-      "changed_at": "2026-08-13T13:14:31+09:00",
-      "municipality": "八代市",
-      "before": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）",
-      "after": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）",
-      "change_type": "再確認・変更なし",
-      "publisher": "八代市社会福祉協議会",
-      "official_updated_at": "2026-08-10",
-      "official_url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html"
-    },
-    {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "甲佐町",
       "before": "募集中（一部日受付終了）",
       "after": "受付終了・団体は要調整",
@@ -7117,17 +7552,77 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_url": "https://kosa-shakyo.or.jp/pages/50/"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
+      "municipality": "御船町",
+      "before": "募集中（8月16日～22日・人数上限あり）",
+      "after": "情報未確認（前回募集ページ・申込状況を保持）",
+      "change_type": "現行受付確認できず",
+      "publisher": "御船町社会福祉協議会",
+      "official_updated_at": null,
+      "official_url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D55#block269-55"
+    },
+    {
+      "changed_at": "2026-08-17T09:45:00+09:00",
+      "municipality": "美里町",
+      "before": "募集休止（定員到達）",
+      "after": "募集休止（定員到達）",
+      "change_type": "変更なし・要再確認",
+      "publisher": "美里町社会福祉協議会",
+      "official_updated_at": null,
+      "official_url": "https://misatoshakyo.or.jp/pages/455/"
+    },
+    {
+      "changed_at": "2026-08-17T09:45:00+09:00",
+      "municipality": "芦北町",
+      "before": "情報未確認（8月17日以降の通常VC移行条件要確認）",
+      "after": "情報未確認（8月17日以降の通常VC移行条件要確認）",
+      "change_type": "再確認・確認できず",
+      "publisher": "芦北町社会福祉協議会",
+      "official_updated_at": "2026-08-10",
+      "official_url": "https://www.ashikita-shakyo.com/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8B%9F%E9%9B%86%E7%B5%82%E4%BA%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/"
+    },
+    {
+      "changed_at": "2026-08-17T09:45:00+09:00",
+      "municipality": "氷川町",
+      "before": "受付終了・活動状況要確認",
+      "after": "募集中（8月14日～20日・8月17日休止）",
+      "change_type": "休所日更新",
+      "publisher": "氷川町社会福祉協議会",
+      "official_updated_at": "2026-08-16",
+      "official_url": "https://hikawa-syakyo.jp/news/%E6%B0%B7%E5%B7%9D%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BC%91%E6%89%80%E6%97%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/"
+    },
+    {
+      "changed_at": "2026-08-17T09:45:00+09:00",
+      "municipality": "八代市",
+      "before": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）",
+      "after": "限定募集（団体・個別照会／8月17日以降の一般枠は要確認）",
+      "change_type": "募集経路更新",
+      "publisher": "八代市社会福祉協議会",
+      "official_updated_at": "2026-08-10",
+      "official_url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html"
+    },
+    {
+      "changed_at": "2026-08-17T09:45:00+09:00",
+      "municipality": "甲佐町",
+      "before": "受付終了・団体は要調整",
+      "after": "受付終了・団体は要調整",
+      "change_type": "再確認・確認できず",
+      "publisher": "甲佐町社会福祉協議会",
+      "official_updated_at": null,
+      "official_url": "https://kosa-shakyo.or.jp/pages/50/"
+    },
+    {
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "益城町",
-      "before": "活動休止・8月17日以降要再確認",
-      "after": "活動休止・8月17日以降要再確認",
+      "before": "情報未確認（8月17日以降の再開条件要確認）",
+      "after": "情報未確認（8月17日以降の再開条件要確認）",
       "change_type": "再確認・確認できず",
       "publisher": "益城町社会福祉協議会",
       "official_updated_at": "2026-08-06",
       "official_url": "https://www.mashiki-shakyo.or.jp/news/2010/"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "嘉島町",
       "before": "情報未確認（前回値保持）",
       "after": "情報未確認（前回値保持）",
@@ -7137,17 +7632,17 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_url": "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D127"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "御船町",
-      "before": "定員到達",
-      "after": "募集中（8月16日～22日・人数上限あり）",
-      "change_type": "募集状況更新",
+      "before": "情報未確認（前回募集ページ・申込状況を保持）",
+      "after": "情報未確認（前回募集ページ・申込状況を保持）",
+      "change_type": "再確認・確認できず",
       "publisher": "御船町社会福祉協議会",
       "official_updated_at": null,
       "official_url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D55#block269-55"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "美里町",
       "before": "募集休止（定員到達）",
       "after": "募集休止（定員到達）",
@@ -7157,67 +7652,67 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_url": "https://misatoshakyo.or.jp/pages/455/"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "宇城市",
-      "before": "募集中（一部日定員到達）",
-      "after": "受付終了・次回日程要確認",
-      "change_type": "募集状況更新",
+      "before": "受付終了・次回日程要確認",
+      "after": "募集中（8月17日～24日・26日～31日・事前申込）",
+      "change_type": "募集日程更新",
       "publisher": "宇城市社会福祉協議会",
-      "official_updated_at": "2026-08-13",
+      "official_updated_at": "2026-08-16",
       "official_url": "https://www.shakyou-uki.jp/oshirase/12239-2/"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "宇土市",
-      "before": "募集中（第2期・50人程度／日）",
-      "after": "受付終了・詳細要確認",
+      "before": "受付終了・詳細要確認",
+      "after": "募集中（第2期・8月13日～19日・70人程度／日・全国）",
       "change_type": "募集状況更新",
       "publisher": "宇土市社会福祉協議会",
       "official_updated_at": "2026-08-09",
       "official_url": "https://www.utoshakyou.jp/volunteer_2026.html"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "熊本市",
-      "before": "定員到達",
-      "after": "定員到達",
-      "change_type": "再確認・変更なし",
+      "before": "定員到達（第1期）",
+      "after": "受付終了（第2期定員到達）・8月24日以降要再確認",
+      "change_type": "第2期募集締切",
       "publisher": "熊本市社会福祉協議会",
-      "official_updated_at": "2026-08-07",
-      "official_url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/"
+      "official_updated_at": "2026-08-14",
+      "official_url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "熊本市",
       "before": null,
-      "after": "定員到達",
+      "after": "受付終了（第2期定員到達）・8月24日以降要再確認",
       "change_type": "初回登録",
       "publisher": "熊本市社会福祉協議会",
-      "official_updated_at": "2026-08-07",
-      "official_url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/"
+      "official_updated_at": "2026-08-14",
+      "official_url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "宇土市",
       "before": null,
-      "after": "受付終了・詳細要確認",
+      "after": "募集中（第2期・8月13日～19日・70人程度／日・全国）",
       "change_type": "初回登録",
       "publisher": "宇土市社会福祉協議会",
       "official_updated_at": "2026-08-09",
       "official_url": "https://www.utoshakyou.jp/volunteer_2026.html"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "宇城市",
       "before": null,
-      "after": "受付終了・次回日程要確認",
+      "after": "募集中（8月17日～24日・26日～31日・事前申込）",
       "change_type": "初回登録",
       "publisher": "宇城市社会福祉協議会",
-      "official_updated_at": "2026-08-13",
+      "official_updated_at": "2026-08-16",
       "official_url": "https://www.shakyou-uki.jp/oshirase/12239-2/"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "美里町",
       "before": null,
       "after": "募集休止（定員到達）",
@@ -7227,17 +7722,17 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_url": "https://misatoshakyo.or.jp/pages/455/"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "御船町",
       "before": null,
-      "after": "募集中（8月16日～22日・人数上限あり）",
+      "after": "情報未確認（前回募集ページ・申込状況を保持）",
       "change_type": "初回登録",
       "publisher": "御船町社会福祉協議会",
       "official_updated_at": null,
       "official_url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D55#block269-55"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "嘉島町",
       "before": null,
       "after": "情報未確認（前回値保持）",
@@ -7247,17 +7742,17 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_url": "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D127"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "益城町",
       "before": null,
-      "after": "活動休止・8月17日以降要再確認",
+      "after": "情報未確認（8月17日以降の再開条件要確認）",
       "change_type": "初回登録",
       "publisher": "益城町社会福祉協議会",
       "official_updated_at": "2026-08-06",
       "official_url": "https://www.mashiki-shakyo.or.jp/news/2010/"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "甲佐町",
       "before": null,
       "after": "受付終了・団体は要調整",
@@ -7267,30 +7762,30 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "official_url": "https://kosa-shakyo.or.jp/pages/50/"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "八代市",
       "before": null,
-      "after": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）",
+      "after": "限定募集（団体・個別照会／8月17日以降の一般枠は要確認）",
       "change_type": "初回登録",
       "publisher": "八代市社会福祉協議会",
       "official_updated_at": "2026-08-10",
       "official_url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "氷川町",
       "before": null,
-      "after": "受付終了・活動状況要確認",
+      "after": "募集中（8月14日～20日・8月17日休止）",
       "change_type": "初回登録",
       "publisher": "氷川町社会福祉協議会",
-      "official_updated_at": "2026-08-09",
-      "official_url": "https://hikawa-syakyo.jp/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%80%90%EF%BC%98-%EF%BC%91%EF%BC%94%EF%BD%9E%EF%BC%92%EF%BC%90%E3%80%91/"
+      "official_updated_at": "2026-08-16",
+      "official_url": "https://hikawa-syakyo.jp/news/%E6%B0%B7%E5%B7%9D%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BC%91%E6%89%80%E6%97%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/"
     },
     {
-      "changed_at": "2026-08-13T13:14:31+09:00",
+      "changed_at": "2026-08-17T09:45:00+09:00",
       "municipality": "芦北町",
       "before": null,
-      "after": "募集終了・8月17日以降要再確認",
+      "after": "情報未確認（8月17日以降の通常VC移行条件要確認）",
       "change_type": "初回登録",
       "publisher": "芦北町社会福祉協議会",
       "official_updated_at": "2026-08-10",
@@ -7298,30 +7793,20 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
     },
     {
       "changed_at": "2026-08-10",
-      "municipality": "八代市",
-      "before": "募集中（団体は電話で事前相談）",
-      "after": "募集中（団体申込フォーム掲載・個人第1弾フォーム受付終了）",
-      "change_type": "団体申込方法変更・個人フォーム受付終了",
-      "publisher": "八代市社会福祉協議会",
+      "municipality": "芦北町",
+      "before": "募集終了・8月17日以降要再確認",
+      "after": "情報未確認（8月17日以降の通常VC移行条件要確認）",
+      "change_type": "移行条件確認できず",
+      "publisher": "芦北町社会福祉協議会",
       "official_updated_at": "2026-08-10",
-      "official_url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html"
-    },
-    {
-      "changed_at": "2026-08-07",
-      "municipality": "熊本市",
-      "before": "定員到達",
-      "after": "定員到達",
-      "change_type": "変更なし・要再確認",
-      "publisher": "熊本市社会福祉協議会",
-      "official_updated_at": "2026-08-07",
-      "official_url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/"
+      "official_url": "https://www.ashikita-shakyo.com/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8B%9F%E9%9B%86%E7%B5%82%E4%BA%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/"
     },
     {
       "changed_at": "2026-08-06",
       "municipality": "益城町",
-      "before": "一時休止",
-      "after": "活動休止・8月17日以降要再確認",
-      "change_type": "確認できず",
+      "before": "活動休止・8月17日以降要再確認",
+      "after": "情報未確認（8月17日以降の再開条件要確認）",
+      "change_type": "再開条件確認できず",
       "publisher": "益城町社会福祉協議会",
       "official_updated_at": "2026-08-06",
       "official_url": "https://www.mashiki-shakyo.or.jp/news/2010/"
@@ -7345,7 +7830,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.pref.kumamoto.jp/soshiki/27/275523.html",
       "published_at": null,
       "updated_at": "2026-08-10",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7355,7 +7840,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.fukushi-kumamoto.or.jp/kvc/",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7365,7 +7850,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.fukushi-kumamoto.or.jp/pages/291/detail=1/b_id=4334/r_id=2215#block4334-2215",
       "published_at": "2026-08-02",
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7375,7 +7860,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.fukushi-kumamoto.or.jp/pages/291/detail=1/b_id=4334/r_id=2213#block4334-2213",
       "published_at": "2026-08-01",
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7385,7 +7870,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.fukushi-kumamoto.or.jp/pages/291/detail=1/b_id=4334/r_id=2212#block4334-2212",
       "published_at": "2026-07-31",
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7395,7 +7880,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.saigaivc.com/r8kumamoto/",
       "published_at": null,
       "updated_at": "2026-07-31",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7405,7 +7890,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.pref.kumamoto.jp/soshiki/222/275364.html",
       "published_at": null,
       "updated_at": "2026-08-01",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7415,7 +7900,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
       "published_at": "2026-08-07",
       "updated_at": null,
-      "checked_at": "2026-08-11T19:17:17+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7425,7 +7910,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.utoshakyou.jp/volunteer_2026.html",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-11T19:17:17+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7435,7 +7920,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://forms.gle/FCwVAHmc4htUM5Au8",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-11T19:17:17+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7445,7 +7930,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
       "published_at": "2026-08-08",
       "updated_at": "2026-08-08",
-      "checked_at": "2026-08-11T19:17:17+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7455,7 +7940,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://misatoshakyo.or.jp/pages/455/",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-11T19:17:17+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7465,7 +7950,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D53",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-11T19:17:17+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7475,7 +7960,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D124",
       "published_at": "2026-08-03",
       "updated_at": null,
-      "checked_at": "2026-08-11T19:17:17+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7485,7 +7970,17 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D127",
       "published_at": "2026-08-05",
       "updated_at": null,
-      "checked_at": "2026-08-11T19:17:17+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "used_for_this_event": true
+    },
+    {
+      "group": "市町村社会福祉協議会",
+      "publisher": "熊本市社会福祉協議会",
+      "title": "８/１３時点での第２期ボランティア募集状況のお知らせ",
+      "url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
+      "published_at": "2026-08-14",
+      "updated_at": "2026-08-14",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7495,7 +7990,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://mifune-shakyo.jp/pages/51/detail=1/b_id=269/r_id=55#block269-55",
       "published_at": "2026-08-04",
       "updated_at": "2026-08-07",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7505,7 +8000,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.mashiki-shakyo.or.jp/news/2010/",
       "published_at": "2026-08-06",
       "updated_at": "2026-08-06",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7515,7 +8010,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.mashiki-shakyo.or.jp/news/2000/",
       "published_at": "2026-08-06",
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7525,7 +8020,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://kosa-shakyo.or.jp/pages/50/",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7535,7 +8030,27 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
       "published_at": "2026-08-10",
       "updated_at": "2026-08-10",
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "used_for_this_event": true
+    },
+    {
+      "group": "市町村社会福祉協議会",
+      "publisher": "氷川町社会福祉協議会",
+      "title": "災害ボランティア募集のお知らせ【8/14～20】",
+      "url": "https://hikawa-syakyo.jp/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%80%90%EF%BC%98-%EF%BC%91%EF%BC%94%EF%BD%9E%EF%BC%92%EF%BC%90%E3%80%91/",
+      "published_at": "2026-08-09",
+      "updated_at": "2026-08-09",
+      "checked_at": "2026-08-17T09:45:00+09:00",
+      "used_for_this_event": true
+    },
+    {
+      "group": "市町村社会福祉協議会",
+      "publisher": "氷川町社会福祉協議会",
+      "title": "氷川町災害ボランティアセンターの休所日のお知らせ",
+      "url": "https://hikawa-syakyo.jp/news/%E6%B0%B7%E5%B7%9D%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BC%91%E6%89%80%E6%97%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
+      "published_at": "2026-08-16",
+      "updated_at": "2026-08-16",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7545,7 +8060,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://hikawa-syakyo.jp/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8b%9f%e9%9b%86%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b%e3%80%90%ef%bc%98-%ef%bc%91%ef%bc%94%ef%bd%9e%ef%bc%92%ef%bc%90/",
       "published_at": "2026-08-09",
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7555,7 +8070,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://hikawa-syakyo.jp/news/%E3%80%90%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%EF%BC%88%E5%85%A8%E5%9B%BD%E5%8B%9F%E9%9B%86%EF%BC%89/",
       "published_at": "2026-08-05",
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7565,7 +8080,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.ashikita-shakyo.com/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8b%9f%e9%9b%86%e7%b5%82%e4%ba%86%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
       "published_at": "2026-08-10",
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7575,7 +8090,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://www.ashikita-shakyo.com/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
       "published_at": "2026-08-05",
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7585,7 +8100,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://forms.gle/eq2e9DF5WBhT8Xd48",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7595,7 +8110,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://forms.gle/MxJ1PGtwxKXFfLMd9",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7605,7 +8120,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D55#block269-55",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7615,7 +8130,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://878eb4be.viewer.kintoneapp.com/public/saigaivc-yoyaku-zyokyo-08-mashiki",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7625,7 +8140,7 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://forms.gle/VvS46pcwKpX1XJRZ8",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
@@ -7635,17 +8150,17 @@ globalThis.VOLUNTEER_DATA = Object.freeze({
       "url": "https://9c3d4cf9.form.kintoneapp.com/public/saigaivc-yoyaku-dantai-08-yatsushiro",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     },
     {
       "group": "市町村社会福祉協議会",
       "publisher": "氷川町社会福祉協議会（公式申込・受付）",
-      "title": "氷川町 申込・受付案内（回答受付終了（理由未公表））",
+      "title": "氷川町 申込・受付案内（公式フォーム掲載（8月17日・24日・31日は活動休止））",
       "url": "https://forms.gle/qEg4x2XLFeRyLZF57",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-08-13T13:14:31+09:00",
+      "checked_at": "2026-08-17T09:45:00+09:00",
       "used_for_this_event": true
     }
   ]

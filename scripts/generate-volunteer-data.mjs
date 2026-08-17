@@ -22,7 +22,7 @@ const requiredFields = [
 const optionalFields = [
   "outside_kyushu_allowed","ehime_participation_allowed","outside_prefecture_note","application_form_status",
   "safety_note","infrastructure_note","priority_note","needs_reconfirmation","information_confidence",
-  "change_from_previous","changes_from_previous","previous_known_state","application_urls","activity_windows",
+  "change_from_previous","changes_from_previous","previous_known_state","application_urls","activity_windows","sources",
   "district_capacities","official_information_conflict","portal_coverage_checked_at","recheck_status","recheck_note"
 ];
 const activityAliases = new Map([
@@ -169,16 +169,23 @@ const currentCalendarOverrides = {
     "2026-08-12": {key:"full",label:"第1期募集締切",countable:false},
     "2026-08-13": {key:"full",label:"第1期募集締切",countable:false},
     "2026-08-14": {key:"full",label:"第1期募集締切",countable:false},
-    "2026-08-15": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
-    "2026-08-16": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
-    "2026-08-17": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
-    "2026-08-18": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
-    "2026-08-19": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
-    "2026-08-20": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
-    "2026-08-21": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
-    "2026-08-22": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
-    "2026-08-23": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false},
-    "2026-08-24": {key:"unknown",label:"8月15日以降は再告知待ち",countable:false}
+    "2026-08-15": {key:"full",label:"第1期募集締切・第2期情報確認",countable:false},
+    "2026-08-16": {key:"full",label:"第2期必要人数到達・締切",countable:false},
+    "2026-08-17": {key:"full",label:"第2期必要人数到達・締切",countable:false},
+    "2026-08-18": {key:"full",label:"第2期必要人数到達・締切",countable:false},
+    "2026-08-19": {key:"full",label:"第2期必要人数到達・締切",countable:false},
+    "2026-08-20": {key:"full",label:"第2期必要人数到達・締切",countable:false},
+    "2026-08-21": {key:"full",label:"第2期必要人数到達・締切",countable:false},
+    "2026-08-22": {key:"full",label:"第2期必要人数到達・締切",countable:false},
+    "2026-08-23": {key:"full",label:"第2期必要人数到達・締切",countable:false},
+    "2026-08-24": {key:"unknown",label:"再告知予定・現況未確認",countable:false},
+    "2026-08-25": {key:"unknown",label:"再告知予定・現況未確認",countable:false},
+    "2026-08-26": {key:"unknown",label:"再告知予定・現況未確認",countable:false},
+    "2026-08-27": {key:"unknown",label:"再告知予定・現況未確認",countable:false},
+    "2026-08-28": {key:"unknown",label:"再告知予定・現況未確認",countable:false},
+    "2026-08-29": {key:"unknown",label:"再告知予定・現況未確認",countable:false},
+    "2026-08-30": {key:"unknown",label:"再告知予定・現況未確認",countable:false},
+    "2026-08-31": {key:"unknown",label:"再告知予定・現況未確認",countable:false}
   },
   "八代市": {
     "2026-08-11": {key:"recruiting",label:"団体申込フォームで事前調整",countable:true},
