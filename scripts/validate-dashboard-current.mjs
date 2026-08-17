@@ -7,11 +7,14 @@ import { runInNewContext } from "node:vm";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html");
 const publicPath = resolve(root, "public", "dashboard.html");
-const [html, publicHtml, volunteerCss] = await Promise.all([
+const currentShelterDataPath = resolve(root, "current-shelters.json");
+const [html, publicHtml, volunteerCss, currentShelterDataText] = await Promise.all([
   readFile(sourcePath, "utf8"),
   readFile(publicPath, "utf8"),
   readFile(resolve(root, "volunteer.css"), "utf8"),
+  readFile(currentShelterDataPath, "utf8"),
 ]);
+const currentShelterData = JSON.parse(currentShelterDataText);
 
 assert.equal(publicHtml, html, "公開用HTMLがレビュー元HTMLと一致していません");
 
@@ -28,6 +31,10 @@ const requiredText = [
   "TEC-FORCE現在103人・累計3,703人日",
   "最新集計71か所／位置履歴206点",
   "同梱206点は現在開設中の施設一覧として扱わない",
+  "現在開設避難所総数",
+  "地図表示数",
+  "座標未確認数",
+  "防災情報くまもと 現在開設避難所一覧（公式JSON）",
   'checkedAt":"2026-08-17T09:45:00+09:00"',
   "status:\"8月2日時点で開設\"",
   'data-view="overview"',
@@ -139,11 +146,34 @@ const dataEnd = html.indexOf("const SHELTER_EXPECTED_TOTAL=206;");
 assert.ok(dataStart >= 0 && dataEnd > dataStart, "補正後のダッシュボードデータを抽出できません");
 const sandbox = {};
 runInNewContext(
-  `${html.slice(dataStart, dataEnd)}\nglobalThis.__result={HUBS,NEED_MUNICIPALITIES,PROVINCE_NEEDS,TIMELINE_EVENTS,RECORDS};`,
+  `${html.slice(dataStart, dataEnd)}\nglobalThis.__result={HUBS,NEED_MUNICIPALITIES,PROVINCE_NEEDS,TIMELINE_EVENTS,RECORDS,CURRENT_SHELTER_META,CURRENT_SHELTER_ROWS,CURRENT_SHELTERS};`,
   sandbox,
   { timeout: 2_000 },
 );
 const runtime = sandbox.__result;
+assert.equal(runtime.CURRENT_SHELTER_META.currentCount, 72, "現行公式避難所一覧の件数が72件ではありません");
+assert.equal(
+  JSON.stringify(runtime.CURRENT_SHELTER_ROWS),
+  JSON.stringify(currentShelterData.shelters),
+  "HTMLに埋め込んだ現行避難所データがcurrent-shelters.jsonと一致しません",
+);
+assert.equal(
+  runtime.CURRENT_SHELTER_META.sourceAsOf,
+  currentShelterData.meta.source_last_modified || currentShelterData.meta.fetched_at,
+  "HTMLに埋め込んだ現行公式避難所JSONの最終更新時点がcurrent-shelters.jsonと一致しません",
+);
+assert.equal(runtime.CURRENT_SHELTER_META.currentDefinition, "熊本県公式の現在開設中一覧（shelterStartTimestampあり・shelterEndTimestamp空）", "現行一覧の抽出定義が明示されていません");
+assert.equal(runtime.CURRENT_SHELTER_ROWS.length, 72, "現行公式避難所一覧を削除・重複しています");
+assert.equal(runtime.CURRENT_SHELTER_ROWS.filter((row) => row.coordinate_status === "confirmed").length, 67, "現行避難所の地図表示可能数が67件ではありません");
+assert.equal(runtime.CURRENT_SHELTER_ROWS.filter((row) => row.coordinate_status === "unresolved").length, 5, "座標未確認の現行避難所を保持していません");
+assert.equal(runtime.CURRENT_SHELTERS.filter((row) => Number.isFinite(row.lat) && Number.isFinite(row.lng)).length, 67, "地図表示数が現行座標確認済み件数と一致しません");
+assert.equal(67 + 5, runtime.CURRENT_SHELTER_META.currentCount, "地図表示数と座標未確認数の合計が現在総数と一致しません");
+assert.ok(runtime.CURRENT_SHELTERS.filter((row) => row.coordinateStatus === "unresolved").every((row) => row.lat === null && row.lng === null), "座標未確認施設に推測座標があります");
+assert.ok(runtime.CURRENT_SHELTERS.every((row) => row.source === "current-official-list"), "現行地図が8月2日履歴データ由来になっています");
+assert.ok(html.includes("historyRecords:PREGEOCODED_SHELTERS.map"), "206点の履歴レイヤーが現行データと分離されていません");
+assert.ok(html.includes("filteredShelters().filter(isCurrentShelterMappable)"), "現行地図が座標確認済み施設だけを表示していません");
+assert.ok(!html.includes("shelterState={records:PREGEOCODED_SHELTERS"), "206点を現行避難所データとして初期化しています");
+assert.equal(new Set(runtime.CURRENT_SHELTER_ROWS.map((row) => `${row.municipality_code}|${row.name}|${row.address}`)).size, 72, "現行公式一覧の施設識別子が重複しています");
 assert.ok(runtime.HUBS.some((hub) => hub.id === "mifune"), "御船町の既存代表点が支援地図にありません");
 assert.ok(runtime.HUBS.some((hub) => hub.id === "ashikita"), "芦北町の既存代表点が支援地図にありません");
 assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("31,728棟"), "住家被害の最新県計が支援ニーズに反映されていません");

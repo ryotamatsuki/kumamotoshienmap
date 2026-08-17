@@ -19,11 +19,14 @@ async function request(path, options = {}) {
 }
 
 const dashboard = await readFile(resolve(root, "dist", "dashboard.html"), "utf8");
+const currentShelterData = await readFile(resolve(root, "current-shelters.json"), "utf8");
 const assets = {
   "/volunteer.css": ["text/css", await readFile(resolve(root, "dist", "volunteer.css"), "utf8")],
   "/volunteer-data.js": ["text/javascript", await readFile(resolve(root, "dist", "volunteer-data.js"), "utf8")],
   "/volunteer.js": ["text/javascript", await readFile(resolve(root, "dist", "volunteer.js"), "utf8")],
+  "/current-shelters.json": ["application/json", currentShelterData],
 };
+assert.equal(await readFile(resolve(root, "dist", "current-shelters.json"), "utf8"), currentShelterData, "current-shelters.jsonのビルド成果物が生成元データと一致しません");
 
 for (const path of ["/", "/dashboard.html"]) {
   const response = await request(path);

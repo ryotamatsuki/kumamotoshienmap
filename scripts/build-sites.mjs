@@ -19,6 +19,7 @@ const dashboard = readFileSync(publicPath);
 const volunteerCss = readFileSync(join(root, "volunteer.css"), "utf8");
 const volunteerData = readFileSync(join(root, "volunteer-data.js"), "utf8");
 const volunteerApp = readFileSync(join(root, "volunteer.js"), "utf8");
+const currentShelterData = readFileSync(join(root, "current-shelters.json"), "utf8");
 
 if (!original.equals(dashboard)) {
   throw new Error("The published dashboard does not match the reviewed source.");
@@ -32,6 +33,7 @@ const workerSource = `const dashboard = ${JSON.stringify(dashboardText)};
 const volunteerCss = ${JSON.stringify(volunteerCss)};
 const volunteerData = ${JSON.stringify(volunteerData)};
 const volunteerApp = ${JSON.stringify(volunteerApp)};
+const currentShelterData = ${JSON.stringify(currentShelterData)};
 
 const htmlHeaders = {
   "Content-Type": "text/html; charset=utf-8",
@@ -49,6 +51,7 @@ export default {
       "/volunteer.css": [volunteerCss, "text/css; charset=utf-8"],
       "/volunteer-data.js": [volunteerData, "text/javascript; charset=utf-8"],
       "/volunteer.js": [volunteerApp, "text/javascript; charset=utf-8"],
+      "/current-shelters.json": [currentShelterData, "application/json; charset=utf-8"],
     };
 
     if (url.pathname === "/favicon.ico") {
@@ -97,6 +100,7 @@ copyFileSync(publicPath, join(output, "dashboard.html"));
 copyFileSync(join(root, "volunteer.css"), join(output, "volunteer.css"));
 copyFileSync(join(root, "volunteer-data.js"), join(output, "volunteer-data.js"));
 copyFileSync(join(root, "volunteer.js"), join(output, "volunteer.js"));
+copyFileSync(join(root, "current-shelters.json"), join(output, "current-shelters.json"));
 copyFileSync(
   join(root, ".openai", "hosting.json"),
   join(metadataDirectory, "hosting.json"),
