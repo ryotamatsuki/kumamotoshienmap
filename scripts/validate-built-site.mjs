@@ -19,11 +19,18 @@ async function request(path, options = {}) {
 }
 
 const dashboard = await readFile(resolve(root, "dist", "dashboard.html"), "utf8");
+const currentShelterData = await readFile(resolve(root, "current-shelters.json"), "utf8");
+const currentShelterPayload = JSON.parse(currentShelterData);
+assert.ok(Array.isArray(currentShelterPayload.shelters), "current-shelters.jsonのsheltersが配列ではありません");
+assert.equal(currentShelterPayload.meta.current_count, currentShelterPayload.shelters.length, "current-shelters.jsonのcurrent_countと配列件数が一致しません");
+assert.equal(currentShelterPayload.shelters.filter((row) => row.coordinate_status === "conflict").length, 0, "conflict座標を配信成果物へ含めています");
 const assets = {
   "/volunteer.css": ["text/css", await readFile(resolve(root, "dist", "volunteer.css"), "utf8")],
   "/volunteer-data.js": ["text/javascript", await readFile(resolve(root, "dist", "volunteer-data.js"), "utf8")],
   "/volunteer.js": ["text/javascript", await readFile(resolve(root, "dist", "volunteer.js"), "utf8")],
+  "/current-shelters.json": ["application/json", currentShelterData],
 };
+assert.equal(await readFile(resolve(root, "dist", "current-shelters.json"), "utf8"), currentShelterData, "current-shelters.jsonのビルド成果物が生成元データと一致しません");
 
 for (const path of ["/", "/dashboard.html"]) {
   const response = await request(path);
@@ -40,7 +47,12 @@ for (const [path, [contentType, expected]] of Object.entries(assets)) {
   const response = await request(path);
   assert.equal(response.status, 200, `${path} のGETが失敗しました`);
   assert.match(response.headers.get("content-type") ?? "", new RegExp(`^${contentType}`));
-  assert.equal(await response.text(), expected, `${path} の配信内容がビルド成果物と一致しません`);
+  const body = await response.text();
+  assert.equal(body, expected, `${path} の配信内容がビルド成果物と一致しません`);
+  if (path === "/current-shelters.json") {
+    const servedPayload = JSON.parse(body);
+    assert.deepEqual(servedPayload, currentShelterPayload, "配信されたcurrent-shelters.jsonが生成元データと一致しません");
+  }
 }
 
 assert.equal((await request("/missing")).status, 404);
