@@ -45,6 +45,7 @@ function extractJsonConstant(text, name, nextMarker) {
 }
 
 assert.equal(publicHtml, html, "公開用HTMLとレビュー元HTMLが一致していません");
+assert.ok(html.includes('<script src="./volunteer-data.js?v=20260821-1500"></script>'), "ボランティアデータのキャッシュバスターがありません");
 assert.ok(!html.includes("2026年8月21日13:14"), "現行HTMLに旧時点のページ確認時刻が残っています");
 assert.ok(!html.includes("2026/8/21 13:14"), "現行HTMLに旧時点のボランティア確認時刻が残っています");
 assert.equal((html.match(/CURRENT_STATE_CLEANUP_20260821_START/g) || []).length, 1, "現行状態補正ブロックが重複しています");

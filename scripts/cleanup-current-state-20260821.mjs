@@ -435,6 +435,7 @@ if (!pageMeta.rows.some((row) => row.section === "愛媛県支援")) pageMeta.ro
 html = replaceJsonObjectConstant(html, "PAGE_RECHECK_META", "const PROVIDER_LABEL=", pageMeta);
 
 html = replaceAll(html, [
+  ["<script src=\"./volunteer-data.js\"></script>", "<script src=\"./volunteer-data.js?v=20260821-1500\"></script>"],
   ["DMAT調整第2陣1人は8月13日～17日、保健師等第3陣3人は8月12日～17日の活動期間中。DPAT第2班は8月9日～12日の予定期間を終え、実働完了は要再確認。日赤・JRATの後続班は予定表示。", "DMATコーディネーション第1～2陣2人は8月7日～8月25日予定、保健師等第1～6班13人は8月2日～8月31日予定、DPAT第1～2陣は8月2日～8月12日活動終了。予定と実働を分けて確認。"],
   ["氷川町の避難所運営等9人（8月12日公表）", "災害応急対策職員54人（県23・市町31、8月1日～終期未定）"],
   ["DMAT調整員1人・保健師第3班3人を派遣期間中", "DMAT調整2人（8月7日～25日予定）・保健師等13人（8月2日～31日予定）"],
