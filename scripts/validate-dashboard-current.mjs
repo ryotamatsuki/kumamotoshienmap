@@ -32,14 +32,14 @@ const requiredText = [
   "35,048<span class=\"overview-kpi-unit\">棟",
   "約4,300戸",
   "給水車129台（国交省第47報・8月21日7時30分・表掲載値）",
-  "行政応援925人",
-  "関係機関含む計1,005人",
+  "行政応援971人",
+  "関係機関含む計1,038人",
   "TEC-FORCE現在105人・累計4,299人日",
   "現在開設避難所総数",
   "地図表示数",
   "座標未確認数",
   "防災情報くまもと 現在開設避難所一覧（公式JSON）",
-  'checkedAt":"2026-08-21T13:14:00+09:00"',
+  'checkedAt":"2026-08-21T15:00:00+09:00"',
   "status:\"8月2日時点で開設\"",
   'data-view="overview"',
   'data-view="needs"',
@@ -48,10 +48,10 @@ const requiredText = [
   'data-view="volunteer"',
   'data-view="map"',
   'id="volunteerLayerToggle"',
-  "3,294件、約952億円",
-  "7市町への対口支援",
-  "計10市町へ行政応援",
-  "8月15日までの確定支援",
+  "7,881件、約1,559億円",
+  "8月19日資料で被災市町村への人的支援を更新",
+  "行政応援971人",
+  "8月19日までの確定支援",
   '@media(max-width:760px)',
 ];
 for (const value of requiredText) {
@@ -65,8 +65,8 @@ const requiredCurrentDisplay = [
   "2026年8月21日確認",
   "国交省第47報",
   "給水車129台（国交省第47報・8月21日7時30分・表掲載値）",
-  "計10市町へ行政応援925人（関係機関含む計1,005人）",
-  "<div class=\"snap\"><strong>925</strong>",
+  "8月19日資料：行政応援971人（関係機関含む計1,038人）",
+  "<div class=\"snap\"><strong>971</strong>",
   "<div class=\"snap\"><strong>129</strong>",
 ];
 for (const value of requiredCurrentDisplay) {
@@ -76,6 +76,8 @@ const forbiddenCurrentDisplay = [
   "国交省第39報",
   "国交省第42報",
   "行政応援854人",
+  "行政応援925人",
+  "関係機関含む計1,005人",
   "給水車131台",
   "TEC-FORCE現在103人・累計3,703人日",
   "<strong>854</strong>",
@@ -149,7 +151,7 @@ assert.ok(
 );
 
 const dataStart = html.indexOf("const HUBS=");
-const dataEnd = html.indexOf("const SHELTER_EXPECTED_TOTAL=206;");
+const dataEnd = html.indexOf("/* CURRENT_STATE_CLEANUP_20260821_END */") + "/* CURRENT_STATE_CLEANUP_20260821_END */".length;
 assert.ok(dataStart >= 0 && dataEnd > dataStart, "補正後のダッシュボードデータを抽出できません");
 const sandbox = {};
 runInNewContext(
@@ -187,26 +189,26 @@ assert.ok(runtime.HUBS.some((hub) => hub.id === "ashikita"), "芦北町の既存
 assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("35,048棟"), "住家被害の最新県計が支援ニーズに反映されていません");
 assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-08-20", "現況タイムラインの日付が最新報告と一致しません");
 const management = runtime.RECORDS.find((record) => record.id === "ehime-management");
-assert.equal(management.scale, "現行13人（県職員4・市町職員9）／累計41人・162人日");
+assert.equal(management.scale, "54人（県23・市町31）／延240人日");
 assert.ok(!`${management.title}${management.status}${management.period}${management.detail}`.includes("第2班"), "先遣隊に根拠のない班名があります");
 const dmat = runtime.RECORDS.find((record) => record.id === "ehime-dmat");
-assert.ok(dmat.providers.includes("公立学校共済組合四国中央病院"), "DMAT派遣元の正式名称がありません");
+assert.ok(dmat.providers.includes("愛媛大学医学部附属病院"), "DMAT派遣元の正式名称がありません");
 const finance = runtime.RECORDS.find((record) => record.id === "national-finance");
-assert.equal(finance.status, "繰上げ交付決定・実施確認なし");
+assert.equal(finance.status, "交付決定");
 const admin = runtime.RECORDS.find((record) => record.id === "kumamoto-internal");
-assert.equal(admin.hubIds.length, 10, "行政応援職員の当日派遣先数が一致しません");
+assert.equal(admin.hubIds.length, 7, "行政応援職員の当日派遣先数が一致しません");
 assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-payment").phase, "recovery", "過去の未確認予定を今後予定に含めています");
 assert.ok(runtime.TIMELINE_EVENTS.every((event) => Array.isArray(event.tags)), "タイムラインの全イベントにtags配列が必要です");
 const ehimeDmat = runtime.RECORDS.find((record) => record.id === "ehime-dmat");
-assert.equal(ehimeDmat.scale, "第2陣1人", "愛媛DMAT第2陣の人数が8月14日公式発表と一致しません");
-assert.equal(JSON.stringify(ehimeDmat.hubIds), JSON.stringify(["yatsushiro"]), "愛媛DMAT調整員の派遣先が8月12日公式発表と一致しません");
+assert.equal(ehimeDmat.scale, "2人（延10人日）", "愛媛DMATコーディネーションの人数が8月20日公式発表と一致しません");
+assert.equal(JSON.stringify(ehimeDmat.hubIds), JSON.stringify(["kumamoto-hq"]), "愛媛DMATコーディネーションの派遣先が8月20日公式発表と一致しません");
 for (const id of ["ehime-redcross-medcoord", "ehime-redcross-mental", "ehime-jrat"]) assert.ok(runtime.RECORDS.some((record) => record.id === id), `${id}の愛媛県公式発表レコードがありません`);
 assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-ehime-aug12").summary, "DMAT調整員1人、保健師等第3班、DWAT、警察部隊、日赤・JRATの後続支援予定を更新。", "愛媛県8月12日更新イベントが最新公式発表と一致しません");
 
-assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-agri").observed.includes("3,294件、約952億円"), "8月11日商工業被害の最新値が反映されていません");
+assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-agri").observed.includes("7,881件、約1,559億円"), "8月19日商工業被害の最新値が反映されていません");
 assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-hq18").summary, "8月8日14時時点：避難者6,355人、断水34,780戸、住家被害18,791棟。", "第18回会議イベントに時点の異なる値が混在しています");
 
-const extendedEnd = html.indexOf("const PAGE_RECHECK_META=");
+const extendedEnd = html.indexOf("/* CURRENT_STATE_CLEANUP_20260821_END */") + "/* CURRENT_STATE_CLEANUP_20260821_END */".length;
 assert.ok(extendedEnd > dataStart, "追加の支援割当データを検証できません");
 const extendedSandbox = {};
 runInNewContext(
@@ -215,18 +217,18 @@ runInNewContext(
   { timeout: 5_000 },
 );
 const extended = extendedSandbox.__extended;
-assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "熊本市").currentSupport.includes("対口支援20団体"), "熊本市の対口支援20団体が反映されていません");
-assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "嘉島町").currentSupport.includes("対口支援4団体"), "嘉島町の対口支援が反映されていません");
-assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "御船町").currentSupport.some((value) => value.includes("県内調整分")), "県内調整分の表示がありません");
+assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "熊本市").currentSupport.some((value) => value.includes("8月19日資料")), "熊本市の8月19日現行支援が反映されていません");
+assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "嘉島町").currentSupport.some((value) => value.includes("8月19日資料")), "嘉島町の8月19日現行支援が反映されていません");
+assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "御船町").currentSupport.some((value) => value.includes("8月19日資料")), "御船町の8月19日現行支援が反映されていません");
 assert.equal(extended.RECORDS.find((record) => record.id === "pair-kumamoto").scale, "20団体", "熊本市の対口支援団体数が8月11日値ではありません");
-assert.equal(extended.RECORDS.find((record) => record.id === "pair-yatsushiro").scale, "9団体", "八代市の対口支援団体数が8月11日値ではありません");
-assert.equal(extended.RECORDS.find((record) => record.id === "pair-hikawa").scale, "7団体", "氷川町の対口支援団体数が8月11日値ではありません");
+assert.equal(extended.RECORDS.find((record) => record.id === "pair-yatsushiro").scale, "10団体", "八代市の対口支援団体数が8月11日値ではありません");
+assert.equal(extended.RECORDS.find((record) => record.id === "pair-hikawa").scale, "6県・1指定都市（計7団体）", "氷川町の対口支援団体数が8月11日値ではありません");
 assert.ok(extended.RECORDS.some((record) => record.id === "pair-kashima" && record.scale === "4団体"), "嘉島町の対口支援レコードがありません");
 assert.ok(extended.SUPPORT_BLOCKS.some((block) => block.id === "internal-coordination" && block.destinations.includes("御船町")), "県内調整分ブロックがありません");
 
 console.log(JSON.stringify({
   currentAsOf: "2026-08-20T14:00:00+09:00",
-  siteCheckedAt: "2026-08-21T13:14:00+09:00",
+  siteCheckedAt: "2026-08-21T15:00:00+09:00",
   shelters: rawTotals.shelters,
   evacuees: rawTotals.evacuees,
   housingMunicipalRows: rawTotals.housing,
