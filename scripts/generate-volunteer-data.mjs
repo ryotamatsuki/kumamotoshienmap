@@ -23,7 +23,8 @@ const optionalFields = [
   "outside_kyushu_allowed","ehime_participation_allowed","outside_prefecture_note","application_form_status",
   "safety_note","infrastructure_note","priority_note","needs_reconfirmation","information_confidence",
   "change_from_previous","changes_from_previous","previous_known_state","application_urls","activity_windows","sources",
-  "district_capacities","official_information_conflict","portal_coverage_checked_at","recheck_status","recheck_note"
+  "district_capacities","official_information_conflict","portal_coverage_checked_at","recheck_status","recheck_note",
+  "eligibility_currently_applicable"
 ];
 const activityAliases = new Map([
   ["災害ごみの運搬","災害ごみの分別・運搬"],["災害ごみの分別","災害ごみの分別・運搬"],
@@ -350,18 +351,24 @@ const currentCalendarOverrides = {
 };
 const currentCalendarOverrides20260821 = {
   "宇土市": {
-    "2026-08-20": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
-    "2026-08-21": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
-    "2026-08-22": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
-    "2026-08-23": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
-    "2026-08-24": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
+    "2026-08-20": {key:"recruiting",label:"第3期募集中・60人目安",capacity:"60人目安／日",countable:true},
+    "2026-08-21": {key:"recruiting",label:"第3期募集中・20人目安",capacity:"20人目安／日",countable:true},
+    "2026-08-22": {key:"recruiting",label:"第3期募集中・30人目安",capacity:"30人目安／日",countable:true},
+    "2026-08-23": {key:"recruiting",label:"第3期募集中・40人目安",capacity:"40人目安／日",countable:true},
+    "2026-08-24": {key:"recruiting",label:"第3期募集中・60人目安",capacity:"60人目安／日",countable:true},
     "2026-08-25": {key:"none",label:"活動なし",countable:false},
     "2026-08-26": {key:"none",label:"活動なし",countable:false},
-    "2026-08-27": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
+    "2026-08-27": {key:"recruiting",label:"第3期募集中・60人目安",capacity:"60人目安／日",countable:true},
     "2026-08-28": {key:"recruiting",label:"団体5人以上受付",countable:true},
     "2026-08-29": {key:"recruiting",label:"団体5人以上受付",countable:true},
     "2026-08-30": {key:"recruiting",label:"団体5人以上受付",countable:true},
-    "2026-08-31": {key:"recruiting",label:"団体5人以上受付",countable:true}
+    "2026-08-31": {key:"recruiting",label:"団体5人以上受付",countable:true},
+    "2026-09-01": {key:"recruiting",label:"団体5人以上受付",countable:true},
+    "2026-09-02": {key:"recruiting",label:"団体5人以上受付",countable:true},
+    "2026-09-03": {key:"recruiting",label:"団体5人以上受付",countable:true},
+    "2026-09-04": {key:"recruiting",label:"団体5人以上受付",countable:true},
+    "2026-09-05": {key:"recruiting",label:"団体5人以上受付",countable:true},
+    "2026-09-06": {key:"recruiting",label:"団体5人以上受付",countable:true}
   },
   "宇城市": {
     "2026-08-20": {key:"recruiting",label:"個人日別受付",countable:true},
@@ -379,7 +386,7 @@ const currentCalendarOverrides20260821 = {
   },
   "美里町": Object.fromEntries(Array.from({length:9}, (_, index) => {
     const day = String(22 + index).padStart(2, "0");
-    return [`2026-08-${day}`, {key:"recruiting",label:"募集中・約40人／日",capacity:"約40人／日",countable:true}];
+    return [`2026-08-${day}`, {key:"unknown",label:"現行フォーム受付終了・要再確認",capacity:"約40人／日",countable:false}];
   })),
   "御船町": {
     "2026-08-24": {key:"recruiting",label:"団体のみ",countable:true},
@@ -392,8 +399,8 @@ const currentCalendarOverrides20260821 = {
     "2026-08-31": {key:"none",label:"活動なし",countable:false}
   },
   "嘉島町": {
-    "2026-08-21": {key:"recruiting",label:"事前受付",countable:true},
-    "2026-08-22": {key:"recruiting",label:"事前受付",countable:true}
+    "2026-08-21": {key:"unknown",label:"現行フォーム受付終了・要再確認",countable:false},
+    "2026-08-22": {key:"unknown",label:"現行フォーム受付終了・要再確認",countable:false}
   },
   "益城町": Object.fromEntries(Array.from({length:5}, (_, index) => {
     const day = String(24 + index).padStart(2, "0");
@@ -401,7 +408,9 @@ const currentCalendarOverrides20260821 = {
   })),
   "甲佐町": Object.fromEntries(Array.from({length:10}, (_, index) => {
     const day = String(22 + index).padStart(2, "0");
-    return [`2026-08-${day}`, {key:"planned",label:"近日募集予定・詳細未確認",countable:false}];
+    return [`2026-08-${day}`, index < 8
+      ? {key:"full",label:"必要人数到達・受付終了",countable:false}
+      : {key:"unknown",label:"8月30日以降は未定",countable:false}];
   })),
   "八代市": Object.fromEntries(Array.from({length:8}, (_, index) => {
     const day = String(24 + index).padStart(2, "0");

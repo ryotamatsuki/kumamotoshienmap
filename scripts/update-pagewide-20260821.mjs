@@ -1,13 +1,13 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const file = "ehime_kumamoto_support_geocoded_shelters_20260802.html";
-const checkedAt = "2026-08-21T13:14:00+09:00";
-const checkedLabel = "2026年8月21日 13:14";
+const checkedAt = "2026-08-21T15:00:00+09:00";
+const checkedLabel = "2026年8月21日 15:00";
 const prefectureReportUrl = "https://www.pref.kumamoto.jp/uploaded/life/277838_875456_misc.pdf";
 const prefectureReportPageUrl = "https://www.pref.kumamoto.jp/soshiki/222/276831.html";
 const mlitReportUrl = "https://www.mlit.go.jp/common/002017654.pdf";
-const ehimeReportUrl = "https://www.pref.ehime.jp/uploaded/attachment/187993.pdf";
-const governmentMeetingUrl = "https://www.pref.kumamoto.jp/uploaded/attachment/316845.pdf";
+const ehimeReportUrl = "https://www.pref.ehime.jp/uploaded/attachment/188363.pdf";
+const governmentMeetingUrl = "https://www.pref.kumamoto.jp/uploaded/attachment/317153.pdf";
 const cabinetOfficeReportUrl = "https://www.bousai.go.jp/updates/r8kumamoto_jishin/status/pdf/r8kumamoto_jishin_20260820.pdf";
 
 function parseJsonConstant(text, name, nextMarker) {
@@ -567,6 +567,7 @@ updated = updated.replaceAll("8月11日までの確定支援を反映", "8月15�
 updated = updated.replaceAll(/同梱206点は現在開設中の施設一覧として扱わない(?:（8月2日位置履歴）)*/g, "同梱206点は現在開設中の施設一覧として扱わない（8月2日位置履歴）");
 
 await writeFile(file, updated, "utf8");
+await import("./cleanup-current-state-20260821.mjs");
 const rawTotals = needs.reduce((totals, row) => {
   totals.shelters += row.raw.shelters;
   totals.evacuees += row.raw.evacuees;
