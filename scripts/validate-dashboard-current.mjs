@@ -25,21 +25,21 @@ const currentShelterConflictCount = currentShelterRows.filter((row) => row?.coor
 assert.equal(publicHtml, html, "公開用HTMLがレビュー元HTMLと一致していません");
 
 const requiredText = [
-  "経過日 D+20（主要公表値は8月16日14時）",
-  "3,121<span class=\"overview-kpi-unit\">人",
-  "71<span class=\"overview-kpi-unit\">か所",
-  "394<span class=\"overview-kpi-unit\">人",
-  "31,728<span class=\"overview-kpi-unit\">棟",
-  "約10,000戸",
-  "給水車131台（国交省第42報・8月16日6時～7時30分・表掲載値）",
+  "経過日 D+24（主要公表値は8月20日14時）",
+  "2,925<span class=\"overview-kpi-unit\">人",
+  "69<span class=\"overview-kpi-unit\">か所",
+  "398<span class=\"overview-kpi-unit\">人",
+  "35,048<span class=\"overview-kpi-unit\">棟",
+  "約4,300戸",
+  "給水車129台（国交省第47報・8月21日7時30分・表掲載値）",
   "行政応援925人",
   "関係機関含む計1,005人",
-  "TEC-FORCE現在103人・累計3,703人日",
+  "TEC-FORCE現在105人・累計4,299人日",
   "現在開設避難所総数",
   "地図表示数",
   "座標未確認数",
   "防災情報くまもと 現在開設避難所一覧（公式JSON）",
-  'checkedAt":"2026-08-17T09:45:00+09:00"',
+  'checkedAt":"2026-08-21T13:14:00+09:00"',
   "status:\"8月2日時点で開設\"",
   'data-view="overview"',
   'data-view="needs"',
@@ -62,19 +62,22 @@ const runtimeScriptStart = html.indexOf('<script src="https://cdn.jsdelivr.net/n
 assert.ok(runtimeScriptStart > 0, "公開HTMLの初期表示領域を特定できません");
 const currentDisplayHtml = html.slice(0, runtimeScriptStart);
 const requiredCurrentDisplay = [
-  "2026年8月17日確認",
-  "国交省第42報",
-  "給水車131台（国交省第42報・8月16日6時～7時30分・表掲載値）",
+  "2026年8月21日確認",
+  "国交省第47報",
+  "給水車129台（国交省第47報・8月21日7時30分・表掲載値）",
   "計10市町へ行政応援925人（関係機関含む計1,005人）",
   "<div class=\"snap\"><strong>925</strong>",
-  "<div class=\"snap\"><strong>131</strong>",
+  "<div class=\"snap\"><strong>129</strong>",
 ];
 for (const value of requiredCurrentDisplay) {
   assert.ok(currentDisplayHtml.includes(value), `初期表示の最新値がありません: ${value}`);
 }
 const forbiddenCurrentDisplay = [
   "国交省第39報",
+  "国交省第42報",
   "行政応援854人",
+  "給水車131台",
+  "TEC-FORCE現在103人・累計3,703人日",
   "<strong>854</strong>",
   "<strong>173</strong>",
   "2026年8月11日確認",
@@ -110,8 +113,8 @@ function parseJsonConstant(name) {
 
 const impacts = parseJsonConstant("IMPACTS");
 assert.equal(impacts.length, 11, "開設避難所の市町数が公式集計と一致しません");
-assert.equal(impacts.reduce((sum, row) => sum + row.shelters, 0), 71);
-assert.equal(impacts.reduce((sum, row) => sum + row.evacuees, 0), 3_121);
+assert.equal(impacts.reduce((sum, row) => sum + row.shelters, 0), 69);
+assert.equal(impacts.reduce((sum, row) => sum + row.evacuees, 0), 2_925);
 
 const needs = parseJsonConstant("NEED_MUNICIPALITIES");
 assert.equal(needs.length, 24, "市町別被害表の収録数が想定外です");
@@ -128,20 +131,20 @@ const rawTotals = needs.reduce(
   { shelters: 0, evacuees: 0, waterOutage: 0, waterPoints: 0, housing: 0, human: 0 },
 );
 assert.deepEqual(rawTotals, {
-  shelters: 71,
-  evacuees: 3_121,
-  waterOutage: 10_035,
+  shelters: 69,
+  evacuees: 2_925,
+  waterOutage: 4_284,
   waterPoints: 0,
-  housing: 31_723,
-  human: 391,
+  housing: 35_040,
+  human: 396,
 });
 
 assert.ok(
-  html.includes("24市町の人的被害表内合計391人。県速報の人的被害合計は394人"),
+  html.includes("24市町の人的被害表内合計396人。県速報の人的被害合計は398人"),
   "市町別人的被害と県合計の差分説明がありません",
 );
 assert.ok(
-  html.includes("住家被害31,723棟と県計31,728棟との差5棟"),
+  html.includes("住家被害35,040棟と県計35,048棟との差8棟"),
   "市町別住家被害と県合計の差分説明がありません",
 );
 
@@ -181,8 +184,8 @@ assert.ok(!html.includes("shelterState={records:PREGEOCODED_SHELTERS"), "206点�
 assert.equal(new Set(runtime.CURRENT_SHELTER_ROWS.map((row) => `${row.municipality_code}|${row.name}|${row.address}`)).size, currentShelterCount, "現行公式一覧の施設識別子が重複しています");
 assert.ok(runtime.HUBS.some((hub) => hub.id === "mifune"), "御船町の既存代表点が支援地図にありません");
 assert.ok(runtime.HUBS.some((hub) => hub.id === "ashikita"), "芦北町の既存代表点が支援地図にありません");
-assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("31,728棟"), "住家被害の最新県計が支援ニーズに反映されていません");
-assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-08-16", "現況タイムラインの日付が最新報告と一致しません");
+assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("35,048棟"), "住家被害の最新県計が支援ニーズに反映されていません");
+assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-08-20", "現況タイムラインの日付が最新報告と一致しません");
 const management = runtime.RECORDS.find((record) => record.id === "ehime-management");
 assert.equal(management.scale, "現行13人（県職員4・市町職員9）／累計41人・162人日");
 assert.ok(!`${management.title}${management.status}${management.period}${management.detail}`.includes("第2班"), "先遣隊に根拠のない班名があります");
@@ -222,11 +225,11 @@ assert.ok(extended.RECORDS.some((record) => record.id === "pair-kashima" && reco
 assert.ok(extended.SUPPORT_BLOCKS.some((block) => block.id === "internal-coordination" && block.destinations.includes("御船町")), "県内調整分ブロックがありません");
 
 console.log(JSON.stringify({
-  currentAsOf: "2026-08-16T14:00:00+09:00",
-  siteCheckedAt: "2026-08-17T09:45:00+09:00",
+  currentAsOf: "2026-08-20T14:00:00+09:00",
+  siteCheckedAt: "2026-08-21T13:14:00+09:00",
   shelters: rawTotals.shelters,
   evacuees: rawTotals.evacuees,
   housingMunicipalRows: rawTotals.housing,
-  housingPrefectureTotal: 31_728,
+  housingPrefectureTotal: 35_048,
   shelterCoordinateSnapshot: 206,
 }));
