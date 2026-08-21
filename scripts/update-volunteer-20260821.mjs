@@ -1,6 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 
-const checkedAt = "2026-08-21T13:14:00+09:00";
+const checkedAt = "2026-08-21T15:00:00+09:00";
 const root = new URL("../", import.meta.url);
 const paths = {
   north: new URL("research_official_north.json", root),
@@ -122,7 +122,7 @@ addSource(center("宇城市"), source("宇城市社会福祉協議会", "ボラ�
 
 update("美里町", {
   center_status: "開設・活動中",
-  recruitment_status: "募集中（8月22日～30日・各日約40人）",
+  recruitment_status: "募集案内掲載（8月22日～30日・各日約40人、現行フォーム受付終了）",
   activity_start_date: "2026-08-22",
   activity_end_date: "2026-08-30",
   activity_dates_text: "8月22日～30日を各日約40人で募集。日別の受付状況、対象地域、団体条件は公式ページで確認する。",
@@ -133,9 +133,10 @@ update("美里町", {
   outside_prefecture_allowed: null,
   outside_kyushu_allowed: null,
   individual_allowed: true,
-  application_method: "公式ページの案内に従い日別に申込み。残席・団体受入・県外参加条件は申込前に照会。",
-  application_url: "https://misatoshakyo.or.jp/pages/467/",
-  application_form_status: "8月22日～30日・各日約40人",
+  application_method: "公式ページで8月22日～30日・各日約40人の募集案内を確認。現行フォームは受付終了のため、再開・残席・団体受入・県外参加条件は公式ページへ要照会。",
+  application_url: null,
+  application_urls: null,
+  application_form_status: "募集案内掲載・現行フォーム受付終了",
   official_source_title: "美里町災害ボランティアセンター 8月22日～30日の募集",
   official_source_url: "https://misatoshakyo.or.jp/pages/467/",
   source_updated_at: null,
@@ -145,8 +146,8 @@ update("美里町", {
   previous_known_state: "募集休止（定員到達）",
   change_from_previous: "募集休止から8月22～30日の募集へ更新。各日約40人を現行値とする。",
   remarks: "現行ページで確認できた日程・人数のみを反映。県外・団体受入条件は別途要照会。",
-  ehime_dispatch_status: "募集中・県外団体条件要照会",
-  eligibility_currently_applicable: true,
+  ehime_dispatch_status: "募集案内掲載・現行フォーム受付終了・県外団体条件要照会",
+  eligibility_currently_applicable: false,
 });
 addSource(center("美里町"), source("美里町社会福祉協議会", "美里町災害ボランティアセンター 8月22日～30日の募集", "https://misatoshakyo.or.jp/pages/467/", "8月22～30日、各日約40人"));
 
@@ -179,7 +180,7 @@ addSource(center("御船町"), source("御船町社会福祉協議会", "御船�
 
 update("嘉島町", {
   center_status: "開設・事前受付",
-  recruitment_status: "募集中（事前受付・8月21日～22日）",
+  recruitment_status: "募集案内掲載（事前受付・8月21日～22日、現行フォーム受付終了）",
   activity_start_date: "2026-08-21",
   activity_end_date: "2026-08-22",
   activity_dates_text: "8月21日～22日の災害ボランティア事前受付を公式告知。参加対象地域、人数、団体条件、参加確定は要確認。",
@@ -192,11 +193,12 @@ update("嘉島町", {
   individual_allowed: true,
   group_allowed: null,
   group_application_available: null,
-  application_method: "8月21日～22日の事前受付。人数・対象地域・団体条件は最新記事とセンターへ要確認。",
-  application_url: "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D135",
-  application_form_status: "8月21日～22日事前受付",
+  application_method: "8月21日～22日の事前受付案内を確認。現行フォームは受付終了のため、人数・対象地域・団体条件・再開は公式ホームページとセンターへ要確認。",
+  application_url: null,
+  application_urls: null,
+  application_form_status: "事前受付案内掲載・現行フォーム受付終了",
   official_source_title: "災害ボランティア事前受付（8月21日～22日）",
-  official_source_url: "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D135",
+  official_source_url: "https://kashima-shakyo.or.jp/",
   source_updated_at: null,
   recheck_status: "差分あり",
   recheck_note: "8月21日に公式記事を確認。8月21～22日の事前受付を反映し、県外参加可否や団体条件は推測しない。",
@@ -204,10 +206,11 @@ update("嘉島町", {
   previous_known_state: "情報未確認（8月17日以降要確認）",
   change_from_previous: "未確認から8月21～22日の事前受付へ更新。対象地域・人数・団体条件は要照会。",
   remarks: "最新記事で確認できない県外可否・団体条件を、過去の地域限定情報から推測しない。",
-  ehime_dispatch_status: "事前受付・愛媛県参加可否要照会",
-  eligibility_currently_applicable: true,
+  ehime_dispatch_status: "現行フォーム受付終了・愛媛県参加可否要照会",
+  eligibility_currently_applicable: false,
 });
-addSource(center("嘉島町"), source("嘉島町社会福祉協議会", "災害ボランティア事前受付（8月21日～22日）", "https://kashima-shakyo.or.jp/publics/index/1/detail%3D1/b_id%3D1/r_id%3D135", "8月21～22日の事前受付"));
+center("嘉島町").sources = (center("嘉島町").sources || []).map((item) => item.url?.includes("kashima-shakyo.or.jp") ? { ...item, url: "https://kashima-shakyo.or.jp/" } : item);
+addSource(center("嘉島町"), source("嘉島町社会福祉協議会", "災害ボランティア事前受付（8月21日～22日）", "https://kashima-shakyo.or.jp/", "8月21～22日の事前受付案内、現行フォーム受付終了"));
 
 update("益城町", {
   center_status: "開設・活動中",
@@ -237,10 +240,10 @@ addSource(center("益城町"), source("益城町社会福祉協議会", "第3期
 
 update("甲佐町", {
   center_status: "開設・募集準備中",
-  recruitment_status: "近日募集予定・詳細未確認",
+  recruitment_status: "受付終了（8月29日まで必要人数到達）・以降未定",
   activity_start_date: null,
   activity_end_date: null,
-  activity_dates_text: "8月22日以降について近日中に募集開始予定。日程・人数・申込方法は未公表。",
+  activity_dates_text: "8月29日までの公表日程は必要人数到達で受付終了。8月30日以降は決まり次第公式告知を確認する。",
   activity_windows: [],
   daily_capacity: null,
   capacity_disclosed: null,
@@ -250,22 +253,22 @@ update("甲佐町", {
   individual_allowed: null,
   group_allowed: null,
   group_application_available: null,
-  application_method: "近日中に募集開始予定。日程・人数・申込方法は公式告知後に確認。",
+  application_method: "8月29日まで受付終了。8月30日以降の募集日程・申込方法は決まり次第公式告知を確認する。",
   application_url: null,
-  application_form_status: "近日募集予定・申込方法未公表",
+  application_form_status: "8月29日まで受付終了・以降未定",
   official_source_title: "甲佐町災害ボランティアセンター（近日募集予定）",
   official_source_url: "https://kosa-shakyo.or.jp/pages/50/",
   source_updated_at: null,
   recheck_status: "差分あり",
-  recheck_note: "8月21日に公式ページを再確認。8月22日以降は近日募集予定だが、日程・人数・申込方法は未公表。受付終了とは断定しない。",
-  change_status: "近日募集予定へ更新",
+  recheck_note: "8月21日に公式ページを再確認。8月29日まで必要人数到達で受付終了、8月30日以降は未定との現行表示を反映。",
+  change_status: "受付終了・以降未定へ更新",
   previous_known_state: "受付終了・団体は要調整",
-  change_from_previous: "受付終了と断定せず、近日募集予定・詳細未確認へ変更。",
+  change_from_previous: "近日募集予定・詳細未確認から、8月29日まで受付終了・以降未定へ更新。",
   remarks: "過去の九州圏内制限・愛媛県不可は最新記事で再掲されていないため、現行条件とは扱わない。",
-  ehime_dispatch_status: "近日募集予定・参加条件要照会",
+  ehime_dispatch_status: "8月29日まで受付終了・以降の参加条件要照会",
   eligibility_currently_applicable: false,
 });
-addSource(center("甲佐町"), source("甲佐町社会福祉協議会", "甲佐町災害ボランティアセンター（近日募集予定）", "https://kosa-shakyo.or.jp/pages/50/", "8月22日以降の近日募集予定、詳細未公表"));
+addSource(center("甲佐町"), source("甲佐町社会福祉協議会", "甲佐町災害ボランティアセンター（近日募集予定）", "https://kosa-shakyo.or.jp/pages/50/", "8月29日まで必要人数到達で受付終了、8月30日以降は未定"));
 
 update("八代市", {
   recruitment_status: "募集中（個人8月24日～31日／団体5人以上8月24日～9月30日）",

@@ -243,7 +243,7 @@ body.shelter-layer-open .legend{bottom:122px}
 <button aria-controls="volunteerView" aria-selected="false" class="view-tab" data-view="volunteer" id="volunteerViewTab" role="tab" tabindex="-1" type="button">災害ボランティア</button>
 <button aria-controls="mapView" aria-selected="false" class="view-tab" data-view="map" id="mapViewTab" role="tab" tabindex="-1" type="button">地図</button>
 </nav>
-<div class="head-actions"><span class="badge">ページ全体再確認：2026年8月21日13:14</span><button class="btn" id="csvBtn" type="button">CSV</button><button class="btn" id="printBtn" type="button">印刷</button><button class="btn mobile-toggle" id="mobileToggle" type="button">情報欄</button></div>
+<div class="head-actions"><span class="badge">ページ全体再確認：2026年8月21日15:00</span><button class="btn" id="csvBtn" type="button">CSV</button><button class="btn" id="printBtn" type="button">印刷</button><button class="btn mobile-toggle" id="mobileToggle" type="button">情報欄</button></div>
 </header>
 <div aria-labelledby="overviewViewTab" class="overview-view" id="overviewView" role="tabpanel">
 <div class="overview-shell">
@@ -725,6 +725,12 @@ if(unusedGeocoderSourceIndex>=0)SOURCES.splice(unusedGeocoderSourceIndex,1);
 SOURCES.unshift({group:'熊本県',name:'防災情報くまもと 現在開設避難所一覧（公式JSON）',asOf:`公式JSON最終更新：${CURRENT_SHELTER_META.sourceAsOf}／取得：${CURRENT_SHELTER_META.fetchedAt}。現行${CURRENT_SHELTER_META.currentCount}件`,url:CURRENT_SHELTER_META.sourceUrl});
 SOURCES.unshift({group:'熊本県',name:'防災情報くまもと 避難所マスター',asOf:'位置履歴スナップショット：2026年8月2日23時21分の206施設。熊本県第36報の69か所は2026年8月20日14時の被害・避難状況スナップショットであり、現行公式JSONの71施設とは別定義',url:SHELTER_SNAPSHOT_META.sourceUrl});
 const PAGE_RECHECK_META={"checkedAt":"2026-08-21T15:00:00+09:00","portalObservedAt":null,"volunteerCheckedAt":"2026-08-21T15:00:00+09:00","rows":[{"section":"被害・支援","status":"差分あり","current":"8月20日14時の熊本県第36報へ更新","previous":"熊本県第30報：8月16日14時","difference":"避難所69か所、避難者2,925人、人的被害398人、住家被害35,048棟。市町別表は人的396人・住家35,040棟で県計と分けて表示。","source":"熊本県 第36報","url":"https://www.pref.kumamoto.jp/uploaded/life/277838_875456_misc.pdf"},{"section":"愛媛県支援","status":"差分あり","current":"8月20日12時資料へ更新","previous":"8月14日12時資料","difference":"応急対策職員54人、保健師等13人、DMAT調整2人、DWAT9人、警察12人等を現行・終了・予定・実働要確認に分離。","source":"愛媛県 本県の支援状況（2026年8月20日12時）","url":"https://www.pref.ehime.jp/uploaded/attachment/188363.pdf"},{"section":"避難所","status":"差分あり","current":"県第36報69か所／公式JSON現在71施設／位置履歴206点","previous":"第30報71か所／8月2日23時21分の位置履歴206点","difference":"県報は8月20日14時のスナップショット、公式JSONは8月21日14時25分更新の現在開設一覧、206点は8月2日の履歴として定義を分離。","source":"熊本県 第36報・避難所公式JSON","url":"https://www.pref.kumamoto.jp/uploaded/life/277838_875456_misc.pdf"},{"section":"支援ニーズ見通し","status":"差分あり","current":"避難・人的・住家は第36報、断水は国交省第47報で約4,300戸へ更新","previous":"第30報・第42報の8月16日値","difference":"断水は表掲載の八代・宇城・氷川計4,284戸を使用。内閣府8月20日値とは時点・集計定義が異なるため併記しない。","source":"熊本県 第36報・国土交通省第47報","url":"https://www.mlit.go.jp/common/002017654.pdf"},{"section":"発災後タイムライン","status":"差分あり","current":"8月20日第36報・8月21日第47報を追加","previous":"8月16日第30報・第42報","difference":"県の被害・避難スナップショットと国交省の断水・給水・TEC-FORCEを対象時刻ごとに分けて表示。","source":"熊本県 被害情報・国土交通省第47報","url":"https://www.pref.kumamoto.jp/soshiki/222/276831.html"},{"section":"支援ダッシュボード","status":"差分あり","current":"給水車129台、TEC-FORCE現在105人・累計4,299人日","previous":"給水車131台、TEC-FORCE現在105人・累計4,299人日","difference":"国交省第47報の8月21日値へ更新。行政応援971人・関係機関含む計1,038人は8月19日合同会議資料の対象時点値として保持。","source":"国土交通省第47報／第18回政府・第25回熊本県災害対策本部会議","url":"https://www.pref.kumamoto.jp/uploaded/attachment/317153.pdf"},{"section":"災害ボランティア","status":"差分あり","current":"8月21日に11市町の公式ページ・県社協情報を再確認","previous":"8月17日確認","difference":"宇土市、宇城市、美里町、御船町、嘉島町、益城町、八代市、氷川町、芦北町などの募集日程・受付方法を更新。未確認は募集なしと判定しない。","source":"市町社会福祉協議会公式ページ","url":"https://www.fukushi-kumamoto.or.jp/kvc/"},{"section":"地図・境界","status":"変更なし","current":"既存境界・地理院淡色地図・公式座標履歴を保持","previous":"既存の検証済みデータ","difference":"新しい境界や座標を推測せず、206点は位置履歴として扱う。","source":"国土地理院タイル一覧","url":"https://maps.gsi.go.jp/development/ichiran.html"}]};
+
+
+
+
+
+
 
 
 
