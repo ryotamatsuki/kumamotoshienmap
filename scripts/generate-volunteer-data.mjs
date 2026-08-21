@@ -348,6 +348,80 @@ const currentCalendarOverrides = {
     "2026-08-24": {key:"planned",label:"通常VC移行後の条件要確認",countable:false}
   }
 };
+const currentCalendarOverrides20260821 = {
+  "宇土市": {
+    "2026-08-20": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
+    "2026-08-21": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
+    "2026-08-22": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
+    "2026-08-23": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
+    "2026-08-24": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
+    "2026-08-25": {key:"none",label:"活動なし",countable:false},
+    "2026-08-26": {key:"none",label:"活動なし",countable:false},
+    "2026-08-27": {key:"recruiting",label:"第3期募集中",capacity:"70人程度／日",countable:true},
+    "2026-08-28": {key:"recruiting",label:"団体5人以上受付",countable:true},
+    "2026-08-29": {key:"recruiting",label:"団体5人以上受付",countable:true},
+    "2026-08-30": {key:"recruiting",label:"団体5人以上受付",countable:true},
+    "2026-08-31": {key:"recruiting",label:"団体5人以上受付",countable:true}
+  },
+  "宇城市": {
+    "2026-08-20": {key:"recruiting",label:"個人日別受付",countable:true},
+    "2026-08-21": {key:"recruiting",label:"個人日別受付",countable:true},
+    "2026-08-22": {key:"recruiting",label:"個人日別受付",countable:true},
+    "2026-08-23": {key:"recruiting",label:"個人日別受付",countable:true},
+    "2026-08-24": {key:"recruiting",label:"個人日別受付",countable:true},
+    "2026-08-25": {key:"none",label:"活動なし",countable:false},
+    "2026-08-26": {key:"recruiting",label:"個人日別受付",countable:true},
+    "2026-08-27": {key:"recruiting",label:"個人日別受付",countable:true},
+    "2026-08-28": {key:"recruiting",label:"個人日別受付",countable:true},
+    "2026-08-29": {key:"recruiting",label:"個人日別受付",countable:true},
+    "2026-08-30": {key:"recruiting",label:"個人日別受付",countable:true},
+    "2026-08-31": {key:"recruiting",label:"個人日別受付",countable:true}
+  },
+  "美里町": Object.fromEntries(Array.from({length:9}, (_, index) => {
+    const day = String(22 + index).padStart(2, "0");
+    return [`2026-08-${day}`, {key:"recruiting",label:"募集中・約40人／日",capacity:"約40人／日",countable:true}];
+  })),
+  "御船町": {
+    "2026-08-24": {key:"recruiting",label:"団体のみ",countable:true},
+    "2026-08-25": {key:"recruiting",label:"募集中",countable:true},
+    "2026-08-26": {key:"none",label:"活動なし",countable:false},
+    "2026-08-27": {key:"recruiting",label:"募集中",countable:true},
+    "2026-08-28": {key:"recruiting",label:"募集中",countable:true},
+    "2026-08-29": {key:"recruiting",label:"募集中",countable:true},
+    "2026-08-30": {key:"none",label:"活動なし",countable:false},
+    "2026-08-31": {key:"none",label:"活動なし",countable:false}
+  },
+  "嘉島町": {
+    "2026-08-21": {key:"recruiting",label:"事前受付",countable:true},
+    "2026-08-22": {key:"recruiting",label:"事前受付",countable:true}
+  },
+  "益城町": Object.fromEntries(Array.from({length:5}, (_, index) => {
+    const day = String(24 + index).padStart(2, "0");
+    return [`2026-08-${day}`, {key:"recruiting",label:"第3期募集中・30人／日",capacity:"30人／日",countable:true}];
+  })),
+  "甲佐町": Object.fromEntries(Array.from({length:10}, (_, index) => {
+    const day = String(22 + index).padStart(2, "0");
+    return [`2026-08-${day}`, {key:"planned",label:"近日募集予定・詳細未確認",countable:false}];
+  })),
+  "八代市": Object.fromEntries(Array.from({length:8}, (_, index) => {
+    const day = String(24 + index).padStart(2, "0");
+    return [`2026-08-${day}`, {key:"recruiting",label:"個人・団体受付",countable:true}];
+  })),
+  "氷川町": {
+    "2026-08-21": {key:"recruiting",label:"募集中",countable:true},
+    "2026-08-22": {key:"recruiting",label:"募集中",countable:true},
+    "2026-08-23": {key:"recruiting",label:"募集中",countable:true},
+    "2026-08-24": {key:"none",label:"活動休止",countable:false},
+    "2026-08-25": {key:"recruiting",label:"募集中",countable:true},
+    "2026-08-26": {key:"recruiting",label:"募集中",countable:true},
+    "2026-08-27": {key:"recruiting",label:"募集中",countable:true}
+  },
+  "芦北町": Object.fromEntries(Array.from({length:11}, (_, index) => {
+    const day = String(21 + index).padStart(2, "0");
+    return [`2026-08-${day}`, {key:"unknown",label:"事前登録者へ個別依頼",countable:false}];
+  }))
+};
+Object.assign(currentCalendarOverrides, currentCalendarOverrides20260821);
 for(const center of centers){
   const override = currentCalendarOverrides[center.municipality] || calendarOverrides[center.municipality];
   if(override) center.calendar_overrides = override;
