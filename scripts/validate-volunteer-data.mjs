@@ -34,6 +34,7 @@ assert(unique(data.all_centers.map((center)=>center.municipality)),"共通表示
 assert(data.all_centers.every((center)=>data.all_municipalities.includes(center.municipality)),"県内市町村一覧と共通表示用データが一致しません");
 assert(isIso(data.meta.checked_at) && isIso(data.meta.reference_at),"情報基準日時がISO形式ではありません");
 assert(data.meta.reference_at.startsWith("2026-08-21"),"ボランティア情報の基準日が2026-08-21ではありません");
+assert(data.meta.checked_at === "2026-08-21T15:00:00+09:00", "ボランティア情報の最終確認時刻がページ全体の確認時刻と一致しません");
 
 for(const center of data.all_centers){
   for(const field of requiredFields){
