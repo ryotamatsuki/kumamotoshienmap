@@ -9,6 +9,7 @@
   "page_checked_at": null,
   "base_main_sha": "f8799b3e943626616f88742f3c52037d4253b413",
   "expected_changed_files": [
+    ".github/workflows/post-deploy-pages-smoke.yml",
     "operations/ledgers/refresh-20260822-1544.json",
     "package.json",
     "scripts/current-page-metadata.mjs",
