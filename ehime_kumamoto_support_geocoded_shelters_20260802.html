@@ -1256,8 +1256,28 @@ function renderTimelineDetail(item){
  const related=item.recordIds.map(id=>RECORDS.find(r=>r.id===id)).filter(Boolean);
  el.innerHTML=`<div class="timeline-detail-head"><div><h3>${esc(item.title)}</h3><div class="timeline-detail-date">${esc(item.dateLabel)}（${esc(item.weekday)}） ${esc(item.time)}</div></div><span class="timeline-detail-type">${TIMELINE_PHASE_LABEL[item.phase]}</span></div><div class="timeline-detail-body"><p>${esc(item.detail)}</p><dl class="timeline-detail-grid"><dt>主な主体</dt><dd>${esc(TIMELINE_ACTOR_LABEL[item.actor])}</dd><dt>地域</dt><dd>${esc(item.place)}</dd><dt>資料</dt><dd>${esc(item.sourceLabel)}</dd></dl>${related.length?`<div class="timeline-related"><h4>関連する支援項目</h4>${related.map(overviewRecordHtml).join('')}</div>`:''}<div class="timeline-detail-actions"><a href="${item.sourceUrl}" target="_blank" rel="noopener">一次資料を開く</a>${item.hubIds.length?`<button type="button" data-timeline-map="${item.hubIds[0]}">地図で地域を確認</button>`:''}${related.length?`<button type="button" data-timeline-dashboard="${related.map(r=>r.id).join(',')}">支援項目をまとめて確認</button>`:''}</div></div>`;
 }
+function timelineTimeOrder(value){
+ const text=String(value||'').trim();
+ const match=text.match(/(\d{1,2}):(\d{2})/);
+ if(match)return Number(match[1])*60+Number(match[2]);
+ if(/午前/u.test(text))return 9*60;
+ if(/日中|開始/u.test(text))return 12*60;
+ if(/午後/u.test(text))return 15*60;
+ if(/完了|決定/u.test(text))return 18*60;
+ if(/以降毎日|予定延期|予定/u.test(text))return 24*60;
+ return 24*60+1;
+}
+function sortTimelineEvents(events){
+ return [...events].sort((a,b)=>{
+  const dateOrder=String(a.date||'').localeCompare(String(b.date||''),'ja');
+  if(dateOrder!==0)return dateOrder;
+  const timeOrder=timelineTimeOrder(a.time)-timelineTimeOrder(b.time);
+  if(timeOrder!==0)return timeOrder;
+  return String(a.id||'').localeCompare(String(b.id||''),'ja');
+ });
+}
 function renderTimeline(){
- const filtered=timelineFilteredEvents();
+ const filtered=sortTimelineEvents(timelineFilteredEvents());
  document.getElementById('timelineMetricAll').textContent=TIMELINE_EVENTS.length.toLocaleString('ja-JP');
  document.getElementById('timelineMetricDay1').textContent=TIMELINE_EVENTS.filter(item=>item.date==='2026-07-28').length.toLocaleString('ja-JP');
  document.getElementById('timelineMetricEhime').textContent=TIMELINE_EVENTS.filter(item=>item.actor==='ehime').length.toLocaleString('ja-JP');
