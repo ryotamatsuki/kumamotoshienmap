@@ -9,13 +9,14 @@
     "generate:current-shelter-data": "node scripts/generate-current-shelter-data.mjs",
     "validate:dashboard": "node scripts/validate-dashboard-current.mjs",
     "validate:current-state": "node scripts/validate-current-state-audit.mjs",
+    "validate:timeline": "node scripts/validate-timeline-order.mjs",
     "validate:dist": "node scripts/validate-built-site.mjs",
     "validate:volunteer": "node scripts/validate-volunteer-data.mjs",
     "validate:shelters": "node scripts/validate-shelter-coordinates.mjs",
     "validate:current-shelters": "node scripts/validate-current-shelters.mjs",
     "validate:release": "node scripts/validate-update-release.mjs",
     "test:release-gate": "node scripts/test-release-gate.mjs",
-    "build": "npm run generate:volunteer && npm run generate:current-shelter-data && npm run sync:page-metadata && npm run validate:dashboard && npm run validate:current-state && npm run validate:volunteer && npm run validate:shelters && npm run validate:current-shelters && node scripts/build-sites.mjs && npm run validate:dist",
+    "build": "npm run generate:volunteer && npm run generate:current-shelter-data && npm run sync:page-metadata && npm run validate:dashboard && npm run validate:current-state && npm run validate:timeline && npm run validate:volunteer && npm run validate:shelters && npm run validate:current-shelters && node scripts/build-sites.mjs && npm run validate:dist",
     "sync:page-metadata": "node scripts/sync-current-page-metadata.mjs"
   }
 }
