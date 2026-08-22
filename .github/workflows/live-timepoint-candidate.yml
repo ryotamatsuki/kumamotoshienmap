@@ -1,4 +1,4 @@
-name: Live timepoint shelter candidate
+name: Apply timepoint refresh
 
 on:
   pull_request:
@@ -6,43 +6,63 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  candidate:
-    name: Fetch and validate live shelter candidate
+  apply:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    name: Apply validated refresh
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+          persist-credentials: true
       - uses: actions/setup-node@v7
         with:
           node-version: 22.x
-      - name: Fetch official live shelter JSON as candidate
+      - name: Fetch and validate official shelter candidate
         run: |
           set -Eeuo pipefail
           npm install --ignore-scripts --no-audit --no-fund --package-lock=false
           npm run update:current-shelters -- --dry-run --candidate-output candidate-current-shelters.json | tee candidate-summary.json
           node scripts/validate-current-shelters.mjs --candidate=candidate-current-shelters.json
-      - name: Pack working snapshot
+      - name: Apply timepoint refresh
         run: |
           set -Eeuo pipefail
-          tar --exclude=.git --exclude=node_modules -czf /tmp/repo-working-snapshot.tar.gz .
-      - name: Upload candidate
-        uses: actions/upload-artifact@v4
-        with:
-          name: current-shelters-candidate
-          path: |
-            candidate-current-shelters.json
-            candidate-summary.json
-          if-no-files-found: error
-          retention-days: 1
-      - name: Upload working snapshot
-        uses: actions/upload-artifact@v4
-        with:
-          name: repo-working-snapshot
-          path: /tmp/repo-working-snapshot.tar.gz
-          if-no-files-found: error
-          retention-days: 1
+          python scripts/apply-timepoint-20260822.py
+          npm run build
+          npm run test:release-gate
+          cmp --silent ehime_kumamoto_support_geocoded_shelters_20260802.html public/dashboard.html
+          git diff --check
+      - name: Commit refreshed data and remove temporary apply script
+        env:
+          BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -Eeuo pipefail
+          rm -f candidate-current-shelters.json candidate-summary.json
+          git rm scripts/apply-timepoint-20260822.py
+          git add \
+            operations/ledgers/refresh-20260822-1516.json \
+            current-shelters.json \
+            ehime_kumamoto_support_geocoded_shelters_20260802.html \
+            public/dashboard.html \
+            research_official_north.json \
+            research_official_south.json \
+            research_official_statewide.json \
+            scripts/generate-volunteer-data.mjs \
+            scripts/validate-current-state-audit.mjs \
+            scripts/validate-dashboard-current.mjs \
+            scripts/validate-volunteer-data.mjs \
+            volunteer-data.js
+          git diff --cached --check
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --cached --quiet; then
+            echo "No refresh changes to commit."
+            exit 1
+          fi
+          git commit -m "data: refresh dashboard as of 2026-08-22"
+          git push origin "HEAD:${BRANCH_NAME}"
