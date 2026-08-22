@@ -1,0 +1,110 @@
+name: Verify deployed GitHub Pages
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    name: Pages HTTP and browser smoke
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Verify deployed HTTP assets
+        run: |
+          set -Eeuo pipefail
+          base="https://ryotamatsuki.github.io/kumamotoshienmap"
+          for path in "/" "/ehime_kumamoto_support_geocoded_shelters_20260802.html" "/volunteer.css" "/volunteer.js" "/volunteer-data.js" "/current-shelters.json"; do
+            echo "GET ${base}${path}"
+            curl -fL --retry 20 --retry-delay 5 --retry-all-errors --connect-timeout 10 --max-time 30 "${base}${path}" -o "/tmp/$(echo "$path" | tr '/.' '__').body"
+          done
+          html=/tmp/_ehime_kumamoto_support_geocoded_shelters_20260802_html.body
+          grep -F '2026年8月22日確認' "$html"
+          grep -F 'volunteer-data.js?v=20260822-1516' "$html"
+          grep -F 'data-view="overview"' "$html"
+          grep -F 'data-view="needs"' "$html"
+          grep -F 'data-view="timeline"' "$html"
+          grep -F 'data-view="dashboard"' "$html"
+          grep -F 'data-view="volunteer"' "$html"
+          grep -F 'data-view="map"' "$html"
+          node - <<'NODE'
+          const fs = require('fs');
+          const p = '/tmp/_current-shelters_json.body';
+          const d = JSON.parse(fs.readFileSync(p, 'utf8'));
+          if (d?.meta?.current_count !== 68 || d?.shelters?.length !== 68) throw new Error(`deployed current shelters mismatch: ${d?.meta?.current_count}/${d?.shelters?.length}`);
+          if (d.shelters.some(x => x.coordinate_status !== 'confirmed')) throw new Error('deployed current shelters contain non-confirmed coordinates');
+          console.log(JSON.stringify({current_count:d.meta.current_count, source_last_modified:d.meta.source_last_modified, fetched_at:d.meta.fetched_at}));
+          NODE
+          volunteer=/tmp/_volunteer-data_js.body
+          grep -F '2026-08-22T15:16:00+09:00' "$volunteer"
+          grep -F '募集中（第3期・8月26日～30日）' "$volunteer"
+      - name: Install browser driver
+        run: |
+          set -Eeuo pipefail
+          npm install --no-save --ignore-scripts --no-audit --no-fund --package-lock=false puppeteer-core
+          command -v google-chrome
+      - name: Verify Desktop and Mobile runtime
+        run: |
+          set -Eeuo pipefail
+          mkdir -p /tmp/pages-smoke
+          node - <<'NODE'
+          const puppeteer = require('puppeteer-core');
+          const url = 'https://ryotamatsuki.github.io/kumamotoshienmap/ehime_kumamoto_support_geocoded_shelters_20260802.html';
+          const expectedViews = ['overview','needs','timeline','dashboard','volunteer','map'];
+          (async () => {
+            const browser = await puppeteer.launch({headless:true, executablePath:'/usr/bin/google-chrome', args:['--no-sandbox','--disable-dev-shm-usage']});
+            try {
+              for (const spec of [
+                {name:'desktop', width:1440, height:1000, mobile:false},
+                {name:'mobile', width:390, height:844, mobile:true},
+              ]) {
+                const page = await browser.newPage();
+                await page.setViewport({width:spec.width,height:spec.height,isMobile:spec.mobile,deviceScaleFactor:1});
+                const pageErrors = [];
+                const consoleErrors = [];
+                page.on('pageerror', err => pageErrors.push(String(err)));
+                page.on('console', msg => { if (msg.type() === 'error') consoleErrors.push(msg.text()); });
+                const response = await page.goto(url,{waitUntil:'networkidle2',timeout:60000});
+                if (!response || !response.ok()) throw new Error(`${spec.name}: HTTP ${response?.status()}`);
+                await new Promise(r => setTimeout(r, 1200));
+                const state = await page.evaluate((views) => {
+                  const body = document.body.innerText;
+                  const values = [...document.querySelectorAll('[data-view]')].map(el => el.getAttribute('data-view'));
+                  const scriptSrcs = [...document.scripts].map(s => s.getAttribute('src') || '');
+                  return {
+                    title: document.title,
+                    hasCheckedDate: body.includes('2026年8月22日確認'),
+                    hasCurrent68: body.includes('68'),
+                    presentViews: views.filter(v => values.includes(v)),
+                    cacheOk: scriptSrcs.some(src => src.includes('volunteer-data.js?v=20260822-1516')),
+                  };
+                }, expectedViews);
+                if (!state.hasCheckedDate) throw new Error(`${spec.name}: checked date not rendered`);
+                if (!state.cacheOk) throw new Error(`${spec.name}: release cache marker missing`);
+                if (state.presentViews.length !== expectedViews.length) throw new Error(`${spec.name}: missing views ${expectedViews.filter(v=>!state.presentViews.includes(v)).join(',')}`);
+                if (pageErrors.length) throw new Error(`${spec.name}: page errors: ${pageErrors.join(' | ')}`);
+                await page.screenshot({path:`/tmp/pages-smoke/${spec.name}.png`,fullPage:true});
+                console.log(JSON.stringify({name:spec.name,...state,consoleErrors}));
+                await page.close();
+              }
+            } finally {
+              await browser.close();
+            }
+          })().catch(err => { console.error(err); process.exit(1); });
+          NODE
+      - name: Upload deployed-page screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-smoke-screenshots
+          path: /tmp/pages-smoke/*.png
+          if-no-files-found: ignore
+          retention-days: 1
