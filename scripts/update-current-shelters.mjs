@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, realpath, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -255,7 +255,63 @@ function createShelterRow(item, officialCoordinate, officialCoordinateAsOf, mast
   };
 }
 
-const isDryRun = process.argv.includes("--dry-run");
+function parseArguments(argv) {
+  const options = { dryRun: false, outputPath: null };
+  const productionPath = resolve(root, "current-shelters.json");
+
+  const setOutputPath = (value) => {
+    if (!value || value.startsWith("--")) throw new Error("--output/--candidate-outputには出力先パスが必要です。");
+    const resolvedPath = resolve(process.cwd(), value);
+    if (options.outputPath && options.outputPath !== resolvedPath) {
+      throw new Error(`出力先が複数指定されています（${options.outputPath} / ${resolvedPath}）。`);
+    }
+    options.outputPath = resolvedPath;
+  };
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const argument = argv[index];
+    if (argument === "--dry-run") {
+      options.dryRun = true;
+      continue;
+    }
+    if (argument === "--help" || argument === "-h") {
+      console.log([
+        "Usage: node scripts/update-current-shelters.mjs [--dry-run] [--output <path>]",
+        "  --dry-run                         本番 current-shelters.json を変更しない",
+        "  --output <path>                   出力先を指定（dry-runでは候補JSON）",
+        "  --candidate-output <path>         --outputの安全な別名",
+        "  --output=<path> / --candidate-output=<path>  同上",
+      ].join("\n"));
+      process.exit(0);
+    }
+    const inlineOutput = argument.match(/^--(?:output|candidate-output)=(.+)$/u);
+    if (inlineOutput) {
+      setOutputPath(inlineOutput[1]);
+      continue;
+    }
+    if (argument === "--output" || argument === "--candidate-output") {
+      setOutputPath(argv[index + 1]);
+      index += 1;
+      continue;
+    }
+    throw new Error(`未知のオプションです: ${argument}`);
+  }
+
+  if (options.dryRun && options.outputPath === productionPath) {
+    throw new Error(`dry-runの出力先に本番ファイルを指定できません: ${productionPath}`);
+  }
+  return options;
+}
+
+const { dryRun: isDryRun, outputPath: requestedOutputPath } = parseArguments(process.argv.slice(2));
+const writePath = requestedOutputPath ?? (isDryRun ? null : outputPath);
+if (isDryRun && requestedOutputPath) {
+  const productionRealPath = await realpath(outputPath).catch(() => outputPath);
+  const requestedRealPath = await realpath(requestedOutputPath).catch(() => requestedOutputPath);
+  if (requestedRealPath === productionRealPath) {
+    throw new Error(`dry-runの出力先が本番current-shelters.jsonを指しています: ${requestedOutputPath}`);
+  }
+}
 const response = await fetch(sourceUrl, { headers: { accept: "application/json" } });
 if (!response.ok) throw new Error(`公式避難所JSONの取得に失敗しました: HTTP ${response.status}`);
 const fetchedAt = formatJst(new Date());
@@ -302,8 +358,8 @@ const data = {
   shelters,
 };
 
-if (!isDryRun) {
-  await writeFile(outputPath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+if (writePath) {
+  await writeFile(writePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
 console.log(JSON.stringify({
@@ -319,5 +375,5 @@ console.log(JSON.stringify({
   conflictFacilityIds: shelters
     .filter((row) => row.coordinate_status === "conflict")
     .map((row) => row.facility_id),
-  outputPath: isDryRun ? null : outputPath,
+  outputPath: writePath,
 }));

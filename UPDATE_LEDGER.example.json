@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-YYYYMMDD-HHMM",
+  "release_id": "YYYYMMDD-HHMM",
+  "reference_at": "YYYY-MM-DDTHH:MM:SS+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "40文字のmain SHA",
+  "expected_changed_files": [
+    "current-shelters.json",
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "public/dashboard.html",
+    "volunteer-data.js",
+    "research_official_north.json",
+    "research_official_south.json",
+    "research_official_statewide.json",
+    "scripts/validate-dashboard-current.mjs",
+    "scripts/validate-current-state-audit.mjs",
+    "scripts/validate-current-shelters.mjs",
+    "scripts/validate-volunteer-data.mjs"
+  ],
+  "sources": [
+    {
+      "source_id": "official-source-example",
+      "url": "https://example.invalid/official",
+      "source_as_of": null,
+      "checked_at": null,
+      "fetched_at": null
+    }
+  ],
+  "coverage": {
+    "statewide": "rechecked",
+    "municipalities": "45市町を分類",
+    "researched_centers": "対象市町を再確認"
+  },
+  "snapshots": {},
+  "unresolved": []
+}
