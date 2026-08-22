@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { assertCurrentPageMetadataSynced } from "./current-page-metadata.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html");
@@ -62,6 +63,7 @@ const provinceNeeds = extractJsonConstant(html, "PROVINCE_NEEDS", "const NEED_RE
 const municipalities = extractJsonConstant(html, "NEED_MUNICIPALITIES", "const NEED_LESSONS=");
 const sources = extractJsonConstant(html, "SOURCES", "const pairSupportRecords20260811=");
 const pageMeta = extractJsonConstant(html, "PAGE_RECHECK_META", "const PROVIDER_LABEL=");
+assertCurrentPageMetadataSynced(html, pageMeta);
 const record = (id) => {
   const value = records.find((item) => item.id === id);
   assert.ok(value, `レコード ${id} がありません`);
