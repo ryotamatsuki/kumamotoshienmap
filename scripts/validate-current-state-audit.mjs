@@ -45,7 +45,7 @@ function extractJsonConstant(text, name, nextMarker) {
 }
 
 assert.equal(publicHtml, html, "公開用HTMLとレビュー元HTMLが一致していません");
-assert.ok(html.includes('<script src="./volunteer-data.js?v=20260821-1500"></script>'), "ボランティアデータのキャッシュバスターがありません");
+assert.ok(html.includes('<script src="./volunteer-data.js?v=20260822-1516"></script>'), "ボランティアデータのキャッシュバスターがありません");
 assert.ok(!html.includes("2026年8月21日13:14"), "現行HTMLに旧時点のページ確認時刻が残っています");
 assert.ok(!html.includes("2026/8/21 13:14"), "現行HTMLに旧時点のボランティア確認時刻が残っています");
 assert.equal((html.match(/CURRENT_STATE_CLEANUP_20260821_START/g) || []).length, 1, "現行状態補正ブロックが重複しています");
@@ -92,7 +92,7 @@ for (const id of ["ehime-pair", "pair-hikawa", "pair-kashima"]) {
   assert.ok(!record(id).status.includes("活動中"), `${id}に期限切れの活動中表示があります`);
 }
 
-assert.ok(need("p-shelter").observed.includes("8月21日14時25分更新"));
+assert.ok(need("p-shelter").observed.includes("8月22日13時30分更新"));
 assert.ok(need("p-waste").observed.includes("10市町村"));
 assert.ok(need("p-agri").observed.includes("7,881件、約1,559億円"));
 for (const name of ["熊本市", "八代市", "宇土市", "宇城市", "美里町", "御船町", "嘉島町", "益城町", "甲佐町", "氷川町", "芦北町"]) {
@@ -107,12 +107,12 @@ assert.ok(event("t-kumamoto-0819").summary.includes("971人"));
 assert.ok(!event("t-kumamoto-0816").tags.includes("最新確認"));
 assert.equal(event("t-current-status").summary, "避難者2,925人、開設避難所69か所、人的被害398人、住家被害35,048棟。");
 
-assert.equal(pageMeta.checkedAt, "2026-08-21T15:00:00+09:00");
+assert.equal(pageMeta.checkedAt, "2026-08-22T15:16:00+09:00");
 assert.ok(pageMeta.rows.some((row) => row.section === "愛媛県支援"));
 for (const row of pageMeta.rows) {
   if (row.status === "差分あり") assert.notEqual(row.current, row.previous, `ページ再確認の現行値と前回値が同じです: ${row.section}`);
 }
-assert.ok(pageMeta.rows.find((row) => row.section === "支援ダッシュボード").difference.includes("971人"));
+assert.ok(pageMeta.rows.find((row) => row.section === "支援ダッシュボード").status === "変更なし");
 
 for (const url of [
   "https://www.pref.ehime.jp/uploaded/attachment/188363.pdf",
@@ -124,7 +124,7 @@ for (const url of [
 
 const currentDisplay = html.slice(0, html.indexOf('<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js">'));
 for (const value of [
-  "D+24",
+  "D+25",
   "行政応援971人",
   "関係機関含む計1,038人",
   "8月19日までの確定支援",
@@ -138,10 +138,10 @@ for (const value of [
   "仮置場11市町開設",
 ]) assert.ok(!currentDisplay.includes(value), `旧い現行表示が残っています: ${value}`);
 
-assert.equal(shelterData.meta.fetched_at, "2026-08-21T14:30:05+09:00");
-assert.equal(shelterData.meta.source_last_modified, "2026-08-21T14:25:44+09:00");
-assert.equal(shelterData.meta.current_count, 71);
-assert.equal(shelterData.shelters.length, 71);
+assert.equal(shelterData.meta.fetched_at, "2026-08-22T15:35:05+09:00");
+assert.equal(shelterData.meta.source_last_modified, "2026-08-22T13:30:50+09:00");
+assert.equal(shelterData.meta.current_count, 68);
+assert.equal(shelterData.shelters.length, 68);
 assert.ok(shelterData.shelters.every((row) => row.coordinate_status === "confirmed"));
 
 console.log(JSON.stringify({

@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-08-21T15:00:00+09:00",
+  "checked_at": "2026-08-22T15:16:00+09:00",
   "sources": [
     {
       "publisher": "熊本県",
@@ -95,6 +95,15 @@
     "toll_requires_request_or_acceptance": true,
     "toll_requires_prior_procedure": true,
     "checked_at": "2026-08-21T15:00:00+09:00",
-    "latest_checked_at": "2026-08-21T15:00:00+09:00"
-  }
+    "latest_checked_at": "2026-08-22T15:16:00+09:00"
+  },
+  "additional_official_observations": [
+    {
+      "subject": "玉東町",
+      "state": "UNKNOWN",
+      "observation": "熊本市の連携中枢都市圏公式情報に『令和8年熊本地震災害ボランティア募集（玉東町）』の掲載を確認。活動日・対象地域・申込条件の詳細は今回の確認では特定できないため、募集条件を推測しない。",
+      "url": "https://www.city.kumamoto.jp/toshiken/",
+      "checked_at": "2026-08-22T15:16:00+09:00"
+    }
+  ]
 }

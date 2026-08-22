@@ -25,7 +25,7 @@ const currentShelterConflictCount = currentShelterRows.filter((row) => row?.coor
 assert.equal(publicHtml, html, "公開用HTMLがレビュー元HTMLと一致していません");
 
 const requiredText = [
-  "経過日 D+24（主要公表値は8月20日14時）",
+  "経過日 D+25（主要公表値は8月20日14時）",
   "2,925<span class=\"overview-kpi-unit\">人",
   "69<span class=\"overview-kpi-unit\">か所",
   "398<span class=\"overview-kpi-unit\">人",
@@ -39,7 +39,7 @@ const requiredText = [
   "地図表示数",
   "座標未確認数",
   "防災情報くまもと 現在開設避難所一覧（公式JSON）",
-  'checkedAt":"2026-08-21T15:00:00+09:00"',
+  'checkedAt":"2026-08-22T15:16:00+09:00"',
   "status:\"8月2日時点で開設\"",
   'data-view="overview"',
   'data-view="needs"',
@@ -62,7 +62,7 @@ const runtimeScriptStart = html.indexOf('<script src="https://cdn.jsdelivr.net/n
 assert.ok(runtimeScriptStart > 0, "公開HTMLの初期表示領域を特定できません");
 const currentDisplayHtml = html.slice(0, runtimeScriptStart);
 const requiredCurrentDisplay = [
-  "2026年8月21日確認",
+  "2026年8月22日確認",
   "国交省第47報",
   "給水車129台（国交省第47報・8月21日7時30分・表掲載値）",
   "8月19日資料：行政応援971人（関係機関含む計1,038人）",
@@ -228,7 +228,7 @@ assert.ok(extended.SUPPORT_BLOCKS.some((block) => block.id === "internal-coordin
 
 console.log(JSON.stringify({
   currentAsOf: "2026-08-20T14:00:00+09:00",
-  siteCheckedAt: "2026-08-21T15:00:00+09:00",
+  siteCheckedAt: "2026-08-22T15:16:00+09:00",
   shelters: rawTotals.shelters,
   evacuees: rawTotals.evacuees,
   housingMunicipalRows: rawTotals.housing,

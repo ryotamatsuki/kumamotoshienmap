@@ -1,6 +1,6 @@
 {
   "research_scope": "令和8年熊本地震に伴う災害ボランティアセンター・募集情報（南部担当）",
-  "checked_at": "2026-08-21T15:00:00+09:00",
+  "checked_at": "2026-08-22T15:16:00+09:00",
   "timezone": "Asia/Tokyo",
   "source_policy": "熊本県、熊本県社会福祉協議会、市町、市町社会福祉協議会、災害ボランティアセンターの公式Webページおよび公式SNSのみ。報道、まとめサイト、非公式SNS、過去災害資料は現状判定に使用していない。",
   "null_policy": {
@@ -89,9 +89,9 @@
       "official_source_url": "https://www.mashiki-shakyo.or.jp/news/2068/",
       "source_published_at": "2026-08-06",
       "source_updated_at": null,
-      "checked_at": "2026-08-21T15:00:00+09:00",
-      "recheck_status": "差分あり",
-      "recheck_note": "8月21日に公式告知を再確認。第3期8月24～28日、各日30人の募集を反映。",
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "8月22日15:16時点で公式一次情報を再確認。前回確認済みの現行状態を変更する新たな一次情報は確認できず、既存状態を保持。",
       "change_status": "第3期募集日程更新",
       "previous_known_state": "情報未確認（8月17日以降の再開条件要確認）",
       "change_from_previous": "休止後の未確認状態から、第3期8月24～28日・各日30人へ更新。",
@@ -105,7 +105,7 @@
           "url": "https://www.mashiki-shakyo.or.jp/news/2068/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-21T15:00:00+09:00",
+          "checked_at": "2026-08-22T15:16:00+09:00",
           "facts_used": "第3期8月24～28日、各日30人"
         },
         {
@@ -197,9 +197,9 @@
       "official_source_url": "https://kosa-shakyo.or.jp/pages/50/",
       "source_published_at": null,
       "source_updated_at": null,
-      "checked_at": "2026-08-21T15:00:00+09:00",
-      "recheck_status": "差分あり",
-      "recheck_note": "8月21日に公式ページを再確認。8月29日まで必要人数到達で受付終了、8月30日以降は未定との現行表示を反映。",
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "8月22日15:16時点で公式一次情報を再確認。前回確認済みの現行状態を変更する新たな一次情報は確認できず、既存状態を保持。",
       "change_status": "受付終了・以降未定へ更新",
       "previous_known_state": "受付終了・団体は要調整",
       "change_from_previous": "近日募集予定・詳細未確認から、8月29日まで受付終了・以降未定へ更新。",
@@ -213,7 +213,7 @@
           "url": "https://kosa-shakyo.or.jp/pages/50/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-21T15:00:00+09:00",
+          "checked_at": "2026-08-22T15:16:00+09:00",
           "facts_used": "8月29日まで必要人数到達で受付終了、8月30日以降は未定"
         }
       ],
@@ -276,9 +276,9 @@
       "official_source_url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
       "source_published_at": "2026-08-10",
       "source_updated_at": null,
-      "checked_at": "2026-08-21T15:00:00+09:00",
-      "recheck_status": "差分あり",
-      "recheck_note": "8月21日に公式ページを再確認。個人8月24～31日、団体5人以上8月24日～9月30日の募集を反映。県外・愛媛県可否は要照会。",
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "8月22日15:16時点で公式一次情報を再確認。前回確認済みの現行状態を変更する新たな一次情報は確認できず、既存状態を保持。",
       "change_status": "個人・団体募集日程更新",
       "previous_known_state": "限定募集（団体・個別照会）",
       "change_from_previous": "個別照会表示から、個人・5人以上団体の現行日程へ更新。",
@@ -292,7 +292,7 @@
           "url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-21T15:00:00+09:00",
+          "checked_at": "2026-08-22T15:16:00+09:00",
           "facts_used": "個人8月24～31日、団体5人以上8月24日～9月30日"
         }
       ],
@@ -380,9 +380,9 @@
       "official_source_url": "https://hikawa-syakyo.jp/news/",
       "source_published_at": "2026-08-16",
       "source_updated_at": null,
-      "checked_at": "2026-08-21T15:00:00+09:00",
-      "recheck_status": "差分あり",
-      "recheck_note": "8月21日に公式一覧を再確認。8月21～27日募集、8月24日休止を反映。",
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "8月22日15:16時点で公式一次情報を再確認。前回確認済みの現行状態を変更する新たな一次情報は確認できず、既存状態を保持。",
       "change_status": "募集日程・休止日更新",
       "previous_known_state": "募集中（8月14日～20日・8月17日休止）",
       "change_from_previous": "募集期間を8月21～27日に更新し、8月24日を休止日として明示。",
@@ -396,7 +396,7 @@
           "url": "https://hikawa-syakyo.jp/news/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-21T15:00:00+09:00",
+          "checked_at": "2026-08-22T15:16:00+09:00",
           "facts_used": "8月21～27日募集、8月24日休止"
         },
         {
@@ -503,9 +503,9 @@
       "official_source_url": "https://www.ashikita-shakyo.com/news/%E3%80%90%E9%87%8D%E8%A6%81%E3%80%91%E8%8A%A6%E5%8C%97%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%81%8B%E5%96%B6%E4%BD%93%E5%88%B6%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
       "source_published_at": "2026-08-17",
       "source_updated_at": null,
-      "checked_at": "2026-08-21T15:00:00+09:00",
-      "recheck_status": "差分あり",
-      "recheck_note": "8月21日に公式告知を再確認。一般公開募集終了後は事前登録者への必要時個別依頼方式であることを反映。",
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "recheck_status": "変更なし",
+      "recheck_note": "8月22日15:16時点で公式一次情報を再確認。前回確認済みの現行状態を変更する新たな一次情報は確認できず、既存状態を保持。",
       "change_status": "通常運営方式更新",
       "previous_known_state": "情報未確認（8月17日以降の通常VC移行条件要確認）",
       "change_from_previous": "一般公開募集終了後の運営方式を確認し、事前登録者への個別依頼として表示。",
@@ -519,7 +519,7 @@
           "url": "https://www.ashikita-shakyo.com/news/%E3%80%90%E9%87%8D%E8%A6%81%E3%80%91%E8%8A%A6%E5%8C%97%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%81%8B%E5%96%B6%E4%BD%93%E5%88%B6%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-21T15:00:00+09:00",
+          "checked_at": "2026-08-22T15:16:00+09:00",
           "facts_used": "一般公開募集終了、事前登録者へ必要時に個別依頼"
         },
         {
@@ -574,7 +574,7 @@
     "八代市はセンター設置準備中であり、募集開始とは判定しない。",
     "芦北町および県社協ポータル未掲載市町は、市町別公式募集情報未確認として扱い、募集なし・活動終了とは表示しない。"
   ],
-  "scope": "令和8年熊本地震・災害ボランティア公式一次情報（益城町、甲佐町、八代市、氷川町、芦北町）・2026年8月21日再確認",
+  "scope": "令和8年熊本地震・災害ボランティア公式一次情報（益城町、甲佐町、八代市、氷川町、芦北町）・2026年8月22日再確認",
   "key_changes_from_previous": [
     {
       "change_status": "募集中→一時休止（再開詳細未公表）",
