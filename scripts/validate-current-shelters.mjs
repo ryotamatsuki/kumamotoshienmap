@@ -34,6 +34,14 @@ const ISO_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}(?:[T ][0-9]{2}:[0-9]{2}(?::[0-9]{2}
 const isRecord = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
 const hasOwn = (value, key) => isRecord(value) && Object.hasOwn(value, key);
 const nonEmptyString = (value) => typeof value === "string" && value.trim().length > 0;
+function formatValue(value) {
+  if (value === undefined) return "undefined";
+  const serialized = JSON.stringify(value);
+  return serialized === undefined ? String(value) : serialized;
+}
+function expectedActual(expected, actual) {
+  return `期待値=${formatValue(expected)}、実際=${formatValue(actual)}`;
+}
 
 function normalizeText(value) {
   if (typeof value !== "string") return "";
@@ -89,13 +97,32 @@ function haversineDistanceMeters(first, second) {
 const pathFromArgument = (value) => resolve(process.cwd(), value);
 
 function parseArguments(argv) {
-  const options = { currentPath: DEFAULT_CURRENT_PATH, masterPath: DEFAULT_MASTER_PATH, manifestPath: DEFAULT_MANIFEST_PATH, allowConflicts: false };
+  const options = {
+    currentPath: DEFAULT_CURRENT_PATH,
+    inputKind: "current",
+    explicitInputPath: false,
+    masterPath: DEFAULT_MASTER_PATH,
+    manifestPath: DEFAULT_MANIFEST_PATH,
+    allowConflicts: false,
+  };
   const positional = [];
-  for (const argument of argv) {
+  const setInputPath = (value, inputKind) => {
+    if (!value || value.startsWith("--")) throw new Error("--current/--candidateには入力JSONのパスが必要です。");
+    if (options.explicitInputPath) throw new Error("current-shelters.jsonの入力パスは1つだけ指定してください。");
+    options.currentPath = pathFromArgument(value);
+    options.inputKind = inputKind;
+    options.explicitInputPath = true;
+  };
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const argument = argv[index];
     if (argument === "--help" || argument === "-h") {
       console.log([
         "Usage: node scripts/validate-current-shelters.mjs [current-shelters.json]",
         "  --current=<path>    現行避難所JSON（既定: current-shelters.json）",
+        "  --current <path>    --current=<path>の空白区切り形式",
+        "  --candidate=<path>  dry-runで生成した候補JSON",
+        "  --candidate <path>  --candidate=<path>の空白区切り形式",
         "  --master=<path>     位置履歴マスターJSON/HTML",
         "  --manifest=<path>   座標マニフェストJSON",
         "  --allow-conflicts   conflictを報告して継続（通常のbuildでは指定しない）",
@@ -103,17 +130,33 @@ function parseArguments(argv) {
       process.exit(0);
     }
     if (argument === "--allow-conflicts") { options.allowConflicts = true; continue; }
-    const match = argument.match(/^--(current|master|manifest)=(.+)$/u);
+    const match = argument.match(/^--(current|candidate|master|manifest)=(.+)$/u);
     if (match) {
       const [, name, value] = match;
-      options[`${name}Path`] = pathFromArgument(value);
+      if (name === "current" || name === "candidate") setInputPath(value, name);
+      else options[`${name}Path`] = pathFromArgument(value);
+      continue;
+    }
+    if (argument === "--current" || argument === "--candidate") {
+      setInputPath(argv[index + 1], argument.slice(2));
+      index += 1;
+      continue;
+    }
+    if (argument === "--master" || argument === "--manifest") {
+      const value = argv[index + 1];
+      if (!value || value.startsWith("--")) throw new Error(`${argument}には入力ファイルのパスが必要です。`);
+      options[`${argument.slice(2)}Path`] = pathFromArgument(value);
+      index += 1;
       continue;
     }
     if (argument.startsWith("--")) throw new Error(`未知のオプションです: ${argument}`);
     positional.push(argument);
   }
   if (positional.length > 1) throw new Error("current-shelters.jsonの指定は1つまでです。");
-  if (positional.length === 1) options.currentPath = pathFromArgument(positional[0]);
+  if (positional.length === 1) {
+    if (options.explicitInputPath) throw new Error("current-shelters.jsonの入力パスは1つだけ指定してください。");
+    options.currentPath = pathFromArgument(positional[0]);
+  }
   return options;
 }
 
@@ -194,9 +237,9 @@ function addMasterErrors(master, errors) {
   }
 }
 function validateMeta(data, master, errors) {
-  if (!isRecord(data)) { errors.push("current-shelters.jsonのルートがオブジェクトではありません。"); return null; }
-  if (data.schema_version !== 1) errors.push(`schema_versionは1である必要があります（${data.schema_version}）。`);
-  if (!isRecord(data.meta)) { errors.push("metaがオブジェクトではありません。"); return null; }
+  if (!isRecord(data)) { errors.push(`current-shelters.jsonのルートがオブジェクトではありません（${expectedActual("object", data)}）。`); return null; }
+  if (data.schema_version !== 1) errors.push(`schema_versionが不正です（${expectedActual(1, data.schema_version)}）。`);
+  if (!isRecord(data.meta)) { errors.push(`metaがオブジェクトではありません（${expectedActual("object", data.meta)}）。`); return null; }
   const meta = data.meta;
   for (const key of REQUIRED_META_FIELDS) if (!hasOwn(meta, key)) errors.push(`meta.${key}がありません。`);
   if (meta.source_url !== OFFICIAL_SOURCE_URL) errors.push(`meta.source_urlが熊本県公式避難所JSONではありません（${meta.source_url}）。`);
@@ -205,7 +248,7 @@ function validateMeta(data, master, errors) {
   if (meta.source_last_modified !== null && !isValidDateValue(meta.source_last_modified)) errors.push("meta.source_last_modifiedはnullまたはISO形式の日時である必要があります。");
   if (!nonEmptyString(meta.current_definition)) errors.push("meta.current_definitionが空です。");
   else if (!/shelterStartTimestamp.*shelterEndTimestamp/iu.test(meta.current_definition)) errors.push("meta.current_definitionにshelterStartTimestampあり・shelterEndTimestamp空の条件がありません。");
-  if (!Number.isInteger(meta.current_count) || meta.current_count < 0) errors.push("meta.current_countは0以上の整数である必要があります。");
+  if (!Number.isInteger(meta.current_count) || meta.current_count < 0) errors.push(`meta.current_countは0以上の整数である必要があります（実際=${formatValue(meta.current_count)}）。`);
   if (!isValidDateValue(meta.coordinate_master_source_as_of)) errors.push("meta.coordinate_master_source_as_ofがISO形式の日時ではありません。");
   if (!Number.isInteger(meta.coordinate_master_expected_count) || meta.coordinate_master_expected_count < 1) errors.push("meta.coordinate_master_expected_countは正の整数である必要があります。");
   else if (meta.coordinate_master_expected_count !== master.rows.length) errors.push(`meta.coordinate_master_expected_countが座標マスター件数と一致しません（${meta.coordinate_master_expected_count}/${master.rows.length}）。`);
@@ -269,9 +312,13 @@ function validateIdentityAgainstMaster(shelter, masterRow, label, errors) {
 }
 
 function validateShelters(data, meta, master, errors, options) {
-  if (!isRecord(data) || !Array.isArray(data.shelters)) { errors.push("sheltersが配列ではありません。"); return { confirmed: 0, unresolved: 0, conflicts: 0, sources: {} }; }
+  if (!isRecord(data) || !Array.isArray(data.shelters)) {
+    const actualShelters = isRecord(data) ? data.shelters : data;
+    errors.push(`sheltersが配列ではありません（${expectedActual("array", actualShelters)}）。`);
+    return { confirmed: 0, unresolved: 0, conflicts: 0, sources: {} };
+  }
   const shelters = data.shelters;
-  if (!Number.isInteger(meta?.current_count) || meta.current_count !== shelters.length) errors.push(`meta.current_countとshelters件数が不一致です（${meta?.current_count}/${shelters.length}）。未解決施設を含む現行一覧を削除せず保持してください。`);
+  if (!Number.isInteger(meta?.current_count) || meta.current_count !== shelters.length) errors.push(`meta.current_countとshelters件数が不一致です（${expectedActual(meta?.current_count, shelters.length)}）。未解決施設を含む現行一覧を削除せず保持してください。`);
   const masterById = new Map(master.rows.filter((row) => nonEmptyString(row.id)).map((row) => [String(row.id), row]));
   const seenFacilityIds = new Set();
   const seenIdentity = new Set();
@@ -365,8 +412,9 @@ function validateShelters(data, meta, master, errors, options) {
 
 async function main() {
   const options = parseArguments(process.argv.slice(2));
-  if (!(await exists(options.currentPath))) throw new Error(`現行避難所データがありません: ${options.currentPath}`);
-  const data = await readJson(options.currentPath, "current-shelters.json");
+  const inputLabel = options.inputKind === "candidate" ? "候補current-shelters.json" : "現行current-shelters.json";
+  if (!(await exists(options.currentPath))) throw new Error(`${inputLabel}がありません: ${options.currentPath}`);
+  const data = await readJson(options.currentPath, inputLabel);
   const master = await loadCoordinateMaster(options);
   const errors = [];
   addMasterErrors(master, errors);
@@ -374,11 +422,13 @@ async function main() {
   const counts = validateShelters(data, meta, master, errors, options);
   const onlyAllowedConflictErrors = options.allowConflicts && errors.length > 0 && errors.every((error) => /conflict|乖離|自動採用せず/u.test(error));
   if (errors.length > 0 && !onlyAllowedConflictErrors) {
-    console.error(["現行避難所JSON検証失敗:", ...errors].join("\n"));
+    console.error([`${inputLabel}検証失敗: ${options.currentPath}`, ...errors].join("\n"));
     process.exitCode = 1;
     return;
   }
   console.log(JSON.stringify({
+    input_path: options.currentPath,
+    input_kind: options.inputKind,
     current: Array.isArray(data.shelters) ? data.shelters.length : 0,
     map: counts.confirmed,
     unresolved: counts.unresolved,

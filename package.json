@@ -13,6 +13,7 @@
     "validate:volunteer": "node scripts/validate-volunteer-data.mjs",
     "validate:shelters": "node scripts/validate-shelter-coordinates.mjs",
     "validate:current-shelters": "node scripts/validate-current-shelters.mjs",
+    "validate:release": "node scripts/validate-update-release.mjs",
     "build": "npm run generate:volunteer && npm run generate:current-shelter-data && npm run validate:dashboard && npm run validate:current-state && npm run validate:volunteer && npm run validate:shelters && npm run validate:current-shelters && node scripts/build-sites.mjs && npm run validate:dist"
   }
 }

@@ -1,0 +1,192 @@
+name: Validate timepoint update
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      ledger_path:
+        description: "Optional UPDATE_LEDGER path; required when sensitive data files change"
+        required: false
+        default: ""
+        type: string
+      base_sha:
+        description: "Base commit for changed-file validation; blank uses origin/main"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-timepoint-update-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Build and release gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Check out the PR or selected revision
+        uses: actions/checkout@v4
+        with:
+          # Validate the PR head itself, not GitHub's synthetic merge commit.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Node.js LTS
+        uses: actions/setup-node@v4
+        with:
+          # The repository has no engines declaration; Node 22 is the compatible
+          # LTS baseline for the ESM and built-in Node APIs used by the scripts.
+          node-version: 22.x
+          check-latest: false
+
+      - name: Resolve validation base and ledger
+        id: context
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
+          INPUT_BASE_SHA: ${{ inputs.base_sha || '' }}
+          INPUT_LEDGER_PATH: ${{ inputs.ledger_path || '' }}
+        run: |
+          set -Eeuo pipefail
+
+          ledger_path="${INPUT_LEDGER_PATH:-}"
+          if [[ -z "$ledger_path" && -f UPDATE_LEDGER.json ]]; then
+            ledger_path="UPDATE_LEDGER.json"
+          fi
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            base_ref="$PR_BASE_SHA"
+          else
+            base_ref="$INPUT_BASE_SHA"
+            if [[ -z "$base_ref" ]]; then
+              git fetch --no-tags origin main --prune
+              base_ref="origin/main"
+            fi
+          fi
+
+          if [[ -z "$base_ref" ]]; then
+            echo "::error title=Release Gate context missing::Could not resolve the base commit for changed-file validation."
+            exit 1
+          fi
+
+          if ! base_sha="$(git rev-parse --verify "${base_ref}^{commit}")"; then
+            echo "::error title=Invalid Release Gate base::Unable to resolve base commit: ${base_ref}"
+            exit 1
+          fi
+
+          if [[ -n "$ledger_path" && ! "$ledger_path" =~ ^[A-Za-z0-9._/-]+$ ]]; then
+            echo "::error title=Invalid ledger path::The ledger path contains unsupported characters: ${ledger_path}"
+            exit 1
+          fi
+
+          echo "base_sha=$base_sha" >> "$GITHUB_OUTPUT"
+          echo "ledger_path=$ledger_path" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Release Gate context"
+            echo "- Base commit: `${base_sha}`"
+            echo "- Head commit: `$(git rev-parse HEAD)`"
+            if [[ -n "$ledger_path" ]]; then
+              echo "- Ledger path: `${ledger_path}`"
+            else
+              echo "- Ledger path: *(not supplied; required when sensitive data changes)*"
+            fi
+            echo "- Live official JSON fetch: **not used**"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Install npm metadata without assuming a lockfile
+        run: |
+          set -Eeuo pipefail
+          npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+
+      - name: Build from repository fixtures and current files
+        run: |
+          set -Eeuo pipefail
+          # Do not run update:current-shelters here. Normal PR CI is deliberately
+          # offline with respect to official JSON; it validates checked-in data.
+          npm run build
+
+      - name: Ensure build did not rewrite tracked inputs
+        run: |
+          set -Eeuo pipefail
+          if ! git diff --quiet; then
+            echo "::error title=Non-reproducible build::npm run build modified tracked files. Generated outputs must be committed explicitly and reproduce byte-for-byte in CI."
+            git status --short
+            git diff --stat
+            exit 1
+          fi
+          if ! git diff --cached --quiet; then
+            echo "::error title=Unexpected staged files::The CI checkout contains staged changes after the build."
+            git diff --cached --name-status
+            exit 1
+          fi
+          untracked_files="$(git ls-files --others --exclude-standard)"
+          if [[ -n "$untracked_files" ]]; then
+            echo "::error title=Untracked files present::The checkout contains files outside the reviewed diff:"
+            printf '%s\n' "$untracked_files"
+            exit 1
+          fi
+
+      - name: Check JavaScript syntax
+        run: |
+          set -Eeuo pipefail
+          node --check volunteer.js
+          node --check volunteer-data.js
+          node --check scripts/build-sites.mjs
+
+      - name: Check committed and working-tree diffs
+        env:
+          BASE_SHA: ${{ steps.context.outputs.base_sha }}
+        run: |
+          set -Eeuo pipefail
+          git diff --check
+          git diff --check "${BASE_SHA}...HEAD"
+
+      - name: Run the timepoint Release Gate
+        env:
+          BASE_SHA: ${{ steps.context.outputs.base_sha }}
+          LEDGER_PATH: ${{ steps.context.outputs.ledger_path }}
+        run: |
+          set -Eeuo pipefail
+
+          # Command contract for the Version 2.1 npm script:
+          # npm run validate:release -- --base=<commit-ish> --require-ledger-if-data-change
+          # For a data update, append --ledger=<path>; for code-only PRs the
+          # ledger may be omitted. The underlying validator is:
+          # node scripts/validate-update-release.mjs --base=<commit-ish>
+          #   --require-ledger-if-data-change [--ledger=<path>]
+          # The validator must inspect the PR diff from BASE_SHA to HEAD when
+          # checking expected_changed_files and must exit non-zero on any gate
+          # failure. It must not fetch live official JSON in this workflow.
+          if [[ ! -f scripts/validate-update-release.mjs ]]; then
+            echo "::error file=scripts/validate-update-release.mjs,title=Release validator missing::Expected Version 2.1 command contract is not implemented: npm run validate:release -- --base=<commit-ish> --require-ledger-if-data-change [--ledger=<path>]"
+            exit 1
+          fi
+          validator_args=(
+            "--base=${BASE_SHA}"
+            "--require-ledger-if-data-change"
+          )
+          if [[ -n "$LEDGER_PATH" ]]; then
+            if [[ ! -f "$LEDGER_PATH" ]]; then
+              echo "::error file=${LEDGER_PATH},title=UPDATE_LEDGER missing::The selected release ledger path does not exist."
+              exit 1
+            fi
+            validator_args+=("--ledger=${LEDGER_PATH}")
+          fi
+
+          npm run validate:release -- "${validator_args[@]}"
+
+      - name: Final release-gate status
+        if: ${{ success() }}
+        run: |
+          set -Eeuo pipefail
+          echo "Release Gate passed: build, fixture validation, syntax checks, diff checks, and the Version 2.1 validator completed successfully."
