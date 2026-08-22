@@ -1,0 +1,112 @@
++    const stale = "ページ全体の再確認：2026年8月21日 15:00（JST）";
++    for (const relativePath of [
++      "ehime_kumamoto_support_geocoded_shelters_20260802.html",
++      "public/dashboard.html",
++      "dist/dashboard.html",
++      "dist/server/index.js",
++    ]) {
++      mutate(resolve(root, relativePath), (value) => value.replace(current, stale));
++    }
++    const result = runNode(root, "scripts/validate-update-release.mjs");
++    expectFailure("visible current checked-at drift", result, /現況表示時刻|PAGE_RECHECK_META/u);
++  } finally { rmSync(root, { recursive: true, force: true }); }
++});
++
+ test("stale current metadata is blocked", () => {
+   const root = prepare();
+   try {
+diff --git a/scripts/validate-current-state-audit.mjs b/scripts/validate-current-state-audit.mjs
+index 2dfae85..8b367c2 100644
+--- a/scripts/validate-current-state-audit.mjs
++++ b/scripts/validate-current-state-audit.mjs
+@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
+ import { readFile } from "node:fs/promises";
+ import { dirname, resolve } from "node:path";
+ import { fileURLToPath } from "node:url";
++import { assertCurrentPageMetadataSynced } from "./current-page-metadata.mjs";
+ 
+ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+ const sourcePath = resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html");
+@@ -62,6 +63,7 @@ const provinceNeeds = extractJsonConstant(html, "PROVINCE_NEEDS", "const NEED_RE
+ const municipalities = extractJsonConstant(html, "NEED_MUNICIPALITIES", "const NEED_LESSONS=");
+ const sources = extractJsonConstant(html, "SOURCES", "const pairSupportRecords20260811=");
+ const pageMeta = extractJsonConstant(html, "PAGE_RECHECK_META", "const PROVIDER_LABEL=");
++assertCurrentPageMetadataSynced(html, pageMeta);
+ const record = (id) => {
+   const value = records.find((item) => item.id === id);
+   assert.ok(value, `レコード ${id} がありません`);
+diff --git a/scripts/validate-update-release.mjs b/scripts/validate-update-release.mjs
+index 04c6a38..fd9429d 100644
+--- a/scripts/validate-update-release.mjs
++++ b/scripts/validate-update-release.mjs
+@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
+ import { dirname, resolve, relative, sep } from "node:path";
+ import { fileURLToPath } from "node:url";
+ import vm from "node:vm";
++import { assertCurrentPageMetadataSynced, extractPageRecheckMeta } from "./current-page-metadata.mjs";
+ 
+ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+ const SOURCE_HTML = resolve(ROOT, "ehime_kumamoto_support_geocoded_shelters_20260802.html");
+@@ -260,7 +261,9 @@ function validateReleaseId(ledger) {
+ 
+ function validateCurrentMetadata(ledger, releaseId) {
+   const html = readText(SOURCE_HTML);
+-  const pageMeta = parseSingleLineObjectConstant(html, "PAGE_RECHECK_META");
++  const pageMeta = extractPageRecheckMeta(html);
++  try { assertCurrentPageMetadataSynced(html, pageMeta); }
++  catch (error) { fail(error.message); }
+   const volunteerSource = readText(VOLUNTEER_DATA);
+   const volunteerMatch = volunteerSource.match(/^globalThis\.VOLUNTEER_DATA = Object\.freeze\(([\s\S]+)\);\s*$/u);
+   if (!volunteerMatch) fail("volunteer-data.jsのVOLUNTEER_DATA形式を解析できません。");
+diff --git "a/\346\231\202\347\202\271\344\277\256\346\255\243\346\233\264\346\226\260\343\202\252\343\203\232\343\203\254\343\203\274\343\202\267\343\203\247\343\203\263.md" "b/\346\231\202\347\202\271\344\277\256\346\255\243\346\233\264\346\226\260\343\202\252\343\203\232\343\203\254\343\203\274\343\202\267\343\203\247\343\203\263.md"
+index ca5d7cd..b9cc5f7 100644
+--- "a/\346\231\202\347\202\271\344\277\256\346\255\243\346\233\264\346\226\260\343\202\252\343\203\232\343\203\254\343\203\274\343\202\267\343\203\247\343\203\263.md"
++++ "b/\346\231\202\347\202\271\344\277\256\346\255\243\346\233\264\346\226\260\343\202\252\343\203\232\343\203\254\343\203\274\343\202\267\343\203\247\343\203\263.md"
+@@ -179,10 +179,13 @@ PASS後のみ本番`current-shelters.json`へ反映する。公式JSONの現行
+ ```sh
+ cp ehime_kumamoto_support_geocoded_shelters_20260802.html public/dashboard.html
+ npm run generate:current-shelter-data
++npm run sync:page-metadata
+ cmp --silent ehime_kumamoto_support_geocoded_shelters_20260802.html public/dashboard.html
+ ```
+ 
+-`npm run build`後はRelease Gateがsource/public、source/dist dashboard、CSS/JS/JSONのdist、Sites Workerへの埋め込み、index.htmlの正本参照を自動検査する。
++`sync:page-metadata`は`PAGE_RECHECK_META.checkedAt`（及び`volunteerCheckedAt`）を正として、ヘッダー、確認バッジ、概要、ページ再確認欄、タイムライン、支援ダッシュボード、現況snapshotの表示時刻を自動同期する。これらを個別手修正してはならない。
++
++`npm run build`後はRelease Gateがsource/public、source/dist dashboard、CSS/JS/JSONのdist、Sites Workerへの埋め込み、index.htmlの正本参照に加え、現況表示時刻が`PAGE_RECHECK_META`と一致していることを自動検査する。
+ 
+ ## 11. release_id / cache bust
+ 
+@@ -211,10 +214,11 @@ Release Gate自己テスト：`test:release-gate`
+ 3. expected_changed_files不一致 → FAIL
+ 4. candidate count不一致 → FAIL
+ 5. coordinate conflict → FAIL
+-6. current metadata旧時点 → FAIL
+-7. HISTORYの過去日付 → 誤検出せずPASS
+-8. accepted_unresolvedの適正記録 → PASS
+-9. blocking_unresolvedあり → FAIL
++6. 画面上の現況確認時刻と`PAGE_RECHECK_META`の不一致 → FAIL
++7. current metadata旧時点 → FAIL
++8. HISTORYの過去日付 → 誤検出せずPASS
++9. accepted_unresolvedの適正記録 → PASS
++10. blocking_unresolvedあり → FAIL
+ 
+ validator自体を変更してFAIL条件が消えた場合、CIで検出する。
+ 
+@@ -264,6 +268,8 @@ CI成功後にhead SHAを固定してmergeする。
+ 
+ merge後main SHAを記録し、Pages実配信後にroot、本体HTML、CSS/JS/JSON、Desktop/Mobile、6タブ、出典リンク、地図、Console、current/history/plan表示、release_id/cache、実配信内容を確認する。GitHub PagesとSitesを混同しない。
+ 
++main更新時は`.github/workflows/post-deploy-pages-smoke.yml`が、Pages上のHTML/CSS/JS/JSONとmerged mainのバイト一致、現況確認時刻、release_id、Desktop/Mobile runtime、6ビュー、page/console errorを自動検査する。workflow PASSを公開後QAの機械的証跡とし、最終目視はこれを補完する。
++
+ ## 19. 残存する人間判断
+ 
+ 完全自動化しない事項：公式情報の意味解釈、PLANNED→ACTUALの裁定、404と募集終了の区別、異なる集計定義の裁定、accepted_unresolvedが本当に安全かの判断、Desktop/Mobile最終目視。
+@@ -280,6 +286,7 @@ merge後main SHAを記録し、Pages実配信後にroot、本体HTML、CSS/JS/JS
+ - [ ] candidate validator PASS
+ - [ ] source/public一致
+ - [ ] release_id一致
++- [ ] 現況表示時刻が`PAGE_RECHECK_META`と一致
+ - [ ] `npm run build` PASS
+ - [ ] `npm run test:release-gate` PASS
+ - [ ] `npm run validate:release` PASS
