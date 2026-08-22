@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/ryotamatsuki/kumamotoshienmap/schema/update-ledger-v1.json",
-  "title": "Kumamoto Support Map Update Ledger",
+  "$id": "https://github.com/ryotamatsuki/kumamotoshienmap/schema/update-ledger-v2.json",
+  "title": "Kumamoto Support Map Update Ledger v2",
   "type": "object",
   "required": [
     "schema_version",
@@ -16,10 +16,11 @@
     "expected_changed_files",
     "sources",
     "coverage",
-    "unresolved"
+    "blocking_unresolved",
+    "accepted_unresolved"
   ],
   "properties": {
-    "schema_version": { "const": 1 },
+    "schema_version": { "const": 2 },
     "repository": { "const": "ryotamatsuki/kumamotoshienmap" },
     "update_type": { "const": "timepoint_refresh" },
     "gate_phase": { "enum": ["pre_merge", "post_deploy"] },
@@ -49,7 +50,31 @@
     },
     "coverage": { "type": "object" },
     "snapshots": { "type": "object" },
-    "unresolved": { "type": "array" }
+    "blocking_unresolved": {
+      "type": "array",
+      "description": "These issues block release. The Release Gate requires this array to be empty."
+    },
+    "accepted_unresolved": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["issue_id", "state", "reason", "owner", "source_ids", "next_review_at"],
+        "properties": {
+          "issue_id": { "type": "string", "minLength": 1 },
+          "state": { "enum": ["UNKNOWN", "CONFLICT", "PLANNED", "OTHER"] },
+          "reason": { "type": "string", "minLength": 1 },
+          "owner": { "type": "string", "minLength": 1 },
+          "source_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "next_review_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    }
   },
+  "not": { "required": ["unresolved"] },
   "additionalProperties": true
 }
