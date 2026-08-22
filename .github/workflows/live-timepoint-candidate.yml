@@ -29,7 +29,7 @@ jobs:
       - name: Pack working snapshot
         run: |
           set -Eeuo pipefail
-          tar --exclude=.git --exclude=node_modules --exclude=repo-working-snapshot.tar.gz -czf repo-working-snapshot.tar.gz .
+          tar --exclude=.git --exclude=node_modules -czf /tmp/repo-working-snapshot.tar.gz .
       - name: Upload candidate
         uses: actions/upload-artifact@v4
         with:
@@ -43,6 +43,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: repo-working-snapshot
-          path: repo-working-snapshot.tar.gz
+          path: /tmp/repo-working-snapshot.tar.gz
           if-no-files-found: error
           retention-days: 1
