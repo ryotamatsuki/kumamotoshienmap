@@ -26,6 +26,10 @@ jobs:
           npm install --ignore-scripts --no-audit --no-fund --package-lock=false
           npm run update:current-shelters -- --dry-run --candidate-output candidate-current-shelters.json | tee candidate-summary.json
           node scripts/validate-current-shelters.mjs --candidate=candidate-current-shelters.json
+      - name: Pack working snapshot
+        run: |
+          set -Eeuo pipefail
+          tar --exclude=.git --exclude=node_modules --exclude=repo-working-snapshot.tar.gz -czf repo-working-snapshot.tar.gz .
       - name: Upload candidate
         uses: actions/upload-artifact@v4
         with:
@@ -33,5 +37,12 @@ jobs:
           path: |
             candidate-current-shelters.json
             candidate-summary.json
+          if-no-files-found: error
+          retention-days: 1
+      - name: Upload working snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: repo-working-snapshot
+          path: repo-working-snapshot.tar.gz
           if-no-files-found: error
           retention-days: 1
