@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const COPY_PATHS = [
   "scripts/validate-update-release.mjs",
+  "scripts/current-page-metadata.mjs",
   "scripts/validate-current-shelters.mjs",
   "ehime_kumamoto_support_geocoded_shelters_20260802.html",
   "public/dashboard.html",
@@ -202,6 +203,25 @@ test("candidate coordinate conflict is blocked", () => {
     writeFileSync(candidatePath, `${JSON.stringify(candidate, null, 2)}\n`);
     const result = runNode(root, "scripts/validate-current-shelters.mjs", [`--candidate=${candidatePath}`]);
     expectFailure("candidate conflict", result, /conflict|乖離|自動採用/u);
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});
+
+
+test("visible current checked-at drift is blocked", () => {
+  const root = prepare();
+  try {
+    const current = "ページ全体の再確認：2026年8月22日 15:16（JST）";
+    const stale = "ページ全体の再確認：2026年8月21日 15:00（JST）";
+    for (const relativePath of [
+      "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+      "public/dashboard.html",
+      "dist/dashboard.html",
+      "dist/server/index.js",
+    ]) {
+      mutate(resolve(root, relativePath), (value) => value.replace(current, stale));
+    }
+    const result = runNode(root, "scripts/validate-update-release.mjs");
+    expectFailure("visible current checked-at drift", result, /現況表示時刻|PAGE_RECHECK_META/u);
   } finally { rmSync(root, { recursive: true, force: true }); }
 });
 

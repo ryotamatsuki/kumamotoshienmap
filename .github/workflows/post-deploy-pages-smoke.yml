@@ -1,0 +1,117 @@
+name: Post-deploy Pages smoke
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pages-smoke:
+    name: Verify deployed GitHub Pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Wait for deployed files to match main
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          base="https://ryotamatsuki.github.io/kumamotoshienmap"
+          target="ehime_kumamoto_support_geocoded_shelters_20260802.html"
+          deployed=/tmp/deployed-dashboard.html
+          matched=false
+          for attempt in $(seq 1 30); do
+            if curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${target}" -o "$deployed" \
+              && cmp --silent "$target" "$deployed"; then
+              matched=true
+              break
+            fi
+            echo "Pages has not reached ${GITHUB_SHA} yet (attempt ${attempt})."
+            sleep 10
+          done
+          if [[ "$matched" != true ]]; then
+            echo "::error title=Pages deployment stale::Deployed dashboard did not converge to the merged main file."
+            exit 1
+          fi
+          for asset in volunteer.css volunteer.js volunteer-data.js current-shelters.json; do
+            curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${asset}" -o "/tmp/${asset}"
+            cmp --silent "$asset" "/tmp/${asset}" || {
+              echo "::error title=Pages asset stale::${asset} differs from merged main."
+              exit 1
+            }
+          done
+          curl -fsSL --connect-timeout 10 --max-time 30 "${base}/" -o /tmp/root.html
+          grep -F './ehime_kumamoto_support_geocoded_shelters_20260802.html' /tmp/root.html
+      - name: Install browser driver
+        run: |
+          set -Eeuo pipefail
+          npm install --no-save --ignore-scripts --no-audit --no-fund --package-lock=false puppeteer-core
+          command -v google-chrome
+      - name: Verify Desktop and Mobile runtime
+        run: |
+          set -Eeuo pipefail
+          node --input-type=module - <<'NODE'
+          import puppeteer from 'puppeteer-core';
+          import { extractPageRecheckMeta, formatPageCheckedAt } from './scripts/current-page-metadata.mjs';
+          import { readFileSync } from 'node:fs';
+
+          const expectedHtml = readFileSync('ehime_kumamoto_support_geocoded_shelters_20260802.html','utf8');
+          const meta = extractPageRecheckMeta(expectedHtml);
+          const checkedLabel = formatPageCheckedAt(meta.checkedAt);
+          const checkedCompact = formatPageCheckedAt(meta.checkedAt,{compact:true});
+          const volunteerLabel = formatPageCheckedAt(meta.volunteerCheckedAt || meta.checkedAt);
+          const releaseMatch = expectedHtml.match(/volunteer-data\.js\?v=([A-Za-z0-9._-]+)/u);
+          if(!releaseMatch) throw new Error('release_id query missing from expected HTML');
+          const releaseId = releaseMatch[1];
+          const expectedViews = ['overview','needs','timeline','dashboard','volunteer','map'];
+          const url = 'https://ryotamatsuki.github.io/kumamotoshienmap/ehime_kumamoto_support_geocoded_shelters_20260802.html';
+          const browser = await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
+          try {
+            for (const spec of [
+              {name:'desktop',width:1440,height:1000,mobile:false},
+              {name:'mobile',width:390,height:844,mobile:true},
+            ]) {
+              const page = await browser.newPage();
+              await page.setViewport({width:spec.width,height:spec.height,isMobile:spec.mobile,deviceScaleFactor:1});
+              const pageErrors=[];
+              const consoleErrors=[];
+              page.on('pageerror',error=>pageErrors.push(String(error)));
+              page.on('console',message=>{if(message.type()==='error')consoleErrors.push(message.text());});
+              const response=await page.goto(url,{waitUntil:'networkidle2',timeout:60000});
+              if(!response?.ok()) throw new Error(`${spec.name}: HTTP ${response?.status()}`);
+              const state=await page.evaluate(({views,checkedLabel,checkedCompact,volunteerLabel,releaseId})=>{
+                const values=[...document.querySelectorAll('[data-view]')].map(el=>el.getAttribute('data-view'));
+                const body=document.body.innerText;
+                const scriptSrcs=[...document.scripts].map(script=>script.getAttribute('src')||'');
+                return {
+                  title:document.title,
+                  presentViews:views.filter(view=>values.includes(view)),
+                  headerChecked:body.includes(`ページ全体の再確認：${checkedLabel}（JST）`),
+                  badgeChecked:body.includes(`ページ全体再確認：${checkedCompact}`),
+                  siteChecked:body.includes(`サイト確認：${checkedLabel}（JST）`),
+                  volunteerChecked:body.includes(`ボランティア個別確認：${volunteerLabel}確認済み`),
+                  releaseChecked:scriptSrcs.some(src=>src.includes(`volunteer-data.js?v=${releaseId}`)),
+                };
+              },{views:expectedViews,checkedLabel,checkedCompact,volunteerLabel,releaseId});
+              for (const [key,value] of Object.entries({headerChecked:state.headerChecked,badgeChecked:state.badgeChecked,siteChecked:state.siteChecked,volunteerChecked:state.volunteerChecked,releaseChecked:state.releaseChecked})) {
+                if(!value) throw new Error(`${spec.name}: ${key} failed`);
+              }
+              if(state.presentViews.length!==expectedViews.length) throw new Error(`${spec.name}: missing views ${expectedViews.filter(view=>!state.presentViews.includes(view)).join(',')}`);
+              if(pageErrors.length) throw new Error(`${spec.name}: page errors: ${pageErrors.join(' | ')}`);
+              if(consoleErrors.length) throw new Error(`${spec.name}: console errors: ${consoleErrors.join(' | ')}`);
+              console.log(JSON.stringify({name:spec.name,...state,pageErrors,consoleErrors}));
+              await page.close();
+            }
+          } finally {
+            await browser.close();
+          }
+          NODE

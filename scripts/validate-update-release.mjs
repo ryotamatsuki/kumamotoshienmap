@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { dirname, resolve, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
+import { assertCurrentPageMetadataSynced, extractPageRecheckMeta } from "./current-page-metadata.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const SOURCE_HTML = resolve(ROOT, "ehime_kumamoto_support_geocoded_shelters_20260802.html");
@@ -260,7 +261,9 @@ function validateReleaseId(ledger) {
 
 function validateCurrentMetadata(ledger, releaseId) {
   const html = readText(SOURCE_HTML);
-  const pageMeta = parseSingleLineObjectConstant(html, "PAGE_RECHECK_META");
+  const pageMeta = extractPageRecheckMeta(html);
+  try { assertCurrentPageMetadataSynced(html, pageMeta); }
+  catch (error) { fail(error.message); }
   const volunteerSource = readText(VOLUNTEER_DATA);
   const volunteerMatch = volunteerSource.match(/^globalThis\.VOLUNTEER_DATA = Object\.freeze\(([\s\S]+)\);\s*$/u);
   if (!volunteerMatch) fail("volunteer-data.jsのVOLUNTEER_DATA形式を解析できません。");
