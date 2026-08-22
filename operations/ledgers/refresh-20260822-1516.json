@@ -1,0 +1,186 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260822-1516",
+  "release_id": "20260822-1516",
+  "reference_at": "2026-08-22T15:16:00+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "c18527ff3c38b17206f3323a929ddf89865e7572",
+  "expected_changed_files": [
+    "operations/ledgers/refresh-20260822-1516.json",
+    "current-shelters.json",
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "public/dashboard.html",
+    "research_official_north.json",
+    "research_official_south.json",
+    "research_official_statewide.json",
+    "scripts/generate-volunteer-data.mjs",
+    "scripts/validate-current-state-audit.mjs",
+    "scripts/validate-dashboard-current.mjs",
+    "scripts/validate-volunteer-data.mjs",
+    "volunteer-data.js"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-live-shelter",
+      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+      "source_as_of": "2026-08-22T13:30:50+09:00",
+      "checked_at": "2026-08-22T15:35:05+09:00",
+      "fetched_at": "2026-08-22T15:35:05+09:00"
+    },
+    {
+      "source_id": "kumamoto-city-vc-third",
+      "url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC%EF%BC%93%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
+      "source_as_of": "2026-08-21T00:00:00+09:00",
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "fetched_at": null
+    },
+    {
+      "source_id": "mifune-vc",
+      "url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D56",
+      "source_as_of": null,
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "fetched_at": null
+    },
+    {
+      "source_id": "kumamoto-city-volunteer-app",
+      "url": "https://www.city.kumamoto.jp/toshiken/",
+      "source_as_of": "2026-08-22T00:00:00+09:00",
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "fetched_at": null
+    },
+    {
+      "source_id": "kumamoto-prefecture-report36",
+      "url": "https://www.pref.kumamoto.jp/uploaded/life/277838_875456_misc.pdf",
+      "source_as_of": "2026-08-20T14:00:00+09:00",
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "fetched_at": null
+    },
+    {
+      "source_id": "mlit-earthquake-status",
+      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
+      "source_as_of": null,
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "fetched_at": null
+    },
+    {
+      "source_id": "ehime-support-page",
+      "url": "https://www.pref.ehime.jp/page/154856.html",
+      "source_as_of": null,
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "fetched_at": null
+    },
+    {
+      "source_id": "ehime-support-20260820",
+      "url": "https://www.pref.ehime.jp/uploaded/attachment/188363.pdf",
+      "source_as_of": "2026-08-20T12:00:00+09:00",
+      "checked_at": "2026-08-22T15:16:00+09:00",
+      "fetched_at": null
+    }
+  ],
+  "coverage": {
+    "statewide": "rechecked_no_newer_confirmed_snapshot",
+    "municipalities": {
+      "熊本市": "rechecked_current",
+      "八代市": "rechecked_current",
+      "人吉市": "official_not_found",
+      "荒尾市": "official_not_found",
+      "水俣市": "official_not_found",
+      "玉名市": "official_not_found",
+      "山鹿市": "official_not_found",
+      "菊池市": "official_not_found",
+      "宇土市": "rechecked_current",
+      "上天草市": "official_not_found",
+      "宇城市": "rechecked_current",
+      "阿蘇市": "official_not_found",
+      "天草市": "official_not_found",
+      "合志市": "official_not_found",
+      "美里町": "rechecked_current",
+      "玉東町": "unknown_needs_recheck",
+      "南関町": "official_not_found",
+      "長洲町": "official_not_found",
+      "和水町": "official_not_found",
+      "大津町": "official_not_found",
+      "菊陽町": "official_not_found",
+      "南小国町": "official_not_found",
+      "小国町": "official_not_found",
+      "産山村": "official_not_found",
+      "高森町": "official_not_found",
+      "西原村": "official_not_found",
+      "南阿蘇村": "official_not_found",
+      "御船町": "rechecked_current",
+      "嘉島町": "rechecked_current",
+      "益城町": "rechecked_current",
+      "甲佐町": "rechecked_current",
+      "山都町": "official_not_found",
+      "氷川町": "rechecked_current",
+      "芦北町": "rechecked_current",
+      "津奈木町": "official_not_found",
+      "錦町": "official_not_found",
+      "多良木町": "official_not_found",
+      "湯前町": "official_not_found",
+      "水上村": "official_not_found",
+      "相良村": "official_not_found",
+      "五木村": "official_not_found",
+      "山江村": "official_not_found",
+      "球磨村": "official_not_found",
+      "あさぎり町": "official_not_found",
+      "苓北町": "official_not_found"
+    },
+    "researched_centers": 11,
+    "current_shelters": {
+      "current_count": 68,
+      "unresolved": 0,
+      "conflicts": 0
+    },
+    "historical_coordinate_master": 206,
+    "source_public_parity": "required",
+    "notes": "official_not_foundは今回確認した公式集約・既存公式一次情報で新規の募集詳細を確認できなかったことのみを表し、募集なし・活動終了を意味しない。"
+  },
+  "snapshots": {
+    "prefecture_report": {
+      "report": "第36報",
+      "source_as_of": "2026-08-20T14:00:00+09:00",
+      "shelters": 69,
+      "evacuees": 2925
+    },
+    "current_shelters": {
+      "source_last_modified": "2026-08-22T13:30:50+09:00",
+      "fetched_at": "2026-08-22T15:35:05+09:00",
+      "current_count": 68,
+      "confirmed": 68,
+      "unresolved": 0,
+      "conflicts": 0
+    },
+    "coordinate_history": {
+      "source_as_of": "2026-08-02T23:21:09+09:00",
+      "count": 206
+    }
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {
+      "issue_id": "gyokuto-volunteer-detail",
+      "state": "UNKNOWN",
+      "reason": "熊本市の連携中枢都市圏公式情報で『令和8年熊本地震災害ボランティア募集（玉東町）』の掲載を確認したが、今回の確認では活動日・募集地域・申込条件の詳細を一次情報で確定できない。募集ありの詳細条件を推測せずUNKNOWNを維持する。",
+      "owner": "更新担当",
+      "source_ids": [
+        "kumamoto-city-volunteer-app"
+      ],
+      "next_review_at": "2026-08-23T15:16:00+09:00"
+    },
+    {
+      "issue_id": "ehime-support-latest-detail",
+      "state": "UNKNOWN",
+      "reason": "愛媛県公式の支援ページ更新を再確認したが、8月20日12時資料を上回る数値入り時点資料を今回特定できないため、支援人数等は8月20日12時の検証済み値を保持する。",
+      "owner": "更新担当",
+      "source_ids": [
+        "ehime-support-page",
+        "ehime-support-20260820"
+      ],
+      "next_review_at": "2026-08-23T15:16:00+09:00"
+    }
+  ]
+}
