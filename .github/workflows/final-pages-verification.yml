@@ -1,0 +1,102 @@
+name: Final deployed Pages verification
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify final deployed Pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Wait for deployed assets to equal main
+        run: |
+          set -Eeuo pipefail
+          base='https://ryotamatsuki.github.io/kumamotoshienmap'
+          target='ehime_kumamoto_support_geocoded_shelters_20260802.html'
+          matched=false
+          for attempt in $(seq 1 30); do
+            if curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${target}" -o /tmp/deployed.html \
+              && cmp --silent "$target" /tmp/deployed.html; then
+              matched=true
+              break
+            fi
+            echo "Pages not converged yet: attempt ${attempt}"
+            sleep 10
+          done
+          [[ "$matched" == true ]]
+          for asset in volunteer.css volunteer.js volunteer-data.js current-shelters.json; do
+            curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${asset}" -o "/tmp/${asset}"
+            cmp --silent "$asset" "/tmp/${asset}"
+          done
+          node - <<'NODE'
+          const fs=require('fs');
+          const d=JSON.parse(fs.readFileSync('/tmp/current-shelters.json','utf8'));
+          if(d.meta.current_count!==68 || d.shelters.length!==68) throw new Error(`shelters ${d.meta.current_count}/${d.shelters.length}`);
+          if(d.shelters.some(x=>x.coordinate_status!=='confirmed')) throw new Error('non-confirmed shelter found');
+          console.log(JSON.stringify({current_count:d.meta.current_count,source_last_modified:d.meta.source_last_modified,fetched_at:d.meta.fetched_at}));
+          NODE
+      - name: Install browser driver
+        run: |
+          set -Eeuo pipefail
+          npm install --no-save --ignore-scripts --no-audit --no-fund --package-lock=false puppeteer-core
+          command -v google-chrome
+      - name: Verify Desktop and Mobile visible state
+        run: |
+          set -Eeuo pipefail
+          mkdir -p /tmp/final-pages
+          node --input-type=module - <<'NODE'
+          import puppeteer from 'puppeteer-core';
+          const url='https://ryotamatsuki.github.io/kumamotoshienmap/ehime_kumamoto_support_geocoded_shelters_20260802.html';
+          const views=['overview','needs','timeline','dashboard','volunteer','map'];
+          const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
+          try{
+            for(const spec of [{name:'desktop',width:1440,height:1000,mobile:false},{name:'mobile',width:390,height:844,mobile:true}]){
+              const page=await browser.newPage();
+              await page.setViewport({width:spec.width,height:spec.height,isMobile:spec.mobile,deviceScaleFactor:1});
+              const pageErrors=[]; const consoleErrors=[];
+              page.on('pageerror',e=>pageErrors.push(String(e)));
+              page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text());});
+              const response=await page.goto(url,{waitUntil:'networkidle2',timeout:60000});
+              if(!response?.ok()) throw new Error(`${spec.name}: HTTP ${response?.status()}`);
+              await new Promise(r=>setTimeout(r,1000));
+              const state=await page.evaluate((views)=>{
+                const body=document.body.innerText;
+                const values=[...document.querySelectorAll('[data-view]')].map(el=>el.getAttribute('data-view'));
+                const srcs=[...document.scripts].map(s=>s.getAttribute('src')||'');
+                return {
+                  header:body.includes('ページ全体の再確認：2026年8月22日 15:16（JST）'),
+                  badge:body.includes('ページ全体再確認：2026年8月22日15:16'),
+                  site:body.includes('サイト確認：2026年8月22日 15:16（JST）'),
+                  volunteer:body.includes('ボランティア個別確認：2026年8月22日 15:16確認済み'),
+                  release:srcs.some(src=>src.includes('volunteer-data.js?v=20260822-1516')),
+                  presentViews:views.filter(v=>values.includes(v)),
+                };
+              },views);
+              for(const [k,v] of Object.entries({header:state.header,badge:state.badge,site:state.site,volunteer:state.volunteer,release:state.release})) if(!v) throw new Error(`${spec.name}: ${k} false`);
+              if(state.presentViews.length!==views.length) throw new Error(`${spec.name}: missing views`);
+              if(pageErrors.length) throw new Error(`${spec.name}: page errors ${pageErrors.join(' | ')}`);
+              if(consoleErrors.length) throw new Error(`${spec.name}: console errors ${consoleErrors.join(' | ')}`);
+              await page.screenshot({path:`/tmp/final-pages/${spec.name}.png`,fullPage:true});
+              console.log(JSON.stringify({name:spec.name,...state,pageErrors,consoleErrors}));
+              await page.close();
+            }
+          }finally{await browser.close();}
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final-pages-screenshots
+          path: /tmp/final-pages/*.png
+          if-no-files-found: error
+          retention-days: 1
