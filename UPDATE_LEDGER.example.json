@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "repository": "ryotamatsuki/kumamotoshienmap",
   "update_type": "timepoint_refresh",
   "gate_phase": "pre_merge",
@@ -9,6 +9,7 @@
   "page_checked_at": null,
   "base_main_sha": "40文字のmain SHA",
   "expected_changed_files": [
+    "operations/ledgers/refresh-YYYYMMDD-HHMM.json",
     "current-shelters.json",
     "ehime_kumamoto_support_geocoded_shelters_20260802.html",
     "public/dashboard.html",
@@ -33,8 +34,23 @@
   "coverage": {
     "statewide": "rechecked",
     "municipalities": "45市町を分類",
-    "researched_centers": "対象市町を再確認"
+    "researched_centers": "対象市町を再確認",
+    "current_shelters": {
+      "current_count": 0,
+      "unresolved": 0,
+      "conflicts": 0
+    }
   },
   "snapshots": {},
-  "unresolved": []
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {
+      "issue_id": "example-unknown",
+      "state": "UNKNOWN",
+      "reason": "公式情報に現時点の値が掲載されていないため、推定せずUNKNOWNとして保持する。",
+      "owner": "更新担当",
+      "source_ids": ["official-source-example"],
+      "next_review_at": "YYYY-MM-DDTHH:MM:SS+09:00"
+    }
+  ]
 }
