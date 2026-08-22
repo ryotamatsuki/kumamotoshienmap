@@ -1,0 +1,37 @@
+name: Live timepoint shelter candidate
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  candidate:
+    name: Fetch and validate live shelter candidate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Fetch official live shelter JSON as candidate
+        run: |
+          set -Eeuo pipefail
+          npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+          npm run update:current-shelters -- --dry-run --candidate-output candidate-current-shelters.json | tee candidate-summary.json
+          node scripts/validate-current-shelters.mjs --candidate=candidate-current-shelters.json
+      - name: Upload candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: current-shelters-candidate
+          path: |
+            candidate-current-shelters.json
+            candidate-summary.json
+          if-no-files-found: error
+          retention-days: 1
