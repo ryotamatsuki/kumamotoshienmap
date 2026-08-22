@@ -75,9 +75,12 @@ jobs:
                 const body=document.body.innerText;
                 const values=[...document.querySelectorAll('[data-view]')].map(el=>el.getAttribute('data-view'));
                 const srcs=[...document.scripts].map(s=>s.getAttribute('src')||'');
+                const subtitle=document.querySelector('.subtitle');
+                const badge=document.querySelector('.badge');
                 return {
-                  header:body.includes('ページ全体の再確認：2026年8月22日 15:16（JST）'),
-                  badge:body.includes('ページ全体再確認：2026年8月22日15:16'),
+                  header:(subtitle?.textContent||'').includes('ページ全体の再確認：2026年8月22日 15:16（JST）'),
+                  badge:(badge?.textContent||'').includes('ページ全体再確認：2026年8月22日15:16'),
+                  badgeVisible:badge ? getComputedStyle(badge).display !== 'none' : false,
                   site:body.includes('サイト確認：2026年8月22日 15:16（JST）'),
                   volunteer:body.includes('ボランティア個別確認：2026年8月22日 15:16確認済み'),
                   release:srcs.some(src=>src.includes('volunteer-data.js?v=20260822-1516')),
@@ -85,6 +88,8 @@ jobs:
                 };
               },views);
               for(const [k,v] of Object.entries({header:state.header,badge:state.badge,site:state.site,volunteer:state.volunteer,release:state.release})) if(!v) throw new Error(`${spec.name}: ${k} false`);
+              if(spec.mobile && state.badgeVisible) throw new Error(`${spec.name}: badge should be hidden`);
+              if(!spec.mobile && !state.badgeVisible) throw new Error(`${spec.name}: badge should be visible`);
               if(state.presentViews.length!==views.length) throw new Error(`${spec.name}: missing views`);
               if(pageErrors.length) throw new Error(`${spec.name}: page errors ${pageErrors.join(' | ')}`);
               if(consoleErrors.length) throw new Error(`${spec.name}: console errors ${consoleErrors.join(' | ')}`);
