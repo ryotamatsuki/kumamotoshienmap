@@ -305,7 +305,7 @@ test("UNKNOWN national old snapshot as current is blocked", () => {
   try {
     const auditPath = resolve(root, "national-support-audit.json");
     const audit = JSON.parse(readFileSync(auditPath, "utf8"));
-    const target = audit.records.find((item) => item.record_id === "national-rescue");
+    const target = audit.records.find((item) => item.record_id === "national-finance");
     target.display.scale = target.previous_snapshot.value;
     writeFileSync(auditPath, `${JSON.stringify(audit, null, 2)}\n`);
     const result = runNode(root, "scripts/validate-update-release.mjs");
