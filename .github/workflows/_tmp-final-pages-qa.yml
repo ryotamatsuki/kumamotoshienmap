@@ -67,18 +67,20 @@ jobs:
               if(!response?.ok()) throw new Error(`${spec.name}: HTTP ${response?.status()}`);
               const state=await page.evaluate((views)=>{
                 const values=[...document.querySelectorAll('[data-view]')].map(el=>el.getAttribute('data-view'));
-                const body=document.body.innerText;
+                const html=document.documentElement.innerHTML;
                 const badge=document.querySelector('.badge');
+                const rescueCard=document.querySelector('[data-overview-records="national-rescue"]');
                 return {
                   presentViews:views.filter(v=>values.includes(v)),
                   badgeVisible:badge ? getComputedStyle(badge).display !== 'none' : false,
-                  nationalCurrent:body.includes('緊急消防援助隊：2隊9名（北九州市第6次）'),
-                  pushUnknown:body.includes('8/18：プッシュ型物資支援24億円・強化／8/24継続：UNKNOWN'),
-                  financeUnknown:body.includes('616億円の繰上げ交付決定：確認済／現金交付完了：UNKNOWN')
+                  rescueCardCurrent:(rescueCard?.textContent||'').includes('2隊9名'),
+                  nationalCurrent:html.includes('緊急消防援助隊：2隊9名（北九州市第6次）'),
+                  pushUnknown:html.includes('8/18：プッシュ型物資支援24億円・強化／8/24継続：UNKNOWN'),
+                  financeUnknown:html.includes('616億円の繰上げ交付決定：確認済／現金交付完了：UNKNOWN')
                 };
               },expectedViews);
               if(state.presentViews.length!==expectedViews.length) throw new Error(`${spec.name}: missing views`);
-              if(!state.nationalCurrent||!state.pushUnknown||!state.financeUnknown) throw new Error(`${spec.name}: national state mismatch`);
+              if(!state.rescueCardCurrent||!state.nationalCurrent||!state.pushUnknown||!state.financeUnknown) throw new Error(`${spec.name}: national state mismatch ${JSON.stringify(state)}`);
               if(spec.mobile && state.badgeVisible) throw new Error('mobile badge should be hidden');
               if(!spec.mobile && !state.badgeVisible) throw new Error('desktop badge should be visible');
               if(pageErrors.length) throw new Error(`${spec.name}: page errors ${pageErrors.join(' | ')}`);
