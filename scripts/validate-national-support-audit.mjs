@@ -128,8 +128,11 @@ if (!actor.includes("全件再監査")) fail("国・関係機関actorに全件�
 const resourceRegionMatch = source.match(/<div class="overview-resource-grid">[\s\S]*?<\/div>\s*<\/section>/u);
 if (!resourceRegionMatch) fail("主要な投入資源regionが見つかりません。");
 const resourceRegion = resourceRegionMatch[0];
-for (const stale of ["129台", "4,299人日", "現在105人", "約100人・4機", "継続要確認"]) if (resourceRegion.includes(stale)) fail(`主要投入資源に旧current表現が残っています: ${stale}`);
+for (const stale of ["129台", "4,299人日", "現在105人", "継続要確認"]) if (resourceRegion.includes(stale)) fail(`主要投入資源に旧current表現が残っています: ${stale}`);
 if (!resourceRegion.includes("119台") || !resourceRegion.includes("4,507人日") || !resourceRegion.includes("UNKNOWN")) fail("主要投入資源がnational auditの裁定表示へ更新されていません。");
+const rescueCard = resourceRegion.match(/<button class="overview-resource" data-overview-records="national-rescue"[^>]*>[\s\S]*?<\/button>/u)?.[0] ?? "";
+if (!rescueCard.includes('<div class="overview-resource-value">UNKNOWN</div>')) fail("救急・航空支援の現況値がUNKNOWNになっていません。");
+if (!rescueCard.includes("約100人・4機") || !rescueCard.includes("HISTORICAL")) fail("救急・航空支援の8/2実績がHISTORICAL履歴として保持されていません。");
 
 console.log(JSON.stringify({
   status: "PASS",
