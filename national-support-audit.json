@@ -1,0 +1,851 @@
+{
+  "schema_version": 1,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "reference_at": "2026-08-24T22:38:32+09:00",
+  "checked_at": "2026-08-24T22:38:32+09:00",
+  "release_id": "20260824-2238",
+  "state_values": [
+    "CURRENT",
+    "HISTORICAL",
+    "PLANNED",
+    "UNKNOWN",
+    "CONFLICT"
+  ],
+  "inventory": {
+    "existing_record_ids": [
+      "national-coordination",
+      "national-rescue",
+      "national-medical",
+      "national-water",
+      "national-purifier",
+      "national-tec",
+      "national-push",
+      "national-cert",
+      "national-scrivener",
+      "national-bath",
+      "national-finance",
+      "national-toilets"
+    ],
+    "generated_record_ids": [
+      "national-tec-next-wave"
+    ],
+    "existing_record_count": 12,
+    "audit_record_count": 13
+  },
+  "policy": {
+    "primary_source_required_for_current": true,
+    "planned_period_does_not_imply_current": true,
+    "absence_of_new_release_does_not_imply_historical": true,
+    "unknown_must_not_display_previous_snapshot_as_current": true,
+    "historical_values_may_be_retained_as_history": true,
+    "required_agencies": [
+      "内閣府・政府非常災害現地対策本部",
+      "総務省・消防庁",
+      "国土交通省・地方整備局",
+      "厚生労働省・保健医療福祉支援",
+      "防衛省・自衛隊",
+      "警察庁",
+      "その他現行表示に含まれる国・全国組織"
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "cao-status-0823",
+      "publisher": "内閣府（防災担当）",
+      "kind": "official_web",
+      "url": "https://www.bousai.go.jp/updates/r8kumamoto_jishin/status/index.html",
+      "source_as_of": "2026-08-23T10:00:00+09:00",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "内閣府公式の令和8年熊本地震対応状況一覧で、8月23日10時現在資料が最新掲載。"
+    },
+    {
+      "source_id": "mlit-report48",
+      "publisher": "国土交通省",
+      "kind": "official_web_pdf_index",
+      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
+      "source_as_of": "2026-08-23T10:00:00+09:00",
+      "source_published_at": "2026-08-23T10:00:00+09:00",
+      "source_updated_at": null,
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "第48報。断水は8月23日7時30分時点。給水車119台、TEC-FORCE現時点98人・累計4,507人日を確認。"
+    },
+    {
+      "source_id": "fdma-report60",
+      "publisher": "総務省消防庁",
+      "kind": "official_web_pdf_index",
+      "url": "https://www.fdma.go.jp/disaster/info/2026/",
+      "source_as_of": "2026-08-23T10:00:00+09:00",
+      "source_published_at": "2026-08-23T10:00:00+09:00",
+      "source_updated_at": "2026-08-23T10:00:00+09:00",
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "消防庁公式一覧で熊本地震第60報・R8.8.23更新を確認。旧8月2日約100人・4機を基準日時点の現況値とは扱わない。"
+    },
+    {
+      "source_id": "kagoshima-fire-end",
+      "publisher": "鹿児島市消防局",
+      "kind": "official_web",
+      "url": "https://www.city.kagoshima.lg.jp/shobo/sbsoumu/kurashi/bosai/shobokyoku/gaiyo/r8kumomatozishin.html",
+      "source_as_of": "2026-08-14T00:00:00+09:00",
+      "source_published_at": null,
+      "source_updated_at": "2026-08-18T00:00:00+09:00",
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "鹿児島県大隊は8月14日解散式・活動終了。全国複合レコード全体の終了根拠には使用しない。"
+    },
+    {
+      "source_id": "mod-minister-0823",
+      "publisher": "防衛省",
+      "kind": "official_web",
+      "url": "https://www.mod.go.jp/j/press/kisha/2026/0823a_r.html",
+      "source_as_of": "2026-08-23T18:40:00+09:00",
+      "source_published_at": "2026-08-23T18:40:00+09:00",
+      "source_updated_at": null,
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "防衛大臣が給水・入浴支援の継続を明示。8月24日に2か所終了、5か所は継続予定と説明。"
+    },
+    {
+      "source_id": "mod-disaster-0823",
+      "publisher": "防衛省・自衛隊",
+      "kind": "official_web",
+      "url": "https://www.mod.go.jp/j/approach/defense/saigai/",
+      "source_as_of": "2026-08-23T00:00:00+09:00",
+      "source_published_at": null,
+      "source_updated_at": "2026-08-23T00:00:00+09:00",
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "8月23日実施分の入浴支援を公式掲載。"
+    },
+    {
+      "source_id": "mod-js-0824",
+      "publisher": "防衛省・統合幕僚監部",
+      "kind": "official_web",
+      "url": "https://www.mod.go.jp/js/press/",
+      "source_as_of": "2026-08-23T00:00:00+09:00",
+      "source_published_at": "2026-08-24T00:00:00+09:00",
+      "source_updated_at": "2026-08-24T00:00:00+09:00",
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "8月24日に『令和8年熊本地震に係る災害派遣について（8.23）』を公表。"
+    },
+    {
+      "source_id": "kkr-tec5-0824",
+      "publisher": "国土交通省近畿地方整備局",
+      "kind": "official_web",
+      "url": "https://www.kkr.mlit.go.jp/news/top/press/2026/20260824-2tec-forcedai5jin.html",
+      "source_as_of": "2026-08-24T00:00:00+09:00",
+      "source_published_at": "2026-08-24T00:00:00+09:00",
+      "source_updated_at": "2026-08-24T00:00:00+09:00",
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "TEC-FORCE第5陣・給水支援班2班は8月26日9時20分出発式。基準日時点ではPLANNED。"
+    },
+    {
+      "source_id": "mhlw-disaster-recheck",
+      "publisher": "厚生労働省",
+      "kind": "official_web_recheck",
+      "url": "https://www.mhlw.go.jp/stf/newpage_73935.html",
+      "source_as_of": "2026-08-21T00:00:00+09:00",
+      "source_published_at": null,
+      "source_updated_at": "2026-08-21T00:00:00+09:00",
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "厚生労働省の令和8年熊本地震対応ページ（最終更新8月21日）を再確認。基準日時点の全国DHEAT/DMAT/DPAT等の同一定義現況人数は確定できずUNKNOWN。"
+    },
+    {
+      "source_id": "npa-recheck",
+      "publisher": "警察庁",
+      "kind": "official_web_recheck",
+      "url": "https://www.npa.go.jp/news/release/index.html/",
+      "source_as_of": null,
+      "source_published_at": null,
+      "source_updated_at": null,
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "警察庁公式の報道発表・災害関連一次情報を再探索。現行ダッシュボードの複合救助レコードと同一定義の基準日時点人数は確定できず。"
+    },
+    {
+      "source_id": "kumamoto-gov-0819",
+      "publisher": "熊本県・政府非常災害現地対策本部",
+      "kind": "official_pdf",
+      "url": "https://www.pref.kumamoto.jp/uploaded/attachment/317153.pdf",
+      "source_as_of": "2026-08-19T14:00:00+09:00",
+      "source_published_at": "2026-08-19T14:00:00+09:00",
+      "source_updated_at": null,
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "旧政府・県合同スナップショット。行政応援、罹災証明、トイレ等の履歴根拠として保持。"
+    },
+    {
+      "source_id": "kumamoto-hq-0802",
+      "publisher": "熊本県",
+      "kind": "official_pdf",
+      "url": "https://www.pref.kumamoto.jp/uploaded/attachment/315809.pdf",
+      "source_as_of": "2026-08-02T14:00:00+09:00",
+      "source_published_at": "2026-08-02T14:00:00+09:00",
+      "source_updated_at": null,
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "プッシュ型物資・普通交付税等の旧スナップショット根拠。"
+    },
+    {
+      "source_id": "cao-scrivener-0731",
+      "publisher": "内閣府",
+      "kind": "official_pdf",
+      "url": "https://www.bousai.go.jp/pdf/260731_1900-2.pdf",
+      "source_as_of": "2026-07-31T19:00:00+09:00",
+      "source_published_at": "2026-07-31T19:00:00+09:00",
+      "source_updated_at": null,
+      "fetched_at": "2026-08-24T22:38:32+09:00",
+      "checked_at": "2026-08-24T22:38:32+09:00",
+      "primary": true,
+      "notes": "行政書士支援の旧実績根拠。基準日時点の継続・終了は確定できず。"
+    }
+  ],
+  "agency_coverage": [
+    {
+      "agency": "内閣府・政府非常災害現地対策本部",
+      "status": "rechecked_current",
+      "source_ids": [
+        "cao-status-0823"
+      ],
+      "notes": "8月23日10時現在の政府対応状況資料を確認。"
+    },
+    {
+      "agency": "総務省・消防庁",
+      "status": "unknown_needs_recheck",
+      "source_ids": [
+        "fdma-report60",
+        "kagoshima-fire-end"
+      ],
+      "notes": "第60報を確認。一部県隊の終了は確認できるが、旧複合人数と同一定義の全国現況値は確定できない。"
+    },
+    {
+      "agency": "国土交通省・地方整備局",
+      "status": "rechecked_current",
+      "source_ids": [
+        "mlit-report48",
+        "kkr-tec5-0824"
+      ],
+      "notes": "第48報の現況と8月26日追加派遣予定を分離。"
+    },
+    {
+      "agency": "厚生労働省・保健医療福祉支援",
+      "status": "unknown_needs_recheck",
+      "source_ids": [
+        "mhlw-disaster-recheck",
+        "cao-status-0823"
+      ],
+      "notes": "同一定義の全国チーム現況人数を確定できず。"
+    },
+    {
+      "agency": "防衛省・自衛隊",
+      "status": "rechecked_current",
+      "source_ids": [
+        "mod-minister-0823",
+        "mod-disaster-0823",
+        "mod-js-0824"
+      ],
+      "notes": "給水・入浴等の生活支援継続を確認。"
+    },
+    {
+      "agency": "警察庁",
+      "status": "unknown_needs_recheck",
+      "source_ids": [
+        "npa-recheck",
+        "fdma-report60"
+      ],
+      "notes": "複合救助レコードと同一定義の現況人数を確定できず。"
+    },
+    {
+      "agency": "総務省（財政措置）",
+      "status": "unknown_needs_recheck",
+      "source_ids": [
+        "kumamoto-hq-0802",
+        "cao-status-0823"
+      ],
+      "notes": "8月3日現金交付予定という旧表示を現況実績へ推定昇格しない。"
+    },
+    {
+      "agency": "全国医療・福祉関係機関（日赤・JMAT・JRAT等）",
+      "status": "unknown_needs_recheck",
+      "source_ids": [
+        "mhlw-disaster-recheck",
+        "mod-minister-0823"
+      ],
+      "notes": "個別活動の実績はあるが全国複合レコードの基準日時点同一定義値は確定できない。"
+    },
+    {
+      "agency": "水資源機構・日本水道協会等",
+      "status": "unknown_needs_recheck",
+      "source_ids": [
+        "mlit-report48",
+        "kumamoto-gov-0819"
+      ],
+      "notes": "給水支援全体はCURRENTだが、可搬式浄水装置単体の継続状態は確定できない。"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "national-coordination",
+      "provider": "内閣府・政府非常災害現地対策本部",
+      "category": "administration",
+      "previous_snapshot": {
+        "state": "HISTORICAL",
+        "value": "行政応援971人／関係機関含む計1,038人",
+        "source_as_of": "2026-08-19T14:00:00+09:00",
+        "source_ids": [
+          "kumamoto-gov-0819"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "CURRENT",
+          "scope": "政府の災害対応状況",
+          "source_ids": [
+            "cao-status-0823"
+          ],
+          "notes": "8月23日10時現在資料まで更新継続を確認。"
+        },
+        {
+          "state": "HISTORICAL",
+          "scope": "8月19日行政応援人数",
+          "source_ids": [
+            "kumamoto-gov-0819"
+          ],
+          "notes": "旧971人/1,038人は現在人数として扱わない。"
+        }
+      ],
+      "state": "CURRENT",
+      "source_ids": [
+        "cao-status-0823",
+        "kumamoto-gov-0819"
+      ],
+      "display": {
+        "status": "CURRENT",
+        "scale": "政府対応：8/23 10:00資料まで確認",
+        "period": "内閣府 8月23日10時現在",
+        "detail": "政府の災害対応状況は8月23日10時現在資料まで確認。8月19日の行政応援971人・関係機関含む1,038人はHISTORICALとして保持し、基準日時点の現在人数には流用しない。",
+        "asOf": "内閣府 8月23日10時現在",
+        "sourceLabel": "内閣府 令和8年熊本地震 被害状況等",
+        "sourceUrl": "https://www.bousai.go.jp/updates/r8kumamoto_jishin/status/index.html"
+      },
+      "notes": "体制の継続と旧人数の時点を分離。"
+    },
+    {
+      "record_id": "national-rescue",
+      "provider": "消防庁・自衛隊・警察等",
+      "category": "rescue",
+      "previous_snapshot": {
+        "state": "HISTORICAL",
+        "value": "救急部隊5県約100人、航空部隊3県4機",
+        "source_as_of": "2026-08-02T12:00:00+09:00",
+        "source_ids": [
+          "fdma-report60"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "HISTORICAL",
+          "scope": "8月2日人数・機数",
+          "source_ids": [
+            "fdma-report60"
+          ],
+          "notes": "旧約100人・4機は過去実績としてのみ保持。"
+        },
+        {
+          "state": "HISTORICAL",
+          "scope": "鹿児島県大隊",
+          "source_ids": [
+            "kagoshima-fire-end"
+          ],
+          "notes": "8月14日活動終了を公式確認。"
+        },
+        {
+          "state": "UNKNOWN",
+          "scope": "全国複合救助・救急・航空支援の同一定義現況人数",
+          "source_ids": [
+            "fdma-report60",
+            "npa-recheck",
+            "mod-js-0824"
+          ],
+          "notes": "一部部隊終了は確認できるが、複合レコード全体の同一定義現況人数を確定できない。"
+        }
+      ],
+      "state": "UNKNOWN",
+      "source_ids": [
+        "fdma-report60",
+        "kagoshima-fire-end",
+        "npa-recheck",
+        "mod-js-0824"
+      ],
+      "display": {
+        "status": "UNKNOWN",
+        "scale": "現況の同一定義人数・機数：UNKNOWN",
+        "period": "8/23 10:00に第60報を再確認",
+        "detail": "8月2日の約100人・4機はHISTORICAL。消防庁第60報まで追跡し、一部県隊の活動終了も確認したが、消防・自衛隊・警察・航空を束ねた旧定義の現在人数・機数は確定できない。",
+        "asOf": "消防庁 第60報（8月23日10時現在）",
+        "sourceLabel": "消防庁 災害情報一覧（第60報）",
+        "sourceUrl": "https://www.fdma.go.jp/disaster/info/2026/"
+      },
+      "notes": "旧人数をcurrent表示しない。"
+    },
+    {
+      "record_id": "national-medical",
+      "provider": "厚生労働省・全国保健医療福祉支援機関",
+      "category": "medical",
+      "previous_snapshot": {
+        "state": "HISTORICAL",
+        "value": "愛媛県分の保健13人・DMAT調整2人・DWAT9人等を全国カードに表示",
+        "source_as_of": "2026-08-20T12:00:00+09:00",
+        "source_ids": [
+          "mhlw-disaster-recheck"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "UNKNOWN",
+          "scope": "DHEAT・DMAT・DPAT・日赤・JMAT・支援ナース・DWAT等の全国複合現況",
+          "source_ids": [
+            "mhlw-disaster-recheck",
+            "cao-status-0823",
+            "mod-minister-0823"
+          ],
+          "notes": "基準日時点の同一定義全国人数・チーム数を確定できない。愛媛県分を全国値として表示しない。"
+        }
+      ],
+      "state": "UNKNOWN",
+      "source_ids": [
+        "mhlw-disaster-recheck",
+        "cao-status-0823",
+        "mod-minister-0823"
+      ],
+      "display": {
+        "status": "UNKNOWN",
+        "scale": "全国の同一定義チーム数・人数：UNKNOWN",
+        "period": "8/24全件再監査",
+        "detail": "厚労省・政府資料等を再探索。個別活動実績は確認できるが、DHEAT・DMAT・DPAT・日赤・JMAT・災害支援ナース・DWAT等を束ねた基準日時点の同一定義全国値は確定できない。愛媛県分の人数は別カテゴリで表示する。",
+        "asOf": "8月24日22:38再監査",
+        "sourceLabel": "厚生労働省 災害対応情報等",
+        "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_73935.html"
+      },
+      "notes": "県別値と全国複合値を分離。"
+    },
+    {
+      "record_id": "national-water",
+      "provider": "国土交通省・日本水道協会・自衛隊等",
+      "category": "water",
+      "previous_snapshot": {
+        "state": "HISTORICAL",
+        "value": "給水車129台",
+        "source_as_of": "2026-08-21T07:30:00+09:00",
+        "source_ids": [
+          "mlit-report48"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "CURRENT",
+          "scope": "応急給水体制",
+          "value": "給水車119台",
+          "source_as_of": "2026-08-23T07:30:00+09:00",
+          "source_ids": [
+            "mlit-report48",
+            "mod-minister-0823"
+          ],
+          "notes": "国交省第48報へ更新。自衛隊も給水継続を明示。"
+        }
+      ],
+      "state": "CURRENT",
+      "source_ids": [
+        "mlit-report48",
+        "mod-minister-0823"
+      ],
+      "display": {
+        "status": "CURRENT",
+        "scale": "給水車119台",
+        "period": "国土交通省第48報（8月23日7時30分時点）",
+        "detail": "第48報で給水車119台へ更新。第47報の129台はHISTORICAL。防衛省も8月23日時点で給水支援継続を明示している。",
+        "asOf": "国土交通省 第48報（8月23日）",
+        "sourceLabel": "国土交通省 第48報",
+        "sourceUrl": "https://www.mlit.go.jp/saigai/saigai_260728.html"
+      },
+      "notes": "旧129台をcurrentから除去。"
+    },
+    {
+      "record_id": "national-purifier",
+      "provider": "水資源機構・日本水道協会・国土交通省",
+      "category": "water",
+      "previous_snapshot": {
+        "state": "HISTORICAL",
+        "value": "竜翔センター付近で稼働",
+        "source_as_of": "2026-08-04T11:00:00+09:00",
+        "source_ids": [
+          "kumamoto-gov-0819"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "UNKNOWN",
+          "scope": "可搬式浄水装置単体の継続稼働",
+          "source_ids": [
+            "mlit-report48",
+            "kumamoto-gov-0819"
+          ],
+          "notes": "給水支援全体は継続するが、この装置単体の基準日時点稼働を一次情報で確定できない。"
+        }
+      ],
+      "state": "UNKNOWN",
+      "source_ids": [
+        "mlit-report48",
+        "kumamoto-gov-0819"
+      ],
+      "display": {
+        "status": "UNKNOWN",
+        "scale": "現在の稼働状態：UNKNOWN",
+        "period": "8/4稼働実績を履歴保持／8/24再監査",
+        "detail": "8月4日11時からの稼働実績はHISTORICALとして保持。応急給水全体の継続は確認できるが、竜翔センター付近の可搬式浄水装置単体が基準日時点で稼働中かは確定できない。",
+        "asOf": "8月24日22:38再監査",
+        "sourceLabel": "国土交通省 第48報ほか",
+        "sourceUrl": "https://www.mlit.go.jp/saigai/saigai_260728.html"
+      },
+      "notes": "過去稼働を現況へ推定しない。"
+    },
+    {
+      "record_id": "national-tec",
+      "provider": "国土交通省 TEC-FORCE",
+      "category": "infrastructure",
+      "previous_snapshot": {
+        "state": "HISTORICAL",
+        "value": "現在105人・累計4,299人日",
+        "source_as_of": "2026-08-21T10:00:00+09:00",
+        "source_ids": [
+          "mlit-report48"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "CURRENT",
+          "scope": "TEC-FORCE現行派遣",
+          "value": "現時点98人・累計4,507人日",
+          "source_as_of": "2026-08-23T10:00:00+09:00",
+          "source_ids": [
+            "mlit-report48"
+          ],
+          "notes": "第48報へ更新。現時点人数と累計人日を別指標として表示。"
+        }
+      ],
+      "state": "CURRENT",
+      "source_ids": [
+        "mlit-report48"
+      ],
+      "display": {
+        "status": "CURRENT",
+        "scale": "現時点98人／累計4,507人日",
+        "period": "国土交通省第48報（8月23日10時）",
+        "detail": "TEC-FORCEは第48報で現時点98人、累計4,507人日へ更新。第47報の105人・4,299人日はHISTORICAL。8月26日出発予定の第5陣は別PLANNEDレコードに分離する。",
+        "asOf": "国土交通省 第48報（8月23日10時）",
+        "sourceLabel": "国土交通省 第48報",
+        "sourceUrl": "https://www.mlit.go.jp/saigai/saigai_260728.html"
+      },
+      "notes": "予定派遣と現在人数を混同しない。"
+    },
+    {
+      "record_id": "national-tec-next-wave",
+      "provider": "国土交通省近畿地方整備局",
+      "category": "infrastructure",
+      "previous_snapshot": null,
+      "adjudications": [
+        {
+          "state": "PLANNED",
+          "scope": "TEC-FORCE第5陣・給水支援班2班",
+          "source_as_of": "2026-08-24T00:00:00+09:00",
+          "source_ids": [
+            "kkr-tec5-0824"
+          ],
+          "notes": "8月26日9時20分出発式予定。実働確認前。"
+        }
+      ],
+      "state": "PLANNED",
+      "source_ids": [
+        "kkr-tec5-0824"
+      ],
+      "display": {
+        "status": "PLANNED",
+        "scale": "給水支援班2班",
+        "period": "8月26日9時20分 出発式予定",
+        "detail": "近畿地方整備局がTEC-FORCE第5陣として給水支援班2班を熊本県へ派遣予定。基準日時点では出発前のためCURRENTにはしない。7月30日派遣の給水機能付散水車は引き続き使用予定。",
+        "asOf": "近畿地方整備局 8月24日公表",
+        "sourceLabel": "近畿地方整備局 TEC-FORCE第5陣派遣",
+        "sourceUrl": "https://www.kkr.mlit.go.jp/news/top/press/2026/20260824-2tec-forcedai5jin.html"
+      },
+      "notes": "予定を実績化しない。"
+    },
+    {
+      "record_id": "national-push",
+      "provider": "国・熊本県",
+      "category": "supplies",
+      "previous_snapshot": {
+        "state": "HISTORICAL",
+        "value": "スポットクーラー、電源車、水・食料等の受入・配送",
+        "source_as_of": "2026-08-02T14:00:00+09:00",
+        "source_ids": [
+          "kumamoto-hq-0802"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "UNKNOWN",
+          "scope": "同じプッシュ型物資スキームの基準日時点継続状態",
+          "source_ids": [
+            "cao-status-0823",
+            "kumamoto-hq-0802"
+          ],
+          "notes": "旧受入・配送実績は保持するが、同じ定義で現在も継続中かを確定できない。"
+        }
+      ],
+      "state": "UNKNOWN",
+      "source_ids": [
+        "cao-status-0823",
+        "kumamoto-hq-0802"
+      ],
+      "display": {
+        "status": "UNKNOWN",
+        "scale": "現在の同一定義実施状況：UNKNOWN",
+        "period": "8/2実績を履歴保持／8/24再監査",
+        "detail": "8月2日のスポットクーラー・電源車・水・食料等の受入・配送はHISTORICAL。基準日時点で同一のプッシュ型物資スキームが継続中かは一次情報で確定できない。",
+        "asOf": "8月24日22:38再監査",
+        "sourceLabel": "内閣府対応状況・熊本県8月2日資料",
+        "sourceUrl": "https://www.bousai.go.jp/updates/r8kumamoto_jishin/status/index.html"
+      },
+      "notes": "古い物資実績をcurrent化しない。"
+    },
+    {
+      "record_id": "national-cert",
+      "provider": "内閣府・罹災証明書コーディネーター",
+      "category": "certificates",
+      "previous_snapshot": {
+        "state": "HISTORICAL",
+        "value": "申請50,932件／調査27,818件／証明書12,496件",
+        "source_as_of": "2026-08-18T00:00:00+09:00",
+        "source_ids": [
+          "kumamoto-gov-0819"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "UNKNOWN",
+          "scope": "同一定義の最新進捗値・国調整支援の継続状態",
+          "source_ids": [
+            "cao-status-0823",
+            "kumamoto-gov-0819"
+          ],
+          "notes": "8月18日累計は履歴。基準日時点の同一定義値をこの監査で一次資料から確定できない。"
+        }
+      ],
+      "state": "UNKNOWN",
+      "source_ids": [
+        "cao-status-0823",
+        "kumamoto-gov-0819"
+      ],
+      "display": {
+        "status": "UNKNOWN",
+        "scale": "現在の同一定義進捗：UNKNOWN",
+        "period": "8/18累計を履歴保持／8/24再監査",
+        "detail": "申請50,932件・調査27,818件・証明書12,496件は8月18日累計のHISTORICAL。国の調整支援と同一定義の最新進捗は基準日時点で確定できない。",
+        "asOf": "8月24日22:38再監査",
+        "sourceLabel": "内閣府対応状況・政府/熊本県8月19日資料",
+        "sourceUrl": "https://www.bousai.go.jp/updates/r8kumamoto_jishin/status/index.html"
+      },
+      "notes": "旧累計値をcurrent表示しない。"
+    },
+    {
+      "record_id": "national-scrivener",
+      "provider": "日本行政書士会連合会・内閣府",
+      "category": "certificates",
+      "previous_snapshot": {
+        "state": "HISTORICAL",
+        "value": "宇土市・宇城市への行政書士支援",
+        "source_as_of": "2026-07-31T19:00:00+09:00",
+        "source_ids": [
+          "cao-scrivener-0731"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "UNKNOWN",
+          "scope": "行政書士派遣の基準日時点継続・終了",
+          "source_ids": [
+            "cao-scrivener-0731",
+            "cao-status-0823"
+          ],
+          "notes": "旧実績は確認できるが、継続・終了を一次情報で確定できない。検索結果がないことを終了根拠にしない。"
+        }
+      ],
+      "state": "UNKNOWN",
+      "source_ids": [
+        "cao-scrivener-0731",
+        "cao-status-0823"
+      ],
+      "display": {
+        "status": "UNKNOWN",
+        "scale": "現在の派遣状態：UNKNOWN",
+        "period": "7/31実績を履歴保持／8/24再監査",
+        "detail": "宇土市・宇城市への行政書士支援は7月31日公表のHISTORICAL実績。基準日時点の継続・終了は確定できないため、旧支援先をCURRENTとは表示しない。",
+        "asOf": "8月24日22:38再監査",
+        "sourceLabel": "内閣府 行政書士による被災者支援等",
+        "sourceUrl": "https://www.bousai.go.jp/pdf/260731_1900-2.pdf"
+      },
+      "notes": "無発表を終了扱いしない。"
+    },
+    {
+      "record_id": "national-bath",
+      "provider": "防衛省・自衛隊等",
+      "category": "water",
+      "previous_snapshot": {
+        "state": "HISTORICAL",
+        "value": "県資料14市町／自衛隊5市町7か所",
+        "source_as_of": "2026-08-21T10:00:00+09:00",
+        "source_ids": [
+          "mod-disaster-0823"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "CURRENT",
+          "scope": "自衛隊入浴支援",
+          "value": "8月24日に2か所終了、5か所継続",
+          "source_as_of": "2026-08-23T18:40:00+09:00",
+          "source_ids": [
+            "mod-minister-0823",
+            "mod-disaster-0823",
+            "mod-js-0824"
+          ],
+          "notes": "防衛大臣が継続を明示。"
+        }
+      ],
+      "state": "CURRENT",
+      "source_ids": [
+        "mod-minister-0823",
+        "mod-disaster-0823",
+        "mod-js-0824"
+      ],
+      "display": {
+        "status": "CURRENT",
+        "scale": "8/24：2か所終了・5か所継続",
+        "period": "防衛省 8月23日18:40確認",
+        "detail": "防衛省は給水・入浴支援の継続を明示。8月24日に熊本市火の君文化センターと宇城市三角港岸壁の2か所を終了し、宇城市小川防災拠点センター、宇土アリーナ、八代港のうらが・はくおうⅡ、氷川中学校の5か所は継続すると公表。",
+        "asOf": "防衛省 8月23日18:40",
+        "sourceLabel": "防衛大臣臨時記者会見",
+        "sourceUrl": "https://www.mod.go.jp/j/press/kisha/2026/0823a_r.html"
+      },
+      "notes": "旧7か所一括値から8/24の変化を分離。"
+    },
+    {
+      "record_id": "national-finance",
+      "provider": "総務省",
+      "category": "finance",
+      "previous_snapshot": {
+        "state": "PLANNED",
+        "value": "県約307億円、20市町村計約309億円を8月3日現金交付予定",
+        "source_as_of": "2026-08-02T14:00:00+09:00",
+        "source_ids": [
+          "kumamoto-hq-0802"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "UNKNOWN",
+          "scope": "予定された現金交付の実施確認",
+          "source_ids": [
+            "kumamoto-hq-0802",
+            "cao-status-0823"
+          ],
+          "notes": "予定日経過だけで実績へ昇格しない。基準日時点の実施確認を一次情報で確定できない。"
+        }
+      ],
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-hq-0802",
+        "cao-status-0823"
+      ],
+      "display": {
+        "status": "UNKNOWN",
+        "scale": "交付実施状態：UNKNOWN",
+        "period": "8/3現金交付予定は旧公表",
+        "detail": "県約307億円、20市町村計約309億円の繰上げ交付は8月3日現金交付予定という旧公表。予定日を過ぎたことだけで実施済みとは扱わず、基準日時点の実施状態はUNKNOWNとする。",
+        "asOf": "8月24日22:38再監査",
+        "sourceLabel": "熊本県8月2日資料・政府対応状況",
+        "sourceUrl": "https://www.pref.kumamoto.jp/uploaded/attachment/315809.pdf"
+      },
+      "notes": "予定日経過を実績化しない。"
+    },
+    {
+      "record_id": "national-toilets",
+      "provider": "国・熊本県・関係自治体",
+      "category": "water",
+      "previous_snapshot": {
+        "state": "HISTORICAL",
+        "value": "トイレカー26台、仮設トイレ120基等・計296設備",
+        "source_as_of": "2026-08-19T14:00:00+09:00",
+        "source_ids": [
+          "kumamoto-gov-0819"
+        ]
+      },
+      "adjudications": [
+        {
+          "state": "UNKNOWN",
+          "scope": "同一定義設備の基準日時点稼働・設置数",
+          "source_ids": [
+            "cao-status-0823",
+            "kumamoto-gov-0819"
+          ],
+          "notes": "旧設置数を履歴保持するが、同一定義の現在稼働数は確定できない。"
+        }
+      ],
+      "state": "UNKNOWN",
+      "source_ids": [
+        "cao-status-0823",
+        "kumamoto-gov-0819"
+      ],
+      "display": {
+        "status": "UNKNOWN",
+        "scale": "現在の同一定義稼働数：UNKNOWN",
+        "period": "8/19設置実績を履歴保持／8/24再監査",
+        "detail": "トイレカー26台・仮設トイレ120基等・計296設備は8月19日のHISTORICALスナップショット。基準日時点の同一定義稼働・設置数は確定できない。",
+        "asOf": "8月24日22:38再監査",
+        "sourceLabel": "内閣府対応状況・政府/熊本県8月19日資料",
+        "sourceUrl": "https://www.bousai.go.jp/updates/r8kumamoto_jishin/status/index.html"
+      },
+      "notes": "旧設備数をcurrent表示しない。"
+    }
+  ],
+  "summary": {
+    "existing_records_audited": 12,
+    "records_total": 13,
+    "CURRENT": 4,
+    "HISTORICAL": 0,
+    "PLANNED": 1,
+    "UNKNOWN": 8,
+    "CONFLICT": 0,
+    "accepted_unresolved_count": 8,
+    "blocking_unresolved_count": 0
+  }
+}

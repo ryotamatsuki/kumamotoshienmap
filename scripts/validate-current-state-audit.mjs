@@ -110,7 +110,7 @@ assert.ok(event("t-kumamoto-0819").summary.includes("971人"));
 assert.ok(!event("t-kumamoto-0816").tags.includes("最新確認"));
 assert.equal(event("t-current-status").summary, "避難者2,709人、開設避難所65か所、人的被害398人、住家被害38,537棟。");
 
-assert.equal(pageMeta.checkedAt, "2026-08-24T18:06:00+09:00");
+assert.equal(pageMeta.checkedAt, "2026-08-24T22:38:32+09:00");
 assert.equal(pageMeta.volunteerCheckedAt, "2026-08-24T15:45:00+09:00");
 assert.ok(pageMeta.rows.some((row)=>row.section==="他自治体等"&&row.current.includes("全件再監査")),"他自治体等の全件再監査がPAGE_RECHECK_METAにありません");
 assert.ok(pageMeta.rows.some((row) => row.section === "愛媛県支援"));

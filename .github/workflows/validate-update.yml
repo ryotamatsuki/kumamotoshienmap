@@ -148,6 +148,8 @@ jobs:
           node --check scripts/build-sites.mjs
           node --check scripts/validate-update-release.mjs
           node --check scripts/test-release-gate.mjs
+          node --check scripts/sync-national-support-audit.mjs
+          node --check scripts/validate-national-support-audit.mjs
 
       - name: Run Release Gate self-tests
         run: |
