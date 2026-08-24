@@ -1,10 +1,13 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { extractPageRecheckMeta } from "./current-page-metadata.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const source = readFileSync(join(root, "volunteer-data.js"), "utf8");
 const uiSource = readFileSync(join(root, "volunteer.js"), "utf8");
+const pageHtml = readFileSync(join(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html"), "utf8");
+const pageMeta = extractPageRecheckMeta(pageHtml);
 const match = source.match(/^globalThis\.VOLUNTEER_DATA = Object\.freeze\(([\s\S]+)\);\s*$/);
 if(!match) throw new Error("volunteer-data.js の形式が不正です");
 const data = JSON.parse(match[1]);
@@ -34,7 +37,7 @@ assert(unique(data.all_centers.map((center)=>center.municipality)),"共通表示
 assert(data.all_centers.every((center)=>data.all_municipalities.includes(center.municipality)),"県内市町村一覧と共通表示用データが一致しません");
 assert(isIso(data.meta.checked_at) && isIso(data.meta.reference_at),"情報基準日時がISO形式ではありません");
 assert(data.meta.reference_at.startsWith("2026-08-24"),"ボランティア情報の基準日が2026-08-22ではありません");
-assert(data.meta.checked_at === "2026-08-24T15:45:00+09:00", "ボランティア情報の最終確認時刻がページ全体の確認時刻と一致しません");
+assert(data.meta.checked_at === pageMeta.volunteerCheckedAt, "ボランティア情報の最終確認時刻がPAGE_RECHECK_META.volunteerCheckedAtと一致しません");
 
 for(const center of data.all_centers){
   for(const field of requiredFields){

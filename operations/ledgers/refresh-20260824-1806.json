@@ -1,0 +1,337 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260824-1806",
+  "release_id": "20260824-1806",
+  "reference_at": "2026-08-24T18:06:00+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "e17450d8e458969a311ddeff66081e1f3fc3a3b8",
+  "expected_changed_files": [
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "municipal-support-audit.json",
+    "operations/ledgers/refresh-20260824-1806.json",
+    "package.json",
+    "public/dashboard.html",
+    "scripts/sync-municipal-support-audit.mjs",
+    "scripts/test-release-gate.mjs",
+    "scripts/validate-current-state-audit.mjs",
+    "scripts/validate-dashboard-current.mjs",
+    "scripts/validate-municipal-support-audit.mjs",
+    "scripts/validate-update-release.mjs",
+    "scripts/validate-volunteer-data.mjs",
+    "時点修正更新オペレーション.md"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-roster-0811",
+      "url": "https://www.pref.kumamoto.jp/uploaded/attachment/316600.pdf",
+      "source_as_of": "2026-08-11T14:00:00+09:00",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "historical_roster"
+    },
+    {
+      "source_id": "kumamoto-aggregate-0819",
+      "url": "https://www.pref.kumamoto.jp/uploaded/attachment/317153.pdf",
+      "source_as_of": "2026-08-19T14:00:00+09:00",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "historical_aggregate"
+    },
+    {
+      "source_id": "chiba-0819",
+      "url": "https://www.pref.chiba.lg.jp/bousai/kouikiouen/r8kumamoto-taiou.html",
+      "source_as_of": "2026-08-19",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "tokyo-0820",
+      "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082015",
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "tokyo-0821",
+      "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082106",
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "kanagawa-0821",
+      "url": "https://www.pref.kanagawa.jp/docs/bu4/prs/r7010643.html",
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "saitama-tokorozawa-0820",
+      "url": "https://www.city.tokorozawa.saitama.jp/tokoronews/press/r8/08/kumamotoouennsyokuinn0820.html",
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "saitama-koshigaya-0821",
+      "url": "https://www.city.koshigaya.saitama.jp/anzen_anshin/bosai/oshirase/kumamoto_sien.html",
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "kawasaki-0812",
+      "url": "https://www.city.kawasaki.jp/templates/prs/601/0000189384.html",
+      "source_as_of": "2026-08-12",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "kawasaki-0824",
+      "url": "https://www.city.kawasaki.jp/templates/prs/601/0000189631.html",
+      "source_as_of": "2026-08-24",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "osaka-0814",
+      "url": "https://www.city.osaka.lg.jp/kikikanrishitsu/page/0000684623.html",
+      "source_as_of": "2026-08-14",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "okayama-0820",
+      "url": "https://www.pref.okayama.jp/page/1051632.html",
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "yamaguchi-0820",
+      "url": "https://www.pref.yamaguchi.lg.jp/press/359667.html",
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "nagoya-0813",
+      "url": "https://www.city.nagoya.jp/houdou/3003942/3003947/3005441.html",
+      "source_as_of": "2026-08-13",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "nagasaki-0817",
+      "url": "https://www.pref.nagasaki.jp/press-contents/51537.html",
+      "source_as_of": "2026-08-17",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "nagasaki-health",
+      "url": "https://www.pref.nagasaki.jp/press-contents/50893.html",
+      "source_as_of": "2026-07-30",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "fukuoka-0821",
+      "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken5.html",
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "tokushima-0824",
+      "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315847/",
+      "source_as_of": "2026-08-24",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "shiga-0821",
+      "url": "https://www.pref.shiga.lg.jp/kensei/koho/e-shinbun/oshirase/352146.html",
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "toyama-0821",
+      "url": "https://www.pref.toyama.jp/1902/bousaianzen/bousai/jishin/kumamotozishin.html",
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "kyoto-press-0820",
+      "url": "https://www.pref.kyoto.jp/press/",
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "hokkaido-0820",
+      "url": "https://www.pref.hokkaido.lg.jp/sm/ktk/175789.html",
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "aomori-0821",
+      "url": "https://www.pref.aomori.lg.jp/release/2026/81234.html",
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "hiroshima-city-0813",
+      "url": "https://www.city.hiroshima.lg.jp/shisei/kouhou/1004010/1045546/1050818/1052407.html",
+      "source_as_of": "2026-08-13",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "saga-0810",
+      "url": "https://www.pref.saga.lg.jp/kiji003120626/index.html",
+      "source_as_of": "2026-08-10",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "saga-health-0730",
+      "url": "https://www.pref.saga.lg.jp/kiji003120545/index.html",
+      "source_as_of": "2026-07-30",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "saga-dwat-0805",
+      "url": "https://www.pref.saga.lg.jp/kiji003120569/index.html",
+      "source_as_of": "2026-08-05",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "ehime-0824",
+      "url": "https://www.pref.ehime.jp/uploaded/attachment/188555.pdf",
+      "source_as_of": "2026-08-24T12:00:00+09:00",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "sender_official"
+    },
+    {
+      "source_id": "kumamoto-pharmacy-0808",
+      "url": "https://www.pref.kumamoto.jp/uploaded/attachment/316443.pdf",
+      "source_as_of": "2026-08-08T14:00:00+09:00",
+      "checked_at": "2026-08-24T18:06:00+09:00",
+      "role": "historical_activity"
+    }
+  ],
+  "coverage": {
+    "current_count": 67,
+    "unresolved_count": 0,
+    "conflict_count": 0,
+    "municipal_support": {
+      "records": 9,
+      "provider_adjudications": 72,
+      "current": 18,
+      "planned": 6,
+      "historical": 4,
+      "unknown": 44,
+      "unadjudicated": 0
+    }
+  },
+  "snapshots": {
+    "municipal_support_reference_at": "2026-08-24T18:06:00+09:00",
+    "historical_central_aggregate": {
+      "as_of": "2026-08-19T14:00:00+09:00",
+      "administrative_support": 971,
+      "with_related_agencies": 1038,
+      "state": "HISTORICAL"
+    }
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {
+      "issue_id": "municipal-support-pair-kumamoto-unknown",
+      "state": "UNKNOWN",
+      "reason": "熊本市について、旧割当名簿のうち 山梨県, 群馬県, 札幌市, さいたま市, 千葉市, 横浜市, 相模原市, 新潟市, 静岡市, 神戸市, 京都市, 堺市, 広島市, 福岡市 は2026-08-24 18:06時点の継続・終了を直接確定する新しい公式一次情報を取得できなかった。旧値をCURRENTとして残さずUNKNOWN表示する。",
+      "owner": "timepoint-refresh",
+      "source_ids": [
+        "kumamoto-roster-0811"
+      ],
+      "next_review_at": "2026-08-25T09:00:00+09:00"
+    },
+    {
+      "issue_id": "municipal-support-pair-yatsushiro-unknown",
+      "state": "UNKNOWN",
+      "reason": "八代市について、旧割当名簿のうち 福井県, 大阪府, 大分県, 鹿児島県, 沖縄県, 北九州市 は2026-08-24 18:06時点の継続・終了を直接確定する新しい公式一次情報を取得できなかった。旧値をCURRENTとして残さずUNKNOWN表示する。",
+      "owner": "timepoint-refresh",
+      "source_ids": [
+        "kumamoto-roster-0811"
+      ],
+      "next_review_at": "2026-08-25T09:00:00+09:00"
+    },
+    {
+      "issue_id": "municipal-support-pair-uto-unknown",
+      "state": "UNKNOWN",
+      "reason": "宇土市について、旧割当名簿のうち 香川県 は2026-08-24 18:06時点の継続・終了を直接確定する新しい公式一次情報を取得できなかった。旧値をCURRENTとして残さずUNKNOWN表示する。",
+      "owner": "timepoint-refresh",
+      "source_ids": [
+        "kumamoto-roster-0811"
+      ],
+      "next_review_at": "2026-08-25T09:00:00+09:00"
+    },
+    {
+      "issue_id": "municipal-support-pair-uki-unknown",
+      "state": "UNKNOWN",
+      "reason": "宇城市について、旧割当名簿のうち 石川県, 長野県, 岐阜県, 静岡県, 愛知県, 三重県, 兵庫県, 奈良県, 和歌山県, 宮崎県, 福岡市 は2026-08-24 18:06時点の継続・終了を直接確定する新しい公式一次情報を取得できなかった。旧値をCURRENTとして残さずUNKNOWN表示する。",
+      "owner": "timepoint-refresh",
+      "source_ids": [
+        "kumamoto-roster-0811"
+      ],
+      "next_review_at": "2026-08-25T09:00:00+09:00"
+    },
+    {
+      "issue_id": "municipal-support-pair-hikawa-unknown",
+      "state": "UNKNOWN",
+      "reason": "氷川町について、旧割当名簿のうち 鳥取県, 島根県, 広島県, 高知県, 浜松市 は2026-08-24 18:06時点の継続・終了を直接確定する新しい公式一次情報を取得できなかった。旧値をCURRENTとして残さずUNKNOWN表示する。",
+      "owner": "timepoint-refresh",
+      "source_ids": [
+        "kumamoto-roster-0811"
+      ],
+      "next_review_at": "2026-08-25T09:00:00+09:00"
+    },
+    {
+      "issue_id": "municipal-support-pair-kashima-unknown",
+      "state": "UNKNOWN",
+      "reason": "嘉島町について、旧割当名簿のうち 岩手県, 秋田県 は2026-08-24 18:06時点の継続・終了を直接確定する新しい公式一次情報を取得できなかった。旧値をCURRENTとして残さずUNKNOWN表示する。",
+      "owner": "timepoint-refresh",
+      "source_ids": [
+        "kumamoto-roster-0811"
+      ],
+      "next_review_at": "2026-08-25T09:00:00+09:00"
+    },
+    {
+      "issue_id": "municipal-support-pharmacy-unknown",
+      "state": "UNKNOWN",
+      "reason": "宇城市・八代市・氷川町について、旧割当名簿のうち 熊本県薬剤師会, 福岡県薬剤師会, 宮崎県薬剤師会 は2026-08-24 18:06時点の継続・終了を直接確定する新しい公式一次情報を取得できなかった。旧値をCURRENTとして残さずUNKNOWN表示する。",
+      "owner": "timepoint-refresh",
+      "source_ids": [
+        "kumamoto-pharmacy-0808"
+      ],
+      "next_review_at": "2026-08-25T09:00:00+09:00"
+    },
+    {
+      "issue_id": "municipal-support-kumamoto-internal-unknown",
+      "state": "UNKNOWN",
+      "reason": "熊本県内について、旧割当名簿のうち 熊本県, 熊本県内市町村 は2026-08-24 18:06時点の継続・終了を直接確定する新しい公式一次情報を取得できなかった。旧値をCURRENTとして残さずUNKNOWN表示する。",
+      "owner": "timepoint-refresh",
+      "source_ids": [
+        "kumamoto-aggregate-0819"
+      ],
+      "next_review_at": "2026-08-25T09:00:00+09:00"
+    }
+  ]
+}
