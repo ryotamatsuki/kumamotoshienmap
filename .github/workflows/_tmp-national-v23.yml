@@ -52,7 +52,13 @@ jobs:
           git diff > /tmp/build-1.diff
           npm run build
           git diff > /tmp/build-2.diff
-          cmp --silent /tmp/build-1.diff /tmp/build-2.diff
+          if ! cmp --silent /tmp/build-1.diff /tmp/build-2.diff; then
+            echo '::error title=Non-reproducible build::Second build changed the generated diff.'
+            diff -u /tmp/build-1.diff /tmp/build-2.diff || true
+            echo '--- changed files after second build ---'
+            git status --short
+            exit 1
+          fi
       - name: Release Gate self-tests
         run: npm run test:release-gate
       - name: Required syntax checks
