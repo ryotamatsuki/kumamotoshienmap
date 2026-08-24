@@ -24,22 +24,17 @@ function stripGenerated(html) {
   return `${html.slice(0, start)}${html.slice(end + END.length)}`;
 }
 
-function replaceRequired(html, from, to, label) {
-  if (!html.includes(from)) throw new Error(`sync anchor missing: ${label}`);
-  return html.replace(from, to);
-}
-
 function replaceOverviewResource(html, recordId, label, value, sub) {
-  const pattern = new RegExp(`<button class=\\"overview-resource\\" data-overview-records=\\"${recordId}\\" type=\\"button\\">[\\s\\S]*?<\\/button>`, "u");
+  const pattern = new RegExp(`<button class="overview-resource" data-overview-records="${recordId}" type="button">[\\s\\S]*?<\\/button>`, "u");
   if (!pattern.test(html)) throw new Error(`overview resource missing: ${recordId}`);
   return html.replace(pattern, `<button class="overview-resource" data-overview-records="${recordId}" type="button"><div class="overview-resource-label">${label}</div><div class="overview-resource-value">${value}</div><div class="overview-resource-sub">${sub}</div></button>`);
 }
 
 source = stripGenerated(source);
 source = source.replace(/volunteer-data\.js\?v=[A-Za-z0-9._-]+/gu, `volunteer-data.js?v=${audit.release_id}`);
-source = source.replace(/(const\s+PAGE_RECHECK_META\s*=\s*\{[^\n]*?\"checkedAt\"\s*:\s*)\"[^\"]+\"/u, `$1"${audit.reference_at}"`);
+source = source.replace(/(const\s+PAGE_RECHECK_META\s*=\s*\{[^\n]*?"checkedAt"\s*:\s*)"[^"]+"/u, `$1"${audit.reference_at}"`);
 
-const nationalActorPattern = /<button class=\"overview-actor\" data-overview-provider=\"national\" type=\"button\">[\s\S]*?<\/button>/u;
+const nationalActorPattern = /<button class="overview-actor" data-overview-provider="national" type="button">[\s\S]*?<\/button>/u;
 if (!nationalActorPattern.test(source)) throw new Error("national overview actor card missing");
 source = source.replace(nationalActorPattern, `<button class="overview-actor" data-overview-provider="national" type="button"><div class="overview-actor-head"><i class="dot national"></i>国・関係機関</div><ul><li>8月24日22:38に既存12レコードを全件再監査（監査レコード計13件）</li><li>国交省第48報：給水車119台、TEC-FORCE現時点98人・累計4,507人日</li><li>消防・医療等の同一定義現況を確定できない項目はUNKNOWN、8月26日TEC-FORCE第5陣はPLANNED</li></ul><span class="overview-more">支援全体を確認 →</span></button>`);
 source = replaceOverviewResource(source, "national-water", "応急給水", "119台", "国交省第48報・8月23日7時30分時点");
@@ -92,7 +87,7 @@ const overlay = `${START}\nconst NATIONAL_SUPPORT_AUDIT_META=${JSON.stringify({
   existingRecordCount: audit.inventory.existing_record_count,
   auditRecordCount: audit.inventory.audit_record_count,
   summary,
-})};\nconst NATIONAL_SUPPORT_AUDIT_SOURCES=${JSON.stringify(sourceDigest)};\nconst nationalSupportRecordUpdates=${JSON.stringify(recordUpdates)};\nObject.entries(nationalSupportRecordUpdates).forEach(([id,values])=>{const record=RECORDS.find(item=>item.id===id);if(record)Object.assign(record,values);});\nconst nationalSupportGeneratedRecords=${JSON.stringify(generatedRecords)};\nnationalSupportGeneratedRecords.forEach(record=>{if(!RECORDS.some(item=>item.id===record.id))RECORDS.push(record);});\nif(typeof PAGE_RECHECK_META!==\"undefined\"){PAGE_RECHECK_META.checkedAt=NATIONAL_SUPPORT_AUDIT_META.referenceAt;const rows=Array.isArray(PAGE_RECHECK_META.rows)?PAGE_RECHECK_META.rows:[];const nextRows=rows.filter(row=>row.section!==\"国・関係機関\");nextRows.push(${JSON.stringify(pageRow)});PAGE_RECHECK_META.rows.splice(0,PAGE_RECHECK_META.rows.length,...nextRows);}\n${END}`;
+})};\nconst NATIONAL_SUPPORT_AUDIT_SOURCES=${JSON.stringify(sourceDigest)};\nconst nationalSupportRecordUpdates=${JSON.stringify(recordUpdates)};\nObject.entries(nationalSupportRecordUpdates).forEach(([id,values])=>{const record=RECORDS.find(item=>item.id===id);if(record)Object.assign(record,values);});\nconst nationalSupportGeneratedRecords=${JSON.stringify(generatedRecords)};\nnationalSupportGeneratedRecords.forEach(record=>{if(!RECORDS.some(item=>item.id===record.id))RECORDS.push(record);});\nif(typeof PAGE_RECHECK_META!=="undefined"){PAGE_RECHECK_META.checkedAt=NATIONAL_SUPPORT_AUDIT_META.referenceAt;const rows=Array.isArray(PAGE_RECHECK_META.rows)?PAGE_RECHECK_META.rows:[];const nextRows=rows.filter(row=>row.section!=="国・関係機関");nextRows.push(${JSON.stringify(pageRow)});PAGE_RECHECK_META.rows.splice(0,PAGE_RECHECK_META.rows.length,...nextRows);}\n${END}`;
 
 let insertAt = source.indexOf(MUNICIPAL_END);
 if (insertAt >= 0) insertAt += MUNICIPAL_END.length;
