@@ -30,7 +30,7 @@ function replaceIfPresent(text, from, to) {
   write(path, JSON.stringify(audit, null, 2));
 }
 
-// Keep ledger source URLs aligned and include the current dashboard validator in the exact diff contract.
+// Keep ledger source URLs aligned and include all permanent generator/validator changes in the exact diff contract.
 {
   const path = "operations/ledgers/refresh-20260824-2238.json";
   const ledger = JSON.parse(read(path));
@@ -40,11 +40,26 @@ function replaceIfPresent(text, from, to) {
   if (mhlw) mhlw.url = "https://www.mhlw.go.jp/stf/newpage_73935.html";
   const npa = ledger.sources.find((item) => item.source_id === "npa-recheck");
   if (npa) npa.url = "https://www.npa.go.jp/news/release/index.html/";
-  if (!ledger.expected_changed_files.includes("scripts/validate-dashboard-current.mjs")) {
-    ledger.expected_changed_files.push("scripts/validate-dashboard-current.mjs");
-    ledger.expected_changed_files.sort();
+  for (const required of ["scripts/validate-dashboard-current.mjs", "scripts/sync-municipal-support-audit.mjs"]) {
+    if (!ledger.expected_changed_files.includes(required)) ledger.expected_changed_files.push(required);
   }
+  ledger.expected_changed_files.sort();
   write(path, JSON.stringify(ledger, null, 2));
+}
+
+// Make the municipal audit generator derive visible recheck labels from audit.reference_at.
+{
+  const path = "scripts/sync-municipal-support-audit.mjs";
+  let text = read(path);
+  if (!text.includes("const auditCheckedLabel=")) {
+    const anchor = 'const audit = JSON.parse(await readFile(auditPath, "utf8"));\n';
+    if (!text.includes(anchor)) throw new Error("municipal sync audit anchor missing");
+    text = text.replace(anchor, `${anchor}const auditTimeMatch=audit.reference_at.match(/^\\d{4}-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2})/u);\nif(!auditTimeMatch)throw new Error("municipal audit reference_at format is invalid");\nconst auditCheckedLabel=\`${'${Number(auditTimeMatch[1])}'}月${'${Number(auditTimeMatch[2])}'}日${'${auditTimeMatch[3]}'}:${'${auditTimeMatch[4]}'}\`;\nconst auditCheckedSourceLabel=\`${'${audit.reference_at.slice(0,4)}'}年${'${Number(auditTimeMatch[1])}'}月${'${Number(auditTimeMatch[2])}'}日${'${auditTimeMatch[3]}'}時${'${auditTimeMatch[4]}'}分再確認\`;\n`);
+    const writeAnchor = 'next=upsertBlock(next,buildOverlay(meta));\nawait writeFile(sourcePath,next,"utf8");';
+    if (!text.includes(writeAnchor)) throw new Error("municipal sync output anchor missing");
+    text = text.replace(writeAnchor, 'next=upsertBlock(next,buildOverlay(meta));\nnext=next.replaceAll("8月24日18:06",auditCheckedLabel).replaceAll("2026年8月24日18時06分再確認",auditCheckedSourceLabel);\nawait writeFile(sourcePath,next,"utf8");');
+  }
+  write(path, text);
 }
 
 // Retire stale-current assertions from the dashboard validator and assert the new national snapshot semantics.
