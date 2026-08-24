@@ -25,6 +25,18 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22.x
+      - name: Fix migration path anchors
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('scripts/_tmp-apply-national-v23.mjs')
+          text = path.read_text()
+          text = text.replace('municipal-support\\\\.json', 'municipal-support-audit\\\\.json')
+          text = text.replace('national-support\\\\.json', 'national-support-audit\\\\.json')
+          path.write_text(text)
+          PY
       - name: Apply permanent integration patches
         run: node scripts/_tmp-apply-national-v23.mjs
       - name: Install npm metadata
