@@ -38,10 +38,10 @@ source = source.replace(/(const\s+PAGE_RECHECK_META\s*=\s*\{[^\n]*?"checkedAt"\s
 
 const nationalActorPattern = /<button class="overview-actor" data-overview-provider="national" type="button">[\s\S]*?<\/button>/u;
 if (!nationalActorPattern.test(source)) throw new Error("national overview actor card missing");
-source = source.replace(nationalActorPattern, `<button class="overview-actor" data-overview-provider="national" type="button"><div class="overview-actor-head"><i class="dot national"></i>国・関係機関</div><ul><li>8月24日22:38に既存12レコードを全件再監査（監査レコード計13件）</li><li>国交省第48報：給水車119台、TEC-FORCE現時点98人・累計4,507人日</li><li>消防・医療等の同一定義現況を確定できない項目はUNKNOWN、8月26日TEC-FORCE第5陣はPLANNED</li></ul><span class="overview-more">支援全体を確認 →</span></button>`);
+source = source.replace(nationalActorPattern, `<button class="overview-actor" data-overview-provider="national" type="button"><div class="overview-actor-head"><i class="dot national"></i>国・関係機関</div><ul><li>8月24日22:38全件再監査基準・23:58追加再監査（既存12件＋追加1件）</li><li>国交省第48報：給水車119台、TEC-FORCE現時点98人・累計4,507人日</li><li>旧UNKNOWN 8件を追加再裁定：6件CURRENT、2件UNKNOWN。全国同一定義総数等は詳細で時点分離、8月26日TEC-FORCE第5陣はPLANNED</li></ul><span class="overview-more">支援全体を確認 →</span></button>`);
 source = replaceOverviewResource(source, "national-water", "応急給水", "119台", "国交省第48報・8月23日7時30分時点");
 source = replaceOverviewResource(source, "national-tec", "TEC-FORCE", "98人", "現時点98人／累計4,507人日・第48報");
-source = replaceOverviewResource(source, "national-rescue", "救急・航空支援", "UNKNOWN", "8/2 約100人・4機はHISTORICAL");
+source = replaceOverviewResource(source, "national-rescue", "救急・消防支援", "2隊9名", "8/2 約100人・4機はHISTORICAL／北九州市第6次を現行掲載");
 
 const summary = audit.summary;
 const sourceDigest = audit.sources.map((item) => ({
@@ -78,7 +78,7 @@ const pageRow = {
   current: `既存12件＋追加予定1件を${audit.reference_at.slice(0, 16).replace("T", " ")} JSTに裁定`,
   previous: "国交省第47報、消防8月2日値、政府8月19日資料等が混在",
   difference: `CURRENT ${summary.CURRENT} / PLANNED ${summary.PLANNED} / UNKNOWN ${summary.UNKNOWN} / CONFLICT ${summary.CONFLICT}。旧人数は履歴へ分離。`,
-  source: "内閣府8/23・消防庁第60報・国交省第48報・防衛省8/23ほか",
+  source: "内閣府8/23・消防庁第60報・国交省第48報・防衛省8/23・追加一次情報8/24ほか",
   url: "https://www.bousai.go.jp/updates/r8kumamoto_jishin/status/index.html",
 };
 
@@ -101,7 +101,7 @@ else {
 source = `${source.slice(0, insertAt)}\n${overlay}${source.slice(insertAt)}`;
 
 // Explicitly eliminate stale-current wording while preserving dated history in the audit JSON.
-source = source.replaceAll("8月2日公表値・継続要確認", "8/2実績はHISTORICAL・現況UNKNOWN");
+source = source.replaceAll("8月2日公表値・継続要確認", "8/2実績はHISTORICAL・現行の緊急消防援助隊活動を別表示");
 
 writeFileSync(SOURCE_PATH, source);
 writeFileSync(PUBLIC_PATH, source);

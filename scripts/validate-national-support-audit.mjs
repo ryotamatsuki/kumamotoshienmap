@@ -44,7 +44,7 @@ if (audit.schema_version !== 1) fail("schema_versionは1で必要です。");
 if (audit.repository !== "ryotamatsuki/kumamotoshienmap") fail("repositoryが一致しません。");
 if (Number.isNaN(Date.parse(audit.reference_at)) || Number.isNaN(Date.parse(audit.checked_at))) fail("reference_at/checked_atが不正です。");
 if (!/^\d{8}-\d{4}$/u.test(String(audit.release_id ?? ""))) fail("release_idがYYYYMMDD-HHMM形式ではありません。");
-if (audit.reference_at !== audit.checked_at) fail("今回の全件監査ではchecked_atをreference_atへ固定してください。");
+if (Date.parse(audit.checked_at) < Date.parse(audit.reference_at)) fail("checked_atはreference_at以後で必要です。");
 
 const pageMeta = parsePageMeta(source);
 if (pageMeta.checkedAt !== audit.reference_at) fail(`reference_atとPAGE_RECHECK_META.checkedAtが不一致です。 expected=${audit.reference_at} actual=${pageMeta.checkedAt}`);
@@ -70,7 +70,7 @@ for (const [index, item] of (audit.sources ?? []).entries()) {
   if (!item?.source_id || !/^https?:\/\//u.test(String(item.url ?? ""))) fail(`sources[${index}]にsource_id/urlが必要です。`);
   if (sourceById.has(item.source_id)) fail(`source_id重複: ${item.source_id}`);
   if (item.primary !== true) fail(`national auditの裁定用sourceはprimary=trueで登録してください: ${item.source_id}`);
-  if (item.checked_at !== audit.reference_at) fail(`source.checked_atがreference_atと不一致: ${item.source_id}`);
+  if (Number.isNaN(Date.parse(item.checked_at)) || Date.parse(item.checked_at) < Date.parse(audit.reference_at) || Date.parse(item.checked_at) > Date.parse(audit.checked_at)) fail(`source.checked_atはreference_at以上かつaudit.checked_at以下で必要です: ${item.source_id}`);
   sourceById.set(item.source_id, item);
 }
 
@@ -129,9 +129,9 @@ const resourceRegionMatch = source.match(/<div class="overview-resource-grid">[\
 if (!resourceRegionMatch) fail("主要な投入資源regionが見つかりません。");
 const resourceRegion = resourceRegionMatch[0];
 for (const stale of ["129台", "4,299人日", "現在105人", "継続要確認"]) if (resourceRegion.includes(stale)) fail(`主要投入資源に旧current表現が残っています: ${stale}`);
-if (!resourceRegion.includes("119台") || !resourceRegion.includes("4,507人日") || !resourceRegion.includes("UNKNOWN")) fail("主要投入資源がnational auditの裁定表示へ更新されていません。");
+if (!resourceRegion.includes("119台") || !resourceRegion.includes("4,507人日") || !resourceRegion.includes("2隊9名")) fail("主要投入資源がnational auditの裁定表示へ更新されていません。");
 const rescueCard = resourceRegion.match(/<button class="overview-resource" data-overview-records="national-rescue"[^>]*>[\s\S]*?<\/button>/u)?.[0] ?? "";
-if (!rescueCard.includes('<div class="overview-resource-value">UNKNOWN</div>')) fail("救急・航空支援の現況値がUNKNOWNになっていません。");
+if (!rescueCard.includes('<div class="overview-resource-value">2隊9名</div>')) fail("救急・消防支援の現行確認値が2隊9名になっていません。");
 if (!rescueCard.includes("約100人・4機") || !rescueCard.includes("HISTORICAL")) fail("救急・航空支援の8/2実績がHISTORICAL履歴として保持されていません。");
 
 console.log(JSON.stringify({
