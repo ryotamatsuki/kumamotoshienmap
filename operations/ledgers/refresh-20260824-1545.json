@@ -1,0 +1,228 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260824-1545",
+  "release_id": "20260824-1545",
+  "reference_at": "2026-08-24T15:45:00+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "579ba049afa84ac4fa54c55cff81144369f5d3c3",
+  "expected_changed_files": [
+    "current-shelters.json",
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "operations/ledgers/refresh-20260824-1545.json",
+    "public/dashboard.html",
+    "research_official_north.json",
+    "research_official_south.json",
+    "research_official_statewide.json",
+    "scripts/generate-volunteer-data.mjs",
+    "scripts/test-release-gate.mjs",
+    "scripts/validate-current-state-audit.mjs",
+    "scripts/validate-dashboard-current.mjs",
+    "scripts/validate-volunteer-data.mjs",
+    "volunteer-data.js"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-pref-report42",
+      "url": "https://www.pref.kumamoto.jp/uploaded/life/278039_877218_misc.pdf",
+      "source_as_of": "2026-08-24T08:00:00+09:00",
+      "checked_at": "2026-08-24T15:45:00+09:00",
+      "fetched_at": "2026-08-24T15:44:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-live-shelter",
+      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+      "source_as_of": "2026-08-24T15:30:54+09:00",
+      "checked_at": "2026-08-24T15:45:00+09:00",
+      "fetched_at": "2026-08-24T15:44:18+09:00"
+    },
+    {
+      "source_id": "ehime-support-20260824",
+      "url": "https://www.pref.ehime.jp/uploaded/attachment/188555.pdf",
+      "source_as_of": "2026-08-24T12:00:00+09:00",
+      "checked_at": "2026-08-24T15:45:00+09:00",
+      "fetched_at": "2026-08-24T15:44:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-city-vc-status",
+      "url": "https://www.kumamoto-city-csw.or.jp/%ef%bc%98-%ef%bc%92%ef%bc%91%e6%99%82%e7%82%b9%e3%81%a7%e3%81%ae%e7%ac%ac%ef%bc%93%e6%9c%9f%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8b%9f%e9%9b%86%e7%8a%b6%e6%b3%81%e3%81%ae%e3%81%8a/",
+      "source_as_of": "2026-08-23T00:00:00+09:00",
+      "checked_at": "2026-08-24T15:45:00+09:00",
+      "fetched_at": "2026-08-24T15:44:00+09:00"
+    },
+    {
+      "source_id": "uki-vc-current",
+      "url": "https://www.shakyou-uki.jp/oshirase/12239/",
+      "source_as_of": "2026-08-23T00:00:00+09:00",
+      "checked_at": "2026-08-24T15:45:00+09:00",
+      "fetched_at": "2026-08-24T15:44:00+09:00"
+    },
+    {
+      "source_id": "kashima-vc-official",
+      "url": "https://kashima-shakyo.or.jp/",
+      "source_as_of": null,
+      "checked_at": "2026-08-24T15:45:00+09:00",
+      "fetched_at": "2026-08-24T15:44:00+09:00"
+    },
+    {
+      "source_id": "hikawa-vc-news",
+      "url": "https://hikawa-syakyo.jp/news/",
+      "source_as_of": "2026-08-24T00:00:00+09:00",
+      "checked_at": "2026-08-24T15:45:00+09:00",
+      "fetched_at": "2026-08-24T15:44:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-city-volunteer-aggregate",
+      "url": "https://www.city.kumamoto.jp/toshiken/",
+      "source_as_of": null,
+      "checked_at": "2026-08-24T15:45:00+09:00",
+      "fetched_at": "2026-08-24T15:44:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-pref-vc",
+      "url": "https://www.fukushi-kumamoto.or.jp/kvc/",
+      "source_as_of": null,
+      "checked_at": "2026-08-24T15:45:00+09:00",
+      "fetched_at": "2026-08-24T15:44:00+09:00"
+    }
+  ],
+  "coverage": {
+    "statewide": "rechecked_current",
+    "municipalities": {
+      "熊本市": "rechecked_current",
+      "八代市": "rechecked_current",
+      "人吉市": "official_not_found",
+      "荒尾市": "official_not_found",
+      "水俣市": "official_not_found",
+      "玉名市": "official_not_found",
+      "山鹿市": "official_not_found",
+      "菊池市": "official_not_found",
+      "宇土市": "rechecked_current",
+      "上天草市": "official_not_found",
+      "宇城市": "unknown_needs_recheck",
+      "阿蘇市": "official_not_found",
+      "天草市": "official_not_found",
+      "合志市": "official_not_found",
+      "美里町": "rechecked_current",
+      "玉東町": "unknown_needs_recheck",
+      "南関町": "official_not_found",
+      "長洲町": "official_not_found",
+      "和水町": "official_not_found",
+      "大津町": "official_not_found",
+      "菊陽町": "official_not_found",
+      "南小国町": "official_not_found",
+      "小国町": "official_not_found",
+      "産山村": "official_not_found",
+      "高森町": "official_not_found",
+      "西原村": "official_not_found",
+      "南阿蘇村": "official_not_found",
+      "御船町": "rechecked_current",
+      "嘉島町": "unknown_needs_recheck",
+      "益城町": "rechecked_current",
+      "甲佐町": "rechecked_current",
+      "山都町": "official_not_found",
+      "氷川町": "rechecked_current",
+      "芦北町": "rechecked_current",
+      "津奈木町": "official_not_found",
+      "錦町": "official_not_found",
+      "多良木町": "official_not_found",
+      "湯前町": "official_not_found",
+      "水上村": "official_not_found",
+      "相良村": "official_not_found",
+      "五木村": "official_not_found",
+      "山江村": "official_not_found",
+      "球磨村": "official_not_found",
+      "あさぎり町": "official_not_found",
+      "苓北町": "official_not_found"
+    },
+    "researched_centers": 11,
+    "current_shelters": {
+      "current_count": 67,
+      "confirmed": 67,
+      "unresolved": 0,
+      "conflicts": 0
+    },
+    "historical_coordinate_master": 206,
+    "source_public_parity": "required",
+    "notes": "official_not_foundは今回確認した公式集約・既存公式一次情報で新規の募集詳細を確認できなかったことのみを表し、募集なし・活動終了を意味しない。宇城市・嘉島町・玉東町は確認不能箇所をUNKNOWNとして明示する。"
+  },
+  "snapshots": {
+    "prefecture_report": {
+      "report": "第42報",
+      "source_as_of": "2026-08-24T08:00:00+09:00",
+      "shelters": 65,
+      "evacuees": 2709,
+      "human_total": 398,
+      "housing_total": 38537,
+      "municipality_rows_human": 396,
+      "municipality_rows_housing": 38498
+    },
+    "current_shelters": {
+      "source_last_modified": "2026-08-24T15:30:54+09:00",
+      "fetched_at": "2026-08-24T15:44:18+09:00",
+      "current_count": 67,
+      "confirmed": 67,
+      "unresolved": 0,
+      "conflicts": 0
+    },
+    "ehime_support": {
+      "source_as_of": "2026-08-24T12:00:00+09:00",
+      "human_support_actual_people": 192,
+      "human_support_person_days": 891,
+      "pair_support_people": 67,
+      "pair_support_person_days": 292
+    },
+    "coordinate_history": {
+      "source_as_of": "2026-08-02T23:21:09+09:00",
+      "count": 206
+    }
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {
+      "issue_id": "gyokuto-volunteer-detail",
+      "state": "UNKNOWN",
+      "reason": "公式集約に玉東町の災害ボランティア募集掲載を確認しているが、活動日・募集地域・申込条件の詳細を一次情報で確定できない。募集なしとも現行募集中とも推定せずUNKNOWNを維持する。",
+      "owner": "更新担当",
+      "source_ids": [
+        "kumamoto-city-volunteer-aggregate",
+        "kumamoto-pref-vc"
+      ],
+      "next_review_at": "2026-08-25T15:45:00+09:00"
+    },
+    {
+      "issue_id": "uki-volunteer-daily-schedule",
+      "state": "UNKNOWN",
+      "reason": "宇城市災害VCの開設・事前登録は公式ページで確認できるが、前回の日別募集URLは404となり、8月24日以降の個別活動日程を一次情報で確定できない。404を募集終了へ変換しない。",
+      "owner": "更新担当",
+      "source_ids": [
+        "uki-vc-current",
+        "kumamoto-pref-vc"
+      ],
+      "next_review_at": "2026-08-25T15:45:00+09:00"
+    },
+    {
+      "issue_id": "kashima-volunteer-current",
+      "state": "UNKNOWN",
+      "reason": "嘉島町社会福祉協議会公式サイトは今回の取得でTLS証明書エラーとなり、8月21～22日の過去確認値を8月24日の現況へ流用できないためUNKNOWNとする。",
+      "owner": "更新担当",
+      "source_ids": [
+        "kashima-vc-official",
+        "kumamoto-pref-vc"
+      ],
+      "next_review_at": "2026-08-25T15:45:00+09:00"
+    },
+    {
+      "issue_id": "kumamoto-volunteer-after-0831",
+      "state": "PLANNED",
+      "reason": "熊本市第3期8月26～30日は必要人数到達で受付終了。8月31日以降はニーズに応じて改めて案内予定とされ、具体的募集条件は未公表のためPLANNEDとして推定しない。",
+      "owner": "更新担当",
+      "source_ids": [
+        "kumamoto-city-vc-status"
+      ],
+      "next_review_at": "2026-08-25T15:45:00+09:00"
+    }
+  ]
+}

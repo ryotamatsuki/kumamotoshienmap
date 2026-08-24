@@ -443,6 +443,29 @@ const currentCalendarOverrides20260822 = {
   }
 };
 Object.assign(currentCalendarOverrides, currentCalendarOverrides20260822);
+const currentCalendarOverrides20260824 = {
+  "熊本市": {
+    "2026-08-24": {key:"paused",label:"ニーズ調整のため活動休止",countable:false},
+    "2026-08-25": {key:"paused",label:"ニーズ調整のため活動休止",countable:false},
+    ...Object.fromEntries([26,27,28,29,30].map((day)=>[`2026-08-${day}`,{key:"full",label:"第3期必要人数到達・受付終了",countable:false}]))
+  },
+  "宇城市": Object.fromEntries([24,25,26,27,28,29,30,31].map((day)=>[`2026-08-${day}`,{key:"unknown",label:"現行活動日程要確認",countable:false}])),
+  "嘉島町": Object.fromEntries([24,25,26,27,28,29,30,31].map((day)=>[`2026-08-${day}`,{key:"unknown",label:"公式サイト取得不能・要確認",countable:false}])),
+  "氷川町": {
+    "2026-08-24": {key:"none",label:"活動休止",countable:false},
+    "2026-08-25": {key:"recruiting",label:"8/21～27募集期間",countable:true},
+    "2026-08-26": {key:"recruiting",label:"8/21～27募集期間",countable:true},
+    "2026-08-27": {key:"recruiting",label:"8/21～27募集期間",countable:true},
+    "2026-08-28": {key:"recruiting",label:"8/28～9/3募集中",countable:true},
+    "2026-08-29": {key:"recruiting",label:"8/28～9/3募集中",countable:true},
+    "2026-08-30": {key:"recruiting",label:"8/28～9/3募集中",countable:true},
+    "2026-08-31": {key:"none",label:"仮置場休業のため活動休止",countable:false},
+    "2026-09-01": {key:"recruiting",label:"8/28～9/3募集中",countable:true},
+    "2026-09-02": {key:"recruiting",label:"8/28～9/3募集中",countable:true},
+    "2026-09-03": {key:"recruiting",label:"8/28～9/3募集中",countable:true}
+  }
+};
+Object.assign(currentCalendarOverrides, currentCalendarOverrides20260824);
 for(const center of centers){
   const override = currentCalendarOverrides[center.municipality] || calendarOverrides[center.municipality];
   if(override) center.calendar_overrides = override;
