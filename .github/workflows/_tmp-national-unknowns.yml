@@ -25,6 +25,15 @@ jobs:
           node-version: 22.x
       - name: Apply same-reference re-adjudication
         run: node scripts/_tmp-resolve-national-unknowns.mjs
+      - name: Preserve full-audit wording
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/sync-national-support-audit.mjs')
+          s=p.read_text()
+          s=s.replace('8月24日22:38基準・23:58追加再監査（既存12件＋追加1件）','8月24日22:38全件再監査基準・23:58追加再監査（既存12件＋追加1件）')
+          p.write_text(s)
+          PY
       - name: Install npm metadata
         run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
       - name: Build and validate
