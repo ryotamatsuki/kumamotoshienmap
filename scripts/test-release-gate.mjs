@@ -10,7 +10,9 @@ const COPY_PATHS = [
   "scripts/current-page-metadata.mjs",
   "scripts/validate-current-shelters.mjs",
   "scripts/validate-municipal-support-audit.mjs",
+  "scripts/validate-national-support-audit.mjs",
   "municipal-support-audit.json",
+  "national-support-audit.json",
   "ehime_kumamoto_support_geocoded_shelters_20260802.html",
   "public/dashboard.html",
   "dist/dashboard.html",
@@ -108,6 +110,8 @@ function ledger(root, expectedChangedFiles, overrides = {}) {
       current_count: JSON.parse(readFileSync(resolve(root, "current-shelters.json"), "utf8")).shelters.length,
       unresolved_count: 0,
       conflict_count: 0,
+      municipal_support: "audited",
+      national_support: "audited",
     },
     snapshots: {},
     blocking_unresolved: [],
@@ -265,6 +269,47 @@ test("stale municipal-support audit is blocked", () => {
 `);
     const result = runNode(root, "scripts/validate-update-release.mjs");
     expectFailure("stale municipal audit", result, /全件再監査|municipal|reference_at|時点修正/u);
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});
+
+test("stale national-support audit is blocked", () => {
+  const root = prepare();
+  try {
+    const auditPath = resolve(root, "national-support-audit.json");
+    const audit = JSON.parse(readFileSync(auditPath, "utf8"));
+    audit.reference_at = "2000-01-01T00:00:00+09:00";
+    audit.checked_at = "2000-01-01T00:00:00+09:00";
+    writeFileSync(auditPath, `${JSON.stringify(audit, null, 2)}\n`);
+    const result = runNode(root, "scripts/validate-update-release.mjs");
+    expectFailure("stale national audit", result, /国・関係機関|national|reference_at|全件再監査/u);
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});
+
+test("national record omission is blocked", () => {
+  const root = prepare();
+  try {
+    const auditPath = resolve(root, "national-support-audit.json");
+    const audit = JSON.parse(readFileSync(auditPath, "utf8"));
+    audit.records = audit.records.filter((item) => item.record_id !== "national-water");
+    audit.inventory.audit_record_count = audit.records.length;
+    audit.summary.records_total = audit.records.length;
+    audit.summary.CURRENT -= 1;
+    writeFileSync(auditPath, `${JSON.stringify(audit, null, 2)}\n`);
+    const result = runNode(root, "scripts/validate-update-release.mjs");
+    expectFailure("national omission", result, /未裁定|監査対象|national-water|全件再監査/u);
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});
+
+test("UNKNOWN national old snapshot as current is blocked", () => {
+  const root = prepare();
+  try {
+    const auditPath = resolve(root, "national-support-audit.json");
+    const audit = JSON.parse(readFileSync(auditPath, "utf8"));
+    const target = audit.records.find((item) => item.record_id === "national-rescue");
+    target.display.scale = target.previous_snapshot.value;
+    writeFileSync(auditPath, `${JSON.stringify(audit, null, 2)}\n`);
+    const result = runNode(root, "scripts/validate-update-release.mjs");
+    expectFailure("unknown national old current", result, /UNKNOWN|旧スナップショット|current scale|国・関係機関/u);
   } finally { rmSync(root, { recursive: true, force: true }); }
 });
 

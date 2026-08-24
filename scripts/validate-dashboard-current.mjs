@@ -31,16 +31,16 @@ const requiredText = [
   "398<span class=\"overview-kpi-unit\">人",
   "38,537<span class=\"overview-kpi-unit\">棟",
   "約4,300戸",
-  "給水車129台（国交省第47報・8月21日7時30分・表掲載値）",
+  "国交省第48報：給水車119台、TEC-FORCE現時点98人・累計4,507人日",
   "行政応援971人",
   "履歴スナップショット",
   "対口支援・他自治体支援を全件再監査",
-  "TEC-FORCE現在105人・累計4,299人日",
+  "TEC-FORCE現時点98人・累計4,507人日",
   "現在開設避難所総数",
   "地図表示数",
   "座標未確認数",
   "防災情報くまもと 現在開設避難所一覧（公式JSON）",
-  'checkedAt":"2026-08-22T15:16:00+09:00"',
+  'checkedAt":"2026-08-24T22:38:32+09:00"',
   "status:\"8月2日時点で開設\"",
   'data-view="overview"',
   'data-view="needs"',
@@ -50,7 +50,7 @@ const requiredText = [
   'data-view="map"',
   'id="volunteerLayerToggle"',
   "7,881件、約1,559億円",
-  "8月24日18:06に対口支援・他自治体支援を全件再監査",
+  "8月24日22:38に対口支援・他自治体支援を全件再監査",
   "行政応援971人",
   "8月24日までの確認済み支援",
   '@media(max-width:760px)',
@@ -63,12 +63,12 @@ const runtimeScriptStart = html.indexOf('<script src="https://cdn.jsdelivr.net/n
 assert.ok(runtimeScriptStart > 0, "公開HTMLの初期表示領域を特定できません");
 const currentDisplayHtml = html.slice(0, runtimeScriptStart);
 const requiredCurrentDisplay = [
-  "2026年8月24日 18:06",
-  "国交省第47報",
-  "給水車129台（国交省第47報・8月21日7時30分・表掲載値）",
+  "2026年8月24日 22:38",
+  "国交省第48報",
+  "国交省第48報：給水車119台、TEC-FORCE現時点98人・累計4,507人日",
   "8月19日行政応援971人は履歴スナップショット",
   "<div class=\"snap\"><strong>8/19</strong>",
-  "<div class=\"snap\"><strong>129</strong>",
+  "8/2 約100人・4機はHISTORICAL",
 ];
 for (const value of requiredCurrentDisplay) {
   assert.ok(currentDisplayHtml.includes(value), `初期表示の最新値がありません: ${value}`);
@@ -81,6 +81,9 @@ const forbiddenCurrentDisplay = [
   "関係機関含む計1,005人",
   "給水車131台",
   "TEC-FORCE現在103人・累計3,703人日",
+  "給水車129台（国交省第47報・8月21日7時30分・表掲載値）",
+  "TEC-FORCE現在105人・累計4,299人日",
+  "8月2日公表値・継続要確認",
   "<strong>854</strong>",
   "<strong>173</strong>",
   "2026年8月11日確認",
@@ -218,10 +221,10 @@ runInNewContext(
   { timeout: 5_000 },
 );
 const extended = extendedSandbox.__extended;
-assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "熊本市").currentSupport.some((value) => value.includes("8月24日18:06再監査")), "熊本市の他自治体支援全件再監査が反映されていません");
-assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "嘉島町").currentSupport.some((value) => value.includes("8月24日18:06再監査")), "嘉島町の他自治体支援全件再監査が反映されていません");
+assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "熊本市").currentSupport.some((value) => value.includes("8月24日22:38再監査")), "熊本市の他自治体支援全件再監査が反映されていません");
+assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "嘉島町").currentSupport.some((value) => value.includes("8月24日22:38再監査")), "嘉島町の他自治体支援全件再監査が反映されていません");
 const auditedKumamoto=extended.RECORDS.find((record)=>record.id==="pair-kumamoto");
-assert.equal(auditedKumamoto.auditCheckedAt,"2026-08-24T18:06:00+09:00","熊本市対口支援の全件再監査時刻が不正です");
+assert.equal(auditedKumamoto.auditCheckedAt,"2026-08-24T22:38:32+09:00","熊本市対口支援の全件再監査時刻が不正です");
 assert.ok(auditedKumamoto.providers.includes("東京都")&&auditedKumamoto.providers.includes("神奈川県"),"熊本市の現在確認済み派遣元が反映されていません");
 assert.ok(auditedKumamoto.detail.includes("HISTORICAL")&&auditedKumamoto.detail.includes("UNKNOWN"),"旧割当履歴と未確認状態が分離されていません");
 assert.equal(extended.RECORDS.find((record)=>record.id==="pharmacy").providers.length,0,"モバイルファーマシーの旧活動主体をCURRENT扱いしています");
@@ -230,7 +233,7 @@ assert.ok(extended.SUPPORT_BLOCKS.some((block) => block.id === "internal-coordin
 
 console.log(JSON.stringify({
   currentAsOf: "2026-08-24T08:00:00+09:00",
-  siteCheckedAt: "2026-08-24T18:06:00+09:00",
+  siteCheckedAt: "2026-08-24T22:38:32+09:00",
   shelters: rawTotals.shelters,
   evacuees: rawTotals.evacuees,
   housingMunicipalRows: rawTotals.housing,

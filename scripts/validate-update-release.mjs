@@ -24,6 +24,7 @@ const DIST_ASSETS = [
 const SENSITIVE_DATA_PATHS = [
   /^current-shelters\.json$/u,
   /^municipal-support-audit\.json$/u,
+  /^national-support-audit\.json$/u,
   /^shelter-coordinate-manifest\.json$/u,
   /^research_official_(?:north|south|statewide)\.json$/u,
   /^volunteer-data\.js$/u,
@@ -294,6 +295,18 @@ function validateMunicipalSupportAudit() {
   return true;
 }
 
+function validateNationalSupportAudit() {
+  const validatorPath = resolve(ROOT, "scripts", "validate-national-support-audit.mjs");
+  if (!existsSync(validatorPath)) fail("scripts/validate-national-support-audit.mjsがありません。");
+  if (!existsSync(resolve(ROOT, "national-support-audit.json"))) fail("national-support-audit.jsonがありません。時点修正では国・関係機関支援の全件再監査が必須です。");
+  try {
+    execFileSync(process.execPath, [validatorPath], { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+  } catch (error) {
+    fail(`国・関係機関支援の全件再監査validatorが失敗しました。${error.stderr || error.stdout || error.message}`);
+  }
+  return true;
+}
+
 function validateCurrentShelterShape() {
   const data = readJson(CURRENT_SHELTERS, "current-shelters.json");
   const validatorPath = resolve(ROOT, "scripts", "validate-current-shelters.mjs");
@@ -330,6 +343,8 @@ function validateLedgerCoverage(ledger, currentCount) {
   const conflicts = ledger.coverage?.conflict_count ?? ledger.coverage?.current_shelters?.conflicts;
   if (unresolved !== undefined && unresolved !== 0) fail(`UPDATE_LEDGERが未解決の現行避難所座標を含みます: ${unresolved}`);
   if (conflicts !== undefined && conflicts !== 0) fail(`UPDATE_LEDGERがcoordinate conflictを含みます: ${conflicts}`);
+  if (ledger.update_type === "timepoint_refresh" && ledger.coverage?.municipal_support !== "audited") fail("timepoint_refreshではcoverage.municipal_support=auditedが必須です。");
+  if (ledger.update_type === "timepoint_refresh" && ledger.coverage?.national_support !== "audited") fail("timepoint_refreshではcoverage.national_support=auditedが必須です。");
 }
 
 function validateDataChangeLedgerRequirement(ledger, files, required) {
@@ -351,6 +366,7 @@ validateParity();
 const releaseId = validateReleaseId(ledger);
 validateCurrentMetadata(ledger, releaseId);
 validateMunicipalSupportAudit();
+validateNationalSupportAudit();
 const currentShelter = validateCurrentShelterShape();
 validateLedgerCoverage(ledger, currentShelter.currentCount);
 
@@ -364,4 +380,5 @@ console.log(JSON.stringify({
   dist_checked: existsSync(DIST_HTML),
   current_shelters_checked: true,
   municipal_support_checked: true,
+  national_support_checked: true,
 }));

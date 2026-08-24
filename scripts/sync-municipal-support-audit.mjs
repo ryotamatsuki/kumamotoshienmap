@@ -10,6 +10,10 @@ const startMarker = "/* MUNICIPAL_SUPPORT_AUDIT_START */";
 const endMarker = "/* MUNICIPAL_SUPPORT_AUDIT_END */";
 const refreshEndMarker = "/* CURRENT_STATE_REFRESH_20260824_END */";
 const audit = JSON.parse(await readFile(auditPath, "utf8"));
+const auditTimeMatch=audit.reference_at.match(/^\d{4}-(\d{2})-(\d{2})T(\d{2}):(\d{2})/u);
+if(!auditTimeMatch)throw new Error("municipal audit reference_at format is invalid");
+const auditCheckedLabel=`${Number(auditTimeMatch[1])}月${Number(auditTimeMatch[2])}日${auditTimeMatch[3]}:${auditTimeMatch[4]}`;
+const auditCheckedSourceLabel=`${audit.reference_at.slice(0,4)}年${Number(auditTimeMatch[1])}月${Number(auditTimeMatch[2])}日${auditTimeMatch[3]}時${auditTimeMatch[4]}分再確認`;
 
 function stateCounts(record) {
   const all = [...record.provider_statuses, ...(record.additional_statuses || [])];
@@ -115,6 +119,7 @@ const {match,meta}=targetPageMeta(next);
 next=next.replace(match[0],`const PAGE_RECHECK_META=${JSON.stringify(meta)};`);
 next=patchStatic(next);
 next=upsertBlock(next,buildOverlay(meta));
+next=next.replaceAll("8月24日18:06",auditCheckedLabel).replaceAll("2026年8月24日18時06分再確認",auditCheckedSourceLabel);
 await writeFile(sourcePath,next,"utf8");
 await writeFile(publicPath,next,"utf8");
 console.log(JSON.stringify({records:audit.records.length,sources:audit.sources.length,referenceAt:audit.reference_at,releaseId:audit.release_id}));

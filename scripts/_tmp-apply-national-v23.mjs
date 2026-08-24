@@ -39,8 +39,8 @@ function replaceOnce(text, from, to, label) {
   const relative = "scripts/validate-update-release.mjs";
   let text = read(relative);
   text = replaceOnce(text,
-    "  /^municipal-support\\.json$/u,\n",
-    "  /^municipal-support\\.json$/u,\n  /^national-support\\.json$/u,\n",
+    "  /^municipal-support-audit\\.json$/u,\n",
+    "  /^municipal-support-audit\\.json$/u,\n  /^national-support-audit\\.json$/u,\n",
     "national sensitive path");
   const municipalFunction = `function validateMunicipalSupportAudit() {\n  const validatorPath = resolve(ROOT, \"scripts\", \"validate-municipal-support-audit.mjs\");\n  if (!existsSync(validatorPath)) fail(\"scripts/validate-municipal-support-audit.mjsがありません。\");\n  if (!existsSync(resolve(ROOT, \"municipal-support-audit.json\"))) fail(\"municipal-support-audit.jsonがありません。時点修正では対口支援・他自治体支援の全件再監査が必須です。\");\n  try {\n    execFileSync(process.execPath, [validatorPath], { cwd: ROOT, encoding: \"utf8\", stdio: [\"ignore\", \"pipe\", \"pipe\"] });\n  } catch (error) {\n    fail(\`対口支援・他自治体支援の全件再監査validatorが失敗しました。\${error.stderr || error.stdout || error.message}\`);\n  }\n  return true;\n}\n`;
   if (!text.includes(municipalFunction)) throw new Error("missing municipal validator function anchor");
