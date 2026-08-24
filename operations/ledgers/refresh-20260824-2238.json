@@ -19,8 +19,11 @@
     "operations/ledgers/refresh-20260824-2238.json",
     "package.json",
     "public/dashboard.html",
+    "scripts/sync-municipal-support-audit.mjs",
     "scripts/sync-national-support-audit.mjs",
     "scripts/test-release-gate.mjs",
+    "scripts/validate-current-state-audit.mjs",
+    "scripts/validate-dashboard-current.mjs",
     "scripts/validate-national-support-audit.mjs",
     "scripts/validate-update-release.mjs",
     "時点修正更新オペレーション.md"
@@ -34,8 +37,8 @@
     {"source_id":"mod-disaster-0823","url":"https://www.mod.go.jp/j/approach/defense/saigai/"},
     {"source_id":"mod-js-0824","url":"https://www.mod.go.jp/js/press/"},
     {"source_id":"kkr-tec5-0824","url":"https://www.kkr.mlit.go.jp/news/top/press/2026/20260824-2tec-forcedai5jin.html"},
-    {"source_id":"mhlw-disaster-recheck","url":"https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000213000_00020.html"},
-    {"source_id":"npa-recheck","url":"https://www.npa.go.jp/bureau/security/biki/disaster/index.html"},
+    {"source_id":"mhlw-disaster-recheck","url":"https://www.mhlw.go.jp/stf/newpage_73935.html"},
+    {"source_id":"npa-recheck","url":"https://www.npa.go.jp/news/release/index.html/"},
     {"source_id":"kumamoto-gov-0819","url":"https://www.pref.kumamoto.jp/uploaded/attachment/317153.pdf"},
     {"source_id":"kumamoto-hq-0802","url":"https://www.pref.kumamoto.jp/uploaded/attachment/315809.pdf"},
     {"source_id":"cao-scrivener-0731","url":"https://www.bousai.go.jp/pdf/260731_1900-2.pdf"}
