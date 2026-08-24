@@ -21,7 +21,9 @@ function stripGenerated(html) {
   if (start < 0) return html;
   const end = html.indexOf(END, start);
   if (end < 0) throw new Error("NATIONAL_SUPPORT_AUDIT_END marker missing");
-  return `${html.slice(0, start)}${html.slice(end + END.length)}`;
+  const municipalBefore = html.lastIndexOf(MUNICIPAL_END, start);
+  const blockStart = municipalBefore >= 0 ? municipalBefore + MUNICIPAL_END.length : start;
+  return `${html.slice(0, blockStart)}${html.slice(end + END.length)}`;
 }
 
 function replaceOverviewResource(html, recordId, label, value, sub) {
