@@ -1,0 +1,78 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260824-2238",
+  "release_id": "20260824-2238",
+  "reference_at": "2026-08-24T22:38:32+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "09cf20fb99770fb86f85846947a9a1939d4180f1",
+  "expected_changed_files": [
+    ".github/workflows/post-deploy-pages-smoke.yml",
+    ".github/workflows/validate-update.yml",
+    "dist/dashboard.html",
+    "dist/server/index.js",
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "municipal-support-audit.json",
+    "national-support-audit.json",
+    "operations/ledgers/refresh-20260824-2238.json",
+    "package.json",
+    "public/dashboard.html",
+    "scripts/sync-national-support-audit.mjs",
+    "scripts/test-release-gate.mjs",
+    "scripts/validate-national-support-audit.mjs",
+    "scripts/validate-update-release.mjs",
+    "時点修正更新オペレーション.md"
+  ],
+  "sources": [
+    {"source_id":"cao-status-0823","url":"https://www.bousai.go.jp/updates/r8kumamoto_jishin/status/index.html"},
+    {"source_id":"mlit-report48","url":"https://www.mlit.go.jp/saigai/saigai_260728.html"},
+    {"source_id":"fdma-report60","url":"https://www.fdma.go.jp/disaster/info/2026/"},
+    {"source_id":"kagoshima-fire-end","url":"https://www.city.kagoshima.lg.jp/shobo/sbsoumu/kurashi/bosai/shobokyoku/gaiyo/r8kumomatozishin.html"},
+    {"source_id":"mod-minister-0823","url":"https://www.mod.go.jp/j/press/kisha/2026/0823a_r.html"},
+    {"source_id":"mod-disaster-0823","url":"https://www.mod.go.jp/j/approach/defense/saigai/"},
+    {"source_id":"mod-js-0824","url":"https://www.mod.go.jp/js/press/"},
+    {"source_id":"kkr-tec5-0824","url":"https://www.kkr.mlit.go.jp/news/top/press/2026/20260824-2tec-forcedai5jin.html"},
+    {"source_id":"mhlw-disaster-recheck","url":"https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000213000_00020.html"},
+    {"source_id":"npa-recheck","url":"https://www.npa.go.jp/bureau/security/biki/disaster/index.html"},
+    {"source_id":"kumamoto-gov-0819","url":"https://www.pref.kumamoto.jp/uploaded/attachment/317153.pdf"},
+    {"source_id":"kumamoto-hq-0802","url":"https://www.pref.kumamoto.jp/uploaded/attachment/315809.pdf"},
+    {"source_id":"cao-scrivener-0731","url":"https://www.bousai.go.jp/pdf/260731_1900-2.pdf"}
+  ],
+  "coverage": {
+    "current_count": 67,
+    "unresolved_count": 0,
+    "conflict_count": 0,
+    "municipal_support": "audited",
+    "national_support": "audited",
+    "national_support_records": 13,
+    "national_support_existing_records": 12,
+    "national_support_states": {"CURRENT":4,"HISTORICAL":0,"PLANNED":1,"UNKNOWN":8,"CONFLICT":0},
+    "agencies": {
+      "cabinet_office": "rechecked_current",
+      "fdma": "unknown_needs_recheck",
+      "mlit": "rechecked_current",
+      "mhlw": "unknown_needs_recheck",
+      "mod": "rechecked_current",
+      "npa": "unknown_needs_recheck",
+      "mic_finance": "unknown_needs_recheck",
+      "national_medical_organizations": "unknown_needs_recheck"
+    }
+  },
+  "snapshots": {
+    "national_previous": "mixed: 2026-07-31 through 2026-08-21",
+    "national_reference": "2026-08-24T22:38:32+09:00"
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {"issue_id":"national-rescue-current-composite","state":"UNKNOWN","reason":"消防・自衛隊・警察・航空を束ねた旧定義の基準日時点人数・機数を一次情報で確定できないため。8月2日約100人・4機はHISTORICAL表示へ分離。","owner":"national-support-audit","source_ids":["fdma-report60","kagoshima-fire-end","npa-recheck","mod-js-0824"],"next_review_at":"2026-08-25T09:00:00+09:00"},
+    {"issue_id":"national-medical-current-composite","state":"UNKNOWN","reason":"DHEAT・DMAT・DPAT・日赤・JMAT・支援ナース・DWAT等の全国複合現況値を同一定義で確定できないため。","owner":"national-support-audit","source_ids":["mhlw-disaster-recheck","cao-status-0823","mod-minister-0823"],"next_review_at":"2026-08-25T09:00:00+09:00"},
+    {"issue_id":"national-purifier-current-state","state":"UNKNOWN","reason":"応急給水全体は継続確認できるが、竜翔センター付近の可搬式浄水装置単体の基準日時点稼働を確定できないため。","owner":"national-support-audit","source_ids":["mlit-report48","kumamoto-gov-0819"],"next_review_at":"2026-08-25T09:00:00+09:00"},
+    {"issue_id":"national-push-current-state","state":"UNKNOWN","reason":"8月2日の受入・配送実績後、同じプッシュ型物資スキームの基準日時点継続状態を一次情報で確定できないため。","owner":"national-support-audit","source_ids":["cao-status-0823","kumamoto-hq-0802"],"next_review_at":"2026-08-25T09:00:00+09:00"},
+    {"issue_id":"national-cert-current-progress","state":"UNKNOWN","reason":"8月18日累計値後の同一定義最新進捗と国調整支援の継続状態を一次情報で確定できないため。","owner":"national-support-audit","source_ids":["cao-status-0823","kumamoto-gov-0819"],"next_review_at":"2026-08-25T09:00:00+09:00"},
+    {"issue_id":"national-scrivener-current-state","state":"UNKNOWN","reason":"7月31日実績後の行政書士派遣の継続・終了を一次情報で確定できず、無発表を終了根拠にできないため。","owner":"national-support-audit","source_ids":["cao-scrivener-0731","cao-status-0823"],"next_review_at":"2026-08-25T09:00:00+09:00"},
+    {"issue_id":"national-finance-execution","state":"UNKNOWN","reason":"8月3日現金交付予定という旧公表について、予定日経過だけで実施済みに昇格できず、実施確認を確定できないため。","owner":"national-support-audit","source_ids":["kumamoto-hq-0802","cao-status-0823"],"next_review_at":"2026-08-25T09:00:00+09:00"},
+    {"issue_id":"national-toilets-current-count","state":"UNKNOWN","reason":"8月19日設置実績後の同一定義設備の基準日時点稼働・設置数を確定できないため。","owner":"national-support-audit","source_ids":["cao-status-0823","kumamoto-gov-0819"],"next_review_at":"2026-08-25T09:00:00+09:00"}
+  ]
+}
