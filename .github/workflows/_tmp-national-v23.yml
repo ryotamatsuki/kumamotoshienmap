@@ -39,6 +39,8 @@ jobs:
           PY
       - name: Apply permanent integration patches
         run: node scripts/_tmp-apply-national-v23.mjs
+      - name: Apply source and current-validator corrections
+        run: node scripts/_tmp-fix-national-validator-sources.mjs
       - name: Install npm metadata
         run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
       - name: Build and validate
