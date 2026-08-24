@@ -62,7 +62,7 @@ function replaceIfPresent(text, from, to) {
   write(path, text);
 }
 
-// Retire stale-current assertions from the dashboard validator and assert the new national snapshot semantics.
+// Retire stale-current assertions from the dashboard validator and assert the new national/municipal snapshot semantics.
 {
   const path = "scripts/validate-dashboard-current.mjs";
   let text = read(path);
@@ -87,6 +87,8 @@ function replaceIfPresent(text, from, to) {
   text = replaceIfPresent(text,
     "  \"<div class=\\\"snap\\\"><strong>129</strong>\",",
     "  \"8/2 約100人・4機はHISTORICAL\",");
+  text = replaceIfPresent(text, "8月24日18:06再監査", "8月24日22:38再監査");
+  text = replaceIfPresent(text, '"2026-08-24T18:06:00+09:00"', `"${REFERENCE}"`);
 
   const forbiddenAnchor = "  \"TEC-FORCE現在103人・累計3,703人日\",\n";
   const staleForbidden = "  \"給水車129台（国交省第47報・8月21日7時30分・表掲載値）\",\n";
