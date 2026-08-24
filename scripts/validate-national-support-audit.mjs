@@ -119,13 +119,13 @@ for (const item of audit.agency_coverage ?? []) {
   for (const sourceId of item.source_ids) if (!sourceById.has(sourceId)) fail(`agency_coverageに未登録source_id: ${item.agency}/${sourceId}`);
 }
 
-const actorMatch = source.match(/<button class=\"overview-actor\" data-overview-provider=\"national\" type=\"button\">[\s\S]*?<\/button>/u);
+const actorMatch = source.match(/<button class="overview-actor" data-overview-provider="national" type="button">[\s\S]*?<\/button>/u);
 if (!actorMatch) fail("国・関係機関overview actorが見つかりません。");
 const actor = actorMatch[0];
 for (const stale of ["8月19日資料）まで確認", "給水車129台", "現在105人", "4,299人日"]) if (actor.includes(stale)) fail(`国・関係機関actorに旧current表現が残っています: ${stale}`);
 if (!actor.includes("全件再監査")) fail("国・関係機関actorに全件再監査時点が表示されていません。");
 
-const resourceRegionMatch = source.match(/<div class=\"overview-resource-grid\">[\s\S]*?<\/div>\s*<\/section>/u);
+const resourceRegionMatch = source.match(/<div class="overview-resource-grid">[\s\S]*?<\/div>\s*<\/section>/u);
 if (!resourceRegionMatch) fail("主要な投入資源regionが見つかりません。");
 const resourceRegion = resourceRegionMatch[0];
 for (const stale of ["129台", "4,299人日", "現在105人", "約100人・4機", "継続要確認"]) if (resourceRegion.includes(stale)) fail(`主要投入資源に旧current表現が残っています: ${stale}`);
