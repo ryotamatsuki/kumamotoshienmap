@@ -46,7 +46,8 @@ function extractJsonConstant(text, name, nextMarker) {
 }
 
 assert.equal(publicHtml, html, "公開用HTMLとレビュー元HTMLが一致していません");
-assert.ok(html.includes('<script src="./volunteer-data.js?v=20260824-1545"></script>'), "ボランティアデータのキャッシュバスターがありません");
+const releaseScript=html.match(/<script src="\.\/volunteer-data\.js\?v=([A-Za-z0-9._-]+)"><\/script>/u);
+assert.ok(releaseScript,"ボランティアデータのキャッシュバスターがありません");
 assert.ok(!html.includes("2026年8月21日13:14"), "現行HTMLに旧時点のページ確認時刻が残っています");
 assert.ok(!html.includes("2026/8/21 13:14"), "現行HTMLに旧時点のボランティア確認時刻が残っています");
 assert.equal((html.match(/CURRENT_STATE_CLEANUP_20260821_START/g) || []).length, 1, "現行状態補正ブロックが重複しています");
@@ -109,7 +110,9 @@ assert.ok(event("t-kumamoto-0819").summary.includes("971人"));
 assert.ok(!event("t-kumamoto-0816").tags.includes("最新確認"));
 assert.equal(event("t-current-status").summary, "避難者2,709人、開設避難所65か所、人的被害398人、住家被害38,537棟。");
 
-assert.equal(pageMeta.checkedAt, "2026-08-24T15:45:00+09:00");
+assert.equal(pageMeta.checkedAt, "2026-08-24T18:06:00+09:00");
+assert.equal(pageMeta.volunteerCheckedAt, "2026-08-24T15:45:00+09:00");
+assert.ok(pageMeta.rows.some((row)=>row.section==="他自治体等"&&row.current.includes("全件再監査")),"他自治体等の全件再監査がPAGE_RECHECK_METAにありません");
 assert.ok(pageMeta.rows.some((row) => row.section === "愛媛県支援"));
 for (const row of pageMeta.rows) {
   if (row.status === "差分あり") assert.notEqual(row.current, row.previous, `ページ再確認の現行値と前回値が同じです: ${row.section}`);

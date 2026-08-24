@@ -33,7 +33,8 @@ const requiredText = [
   "約4,300戸",
   "給水車129台（国交省第47報・8月21日7時30分・表掲載値）",
   "行政応援971人",
-  "関係機関含む計1,038人",
+  "履歴スナップショット",
+  "対口支援・他自治体支援を全件再監査",
   "TEC-FORCE現在105人・累計4,299人日",
   "現在開設避難所総数",
   "地図表示数",
@@ -49,7 +50,7 @@ const requiredText = [
   'data-view="map"',
   'id="volunteerLayerToggle"',
   "7,881件、約1,559億円",
-  "8月24日資料で愛媛県の人的支援を更新",
+  "8月24日18:06に対口支援・他自治体支援を全件再監査",
   "行政応援971人",
   "8月24日までの確認済み支援",
   '@media(max-width:760px)',
@@ -62,11 +63,11 @@ const runtimeScriptStart = html.indexOf('<script src="https://cdn.jsdelivr.net/n
 assert.ok(runtimeScriptStart > 0, "公開HTMLの初期表示領域を特定できません");
 const currentDisplayHtml = html.slice(0, runtimeScriptStart);
 const requiredCurrentDisplay = [
-  "2026年8月24日 15:45",
+  "2026年8月24日 18:06",
   "国交省第47報",
   "給水車129台（国交省第47報・8月21日7時30分・表掲載値）",
-  "8月19日資料：行政応援971人（関係機関含む計1,038人）",
-  "<div class=\"snap\"><strong>971</strong>",
+  "8月19日行政応援971人は履歴スナップショット",
+  "<div class=\"snap\"><strong>8/19</strong>",
   "<div class=\"snap\"><strong>129</strong>",
 ];
 for (const value of requiredCurrentDisplay) {
@@ -151,7 +152,7 @@ assert.ok(
 );
 
 const dataStart = html.indexOf("const HUBS=");
-const dataEnd = html.indexOf("/* CURRENT_STATE_REFRESH_20260824_END */") + "/* CURRENT_STATE_REFRESH_20260824_END */".length;
+const dataEnd = html.indexOf("/* MUNICIPAL_SUPPORT_AUDIT_END */") + "/* MUNICIPAL_SUPPORT_AUDIT_END */".length;
 assert.ok(dataStart >= 0 && dataEnd > dataStart, "補正後のダッシュボードデータを抽出できません");
 const sandbox = {};
 runInNewContext(
@@ -208,7 +209,7 @@ assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-ehime-aug12
 assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-agri").observed.includes("7,881件、約1,559億円"), "8月19日商工業被害の最新値が反映されていません");
 assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-hq18").summary, "8月8日14時時点：避難者6,355人、断水34,780戸、住家被害18,791棟。", "第18回会議イベントに時点の異なる値が混在しています");
 
-const extendedEnd = html.indexOf("/* CURRENT_STATE_REFRESH_20260824_END */") + "/* CURRENT_STATE_REFRESH_20260824_END */".length;
+const extendedEnd = html.indexOf("/* MUNICIPAL_SUPPORT_AUDIT_END */") + "/* MUNICIPAL_SUPPORT_AUDIT_END */".length;
 assert.ok(extendedEnd > dataStart, "追加の支援割当データを検証できません");
 const extendedSandbox = {};
 runInNewContext(
@@ -217,18 +218,19 @@ runInNewContext(
   { timeout: 5_000 },
 );
 const extended = extendedSandbox.__extended;
-assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "熊本市").currentSupport.some((value) => value.includes("8月19日資料")), "熊本市の8月19日現行支援が反映されていません");
-assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "嘉島町").currentSupport.some((value) => value.includes("8月19日資料")), "嘉島町の8月19日現行支援が反映されていません");
-assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "御船町").currentSupport.some((value) => value.includes("8月19日資料")), "御船町の8月19日現行支援が反映されていません");
-assert.equal(extended.RECORDS.find((record) => record.id === "pair-kumamoto").scale, "20団体", "熊本市の対口支援団体数が8月11日値ではありません");
-assert.equal(extended.RECORDS.find((record) => record.id === "pair-yatsushiro").scale, "10団体", "八代市の対口支援団体数が8月11日値ではありません");
-assert.equal(extended.RECORDS.find((record) => record.id === "pair-hikawa").scale, "6県・1指定都市（計7団体）", "氷川町の対口支援団体数が8月11日値ではありません");
-assert.ok(extended.RECORDS.some((record) => record.id === "pair-kashima" && record.scale === "4団体"), "嘉島町の対口支援レコードがありません");
+assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "熊本市").currentSupport.some((value) => value.includes("8月24日18:06再監査")), "熊本市の他自治体支援全件再監査が反映されていません");
+assert.ok(extended.NEED_MUNICIPALITIES.find((item) => item.name === "嘉島町").currentSupport.some((value) => value.includes("8月24日18:06再監査")), "嘉島町の他自治体支援全件再監査が反映されていません");
+const auditedKumamoto=extended.RECORDS.find((record)=>record.id==="pair-kumamoto");
+assert.equal(auditedKumamoto.auditCheckedAt,"2026-08-24T18:06:00+09:00","熊本市対口支援の全件再監査時刻が不正です");
+assert.ok(auditedKumamoto.providers.includes("東京都")&&auditedKumamoto.providers.includes("神奈川県"),"熊本市の現在確認済み派遣元が反映されていません");
+assert.ok(auditedKumamoto.detail.includes("HISTORICAL")&&auditedKumamoto.detail.includes("UNKNOWN"),"旧割当履歴と未確認状態が分離されていません");
+assert.equal(extended.RECORDS.find((record)=>record.id==="pharmacy").providers.length,0,"モバイルファーマシーの旧活動主体をCURRENT扱いしています");
+assert.ok(extended.SUPPORT_BLOCKS.filter((block)=>block.id!=="internal-coordination").every((block)=>block.badge.includes("旧割当履歴")),"地域ブロックが旧割当名簿を現行扱いしています");
 assert.ok(extended.SUPPORT_BLOCKS.some((block) => block.id === "internal-coordination" && block.destinations.includes("御船町")), "県内調整分ブロックがありません");
 
 console.log(JSON.stringify({
   currentAsOf: "2026-08-24T08:00:00+09:00",
-  siteCheckedAt: "2026-08-24T15:45:00+09:00",
+  siteCheckedAt: "2026-08-24T18:06:00+09:00",
   shelters: rawTotals.shelters,
   evacuees: rawTotals.evacuees,
   housingMunicipalRows: rawTotals.housing,

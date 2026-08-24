@@ -23,6 +23,7 @@ const DIST_ASSETS = [
 
 const SENSITIVE_DATA_PATHS = [
   /^current-shelters\.json$/u,
+  /^municipal-support-audit\.json$/u,
   /^shelter-coordinate-manifest\.json$/u,
   /^research_official_(?:north|south|statewide)\.json$/u,
   /^volunteer-data\.js$/u,
@@ -274,12 +275,23 @@ function validateCurrentMetadata(ledger, releaseId) {
   if (volunteerReleaseId !== undefined && volunteerReleaseId !== releaseId) fail(`volunteer-data.jsのrelease_idとHTML queryが不一致です。expected=${releaseId} actual=${volunteerReleaseId}`);
   const pageCheckedAt = pageMeta?.checkedAt;
   const volunteerCheckedAt = volunteerData?.meta?.checked_at;
-  const referenceAt = volunteerData?.meta?.reference_at;
-  if (Number.isNaN(Date.parse(pageCheckedAt)) || Number.isNaN(Date.parse(volunteerCheckedAt)) || Number.isNaN(Date.parse(referenceAt))) fail(`現況metadataの日時が不正です。page=${pageCheckedAt} volunteer=${volunteerCheckedAt} reference=${referenceAt}`);
-  if (pageCheckedAt !== volunteerCheckedAt) fail(`PAGE_RECHECK_META.checkedAtとVOLUNTEER_DATA.meta.checked_atが不一致です。page=${pageCheckedAt} volunteer=${volunteerCheckedAt}`);
+  const volunteerReferenceAt = volunteerData?.meta?.reference_at;
+  if (Number.isNaN(Date.parse(pageCheckedAt)) || Number.isNaN(Date.parse(volunteerCheckedAt)) || Number.isNaN(Date.parse(volunteerReferenceAt))) fail(`現況metadataの日時が不正です。page=${pageCheckedAt} volunteer=${volunteerCheckedAt} volunteerReference=${volunteerReferenceAt}`);
   if (pageMeta.volunteerCheckedAt && pageMeta.volunteerCheckedAt !== volunteerCheckedAt) fail("PAGE_RECHECK_META.volunteerCheckedAtとボランティアデータのchecked_atが不一致です。");
-  if (ledger?.reference_at && referenceAt !== ledger.reference_at) fail(`ledger.reference_atとVOLUNTEER_DATA.meta.reference_atが不一致です。expected=${ledger.reference_at} actual=${referenceAt}`);
+  if (ledger?.reference_at && pageCheckedAt !== ledger.reference_at) fail(`ledger.reference_atとPAGE_RECHECK_META.checkedAtが不一致です。expected=${ledger.reference_at} actual=${pageCheckedAt}`);
   if (ledger?.page_checked_at && pageCheckedAt !== ledger.page_checked_at) fail(`ledger.page_checked_atとPAGE_RECHECK_META.checkedAtが不一致です。expected=${ledger.page_checked_at} actual=${pageCheckedAt}`);
+}
+
+function validateMunicipalSupportAudit() {
+  const validatorPath = resolve(ROOT, "scripts", "validate-municipal-support-audit.mjs");
+  if (!existsSync(validatorPath)) fail("scripts/validate-municipal-support-audit.mjsがありません。");
+  if (!existsSync(resolve(ROOT, "municipal-support-audit.json"))) fail("municipal-support-audit.jsonがありません。時点修正では対口支援・他自治体支援の全件再監査が必須です。");
+  try {
+    execFileSync(process.execPath, [validatorPath], { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+  } catch (error) {
+    fail(`対口支援・他自治体支援の全件再監査validatorが失敗しました。${error.stderr || error.stdout || error.message}`);
+  }
+  return true;
 }
 
 function validateCurrentShelterShape() {
@@ -338,6 +350,7 @@ validateGitDiff(options);
 validateParity();
 const releaseId = validateReleaseId(ledger);
 validateCurrentMetadata(ledger, releaseId);
+validateMunicipalSupportAudit();
 const currentShelter = validateCurrentShelterShape();
 validateLedgerCoverage(ledger, currentShelter.currentCount);
 
@@ -350,4 +363,5 @@ console.log(JSON.stringify({
   source_public_parity: true,
   dist_checked: existsSync(DIST_HTML),
   current_shelters_checked: true,
+  municipal_support_checked: true,
 }));

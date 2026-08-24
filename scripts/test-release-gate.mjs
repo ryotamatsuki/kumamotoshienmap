@@ -9,6 +9,8 @@ const COPY_PATHS = [
   "scripts/validate-update-release.mjs",
   "scripts/current-page-metadata.mjs",
   "scripts/validate-current-shelters.mjs",
+  "scripts/validate-municipal-support-audit.mjs",
+  "municipal-support-audit.json",
   "ehime_kumamoto_support_geocoded_shelters_20260802.html",
   "public/dashboard.html",
   "dist/dashboard.html",
@@ -81,10 +83,10 @@ function releaseId(root) {
 }
 
 function referenceAt(root) {
-  const source = readFileSync(resolve(root, "volunteer-data.js"), "utf8");
-  const match = source.match(/"reference_at"\s*:\s*"([^"]+)"/u);
-  if (!match) throw new Error("reference_at not found in volunteer-data.js");
-  return match[1];
+  const html = readFileSync(resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html"), "utf8");
+  const match = html.match(/const\s+PAGE_RECHECK_META\s*=\s*(\{[^\n]*\});/u);
+  if (!match) throw new Error("PAGE_RECHECK_META not found in fixture HTML");
+  return JSON.parse(match[1]).checkedAt;
 }
 
 function ledger(root, expectedChangedFiles, overrides = {}) {
@@ -248,6 +250,21 @@ test("accepted unresolved with review metadata may pass", () => {
     writeLedger(root, ledger(root, ["UPDATE_LEDGER.json"], { accepted_unresolved: "VALID" }));
     const result = runNode(root, "scripts/validate-update-release.mjs", ["--ledger=UPDATE_LEDGER.json"]);
     expectPass("accepted unresolved", result);
+  } finally { rmSync(root, { recursive: true, force: true }); }
+});
+
+
+test("stale municipal-support audit is blocked", () => {
+  const root = prepare();
+  try {
+    const auditPath = resolve(root, "municipal-support-audit.json");
+    const audit = JSON.parse(readFileSync(auditPath, "utf8"));
+    audit.reference_at = "2000-01-01T00:00:00+09:00";
+    audit.checked_at = "2000-01-01T00:00:00+09:00";
+    writeFileSync(auditPath, `${JSON.stringify(audit, null, 2)}
+`);
+    const result = runNode(root, "scripts/validate-update-release.mjs");
+    expectFailure("stale municipal audit", result, /全件再監査|municipal|reference_at|時点修正/u);
   } finally { rmSync(root, { recursive: true, force: true }); }
 });
 
