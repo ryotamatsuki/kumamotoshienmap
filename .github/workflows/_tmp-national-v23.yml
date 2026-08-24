@@ -1,0 +1,63 @@
+name: Temporary national audit integration
+
+on:
+  push:
+    branches:
+      - audit/national-support-20260824
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: audit/national-support-20260824
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Apply permanent integration patches
+        run: node scripts/_tmp-apply-national-v23.mjs
+      - name: Install npm metadata
+        run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+      - name: Build and validate
+        run: npm run build
+      - name: Verify build reproducibility
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git diff > /tmp/build-1.diff
+          npm run build
+          git diff > /tmp/build-2.diff
+          cmp --silent /tmp/build-1.diff /tmp/build-2.diff
+      - name: Release Gate self-tests
+        run: npm run test:release-gate
+      - name: Required syntax checks
+        run: |
+          node --check volunteer.js
+          node --check volunteer-data.js
+          node --check scripts/validate-update-release.mjs
+          node --check scripts/test-release-gate.mjs
+          node --check scripts/sync-national-support-audit.mjs
+          node --check scripts/validate-national-support-audit.mjs
+      - name: Diff checks
+        run: git diff --check
+      - name: Commit generated permanent changes
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+            exit 0
+          fi
+          git commit -m 'chore: integrate national support audit v2.3'
+          git push origin HEAD:audit/national-support-20260824
