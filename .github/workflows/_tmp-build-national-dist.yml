@@ -1,0 +1,52 @@
+name: Temporary national audit dist build
+
+on:
+  push:
+    branches:
+      - audit/national-support-20260824
+
+permissions:
+  contents: write
+
+jobs:
+  build-dist:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: audit/national-support-20260824
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Install
+        run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+      - name: Build
+        run: npm run build
+      - name: Verify generated diff scope
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git status --short
+          unexpected="$(git diff --name-only | grep -Ev '^(dist/dashboard\.html|dist/server/index\.js)$' || true)"
+          if [[ -n "$unexpected" ]]; then
+            echo "::error title=Unexpected build changes::$unexpected"
+            exit 1
+          fi
+      - name: Commit dist only
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add dist/dashboard.html dist/server/index.js
+          if git diff --cached --quiet; then
+            echo 'dist already current'
+            exit 0
+          fi
+          git commit -m 'chore: rebuild national support dist'
+          git fetch origin audit/national-support-20260824
+          git rebase origin/audit/national-support-20260824
+          git push origin HEAD:audit/national-support-20260824
