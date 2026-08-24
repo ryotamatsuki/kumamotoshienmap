@@ -52,9 +52,12 @@ jobs:
           curl -fsSL --connect-timeout 10 --max-time 30 "${base}/" -o /tmp/root.html
           grep -F './ehime_kumamoto_support_geocoded_shelters_20260802.html' /tmp/root.html
           grep -F 'NATIONAL_SUPPORT_AUDIT_START' "$deployed"
-          grep -F '8月24日22:38に既存12レコードを全件再監査' "$deployed"
+          grep -F '8月24日22:38全件再監査基準・23:58追加再監査（既存12件＋追加1件）' "$deployed"
           grep -F '国交省第48報・8月23日7時30分時点' "$deployed"
+          grep -F '2隊9名' "$deployed"
           grep -F '8/2 約100人・4機はHISTORICAL' "$deployed"
+          grep -F '616億円の繰上げ交付決定：確認済／現金交付完了：UNKNOWN' "$deployed"
+          grep -F '8/18：プッシュ型物資支援24億円・強化／8/24継続：UNKNOWN' "$deployed"
           if grep -F '8月2日公表値・継続要確認' "$deployed"; then
             echo "::error title=Stale national support::Legacy rescue current wording is still deployed."
             exit 1
