@@ -62,6 +62,17 @@ function replaceIfPresent(text, from, to) {
   write(path, text);
 }
 
+// Keep positive release-gate fixtures compliant with the mandatory audit coverage contract.
+{
+  const path = "scripts/test-release-gate.mjs";
+  let text = read(path);
+  const anchor = "      conflict_count: 0,\n";
+  if (!text.includes('municipal_support: "audited"') && text.includes(anchor)) {
+    text = text.replace(anchor, `${anchor}      municipal_support: "audited",\n      national_support: "audited",\n`);
+  }
+  write(path, text);
+}
+
 // Retire stale-current assertions from the dashboard validator and assert the new national/municipal snapshot semantics.
 {
   const path = "scripts/validate-dashboard-current.mjs";
