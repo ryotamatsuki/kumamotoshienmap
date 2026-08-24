@@ -9,7 +9,6 @@
   "page_checked_at": null,
   "base_main_sha": "2e56e97623d309336be3d21b411fcfa848b37967",
   "expected_changed_files": [
-    ".github/workflows/post-deploy-pages-smoke.yml",
     "ehime_kumamoto_support_geocoded_shelters_20260802.html",
     "national-support-audit.json",
     "operations/ledgers/refresh-20260824-2358.json",
@@ -19,50 +18,17 @@
     "scripts/validate-national-support-audit.mjs"
   ],
   "sources": [
-    {
-      "source_id": "fdma-report60",
-      "url": "https://www.fdma.go.jp/disaster/info/2026/"
-    },
-    {
-      "source_id": "mhlw-disaster-recheck",
-      "url": "https://www.mhlw.go.jp/stf/newpage_73935.html"
-    },
-    {
-      "source_id": "cao-status-0823",
-      "url": "https://www.bousai.go.jp/updates/r8kumamoto_jishin/status/index.html"
-    },
-    {
-      "source_id": "kitakyushu-support-current",
-      "url": "https://ssl.city.kitakyushu.lg.jp/contents/90000638_00003.html"
-    },
-    {
-      "source_id": "kantei-0818-support",
-      "url": "https://www.kantei.go.jp/jp/105/actions/202608/18hijoukaigi_chibagouu.html"
-    },
-    {
-      "source_id": "jwa-purifier-current",
-      "url": "https://www.water.go.jp/honsya/honsya/bousai/r807kumamotojishin/index.html"
-    },
-    {
-      "source_id": "kumagyou-0814-current",
-      "url": "https://www.kumagyou.jp/news/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E7%86%8A%E6%9C%AC%E5%9C%B0%E9%9C%87%E3%81%AB%E4%BF%82%E3%82%8B%E3%80%8C%E7%BD%B9%E7%81%BD%E8%A8%BC%E6%98%8E%E6%9B%B8%E7%94%B3%E8%AB%8B%E6%94%AF%E6%8F%B4%E3%80%8D%E3%81%AB/"
-    },
-    {
-      "source_id": "kantei-0803-finance",
-      "url": "https://www.kantei.go.jp/jp/105/statement/2026/0803kaiken.html"
-    },
-    {
-      "source_id": "tokushima-toilet-0824",
-      "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315847/"
-    },
-    {
-      "source_id": "moe-toilet-current",
-      "url": "https://www.env.go.jp/saigai/kumamoto_earthquake_202607/sns/202608.html"
-    },
-    {
-      "source_id": "yatsushiro-cert-0823",
-      "url": "https://www.city.yatsushiro.lg.jp/kiji00326973/index.html"
-    }
+    {"source_id":"fdma-report60","url":"https://www.fdma.go.jp/disaster/info/2026/"},
+    {"source_id":"mhlw-disaster-recheck","url":"https://www.mhlw.go.jp/stf/newpage_73935.html"},
+    {"source_id":"cao-status-0823","url":"https://www.bousai.go.jp/updates/r8kumamoto_jishin/status/index.html"},
+    {"source_id":"kitakyushu-support-current","url":"https://ssl.city.kitakyushu.lg.jp/contents/90000638_00003.html"},
+    {"source_id":"kantei-0818-support","url":"https://www.kantei.go.jp/jp/105/actions/202608/18hijoukaigi_chibagouu.html"},
+    {"source_id":"jwa-purifier-current","url":"https://www.water.go.jp/honsya/honsya/bousai/r807kumamotojishin/index.html"},
+    {"source_id":"kumagyou-0814-current","url":"https://www.kumagyou.jp/news/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E7%86%8A%E6%9C%AC%E5%9C%B0%E9%9C%87%E3%81%AB%E4%BF%82%E3%82%8B%E3%80%8C%E7%BD%B9%E7%81%BD%E8%A8%BC%E6%98%8E%E6%9B%B8%E7%94%B3%E8%AB%8B%E6%94%AF%E6%8F%B4%E3%80%8D%E3%81%AB/"},
+    {"source_id":"kantei-0803-finance","url":"https://www.kantei.go.jp/jp/105/statement/2026/0803kaiken.html"},
+    {"source_id":"tokushima-toilet-0824","url":"https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315847/"},
+    {"source_id":"moe-toilet-current","url":"https://www.env.go.jp/saigai/kumamoto_earthquake_202607/sns/202608.html"},
+    {"source_id":"yatsushiro-cert-0823","url":"https://www.city.yatsushiro.lg.jp/kiji00326973/index.html"}
   ],
   "coverage": {
     "current_count": 67,
@@ -71,36 +37,15 @@
     "municipal_support": "audited",
     "national_support": "audited",
     "national_support_records": 13,
-    "national_support_states": {
-      "CURRENT": 10,
-      "HISTORICAL": 0,
-      "PLANNED": 1,
-      "UNKNOWN": 2,
-      "CONFLICT": 0
-    },
+    "national_support_states": {"CURRENT":10,"HISTORICAL":0,"PLANNED":1,"UNKNOWN":2,"CONFLICT":0},
     "institution_coverage": "same-reference national re-adjudication; existing entity inventory retained",
     "previous_unknown_records": 8,
     "resolved_record_states": 6,
-    "remaining_unknown_records": [
-      "national-push",
-      "national-finance"
-    ]
+    "remaining_unknown_records": ["national-push","national-finance"]
   },
   "snapshots": {
-    "national_previous_states": {
-      "CURRENT": 4,
-      "HISTORICAL": 0,
-      "PLANNED": 1,
-      "UNKNOWN": 8,
-      "CONFLICT": 0
-    },
-    "national_rechecked_states": {
-      "CURRENT": 10,
-      "HISTORICAL": 0,
-      "PLANNED": 1,
-      "UNKNOWN": 2,
-      "CONFLICT": 0
-    },
+    "national_previous_states": {"CURRENT":4,"HISTORICAL":0,"PLANNED":1,"UNKNOWN":8,"CONFLICT":0},
+    "national_rechecked_states": {"CURRENT":10,"HISTORICAL":0,"PLANNED":1,"UNKNOWN":2,"CONFLICT":0},
     "reference_at": "2026-08-24T22:38:32+09:00",
     "rechecked_at": "2026-08-24T23:58:00+09:00"
   },
@@ -111,10 +56,7 @@
       "state": "UNKNOWN",
       "reason": "緊急消防援助隊の現行活動は確認できたが、消防・警察・自衛隊・航空を束ねた旧定義の全国総数は基準日時点で一次情報により確定できない。",
       "owner": "national-support-audit",
-      "source_ids": [
-        "fdma-report60",
-        "kitakyushu-support-current"
-      ],
+      "source_ids": ["fdma-report60","kitakyushu-support-current"],
       "next_review_at": "2026-08-25T09:00:00+09:00"
     },
     {
@@ -122,11 +64,7 @@
       "state": "UNKNOWN",
       "reason": "保健医療福祉支援の活動継続は確認できたが、DHEAT・DMAT・DPAT・日赤等を束ねた同一定義の全国現況総数は確定できない。",
       "owner": "national-support-audit",
-      "source_ids": [
-        "mhlw-disaster-recheck",
-        "kitakyushu-support-current",
-        "kantei-0818-support"
-      ],
+      "source_ids": ["mhlw-disaster-recheck","kitakyushu-support-current","kantei-0818-support"],
       "next_review_at": "2026-08-25T09:00:00+09:00"
     },
     {
@@ -134,10 +72,7 @@
       "state": "UNKNOWN",
       "reason": "8月18日のプッシュ型物資支援24億円・支援強化までは一次確認できるが、8月24日基準で同一スキームが継続中かを直接示す一次情報を確認できない。",
       "owner": "national-support-audit",
-      "source_ids": [
-        "kantei-0818-support",
-        "cao-status-0823"
-      ],
+      "source_ids": ["kantei-0818-support","cao-status-0823"],
       "next_review_at": "2026-08-25T09:00:00+09:00"
     },
     {
@@ -145,10 +80,7 @@
       "state": "UNKNOWN",
       "reason": "罹災証明関連業務の現行活動は確認できたが、県全体の8月18日累計より新しい同一定義の申請・調査・交付総数を一次情報で確定できない。",
       "owner": "national-support-audit",
-      "source_ids": [
-        "kitakyushu-support-current",
-        "yatsushiro-cert-0823"
-      ],
+      "source_ids": ["kitakyushu-support-current","yatsushiro-cert-0823"],
       "next_review_at": "2026-08-25T09:00:00+09:00"
     },
     {
@@ -156,10 +88,7 @@
       "state": "UNKNOWN",
       "reason": "普通交付税616億円の繰上げ交付決定は一次確認済みだが、8月3日の現金交付完了を直接示す一次記録を確認できない。",
       "owner": "national-support-audit",
-      "source_ids": [
-        "kantei-0803-finance",
-        "kantei-0818-support"
-      ],
+      "source_ids": ["kantei-0803-finance","kantei-0818-support"],
       "next_review_at": "2026-08-25T09:00:00+09:00"
     },
     {
@@ -167,10 +96,7 @@
       "state": "UNKNOWN",
       "reason": "トイレカー管理運営・環境省巡回の現行活動は確認できたが、8月19日の296設備より新しい同一定義の全国設備総数は確定できない。",
       "owner": "national-support-audit",
-      "source_ids": [
-        "tokushima-toilet-0824",
-        "moe-toilet-current"
-      ],
+      "source_ids": ["tokushima-toilet-0824","moe-toilet-current"],
       "next_review_at": "2026-08-25T09:00:00+09:00"
     }
   ]
