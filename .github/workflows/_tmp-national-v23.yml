@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - audit/national-support-20260824
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -17,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: audit/national-support-20260824
+          ref: ${{ github.event.pull_request.head.ref || 'audit/national-support-20260824' }}
           fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
