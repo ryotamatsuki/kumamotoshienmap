@@ -1,0 +1,55 @@
+name: Temporary national unresolved re-adjudication
+
+on:
+  push:
+    branches:
+      - fix/national-unknowns-20260824
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: fix/national-unknowns-20260824
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Apply same-reference re-adjudication
+        run: node scripts/_tmp-resolve-national-unknowns.mjs
+      - name: Install npm metadata
+        run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+      - name: Build and validate
+        run: |
+          set -Eeuo pipefail
+          npm run build
+          npm run test:release-gate
+          node --check scripts/sync-national-support-audit.mjs
+          node --check scripts/validate-national-support-audit.mjs
+          node --check scripts/test-release-gate.mjs
+          git diff --check
+      - name: Commit formal results
+        run: |
+          set -Eeuo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            national-support-audit.json \
+            operations/ledgers/refresh-20260824-2358.json \
+            ehime_kumamoto_support_geocoded_shelters_20260802.html \
+            public/dashboard.html \
+            scripts/sync-national-support-audit.mjs \
+            scripts/validate-national-support-audit.mjs \
+            scripts/test-release-gate.mjs
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No formal changes to commit"
+          else
+            git commit -m "fix: re-adjudicate national support unknowns"
+            git push origin HEAD:fix/national-unknowns-20260824
+          fi
