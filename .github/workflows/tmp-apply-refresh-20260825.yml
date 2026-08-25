@@ -24,6 +24,7 @@ jobs:
       - name: Apply audited refresh
         run: |
           set -Eeuo pipefail
+          mkdir -p operations/audits
           node scripts/tmp-apply-refresh-20260825.mjs
           node scripts/tmp-postpatch-refresh-20260825.mjs
       - name: Build and validate
