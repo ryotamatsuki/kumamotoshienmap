@@ -33,6 +33,7 @@ jobs:
           npm run build
           npm run test:release-gate
       - name: Commit generated refresh
+        if: always()
         run: |
           set -Eeuo pipefail
           git config user.name github-actions[bot]
