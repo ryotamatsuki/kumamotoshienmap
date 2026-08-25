@@ -1,1 +1,34 @@
-import{readFileSync}from'node:fs';import{dirname,resolve}from'node:path';import{fileURLToPath}from'node:url';const R=resolve(dirname(fileURLToPath(import.meta.url)),'..'),a=JSON.parse(readFileSync(resolve(R,'national-support-audit.json'),'utf8')),h=readFileSync(resolve(R,'ehime_kumamoto_support_geocoded_shelters_20260802.html'),'utf8'),p=readFileSync(resolve(R,'public/dashboard.html'),'utf8');function f(m){throw new Error('[NATIONAL SUPPORT AUDIT FAIL] '+m)}if(h!==p)f('source/public parity');if(a.reference_at!=='2026-08-25T14:08:00+09:00')f('reference_at');if(a.inventory.audit_record_count!==a.records.length)f('record count');const ids=new Set(a.sources.map(x=>x.source_id));for(const s of a.sources){if(!s.primary)f('non-primary '+s.source_id);if(Date.parse(s.checked_at)<Date.parse(a.reference_at)||Date.parse(s.checked_at)>Date.parse(a.checked_at))f('checked_at '+s.source_id);}for(const r of a.records){if(r.display.status!==r.state)f('display state '+r.record_id);for(const id of r.source_ids)if(!ids.has(id))f('source '+id);if(r.state==='CURRENT'&&!r.adjudications.some(x=>x.state==='CURRENT'&&x.source_ids.some(id=>ids.has(id))))f('CURRENT evidence '+r.record_id);if(r.state==='UNKNOWN'&&!String(r.display.scale).includes('UNKNOWN'))f('UNKNOWN wording '+r.record_id);}for(const s of ['CURRENT','HISTORICAL','PLANNED','UNKNOWN','CONFLICT'])if(a.summary[s]!==a.records.filter(r=>r.state===s).length)f('summary '+s);if(a.summary.blocking_unresolved_count!==0)f('blocking unresolved');for(const x of ['内閣府','消防庁','国土交通省','厚生労働省','防衛省','警察庁','財務省','経済産業省'])if(!(a.agency_coverage||[]).some(y=>y.agency.includes(x)))f('agency '+x);if(!h.includes('8月25日14:08基準で全件再監査'))f('actor not updated');if(!h.includes('national-sme-loan'))f('new policy record not generated');console.log(JSON.stringify({status:'PASS',reference_at:a.reference_at,records:a.records.length,summary:a.summary}));
+import { readFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
+const audit=JSON.parse(readFileSync(resolve(root,'national-support-audit.json'),'utf8'));
+const html=readFileSync(resolve(root,'ehime_kumamoto_support_geocoded_shelters_20260802.html'),'utf8');
+const publicHtml=readFileSync(resolve(root,'public/dashboard.html'),'utf8');
+const fail=(message)=>{throw new Error('[NATIONAL SUPPORT AUDIT FAIL] '+message);};
+
+if(html!==publicHtml)fail('source/public parity');
+if(audit.reference_at!=='2026-08-25T14:08:00+09:00')fail('reference_at');
+if(audit.inventory.audit_record_count!==audit.records.length)fail('record count');
+const sourceIds=new Set(audit.sources.map((source)=>source.source_id));
+const auditUpper=Date.parse(audit.rechecked_at||audit.checked_at);
+for(const source of audit.sources){
+  if(!source.primary)fail('non-primary '+source.source_id);
+  const checked=Date.parse(source.rechecked_at||source.checked_at);
+  if(!Number.isFinite(checked)||checked<Date.parse(audit.reference_at)||checked>auditUpper)fail('checked/rechecked_at '+source.source_id);
+}
+for(const record of audit.records){
+  if(record.display.status!==record.state)fail('display state '+record.record_id);
+  for(const sourceId of record.source_ids)if(!sourceIds.has(sourceId))fail('source '+sourceId);
+  if(record.state==='CURRENT'&&!record.adjudications.some((item)=>item.state==='CURRENT'&&item.source_ids.some((sourceId)=>sourceIds.has(sourceId))))fail('CURRENT evidence '+record.record_id);
+  if(record.state==='UNKNOWN'&&!String(record.display.scale).includes('UNKNOWN'))fail('UNKNOWN wording '+record.record_id);
+  if(record.state==='PLANNED'&&!record.adjudications.some((item)=>item.state==='PLANNED'))fail('PLANNED evidence '+record.record_id);
+}
+for(const state of ['CURRENT','HISTORICAL','PLANNED','UNKNOWN','CONFLICT'])if(audit.summary[state]!==audit.records.filter((record)=>record.state===state).length)fail('summary '+state);
+if(audit.summary.blocking_unresolved_count!==0)fail('blocking unresolved');
+for(const agency of ['内閣府','消防庁','国土交通省','厚生労働省','防衛省','警察庁','財務省','経済産業省'])if(!(audit.agency_coverage||[]).some((item)=>item.agency.includes(agency)))fail('agency '+agency);
+if(!html.includes('8月25日14:08基準で全件再監査'))fail('actor not updated');
+if(!html.includes('national-sme-loan'))fail('new policy record not generated');
+if(!html.includes('national-accommodation-hakuo2'))fail('planned accommodation record not generated');
+console.log(JSON.stringify({status:'PASS',reference_at:audit.reference_at,rechecked_at:audit.rechecked_at,records:audit.records.length,summary:audit.summary}));
