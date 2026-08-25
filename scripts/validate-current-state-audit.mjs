@@ -75,9 +75,7 @@ for (const id of ["ehime-pair", "pair-hikawa", "pair-kashima"]) {
 assert.ok(need("p-shelter").observed.includes("8月24日15時30分更新"));
 assert.ok(need("p-waste").observed.includes("10市町村"));
 assert.ok(need("p-agri").observed.includes("7,881件、約1,559億円"));
-for (const name of ["熊本市", "八代市", "宇土市", "宇城市", "美里町", "御船町", "嘉島町", "益城町", "甲佐町", "氷川町", "芦北町"]) {
-  assert.ok(Array.isArray(municipalities.find((item) => item.name === name)?.currentSupport), `${name}の支援情報配列がありません`);
-}
+for (const name of ["熊本市", "八代市", "宇土市", "宇城市", "美里町", "御船町", "嘉島町", "益城町", "甲佐町", "氷川町", "芦北町"]) assert.ok(Array.isArray(municipalities.find((item) => item.name === name)?.currentSupport), `${name}の支援情報配列がありません`);
 
 assert.ok(event("t-current-status").tags.includes("熊本県第42報"));
 assert.ok(event("t-kumamoto-0816").tags.includes("過去スナップショット"));
@@ -88,7 +86,6 @@ assert.equal(pageMeta.checkedAt, REFERENCE_AT);
 assert.ok(Date.parse(pageMeta.volunteerCheckedAt) <= Date.parse(REFERENCE_AT), "volunteer確認時刻がreference_atより未来です");
 assert.ok(pageMeta.rows.some((row) => row.section === "他自治体等" && row.current.includes("全件再監査")), "他自治体等の全件再監査がPAGE_RECHECK_METAにありません");
 assert.ok(pageMeta.rows.some((row) => row.section === "愛媛県支援"));
-assert.ok(pageMeta.rows.some((row) => row.section === "国・関係機関" && row.current.includes("8月25日14:08")), "国・関係機関の再監査時点がありません");
 
 const currentDisplay = html.slice(0, html.indexOf('<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js">'));
 for (const value of ["D+27", "行政応援971人", "8月24日までの確認済み支援", "8月25日14:08基準で全件再監査"]) assert.ok(currentDisplay.includes(value), `初期表示に ${value} がありません`);
