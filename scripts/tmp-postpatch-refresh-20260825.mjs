@@ -11,7 +11,9 @@ v=v.replaceAll('国交省第48報：給水車119台、TEC-FORCE現時点98人・
  .replaceAll('TEC-FORCE現時点98人・累計4,507人日','8月25日閣議：被災中小企業者等への災害融資特別措置を決定')
  .replaceAll('2026-08-24T22:38:32+09:00','2026-08-25T14:08:00+09:00')
  .replaceAll('8月24日22:38に対口支援・他自治体支援を全件再監査','8月25日14:08に対口支援・他自治体支援を全件再監査')
- .replaceAll('2026年8月24日 22:38','2026年8月25日 14:08');
+ .replaceAll('2026年8月24日 22:38','2026年8月25日 14:08')
+ .replaceAll('8月24日22:38再監査','8月25日14:08再監査')
+ .replace('  "国交省第48報",\n','  "8月25日14:08基準で全件再監査",\n');
 await writeFile(validator,v);
 
 const smoke='.github/workflows/post-deploy-pages-smoke.yml';
