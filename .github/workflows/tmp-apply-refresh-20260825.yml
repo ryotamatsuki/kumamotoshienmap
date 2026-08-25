@@ -1,0 +1,46 @@
+name: Temporary apply full refresh 20260825
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260825-1408
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: audit/timepoint-20260825-1408
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+      - name: Apply audited refresh
+        run: |
+          set -Eeuo pipefail
+          node scripts/tmp-apply-refresh-20260825.mjs
+          node scripts/tmp-postpatch-refresh-20260825.mjs
+      - name: Build and validate
+        run: |
+          set -Eeuo pipefail
+          npm run build
+          npm run test:release-gate
+      - name: Commit generated refresh
+        run: |
+          set -Eeuo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git reset -- scripts/tmp-apply-refresh-20260825.mjs scripts/tmp-postpatch-refresh-20260825.mjs .github/workflows/tmp-apply-refresh-20260825.yml
+          if git diff --cached --quiet; then
+            echo 'No refresh changes.'
+            exit 0
+          fi
+          git commit -m 'data:全面再監査を2026-08-25時点へ更新'
+          git push origin HEAD:audit/timepoint-20260825-1408
