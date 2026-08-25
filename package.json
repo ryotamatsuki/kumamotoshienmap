@@ -16,11 +16,12 @@
     "validate:current-shelters": "node scripts/validate-current-shelters.mjs",
     "validate:release": "node scripts/validate-update-release.mjs",
     "test:release-gate": "node scripts/test-release-gate.mjs",
-    "build": "npm run generate:volunteer && npm run generate:current-shelter-data && npm run sync:municipal-support && npm run sync:national-support && npm run sync:page-metadata && npm run validate:dashboard && npm run validate:current-state && npm run validate:timeline && npm run validate:volunteer && npm run validate:shelters && npm run validate:current-shelters && npm run validate:municipal-support && npm run validate:national-support && node scripts/build-sites.mjs && npm run validate:dist",
+    "build": "npm run generate:volunteer && npm run generate:current-shelter-data && npm run sync:municipal-support && npm run sync:national-support && npm run sync:page-metadata && npm run validate:dashboard && npm run validate:current-state && npm run validate:timeline && npm run validate:volunteer && npm run validate:shelters && npm run validate:current-shelters && npm run validate:municipal-support && npm run validate:national-support && npm run validate:institution-coverage && node scripts/build-sites.mjs && npm run validate:dist",
     "sync:page-metadata": "node scripts/sync-current-page-metadata.mjs",
     "sync:municipal-support": "node scripts/sync-municipal-support-audit.mjs",
     "validate:municipal-support": "node scripts/validate-municipal-support-audit.mjs",
     "sync:national-support": "node scripts/sync-national-support-audit.mjs",
-    "validate:national-support": "node scripts/validate-national-support-audit.mjs"
+    "validate:national-support": "node scripts/validate-national-support-audit.mjs",
+    "validate:institution-coverage": "node scripts/validate-institution-coverage.mjs"
   }
 }

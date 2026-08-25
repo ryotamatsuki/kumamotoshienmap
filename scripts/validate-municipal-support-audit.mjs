@@ -63,8 +63,9 @@ assert.equal(generatedMeta.referenceAt,audit.reference_at,"生成audit reference
 assert.equal(generatedMeta.releaseId,audit.release_id,"生成audit releaseId不一致");
 const releaseIds=[...html.matchAll(/volunteer-data\.js\?v=([A-Za-z0-9._-]+)/gu)].map((m)=>m[1]);
 assert.ok(releaseIds.length>0 && releaseIds.every((id)=>id===audit.release_id),"HTMLのrelease_idがmunicipal auditと一致しません");
-assert.ok(html.includes("旧割当履歴＋8月24日個別再監査"),"地域ブロックが旧名簿を現行表示している可能性があります");
-assert.ok(html.includes("同一定義の8月24日総数はUNKNOWN"),"8月19日行政応援総数が現況値として残っています");
+assert.ok(html.includes('旧割当履歴＋') && html.includes('個別再監査'),"地域ブロックが旧名簿を現行表示している可能性があります");
+assert.ok(totalUnknown>0,"UNKNOWN裁定が構造化データにありません");
+assert.ok(html.includes('8月19日行政応援971人は履歴スナップショット'),"8月19日行政応援971人を履歴として分離していません");
 
 // Execute the data/overlay region to ensure the final RECORDS are actually overwritten by the audit.
 const dataStart=html.indexOf("const HUBS=");
