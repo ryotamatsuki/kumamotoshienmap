@@ -1,7 +1,8 @@
 import {readFile,writeFile} from 'node:fs/promises';
 const path='scripts/sync-municipal-support-audit.mjs';
 let s=await readFile(path,'utf8');
-s=s.replaceAll('${auditCheckedLabel}','8月25日14:08');
+s=s.replaceAll('${auditCheckedLabel}','8月25日14:08')
+ .replaceAll("block.badge=`旧割当履歴＋8月25日14:08個別再監査`","block.badge='旧割当履歴＋8月25日14:08個別再監査'");
 await writeFile(path,s);
 
 const smoke='.github/workflows/post-deploy-pages-smoke.yml';
