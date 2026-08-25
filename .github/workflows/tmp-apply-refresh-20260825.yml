@@ -1,9 +1,7 @@
 name: Temporary apply full refresh 20260825
 
 on:
-  push:
-    branches:
-      - audit/timepoint-20260825-1408
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -32,17 +30,3 @@ jobs:
           set -Eeuo pipefail
           npm run build
           npm run test:release-gate
-      - name: Commit generated refresh
-        if: always()
-        run: |
-          set -Eeuo pipefail
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add -A
-          git reset -- scripts/tmp-apply-refresh-20260825.mjs scripts/tmp-postpatch-refresh-20260825.mjs .github/workflows/tmp-apply-refresh-20260825.yml .github/workflows/post-deploy-pages-smoke.yml
-          if git diff --cached --quiet; then
-            echo 'No refresh changes.'
-            exit 0
-          fi
-          git commit -m 'data: 全面再監査を2026-08-25時点へ更新'
-          git push origin HEAD:audit/timepoint-20260825-1408
