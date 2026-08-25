@@ -432,6 +432,17 @@
       "rechecked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "note": "第3班8月22-31、現地業務23-30の派遣告知。実働開始の直接確認なし。"
+    },
+    {
+      "source_id": "sapporo-current",
+      "name": "札幌市 令和8年熊本地震に伴う札幌市の対応",
+      "role": "dispatch_origin_official",
+      "url": "https://www.city.sapporo.jp/kinkyu/202607_kumamotojishin.html",
+      "as_of": "2026-08-10",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00",
+      "primary": true,
+      "note": "8月10日更新で罹災証明発行支援の職員4名が熊本市で従事開始と確認。8月25日基準の継続・終了を直接示す更新は未確認のためUNKNOWN根拠として使用。"
     }
   ],
   "records": [
