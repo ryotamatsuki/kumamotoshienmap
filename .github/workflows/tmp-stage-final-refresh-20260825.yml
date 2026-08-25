@@ -32,9 +32,9 @@ jobs:
           start=s.index("          node <<'NODE'\n")+len("          node <<'NODE'\n")
           end=s.index("\n          NODE",start)
           lines=s[start:end].splitlines()
-          Path('/tmp/finalize.mjs').write_text('\n'.join(line[10:] if line.startswith('          ') else line for line in lines)+'\n')
+          Path('/tmp/finalize.cjs').write_text('\n'.join(line[10:] if line.startswith('          ') else line for line in lines)+'\n')
           PY
-          node /tmp/finalize.mjs
+          node /tmp/finalize.cjs
       - name: Build and validate all data gates
         run: |
           set -Eeuo pipefail
