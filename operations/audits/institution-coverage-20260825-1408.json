@@ -1,0 +1,2788 @@
+{
+  "schema_version": 1,
+  "operation_version": "2.5",
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "reference_at": "2026-08-25T14:08:00+09:00",
+  "checked_at": "2026-08-25T14:36:00+09:00",
+  "release_id": "20260825-1408",
+  "sources": [
+    {
+      "source_id": "kumamoto-volunteer-0824",
+      "url": "https://www.pref.kumamoto.jp/soshiki/27/275523.html",
+      "primary": true,
+      "source_as_of": "2026-08-24",
+      "checked_at": "2026-08-25T14:36:00+09:00"
+    },
+    {
+      "source_id": "municipal-support-audit",
+      "url": "https://github.com/ryotamatsuki/kumamotoshienmap/blob/main/municipal-support-audit.json",
+      "primary": true,
+      "checked_at": "2026-08-25T14:36:00+09:00"
+    },
+    {
+      "source_id": "national-support-audit",
+      "url": "https://github.com/ryotamatsuki/kumamotoshienmap/blob/main/national-support-audit.json",
+      "primary": true,
+      "checked_at": "2026-08-25T14:36:00+09:00"
+    }
+  ],
+  "entries": [
+    {
+      "entity": "熊本県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "熊本市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表に災害VC開設・活動を掲載。"
+    },
+    {
+      "entity": "熊本市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "当該市町村災害VCの運営主体として横断情報から裁定。"
+    },
+    {
+      "entity": "八代市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表に災害VC開設・活動を掲載。"
+    },
+    {
+      "entity": "八代市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "当該市町村災害VCの運営主体として横断情報から裁定。"
+    },
+    {
+      "entity": "人吉市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "人吉市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "荒尾市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "荒尾市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "水俣市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "水俣市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "玉名市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "玉名市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "山鹿市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "山鹿市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "菊池市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "菊池市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "宇土市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表に災害VC開設・活動を掲載。"
+    },
+    {
+      "entity": "宇土市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "当該市町村災害VCの運営主体として横断情報から裁定。"
+    },
+    {
+      "entity": "上天草市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "上天草市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "宇城市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表に災害VC開設・活動を掲載。"
+    },
+    {
+      "entity": "宇城市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "当該市町村災害VCの運営主体として横断情報から裁定。"
+    },
+    {
+      "entity": "阿蘇市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "阿蘇市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "天草市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "天草市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "合志市",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "合志市社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "美里町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表に災害VC開設・活動を掲載。"
+    },
+    {
+      "entity": "美里町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "当該市町村災害VCの運営主体として横断情報から裁定。"
+    },
+    {
+      "entity": "玉東町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "玉東町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "南関町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "南関町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "長洲町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "長洲町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "和水町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "和水町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "大津町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "大津町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "菊陽町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "菊陽町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "南小国町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "南小国町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "小国町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "小国町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "産山村",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "産山村社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "高森町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "高森町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "西原村",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "西原村社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "南阿蘇村",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "南阿蘇村社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "御船町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表に災害VC開設・活動を掲載。"
+    },
+    {
+      "entity": "御船町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "当該市町村災害VCの運営主体として横断情報から裁定。"
+    },
+    {
+      "entity": "嘉島町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表に災害VC開設・活動を掲載。"
+    },
+    {
+      "entity": "嘉島町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "当該市町村災害VCの運営主体として横断情報から裁定。"
+    },
+    {
+      "entity": "益城町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表に災害VC開設・活動を掲載。"
+    },
+    {
+      "entity": "益城町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "当該市町村災害VCの運営主体として横断情報から裁定。"
+    },
+    {
+      "entity": "甲佐町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表に災害VC開設・活動を掲載。"
+    },
+    {
+      "entity": "甲佐町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "当該市町村災害VCの運営主体として横断情報から裁定。"
+    },
+    {
+      "entity": "山都町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "山都町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "氷川町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表に災害VC開設・活動を掲載。"
+    },
+    {
+      "entity": "氷川町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "当該市町村災害VCの運営主体として横断情報から裁定。"
+    },
+    {
+      "entity": "芦北町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表に災害VC開設・活動を掲載。"
+    },
+    {
+      "entity": "芦北町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "当該市町村災害VCの運営主体として横断情報から裁定。"
+    },
+    {
+      "entity": "津奈木町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "津奈木町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "錦町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "錦町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "多良木町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "多良木町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "湯前町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "湯前町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "水上村",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "水上村社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "相良村",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "相良村社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "五木村",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "五木村社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "山江村",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "山江村社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "球磨村",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "球磨村社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "あさぎり町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "あさぎり町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "苓北町",
+      "kind": "municipality",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "苓北町社会福祉協議会",
+      "kind": "social_welfare_council",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "note": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "埼玉県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "千葉県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "東京都",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "神奈川県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "川崎市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "大阪市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "山梨県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "群馬県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "札幌市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "さいたま市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "千葉市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "横浜市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "相模原市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "新潟市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "静岡市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "神戸市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "京都市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "堺市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "広島市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "福岡市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "岡山県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "山口県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "長崎県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "福井県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "大阪府",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "大分県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "鹿児島県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "沖縄県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "北九州市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "名古屋市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "京都府",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "滋賀県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "徳島県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "福岡県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "香川県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "富山県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "石川県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "長野県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "岐阜県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "静岡県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "愛知県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "三重県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "兵庫県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "奈良県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "和歌山県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "宮崎県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "愛媛県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "佐賀県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "鳥取県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "島根県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "広島県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "高知県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "浜松市",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "北海道",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "青森県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "岩手県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "秋田県",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "熊本県薬剤師会",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "福岡県薬剤師会",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "宮崎県薬剤師会",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "熊本県内市町村",
+      "kind": "dispatch_provider",
+      "scope": "対口・自治体等支援",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "municipal-support-audit"
+      ],
+      "note": "municipal-support-audit.jsonで個別CURRENT/HISTORICAL/PLANNED/UNKNOWN裁定済み。"
+    },
+    {
+      "entity": "内閣府",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "政府非常災害現地対策本部",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "総務省",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "消防庁",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "国土交通省",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "TEC-FORCE",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "厚生労働省",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "防衛省",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "自衛隊",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "警察庁",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "財務省",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "経済産業省",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "環境省",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "水資源機構",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "日本水道協会",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "日本行政書士会連合会",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "熊本県行政書士会",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "DHEAT",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "DMAT",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "DPAT",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "DWAT",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "災害支援ナース",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "日本赤十字社",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "JMAT",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "JRAT",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "日本薬剤師会",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "全国社会福祉協議会",
+      "kind": "national_or_network",
+      "scope": "国・全国支援機関",
+      "state": "ADJUDICATED",
+      "source_ids": [
+        "national-support-audit"
+      ],
+      "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    }
+  ],
+  "required_entities": [
+    "DHEAT",
+    "DMAT",
+    "DPAT",
+    "DWAT",
+    "JMAT",
+    "JRAT",
+    "TEC-FORCE",
+    "あさぎり町",
+    "あさぎり町社会福祉協議会",
+    "さいたま市",
+    "三重県",
+    "上天草市",
+    "上天草市社会福祉協議会",
+    "五木村",
+    "五木村社会福祉協議会",
+    "京都市",
+    "京都府",
+    "人吉市",
+    "人吉市社会福祉協議会",
+    "佐賀県",
+    "全国社会福祉協議会",
+    "八代市",
+    "八代市社会福祉協議会",
+    "兵庫県",
+    "内閣府",
+    "北九州市",
+    "北海道",
+    "千葉市",
+    "千葉県",
+    "南小国町",
+    "南小国町社会福祉協議会",
+    "南関町",
+    "南関町社会福祉協議会",
+    "南阿蘇村",
+    "南阿蘇村社会福祉協議会",
+    "厚生労働省",
+    "合志市",
+    "合志市社会福祉協議会",
+    "名古屋市",
+    "和歌山県",
+    "和水町",
+    "和水町社会福祉協議会",
+    "嘉島町",
+    "嘉島町社会福祉協議会",
+    "国土交通省",
+    "埼玉県",
+    "堺市",
+    "多良木町",
+    "多良木町社会福祉協議会",
+    "大分県",
+    "大津町",
+    "大津町社会福祉協議会",
+    "大阪市",
+    "大阪府",
+    "天草市",
+    "天草市社会福祉協議会",
+    "奈良県",
+    "宇土市",
+    "宇土市社会福祉協議会",
+    "宇城市",
+    "宇城市社会福祉協議会",
+    "宮崎県",
+    "宮崎県薬剤師会",
+    "富山県",
+    "小国町",
+    "小国町社会福祉協議会",
+    "山口県",
+    "山梨県",
+    "山江村",
+    "山江村社会福祉協議会",
+    "山都町",
+    "山都町社会福祉協議会",
+    "山鹿市",
+    "山鹿市社会福祉協議会",
+    "岐阜県",
+    "岡山県",
+    "岩手県",
+    "島根県",
+    "川崎市",
+    "広島市",
+    "広島県",
+    "御船町",
+    "御船町社会福祉協議会",
+    "徳島県",
+    "愛媛県",
+    "愛知県",
+    "政府非常災害現地対策本部",
+    "新潟市",
+    "日本水道協会",
+    "日本薬剤師会",
+    "日本行政書士会連合会",
+    "日本赤十字社",
+    "札幌市",
+    "東京都",
+    "横浜市",
+    "水上村",
+    "水上村社会福祉協議会",
+    "水俣市",
+    "水俣市社会福祉協議会",
+    "水資源機構",
+    "氷川町",
+    "氷川町社会福祉協議会",
+    "沖縄県",
+    "津奈木町",
+    "津奈木町社会福祉協議会",
+    "浜松市",
+    "消防庁",
+    "湯前町",
+    "湯前町社会福祉協議会",
+    "滋賀県",
+    "災害支援ナース",
+    "熊本市",
+    "熊本市社会福祉協議会",
+    "熊本県",
+    "熊本県内市町村",
+    "熊本県薬剤師会",
+    "熊本県行政書士会",
+    "玉名市",
+    "玉名市社会福祉協議会",
+    "玉東町",
+    "玉東町社会福祉協議会",
+    "球磨村",
+    "球磨村社会福祉協議会",
+    "環境省",
+    "産山村",
+    "産山村社会福祉協議会",
+    "甲佐町",
+    "甲佐町社会福祉協議会",
+    "益城町",
+    "益城町社会福祉協議会",
+    "相模原市",
+    "相良村",
+    "相良村社会福祉協議会",
+    "石川県",
+    "神奈川県",
+    "神戸市",
+    "福井県",
+    "福岡市",
+    "福岡県",
+    "福岡県薬剤師会",
+    "秋田県",
+    "経済産業省",
+    "総務省",
+    "美里町",
+    "美里町社会福祉協議会",
+    "群馬県",
+    "自衛隊",
+    "芦北町",
+    "芦北町社会福祉協議会",
+    "苓北町",
+    "苓北町社会福祉協議会",
+    "荒尾市",
+    "荒尾市社会福祉協議会",
+    "菊池市",
+    "菊池市社会福祉協議会",
+    "菊陽町",
+    "菊陽町社会福祉協議会",
+    "西原村",
+    "西原村社会福祉協議会",
+    "警察庁",
+    "財務省",
+    "錦町",
+    "錦町社会福祉協議会",
+    "長崎県",
+    "長洲町",
+    "長洲町社会福祉協議会",
+    "長野県",
+    "防衛省",
+    "阿蘇市",
+    "阿蘇市社会福祉協議会",
+    "青森県",
+    "静岡市",
+    "静岡県",
+    "香川県",
+    "高森町",
+    "高森町社会福祉協議会",
+    "高知県",
+    "鳥取県",
+    "鹿児島県"
+  ],
+  "source_mentions": [
+    "DHEAT",
+    "DMAT",
+    "DPAT",
+    "DWAT",
+    "JMAT",
+    "JRAT",
+    "TEC-FORCE",
+    "あさぎり町",
+    "あさぎり町社会福祉協議会",
+    "さいたま市",
+    "三重県",
+    "上天草市",
+    "上天草市社会福祉協議会",
+    "五木村",
+    "五木村社会福祉協議会",
+    "京都市",
+    "京都府",
+    "人吉市",
+    "人吉市社会福祉協議会",
+    "佐賀県",
+    "全国社会福祉協議会",
+    "八代市",
+    "八代市社会福祉協議会",
+    "兵庫県",
+    "内閣府",
+    "北九州市",
+    "北海道",
+    "千葉市",
+    "千葉県",
+    "南小国町",
+    "南小国町社会福祉協議会",
+    "南関町",
+    "南関町社会福祉協議会",
+    "南阿蘇村",
+    "南阿蘇村社会福祉協議会",
+    "厚生労働省",
+    "合志市",
+    "合志市社会福祉協議会",
+    "名古屋市",
+    "和歌山県",
+    "和水町",
+    "和水町社会福祉協議会",
+    "嘉島町",
+    "嘉島町社会福祉協議会",
+    "国土交通省",
+    "埼玉県",
+    "堺市",
+    "多良木町",
+    "多良木町社会福祉協議会",
+    "大分県",
+    "大津町",
+    "大津町社会福祉協議会",
+    "大阪市",
+    "大阪府",
+    "天草市",
+    "天草市社会福祉協議会",
+    "奈良県",
+    "宇土市",
+    "宇土市社会福祉協議会",
+    "宇城市",
+    "宇城市社会福祉協議会",
+    "宮崎県",
+    "宮崎県薬剤師会",
+    "富山県",
+    "小国町",
+    "小国町社会福祉協議会",
+    "山口県",
+    "山梨県",
+    "山江村",
+    "山江村社会福祉協議会",
+    "山都町",
+    "山都町社会福祉協議会",
+    "山鹿市",
+    "山鹿市社会福祉協議会",
+    "岐阜県",
+    "岡山県",
+    "岩手県",
+    "島根県",
+    "川崎市",
+    "広島市",
+    "広島県",
+    "御船町",
+    "御船町社会福祉協議会",
+    "徳島県",
+    "愛媛県",
+    "愛知県",
+    "政府非常災害現地対策本部",
+    "新潟市",
+    "日本水道協会",
+    "日本薬剤師会",
+    "日本行政書士会連合会",
+    "日本赤十字社",
+    "札幌市",
+    "東京都",
+    "横浜市",
+    "水上村",
+    "水上村社会福祉協議会",
+    "水俣市",
+    "水俣市社会福祉協議会",
+    "水資源機構",
+    "氷川町",
+    "氷川町社会福祉協議会",
+    "沖縄県",
+    "津奈木町",
+    "津奈木町社会福祉協議会",
+    "浜松市",
+    "消防庁",
+    "湯前町",
+    "湯前町社会福祉協議会",
+    "滋賀県",
+    "災害支援ナース",
+    "熊本市",
+    "熊本市社会福祉協議会",
+    "熊本県",
+    "熊本県内市町村",
+    "熊本県薬剤師会",
+    "熊本県行政書士会",
+    "玉名市",
+    "玉名市社会福祉協議会",
+    "玉東町",
+    "玉東町社会福祉協議会",
+    "球磨村",
+    "球磨村社会福祉協議会",
+    "環境省",
+    "産山村",
+    "産山村社会福祉協議会",
+    "甲佐町",
+    "甲佐町社会福祉協議会",
+    "益城町",
+    "益城町社会福祉協議会",
+    "相模原市",
+    "相良村",
+    "相良村社会福祉協議会",
+    "石川県",
+    "神奈川県",
+    "神戸市",
+    "福井県",
+    "福岡市",
+    "福岡県",
+    "福岡県薬剤師会",
+    "秋田県",
+    "経済産業省",
+    "総務省",
+    "美里町",
+    "美里町社会福祉協議会",
+    "群馬県",
+    "自衛隊",
+    "芦北町",
+    "芦北町社会福祉協議会",
+    "苓北町",
+    "苓北町社会福祉協議会",
+    "荒尾市",
+    "荒尾市社会福祉協議会",
+    "菊池市",
+    "菊池市社会福祉協議会",
+    "菊陽町",
+    "菊陽町社会福祉協議会",
+    "西原村",
+    "西原村社会福祉協議会",
+    "警察庁",
+    "財務省",
+    "錦町",
+    "錦町社会福祉協議会",
+    "長崎県",
+    "長洲町",
+    "長洲町社会福祉協議会",
+    "長野県",
+    "防衛省",
+    "阿蘇市",
+    "阿蘇市社会福祉協議会",
+    "青森県",
+    "静岡市",
+    "静岡県",
+    "香川県",
+    "高森町",
+    "高森町社会福祉協議会",
+    "高知県",
+    "鳥取県",
+    "鹿児島県"
+  ],
+  "adjudicated_entities": [
+    "DHEAT",
+    "DMAT",
+    "DPAT",
+    "DWAT",
+    "JMAT",
+    "JRAT",
+    "TEC-FORCE",
+    "あさぎり町",
+    "あさぎり町社会福祉協議会",
+    "さいたま市",
+    "三重県",
+    "上天草市",
+    "上天草市社会福祉協議会",
+    "五木村",
+    "五木村社会福祉協議会",
+    "京都市",
+    "京都府",
+    "人吉市",
+    "人吉市社会福祉協議会",
+    "佐賀県",
+    "全国社会福祉協議会",
+    "八代市",
+    "八代市社会福祉協議会",
+    "兵庫県",
+    "内閣府",
+    "北九州市",
+    "北海道",
+    "千葉市",
+    "千葉県",
+    "南小国町",
+    "南小国町社会福祉協議会",
+    "南関町",
+    "南関町社会福祉協議会",
+    "南阿蘇村",
+    "南阿蘇村社会福祉協議会",
+    "厚生労働省",
+    "合志市",
+    "合志市社会福祉協議会",
+    "名古屋市",
+    "和歌山県",
+    "和水町",
+    "和水町社会福祉協議会",
+    "嘉島町",
+    "嘉島町社会福祉協議会",
+    "国土交通省",
+    "埼玉県",
+    "堺市",
+    "多良木町",
+    "多良木町社会福祉協議会",
+    "大分県",
+    "大津町",
+    "大津町社会福祉協議会",
+    "大阪市",
+    "大阪府",
+    "天草市",
+    "天草市社会福祉協議会",
+    "奈良県",
+    "宇土市",
+    "宇土市社会福祉協議会",
+    "宇城市",
+    "宇城市社会福祉協議会",
+    "宮崎県",
+    "宮崎県薬剤師会",
+    "富山県",
+    "小国町",
+    "小国町社会福祉協議会",
+    "山口県",
+    "山梨県",
+    "山江村",
+    "山江村社会福祉協議会",
+    "山都町",
+    "山都町社会福祉協議会",
+    "山鹿市",
+    "山鹿市社会福祉協議会",
+    "岐阜県",
+    "岡山県",
+    "岩手県",
+    "島根県",
+    "川崎市",
+    "広島市",
+    "広島県",
+    "御船町",
+    "御船町社会福祉協議会",
+    "徳島県",
+    "愛媛県",
+    "愛知県",
+    "政府非常災害現地対策本部",
+    "新潟市",
+    "日本水道協会",
+    "日本薬剤師会",
+    "日本行政書士会連合会",
+    "日本赤十字社",
+    "札幌市",
+    "東京都",
+    "横浜市",
+    "水上村",
+    "水上村社会福祉協議会",
+    "水俣市",
+    "水俣市社会福祉協議会",
+    "水資源機構",
+    "氷川町",
+    "氷川町社会福祉協議会",
+    "沖縄県",
+    "津奈木町",
+    "津奈木町社会福祉協議会",
+    "浜松市",
+    "消防庁",
+    "湯前町",
+    "湯前町社会福祉協議会",
+    "滋賀県",
+    "災害支援ナース",
+    "熊本市",
+    "熊本市社会福祉協議会",
+    "熊本県",
+    "熊本県内市町村",
+    "熊本県薬剤師会",
+    "熊本県行政書士会",
+    "玉名市",
+    "玉名市社会福祉協議会",
+    "玉東町",
+    "玉東町社会福祉協議会",
+    "球磨村",
+    "球磨村社会福祉協議会",
+    "環境省",
+    "産山村",
+    "産山村社会福祉協議会",
+    "甲佐町",
+    "甲佐町社会福祉協議会",
+    "益城町",
+    "益城町社会福祉協議会",
+    "相模原市",
+    "相良村",
+    "相良村社会福祉協議会",
+    "石川県",
+    "神奈川県",
+    "神戸市",
+    "福井県",
+    "福岡市",
+    "福岡県",
+    "福岡県薬剤師会",
+    "秋田県",
+    "経済産業省",
+    "総務省",
+    "美里町",
+    "美里町社会福祉協議会",
+    "群馬県",
+    "自衛隊",
+    "芦北町",
+    "芦北町社会福祉協議会",
+    "苓北町",
+    "苓北町社会福祉協議会",
+    "荒尾市",
+    "荒尾市社会福祉協議会",
+    "菊池市",
+    "菊池市社会福祉協議会",
+    "菊陽町",
+    "菊陽町社会福祉協議会",
+    "西原村",
+    "西原村社会福祉協議会",
+    "警察庁",
+    "財務省",
+    "錦町",
+    "錦町社会福祉協議会",
+    "長崎県",
+    "長洲町",
+    "長洲町社会福祉協議会",
+    "長野県",
+    "防衛省",
+    "阿蘇市",
+    "阿蘇市社会福祉協議会",
+    "青森県",
+    "静岡市",
+    "静岡県",
+    "香川県",
+    "高森町",
+    "高森町社会福祉協議会",
+    "高知県",
+    "鳥取県",
+    "鹿児島県"
+  ],
+  "missing_entities": [],
+  "unadjudicated_source_mentions": [],
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {
+      "entity": "人吉市",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "人吉市社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "荒尾市",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "荒尾市社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "水俣市",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "水俣市社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "玉名市",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "玉名市社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "山鹿市",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "山鹿市社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "菊池市",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "菊池市社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "上天草市",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "上天草市社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "阿蘇市",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "阿蘇市社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "天草市",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "天草市社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "合志市",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "合志市社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "玉東町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "玉東町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "南関町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "南関町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "長洲町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "長洲町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "和水町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "和水町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "大津町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "大津町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "菊陽町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "菊陽町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "南小国町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "南小国町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "小国町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "小国町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "産山村",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "産山村社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "高森町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "高森町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "西原村",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "西原村社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "南阿蘇村",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "南阿蘇村社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "山都町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "山都町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "津奈木町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "津奈木町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "錦町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "錦町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "多良木町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "多良木町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "湯前町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "湯前町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "水上村",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "水上村社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "相良村",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "相良村社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "五木村",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "五木村社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "山江村",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "山江村社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "球磨村",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "球磨村社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "あさぎり町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "あさぎり町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    },
+    {
+      "entity": "苓北町",
+      "scope": "災害ボランティアセンター関与",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+    },
+    {
+      "entity": "苓北町社会福祉協議会",
+      "scope": "災害ボランティアセンター運営関与",
+      "state": "UNKNOWN",
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+    }
+  ],
+  "summary": {
+    "entities": 179,
+    "municipalities": 45,
+    "social_welfare_councils": 45,
+    "active_volunteer_center_municipalities": 11,
+    "pair_dispatch_entities": 62,
+    "national_network_entities": 30,
+    "missing_entities": 0,
+    "unadjudicated_source_mentions": 0,
+    "blocking_unresolved": 0
+  }
+}
