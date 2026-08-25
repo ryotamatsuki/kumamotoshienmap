@@ -522,6 +522,14 @@
             "kantei-0825-cabinet"
           ],
           "notes": "同日閣議で災害融資特別措置と激甚災害政令改正を決定。政府対応の継続を基準日当日の一次情報で確認。"
+        },
+        {
+          "state": "CURRENT",
+          "scope": "8月25日の政府災害対応・復旧支援決定",
+          "source_ids": [
+            "kantei-0825-cabinet"
+          ],
+          "notes": "同日閣議で災害融資特別措置と激甚災害政令改正を決定。政府対応の継続を基準日当日の一次情報で確認。"
         }
       ],
       "state": "CURRENT",
@@ -637,6 +645,15 @@
             "mhlw-disaster-recheck"
           ],
           "notes": "基準日時点の同一定義の実働継続を直接示す一次情報を確認できない。無発表・予定期間・前回値からCURRENTを推定しない。"
+        },
+        {
+          "state": "UNKNOWN",
+          "scope": "8月25日基準の保健医療福祉支援の同一定義実働",
+          "source_ids": [
+            "kitakyushu-support-current",
+            "mhlw-disaster-recheck"
+          ],
+          "notes": "基準日時点の同一定義の実働継続を直接示す一次情報を確認できない。無発表・予定期間・前回値からCURRENTを推定しない。"
         }
       ],
       "state": "UNKNOWN",
@@ -680,6 +697,15 @@
             "mod-minister-0823"
           ],
           "notes": "8/25基準では基準時点CURRENTの直接証拠として扱わず、最終確認済み履歴へ移行。 国交省第48報へ更新。自衛隊も給水継続を明示。"
+        },
+        {
+          "state": "UNKNOWN",
+          "scope": "8月25日基準の給水車等応急給水体制",
+          "source_ids": [
+            "mlit-report48",
+            "mod-minister-0823"
+          ],
+          "notes": "基準日時点の同一定義の実働継続を直接示す一次情報を確認できない。無発表・予定期間・前回値からCURRENTを推定しない。"
         },
         {
           "state": "UNKNOWN",
@@ -767,6 +793,15 @@
             "mlit-report48"
           ],
           "notes": "8/25基準では基準時点CURRENTの直接証拠として扱わず、最終確認済み履歴へ移行。 第48報へ更新。現時点人数と累計人日を別指標として表示。"
+        },
+        {
+          "state": "UNKNOWN",
+          "scope": "8月25日基準のTEC-FORCE現行人数",
+          "source_ids": [
+            "mlit-report48",
+            "kkr-tec5-0824"
+          ],
+          "notes": "基準日時点の同一定義の実働継続を直接示す一次情報を確認できない。無発表・予定期間・前回値からCURRENTを推定しない。"
         },
         {
           "state": "UNKNOWN",
@@ -1011,6 +1046,15 @@
             "mod-js-0824"
           ],
           "notes": "基準日時点の同一定義の実働継続を直接示す一次情報を確認できない。無発表・予定期間・前回値からCURRENTを推定しない。"
+        },
+        {
+          "state": "UNKNOWN",
+          "scope": "8月25日基準の自衛隊入浴支援地点",
+          "source_ids": [
+            "mod-disaster-0823",
+            "mod-js-0824"
+          ],
+          "notes": "基準日時点の同一定義の実働継続を直接示す一次情報を確認できない。無発表・予定期間・前回値からCURRENTを推定しない。"
         }
       ],
       "state": "UNKNOWN",
@@ -1170,7 +1214,7 @@
     "PLANNED": 1,
     "UNKNOWN": 6,
     "CONFLICT": 0,
-    "accepted_unresolved_count": 7,
+    "accepted_unresolved_count": 11,
     "blocking_unresolved_count": 0
   }
 }
