@@ -135,7 +135,7 @@ assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-sta
 assert.ok(runtime.TIMELINE_EVENTS.every((event) => Array.isArray(event.tags)), "タイムラインの全イベントにtags配列が必要です");
 
 const auditedKumamoto = runtime.RECORDS.find((record) => record.id === "pair-kumamoto");
-assert.equal(auditedKumamoto.auditCheckedAt, REFERENCE_AT, "熊本市対口支援の再監査基準が不正です");
+assert.equal(auditedKumamoto.auditCheckedAt, municipalAudit.checked_at, "熊本市対口支援の監査確認時刻が不正です");
 assert.ok(auditedKumamoto.detail.includes("UNKNOWN"), "未確認派遣元をUNKNOWNとして表示していません");
 assert.ok(runtime.SUPPORT_BLOCKS.filter((block) => block.id !== "internal-coordination").every((block) => block.badge.includes("旧割当履歴")), "旧割当名簿をCURRENTのように表示しています");
 assert.equal(runtime.RECORDS.find((record) => record.id === "pharmacy").providers.length, 0, "モバイルファーマシーの旧活動主体をCURRENT扱いしています");

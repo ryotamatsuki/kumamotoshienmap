@@ -3,27 +3,602 @@
   "operation_version": "2.5",
   "repository": "ryotamatsuki/kumamotoshienmap",
   "reference_at": "2026-08-25T14:08:00+09:00",
-  "checked_at": "2026-08-25T14:36:00+09:00",
+  "checked_at": "2026-08-25T15:17:00+09:00",
   "release_id": "20260825-1408",
   "sources": [
     {
+      "source_id": "kumamoto-roster-0811",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/uploaded/attachment/316600.pdf",
+      "primary": true,
+      "source_as_of": "2026-08-11T14:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-aggregate-0819",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/uploaded/attachment/317153.pdf",
+      "primary": true,
+      "source_as_of": "2026-08-19T14:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "chiba-0819",
+      "publisher": "千葉県",
+      "url": "https://www.pref.chiba.lg.jp/bousai/kouikiouen/r8kumamoto-taiou.html",
+      "primary": true,
+      "source_as_of": "2026-08-19",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "tokyo-0820",
+      "publisher": "東京都",
+      "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082015",
+      "primary": true,
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "tokyo-0821",
+      "publisher": "東京都",
+      "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082106",
+      "primary": true,
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kanagawa-0821",
+      "publisher": "神奈川県",
+      "url": "https://www.pref.kanagawa.jp/docs/bu4/prs/r7010643.html",
+      "primary": true,
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "saitama-tokorozawa-0820",
+      "publisher": "所沢市",
+      "url": "https://www.city.tokorozawa.saitama.jp/tokoronews/press/r8/08/kumamotoouennsyokuinn0820.html",
+      "primary": true,
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "saitama-koshigaya-0821",
+      "publisher": "越谷市",
+      "url": "https://www.city.koshigaya.saitama.jp/anzen_anshin/bosai/oshirase/kumamoto_sien.html",
+      "primary": true,
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kawasaki-0812",
+      "publisher": "川崎市",
+      "url": "https://www.city.kawasaki.jp/templates/prs/601/0000189384.html",
+      "primary": true,
+      "source_as_of": "2026-08-12",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kawasaki-0824",
+      "publisher": "川崎市",
+      "url": "https://www.city.kawasaki.jp/templates/prs/601/0000189631.html",
+      "primary": true,
+      "source_as_of": "2026-08-24",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "osaka-0814",
+      "publisher": "大阪市",
+      "url": "https://www.city.osaka.lg.jp/kikikanrishitsu/page/0000684623.html",
+      "primary": true,
+      "source_as_of": "2026-08-14",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "okayama-0820",
+      "publisher": "岡山県",
+      "url": "https://www.pref.okayama.jp/page/1051632.html",
+      "primary": true,
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "yamaguchi-0820",
+      "publisher": "山口県",
+      "url": "https://www.pref.yamaguchi.lg.jp/press/359667.html",
+      "primary": true,
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "nagoya-0813",
+      "publisher": "名古屋市",
+      "url": "https://www.city.nagoya.jp/houdou/3003942/3003947/3005441.html",
+      "primary": true,
+      "source_as_of": "2026-08-13",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "nagasaki-0817",
+      "publisher": "長崎県",
+      "url": "https://www.pref.nagasaki.jp/press-contents/51537.html",
+      "primary": true,
+      "source_as_of": "2026-08-17",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "nagasaki-health",
+      "publisher": "長崎県",
+      "url": "https://www.pref.nagasaki.jp/press-contents/50893.html",
+      "primary": true,
+      "source_as_of": "2026-07-30",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "fukuoka-0821",
+      "publisher": "福岡県",
+      "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken5.html",
+      "primary": true,
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "tokushima-0824",
+      "publisher": "徳島県",
+      "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315847/",
+      "primary": true,
+      "source_as_of": "2026-08-24",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "shiga-0821",
+      "publisher": "滋賀県",
+      "url": "https://www.pref.shiga.lg.jp/kensei/koho/e-shinbun/oshirase/352146.html",
+      "primary": true,
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "toyama-0821",
+      "publisher": "富山県",
+      "url": "https://www.pref.toyama.jp/1902/bousaianzen/bousai/jishin/kumamotozishin.html",
+      "primary": true,
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kyoto-press-0820",
+      "publisher": "京都府",
+      "url": "https://www.pref.kyoto.jp/press/",
+      "primary": true,
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "hokkaido-0820",
+      "publisher": "北海道",
+      "url": "https://www.pref.hokkaido.lg.jp/sm/ktk/175789.html",
+      "primary": true,
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "aomori-0821",
+      "publisher": "青森県",
+      "url": "https://www.pref.aomori.lg.jp/release/2026/81234.html",
+      "primary": true,
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "hiroshima-city-0813",
+      "publisher": "広島市",
+      "url": "https://www.city.hiroshima.lg.jp/shisei/kouhou/1004010/1045546/1050818/1052407.html",
+      "primary": true,
+      "source_as_of": "2026-08-13",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "saga-0810",
+      "publisher": "佐賀県",
+      "url": "https://www.pref.saga.lg.jp/kiji003120626/index.html",
+      "primary": true,
+      "source_as_of": "2026-08-10",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "saga-health-0730",
+      "publisher": "佐賀県",
+      "url": "https://www.pref.saga.lg.jp/kiji003120545/index.html",
+      "primary": true,
+      "source_as_of": "2026-07-30",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "saga-dwat-0805",
+      "publisher": "佐賀県",
+      "url": "https://www.pref.saga.lg.jp/kiji003120569/index.html",
+      "primary": true,
+      "source_as_of": "2026-08-05",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "pharmacy-secondary-0814",
+      "publisher": "MEDIFAX web",
+      "url": "https://mf.jiho.jp/article/269763",
+      "primary": true,
+      "source_as_of": "2026-08-14",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "ehime-0824",
+      "publisher": "愛媛県 本県の支援状況について（8月24日12時版）",
+      "url": "https://www.pref.ehime.jp/uploaded/attachment/188555.pdf",
+      "primary": true,
+      "source_as_of": "2026-08-24T12:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-pharmacy-0808",
+      "publisher": "熊本県 第21回災害対策本部会議資料（モバイルファーマシー活動履歴）",
+      "url": "https://www.pref.kumamoto.jp/uploaded/attachment/316443.pdf",
+      "primary": true,
+      "source_as_of": "2026-08-08T14:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "chiba-city-support-0819",
+      "publisher": "千葉市 令和8年熊本地震に対する支援・取り組み",
+      "url": "https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/01r8kumamotozisin2.html",
+      "primary": true,
+      "source_as_of": "2026-08-19",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "wakayama-uki-current",
+      "publisher": "和歌山県 令和8年熊本地震における人的・物的支援",
+      "url": "https://www.pref.wakayama.lg.jp/prefg/011900/d00222719.html",
+      "primary": true,
+      "source_as_of": "2026-08-25 recheck",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kanagawa-0821-current",
+      "publisher": "神奈川県 被災地等への支援",
+      "url": "https://www.pref.kanagawa.jp/docs/bu4/prs/r7010643.html",
+      "primary": true,
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kitakyushu-0824-current",
+      "publisher": "北九州市 令和8年熊本地震への支援",
+      "url": "https://ssl.city.kitakyushu.lg.jp/contents/90000638_00003.html",
+      "primary": true,
+      "source_as_of": "2026-08-23",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "saga-hikawa-current",
+      "publisher": "佐賀県 被災地支援",
+      "url": "https://www.pref.saga.lg.jp/kiji003120626/index.html",
+      "primary": true,
+      "source_as_of": "2026-08-10",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
       "source_id": "kumamoto-volunteer-0824",
+      "publisher": "熊本県 災害ボランティアへの積極的な参加をお願いします",
       "url": "https://www.pref.kumamoto.jp/soshiki/27/275523.html",
       "primary": true,
       "source_as_of": "2026-08-24",
-      "checked_at": "2026-08-25T14:36:00+09:00"
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
     },
     {
-      "source_id": "municipal-support-audit",
-      "url": "https://github.com/ryotamatsuki/kumamotoshienmap/blob/main/municipal-support-audit.json",
+      "source_id": "tokyo-0820-plan",
+      "publisher": "東京都 第27報 熊本県への応援職員派遣",
+      "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082015",
       "primary": true,
-      "checked_at": "2026-08-25T14:36:00+09:00"
+      "source_as_of": "2026-08-20",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
     },
     {
-      "source_id": "national-support-audit",
-      "url": "https://github.com/ryotamatsuki/kumamotoshienmap/blob/main/national-support-audit.json",
+      "source_id": "nagoya-0813-plan",
+      "publisher": "名古屋市 被災地域への職員派遣",
+      "url": "https://www.city.nagoya.jp/houdou/3003942/3003947/3005441.html",
       "primary": true,
-      "checked_at": "2026-08-25T14:36:00+09:00"
+      "source_as_of": "2026-08-13",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "osaka-status-0814",
+      "publisher": "大阪市 令和8年熊本地震に対する対応状況",
+      "url": "https://www.city.osaka.lg.jp/kikikanrishitsu/page/0000684623.html",
+      "primary": true,
+      "source_as_of": "2026-08-14",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "aomori-0821-plan",
+      "publisher": "青森県 嘉島町第3班派遣",
+      "url": "https://www.pref.aomori.lg.jp/release/2026/81234.html",
+      "primary": true,
+      "source_as_of": "2026-08-21",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "sapporo-current",
+      "publisher": "札幌市 令和8年熊本地震に伴う札幌市の対応",
+      "url": "https://www.city.sapporo.jp/kinkyu/202607_kumamotojishin.html",
+      "primary": true,
+      "source_as_of": "2026-08-10",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "cao-status-0823",
+      "publisher": "内閣府（防災担当）",
+      "url": "https://www.bousai.go.jp/updates/r8kumamoto_jishin/status/index.html",
+      "primary": true,
+      "source_as_of": "2026-08-23T10:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "mlit-report48",
+      "publisher": "国土交通省",
+      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
+      "primary": true,
+      "source_as_of": "2026-08-23T10:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "fdma-report60",
+      "publisher": "総務省消防庁",
+      "url": "https://www.fdma.go.jp/disaster/info/2026/",
+      "primary": true,
+      "source_as_of": "2026-08-23T10:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kagoshima-fire-end",
+      "publisher": "鹿児島市消防局",
+      "url": "https://www.city.kagoshima.lg.jp/shobo/sbsoumu/kurashi/bosai/shobokyoku/gaiyo/r8kumomatozishin.html",
+      "primary": true,
+      "source_as_of": "2026-08-14T00:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "mod-minister-0823",
+      "publisher": "防衛省",
+      "url": "https://www.mod.go.jp/j/press/kisha/2026/0823a_r.html",
+      "primary": true,
+      "source_as_of": "2026-08-23T18:40:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "mod-disaster-0823",
+      "publisher": "防衛省・自衛隊",
+      "url": "https://www.mod.go.jp/j/approach/defense/saigai/",
+      "primary": true,
+      "source_as_of": "2026-08-23T00:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "mod-js-0824",
+      "publisher": "防衛省・統合幕僚監部",
+      "url": "https://www.mod.go.jp/js/press/",
+      "primary": true,
+      "source_as_of": "2026-08-23T00:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kkr-tec5-0824",
+      "publisher": "国土交通省近畿地方整備局",
+      "url": "https://www.kkr.mlit.go.jp/news/top/press/2026/20260824-2tec-forcedai5jin.html",
+      "primary": true,
+      "source_as_of": "2026-08-24T00:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "mhlw-disaster-recheck",
+      "publisher": "厚生労働省",
+      "url": "https://www.mhlw.go.jp/stf/newpage_73935.html",
+      "primary": true,
+      "source_as_of": "2026-08-21T00:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "npa-recheck",
+      "publisher": "警察庁",
+      "url": "https://www.npa.go.jp/news/release/index.html/",
+      "primary": true,
+      "source_as_of": null,
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-gov-0819",
+      "publisher": "熊本県・政府非常災害現地対策本部",
+      "url": "https://www.pref.kumamoto.jp/uploaded/attachment/317153.pdf",
+      "primary": true,
+      "source_as_of": "2026-08-19T14:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-hq-0802",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/uploaded/attachment/315809.pdf",
+      "primary": true,
+      "source_as_of": "2026-08-02T14:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "cao-scrivener-0731",
+      "publisher": "内閣府",
+      "url": "https://www.bousai.go.jp/pdf/260731_1900-2.pdf",
+      "primary": true,
+      "source_as_of": "2026-07-31T19:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kitakyushu-support-current",
+      "publisher": "北九州市",
+      "url": "https://ssl.city.kitakyushu.lg.jp/contents/90000638_00003.html",
+      "primary": true,
+      "source_as_of": null,
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kantei-0812-health",
+      "publisher": "首相官邸",
+      "url": "https://www.kantei.go.jp/jp/105/actions/202608/12hijoukaigi.html",
+      "primary": true,
+      "source_as_of": "2026-08-12T00:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kantei-0818-support",
+      "publisher": "首相官邸",
+      "url": "https://www.kantei.go.jp/jp/105/actions/202608/18hijoukaigi_chibagouu.html",
+      "primary": true,
+      "source_as_of": "2026-08-18T15:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "jwa-purifier-current",
+      "publisher": "独立行政法人水資源機構",
+      "url": "https://www.water.go.jp/honsya/honsya/bousai/r807kumamotojishin/index.html",
+      "primary": true,
+      "source_as_of": null,
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kumagyou-0814-current",
+      "publisher": "熊本県行政書士会",
+      "url": "https://www.kumagyou.jp/news/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E7%86%8A%E6%9C%AC%E5%9C%B0%E9%9C%87%E3%81%AB%E4%BF%82%E3%82%8B%E3%80%8C%E7%BD%B9%E7%81%BD%E8%A8%BC%E6%98%8E%E6%9B%B8%E7%94%B3%E8%AB%8B%E6%94%AF%E6%8F%B4%E3%80%8D%E3%81%AB/",
+      "primary": true,
+      "source_as_of": "2026-08-14T00:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kantei-0803-finance",
+      "publisher": "首相官邸",
+      "url": "https://www.kantei.go.jp/jp/105/statement/2026/0803kaiken.html",
+      "primary": true,
+      "source_as_of": "2026-08-03T00:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "tokushima-toilet-0824",
+      "publisher": "徳島県",
+      "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315847/",
+      "primary": true,
+      "source_as_of": "2026-08-24T00:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "moe-toilet-current",
+      "publisher": "環境省",
+      "url": "https://www.env.go.jp/saigai/kumamoto_earthquake_202607/sns/202608.html",
+      "primary": true,
+      "source_as_of": null,
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "yatsushiro-cert-0823",
+      "publisher": "八代市",
+      "url": "https://www.city.yatsushiro.lg.jp/kiji00326973/index.html",
+      "primary": true,
+      "source_as_of": "2026-08-18T00:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kantei-0825-cabinet",
+      "publisher": "首相官邸",
+      "url": "https://www.kantei.go.jp/jp/kakugi/2026/kakugi-2026082501.html",
+      "primary": true,
+      "source_as_of": "2026-08-25T00:00:00+09:00",
+      "checked_at": "2026-08-25T14:36:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-hakuo2-0823",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/219/276703.html",
+      "primary": true,
+      "source_as_of": "2026-08-23T00:00:00+09:00",
+      "checked_at": "2026-08-25T15:17:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-housing-consult-0825",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/115/278111.html",
+      "primary": true,
+      "source_as_of": "2026-08-25T13:00:00+09:00",
+      "checked_at": "2026-08-25T15:17:00+09:00",
+      "rechecked_at": "2026-08-25T15:17:00+09:00"
     }
   ],
   "entries": [
@@ -1816,6 +2391,16 @@
         "national-support-audit"
       ],
       "note": "national-support-audit.json又は関連全国支援カテゴリーで裁定済み。"
+    },
+    {
+      "entity": "熊本県住宅リフォーム推進協議会",
+      "kind": "local_support_network",
+      "scope": "被災住宅の復旧・改修に関する無料電話・対面相談",
+      "state": "CURRENT",
+      "source_ids": [
+        "kumamoto-housing-consult-0825"
+      ],
+      "note": "熊本県公式ページで8月25日13時から住まいサポートダイヤル開始を確認。基準14:08時点で実施中。"
     }
   ],
   "required_entities": [
@@ -1933,6 +2518,7 @@
     "熊本市",
     "熊本市社会福祉協議会",
     "熊本県",
+    "熊本県住宅リフォーム推進協議会",
     "熊本県内市町村",
     "熊本県薬剤師会",
     "熊本県行政書士会",
@@ -2000,27 +2586,14 @@
     "鹿児島県"
   ],
   "source_mentions": [
-    "DHEAT",
-    "DMAT",
-    "DPAT",
-    "DWAT",
     "JMAT",
     "JRAT",
     "TEC-FORCE",
-    "あさぎり町",
-    "あさぎり町社会福祉協議会",
     "さいたま市",
     "三重県",
-    "上天草市",
-    "上天草市社会福祉協議会",
-    "五木村",
-    "五木村社会福祉協議会",
     "京都市",
     "京都府",
-    "人吉市",
-    "人吉市社会福祉協議会",
     "佐賀県",
-    "全国社会福祉協議会",
     "八代市",
     "八代市社会福祉協議会",
     "兵庫県",
@@ -2029,33 +2602,17 @@
     "北海道",
     "千葉市",
     "千葉県",
-    "南小国町",
-    "南小国町社会福祉協議会",
-    "南関町",
-    "南関町社会福祉協議会",
-    "南阿蘇村",
-    "南阿蘇村社会福祉協議会",
     "厚生労働省",
-    "合志市",
-    "合志市社会福祉協議会",
     "名古屋市",
     "和歌山県",
-    "和水町",
-    "和水町社会福祉協議会",
     "嘉島町",
     "嘉島町社会福祉協議会",
     "国土交通省",
     "埼玉県",
     "堺市",
-    "多良木町",
-    "多良木町社会福祉協議会",
     "大分県",
-    "大津町",
-    "大津町社会福祉協議会",
     "大阪市",
     "大阪府",
-    "天草市",
-    "天草市社会福祉協議会",
     "奈良県",
     "宇土市",
     "宇土市社会福祉協議会",
@@ -2064,16 +2621,8 @@
     "宮崎県",
     "宮崎県薬剤師会",
     "富山県",
-    "小国町",
-    "小国町社会福祉協議会",
     "山口県",
     "山梨県",
-    "山江村",
-    "山江村社会福祉協議会",
-    "山都町",
-    "山都町社会福祉協議会",
-    "山鹿市",
-    "山鹿市社会福祉協議会",
     "岐阜県",
     "岡山県",
     "岩手県",
@@ -2089,50 +2638,29 @@
     "政府非常災害現地対策本部",
     "新潟市",
     "日本水道協会",
-    "日本薬剤師会",
     "日本行政書士会連合会",
-    "日本赤十字社",
     "札幌市",
     "東京都",
     "横浜市",
-    "水上村",
-    "水上村社会福祉協議会",
-    "水俣市",
-    "水俣市社会福祉協議会",
     "水資源機構",
     "氷川町",
     "氷川町社会福祉協議会",
     "沖縄県",
-    "津奈木町",
-    "津奈木町社会福祉協議会",
     "浜松市",
     "消防庁",
-    "湯前町",
-    "湯前町社会福祉協議会",
     "滋賀県",
-    "災害支援ナース",
     "熊本市",
     "熊本市社会福祉協議会",
     "熊本県",
+    "熊本県住宅リフォーム推進協議会",
     "熊本県内市町村",
     "熊本県薬剤師会",
-    "熊本県行政書士会",
-    "玉名市",
-    "玉名市社会福祉協議会",
-    "玉東町",
-    "玉東町社会福祉協議会",
-    "球磨村",
-    "球磨村社会福祉協議会",
     "環境省",
-    "産山村",
-    "産山村社会福祉協議会",
     "甲佐町",
     "甲佐町社会福祉協議会",
     "益城町",
     "益城町社会福祉協議会",
     "相模原市",
-    "相良村",
-    "相良村社会福祉協議会",
     "石川県",
     "神奈川県",
     "神戸市",
@@ -2149,33 +2677,15 @@
     "自衛隊",
     "芦北町",
     "芦北町社会福祉協議会",
-    "苓北町",
-    "苓北町社会福祉協議会",
-    "荒尾市",
-    "荒尾市社会福祉協議会",
-    "菊池市",
-    "菊池市社会福祉協議会",
-    "菊陽町",
-    "菊陽町社会福祉協議会",
-    "西原村",
-    "西原村社会福祉協議会",
     "警察庁",
     "財務省",
-    "錦町",
-    "錦町社会福祉協議会",
     "長崎県",
-    "長洲町",
-    "長洲町社会福祉協議会",
     "長野県",
     "防衛省",
-    "阿蘇市",
-    "阿蘇市社会福祉協議会",
     "青森県",
     "静岡市",
     "静岡県",
     "香川県",
-    "高森町",
-    "高森町社会福祉協議会",
     "高知県",
     "鳥取県",
     "鹿児島県"
@@ -2295,6 +2805,7 @@
     "熊本市",
     "熊本市社会福祉協議会",
     "熊本県",
+    "熊本県住宅リフォーム推進協議会",
     "熊本県内市町村",
     "熊本県薬剤師会",
     "熊本県行政書士会",
@@ -2366,416 +2877,756 @@
   "blocking_unresolved": [],
   "accepted_unresolved": [
     {
+      "issue_id": "institution-unknown-001",
       "entity": "人吉市",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-002",
       "entity": "人吉市社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-003",
       "entity": "荒尾市",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-004",
       "entity": "荒尾市社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-005",
       "entity": "水俣市",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-006",
       "entity": "水俣市社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-007",
       "entity": "玉名市",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-008",
       "entity": "玉名市社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-009",
       "entity": "山鹿市",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-010",
       "entity": "山鹿市社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-011",
       "entity": "菊池市",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-012",
       "entity": "菊池市社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-013",
       "entity": "上天草市",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-014",
       "entity": "上天草市社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-015",
       "entity": "阿蘇市",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-016",
       "entity": "阿蘇市社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-017",
       "entity": "天草市",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-018",
       "entity": "天草市社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-019",
       "entity": "合志市",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-020",
       "entity": "合志市社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-021",
       "entity": "玉東町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-022",
       "entity": "玉東町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-023",
       "entity": "南関町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-024",
       "entity": "南関町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-025",
       "entity": "長洲町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-026",
       "entity": "長洲町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-027",
       "entity": "和水町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-028",
       "entity": "和水町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-029",
       "entity": "大津町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-030",
       "entity": "大津町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-031",
       "entity": "菊陽町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-032",
       "entity": "菊陽町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-033",
       "entity": "南小国町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-034",
       "entity": "南小国町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-035",
       "entity": "小国町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-036",
       "entity": "小国町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-037",
       "entity": "産山村",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-038",
       "entity": "産山村社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-039",
       "entity": "高森町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-040",
       "entity": "高森町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-041",
       "entity": "西原村",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-042",
       "entity": "西原村社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-043",
       "entity": "南阿蘇村",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-044",
       "entity": "南阿蘇村社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-045",
       "entity": "山都町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-046",
       "entity": "山都町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-047",
       "entity": "津奈木町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-048",
       "entity": "津奈木町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-049",
       "entity": "錦町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-050",
       "entity": "錦町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-051",
       "entity": "多良木町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-052",
       "entity": "多良木町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-053",
       "entity": "湯前町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-054",
       "entity": "湯前町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-055",
       "entity": "水上村",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-056",
       "entity": "水上村社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-057",
       "entity": "相良村",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-058",
       "entity": "相良村社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-059",
       "entity": "五木村",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-060",
       "entity": "五木村社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-061",
       "entity": "山江村",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-062",
       "entity": "山江村社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-063",
       "entity": "球磨村",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-064",
       "entity": "球磨村社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-065",
       "entity": "あさぎり町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-066",
       "entity": "あさぎり町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-067",
       "entity": "苓北町",
-      "scope": "災害ボランティアセンター関与",
       "state": "UNKNOWN",
-      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。"
+      "reason": "県公式横断表で基準日時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     },
     {
+      "issue_id": "institution-unknown-068",
       "entity": "苓北町社会福祉協議会",
-      "scope": "災害ボランティアセンター運営関与",
       "state": "UNKNOWN",
-      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。"
+      "reason": "基準日時点の災害VC運営関与を直接確認できずUNKNOWN。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-26T09:00:00+09:00"
     }
   ],
   "summary": {
-    "entities": 179,
+    "entities": 180,
     "municipalities": 45,
     "social_welfare_councils": 45,
     "active_volunteer_center_municipalities": 11,
@@ -2783,6 +3634,311 @@
     "national_network_entities": 30,
     "missing_entities": 0,
     "unadjudicated_source_mentions": 0,
-    "blocking_unresolved": 0
+    "blocking_unresolved": 0,
+    "source_mention_count": 103,
+    "source_mention_adjudicated_count": 103
+  },
+  "rechecked_at": "2026-08-25T15:17:00+09:00",
+  "source_mention_evidence": {
+    "saitama-tokorozawa-0820": [
+      "埼玉県",
+      "熊本市"
+    ],
+    "saitama-koshigaya-0821": [
+      "埼玉県",
+      "熊本市"
+    ],
+    "chiba-0819": [
+      "千葉県",
+      "熊本市"
+    ],
+    "tokyo-0820-plan": [
+      "東京都",
+      "熊本市"
+    ],
+    "kanagawa-0821-current": [
+      "神奈川県",
+      "熊本市"
+    ],
+    "kawasaki-0812": [
+      "川崎市",
+      "熊本市"
+    ],
+    "osaka-0814": [
+      "大阪市",
+      "熊本市"
+    ],
+    "kumamoto-roster-0811": [
+      "山梨県",
+      "熊本市",
+      "群馬県",
+      "さいたま市",
+      "横浜市",
+      "相模原市",
+      "新潟市",
+      "静岡市",
+      "神戸市",
+      "京都市",
+      "堺市",
+      "広島市",
+      "福岡市",
+      "福井県",
+      "八代市",
+      "大阪府",
+      "大分県",
+      "鹿児島県",
+      "沖縄県",
+      "香川県",
+      "宇土市",
+      "石川県",
+      "宇城市",
+      "長野県",
+      "岐阜県",
+      "静岡県",
+      "愛知県",
+      "三重県",
+      "兵庫県",
+      "奈良県",
+      "宮崎県",
+      "鳥取県",
+      "氷川町",
+      "島根県",
+      "広島県",
+      "高知県",
+      "浜松市",
+      "岩手県",
+      "嘉島町",
+      "秋田県"
+    ],
+    "sapporo-current": [
+      "札幌市",
+      "熊本市"
+    ],
+    "chiba-city-support-0819": [
+      "千葉市",
+      "熊本市"
+    ],
+    "okayama-0820": [
+      "岡山県",
+      "八代市"
+    ],
+    "yamaguchi-0820": [
+      "山口県",
+      "八代市"
+    ],
+    "nagasaki-0817": [
+      "長崎県",
+      "八代市",
+      "宇城市",
+      "美里町"
+    ],
+    "kitakyushu-0824-current": [
+      "北九州市",
+      "八代市"
+    ],
+    "osaka-status-0814": [
+      "大阪市",
+      "八代市",
+      "氷川町"
+    ],
+    "nagoya-0813-plan": [
+      "名古屋市",
+      "八代市"
+    ],
+    "kyoto-press-0820": [
+      "京都府",
+      "八代市",
+      "宇土市"
+    ],
+    "shiga-0821": [
+      "滋賀県",
+      "宇土市",
+      "宇城市"
+    ],
+    "tokushima-0824": [
+      "徳島県",
+      "宇土市"
+    ],
+    "fukuoka-0821": [
+      "福岡県",
+      "宇土市",
+      "宇城市"
+    ],
+    "toyama-0821": [
+      "富山県",
+      "宇城市"
+    ],
+    "wakayama-uki-current": [
+      "和歌山県",
+      "宇城市"
+    ],
+    "kawasaki-0824": [
+      "川崎市",
+      "宇城市"
+    ],
+    "ehime-0824": [
+      "愛媛県",
+      "氷川町"
+    ],
+    "saga-hikawa-current": [
+      "佐賀県",
+      "氷川町"
+    ],
+    "hiroshima-city-0813": [
+      "広島市",
+      "氷川町"
+    ],
+    "hokkaido-0820": [
+      "北海道",
+      "嘉島町"
+    ],
+    "aomori-0821-plan": [
+      "青森県",
+      "嘉島町"
+    ],
+    "kumamoto-pharmacy-0808": [
+      "熊本県薬剤師会",
+      "福岡県薬剤師会",
+      "宮崎県薬剤師会"
+    ],
+    "kumamoto-aggregate-0819": [
+      "熊本県",
+      "熊本県内市町村"
+    ],
+    "kumamoto-volunteer-0824": [
+      "熊本市",
+      "熊本市社会福祉協議会",
+      "八代市",
+      "八代市社会福祉協議会",
+      "宇土市",
+      "宇土市社会福祉協議会",
+      "宇城市",
+      "宇城市社会福祉協議会",
+      "美里町",
+      "美里町社会福祉協議会",
+      "御船町",
+      "御船町社会福祉協議会",
+      "嘉島町",
+      "嘉島町社会福祉協議会",
+      "益城町",
+      "益城町社会福祉協議会",
+      "甲佐町",
+      "甲佐町社会福祉協議会",
+      "氷川町",
+      "氷川町社会福祉協議会",
+      "芦北町",
+      "芦北町社会福祉協議会"
+    ],
+    "cao-status-0823": [
+      "内閣府",
+      "政府非常災害現地対策本部"
+    ],
+    "kumamoto-gov-0819": [
+      "内閣府",
+      "政府非常災害現地対策本部"
+    ],
+    "kantei-0825-cabinet": [
+      "内閣府",
+      "政府非常災害現地対策本部",
+      "厚生労働省",
+      "財務省",
+      "経済産業省"
+    ],
+    "kitakyushu-support-current": [
+      "消防庁",
+      "厚生労働省",
+      "内閣府",
+      "総務省",
+      "JMAT",
+      "JRAT"
+    ],
+    "fdma-report60": [
+      "消防庁",
+      "総務省",
+      "警察庁"
+    ],
+    "kagoshima-fire-end": [
+      "消防庁",
+      "総務省"
+    ],
+    "kantei-0818-support": [
+      "厚生労働省",
+      "総務省",
+      "JMAT",
+      "JRAT"
+    ],
+    "mhlw-disaster-recheck": [
+      "厚生労働省",
+      "JMAT",
+      "JRAT"
+    ],
+    "kantei-0812-health": [
+      "厚生労働省"
+    ],
+    "mlit-report48": [
+      "国土交通省",
+      "自衛隊",
+      "日本水道協会",
+      "水資源機構",
+      "TEC-FORCE"
+    ],
+    "mod-minister-0823": [
+      "国土交通省",
+      "自衛隊",
+      "日本水道協会",
+      "防衛省"
+    ],
+    "jwa-purifier-current": [
+      "国土交通省",
+      "水資源機構",
+      "日本水道協会"
+    ],
+    "kkr-tec5-0824": [
+      "国土交通省",
+      "TEC-FORCE"
+    ],
+    "kumamoto-hq-0802": [
+      "総務省"
+    ],
+    "yatsushiro-cert-0823": [
+      "内閣府"
+    ],
+    "kumagyou-0814-current": [
+      "内閣府",
+      "日本行政書士会連合会"
+    ],
+    "cao-scrivener-0731": [
+      "内閣府",
+      "日本行政書士会連合会"
+    ],
+    "mod-disaster-0823": [
+      "防衛省",
+      "自衛隊"
+    ],
+    "mod-js-0824": [
+      "防衛省",
+      "自衛隊"
+    ],
+    "kantei-0803-finance": [
+      "総務省"
+    ],
+    "tokushima-toilet-0824": [
+      "環境省"
+    ],
+    "moe-toilet-current": [
+      "環境省"
+    ],
+    "kumamoto-hakuo2-0823": [
+      "防衛省",
+      "自衛隊",
+      "熊本県"
+    ],
+    "npa-recheck": [
+      "警察庁"
+    ],
+    "kumamoto-housing-consult-0825": [
+      "熊本県",
+      "熊本県住宅リフォーム推進協議会"
+    ]
   }
 }
