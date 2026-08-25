@@ -39,7 +39,7 @@ jobs:
         run: |
           set -Eeuo pipefail
           npm run build
-      - name: Finalize ledger against current branch diff
+      - name: Finalize ledger and create local candidate commit
         run: |
           set -Eeuo pipefail
           node <<'NODE'
@@ -51,16 +51,16 @@ jobs:
           l.expected_changed_files=[...new Set([...committed,...working,p])].sort();
           fs.writeFileSync(p,JSON.stringify(l,null,2)+'\n');
           NODE
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -A
-      - name: Release Gate on staged candidate
+          git commit -m 'data: close v2.5 institution and source-mention audit'
+      - name: Release Gate on local committed candidate
         run: |
           set -Eeuo pipefail
           npm run test:release-gate
           npm run validate:release -- --base=origin/main --ledger=operations/ledgers/refresh-20260825-1408.json --require-ledger-if-data-change
-      - name: Commit final generated candidate
+      - name: Push validated candidate
         run: |
           set -Eeuo pipefail
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git commit -m 'data: close v2.5 institution and source-mention audit'
           git push origin HEAD:audit/timepoint-20260825-1408
