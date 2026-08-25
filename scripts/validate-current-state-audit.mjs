@@ -67,10 +67,9 @@ assert.ok(record("ehime-health").scale.includes("17人"));
 assert.ok(record("ehime-dmat").scale.includes("4人"));
 assert.ok(record("ehime-dpat").status.includes("活動終了"));
 assert.ok(record("ehime-assessor").status.includes("活動終了"));
-assert.ok(record("ehime-pair").status.includes("要確認"));
-for (const id of ["pair-hikawa", "pair-kashima"]) {
-  assert.ok(record(id).status.includes("全件再監査"), `${id}のv2.5再監査表示がありません`);
-  assert.ok(!record(id).status.includes("活動中"), `${id}を根拠なく活動中表示しています`);
+for (const id of ["ehime-pair", "pair-hikawa", "pair-kashima"]) {
+  assert.ok(record(id).status.includes("要確認"), `${id}のraw履歴レコードを現況扱いしています`);
+  assert.ok(!record(id).status.includes("活動中"), `${id}のraw履歴レコードに活動中表示があります`);
 }
 
 assert.ok(need("p-shelter").observed.includes("8月24日15時30分更新"));
