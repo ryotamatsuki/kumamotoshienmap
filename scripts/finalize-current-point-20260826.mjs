@@ -55,4 +55,12 @@ v=v.replace('assert.ok(need("p-shelter").observed.includes("8月24日15時30分�
  .replace('assert.equal(shelterData.meta.current_count, 67);',`assert.equal(shelterData.meta.current_count, ${shelterCount});`)
  .replace('assert.equal(shelterData.shelters.length, 67);',`assert.equal(shelterData.shelters.length, ${shelterCount});`);
 writeFileSync(validator,v);
+
+const volunteerValidator='scripts/validate-volunteer-data.mjs';
+let volunteer=readFileSync(volunteerValidator,'utf8');
+volunteer=volunteer
+  .replace('data.meta.reference_at.startsWith("2026-08-24")','data.meta.reference_at.startsWith("2026-08-26")')
+  .replace('ボランティア情報の基準日が2026-08-22ではありません','ボランティア情報の基準日が2026-08-26ではありません');
+writeFileSync(volunteerValidator,volunteer);
+
 console.log(JSON.stringify({status:'PASS',shelterCount}));
