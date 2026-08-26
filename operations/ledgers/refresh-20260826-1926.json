@@ -69,6 +69,22 @@
       "source_id": "kumamoto-hakuo2-0826-plan",
       "url": "https://www.pref.kumamoto.jp/soshiki/219/276703.html",
       "checked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "kkr-tec5-0824",
+      "publisher": "国土交通省近畿地方整備局",
+      "url": "https://www.kkr.mlit.go.jp/news/top/press/2026/20260824-2tec-forcedai5jin.html",
+      "primary": true,
+      "source_as_of": "2026-08-24T00:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-volunteer-0824",
+      "publisher": "熊本県 災害ボランティアへの積極的な参加をお願いします",
+      "url": "https://www.pref.kumamoto.jp/soshiki/27/275523.html",
+      "primary": true,
+      "source_as_of": "2026-08-24T00:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00"
     }
   ],
   "coverage": {
