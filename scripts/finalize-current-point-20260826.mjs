@@ -3,6 +3,7 @@ import {readFileSync,writeFileSync} from 'node:fs';
 const sourceFiles=['ehime_kumamoto_support_geocoded_shelters_20260802.html','public/dashboard.html'];
 const shelterCount=JSON.parse(readFileSync('current-shelters.json','utf8')).shelters.length;
 const referenceAt='2026-08-26T19:26:53+09:00';
+const volunteerCheckedAt='2026-08-26T20:05:00+09:00';
 
 function updateJsonConstant(text,name,nextMarker,mutate){
   const marker=`const ${name}=`;
@@ -42,7 +43,7 @@ for(const path of sourceFiles){
   });
   text=updateJsonConstant(text,'PAGE_RECHECK_META','const PROVIDER_LABEL=',meta=>{
     meta.checkedAt=referenceAt;
-    meta.volunteerCheckedAt=referenceAt;
+    meta.volunteerCheckedAt=volunteerCheckedAt;
   });
   text=text.replaceAll('2026年8月25日 14:08（JST）','2026年8月26日 19:26（JST）')
     .replaceAll('8月24日までの確認済み支援を反映','8月26日19:26までに確認できた一次情報を反映')
@@ -58,7 +59,8 @@ v=v.replace('assert.ok(need("p-shelter").observed.includes("8月24日15時30分�
  .replace('assert.equal(event("t-current-status").summary, "避難者2,709人、開設避難所65か所、人的被害398人、住家被害38,537棟。");','assert.equal(event("t-current-status").summary, "避難者2,589人、開設避難所64か所、人的被害402人、住家被害39,567棟。");')
  .replace('"D+27", "行政応援971人", "8月24日までの確認済み支援", "8月25日14:08基準で全件再監査"','"D+29", "行政応援971人", "8月26日19:26までに確認できた一次情報", "8月26日19:26基準で全件再監査"')
  .replace('assert.equal(shelterData.meta.current_count, 67);',`assert.equal(shelterData.meta.current_count, ${shelterCount});`)
- .replace('assert.equal(shelterData.shelters.length, 67);',`assert.equal(shelterData.shelters.length, ${shelterCount});`);
+ .replace('assert.equal(shelterData.shelters.length, 67);',`assert.equal(shelterData.shelters.length, ${shelterCount});`)
+ .replace('assert.ok(Date.parse(pageMeta.volunteerCheckedAt) <= Date.parse(REFERENCE_AT), "volunteer確認時刻がreference_atより未来です");','assert.ok(Number.isFinite(Date.parse(pageMeta.volunteerCheckedAt)) && Date.parse(pageMeta.volunteerCheckedAt) >= Date.parse(REFERENCE_AT), "volunteer確認時刻がreference_at以前又は不正です");');
 writeFileSync(validator,v);
 
 const volunteerValidator='scripts/validate-volunteer-data.mjs';
@@ -68,4 +70,4 @@ volunteer=volunteer
   .replace('ボランティア情報の基準日が2026-08-22ではありません','ボランティア情報の基準日が2026-08-26ではありません');
 writeFileSync(volunteerValidator,volunteer);
 
-console.log(JSON.stringify({status:'PASS',shelterCount,referenceAt}));
+console.log(JSON.stringify({status:'PASS',shelterCount,referenceAt,volunteerCheckedAt}));
