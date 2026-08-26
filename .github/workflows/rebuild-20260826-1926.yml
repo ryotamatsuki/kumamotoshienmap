@@ -1,0 +1,42 @@
+name: Temporary deterministic rebuild 20260826-1926
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260826-1926
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    if: ${{ !contains(github.event.head_commit.message || '', '[skip rebuild]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: audit/timepoint-20260826-1926
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+      - name: Rebuild committed dashboard artifacts
+        run: |
+          set -Eeuo pipefail
+          npm run build
+          git diff --check
+          git status --short
+      - name: Commit deterministic build output
+        run: |
+          set -Eeuo pipefail
+          git add ehime_kumamoto_support_geocoded_shelters_20260802.html public/dashboard.html
+          if git diff --cached --quiet; then
+            echo 'Build output already reproducible.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'build: commit reproducible report 45 artifacts [skip rebuild]'
+          git push origin HEAD:audit/timepoint-20260826-1926
