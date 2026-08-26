@@ -2,6 +2,7 @@ import {readFileSync,writeFileSync} from 'node:fs';
 
 const sourceFiles=['ehime_kumamoto_support_geocoded_shelters_20260802.html','public/dashboard.html'];
 const shelterCount=JSON.parse(readFileSync('current-shelters.json','utf8')).shelters.length;
+const referenceAt='2026-08-26T19:26:53+09:00';
 
 function updateJsonConstant(text,name,nextMarker,mutate){
   const marker=`const ${name}=`;
@@ -39,6 +40,10 @@ for(const path of sourceFiles){
     if(admin)admin.observed='熊本県第45報では住家被害39,567棟。市町別旧スナップショットとは時点が異なるため、県計と旧内訳を分離して表示する。';
     if(housing)housing.observed='熊本県第45報では住家被害39,567棟。被害区分別の現況は確認できた県計の範囲を超えて推測せず、旧区分値を現況として流用しない。';
   });
+  text=updateJsonConstant(text,'PAGE_RECHECK_META','const PROVIDER_LABEL=',meta=>{
+    meta.checkedAt=referenceAt;
+    meta.volunteerCheckedAt=referenceAt;
+  });
   text=text.replaceAll('2026年8月25日 14:08（JST）','2026年8月26日 19:26（JST）')
     .replaceAll('8月24日までの確認済み支援を反映','8月26日19:26までに確認できた一次情報を反映')
     .replaceAll('8月25日14:08基準で全件再監査','8月26日19:26基準で全件再監査')
@@ -63,4 +68,4 @@ volunteer=volunteer
   .replace('ボランティア情報の基準日が2026-08-22ではありません','ボランティア情報の基準日が2026-08-26ではありません');
 writeFileSync(volunteerValidator,volunteer);
 
-console.log(JSON.stringify({status:'PASS',shelterCount}));
+console.log(JSON.stringify({status:'PASS',shelterCount,referenceAt}));
