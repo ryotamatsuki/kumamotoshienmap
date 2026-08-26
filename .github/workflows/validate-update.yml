@@ -104,8 +104,9 @@ jobs:
             if [[ -n "$ledger_path" ]]; then
               echo "- Ledger path: $ledger_path"
             else
-              echo "- Ledger path: (none; required automatically if sensitive data changes)"
+              echo "- Ledger path: (none; required automatically if sensitive timepoint data changes)"
             fi
+            echo "- Sender audit manifest: sender-municipality-audit.json"
             echo "- Live official JSON fetch: not used"
           } >> "$GITHUB_STEP_SUMMARY"
 
@@ -150,6 +151,21 @@ jobs:
           node --check scripts/test-release-gate.mjs
           node --check scripts/sync-national-support-audit.mjs
           node --check scripts/validate-national-support-audit.mjs
+          node --check scripts/sender-coverage-lib.mjs
+          node --check scripts/validate-sender-coverage.mjs
+          node --check scripts/test-sender-coverage-gates.mjs
+          node --check scripts/validate-release-with-sender.mjs
+          node --check scripts/sync-sender-dist.mjs
+          node --check scripts/validate-sender-dist.mjs
+
+      - name: Run sender coverage hard gates explicitly
+        run: |
+          set -Eeuo pipefail
+          npm run validate:ehime-sender-coverage
+          npm run validate:nationwide-sender-coverage
+          npm run validate:sender-source-mentions
+          npm run validate:sender-coverage
+          npm run validate:sender-dist
 
       - name: Run Release Gate self-tests
         run: |
@@ -164,7 +180,7 @@ jobs:
           git diff --check
           git diff --check "${BASE_SHA}...HEAD"
 
-      - name: Run the timepoint Release Gate
+      - name: Run the timepoint and sender Release Gates
         env:
           BASE_SHA: ${{ steps.context.outputs.base_sha }}
           LEDGER_PATH: ${{ steps.context.outputs.ledger_path }}
@@ -184,4 +200,4 @@ jobs:
         if: ${{ success() }}
         run: |
           set -Eeuo pipefail
-          echo "Release Gate passed: build, self-tests, syntax checks, diff checks, and release validation all succeeded."
+          echo "Release Gate passed: existing v2.5 gates, Ehime 20/20 sender gate, nationwide 47-prefecture discovery gate, source-mention closure, build, self-tests, syntax checks and diff checks all succeeded."
