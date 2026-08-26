@@ -2,7 +2,7 @@
   "schema_version": 1,
   "repository": "ryotamatsuki/kumamotoshienmap",
   "audit_type": "sender_municipality_coverage",
-  "policy_version": "2.5+sender-coverage-1",
+  "policy_version": "2.6",
   "reference_at": "2026-08-27T06:34:00+09:00",
   "checked_at": "2026-08-27T06:34:00+09:00",
   "base_main_sha": "c3a216faa48062d14cb88b07a36a4c23e705a43a",
