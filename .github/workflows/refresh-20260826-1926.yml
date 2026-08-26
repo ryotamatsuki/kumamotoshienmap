@@ -65,9 +65,10 @@ jobs:
             writeFileSync(p,t);
           }
           NODE
-      - name: Record expected post-deploy smoke count
+      - name: Defer workflow-file updates to authenticated finalization
         run: |
           set -Eeuo pipefail
+          git checkout HEAD -- .github/workflows/post-deploy-pages-smoke.yml
           node --input-type=module - <<'NODE'
           import {readFileSync} from 'node:fs';
           const count=JSON.parse(readFileSync('current-shelters.json','utf8')).shelters.length;
