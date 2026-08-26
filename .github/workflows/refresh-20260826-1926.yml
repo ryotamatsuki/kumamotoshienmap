@@ -1,0 +1,96 @@
+name: Temporary v2.5 full refresh 20260826-1926
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260826-1926
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    if: ${{ !contains(github.event.head_commit.message || '', '[skip refresh]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: audit/timepoint-20260826-1926
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Candidate shelter refresh and strict validation
+        run: |
+          set -Eeuo pipefail
+          node scripts/update-current-shelters.mjs --dry-run --candidate-output=current-shelters.candidate.json
+          node scripts/validate-current-shelters.mjs --candidate current-shelters.candidate.json
+      - name: Apply current shelters and v2.5 adjudication refresh
+        run: |
+          set -Eeuo pipefail
+          node scripts/update-current-shelters.mjs
+          node scripts/refresh-20260826-1926.mjs
+      - name: Patch post-deploy expected shelter count
+        run: |
+          set -Eeuo pipefail
+          node --input-type=module - <<'NODE'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          const count=JSON.parse(readFileSync('current-shelters.json','utf8')).shelters.length;
+          const p='.github/workflows/post-deploy-pages-smoke.yml';
+          let t=readFileSync(p,'utf8');
+          t=t.replace(/current_count!==\d+/g,`current_count!==${count}`)
+             .replace(/shelters\.length!==\d+/g,`shelters.length!==${count}`)
+             .replace(/current shelters count must be \d+/g,`current shelters count must be ${count}`);
+          writeFileSync(p,t);
+          console.log(JSON.stringify({currentShelters:count}));
+          NODE
+      - name: Build generated artifacts
+        run: |
+          set -Eeuo pipefail
+          npm run build
+      - name: Remove temporary runner and finalize release ledger
+        run: |
+          set -Eeuo pipefail
+          rm -f current-shelters.candidate.json
+          git rm .github/workflows/refresh-20260826-1926.yml scripts/refresh-20260826-1926.mjs
+          git add -N .
+          node --input-type=module - <<'NODE'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          const base='96d0aa6513703634f7355a2cf9fd95a78d0e9de1';
+          const lp='operations/ledgers/refresh-20260826-1926.json';
+          const ledger=JSON.parse(readFileSync(lp,'utf8'));
+          const shelters=JSON.parse(readFileSync('current-shelters.json','utf8'));
+          const unresolved=shelters.shelters.filter(x=>x.coordinate_status==='unresolved').length;
+          const conflict=shelters.shelters.filter(x=>x.coordinate_status==='conflict').length;
+          ledger.coverage.current_count=shelters.shelters.length;
+          ledger.coverage.unresolved_count=unresolved;
+          ledger.coverage.conflict_count=conflict;
+          ledger.snapshots.current_shelters=shelters.shelters.length;
+          let files=execFileSync('git',['diff','--name-only',base],{encoding:'utf8'}).trim().split(/\n/u).filter(Boolean);
+          files=files.filter(p=>p!=='.github/workflows/refresh-20260826-1926.yml'&&p!=='scripts/refresh-20260826-1926.mjs'&&p!=='current-shelters.candidate.json');
+          if(!files.includes(lp))files.push(lp);
+          ledger.expected_changed_files=[...new Set(files)].sort();
+          writeFileSync(lp,JSON.stringify(ledger,null,2)+'\n');
+          console.log(JSON.stringify({expectedChangedFiles:ledger.expected_changed_files,currentShelters:shelters.shelters.length,unresolved,conflict}));
+          NODE
+          git add -A
+      - name: Release self-test and gate
+        run: |
+          set -Eeuo pipefail
+          npm run test:release-gate
+          npm run validate:release
+          git diff --check --cached
+      - name: Commit generated refresh
+        run: |
+          set -Eeuo pipefail
+          if git diff --cached --quiet; then
+            echo 'No generated changes.'
+            exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'data: 2026-08-26時点の全面再監査を反映 [skip refresh]'
+          git push origin HEAD:audit/timepoint-20260826-1926
