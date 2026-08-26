@@ -31,7 +31,7 @@ function targetPageMeta(html) {
   meta.volunteerCheckedAt ||= audit.reference_at;
   const municipalRow = {
     section: "他自治体等", status: "差分あり",
-    current: "8月25日14:08に対口支援・他自治体支援を全件再監査",
+    current: "8月26日19:26に対口支援・他自治体支援を全件再監査",
     previous: "8月8～19日資料を混在して現行表示",
     difference: "旧割当名簿をHISTORICALとして保持し、派遣元公式情報でCURRENT／PLANNED／HISTORICAL／UNKNOWNを全構成団体ごとに裁定。中央集計971人は8月19日履歴へ変更。",
     source: "派遣元自治体公式情報・熊本県旧割当資料",
@@ -41,7 +41,7 @@ function targetPageMeta(html) {
   meta.rows.push(municipalRow);
   const dashboard = meta.rows.find((row) => row.section === "支援ダッシュボード");
   if (dashboard) {
-    dashboard.current = "県被害・愛媛県支援に加え、他自治体支援を8月25日14:08全件再監査";
+    dashboard.current = "県被害・愛媛県支援に加え、他自治体支援を8月26日19:26全件再監査";
     dashboard.previous = "県第42報・愛媛県8月24日資料／他自治体支援は8月8～19日資料混在";
     dashboard.difference = "対口支援・他自治体等は割当履歴と現況を分離し、派遣元公式情報に基づくCURRENT／PLANNED／HISTORICAL／UNKNOWNへ更新。";
     dashboard.source = "熊本県第42報・愛媛県8月24日資料・他自治体支援全件監査";
@@ -84,7 +84,7 @@ function buildOverlay(pageMeta) {
     `const MUNICIPAL_SUPPORT_PAGE_META=${JSON.stringify(pageMeta)};`,
     `Object.entries(MUNICIPAL_SUPPORT_RECORD_UPDATES).forEach(([id,values])=>{const record=RECORDS.find((item)=>item.id===id);if(record)Object.assign(record,values);});`,
     `Object.entries(MUNICIPAL_SUPPORT_BY_DESTINATION).forEach(([name,text])=>{const municipality=NEED_MUNICIPALITIES.find((item)=>item.name===name);if(municipality){municipality.currentSupport=(municipality.currentSupport||[]).filter((value)=>!String(value).includes('8月19日資料')&&!String(value).includes('8月11日資料'));municipality.currentSupport.unshift(text);}});`,
-    `SUPPORT_BLOCKS.forEach((block)=>{if(block.id!=='internal-coordination'){block.badge='旧割当履歴＋8月25日14:08個別再監査';block.note='割当名簿は履歴表示。現在の活動は派遣元公式情報を個別再監査し、CURRENT／PLANNED／HISTORICAL／UNKNOWNを分離。';}});`,
+    `SUPPORT_BLOCKS.forEach((block)=>{if(block.id!=='internal-coordination'){block.badge='旧割当履歴＋8月26日19:26個別再監査';block.note='割当名簿は履歴表示。現在の活動は派遣元公式情報を個別再監査し、CURRENT／PLANNED／HISTORICAL／UNKNOWNを分離。';}});`,
     `MUNICIPAL_SUPPORT_AUDIT_SOURCES.forEach((source)=>{if(!SOURCES.some((item)=>item.url===source.url))SOURCES.push(source);});`,
     `PAGE_RECHECK_META.checkedAt=MUNICIPAL_SUPPORT_PAGE_META.checkedAt;PAGE_RECHECK_META.volunteerCheckedAt=MUNICIPAL_SUPPORT_PAGE_META.volunteerCheckedAt;PAGE_RECHECK_META.rows.splice(0,PAGE_RECHECK_META.rows.length,...MUNICIPAL_SUPPORT_PAGE_META.rows);`,
     endMarker,
@@ -101,10 +101,10 @@ function upsertBlock(html, block) {
 }
 function patchStatic(html) {
   let next = html;
-  next = next.replace("<div class=\"provider-card\"><b><i class=\"dot municipal\"></i>他自治体等</b><p>8月19日資料の対口支援・県内調整、モバイルファーマシー等。</p></div>","<div class=\"provider-card\"><b><i class=\"dot municipal\"></i>他自治体等</b><p>8月25日14:08に対口支援・他自治体支援を全件再監査。継続・終了・予定・UNKNOWNを分離。</p></div>");
-  next = next.replace("<div class=\"section-note\">公表値：8月15日14時</div>","<div class=\"section-note\">旧割当履歴＋8月25日14:08個別再監査</div>");
+  next = next.replace("<div class=\"provider-card\"><b><i class=\"dot municipal\"></i>他自治体等</b><p>8月19日資料の対口支援・県内調整、モバイルファーマシー等。</p></div>","<div class=\"provider-card\"><b><i class=\"dot municipal\"></i>他自治体等</b><p>8月26日19:26に対口支援・他自治体支援を全件再監査。継続・終了・予定・UNKNOWNを分離。</p></div>");
+  next = next.replace("<div class=\"section-note\">公表値：8月15日14時</div>","<div class=\"section-note\">旧割当履歴＋8月26日19:26個別再監査</div>");
   next = next.replace("<div class=\"snap\"><strong>971</strong><span>行政応援<br/>関係機関含む計1,038人</span></div>","<div class=\"snap\"><strong>8/19</strong><span>行政応援971人<br/>履歴スナップショット</span></div>");
-  next = next.replace("<li>8月24日資料で愛媛県の人的支援を更新</li><li>8月19日資料：行政応援971人（関係機関含む計1,038人）</li><li>宇城市・八代市でモバイルファーマシー（8月8日資料の活動実績・最新状況要確認）</li>","<li>8月25日14:08に対口支援・他自治体支援を全件再監査</li><li>8月19日行政応援971人は履歴スナップショット（同一定義の基準日時点総数はUNKNOWN）</li><li>モバイルファーマシーは8月8日の活動履歴を保持し、8月24日の継続・終了は一次情報不足のためUNKNOWN</li>");
+  next = next.replace("<li>8月24日資料で愛媛県の人的支援を更新</li><li>8月19日資料：行政応援971人（関係機関含む計1,038人）</li><li>宇城市・八代市でモバイルファーマシー（8月8日資料の活動実績・最新状況要確認）</li>","<li>8月26日19:26に対口支援・他自治体支援を全件再監査</li><li>8月19日行政応援971人は履歴スナップショット（同一定義の基準日時点総数はUNKNOWN）</li><li>モバイルファーマシーは8月8日の活動履歴を保持し、8月24日の継続・終了は一次情報不足のためUNKNOWN</li>");
   next = next.replaceAll(/volunteer-data\.js\?v=[A-Za-z0-9._-]+/gu,`volunteer-data.js?v=${audit.release_id}`);
   return next;
 }
@@ -119,7 +119,7 @@ const {match,meta}=targetPageMeta(next);
 next=next.replace(match[0],`const PAGE_RECHECK_META=${JSON.stringify(meta)};`);
 next=patchStatic(next);
 next=upsertBlock(next,buildOverlay(meta));
-next=next.replaceAll("8月25日14:08",auditCheckedLabel).replaceAll("2026年8月24日18時06分再確認",auditCheckedSourceLabel);
+next=next.replaceAll("8月26日19:26",auditCheckedLabel).replaceAll("2026年8月24日18時06分再確認",auditCheckedSourceLabel);
 await writeFile(sourcePath,next,"utf8");
 await writeFile(publicPath,next,"utf8");
 console.log(JSON.stringify({records:audit.records.length,sources:audit.sources.length,referenceAt:audit.reference_at,releaseId:audit.release_id}));

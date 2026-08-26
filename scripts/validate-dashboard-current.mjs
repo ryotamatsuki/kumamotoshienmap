@@ -4,7 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { runInNewContext } from "node:vm";
 
-const REFERENCE_AT = "2026-08-25T14:08:00+09:00";
+const REFERENCE_AT = "2026-08-26T19:26:53+09:00";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html");
 const publicPath = resolve(root, "public", "dashboard.html");
@@ -15,7 +15,7 @@ const [html, publicHtml, volunteerCss, currentShelterText, municipalAuditText, n
   readFile(resolve(root, "current-shelters.json"), "utf8"),
   readFile(resolve(root, "municipal-support-audit.json"), "utf8"),
   readFile(resolve(root, "national-support-audit.json"), "utf8"),
-  readFile(resolve(root, "operations/audits/institution-coverage-20260825-1408.json"), "utf8"),
+  readFile(resolve(root, "operations/audits/institution-coverage-20260826-1926.json"), "utf8"),
 ]);
 
 const currentShelterData = JSON.parse(currentShelterText);
@@ -30,17 +30,17 @@ assert.equal(coverage.reference_at, REFERENCE_AT, "institution coverage referenc
 assert.equal(coverage.operation_version, "2.5", "institution coverage must use operation v2.5");
 
 const requiredText = [
-  "経過日 D+27（主要公表値は8月24日8時）",
-  "2,709<span class=\"overview-kpi-unit\">人",
-  "65<span class=\"overview-kpi-unit\">か所",
-  "398<span class=\"overview-kpi-unit\">人",
-  "38,537<span class=\"overview-kpi-unit\">棟",
+  "経過日 D+29（県第45報：8月26日8時）",
+  "2,589<span class=\"overview-kpi-unit\">人",
+  "64<span class=\"overview-kpi-unit\">か所",
+  "402<span class=\"overview-kpi-unit\">人",
+  "39,567<span class=\"overview-kpi-unit\">棟",
   "約4,300戸",
   "履歴スナップショット",
   "対口支援・他自治体支援を全件再監査",
-  "8月25日14:08に対口支援・他自治体支援を全件再監査",
-  "8/23値はHISTORICALとして分離。給水車・TEC-FORCE・入浴支援の8/25同一定義現況はUNKNOWN",
-  "8月25日閣議：被災中小企業者等への災害融資特別措置を決定",
+  "8月26日19:26に対口支援・他自治体支援を全件再監査",
+  "国交省第49報8/25値はHISTORICALスナップショット。8/26は佐伯市給水継続をCURRENT、TEC-FORCE第5陣・はくおう2宿泊は実働未確認のためUNKNOWN",
+  "8月25日閣議の災害融資特別措置を保持し、8月26日実働主体を再監査",
   "現在開設避難所総数",
   "地図表示数",
   "座標未確認数",
@@ -62,9 +62,9 @@ const runtimeScriptStart = html.indexOf('<script src="https://cdn.jsdelivr.net/n
 assert.ok(runtimeScriptStart > 0, "公開HTMLの初期表示領域を特定できません");
 const currentDisplayHtml = html.slice(0, runtimeScriptStart);
 for (const value of [
-  "2026年8月25日 14:08",
-  "8月25日14:08基準で全件再監査",
-  "8/23値はHISTORICALとして分離。給水車・TEC-FORCE・入浴支援の8/25同一定義現況はUNKNOWN",
+  "2026年8月26日 19:26",
+  "8月26日19:26基準で全件再監査",
+  "国交省第49報8/25値はHISTORICALスナップショット。8/26は佐伯市給水継続をCURRENT、TEC-FORCE第5陣・はくおう2宿泊は実働未確認のためUNKNOWN",
   "8月19日行政応援971人は履歴スナップショット",
 ]) assert.ok(currentDisplayHtml.includes(value), `初期表示の最新値がありません: ${value}`);
 
@@ -106,8 +106,8 @@ const rawTotals = needs.reduce((totals, row) => {
   return totals;
 }, { shelters: 0, evacuees: 0, waterOutage: 0, housing: 0, human: 0 });
 assert.deepEqual(rawTotals, { shelters: 65, evacuees: 2_709, waterOutage: 4_284, housing: 38_498, human: 396 });
-assert.ok(html.includes("24市町の人的被害表内合計396人。県速報の人的被害合計は398人"));
-assert.ok(html.includes("住家被害38,498棟と県計38,537棟との差39棟"));
+assert.ok(html.includes("24市町の人的被害表内合計396人。県第45報の人的被害合計は402人"));
+assert.ok(html.includes("住家被害の市町別旧スナップショット38,498棟と県第45報39,567棟は時点が異なるため単純差分を現況差と扱わない"));
 
 const dataStart = html.indexOf("const HUBS=");
 const dataEnd = html.indexOf("/* MUNICIPAL_SUPPORT_AUDIT_END */") + "/* MUNICIPAL_SUPPORT_AUDIT_END */".length;
@@ -130,8 +130,8 @@ assert.ok(html.includes("filteredShelters().filter(isCurrentShelterMappable)"), 
 
 assert.ok(runtime.HUBS.some((hub) => hub.id === "mifune"));
 assert.ok(runtime.HUBS.some((hub) => hub.id === "ashikita"));
-assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("38,537棟"));
-assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-08-24", "主要公表値の時点日が不正です");
+assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("39,567棟"));
+assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-08-26", "主要公表値の時点日が不正です");
 assert.ok(runtime.TIMELINE_EVENTS.every((event) => Array.isArray(event.tags)), "タイムラインの全イベントにtags配列が必要です");
 
 const auditedKumamoto = runtime.RECORDS.find((record) => record.id === "pair-kumamoto");

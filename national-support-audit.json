@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "repository": "ryotamatsuki/kumamotoshienmap",
-  "reference_at": "2026-08-25T14:08:00+09:00",
-  "checked_at": "2026-08-25T14:36:00+09:00",
-  "release_id": "20260825-1408",
+  "reference_at": "2026-08-26T19:26:53+09:00",
+  "checked_at": "2026-08-26T20:05:00+09:00",
+  "release_id": "20260826-1926",
   "state_values": [
     "CURRENT",
     "HISTORICAL",
@@ -63,7 +63,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "内閣府公式の令和8年熊本地震対応状況一覧で、8月23日10時現在資料が最新掲載。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "mlit-report48",
@@ -77,7 +77,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "第48報。断水は8月23日7時30分時点。給水車119台、TEC-FORCE現時点98人・累計4,507人日を確認。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "fdma-report60",
@@ -91,7 +91,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "消防庁公式一覧で熊本地震第60報・R8.8.23更新を確認。旧8月2日約100人・4機を基準日時点の現況値とは扱わない。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "kagoshima-fire-end",
@@ -105,7 +105,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "鹿児島県大隊は8月14日解散式・活動終了。全国複合レコード全体の終了根拠には使用しない。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "mod-minister-0823",
@@ -119,7 +119,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "防衛大臣が給水・入浴支援の継続を明示。8月24日に2か所終了、5か所は継続予定と説明。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "mod-disaster-0823",
@@ -133,7 +133,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "8月23日実施分の入浴支援を公式掲載。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "mod-js-0824",
@@ -147,7 +147,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "8月24日に『令和8年熊本地震に係る災害派遣について（8.23）』を公表。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "kkr-tec5-0824",
@@ -161,7 +161,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "TEC-FORCE第5陣・給水支援班2班は8月26日9時20分出発式。基準日時点ではPLANNED。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "mhlw-disaster-recheck",
@@ -175,7 +175,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "厚生労働省の令和8年熊本地震対応ページ（最終更新8月21日）を再確認。基準日時点の全国DHEAT/DMAT/DPAT等の同一定義現況人数は確定できずUNKNOWN。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "npa-recheck",
@@ -189,7 +189,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "警察庁公式の報道発表・災害関連一次情報を再探索。現行ダッシュボードの複合救助レコードと同一定義の基準日時点人数は確定できず。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "kumamoto-gov-0819",
@@ -203,7 +203,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "旧政府・県合同スナップショット。行政応援、罹災証明、トイレ等の履歴根拠として保持。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "kumamoto-hq-0802",
@@ -217,7 +217,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "プッシュ型物資・普通交付税等の旧スナップショット根拠。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "cao-scrivener-0731",
@@ -231,7 +231,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "行政書士支援の旧実績根拠。基準日時点の継続・終了は確定できず。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "kitakyushu-support-current",
@@ -245,7 +245,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "現行支援ページを追加再確認。緊急消防援助隊第6次派遣は陸上隊2隊9名（8月12日から）、保健師第5班4名（8月21日から26日）、家屋被害認定調査第4班10名（8月22日から）を掲載。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "kantei-0812-health",
@@ -259,7 +259,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "8月12日時点の保健関係47チーム・医療関係150チーム・福祉関係15チームの活動実績をHISTORICAL指標として確認。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "kantei-0818-support",
@@ -273,7 +273,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "介護職員等の応援派遣・物資支援を実施中と確認。プッシュ型物資支援24億円を含む予備費242億円の使用決定と支援強化を確認。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "jwa-purifier-current",
@@ -287,7 +287,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "氷川町竜翔センター付近の可搬式浄水装置について、8月4日から給水支援活動を行っており、引き続き支援に取り組む旨を現行公式ページで確認。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "kumagyou-0814-current",
@@ -301,7 +301,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "電話相談を土日祝含め受付中、宇土市・宇城市で罹災証明書申請支援を継続実施。8月25日からの追加申請支援はPLANNEDとして分離。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "kantei-0803-finance",
@@ -315,7 +315,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "総額616億円の普通交付税の繰上げ交付を決定済みと公式確認。8月3日の現金交付完了そのものを示す一次記録は今回確認できず。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "tokushima-toilet-0824",
@@ -329,7 +329,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "8月24日にリエゾン・避難所支援チーム計8名を派遣し、宇土市でトイレカー管理運営業務等に従事すると公式確認。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "moe-toilet-current",
@@ -343,7 +343,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "避難所の仮設トイレ・トイレカーを巡回し、良好な状態とし尿回収状況を確認しながら支援を継続する旨を公式災害対応ページで確認。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "yatsushiro-cert-0823",
@@ -357,7 +357,7 @@
       "checked_at": "2026-08-25T14:36:00+09:00",
       "primary": true,
       "notes": "8月23日更新ページで、8月18日時点の申請11,207件、現地調査済1,608件、証明書交付済1,705件を公表し、調査を現在進めていると確認。県全体の8月18日累計とは定義・範囲を分離。",
-      "rechecked_at": "2026-08-25T15:17:00+09:00"
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     },
     {
       "source_id": "kantei-0825-cabinet",
@@ -369,7 +369,7 @@
       "source_updated_at": "2026-08-25T00:00:00+09:00",
       "fetched_at": "2026-08-25T14:36:00+09:00",
       "checked_at": "2026-08-25T14:36:00+09:00",
-      "rechecked_at": "2026-08-25T15:17:00+09:00",
+      "rechecked_at": "2026-08-26T20:05:00+09:00",
       "primary": true,
       "notes": "8月25日定例閣議で熊本地震被災中小企業者等の災害融資特別措置、激甚災害政令改正を決定。"
     },
@@ -383,9 +383,45 @@
       "source_updated_at": "2026-08-23T00:00:00+09:00",
       "fetched_at": "2026-08-25T15:17:00+09:00",
       "checked_at": "2026-08-25T15:17:00+09:00",
-      "rechecked_at": "2026-08-25T15:17:00+09:00",
+      "rechecked_at": "2026-08-26T20:05:00+09:00",
       "primary": true,
       "notes": "防衛省フェリー「はくおう2」の宿泊支援は8月26日13時開始。基準日時点ではPLANNED。"
+    },
+    {
+      "source_id": "kumamoto-damage45-0826",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/222/276831.html",
+      "primary": true,
+      "source_as_of": "2026-08-26T08:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00",
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "mlit-report49-0825",
+      "publisher": "国土交通省",
+      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
+      "primary": true,
+      "source_as_of": "2026-08-25T10:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00",
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "saiki-water-0825",
+      "publisher": "佐伯市",
+      "url": "https://www.city.saiki.oita.jp/kiji00311824/index.html",
+      "primary": true,
+      "source_as_of": "2026-08-25T00:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00",
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-hakuo2-0826-plan",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/219/276703.html",
+      "primary": true,
+      "source_as_of": "2026-08-23T00:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00",
+      "rechecked_at": "2026-08-26T20:05:00+09:00"
     }
   ],
   "agency_coverage": [
@@ -682,7 +718,7 @@
         "status": "UNKNOWN",
         "scale": "直近活動確認あり／8/25 14:08 CURRENT：UNKNOWN",
         "period": "2026年8月25日14:08基準で再監査",
-        "detail": "北九州市等の直近活動や厚労省対応ページは確認できるが、8月25日14:08時点の全国同一定義の実働継続を直接示す一次更新は未確認。",
+        "detail": "北九州市等の直近活動や厚労省対応ページは確認できるが、8月25日14:08時点の全国同一定義の実働継続を直接示す一次更新は未確認。 8月26日19:26基準で一次情報を再確認し、実働を直接確認できないためUNKNOWNを維持。",
         "asOf": "一次情報を2026年8月25日14:36再確認",
         "sourceLabel": "一次情報再監査",
         "sourceUrl": "https://ssl.city.kitakyushu.lg.jp/contents/90000638_00003.html"
@@ -730,20 +766,29 @@
             "mod-minister-0823"
           ],
           "notes": "基準日時点の同一定義の実働継続を直接示す一次情報を確認できない。無発表・予定期間・前回値からCURRENTを推定しない。"
+        },
+        {
+          "state": "CURRENT",
+          "source_ids": [
+            "saiki-water-0825"
+          ],
+          "reason": "自治体一次ページが継続派遣を現在形で明示。全国総数は別途UNKNOWN。"
         }
       ],
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "source_ids": [
         "mlit-report48",
-        "mod-minister-0823"
+        "mod-minister-0823",
+        "saiki-water-0825",
+        "mlit-report49-0825"
       ],
       "display": {
-        "status": "UNKNOWN",
-        "scale": "8/23 7:30 給水車119台（HISTORICAL）／8/25 14:08 CURRENT：UNKNOWN",
-        "period": "2026年8月25日14:08基準で再監査",
-        "detail": "国交省第48報の給水車119台は8月23日7:30時点。水資源機構の浄水装置支援は別レコードでCURRENT確認するが、この全国給水車指標は基準日時点CURRENTへ流用しない。",
-        "asOf": "一次情報を2026年8月25日14:36再確認",
-        "sourceLabel": "一次情報再監査",
+        "status": "CURRENT",
+        "scale": "佐伯市の給水車派遣継続を確認／全国同一定義総数はUNKNOWN",
+        "period": "8月26日基準",
+        "detail": "佐伯市は日本水道協会の要請を受け7月30日以降、八代市への給水車・職員派遣を「継続し行っています」と8月25日に一次公表。第10班（8月26～29日）は予定表記のため、その班の実働自体は推定しない。国交省第49報の全国104台は8月25日10時のHISTORICALスナップショットとして分離。",
+        "asOf": "2026年8月26日19:26基準",
+        "sourceLabel": "佐伯市・国土交通省",
         "sourceUrl": "https://www.mlit.go.jp/saigai/saigai_260728.html"
       },
       "notes": "旧129台をcurrentから除去。"
@@ -837,7 +882,7 @@
         "status": "UNKNOWN",
         "scale": "8/23 10:00 98人・累計4,507人日（HISTORICAL）／8/25 14:08 CURRENT：UNKNOWN",
         "period": "2026年8月25日14:08基準で再監査",
-        "detail": "第48報の98人・累計4,507人日は8月23日10時時点。8月26日第5陣はPLANNED。8月25日14:08の現行人数を直接確定できない。",
+        "detail": "第48報の98人・累計4,507人日は8月23日10時時点。8月26日第5陣はPLANNED。8月25日14:08の現行人数を直接確定できない。 8月26日19:26基準で一次情報を再確認し、実働を直接確認できないためUNKNOWNを維持。",
         "asOf": "一次情報を2026年8月25日14:36再確認",
         "sourceLabel": "一次情報再監査",
         "sourceUrl": "https://www.mlit.go.jp/saigai/saigai_260728.html"
@@ -858,19 +903,27 @@
             "kkr-tec5-0824"
           ],
           "notes": "8月26日9時20分出発式予定。実働確認前。"
+        },
+        {
+          "state": "UNKNOWN",
+          "source_ids": [
+            "kkr-tec5-0824"
+          ],
+          "reason": "予定公表のみ。基準日時点の実働開始を直接確認できない。"
         }
       ],
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "source_ids": [
-        "kkr-tec5-0824"
+        "kkr-tec5-0824",
+        "mlit-report49-0825"
       ],
       "display": {
-        "status": "PLANNED",
-        "scale": "給水支援班2班",
-        "period": "8月26日9時20分 出発式予定",
-        "detail": "近畿地方整備局がTEC-FORCE第5陣として給水支援班2班を熊本県へ派遣予定。基準日時点では出発前のためCURRENTにはしない。7月30日派遣の給水機能付散水車は引き続き使用予定。",
-        "asOf": "近畿地方整備局 8月24日公表",
-        "sourceLabel": "近畿地方整備局 TEC-FORCE第5陣派遣",
+        "status": "UNKNOWN",
+        "scale": "UNKNOWN（8月26日出発予定の実働を直接確認できず）",
+        "period": "8月26日基準",
+        "detail": "近畿地方整備局は第5陣の8月26日出発式を事前公表したが、基準日時点で実出発・活動開始を直接確認できる一次情報を確認できない。予定時刻経過のみでCURRENTにしない。 8月26日19:26基準で一次情報を再確認し、実働を直接確認できないためUNKNOWNを維持。",
+        "asOf": "2026年8月26日19:26基準",
+        "sourceLabel": "国土交通省",
         "sourceUrl": "https://www.kkr.mlit.go.jp/news/top/press/2026/20260824-2tec-forcedai5jin.html"
       },
       "notes": "予定を実績化しない。"
@@ -917,7 +970,7 @@
         "status": "UNKNOWN",
         "scale": "8/18：プッシュ型物資支援24億円・強化／8/24継続：UNKNOWN",
         "period": "最新の同一スキーム明示は8月18日",
-        "detail": "8月18日に水・食料、段ボールベッド、スポットクーラー等のプッシュ型物資支援へ24億円を計上し支援強化を確認。一方、8月25日基準で同一スキームが継続中かを直接示す一次情報は確認できず、CURRENTには推定昇格しない。",
+        "detail": "8月18日に水・食料、段ボールベッド、スポットクーラー等のプッシュ型物資支援へ24億円を計上し支援強化を確認。一方、8月25日基準で同一スキームが継続中かを直接示す一次情報は確認できず、CURRENTには推定昇格しない。 8月26日19:26基準で一次情報を再確認し、実働を直接確認できないためUNKNOWNを維持。",
         "asOf": "2026年8月25日14:36再監査",
         "sourceLabel": "首相官邸 8月18日非常災害対策本部会議",
         "sourceUrl": "https://www.kantei.go.jp/jp/105/actions/202608/18hijoukaigi_chibagouu.html"
@@ -1082,7 +1135,7 @@
         "status": "UNKNOWN",
         "scale": "8/24活動確認（HISTORICAL）／8/25 14:08 CURRENT：UNKNOWN",
         "period": "2026年8月25日14:08基準で再監査",
-        "detail": "防衛省は8月24日の入浴支援実施を確認できるが、8月25日14:08時点の同一5地点継続を直接確定できる更新は未確認。",
+        "detail": "防衛省は8月24日の入浴支援実施を確認できるが、8月25日14:08時点の同一5地点継続を直接確定できる更新は未確認。 8月26日19:26基準で一次情報を再確認し、実働を直接確認できないためUNKNOWNを維持。",
         "asOf": "一次情報を2026年8月25日14:36再確認",
         "sourceLabel": "一次情報再監査",
         "sourceUrl": "https://www.mod.go.jp/j/approach/defense/saigai/"
@@ -1133,7 +1186,7 @@
         "status": "UNKNOWN",
         "scale": "616億円の繰上げ交付決定：確認済／現金交付完了：UNKNOWN",
         "period": "8/3決定を一次確認・実施完了は未確認",
-        "detail": "政府一次情報で普通交付税総額616億円の繰上げ交付決定は確認済み。一方、旧県資料の『8月3日現金交付予定』が実際に完了したことを直接示す一次記録は確認できず、実施完了はUNKNOWNのままとする。",
+        "detail": "政府一次情報で普通交付税総額616億円の繰上げ交付決定は確認済み。一方、旧県資料の『8月3日現金交付予定』が実際に完了したことを直接示す一次記録は確認できず、実施完了はUNKNOWNのままとする。 8月26日19:26基準で一次情報を再確認し、実働を直接確認できないためUNKNOWNを維持。",
         "asOf": "2026年8月25日14:36再監査",
         "sourceLabel": "首相官邸 8月3日会見・8月18日非常災害対策本部会議",
         "sourceUrl": "https://www.kantei.go.jp/jp/105/statement/2026/0803kaiken.html"
@@ -1234,19 +1287,27 @@
             "kumamoto-hakuo2-0823"
           ],
           "notes": "予約受付は8月25日正午まで、乗船開始は8月26日13時。基準14:08時点では支援開始前のためPLANNED。"
+        },
+        {
+          "state": "UNKNOWN",
+          "source_ids": [
+            "kumamoto-hakuo2-0826-plan"
+          ],
+          "reason": "予定時刻は経過したが、実利用開始の直接確認なし。"
         }
       ],
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "source_ids": [
-        "kumamoto-hakuo2-0823"
+        "kumamoto-hakuo2-0823",
+        "kumamoto-hakuo2-0826-plan"
       ],
       "display": {
-        "status": "PLANNED",
-        "scale": "8/26 13:00から2泊3日の宿泊支援",
-        "period": "2026年8月26日13:00～8月28日10:00",
-        "detail": "八代港停泊中のフェリー「はくおう2」で食事・入浴付き2泊3日の宿泊支援を実施予定。8月25日14:08時点では乗船開始前のためCURRENTへ推定昇格しない。",
-        "asOf": "熊本県 2026年8月23日更新・8月25日再確認",
-        "sourceLabel": "熊本県 防衛省フェリー「はくおう2」宿泊支援",
+        "status": "UNKNOWN",
+        "scale": "UNKNOWN（8月26日13時開始予定の実利用を直接確認できず）",
+        "period": "8月26日13:00開始予定／28日10:00まで",
+        "detail": "熊本県一次ページは宿泊支援の開始予定・予約条件を公表しているが、基準日時点で実際のチェックイン・宿泊支援開始を直接確認できる一次記録を確認できない。予定時刻経過のみでCURRENTにしない。 8月26日19:26基準で一次情報を再確認し、実働を直接確認できないためUNKNOWNを維持。",
+        "asOf": "2026年8月26日19:26基準",
+        "sourceLabel": "熊本県・防衛省",
         "sourceUrl": "https://www.pref.kumamoto.jp/soshiki/219/276703.html"
       },
       "notes": "活動開始前の予定支援として独立表示。"
@@ -1255,13 +1316,35 @@
   "summary": {
     "existing_records_audited": 12,
     "records_total": 15,
-    "CURRENT": 7,
+    "CURRENT": 8,
     "HISTORICAL": 0,
-    "PLANNED": 2,
-    "UNKNOWN": 6,
+    "PLANNED": 0,
+    "UNKNOWN": 7,
     "CONFLICT": 0,
     "accepted_unresolved_count": 11,
     "blocking_unresolved_count": 0
   },
-  "rechecked_at": "2026-08-25T15:17:00+09:00"
+  "rechecked_at": "2026-08-26T20:05:00+09:00",
+  "accepted_unresolved": [
+    {
+      "issue_id": "national-tec-next-wave-start",
+      "state": "UNKNOWN",
+      "reason": "8月26日出発予定は到来したが、実出発・実働開始を直接確認できない。",
+      "owner": "national-support-audit",
+      "source_ids": [
+        "kkr-tec5-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "national-accommodation-hakuo2-start",
+      "state": "UNKNOWN",
+      "reason": "8月26日13時開始予定は到来したが、実利用開始を直接確認できない。",
+      "owner": "national-support-audit",
+      "source_ids": [
+        "kumamoto-hakuo2-0826-plan"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    }
+  ]
 }

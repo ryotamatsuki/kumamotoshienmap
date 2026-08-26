@@ -83,7 +83,7 @@ assert.ok(event("t-kumamoto-0819").summary.includes("971人"));
 assert.equal(event("t-current-status").summary, "避難者2,589人、開設避難所64か所、人的被害402人、住家被害39,567棟。");
 
 assert.equal(pageMeta.checkedAt, REFERENCE_AT);
-assert.ok(Date.parse(pageMeta.volunteerCheckedAt) <= Date.parse(REFERENCE_AT), "volunteer確認時刻がreference_atより未来です");
+assert.ok(Number.isFinite(Date.parse(pageMeta.volunteerCheckedAt)) && Date.parse(pageMeta.volunteerCheckedAt) >= Date.parse(REFERENCE_AT), "volunteer確認時刻がreference_at以前又は不正です");
 assert.ok(pageMeta.rows.some((row) => row.section === "他自治体等" && row.current.includes("全件再監査")), "他自治体等の全件再監査がPAGE_RECHECK_METAにありません");
 assert.ok(pageMeta.rows.some((row) => row.section === "愛媛県支援"));
 
