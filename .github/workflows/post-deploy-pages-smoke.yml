@@ -56,7 +56,7 @@ jobs:
           grep -F '国交省第49報8/25値はHISTORICALスナップショット。8/26は佐伯市給水継続をCURRENT、TEC-FORCE第5陣・はくおう2宿泊は実働未確認のためUNKNOWN' "$deployed"
           grep -F '8月25日閣議の災害融資特別措置を保持し、8月26日実働主体を再監査' "$deployed"
           grep -F 'national-accommodation-hakuo2' "$deployed"
-          grep -F '8/26 13:00から2泊3日の宿泊支援' "$deployed"
+          grep -F '8月26日13:00開始予定／28日10:00まで' "$deployed"
           grep -F '住まいサポートダイヤル（住宅復旧・改修相談）' "$deployed"
           grep -F '熊本県住宅リフォーム推進協議会' "$deployed"
           grep -F '8月19日行政応援971人は履歴スナップショット' "$deployed"
