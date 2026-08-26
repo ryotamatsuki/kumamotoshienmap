@@ -20,6 +20,16 @@ Root cause: the asset loop downloaded every legacy asset to the generic path `/t
 
 Correction: each legacy asset is now downloaded to `/tmp/${asset}`. Sender assets use unique sanitized temporary paths. Sender counts in browser QA are derived from the canonical manifest rather than hard-coded so future sender discoveries do not require changing the smoke test solely because the denominator grew.
 
+## Run 33020510738 — browser selector mismatch
+
+The complete-release convergence, sender asset byte parity, current-shelter checks, Ehime 20/20, nationwide 47/47, 258 adjudicated senders and orphan source mentions 0 all passed. The legacy dashboard Desktop 1440×1000 browser check also passed with all six views, zero page errors, zero console errors and zero page-level horizontal overflow.
+
+The run then timed out while waiting for sender table rows. The sender UI intentionally uses the unique `data-entity-key="prefecture/municipality"` attribute after same-name municipalities were introduced, while the production smoke still queried the former `tr[data-entity]` selector.
+
+Root cause: QA selector compatibility was not preserved when the UI moved from municipality-name-only identity to `prefecture + municipality_name` identity.
+
+Correction: sender rows now keep `data-entity-key` as the canonical unique identifier and also expose `data-entity` as a compatibility/testing attribute. This avoids weakening the unique-key model while allowing the existing smoke selector to observe row rendering.
+
 ## Final requirement
 
-Neither failure is treated as a production PASS. A subsequent main revision must complete the full post-deploy workflow including byte parity and Desktop 1440×1000 / Mobile 390×844 browser QA with zero page errors, console errors and document-level horizontal overflow.
+None of these failed runs is treated as a production PASS. A subsequent main revision must complete the full post-deploy workflow including byte parity and Desktop 1440×1000 / Mobile 390×844 browser QA for both dashboards with zero page errors, console errors and document-level horizontal overflow.
