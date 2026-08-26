@@ -133,3 +133,14 @@ The UI is a view of the canonical audit files. Validators operate on the canonic
 After squash merge, the post-deploy Pages smoke must wait until the root page, legacy dashboard, sender page and sender manifest all match the same main revision before it declares deployment convergence. It then verifies byte parity for every sender audit asset and runs Desktop 1440×1000 and Mobile 390×844 browser checks. Page errors, console errors and document-level horizontal overflow must be zero.
 
 The expected nationwide sender row count is read from the canonical manifest at runtime; the smoke workflow must not hard-code the current denominator because future discovery is expected to increase it.
+
+### 10.1 UI identity and QA selector contract
+
+The DOM must preserve the distinction between canonical identity and test observability.
+
+- `data-entity-key="prefecture/municipality"` is the canonical unique row identity and must be retained for same-name municipalities.
+- `data-entity="municipality"` is a compatibility / QA observation attribute only. It must never replace `data-entity-key` in application identity, de-duplication or source-mention closure logic.
+- Production smoke selectors must be updated whenever a rendered-row contract changes. A UI refactor is not complete until its browser QA selector is updated or a backward-compatible observation attribute is intentionally retained.
+- A selector timeout must be investigated separately from data-count failure: first confirm canonical manifest counts and deployed asset parity, then confirm the rendered DOM selector contract.
+
+This contract prevents a future identity refactor from producing a false production failure while still enforcing `prefecture + municipality_name` as the real entity key.
