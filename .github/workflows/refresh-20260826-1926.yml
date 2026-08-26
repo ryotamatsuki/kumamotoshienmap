@@ -87,11 +87,11 @@ jobs:
           npm run validate:institution-coverage
           node scripts/build-sites.mjs
           npm run validate:dist
-      - name: Remove temporary runner and finalize release ledger
+      - name: Remove temporary scripts and finalize release ledger
         run: |
           set -Eeuo pipefail
           rm -f current-shelters.candidate.json
-          git rm .github/workflows/refresh-20260826-1926.yml scripts/refresh-20260826-1926.mjs scripts/finalize-current-point-20260826.mjs
+          git rm scripts/refresh-20260826-1926.mjs scripts/finalize-current-point-20260826.mjs
           git add -N .
           node --input-type=module - <<'NODE'
           import {readFileSync,writeFileSync} from 'node:fs';
@@ -112,7 +112,7 @@ jobs:
           if(!files.includes(lp))files.push(lp);
           ledger.expected_changed_files=[...new Set(files)].sort();
           writeFileSync(lp,JSON.stringify(ledger,null,2)+'\n');
-          console.log(JSON.stringify({expectedChangedFiles:ledger.expected_changed_files,currentShelters:shelters.shelters.length,unresolved,conflict,deferredWorkflowUpdate:'.github/workflows/post-deploy-pages-smoke.yml'}));
+          console.log(JSON.stringify({expectedChangedFiles:ledger.expected_changed_files,currentShelters:shelters.shelters.length,unresolved,conflict,deferredWorkflowUpdates:['.github/workflows/post-deploy-pages-smoke.yml','.github/workflows/refresh-20260826-1926.yml']}));
           NODE
           git add -A
       - name: Release self-test and gate
