@@ -32,6 +32,7 @@ jobs:
           set -Eeuo pipefail
           node scripts/update-current-shelters.mjs
           node scripts/refresh-20260826-1926.mjs
+          node scripts/finalize-current-point-20260826.mjs
       - name: Generate and synchronize derived data
         run: |
           set -Eeuo pipefail
@@ -96,7 +97,7 @@ jobs:
         run: |
           set -Eeuo pipefail
           rm -f current-shelters.candidate.json
-          git rm .github/workflows/refresh-20260826-1926.yml scripts/refresh-20260826-1926.mjs
+          git rm .github/workflows/refresh-20260826-1926.yml scripts/refresh-20260826-1926.mjs scripts/finalize-current-point-20260826.mjs
           git add -N .
           node --input-type=module - <<'NODE'
           import {readFileSync,writeFileSync} from 'node:fs';
@@ -112,7 +113,7 @@ jobs:
           ledger.coverage.conflict_count=conflict;
           ledger.snapshots.current_shelters=shelters.shelters.length;
           let files=execFileSync('git',['diff','--name-only',base],{encoding:'utf8'}).trim().split(/\n/u).filter(Boolean);
-          files=files.filter(p=>p!=='.github/workflows/refresh-20260826-1926.yml'&&p!=='scripts/refresh-20260826-1926.mjs'&&p!=='current-shelters.candidate.json');
+          files=files.filter(p=>!['.github/workflows/refresh-20260826-1926.yml','scripts/refresh-20260826-1926.mjs','scripts/finalize-current-point-20260826.mjs','current-shelters.candidate.json'].includes(p));
           if(!files.includes(lp))files.push(lp);
           ledger.expected_changed_files=[...new Set(files)].sort();
           writeFileSync(lp,JSON.stringify(ledger,null,2)+'\n');
