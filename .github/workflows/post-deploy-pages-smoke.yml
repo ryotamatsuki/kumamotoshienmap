@@ -13,7 +13,7 @@ jobs:
   pages-smoke:
     name: Verify deployed GitHub Pages
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v7
         with:
@@ -29,7 +29,7 @@ jobs:
           target="ehime_kumamoto_support_geocoded_shelters_20260802.html"
           deployed=/tmp/deployed-dashboard.html
           matched=false
-          for attempt in $(seq 1 30); do
+          for attempt in $(seq 1 36); do
             if curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${target}" -o "$deployed" \
               && cmp --silent "$target" "$deployed"; then
               matched=true
@@ -42,15 +42,44 @@ jobs:
             echo "::error title=Pages deployment stale::Deployed dashboard did not converge to the merged main file."
             exit 1
           fi
+
           for asset in volunteer.css volunteer.js volunteer-data.js current-shelters.json; do
-            curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${asset}" -o "/tmp/${asset}"
-            cmp --silent "$asset" "/tmp/${asset}" || {
+            curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${asset}" -o "/tmp/deployed-asset"
+            cmp --silent "$asset" "/tmp/deployed-asset" || {
               echo "::error title=Pages asset stale::${asset} differs from merged main."
               exit 1
             }
           done
+
+          sender_assets=(
+            sender-municipalities.html
+            sender-municipality-audit.json
+            sender-audit/ehime.json
+            sender-audit/hokkaido-tohoku.json
+            sender-audit/kanto.json
+            sender-audit/chubu.json
+            sender-audit/kinki.json
+            sender-audit/chugoku-shikoku.json
+            sender-audit/kyushu-okinawa.json
+            sender-audit/crosscutting-additions.json
+            sender-audit/sources.json
+            sender-audit/sources-additions.json
+            sender-audit/discovery.json
+            sender-audit/discovery-additions.json
+          )
+          for asset in "${sender_assets[@]}"; do
+            curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${asset}" -o "/tmp/deployed-sender-asset"
+            cmp --silent "$asset" "/tmp/deployed-sender-asset" || {
+              echo "::error title=Sender Pages asset stale::${asset} differs from merged main."
+              exit 1
+            }
+          done
+
           curl -fsSL --connect-timeout 10 --max-time 30 "${base}/" -o /tmp/root.html
           grep -F './ehime_kumamoto_support_geocoded_shelters_20260802.html' /tmp/root.html
+          grep -F './sender-municipalities.html' /tmp/root.html
+          grep -F '送出基礎自治体 Coverage' /tmp/root.html
+
           grep -F 'NATIONAL_SUPPORT_AUDIT_START' "$deployed"
           grep -F '8月26日19:26基準で全件再監査' "$deployed"
           grep -F '国交省第49報8/25値はHISTORICALスナップショット。8/26は佐伯市給水継続をCURRENT、TEC-FORCE第5陣・はくおう2宿泊は実働未確認のためUNKNOWN' "$deployed"
@@ -60,22 +89,35 @@ jobs:
           grep -F '住まいサポートダイヤル（住宅復旧・改修相談）' "$deployed"
           grep -F '熊本県住宅リフォーム推進協議会' "$deployed"
           grep -F '8月19日行政応援971人は履歴スナップショット' "$deployed"
+
+          grep -F '愛媛県内20市町' sender-municipalities.html
+          grep -F '全国基礎自治体 sender' sender-municipalities.html
+          grep -F '予定期間に入っただけではCURRENTにしません' sender-municipalities.html
+
           node --input-type=module - <<'NODE'
           import { readFileSync } from 'node:fs';
           const shelters=JSON.parse(readFileSync('/tmp/current-shelters.json','utf8'));
           if(shelters.meta.current_count!==63 || shelters.shelters.length!==63) throw new Error('deployed current shelters count must be 63');
           if(shelters.shelters.some(row=>row.coordinate_status!=='confirmed')) throw new Error('deployed current shelters contain unresolved/conflict coordinates');
-          console.log(JSON.stringify({currentShelters:shelters.shelters.length,allCoordinatesConfirmed:true}));
+          const sender=JSON.parse(readFileSync('sender-municipality-audit.json','utf8'));
+          if(sender.summary.ehime.required_count!==20 || sender.summary.ehime.adjudicated_count!==20) throw new Error('Ehime sender coverage must be 20/20');
+          if(sender.summary.nationwide.prefecture_discovery_checked!==47) throw new Error('nationwide discovery must be 47/47');
+          if(sender.summary.nationwide.discovered_basic_municipality_senders!==258) throw new Error('sender count must be 258 for this release');
+          if(sender.summary.nationwide.adjudicated_basic_municipality_senders!==258) throw new Error('all discovered senders must be adjudicated');
+          if(sender.summary.nationwide.orphan_source_mentions.length!==0) throw new Error('orphan sender source mentions remain');
+          console.log(JSON.stringify({currentShelters:shelters.shelters.length,allCoordinatesConfirmed:true,ehime:'20/20',prefectureDiscovery:'47/47',senderEntities:258,orphanMentions:0}));
           NODE
           if grep -F '8月2日公表値・継続要確認' "$deployed"; then
             echo "::error title=Stale national support::Legacy rescue current wording is still deployed."
             exit 1
           fi
+
       - name: Install browser driver
         run: |
           set -Eeuo pipefail
           npm install --no-save --ignore-scripts --no-audit --no-fund --package-lock=false puppeteer-core
           command -v google-chrome
+
       - name: Verify Desktop and Mobile runtime
         run: |
           set -Eeuo pipefail
@@ -93,7 +135,9 @@ jobs:
           if(!releaseMatch) throw new Error('release_id query missing from expected HTML');
           const releaseId = releaseMatch[1];
           const expectedViews = ['overview','needs','timeline','dashboard','volunteer','map'];
-          const url = 'https://ryotamatsuki.github.io/kumamotoshienmap/ehime_kumamoto_support_geocoded_shelters_20260802.html';
+          const base = 'https://ryotamatsuki.github.io/kumamotoshienmap';
+          const dashboardUrl = `${base}/ehime_kumamoto_support_geocoded_shelters_20260802.html`;
+          const senderUrl = `${base}/sender-municipalities.html`;
           const browser = await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
           try {
             for (const spec of [
@@ -106,8 +150,8 @@ jobs:
               const consoleErrors=[];
               page.on('pageerror',error=>pageErrors.push(String(error)));
               page.on('console',message=>{if(message.type()==='error')consoleErrors.push(message.text());});
-              const response=await page.goto(url,{waitUntil:'networkidle2',timeout:60000});
-              if(!response?.ok()) throw new Error(`${spec.name}: HTTP ${response?.status()}`);
+              const response=await page.goto(dashboardUrl,{waitUntil:'networkidle2',timeout:60000});
+              if(!response?.ok()) throw new Error(`${spec.name}: dashboard HTTP ${response?.status()}`);
               const state=await page.evaluate(({views,checkedLabel,checkedCompact,volunteerLabel,releaseId})=>{
                 const values=[...document.querySelectorAll('[data-view]')].map(el=>el.getAttribute('data-view'));
                 const body=document.body.innerText;
@@ -123,6 +167,7 @@ jobs:
                   siteChecked:body.includes(`サイト確認：${checkedLabel}（JST）`),
                   volunteerChecked:body.includes(`ボランティア個別確認：${volunteerLabel}確認済み`),
                   releaseChecked:scriptSrcs.some(src=>src.includes(`volunteer-data.js?v=${releaseId}`)),
+                  pageOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,
                 };
               },{views:expectedViews,checkedLabel,checkedCompact,volunteerLabel,releaseId});
               for (const [key,value] of Object.entries({headerChecked:state.headerChecked,badgeChecked:state.badgeChecked,siteChecked:state.siteChecked,volunteerChecked:state.volunteerChecked,releaseChecked:state.releaseChecked})) {
@@ -131,10 +176,49 @@ jobs:
               if(spec.mobile && state.badgeVisible) throw new Error(`${spec.name}: responsive badge should be hidden`);
               if(!spec.mobile && !state.badgeVisible) throw new Error(`${spec.name}: desktop badge should be visible`);
               if(state.presentViews.length!==expectedViews.length) throw new Error(`${spec.name}: missing views ${expectedViews.filter(view=>!state.presentViews.includes(view)).join(',')}`);
-              if(pageErrors.length) throw new Error(`${spec.name}: page errors: ${pageErrors.join(' | ')}`);
-              if(consoleErrors.length) throw new Error(`${spec.name}: console errors: ${consoleErrors.join(' | ')}`);
-              console.log(JSON.stringify({name:spec.name,...state,pageErrors,consoleErrors}));
+              if(state.pageOverflow) throw new Error(`${spec.name}: dashboard page-level horizontal overflow`);
+              if(pageErrors.length) throw new Error(`${spec.name}: dashboard page errors: ${pageErrors.join(' | ')}`);
+              if(consoleErrors.length) throw new Error(`${spec.name}: dashboard console errors: ${consoleErrors.join(' | ')}`);
+              console.log(JSON.stringify({name:`dashboard-${spec.name}`,...state,pageErrors,consoleErrors}));
               await page.close();
+
+              const senderPage = await browser.newPage();
+              await senderPage.setViewport({width:spec.width,height:spec.height,isMobile:spec.mobile,deviceScaleFactor:1});
+              const senderPageErrors=[];
+              const senderConsoleErrors=[];
+              senderPage.on('pageerror',error=>senderPageErrors.push(String(error)));
+              senderPage.on('console',message=>{if(message.type()==='error')senderConsoleErrors.push(message.text());});
+              const senderResponse=await senderPage.goto(senderUrl,{waitUntil:'networkidle2',timeout:60000});
+              if(!senderResponse?.ok()) throw new Error(`${spec.name}: sender page HTTP ${senderResponse?.status()}`);
+              await senderPage.waitForFunction(()=>document.querySelectorAll('#ehimeBody tr[data-entity]').length===20,{timeout:30000});
+              await senderPage.waitForFunction(()=>document.querySelectorAll('#nationalBody tr[data-entity]').length===258,{timeout:30000});
+              const senderState=await senderPage.evaluate(()=>({
+                title:document.title,
+                cards:document.getElementById('cards')?.innerText||'',
+                ehimeRows:document.querySelectorAll('#ehimeBody tr[data-entity]').length,
+                nationalRows:document.querySelectorAll('#nationalBody tr[data-entity]').length,
+                sourceLinks:document.querySelectorAll('#ehimeBody a[href],#nationalBody a[href]').length,
+                pageOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,
+              }));
+              if(senderState.ehimeRows!==20) throw new Error(`${spec.name}: sender Ehime rows ${senderState.ehimeRows}`);
+              if(senderState.nationalRows!==258) throw new Error(`${spec.name}: sender national rows ${senderState.nationalRows}`);
+              for(const expected of ['20/20','47/47','258','0']) if(!senderState.cards.includes(expected)) throw new Error(`${spec.name}: sender summary missing ${expected}`);
+              if(senderState.sourceLinks<20) throw new Error(`${spec.name}: sender source links unexpectedly low: ${senderState.sourceLinks}`);
+              if(senderState.pageOverflow) throw new Error(`${spec.name}: sender page-level horizontal overflow`);
+
+              await senderPage.select('#state','CURRENT');
+              await senderPage.waitForFunction(()=>document.querySelectorAll('#nationalBody tr[data-entity]').length>0);
+              const filtered=await senderPage.$$eval('#nationalBody tr[data-entity]',rows=>rows.length);
+              if(filtered>=258) throw new Error(`${spec.name}: state filter did not narrow sender rows`);
+              await senderPage.select('#state','');
+              await senderPage.type('#search','宇和島市');
+              await senderPage.waitForFunction(()=>document.querySelectorAll('#nationalBody tr[data-entity]').length>=1);
+              const searchText=await senderPage.$eval('#nationalBody',el=>el.innerText);
+              if(!searchText.includes('宇和島市')) throw new Error(`${spec.name}: sender search filter failed`);
+              if(senderPageErrors.length) throw new Error(`${spec.name}: sender page errors: ${senderPageErrors.join(' | ')}`);
+              if(senderConsoleErrors.length) throw new Error(`${spec.name}: sender console errors: ${senderConsoleErrors.join(' | ')}`);
+              console.log(JSON.stringify({name:`sender-${spec.name}`,...senderState,filteredRows:filtered,pageErrors:senderPageErrors,consoleErrors:senderConsoleErrors}));
+              await senderPage.close();
             }
           } finally {
             await browser.close();
