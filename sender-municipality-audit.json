@@ -1,1 +1,26 @@
-__AUDIT_PLACEHOLDER__
+{
+  "schema_version": 1,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "audit_type": "sender_municipality_coverage",
+  "policy_version": "2.5+sender-coverage-1",
+  "reference_at": "2026-08-27T06:34:00+09:00",
+  "checked_at": "2026-08-27T06:34:00+09:00",
+  "base_main_sha": "c3a216faa48062d14cb88b07a36a4c23e705a43a",
+  "entity_files": ["sender-audit/ehime.json","sender-audit/hokkaido-tohoku.json","sender-audit/kanto.json","sender-audit/chubu.json","sender-audit/kinki.json","sender-audit/chugoku-shikoku.json","sender-audit/kyushu-okinawa.json"],
+  "sources_file": "sender-audit/sources.json",
+  "discovery_file": "sender-audit/discovery.json",
+  "policy": {
+    "schedule_only_is_not_current": true,
+    "secondary_sources_for_discovery_only": true,
+    "absence_of_new_release_does_not_imply_historical": true,
+    "allowed_states": ["CURRENT","PLANNED","HISTORICAL","UNKNOWN","NO_EVIDENCE","CONFLICT"],
+    "current_evidence_types": ["explicit_current_activity","continuation_explicit","actual_dispatch_confirmed","actual_presence_confirmed","active_collection_explicit"]
+  },
+  "ehime_required_entities": ["松山市","今治市","宇和島市","八幡浜市","新居浜市","西条市","大洲市","伊予市","四国中央市","西予市","東温市","上島町","久万高原町","松前町","砥部町","内子町","伊方町","松野町","鬼北町","愛南町"],
+  "source_mentions": ["さいたま市","みやま市","三浦市","上島町","上市町","上毛町","下関市","久万高原町","久留米市","二宮町","井原市","京都市","今治市","仙台市","伊予市","伊方町","佐伯市","倉敷市","備前市","入善町","八幡浜市","内子町","北九州市","千葉市","南砺市","南足柄市","厚木市","吉備中央町","名古屋市","周南市","嘉麻市","四国中央市","堺市","大井町","大刀洗町","大和市","大川市","大木町","大津市","大洲市","大牟田市","大磯町","大野城市","大阪市","大館市","太宰府市","宇和島市","宇美町","宇部市","守山市","富山市","寒川町","小田原市","小竹町","小郡市","山北町","山陽小野田市","岡垣町","川崎市","川崎町","平塚市","広島市","座間市","彦根市","志免町","愛南町","愛川町","愛荘町","所沢市","新居浜市","新潟市","新見市","日野町","早島町","春日市","朝倉市","朝日町","札幌市","東峰村","東温市","東近江市","松前町","松山市","松田町","松野町","柳川市","栗東市","桂川町","横須賀市","水巻町","氷見市","津山市","浅口市","浜松市","海老名市","添田町","湖南市","湯河原町","滑川市","瀬戸内市","玉野市","田川市","由利本荘市","直方市","真庭市","矢掛町","砥部町","砺波市","福岡市","福津市","秋田市","秦野市","笠岡市","筑前町","筑後市","筑紫野市","箱根町","篠栗町","米原市","糸島市","綾瀬市","総社市","美作市","美咲町","舟橋村","芦屋町","苅田町","茅ヶ崎市","草津市","葉山町","藤沢市","行橋市","西予市","西条市","豊前市","赤磐市","越谷市","近江八幡市","逗子市","遠賀町","那珂川市","那賀町","里庄町","野洲市","鎌倉市","鏡野町","長浜市","長門市","開成町","防府市","静岡市","鞍手町","飯塚市","高岡市","高島市","高梁市","鬼北町","魚津市","鳴門市","黒部市"],
+  "summary": {
+    "ehime": {"required_count":20,"adjudicated_count":20,"missing_required":[],"unadjudicated_source_mentions":[],"blocking_unresolved":0,"states":{"CURRENT":9,"PLANNED":0,"HISTORICAL":1,"UNKNOWN":10,"NO_EVIDENCE":0,"CONFLICT":0}},
+    "nationwide": {"prefecture_discovery_checked":47,"discovered_basic_municipality_senders":160,"adjudicated_basic_municipality_senders":160,"unadjudicated_discovered_senders":[],"source_mentions":160,"orphan_source_mentions":[],"invalid_current":[],"blocking_conflicts":0,"states":{"CURRENT":14,"PLANNED":1,"HISTORICAL":10,"UNKNOWN":135,"NO_EVIDENCE":0,"CONFLICT":0}}
+  },
+  "blocking_unresolved": []
+}
