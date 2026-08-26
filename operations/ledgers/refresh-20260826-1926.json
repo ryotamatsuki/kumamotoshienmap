@@ -1,0 +1,905 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260826-1926",
+  "release_id": "20260826-1926",
+  "reference_at": "2026-08-26T19:26:53+09:00",
+  "rechecked_at": "2026-08-26T20:05:00+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "96d0aa6513703634f7355a2cf9fd95a78d0e9de1",
+  "expected_changed_files": [
+    ".github/workflows/post-deploy-pages-smoke.yml",
+    "current-shelters.json",
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "municipal-support-audit.json",
+    "national-support-audit.json",
+    "operations/audits/institution-coverage-20260826-1926.json",
+    "operations/ledgers/refresh-20260826-1926.json",
+    "public/dashboard.html",
+    "research_official_north.json",
+    "research_official_statewide.json",
+    "scripts/sync-municipal-support-audit.mjs",
+    "scripts/sync-national-support-audit.mjs",
+    "scripts/validate-current-state-audit.mjs",
+    "scripts/validate-dashboard-current.mjs",
+    "scripts/validate-institution-coverage.mjs",
+    "scripts/validate-national-support-audit.mjs",
+    "scripts/validate-volunteer-data.mjs",
+    "volunteer-data.js"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-damage45-0826",
+      "url": "https://www.pref.kumamoto.jp/soshiki/222/276831.html",
+      "source_as_of": "2026-08-26T08:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-current-shelters",
+      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+      "checked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-volunteer-0824-recheck",
+      "url": "https://www.pref.kumamoto.jp/soshiki/27/275523.html",
+      "source_as_of": "2026-08-24T00:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "saiki-water-0825",
+      "url": "https://www.city.saiki.oita.jp/kiji00311824/index.html",
+      "source_as_of": "2026-08-25T00:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "kyoto-city-0821",
+      "url": "https://www.city.kyoto.lg.jp/gyozai/page/0000357660.html",
+      "source_as_of": "2026-08-21T00:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "nagasaki-0825-departure-plan",
+      "url": "https://www.pref.nagasaki.lg.jp/press-contents/51710.html",
+      "source_as_of": "2026-08-24T00:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-hakuo2-0826-plan",
+      "url": "https://www.pref.kumamoto.jp/soshiki/219/276703.html",
+      "checked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "kkr-tec5-0824",
+      "publisher": "国土交通省近畿地方整備局",
+      "url": "https://www.kkr.mlit.go.jp/news/top/press/2026/20260824-2tec-forcedai5jin.html",
+      "primary": true,
+      "source_as_of": "2026-08-24T00:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-volunteer-0824",
+      "publisher": "熊本県 災害ボランティアへの積極的な参加をお願いします",
+      "url": "https://www.pref.kumamoto.jp/soshiki/27/275523.html",
+      "primary": true,
+      "source_as_of": "2026-08-24T00:00:00+09:00",
+      "checked_at": "2026-08-26T20:05:00+09:00"
+    }
+  ],
+  "coverage": {
+    "current_count": 63,
+    "unresolved_count": 0,
+    "conflict_count": 0,
+    "municipal_support": "audited",
+    "national_support": "audited",
+    "national_support_records": 15,
+    "national_support_states": {
+      "CURRENT": 8,
+      "HISTORICAL": 0,
+      "PLANNED": 0,
+      "UNKNOWN": 7,
+      "CONFLICT": 0
+    },
+    "institution_audit": {
+      "fixed_minimum_checked": true,
+      "required_entity_count": 183,
+      "adjudicated_entity_count": 183,
+      "source_mention_count": 106,
+      "source_mention_adjudicated_count": 106,
+      "missing_entities": [],
+      "unadjudicated_source_mentions": [],
+      "newly_discovered_entities": [
+        "佐伯市",
+        "熊本市国際交流振興事業団",
+        "日本財団ボランティアセンター"
+      ]
+    }
+  },
+  "snapshots": {
+    "reference_at": "2026-08-26T19:26:53+09:00",
+    "rechecked_at": "2026-08-26T20:05:00+09:00",
+    "current_shelters": 63,
+    "national_states": {
+      "records_total": 15,
+      "CURRENT": 8,
+      "HISTORICAL": 0,
+      "PLANNED": 0,
+      "UNKNOWN": 7,
+      "CONFLICT": 0,
+      "accepted_unresolved_count": 2,
+      "blocking_unresolved_count": 0
+    }
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {
+      "issue_id": "national-tec-next-wave-start",
+      "state": "UNKNOWN",
+      "reason": "8月26日出発予定は到来したが、実出発・実働開始を直接確認できない。",
+      "owner": "national-support-audit",
+      "source_ids": [
+        "kkr-tec5-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "national-accommodation-hakuo2-start",
+      "state": "UNKNOWN",
+      "reason": "8月26日13時開始予定は到来したが、実利用開始を直接確認できない。",
+      "owner": "national-support-audit",
+      "source_ids": [
+        "kumamoto-hakuo2-0826-plan"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-001",
+      "entity": "人吉市",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-002",
+      "entity": "人吉市社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-003",
+      "entity": "荒尾市",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-004",
+      "entity": "荒尾市社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-005",
+      "entity": "水俣市",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-006",
+      "entity": "水俣市社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-007",
+      "entity": "玉名市",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-008",
+      "entity": "玉名市社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-009",
+      "entity": "山鹿市",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-010",
+      "entity": "山鹿市社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-011",
+      "entity": "菊池市",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-012",
+      "entity": "菊池市社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-013",
+      "entity": "上天草市",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-014",
+      "entity": "上天草市社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-015",
+      "entity": "阿蘇市",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-016",
+      "entity": "阿蘇市社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-017",
+      "entity": "天草市",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-018",
+      "entity": "天草市社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-019",
+      "entity": "合志市",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-020",
+      "entity": "合志市社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-021",
+      "entity": "玉東町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-022",
+      "entity": "玉東町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-023",
+      "entity": "南関町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-024",
+      "entity": "南関町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-025",
+      "entity": "長洲町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-026",
+      "entity": "長洲町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-027",
+      "entity": "和水町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-028",
+      "entity": "和水町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-029",
+      "entity": "大津町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-030",
+      "entity": "大津町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-031",
+      "entity": "菊陽町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-032",
+      "entity": "菊陽町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-033",
+      "entity": "南小国町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-034",
+      "entity": "南小国町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-035",
+      "entity": "小国町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-036",
+      "entity": "小国町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-037",
+      "entity": "産山村",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-038",
+      "entity": "産山村社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-039",
+      "entity": "高森町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-040",
+      "entity": "高森町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-041",
+      "entity": "西原村",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-042",
+      "entity": "西原村社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-043",
+      "entity": "南阿蘇村",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-044",
+      "entity": "南阿蘇村社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-045",
+      "entity": "山都町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-046",
+      "entity": "山都町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-047",
+      "entity": "津奈木町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-048",
+      "entity": "津奈木町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-049",
+      "entity": "錦町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-050",
+      "entity": "錦町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-051",
+      "entity": "多良木町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-052",
+      "entity": "多良木町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-053",
+      "entity": "湯前町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-054",
+      "entity": "湯前町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-055",
+      "entity": "水上村",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-056",
+      "entity": "水上村社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-057",
+      "entity": "相良村",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-058",
+      "entity": "相良村社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-059",
+      "entity": "五木村",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-060",
+      "entity": "五木村社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-061",
+      "entity": "山江村",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-062",
+      "entity": "山江村社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-063",
+      "entity": "球磨村",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-064",
+      "entity": "球磨村社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-065",
+      "entity": "あさぎり町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-066",
+      "entity": "あさぎり町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-067",
+      "entity": "苓北町",
+      "state": "UNKNOWN",
+      "reason": "県公式横断表で8月26日19:26基準時点の災害VC活動を直接確認できず。非掲載を不活動とは推定しない。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    },
+    {
+      "issue_id": "institution-unknown-068",
+      "entity": "苓北町社会福祉協議会",
+      "state": "UNKNOWN",
+      "reason": "8月26日19:26基準時点の災害VC運営関与を直接確認できずUNKNOWN。 県横断表・既存一次情報を再確認したが、非掲載・更新なしを終了又はCURRENTの根拠にしない。",
+      "owner": "institution-coverage",
+      "source_ids": [
+        "kumamoto-volunteer-0824"
+      ],
+      "next_review_at": "2026-08-27T09:00:00+09:00"
+    }
+  ]
+}

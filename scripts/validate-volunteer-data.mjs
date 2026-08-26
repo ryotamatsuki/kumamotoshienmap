@@ -36,7 +36,7 @@ assert(unique(data.all_municipalities),"全市町村一覧に重複がありま�
 assert(unique(data.all_centers.map((center)=>center.municipality)),"共通表示用データに重複があります");
 assert(data.all_centers.every((center)=>data.all_municipalities.includes(center.municipality)),"県内市町村一覧と共通表示用データが一致しません");
 assert(isIso(data.meta.checked_at) && isIso(data.meta.reference_at),"情報基準日時がISO形式ではありません");
-assert(data.meta.reference_at.startsWith("2026-08-24"),"ボランティア情報の基準日が2026-08-22ではありません");
+assert(data.meta.reference_at.startsWith("2026-08-26"),"ボランティア情報の基準日が2026-08-26ではありません");
 assert(data.meta.checked_at === pageMeta.volunteerCheckedAt, "ボランティア情報の最終確認時刻がPAGE_RECHECK_META.volunteerCheckedAtと一致しません");
 
 for(const center of data.all_centers){
