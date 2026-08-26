@@ -73,6 +73,8 @@ npm run validate:release -- --base=<BASE_SHA> [--ledger=<LEDGER>]
 
 `validate:release` first executes the existing Version 2.5-era Release Gate and only then executes the sender coverage gate. Passing sender coverage can never bypass an existing release check.
 
+Normal merge policy is final-head PR CI. The validation workflow also runs on `main` pushes as defense in depth so a missing PR-event/check-suite cannot make a merged revision invisible to build and Release Gate validation. A post-merge push PASS is not a policy substitute for PR CI when PR CI is available; it is an additional validation surface and a recovery path when the platform does not create the expected PR workflow run.
+
 ## 6. Ehime Hard Gate
 
 Exactly these 20 municipalities are required:
@@ -128,4 +130,6 @@ Destructive tests intentionally verify failure for at least:
 
 The UI is a view of the canonical audit files. Validators operate on the canonical data, not on UI text.
 
-After squash merge, the post-deploy Pages smoke must verify byte parity for the sender HTML, manifest and all sender-audit assets, plus Desktop 1440×1000 and Mobile 390×844 runtime checks. Page errors, console errors and document-level horizontal overflow must be zero.
+After squash merge, the post-deploy Pages smoke must wait until the root page, legacy dashboard, sender page and sender manifest all match the same main revision before it declares deployment convergence. It then verifies byte parity for every sender audit asset and runs Desktop 1440×1000 and Mobile 390×844 browser checks. Page errors, console errors and document-level horizontal overflow must be zero.
+
+The expected nationwide sender row count is read from the canonical manifest at runtime; the smoke workflow must not hard-code the current denominator because future discovery is expected to increase it.
