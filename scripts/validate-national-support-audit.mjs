@@ -11,6 +11,13 @@ const fail=(message)=>{throw new Error('[NATIONAL SUPPORT AUDIT FAIL] '+message)
 if(html!==publicHtml)fail('source/public parity');
 if(audit.reference_at!=='2026-08-25T14:08:00+09:00')fail('reference_at');
 if(audit.inventory.audit_record_count!==audit.records.length)fail('record count');
+const expectedRecordIds=[...new Set([...(audit.inventory.existing_record_ids||[]),...(audit.inventory.generated_record_ids||[])])];
+const actualRecordIds=audit.records.map((record)=>record.record_id);
+if(new Set(actualRecordIds).size!==actualRecordIds.length)fail('監査対象national record_id重複');
+const missingRecordIds=expectedRecordIds.filter((id)=>!actualRecordIds.includes(id));
+const unexpectedRecordIds=actualRecordIds.filter((id)=>!expectedRecordIds.includes(id));
+if(missingRecordIds.length||unexpectedRecordIds.length)fail(`未裁定の監査対象national recordがあります missing=${missingRecordIds.join(',')} unexpected=${unexpectedRecordIds.join(',')}`);
+if(audit.inventory.audit_record_count!==expectedRecordIds.length)fail('監査対象national inventory count');
 const sourceIds=new Set(audit.sources.map((source)=>source.source_id));
 const auditUpper=Date.parse(audit.rechecked_at||audit.checked_at);
 for(const source of audit.sources){
