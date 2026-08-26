@@ -45,4 +45,6 @@ The PR must pass:
 - final Release Gate
 - `git diff --check`
 
+The CI result used for merge approval must belong to the exact final PR head SHA. Any subsequent audit, documentation or code correction invalidates an earlier PASS and requires a new final-head run.
+
 After squash merge, Pages smoke must verify the main dashboard plus `sender-municipalities.html` and all canonical sender audit assets on Desktop 1440×1000 and Mobile 390×844 with zero page/console errors and zero document-level horizontal overflow.
