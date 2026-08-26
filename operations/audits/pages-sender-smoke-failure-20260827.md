@@ -44,6 +44,8 @@ Root cause: missing explicit favicon handling on the standalone sender page caus
 
 Correction: `sender-municipalities.html` now declares an empty data-URL favicon (`<link rel="icon" href="data:,">`) so the browser does not make a missing favicon request. This changes no audit data, identity semantics or sender adjudication.
 
+Diagnostic rule for future failures: when complete-release convergence, canonical JSON byte parity and rendered sender row counts have already passed, a remaining browser resource 4xx must be investigated as a separate URL-level production asset failure rather than being conflated with sender-data closure. Required data/resource URLs remain blocking; optional browser chrome should be made explicit so it cannot create unexplained console noise.
+
 ## Final requirement
 
 None of these failed runs is treated as a production PASS. A subsequent main revision must complete the full post-deploy workflow including byte parity and Desktop 1440×1000 / Mobile 390×844 browser QA for both dashboards with zero page errors, console errors and document-level horizontal overflow.
