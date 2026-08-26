@@ -52,7 +52,7 @@ jobs:
           {const item=PROVINCE_NEEDS.find(value=>value.id==='p-shelter');if(item)item.observed='熊本県第45報（8月26日8時）では避難所64か所、避難者2,589人。現行公式避難所JSONは取得時点の開設施設を別定義で表示する。';}
           {const item=PROVINCE_NEEDS.find(value=>value.id==='p-admin');if(item)item.observed='熊本県第45報では住家被害39,567棟。市町別旧スナップショットとは時点が異なるため、県計と旧内訳を分離して表示する。';}
           {const item=PROVINCE_NEEDS.find(value=>value.id==='p-housing');if(item)item.observed='熊本県第45報では住家被害39,567棟。被害区分別の現況は確認できた県計の範囲を超えて推測せず、旧区分値を現況として流用しない。';}
-          if(typeof PAGE_RECHECK_META!=='undefined'){PAGE_RECHECK_META.checkedAt='2026-08-26T19:26:53+09:00';PAGE_RECHECK_META.volunteerCheckedAt='2026-08-26T19:26:53+09:00';}
+          if(typeof PAGE_RECHECK_META!=='undefined'){PAGE_RECHECK_META.checkedAt='2026-08-26T19:26:53+09:00';PAGE_RECHECK_META.volunteerCheckedAt='2026-08-26T20:05:00+09:00';}
           /* CURRENT_STATE_REFRESH_20260826_FINAL_END */`;
           for(const p of ['ehime_kumamoto_support_geocoded_shelters_20260802.html','public/dashboard.html']){
             let t=readFileSync(p,'utf8');
