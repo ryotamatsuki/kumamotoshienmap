@@ -65,19 +65,13 @@ jobs:
             writeFileSync(p,t);
           }
           NODE
-      - name: Patch post-deploy expected shelter count
+      - name: Record expected post-deploy smoke count
         run: |
           set -Eeuo pipefail
           node --input-type=module - <<'NODE'
-          import {readFileSync,writeFileSync} from 'node:fs';
+          import {readFileSync} from 'node:fs';
           const count=JSON.parse(readFileSync('current-shelters.json','utf8')).shelters.length;
-          const p='.github/workflows/post-deploy-pages-smoke.yml';
-          let t=readFileSync(p,'utf8');
-          t=t.replace(/current_count!==\d+/g,`current_count!==${count}`)
-             .replace(/shelters\.length!==\d+/g,`shelters.length!==${count}`)
-             .replace(/current shelters count must be \d+/g,`current shelters count must be ${count}`);
-          writeFileSync(p,t);
-          console.log(JSON.stringify({currentShelters:count}));
+          console.log(JSON.stringify({currentShelters:count,workflowUpdateDeferred:true}));
           NODE
       - name: Validate generated dashboard and build dist
         run: |
@@ -114,10 +108,11 @@ jobs:
           ledger.snapshots.current_shelters=shelters.shelters.length;
           let files=execFileSync('git',['diff','--name-only',base],{encoding:'utf8'}).trim().split(/\n/u).filter(Boolean);
           files=files.filter(p=>!['.github/workflows/refresh-20260826-1926.yml','scripts/refresh-20260826-1926.mjs','scripts/finalize-current-point-20260826.mjs','current-shelters.candidate.json'].includes(p));
+          files.push('.github/workflows/post-deploy-pages-smoke.yml');
           if(!files.includes(lp))files.push(lp);
           ledger.expected_changed_files=[...new Set(files)].sort();
           writeFileSync(lp,JSON.stringify(ledger,null,2)+'\n');
-          console.log(JSON.stringify({expectedChangedFiles:ledger.expected_changed_files,currentShelters:shelters.shelters.length,unresolved,conflict}));
+          console.log(JSON.stringify({expectedChangedFiles:ledger.expected_changed_files,currentShelters:shelters.shelters.length,unresolved,conflict,deferredWorkflowUpdate:'.github/workflows/post-deploy-pages-smoke.yml'}));
           NODE
           git add -A
       - name: Release self-test and gate
