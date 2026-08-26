@@ -30,6 +30,20 @@ Root cause: QA selector compatibility was not preserved when the UI moved from m
 
 Correction: sender rows now keep `data-entity-key` as the canonical unique identifier and also expose `data-entity` as a compatibility/testing attribute. This avoids weakening the unique-key model while allowing the existing smoke selector to observe row rendering.
 
+## Run 33021482833 — sender favicon 404
+
+The final selector-compatible release reached GitHub Pages and passed complete-release convergence, asset byte parity, current shelters 63/63, Ehime 20/20, nationwide 47/47, 258 adjudicated senders and orphan source mentions 0. The sender table rendered and advanced through the browser assertions, but the Desktop sender QA failed because Chrome emitted one console resource error:
+
+```text
+Failed to load resource: the server responded with a status of 404 ()
+```
+
+All canonical sender JSON resources had already passed byte-parity checks and the sender rows rendered, so the failed request was not a required audit-data resource. The standalone sender page had no favicon declaration, allowing the browser to issue the conventional favicon request against a non-existent Pages resource.
+
+Root cause: missing explicit favicon handling on the standalone sender page caused a non-functional browser resource 404, violating the production requirement of zero console errors.
+
+Correction: `sender-municipalities.html` now declares an empty data-URL favicon (`<link rel="icon" href="data:,">`) so the browser does not make a missing favicon request. This changes no audit data, identity semantics or sender adjudication.
+
 ## Final requirement
 
 None of these failed runs is treated as a production PASS. A subsequent main revision must complete the full post-deploy workflow including byte parity and Desktop 1440×1000 / Mobile 390×844 browser QA for both dashboards with zero page errors, console errors and document-level horizontal overflow.
