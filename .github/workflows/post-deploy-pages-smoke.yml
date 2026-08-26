@@ -52,9 +52,9 @@ jobs:
           curl -fsSL --connect-timeout 10 --max-time 30 "${base}/" -o /tmp/root.html
           grep -F './ehime_kumamoto_support_geocoded_shelters_20260802.html' /tmp/root.html
           grep -F 'NATIONAL_SUPPORT_AUDIT_START' "$deployed"
-          grep -F '8月25日14:08基準で全件再監査' "$deployed"
-          grep -F '8/23値はHISTORICALとして分離。給水車・TEC-FORCE・入浴支援の8/25同一定義現況はUNKNOWN' "$deployed"
-          grep -F '8月25日閣議：被災中小企業者等への災害融資特別措置を決定' "$deployed"
+          grep -F '8月26日19:26基準で全件再監査' "$deployed"
+          grep -F '国交省第49報8/25値はHISTORICALスナップショット。8/26は佐伯市給水継続をCURRENT、TEC-FORCE第5陣・はくおう2宿泊は実働未確認のためUNKNOWN' "$deployed"
+          grep -F '8月25日閣議の災害融資特別措置を保持し、8月26日実働主体を再監査' "$deployed"
           grep -F 'national-accommodation-hakuo2' "$deployed"
           grep -F '8/26 13:00から2泊3日の宿泊支援' "$deployed"
           grep -F '住まいサポートダイヤル（住宅復旧・改修相談）' "$deployed"
@@ -63,7 +63,7 @@ jobs:
           node --input-type=module - <<'NODE'
           import { readFileSync } from 'node:fs';
           const shelters=JSON.parse(readFileSync('/tmp/current-shelters.json','utf8'));
-          if(shelters.meta.current_count!==67 || shelters.shelters.length!==67) throw new Error('deployed current shelters count must be 67');
+          if(shelters.meta.current_count!==63 || shelters.shelters.length!==63) throw new Error('deployed current shelters count must be 63');
           if(shelters.shelters.some(row=>row.coordinate_status!=='confirmed')) throw new Error('deployed current shelters contain unresolved/conflict coordinates');
           console.log(JSON.stringify({currentShelters:shelters.shelters.length,allCoordinatesConfirmed:true}));
           NODE
