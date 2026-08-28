@@ -31,9 +31,10 @@ jobs:
           lines=[]
           for line in body.splitlines():
               lines.append(line[10:] if line.startswith('          ') else line)
-          Path('/tmp/refresh.mjs').write_text('\n'.join(lines)+'\n')
+          Path('.temporary-timepoint-refresh.mjs').write_text('\n'.join(lines)+'\n')
           PY
-          node /tmp/refresh.mjs
+          node .temporary-timepoint-refresh.mjs
+          rm .temporary-timepoint-refresh.mjs
       - name: Build canonical site first
         run: npm run build
       - name: Run destructive release gate tests
