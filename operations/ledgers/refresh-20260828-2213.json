@@ -1,0 +1,68 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260828-2213",
+  "release_id": "20260826-1926",
+  "reference_at": "2026-08-26T19:26:53+09:00",
+  "rechecked_at": "2026-08-28T22:13:00+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "ed442f3fc6125fd74d5c014ec3a2715b5738e3d8",
+  "expected_changed_files": [
+    "current-shelters.json",
+    "operations/ledgers/refresh-20260828-2213.json",
+    "sender-audit/discovery.json",
+    "sender-audit/ehime.json",
+    "sender-audit/sources-additions.json",
+    "sender-audit/timepoint-20260828-additions.json",
+    "sender-municipality-audit.json"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-current-shelters-0828",
+      "publisher": "熊本県 防災情報ポータル",
+      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+      "source_as_of": "2026-08-28T21:57:35+09:00",
+      "checked_at": "2026-08-28T22:13:00+09:00"
+    },
+    {
+      "source_id": "sender-audit-canonical-0828",
+      "publisher": "sender municipality coverage audit",
+      "url": "https://github.com/ryotamatsuki/kumamotoshienmap/blob/audit/timepoint-20260828-2213/sender-municipality-audit.json",
+      "source_as_of": "2026-08-28T22:13:00+09:00",
+      "checked_at": "2026-08-28T22:13:00+09:00"
+    }
+  ],
+  "coverage": {
+    "page_wide_reference_unchanged": "2026-08-26T19:26:53+09:00",
+    "current_shelters": 63,
+    "current_shelter_coordinates_confirmed": 63,
+    "current_shelter_unresolved": 0,
+    "sender_reference_at": "2026-08-28T22:13:00+09:00",
+    "ehime_required": 20,
+    "ehime_adjudicated": 20,
+    "ehime_missing": 0,
+    "prefecture_discovery_checked": 47,
+    "sender_entities_discovered": 302,
+    "sender_entities_adjudicated": 302,
+    "sender_orphan_source_mentions": 0,
+    "sender_blocking_conflicts": 0,
+    "sender_states": {
+      "CURRENT": 24,
+      "PLANNED": 5,
+      "HISTORICAL": 17,
+      "UNKNOWN": 256,
+      "NO_EVIDENCE": 0,
+      "CONFLICT": 0
+    }
+  },
+  "snapshots": {
+    "page_reference_at": "2026-08-26T19:26:53+09:00",
+    "sender_reference_at": "2026-08-28T22:13:00+09:00",
+    "shelter_source_last_modified": "2026-08-28T21:57:35+09:00",
+    "current_shelters": 63
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": []
+}
