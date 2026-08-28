@@ -11,7 +11,9 @@
   "base_main_sha": "ed442f3fc6125fd74d5c014ec3a2715b5738e3d8",
   "expected_changed_files": [
     "current-shelters.json",
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
     "operations/ledgers/refresh-20260828-2213.json",
+    "public/dashboard.html",
     "sender-audit/discovery.json",
     "sender-audit/ehime.json",
     "sender-audit/sources-additions.json",
