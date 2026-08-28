@@ -39,12 +39,12 @@ jobs:
         run: npm run build
       - name: Run destructive release gate tests
         run: npm run test:release-gate
-      - name: Commit refreshed canonical data and dist
+      - name: Commit refreshed canonical data
         run: |
           set -Eeuo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add sender-municipality-audit.json sender-audit/ehime.json sender-audit/discovery.json sender-audit/sources-additions.json sender-audit/timepoint-20260828-additions.json dist
+          git add sender-municipality-audit.json sender-audit/ehime.json sender-audit/discovery.json sender-audit/sources-additions.json sender-audit/timepoint-20260828-additions.json
           if git diff --cached --quiet; then echo 'No refreshed data changes.'; exit 0; fi
           git commit -m 'data: refresh sender audit at 20260828 2213 JST'
           git push origin HEAD:audit/timepoint-20260828-2213
