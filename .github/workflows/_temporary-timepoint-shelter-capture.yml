@@ -1,4 +1,4 @@
-name: Temporary timepoint audit inspector
+name: Temporary timepoint sender refresh
 
 on:
   push:
@@ -6,13 +6,13 @@ on:
       - audit/timepoint-20260828-2213
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  inspect:
+  refresh:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
         with:
@@ -20,18 +20,111 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22.x
-      - name: Inspect canonical audit baselines
+      - name: Apply structured sender timepoint refresh
         run: |
           node --input-type=module - <<'NODE'
-          import {readFileSync} from 'node:fs';
-          import {loadSenderAudit} from './scripts/sender-coverage-lib.mjs';
+          import {readFileSync,writeFileSync} from 'node:fs';
+          const REF='2026-08-28T22:13:00+09:00';
+          const NEXT='2026-08-29T09:00:00+09:00';
+          const BASE='ed442f3fc6125fd74d5c014ec3a2715b5738e3d8';
           const read=p=>JSON.parse(readFileSync(p,'utf8'));
-          const municipal=read('municipal-support-audit.json');
-          const national=read('national-support-audit.json');
-          const institution=read('operations/audits/institution-coverage-20260826-1926.json');
-          const sender=loadSenderAudit();
-          console.log('MUNICIPAL_META',JSON.stringify({reference_at:municipal.reference_at,checked_at:municipal.checked_at,release_id:municipal.release_id,summary:municipal.summary,records:(municipal.records||[]).map(r=>({id:r.record_id,state:r.state,source_ids:r.source_ids,display:r.display}))},null,2));
-          console.log('NATIONAL_META',JSON.stringify({reference_at:national.reference_at,checked_at:national.checked_at,release_id:national.release_id,summary:national.summary,records:(national.records||[]).map(r=>({id:r.record_id,state:r.state,source_ids:r.source_ids,display:r.display}))},null,2));
-          console.log('INSTITUTION_META',JSON.stringify({reference_at:institution.reference_at,checked_at:institution.checked_at,summary:institution.summary,required_count:(institution.required_entities||[]).length,source_mentions:(institution.source_mentions||[]).length,accepted_unresolved_count:(institution.accepted_unresolved||[]).length,newly_discovered:institution.newly_discovered_entities||institution.summary?.newly_discovered_entities},null,2));
-          console.log('SENDER_STATES',JSON.stringify(sender.entities.map(e=>({key:`${e.prefecture}/${e.entity}`,state:e.state,support:e.support_types,dest:e.destinations,source_ids:e.source_ids})),null,2));
+          const write=(p,x)=>writeFileSync(p,JSON.stringify(x,null,2)+'\n');
+          const addUnique=(a,v)=>{if(!a.includes(v))a.push(v)};
+          const mergeUnique=(a,b)=>[...new Set([...(a||[]),...(b||[])])];
+
+          const sourceFile='sender-audit/sources-additions.json';
+          const sourceDoc=read(sourceFile);
+          const newSources=[
+            {source_id:'ehime-niihama-donation-0825',publisher:'新居浜市',title:'令和8年熊本地震義援金の受付について',url:'https://www.city.niihama.lg.jp/soshiki/kikikanri/notogiennkinn.html',tier:1,source_as_of:'2026-08-25T00:00:00+09:00',checked_at:REF,note:'12月25日までの義援金受付を市公式が明示。'},
+            {source_id:'ehime-saijo-0827',publisher:'西条市',title:'令和8年熊本地震の被災地へ当市職員を派遣します',url:'https://www.city.saijo.ehime.jp/soshiki/kikikanri/kumamotohaken2.html',tier:1,source_as_of:'2026-08-27T00:00:00+09:00',checked_at:REF,note:'義援金・代理寄附を実施中と明示し、派遣実績と9月2日以降の追加派遣予定も掲載。'},
+            {source_id:'ehime-uchiko-proxy-0817',publisher:'内子町',title:'エコロジータウン内子ふるさと応援寄附金',url:'https://cms2021.town.uchiko.ehime.jp/soshiki/53/furusatoouenkifukin2.html',tier:1,source_as_of:'2026-08-17T00:00:00+09:00',checked_at:REF,note:'熊本地震に伴う代理寄附を「受け付けています」と町公式が明示。'},
+            {source_id:'ehime-toon-report-0827',publisher:'東温市',title:'広報とうおん2026年9月号',url:'https://www.city.toon.ehime.jp/site/pr/33798.html',tier:1,source_as_of:'2026-08-27T00:00:00+09:00',checked_at:REF,note:'8月13日から19日まで氷川町へ市職員2人を派遣した実績を市公式広報で確認。'},
+            {source_id:'ehime-uwajima-jrat-0821',publisher:'市立宇和島病院',title:'令和8年熊本地震におけるJRAT派遣について',url:'https://www.uwajima-mh.jp/info/other/39727',tier:1,source_as_of:'2026-08-21T00:00:00+09:00',checked_at:REF,note:'8月20日から24日まで職員1名を愛媛JRATの一員として派遣。'},
+            {source_id:'tokyo-wave-0821',publisher:'東京都',title:'令和8年熊本地震への都の対応（第28報）',url:'https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082106',tier:2,source_as_of:'2026-08-21T00:00:00+09:00',checked_at:REF,note:'特別区・市職員の派遣予定を明記。予定のみではCURRENTにしない。'},
+            {source_id:'tokyo-wave-0828',publisher:'東京都',title:'令和8年熊本地震への都の対応（第30報）',url:'https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082806',tier:2,source_as_of:'2026-08-28T00:00:00+09:00',checked_at:REF,note:'8月28日開始の特別区・市職員派遣予定を明記。予定のみではCURRENTにしない。'},
+            {source_id:'gunma-wave1-0805',publisher:'群馬県',title:'令和8年熊本地震に係る熊本県への応援職員の派遣について',url:'https://www.pref.gunma.jp/site/houdou/769933.html',tier:2,source_as_of:'2026-08-05T00:00:00+09:00',checked_at:REF,note:'前橋市・高崎市・館林市・藤岡市・板倉町を第1班派遣元として明記。'},
+            {source_id:'yamaguchi-wave5-0827',publisher:'山口県',title:'令和8年熊本地震に係る職員の派遣について（第5陣）',url:'https://www.pref.yamaguchi.lg.jp/press/360430.html',tier:2,source_as_of:'2026-08-27T00:00:00+09:00',checked_at:REF,note:'山口市・萩市を8月28日開始予定の第5陣派遣元として明記。'},
+            {source_id:'tokushima-0812',publisher:'徳島県',title:'リエゾン（第5陣）及び避難所支援チーム（第4陣）の派遣',url:'https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315640/',tier:2,source_as_of:'2026-08-12T00:00:00+09:00',checked_at:REF,note:'美馬市・勝浦町職員を派遣したことを明示。'},
+            {source_id:'tokushima-0816',publisher:'徳島県',title:'リエゾン（第6陣）及び避難所支援チーム（第5陣）の派遣',url:'https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315706/',tier:2,source_as_of:'2026-08-16T00:00:00+09:00',checked_at:REF,note:'三好市・東みよし町職員を派遣したことを明示。'},
+            {source_id:'tokushima-0820',publisher:'徳島県',title:'リエゾン（第7陣）及び避難所支援チーム（第6陣）の派遣',url:'https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315791/',tier:2,source_as_of:'2026-08-20T00:00:00+09:00',checked_at:REF,note:'徳島市・牟岐町職員を派遣したことを明示。'},
+            {source_id:'tokushima-0823',publisher:'徳島県',title:'住家被害認定調査チーム（第1陣）の派遣',url:'https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315841/',tier:2,source_as_of:'2026-08-23T00:00:00+09:00',checked_at:REF,note:'徳島市・美波町職員を派遣したことを明示。'},
+            {source_id:'tokushima-0828',publisher:'徳島県',title:'リエゾン（第9陣）及び避難所支援チーム（第8陣）の派遣',url:'https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315969/',tier:2,source_as_of:'2026-08-28T00:00:00+09:00',checked_at:REF,note:'小松島市・つるぎ町職員を8月28日に派遣したことを明示。'},
+            {source_id:'fukuoka-wave-0828',publisher:'福岡県',title:'令和8年熊本地震による被害に係る職員の派遣等について',url:'https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken6.html',tier:2,source_as_of:'2026-08-28T11:00:00+09:00',checked_at:REF,note:'8月31日以降の市町村合同派遣を公表。基準時点ではPLANNED。'},
+            {source_id:'nagasaki-wave7-0824',publisher:'長崎県',title:'熊本地震にかかる職員の派遣について（8月25日出発分）',url:'https://www.pref.nagasaki.jp/press-contents/51710.html',tier:2,source_as_of:'2026-08-24T00:00:00+09:00',checked_at:REF,note:'西海市・新上五島町・長崎市・諫早市・大村市等の市町職員を第7陣等として明記。'},
+            {source_id:'nagasaki-status-0827',publisher:'長崎県',title:'熊本地震にかかる職員の派遣について（8月28日出発分）',url:'https://www.pref.nagasaki.jp/press-contents/51933.html',tier:2,source_as_of:'2026-08-27T00:00:00+09:00',checked_at:REF,note:'8月27日時点の派遣状況として美里町・八代市・宇城市の市町職員派遣を9月1日まで含めて集計。'}
+          ];
+          const ids=new Set(sourceDoc.sources.map(s=>s.source_id));
+          for(const s of newSources) if(!ids.has(s.source_id)){sourceDoc.sources.push(s);ids.add(s.source_id)}
+          sourceDoc.reference_at=REF; write(sourceFile,sourceDoc);
+
+          const manifestPath='sender-municipality-audit.json';
+          const manifest=read(manifestPath);
+          const ehimePath='sender-audit/ehime.json';
+          const ehime=read(ehimePath);
+          for(const e of ehime.entities){e.checked_at=REF;e.next_review_at=NEXT;}
+          const patch=(name,p)=>{const e=ehime.entities.find(x=>x.entity===name);if(!e)throw new Error('Ehime entity missing '+name);Object.assign(e,p);if(p.source_ids)e.sources_checked=[...p.source_ids];if(e.state!=='CURRENT')delete e.current_evidence_type;if(e.state!=='UNKNOWN')delete e.reason;};
+          patch('新居浜市',{state:'CURRENT',support_types:['義援金','災害支援代理寄附'],destinations:['熊本県','熊本県内'],source_ids:['ehime-niihama-donation-0825','ehime-proxy-discovery'],evidence_note:'市公式が義援金を2026年12月25日まで受け付ける旨を明示。',current_evidence_type:'active_collection_explicit',source_as_of:'2026-08-25T00:00:00+09:00'});
+          patch('西条市',{state:'CURRENT',support_types:['義援金','災害支援代理寄附','職員派遣'],destinations:['熊本県内','氷川町','益城町'],source_ids:['ehime-saijo-0827','ehime-saijo-listing','ehime-proxy-discovery'],evidence_note:'8月27日市公式が義援金・益城町代理寄附を実施中と明記。派遣実績と次回派遣予定も掲載。',current_evidence_type:'explicit_current_activity',source_as_of:'2026-08-27T00:00:00+09:00'});
+          patch('内子町',{state:'CURRENT',support_types:['職員派遣','災害支援代理寄附'],destinations:['氷川町','熊本県内'],source_ids:['ehime-uchiko-dispatch','ehime-uchiko-proxy-0817'],evidence_note:'8月13～19日の職員派遣実績に加え、町公式が熊本地震の代理寄附を現在形で受け付けていると明示。',current_evidence_type:'active_collection_explicit',source_as_of:'2026-08-17T00:00:00+09:00'});
+          patch('東温市',{state:'HISTORICAL',support_types:['職員派遣'],destinations:['氷川町'],source_ids:['ehime-toon-dispatch','ehime-toon-report-0827'],evidence_note:'市公式広報で8月13～19日に氷川町へ市職員2名を実派遣したことを確認。基準時点では当該派遣は終了。',source_as_of:'2026-08-27T00:00:00+09:00'});
+          patch('宇和島市',{state:'UNKNOWN',support_types:['災害支援代理寄附','車両支援','JRAT職員派遣'],destinations:['熊本県内','熊本県'],source_ids:['ehime-proxy-discovery','ehime-uwajima-jrat-0821'],evidence_note:'市立宇和島病院職員の愛媛JRAT派遣（8月20～24日）は実績確認済み。一方、他の市送出支援が基準時点で継続中かは直接確定できない。',reason:'JRAT派遣はHISTORICALと確認できるが、二次情報で発見した他支援の基準時点継続を市一次情報で閉じられないためUNKNOWN。',source_as_of:'2026-08-21T00:00:00+09:00'});
+          patch('伊方町',{state:'UNKNOWN',source_ids:['ehime-ikata-donation'],evidence_note:'町公式に募金箱設置開始はあるが、8月28日基準までの受付継続期間を直接示す記載を確認できない。',reason:'開始告知の掲載だけで基準時点の継続を推定せずUNKNOWN。'});
+          write(ehimePath,ehime);
+
+          const additionsPath='sender-audit/timepoint-20260828-additions.json';
+          const E=(prefecture,entity,municipality_type,source_id,destination,state,note,current_evidence_type=null)=>{const x={entity,prefecture,municipality_type,kind:'basic_municipality_sender',required:false,state,support_types:['職員派遣'],destinations:[destination],source_ids:[source_id],evidence_note:note,checked_at:REF,next_review_at:NEXT,source_as_of:null,sources_checked:[source_id]};if(state==='CURRENT')x.current_evidence_type=current_evidence_type||'actual_dispatch_confirmed';if(state==='UNKNOWN')x.reason=note;if(state==='PLANNED')x.reason=note;return x;};
+          const entities=[];
+          for(const n of ['中央区','品川区','豊島区'])entities.push(E('東京都',n,'special_ward','tokyo-wave-0821','熊本市','UNKNOWN','東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。'));
+          for(const n of ['立川市','日野市','多摩市','稲城市'])entities.push(E('東京都',n,'city','tokyo-wave-0821','熊本市','UNKNOWN','東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。'));
+          for(const n of ['港区','台東区','目黒区','練馬区','江戸川区'])entities.push(E('東京都',n,'special_ward','tokyo-wave-0828','熊本市','UNKNOWN','8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。'));
+          for(const n of ['昭島市','国分寺市','国立市','東大和市','武蔵村山市','武蔵野市','三鷹市'])entities.push(E('東京都',n,'city','tokyo-wave-0828','熊本市','UNKNOWN','8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。'));
+          for(const n of ['前橋市','高崎市','館林市','藤岡市'])entities.push(E('群馬県',n,'city','gunma-wave1-0805','熊本市','UNKNOWN','群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。'));
+          entities.push(E('群馬県','板倉町','town','gunma-wave1-0805','熊本市','UNKNOWN','群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。'));
+          for(const n of ['山口市','萩市'])entities.push(E('山口県',n,'city','yamaguchi-wave5-0827','八代市','UNKNOWN','8月28日開始予定を山口県公式が公表。実出発・実働を直接確認できないためUNKNOWN。'));
+          const hist=[['美馬市','city','tokushima-0812'],['勝浦町','town','tokushima-0812'],['三好市','city','tokushima-0816'],['東みよし町','town','tokushima-0816'],['徳島市','city','tokushima-0820'],['牟岐町','town','tokushima-0820'],['美波町','town','tokushima-0823']];
+          for(const [n,t,s] of hist)entities.push(E('徳島県',n,t,s,'宇土市','HISTORICAL','徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。'));
+          entities.push(E('徳島県','小松島市','city','tokushima-0828','宇土市','CURRENT','徳島県公式が8月28日に職員を派遣したことを明示し、派遣期間は9月3日まで。','actual_dispatch_confirmed'));
+          entities.push(E('徳島県','つるぎ町','town','tokushima-0828','宇土市','CURRENT','徳島県公式が8月28日に職員を派遣したことを明示し、派遣期間は9月3日まで。','actual_dispatch_confirmed'));
+          for(const [n,t] of [['うきは市','city'],['新宮町','town'],['久山町','town'],['福智町','town']])entities.push(E('福岡県',n,t,'fukuoka-wave-0828','宇土市','PLANNED','福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。'));
+          for(const [n,t] of [['西海市','city'],['新上五島町','town'],['長崎市','city'],['諫早市','city'],['大村市','city']]){const x=E('長崎県',n,t,'nagasaki-wave7-0824',n==='西海市'||n==='新上五島町'?'美里町':n==='長崎市'||n==='諫早市'?'八代市':'宇城市','CURRENT','8月24日公表で派遣元を特定し、8月27日県公式の派遣状況集計で当該市町職員派遣が9月1日まで継続するコホートとして確認できる。','actual_dispatch_confirmed');x.source_ids=['nagasaki-wave7-0824','nagasaki-status-0827'];x.sources_checked=[...x.source_ids];entities.push(x)}
+          write(additionsPath,{region:'timepoint-20260828-additions',reference_at:REF,entities});
+
+          addUnique(manifest.entity_files,additionsPath);
+          for(const e of entities)addUnique(manifest.source_mentions,e.entity);
+          manifest.reference_at=REF;manifest.checked_at=REF;manifest.base_main_sha=BASE;
+          manifest.policy_version='2.6';
+          manifest.timepoint_note='2026-08-28 22:13 JST sender refresh; schedule-only evidence remains non-CURRENT.';
+
+          const discovery=read(manifest.discovery_file);
+          for(const d of discovery.prefecture_discovery)d.checked_at=REF;
+          const byPref=new Map(discovery.prefecture_discovery.map(d=>[d.prefecture,d]));
+          for(const e of entities){const d=byPref.get(e.prefecture);if(!d)throw new Error('missing prefecture discovery '+e.prefecture);d.sender_candidates_found=mergeUnique(d.sender_candidates_found,[e.entity]);d.sources_checked=mergeUnique(d.sources_checked,e.source_ids);}
+          write(manifest.discovery_file,discovery);
+          write(manifestPath,manifest);
+
+          const {loadSenderAudit,senderSummary,validateSenderAudit}=await import('./scripts/sender-coverage-lib.mjs?refresh='+Date.now());
+          const data=loadSenderAudit();
+          const summary=senderSummary(data);
+          const errors=validateSenderAudit(data,{scope:'all'});
+          if(errors.length)throw new Error(errors.join('\n'));
+          manifest.summary.ehime={...manifest.summary.ehime,required_count:20,adjudicated_count:20,missing_required:[],unadjudicated_source_mentions:[],blocking_unresolved:0,states:summary.ehime.states};
+          manifest.summary.nationwide={...manifest.summary.nationwide,prefecture_discovery_checked:summary.prefecturesChecked,discovered_basic_municipality_senders:summary.nationwide.entities,adjudicated_basic_municipality_senders:summary.nationwide.entities,unadjudicated_discovered_senders:[],source_mentions:summary.sourceMentions,orphan_source_mentions:[],invalid_current:[],blocking_conflicts:0,states:summary.nationwide.states};
+          write(manifestPath,manifest);
+          const data2=loadSenderAudit();
+          const errors2=validateSenderAudit(data2,{scope:'all'});if(errors2.length)throw new Error(errors2.join('\n'));
+          console.log(JSON.stringify(senderSummary(data2),null,2));
           NODE
+      - name: Validate sender gates and build
+        run: |
+          npm run validate:sender-coverage
+          npm run test:release-gate
+          npm run build
+      - name: Commit refreshed sender audit
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add sender-municipality-audit.json sender-audit/ehime.json sender-audit/discovery.json sender-audit/sources-additions.json sender-audit/timepoint-20260828-additions.json dist || true
+          if git diff --cached --quiet; then echo 'No sender changes.'; exit 0; fi
+          git commit -m 'data: refresh sender audit at 20260828 2213 JST'
+          git push origin HEAD:audit/timepoint-20260828-2213
