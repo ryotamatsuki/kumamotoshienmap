@@ -1,0 +1,1109 @@
+{
+  "region": "timepoint-20260828-additions",
+  "reference_at": "2026-08-28T22:13:00+09:00",
+  "entities": [
+    {
+      "entity": "中央区",
+      "prefecture": "東京都",
+      "municipality_type": "special_ward",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0821"
+      ],
+      "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0821"
+      ],
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+    },
+    {
+      "entity": "品川区",
+      "prefecture": "東京都",
+      "municipality_type": "special_ward",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0821"
+      ],
+      "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0821"
+      ],
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+    },
+    {
+      "entity": "豊島区",
+      "prefecture": "東京都",
+      "municipality_type": "special_ward",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0821"
+      ],
+      "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0821"
+      ],
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+    },
+    {
+      "entity": "立川市",
+      "prefecture": "東京都",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0821"
+      ],
+      "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0821"
+      ],
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+    },
+    {
+      "entity": "日野市",
+      "prefecture": "東京都",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0821"
+      ],
+      "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0821"
+      ],
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+    },
+    {
+      "entity": "多摩市",
+      "prefecture": "東京都",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0821"
+      ],
+      "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0821"
+      ],
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+    },
+    {
+      "entity": "稲城市",
+      "prefecture": "東京都",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0821"
+      ],
+      "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0821"
+      ],
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+    },
+    {
+      "entity": "港区",
+      "prefecture": "東京都",
+      "municipality_type": "special_ward",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "台東区",
+      "prefecture": "東京都",
+      "municipality_type": "special_ward",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "目黒区",
+      "prefecture": "東京都",
+      "municipality_type": "special_ward",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "練馬区",
+      "prefecture": "東京都",
+      "municipality_type": "special_ward",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "江戸川区",
+      "prefecture": "東京都",
+      "municipality_type": "special_ward",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "昭島市",
+      "prefecture": "東京都",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "国分寺市",
+      "prefecture": "東京都",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "国立市",
+      "prefecture": "東京都",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "東大和市",
+      "prefecture": "東京都",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "武蔵村山市",
+      "prefecture": "東京都",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "武蔵野市",
+      "prefecture": "東京都",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "三鷹市",
+      "prefecture": "東京都",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "tokyo-wave-0828"
+      ],
+      "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokyo-wave-0828"
+      ],
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+    },
+    {
+      "entity": "前橋市",
+      "prefecture": "群馬県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave1-0805"
+      ],
+      "evidence_note": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "gunma-wave1-0805"
+      ],
+      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "高崎市",
+      "prefecture": "群馬県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave1-0805"
+      ],
+      "evidence_note": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "gunma-wave1-0805"
+      ],
+      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "館林市",
+      "prefecture": "群馬県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave1-0805"
+      ],
+      "evidence_note": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "gunma-wave1-0805"
+      ],
+      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "藤岡市",
+      "prefecture": "群馬県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave1-0805"
+      ],
+      "evidence_note": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "gunma-wave1-0805"
+      ],
+      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "板倉町",
+      "prefecture": "群馬県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave1-0805"
+      ],
+      "evidence_note": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "gunma-wave1-0805"
+      ],
+      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "山口市",
+      "prefecture": "山口県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "八代市"
+      ],
+      "source_ids": [
+        "yamaguchi-wave5-0827"
+      ],
+      "evidence_note": "8月28日開始予定を山口県公式が公表。実出発・実働を直接確認できないためUNKNOWN。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "yamaguchi-wave5-0827"
+      ],
+      "reason": "8月28日開始予定を山口県公式が公表。実出発・実働を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "萩市",
+      "prefecture": "山口県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "八代市"
+      ],
+      "source_ids": [
+        "yamaguchi-wave5-0827"
+      ],
+      "evidence_note": "8月28日開始予定を山口県公式が公表。実出発・実働を直接確認できないためUNKNOWN。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "yamaguchi-wave5-0827"
+      ],
+      "reason": "8月28日開始予定を山口県公式が公表。実出発・実働を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "美馬市",
+      "prefecture": "徳島県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-0812"
+      ],
+      "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokushima-0812"
+      ]
+    },
+    {
+      "entity": "勝浦町",
+      "prefecture": "徳島県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-0812"
+      ],
+      "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokushima-0812"
+      ]
+    },
+    {
+      "entity": "三好市",
+      "prefecture": "徳島県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-0816"
+      ],
+      "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokushima-0816"
+      ]
+    },
+    {
+      "entity": "東みよし町",
+      "prefecture": "徳島県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-0816"
+      ],
+      "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokushima-0816"
+      ]
+    },
+    {
+      "entity": "徳島市",
+      "prefecture": "徳島県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-0820"
+      ],
+      "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokushima-0820"
+      ]
+    },
+    {
+      "entity": "牟岐町",
+      "prefecture": "徳島県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-0820"
+      ],
+      "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokushima-0820"
+      ]
+    },
+    {
+      "entity": "美波町",
+      "prefecture": "徳島県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-0823"
+      ],
+      "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokushima-0823"
+      ]
+    },
+    {
+      "entity": "小松島市",
+      "prefecture": "徳島県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-0828"
+      ],
+      "evidence_note": "徳島県公式が8月28日に職員を派遣したことを明示し、派遣期間は9月3日まで。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokushima-0828"
+      ],
+      "current_evidence_type": "actual_dispatch_confirmed"
+    },
+    {
+      "entity": "つるぎ町",
+      "prefecture": "徳島県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-0828"
+      ],
+      "evidence_note": "徳島県公式が8月28日に職員を派遣したことを明示し、派遣期間は9月3日まで。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "tokushima-0828"
+      ],
+      "current_evidence_type": "actual_dispatch_confirmed"
+    },
+    {
+      "entity": "うきは市",
+      "prefecture": "福岡県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "fukuoka-wave-0828"
+      ],
+      "evidence_note": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "fukuoka-wave-0828"
+      ],
+      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。"
+    },
+    {
+      "entity": "新宮町",
+      "prefecture": "福岡県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "fukuoka-wave-0828"
+      ],
+      "evidence_note": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "fukuoka-wave-0828"
+      ],
+      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。"
+    },
+    {
+      "entity": "久山町",
+      "prefecture": "福岡県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "fukuoka-wave-0828"
+      ],
+      "evidence_note": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "fukuoka-wave-0828"
+      ],
+      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。"
+    },
+    {
+      "entity": "福智町",
+      "prefecture": "福岡県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "fukuoka-wave-0828"
+      ],
+      "evidence_note": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "fukuoka-wave-0828"
+      ],
+      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。"
+    },
+    {
+      "entity": "西海市",
+      "prefecture": "長崎県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "美里町"
+      ],
+      "source_ids": [
+        "nagasaki-wave7-0824",
+        "nagasaki-status-0827"
+      ],
+      "evidence_note": "8月24日公表で派遣元を特定し、8月27日県公式の派遣状況集計で当該市町職員派遣が9月1日まで継続するコホートとして確認できる。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "nagasaki-wave7-0824",
+        "nagasaki-status-0827"
+      ],
+      "current_evidence_type": "actual_dispatch_confirmed"
+    },
+    {
+      "entity": "新上五島町",
+      "prefecture": "長崎県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "美里町"
+      ],
+      "source_ids": [
+        "nagasaki-wave7-0824",
+        "nagasaki-status-0827"
+      ],
+      "evidence_note": "8月24日公表で派遣元を特定し、8月27日県公式の派遣状況集計で当該市町職員派遣が9月1日まで継続するコホートとして確認できる。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "nagasaki-wave7-0824",
+        "nagasaki-status-0827"
+      ],
+      "current_evidence_type": "actual_dispatch_confirmed"
+    },
+    {
+      "entity": "長崎市",
+      "prefecture": "長崎県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "八代市"
+      ],
+      "source_ids": [
+        "nagasaki-wave7-0824",
+        "nagasaki-status-0827"
+      ],
+      "evidence_note": "8月24日公表で派遣元を特定し、8月27日県公式の派遣状況集計で当該市町職員派遣が9月1日まで継続するコホートとして確認できる。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "nagasaki-wave7-0824",
+        "nagasaki-status-0827"
+      ],
+      "current_evidence_type": "actual_dispatch_confirmed"
+    },
+    {
+      "entity": "諫早市",
+      "prefecture": "長崎県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "八代市"
+      ],
+      "source_ids": [
+        "nagasaki-wave7-0824",
+        "nagasaki-status-0827"
+      ],
+      "evidence_note": "8月24日公表で派遣元を特定し、8月27日県公式の派遣状況集計で当該市町職員派遣が9月1日まで継続するコホートとして確認できる。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "nagasaki-wave7-0824",
+        "nagasaki-status-0827"
+      ],
+      "current_evidence_type": "actual_dispatch_confirmed"
+    },
+    {
+      "entity": "大村市",
+      "prefecture": "長崎県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "宇城市"
+      ],
+      "source_ids": [
+        "nagasaki-wave7-0824",
+        "nagasaki-status-0827"
+      ],
+      "evidence_note": "8月24日公表で派遣元を特定し、8月27日県公式の派遣状況集計で当該市町職員派遣が9月1日まで継続するコホートとして確認できる。",
+      "checked_at": "2026-08-28T22:13:00+09:00",
+      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "nagasaki-wave7-0824",
+        "nagasaki-status-0827"
+      ],
+      "current_evidence_type": "actual_dispatch_confirmed"
+    }
+  ]
+}
