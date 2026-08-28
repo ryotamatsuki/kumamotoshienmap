@@ -1,0 +1,49 @@
+name: Temporary timepoint sender runner
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260828-2213
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-and-validate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: audit/timepoint-20260828-2213
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Extract and run structured refresh
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          src=Path('.github/workflows/_temporary-timepoint-shelter-capture.yml').read_text()
+          start=src.index("          import {readFileSync,writeFileSync} from 'node:fs';")
+          end=src.index("          NODE",start)
+          body=src[start:end]
+          lines=[]
+          for line in body.splitlines():
+              lines.append(line[10:] if line.startswith('          ') else line)
+          Path('/tmp/refresh.mjs').write_text('\n'.join(lines)+'\n')
+          PY
+          node /tmp/refresh.mjs
+      - name: Build canonical site first
+        run: npm run build
+      - name: Run destructive release gate tests
+        run: npm run test:release-gate
+      - name: Commit refreshed canonical data and dist
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add sender-municipality-audit.json sender-audit/ehime.json sender-audit/discovery.json sender-audit/sources-additions.json sender-audit/timepoint-20260828-additions.json dist
+          if git diff --cached --quiet; then echo 'No refreshed data changes.'; exit 0; fi
+          git commit -m 'data: refresh sender audit at 20260828 2213 JST'
+          git push origin HEAD:audit/timepoint-20260828-2213
