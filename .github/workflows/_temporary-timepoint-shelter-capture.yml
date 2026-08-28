@@ -6,28 +6,43 @@ on:
       - audit/timepoint-20260828-2213
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   capture:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: audit/timepoint-20260828-2213
       - uses: actions/setup-node@v7
         with:
           node-version: 22.x
-      - name: Fetch official current shelters safely
-        run: node scripts/update-current-shelters.mjs --dry-run --candidate-output /tmp/current-shelters-candidate.json
-      - name: Summarize candidate
+      - name: Fetch and apply official current shelters
+        run: node scripts/update-current-shelters.mjs
+      - name: Summarize live shelters and sender baseline
         run: |
           node --input-type=module - <<'NODE'
           import {readFileSync} from 'node:fs';
-          const x=JSON.parse(readFileSync('/tmp/current-shelters-candidate.json','utf8'));
-          console.log(JSON.stringify({meta:x.meta,count:x.shelters.length,unresolved:x.shelters.filter(r=>r.coordinate_status!=='confirmed').map(r=>({id:r.facility_id,name:r.name,status:r.coordinate_status}))},null,2));
+          import {loadSenderAudit} from './scripts/sender-coverage-lib.mjs';
+          const x=JSON.parse(readFileSync('current-shelters.json','utf8'));
+          const data=loadSenderAudit();
+          const selected=data.entities.filter(e=>['CURRENT','PLANNED','HISTORICAL'].includes(e.state)).map(e=>({key:`${e.prefecture}/${e.entity}`,state:e.state,support:e.support_types,dest:e.destinations,sources:e.source_ids}));
+          console.log('SHELTERS',JSON.stringify({meta:x.meta,count:x.shelters.length,unresolved:x.shelters.filter(r=>r.coordinate_status!=='confirmed').map(r=>({id:r.facility_id,name:r.name,status:r.coordinate_status}))},null,2));
+          console.log('SENDER_NON_UNKNOWN',JSON.stringify(selected,null,2));
+          console.log('SENDER_KEYS',JSON.stringify(data.entities.map(e=>`${e.prefecture}/${e.entity}`).sort()));
           NODE
-      - uses: actions/upload-artifact@v4
-        with:
-          name: current-shelters-candidate
-          path: /tmp/current-shelters-candidate.json
-          if-no-files-found: error
+      - name: Commit official shelter snapshot
+        run: |
+          set -Eeuo pipefail
+          if git diff --quiet -- current-shelters.json; then
+            echo 'No current-shelters change.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add current-shelters.json
+          git commit -m 'data: refresh current shelters 20260828'
+          git push origin HEAD:audit/timepoint-20260828-2213
