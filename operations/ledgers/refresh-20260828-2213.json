@@ -38,6 +38,11 @@
   ],
   "coverage": {
     "page_wide_reference_unchanged": "2026-08-26T19:26:53+09:00",
+    "municipal_support": "audited",
+    "national_support": "audited",
+    "current_count": 63,
+    "unresolved_count": 0,
+    "conflict_count": 0,
     "current_shelters": 63,
     "current_shelter_coordinates_confirmed": 63,
     "current_shelter_unresolved": 0,
