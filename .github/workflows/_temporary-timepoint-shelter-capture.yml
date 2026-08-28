@@ -1,4 +1,4 @@
-name: Temporary timepoint shelter capture
+name: Temporary timepoint audit inspector
 
 on:
   push:
@@ -6,10 +6,10 @@ on:
       - audit/timepoint-20260828-2213
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  capture:
+  inspect:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -20,29 +20,18 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22.x
-      - name: Fetch and apply official current shelters
-        run: node scripts/update-current-shelters.mjs
-      - name: Summarize live shelters and sender baseline
+      - name: Inspect canonical audit baselines
         run: |
           node --input-type=module - <<'NODE'
           import {readFileSync} from 'node:fs';
           import {loadSenderAudit} from './scripts/sender-coverage-lib.mjs';
-          const x=JSON.parse(readFileSync('current-shelters.json','utf8'));
-          const data=loadSenderAudit();
-          const selected=data.entities.filter(e=>['CURRENT','PLANNED','HISTORICAL'].includes(e.state)).map(e=>({key:`${e.prefecture}/${e.entity}`,state:e.state,support:e.support_types,dest:e.destinations,sources:e.source_ids}));
-          console.log('SHELTERS',JSON.stringify({meta:x.meta,count:x.shelters.length,unresolved:x.shelters.filter(r=>r.coordinate_status!=='confirmed').map(r=>({id:r.facility_id,name:r.name,status:r.coordinate_status}))},null,2));
-          console.log('SENDER_NON_UNKNOWN',JSON.stringify(selected,null,2));
-          console.log('SENDER_KEYS',JSON.stringify(data.entities.map(e=>`${e.prefecture}/${e.entity}`).sort()));
+          const read=p=>JSON.parse(readFileSync(p,'utf8'));
+          const municipal=read('municipal-support-audit.json');
+          const national=read('national-support-audit.json');
+          const institution=read('operations/audits/institution-coverage-20260826-1926.json');
+          const sender=loadSenderAudit();
+          console.log('MUNICIPAL_META',JSON.stringify({reference_at:municipal.reference_at,checked_at:municipal.checked_at,release_id:municipal.release_id,summary:municipal.summary,records:(municipal.records||[]).map(r=>({id:r.record_id,state:r.state,source_ids:r.source_ids,display:r.display}))},null,2));
+          console.log('NATIONAL_META',JSON.stringify({reference_at:national.reference_at,checked_at:national.checked_at,release_id:national.release_id,summary:national.summary,records:(national.records||[]).map(r=>({id:r.record_id,state:r.state,source_ids:r.source_ids,display:r.display}))},null,2));
+          console.log('INSTITUTION_META',JSON.stringify({reference_at:institution.reference_at,checked_at:institution.checked_at,summary:institution.summary,required_count:(institution.required_entities||[]).length,source_mentions:(institution.source_mentions||[]).length,accepted_unresolved_count:(institution.accepted_unresolved||[]).length,newly_discovered:institution.newly_discovered_entities||institution.summary?.newly_discovered_entities},null,2));
+          console.log('SENDER_STATES',JSON.stringify(sender.entities.map(e=>({key:`${e.prefecture}/${e.entity}`,state:e.state,support:e.support_types,dest:e.destinations,source_ids:e.source_ids})),null,2));
           NODE
-      - name: Commit official shelter snapshot
-        run: |
-          set -Eeuo pipefail
-          if git diff --quiet -- current-shelters.json; then
-            echo 'No current-shelters change.'
-            exit 0
-          fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add current-shelters.json
-          git commit -m 'data: refresh current shelters 20260828'
-          git push origin HEAD:audit/timepoint-20260828-2213
