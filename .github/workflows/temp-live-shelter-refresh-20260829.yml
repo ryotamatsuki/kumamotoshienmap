@@ -1,0 +1,50 @@
+name: Temporary live shelter refresh 20260829
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260829-1258
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: audit/timepoint-20260829-1258
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+
+      - name: Fetch and validate official current shelters
+        id: refresh
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          node scripts/update-current-shelters.mjs | tee /tmp/shelter-refresh.json
+          node scripts/validate-current-shelters.mjs
+          echo '### Live shelter refresh' >> "$GITHUB_STEP_SUMMARY"
+          cat /tmp/shelter-refresh.json >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit refreshed snapshot and remove temporary workflow
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          rm -f .github/workflows/temp-live-shelter-refresh-20260829.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add current-shelters.json .github/workflows/temp-live-shelter-refresh-20260829.yml
+          if git diff --cached --quiet; then
+            echo 'No live shelter file change; temporary workflow cleanup only produced no net diff.'
+            exit 0
+          fi
+          git commit -m 'data: refresh current shelter snapshot 2026-08-29'
+          git push origin HEAD:audit/timepoint-20260829-1258
