@@ -61,6 +61,8 @@ jobs:
               repl=f'<button class="overview-kpi" data-overview-impact="shelters" type="button"><div class="overview-kpi-label">避難所</div><div class="overview-kpi-value">{count}<span class="overview-kpi-unit">か所</span></div><div class="overview-kpi-note">公式JSON現在・{note}</div></button>'
               h,n=re.subn(pat,repl,h,count=1)
               if n!=1: raise SystemExit(f'shelter KPI patch failed: {name}')
+              h=h.replace('24市町の人的被害表内合計396人。県第45報の人的被害合計は402人','24市町の人的被害表内合計396人。県第49報の人的被害合計は402人')
+              h=h.replace('住家被害の市町別旧スナップショット38,498棟と県第45報39,567棟は時点が異なるため単純差分を現況差と扱わない','住家被害の市町別旧スナップショット38,498棟と県第49報43,292棟は時点が異なるため単純差分を現況差と扱わない')
               q.write_text(h)
           v=Path('scripts/validate-dashboard-current.mjs')
           s=v.read_text()
