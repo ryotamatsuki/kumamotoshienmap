@@ -57,20 +57,20 @@ jobs:
           BASE_SHA: 638192a5af73e5767f9dc48e06b18606e78a8127
         run: |
           set -Eeuo pipefail
+          git add -A
           node --input-type=module - <<'NODE'
           import {execFileSync} from 'node:child_process';
           import {readFileSync,writeFileSync} from 'node:fs';
           const base=process.env.BASE_SHA;
           const path='operations/ledgers/refresh-20260830-1420.json';
           const ledger=JSON.parse(readFileSync(path,'utf8'));
-          const files=execFileSync('git',['diff','--name-only',base,'--'],{encoding:'utf8'}).trim().split(/\r?\n/u).filter(Boolean).sort();
+          const files=execFileSync('git',['diff','--cached','--name-only',base,'--'],{encoding:'utf8'}).trim().split(/\r?\n/u).filter(Boolean).sort();
           ledger.expected_changed_files=files;
           writeFileSync(path,JSON.stringify(ledger,null,2)+'\n');
           console.log(JSON.stringify({expectedChangedFiles:files.length,files}));
           NODE
+          git add -A
       - name: Rebuild and run every release gate
-        env:
-          BASE_SHA: 638192a5af73e5767f9dc48e06b18606e78a8127
         run: |
           set -Eeuo pipefail
           npm run build
@@ -90,9 +90,12 @@ jobs:
           npm run validate:sender-dist
           npm run test:release-gate
           git diff --check
-          git add -A
           git diff --cached --check
-          npm run validate:release -- --staged --ledger=operations/ledgers/refresh-20260830-1420.json
+          if ! git diff --quiet; then
+            echo '::error title=Non-reproducible final build::Build changed working-tree files after final staging.'
+            git status --short
+            exit 1
+          fi
       - name: Commit validated refresh and verify committed release gate
         env:
           BASE_SHA: 638192a5af73e5767f9dc48e06b18606e78a8127
