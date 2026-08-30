@@ -1,0 +1,100 @@
+name: Temporary full timepoint refresh 20260830
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260830-1420
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: audit/timepoint-20260830-1420
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Install npm metadata
+        run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+      - name: Generate and validate current-shelter candidate
+        run: |
+          set -Eeuo pipefail
+          npm run update:current-shelters -- --dry-run --candidate-output /tmp/current-shelters-candidate.json
+          node scripts/validate-current-shelters.mjs --candidate=/tmp/current-shelters-candidate.json
+          cp /tmp/current-shelters-candidate.json current-shelters.json
+      - name: Apply exhaustive sender and page-wide refresh
+        run: |
+          set -Eeuo pipefail
+          node scripts/timepoint-refresh-sender-20260830.mjs
+          node scripts/timepoint-refresh-core-20260830.mjs
+      - name: Build all generated artifacts and run embedded validators
+        run: |
+          set -Eeuo pipefail
+          npm run build
+          node --check scripts/sync-municipal-support-audit.mjs
+          node --check scripts/sync-national-support-audit.mjs
+          node --check scripts/validate-dashboard-current.mjs
+          node --check scripts/validate-national-support-audit.mjs
+          node --check scripts/sender-coverage-lib.mjs
+      - name: Remove temporary refresh machinery
+        run: |
+          set -Eeuo pipefail
+          git rm .github/workflows/timepoint-refresh-20260830.yml scripts/timepoint-refresh-core-20260830.mjs scripts/timepoint-refresh-sender-20260830.mjs
+      - name: Finalize exact ledger changed-file inventory
+        env:
+          BASE_SHA: 638192a5af73e5767f9dc48e06b18606e78a8127
+        run: |
+          set -Eeuo pipefail
+          node --input-type=module - <<'NODE'
+          import {execFileSync} from 'node:child_process';
+          import {readFileSync,writeFileSync} from 'node:fs';
+          const base=process.env.BASE_SHA;
+          const path='operations/ledgers/refresh-20260830-1420.json';
+          const ledger=JSON.parse(readFileSync(path,'utf8'));
+          const files=execFileSync('git',['diff','--name-only',base,'--'],{encoding:'utf8'}).trim().split(/\r?\n/u).filter(Boolean).sort();
+          ledger.expected_changed_files=files;
+          writeFileSync(path,JSON.stringify(ledger,null,2)+'\n');
+          console.log(JSON.stringify({expectedChangedFiles:files.length,files}));
+          NODE
+      - name: Rebuild and run every release gate
+        env:
+          BASE_SHA: 638192a5af73e5767f9dc48e06b18606e78a8127
+        run: |
+          set -Eeuo pipefail
+          npm run build
+          npm run validate:dashboard
+          npm run validate:current-state
+          npm run validate:timeline
+          npm run validate:volunteer
+          npm run validate:shelters
+          npm run validate:current-shelters
+          npm run validate:municipal-support
+          npm run validate:national-support
+          npm run validate:institution-coverage
+          npm run validate:ehime-sender-coverage
+          npm run validate:nationwide-sender-coverage
+          npm run validate:sender-source-mentions
+          npm run validate:sender-coverage
+          npm run validate:sender-dist
+          npm run test:release-gate
+          git diff --check
+          git add -A
+          git diff --cached --check
+          npm run validate:release -- --staged --ledger=operations/ledgers/refresh-20260830-1420.json
+      - name: Commit validated refresh and verify committed release gate
+        env:
+          BASE_SHA: 638192a5af73e5767f9dc48e06b18606e78a8127
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'data: full timepoint refresh at 2026-08-30 14:20 JST'
+          npm run validate:release -- --base="$BASE_SHA" --ledger=operations/ledgers/refresh-20260830-1420.json
+          git push origin HEAD:audit/timepoint-20260830-1420
