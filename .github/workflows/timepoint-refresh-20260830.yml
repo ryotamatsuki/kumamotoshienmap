@@ -45,6 +45,14 @@ jobs:
           node --check scripts/timepoint-refresh-core-20260830.mjs
           node scripts/timepoint-refresh-sender-20260830.mjs
           node scripts/timepoint-refresh-core-20260830.mjs
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('operations/audits/institution-coverage-20260830-1420.json')
+          d=json.loads(p.read_text())
+          d['operation_version']='2.5'
+          p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+          PY
       - name: Build all generated artifacts and run embedded validators
         run: |
           set -Eeuo pipefail
