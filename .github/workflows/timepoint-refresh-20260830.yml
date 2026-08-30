@@ -62,6 +62,15 @@ jobs:
               h,n=re.subn(pat,repl,h,count=1)
               if n!=1: raise SystemExit(f'shelter KPI patch failed: {name}')
               q.write_text(h)
+          v=Path('scripts/validate-dashboard-current.mjs')
+          s=v.read_text()
+          replacements={
+            '国交省第49報8/25値はHISTORICALスナップショット。8/26は佐伯市給水継続をCURRENT、TEC-FORCE第5陣・はくおう2宿泊は実働未確認のためUNKNOWN':'国交省第50報（8/27）を最新インフラ履歴として確認。8/30ははくおう2宿泊支援をCURRENT、同一定義の実働を直接確認できない項目はUNKNOWN',
+            '8月25日閣議の災害融資特別措置を保持し、8月30日実働主体を再監査':'8月27日支援パッケージ・8月28日予備費使用決定を確認し、8月30日実働主体を再監査',
+            '2026年8月26日 19:26':'2026年8月30日 14:20'
+          }
+          for old,new in replacements.items(): s=s.replace(old,new)
+          v.write_text(s)
           PY
       - name: Build all generated artifacts and run embedded validators
         run: |
