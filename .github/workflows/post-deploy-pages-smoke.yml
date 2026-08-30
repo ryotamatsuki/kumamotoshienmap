@@ -70,6 +70,7 @@ jobs:
             sender-audit/chugoku-shikoku.json
             sender-audit/kyushu-okinawa.json
             sender-audit/crosscutting-additions.json
+            sender-audit/timepoint-20260830-additions.json
             sender-audit/sources.json
             sender-audit/sources-additions.json
             sender-audit/discovery.json
@@ -89,11 +90,11 @@ jobs:
           grep -F '送出基礎自治体 Coverage' /tmp/root.html
 
           grep -F 'NATIONAL_SUPPORT_AUDIT_START' /tmp/deployed-dashboard.html
-          grep -F '8月26日19:26基準で全件再監査' /tmp/deployed-dashboard.html
-          grep -F '国交省第49報8/25値はHISTORICALスナップショット。8/26は佐伯市給水継続をCURRENT、TEC-FORCE第5陣・はくおう2宿泊は実働未確認のためUNKNOWN' /tmp/deployed-dashboard.html
-          grep -F '8月25日閣議の災害融資特別措置を保持し、8月26日実働主体を再監査' /tmp/deployed-dashboard.html
+          grep -F '8月30日14:20基準で全件再監査' /tmp/deployed-dashboard.html
+          grep -F '国交省第50報（8/27）を最新インフラ履歴として確認。8/30ははくおう2宿泊支援をCURRENT、同一定義の実働を直接確認できない項目はUNKNOWN' /tmp/deployed-dashboard.html
+          grep -F '8月27日支援パッケージ・8月28日予備費使用決定を確認し、8月30日実働主体を再監査' /tmp/deployed-dashboard.html
           grep -F 'national-accommodation-hakuo2' /tmp/deployed-dashboard.html
-          grep -F '8月26日13:00開始予定／28日10:00まで' /tmp/deployed-dashboard.html
+          grep -F '8月30日13:00～9月1日10:00' /tmp/deployed-dashboard.html
           grep -F '住まいサポートダイヤル（住宅復旧・改修相談）' /tmp/deployed-dashboard.html
           grep -F '熊本県住宅リフォーム推進協議会' /tmp/deployed-dashboard.html
           grep -F '8月19日行政応援971人は履歴スナップショット' /tmp/deployed-dashboard.html
@@ -105,7 +106,7 @@ jobs:
           node --input-type=module - <<'NODE'
           import { readFileSync } from 'node:fs';
           const shelters=JSON.parse(readFileSync('/tmp/current-shelters.json','utf8'));
-          if(shelters.meta.current_count!==63 || shelters.shelters.length!==63) throw new Error('deployed current shelters count must be 63');
+          if(shelters.meta.current_count!==shelters.shelters.length) throw new Error('deployed current shelters count mismatch');
           if(shelters.shelters.some(row=>row.coordinate_status!=='confirmed')) throw new Error('deployed current shelters contain unresolved/conflict coordinates');
           const expected=JSON.parse(readFileSync('sender-municipality-audit.json','utf8'));
           const deployed=JSON.parse(readFileSync('/tmp/deployed-sender-manifest.json','utf8'));
