@@ -1,1 +1,415 @@
-{"region":"chubu","reference_at":"2026-08-27T06:34:00+09:00","entities":[{"entity":"新潟市","prefecture":"新潟県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"UNKNOWN","support_types":["行政応援"],"destinations":["熊本県内"],"source_ids":["repository-municipal-audit-0826"],"evidence_note":"既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","reason":"既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。","source_as_of":null,"sources_checked":["repository-municipal-audit-0826"]},{"entity":"上市町","prefecture":"富山県","municipality_type":"town","kind":"basic_municipality_sender","required":false,"state":"HISTORICAL","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式の派遣実施一覧で終了済みの班として確認。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"入善町","prefecture":"富山県","municipality_type":"town","kind":"basic_municipality_sender","required":false,"state":"HISTORICAL","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式の派遣実施一覧で終了済みの班として確認。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"南砺市","prefecture":"富山県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"HISTORICAL","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式の派遣実施一覧で終了済みの班として確認。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"富山市","prefecture":"富山県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"HISTORICAL","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式の派遣実施一覧で終了済みの班として確認。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"朝日町","prefecture":"富山県","municipality_type":"town","kind":"basic_municipality_sender","required":false,"state":"CURRENT","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式が支援を実施している旨を明示し、第5陣（8月22～28日）の構成自治体として掲載。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","current_evidence_type":"explicit_current_activity","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"氷見市","prefecture":"富山県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"HISTORICAL","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式の派遣実施一覧で終了済みの班として確認。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"滑川市","prefecture":"富山県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"HISTORICAL","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式の派遣実施一覧で終了済みの班として確認。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"砺波市","prefecture":"富山県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"HISTORICAL","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式の派遣実施一覧で終了済みの班として確認。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"舟橋村","prefecture":"富山県","municipality_type":"village","kind":"basic_municipality_sender","required":false,"state":"CURRENT","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式が支援を実施している旨を明示し、第5陣（8月22～28日）の構成自治体として掲載。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","current_evidence_type":"explicit_current_activity","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"高岡市","prefecture":"富山県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"HISTORICAL","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式の派遣実施一覧で終了済みの班として確認。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"魚津市","prefecture":"富山県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"CURRENT","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式が支援を実施している旨を明示し、第5陣（8月22～28日）の構成自治体として掲載。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","current_evidence_type":"explicit_current_activity","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"黒部市","prefecture":"富山県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"HISTORICAL","support_types":["職員派遣"],"destinations":["熊本県内"],"source_ids":["toyama-support"],"evidence_note":"富山県公式の派遣実施一覧で終了済みの班として確認。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","source_as_of":null,"sources_checked":["toyama-support"]},{"entity":"浜松市","prefecture":"静岡県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"UNKNOWN","support_types":["行政応援"],"destinations":["熊本県内"],"source_ids":["repository-municipal-audit-0826"],"evidence_note":"既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","reason":"既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。","source_as_of":null,"sources_checked":["repository-municipal-audit-0826"]},{"entity":"静岡市","prefecture":"静岡県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"UNKNOWN","support_types":["行政応援"],"destinations":["熊本県内"],"source_ids":["repository-municipal-audit-0826"],"evidence_note":"既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","reason":"既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。","source_as_of":null,"sources_checked":["repository-municipal-audit-0826"]},{"entity":"名古屋市","prefecture":"愛知県","municipality_type":"city","kind":"basic_municipality_sender","required":false,"state":"UNKNOWN","support_types":["行政応援"],"destinations":["熊本県内"],"source_ids":["baseline-nagoya"],"evidence_note":"既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。","checked_at":"2026-08-27T06:34:00+09:00","next_review_at":"2026-08-28T09:00:00+09:00","reason":"既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。","source_as_of":null,"sources_checked":["baseline-nagoya"]}]}
+{
+  "region": "chubu",
+  "reference_at": "2026-08-30T14:20:00+09:00",
+  "entities": [
+    {
+      "entity": "新潟市",
+      "prefecture": "新潟県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "行政応援"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "repository-municipal-audit-0826"
+      ],
+      "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
+      "source_as_of": null,
+      "sources_checked": [
+        "repository-municipal-audit-0826"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "上市町",
+      "prefecture": "富山県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "入善町",
+      "prefecture": "富山県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "南砺市",
+      "prefecture": "富山県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "富山市",
+      "prefecture": "富山県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "朝日町",
+      "prefecture": "富山県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
+    },
+    {
+      "entity": "氷見市",
+      "prefecture": "富山県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "滑川市",
+      "prefecture": "富山県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "砺波市",
+      "prefecture": "富山県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "舟橋村",
+      "prefecture": "富山県",
+      "municipality_type": "village",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
+    },
+    {
+      "entity": "高岡市",
+      "prefecture": "富山県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "魚津市",
+      "prefecture": "富山県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
+    },
+    {
+      "entity": "黒部市",
+      "prefecture": "富山県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "toyama-support"
+      ],
+      "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": null,
+      "sources_checked": [
+        "toyama-support"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "浜松市",
+      "prefecture": "静岡県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "行政応援"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "repository-municipal-audit-0826"
+      ],
+      "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
+      "source_as_of": null,
+      "sources_checked": [
+        "repository-municipal-audit-0826"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "静岡市",
+      "prefecture": "静岡県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "行政応援"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "repository-municipal-audit-0826"
+      ],
+      "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
+      "source_as_of": null,
+      "sources_checked": [
+        "repository-municipal-audit-0826"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    },
+    {
+      "entity": "名古屋市",
+      "prefecture": "愛知県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "行政応援"
+      ],
+      "destinations": [
+        "熊本県内"
+      ],
+      "source_ids": [
+        "baseline-nagoya"
+      ],
+      "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
+      "source_as_of": null,
+      "sources_checked": [
+        "baseline-nagoya"
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
+    }
+  ],
+  "checked_at": "2026-08-30T14:35:00+09:00",
+  "rechecked_at": "2026-08-30T14:35:00+09:00"
+}

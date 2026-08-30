@@ -3,9 +3,9 @@
   "repository": "ryotamatsuki/kumamotoshienmap",
   "audit_type": "sender_municipality_coverage",
   "policy_version": "2.6",
-  "reference_at": "2026-08-28T22:13:00+09:00",
-  "checked_at": "2026-08-28T22:13:00+09:00",
-  "base_main_sha": "ed442f3fc6125fd74d5c014ec3a2715b5738e3d8",
+  "reference_at": "2026-08-30T14:20:00+09:00",
+  "checked_at": "2026-08-30T14:35:00+09:00",
+  "base_main_sha": "638192a5af73e5767f9dc48e06b18606e78a8127",
   "entity_files": [
     "sender-audit/ehime.json",
     "sender-audit/hokkaido-tohoku.json",
@@ -15,7 +15,8 @@
     "sender-audit/chugoku-shikoku.json",
     "sender-audit/kyushu-okinawa.json",
     "sender-audit/crosscutting-additions.json",
-    "sender-audit/timepoint-20260828-additions.json"
+    "sender-audit/timepoint-20260828-additions.json",
+    "sender-audit/timepoint-20260830-additions.json"
   ],
   "sources_file": "sender-audit/sources.json",
   "sources_additions_file": "sender-audit/sources-additions.json",
@@ -289,23 +290,24 @@
     },
     "nationwide": {
       "prefecture_discovery_checked": 47,
-      "discovered_basic_municipality_senders": 302,
-      "adjudicated_basic_municipality_senders": 302,
+      "discovered_basic_municipality_senders": 309,
+      "adjudicated_basic_municipality_senders": 309,
       "unadjudicated_discovered_senders": [],
-      "source_mentions": 302,
+      "source_mentions": 309,
       "orphan_source_mentions": [],
       "invalid_current": [],
       "blocking_conflicts": 0,
       "states": {
-        "CURRENT": 24,
+        "CURRENT": 11,
         "PLANNED": 5,
         "HISTORICAL": 17,
-        "UNKNOWN": 256,
+        "UNKNOWN": 276,
         "NO_EVIDENCE": 0,
         "CONFLICT": 0
       }
     }
   },
   "blocking_unresolved": [],
-  "timepoint_note": "2026-08-28 22:13 JST sender refresh; schedule-only evidence remains non-CURRENT."
+  "timepoint_note": "2026-08-30 14:20 JST sender exhaustive refresh; 47/47 prefecture discovery rechecked. Schedule-only evidence remains non-CURRENT; newly discovered Gunma municipalities are UNKNOWN pending direct activity evidence.",
+  "rechecked_at": "2026-08-30T14:35:00+09:00"
 }

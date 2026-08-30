@@ -4,7 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { assertCurrentPageMetadataSynced } from "./current-page-metadata.mjs";
 
-const REFERENCE_AT = "2026-08-26T19:26:53+09:00";
+const REFERENCE_AT = "2026-08-30T14:20:00+09:00";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const [html, publicHtml, shelterText, municipalText, nationalText] = await Promise.all([
   readFile(resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html"), "utf8"),
@@ -72,15 +72,15 @@ for (const id of ["ehime-pair", "pair-hikawa", "pair-kashima"]) {
   assert.ok(!record(id).status.includes("活動中"), `${id}のraw履歴レコードに活動中表示があります`);
 }
 
-assert.ok(need("p-shelter").observed.includes("熊本県第45報"));
+assert.ok(need("p-shelter").observed.includes("熊本県第49報"));
 assert.ok(need("p-waste").observed.includes("10市町村"));
 assert.ok(need("p-agri").observed.includes("7,881件、約1,559億円"));
 for (const name of ["熊本市", "八代市", "宇土市", "宇城市", "美里町", "御船町", "嘉島町", "益城町", "甲佐町", "氷川町", "芦北町"]) assert.ok(Array.isArray(municipalities.find((item) => item.name === name)?.currentSupport), `${name}の支援情報配列がありません`);
 
-assert.ok(event("t-current-status").tags.includes("熊本県第45報"));
+assert.ok(event("t-current-status").tags.includes("熊本県第49報"));
 assert.ok(event("t-kumamoto-0816").tags.includes("過去スナップショット"));
 assert.ok(event("t-kumamoto-0819").summary.includes("971人"));
-assert.equal(event("t-current-status").summary, "避難者2,589人、開設避難所64か所、人的被害402人、住家被害39,567棟。");
+assert.equal(event("t-current-status").summary, "避難者2,442人、開設避難所61か所、人的被害402人、住家被害43,292棟。");
 
 assert.equal(pageMeta.checkedAt, REFERENCE_AT);
 assert.ok(Number.isFinite(Date.parse(pageMeta.volunteerCheckedAt)) && Date.parse(pageMeta.volunteerCheckedAt) >= Date.parse(REFERENCE_AT), "volunteer確認時刻がreference_at以前又は不正です");
@@ -88,7 +88,7 @@ assert.ok(pageMeta.rows.some((row) => row.section === "他自治体等" && row.c
 assert.ok(pageMeta.rows.some((row) => row.section === "愛媛県支援"));
 
 const currentDisplay = html.slice(0, html.indexOf('<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js">'));
-for (const value of ["D+29", "行政応援971人", "8月26日19:26までに確認できた一次情報", "8月26日19:26基準で全件再監査"]) assert.ok(currentDisplay.includes(value), `初期表示に ${value} がありません`);
+for (const value of ["D+33", "行政応援971人", "8月30日14:20までに確認できた一次情報", "8月30日14:20基準で全件再監査"]) assert.ok(currentDisplay.includes(value), `初期表示に ${value} がありません`);
 for (const value of ["D+14", "計10市町へ行政応援925人（関係機関含む計1,005人）", "<div class=\"snap\"><strong>925</strong>", "第14回政府現地本部会議（8月15日資料）まで確認", "仮置場11市町開設"]) assert.ok(!currentDisplay.includes(value), `旧い現行表示が残っています: ${value}`);
 
 assert.ok(Number.isFinite(Date.parse(shelterData.meta.fetched_at)), "避難所fetched_atが不正です");

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "scope": "令和8年熊本地震・災害ボランティア公式一次情報（熊本市、宇土市、宇城市、美里町、御船町、嘉島町）・2026年8月26日再確認",
-  "checked_at": "2026-08-26T20:05:00+09:00",
+  "checked_at": "2026-08-30T14:35:00+09:00",
   "verification_policy": {
     "official_sources_only": true,
     "unknown_values_are_null": true,
@@ -770,6 +770,6 @@
       "facts_used": "8月11日～16日の活動休止"
     }
   ],
-  "rechecked_at": "2026-08-26T20:05:00+09:00",
-  "reference_at": "2026-08-26T19:26:53+09:00"
+  "rechecked_at": "2026-08-30T14:35:00+09:00",
+  "reference_at": "2026-08-30T14:20:00+09:00"
 }

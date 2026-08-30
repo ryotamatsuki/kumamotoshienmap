@@ -1,0 +1,182 @@
+{
+  "region": "timepoint-20260830-additions",
+  "reference_at": "2026-08-30T14:20:00+09:00",
+  "checked_at": "2026-08-30T14:35:00+09:00",
+  "entities": [
+    {
+      "entity": "桐生市",
+      "prefecture": "群馬県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave4-0818"
+      ],
+      "evidence_note": "群馬県公式資料で第4班の派遣元自治体として確認。8月24日～9月1日の派遣予定は確認できるが、8月30日14:20時点の実働を直接示す一次情報ではないためUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": "2026-08-18T00:00:00+09:00",
+      "sources_checked": [
+        "gunma-wave4-0818"
+      ],
+      "reason": "予定期間内という理由だけではCURRENTにせず、基準時点の実働を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "伊勢崎市",
+      "prefecture": "群馬県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave4-0818"
+      ],
+      "evidence_note": "群馬県公式資料で第4班の派遣元自治体として確認。8月24日～9月1日の派遣予定は確認できるが、8月30日14:20時点の実働を直接示す一次情報ではないためUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": "2026-08-18T00:00:00+09:00",
+      "sources_checked": [
+        "gunma-wave4-0818"
+      ],
+      "reason": "予定期間内という理由だけではCURRENTにせず、基準時点の実働を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "安中市",
+      "prefecture": "群馬県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave4-0818"
+      ],
+      "evidence_note": "群馬県公式資料で第4班の派遣元自治体として確認。8月24日～9月1日の派遣予定は確認できるが、8月30日14:20時点の実働を直接示す一次情報ではないためUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": "2026-08-18T00:00:00+09:00",
+      "sources_checked": [
+        "gunma-wave4-0818"
+      ],
+      "reason": "予定期間内という理由だけではCURRENTにせず、基準時点の実働を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "下仁田町",
+      "prefecture": "群馬県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave4-0818"
+      ],
+      "evidence_note": "群馬県公式資料で第4班の派遣元自治体として確認。8月24日～9月1日の派遣予定は確認できるが、8月30日14:20時点の実働を直接示す一次情報ではないためUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": "2026-08-18T00:00:00+09:00",
+      "sources_checked": [
+        "gunma-wave4-0818"
+      ],
+      "reason": "予定期間内という理由だけではCURRENTにせず、基準時点の実働を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "長野原町",
+      "prefecture": "群馬県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave4-0818"
+      ],
+      "evidence_note": "群馬県公式資料で第4班の派遣元自治体として確認。8月24日～9月1日の派遣予定は確認できるが、8月30日14:20時点の実働を直接示す一次情報ではないためUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": "2026-08-18T00:00:00+09:00",
+      "sources_checked": [
+        "gunma-wave4-0818"
+      ],
+      "reason": "予定期間内という理由だけではCURRENTにせず、基準時点の実働を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "草津町",
+      "prefecture": "群馬県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave4-0818"
+      ],
+      "evidence_note": "群馬県公式資料で第4班の派遣元自治体として確認。8月24日～9月1日の派遣予定は確認できるが、8月30日14:20時点の実働を直接示す一次情報ではないためUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": "2026-08-18T00:00:00+09:00",
+      "sources_checked": [
+        "gunma-wave4-0818"
+      ],
+      "reason": "予定期間内という理由だけではCURRENTにせず、基準時点の実働を直接確認できないためUNKNOWN。"
+    },
+    {
+      "entity": "高山村",
+      "prefecture": "群馬県",
+      "municipality_type": "village",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "熊本市"
+      ],
+      "source_ids": [
+        "gunma-wave4-0818"
+      ],
+      "evidence_note": "群馬県公式資料で第4班の派遣元自治体として確認。8月24日～9月1日の派遣予定は確認できるが、8月30日14:20時点の実働を直接示す一次情報ではないためUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "source_as_of": "2026-08-18T00:00:00+09:00",
+      "sources_checked": [
+        "gunma-wave4-0818"
+      ],
+      "reason": "予定期間内という理由だけではCURRENTにせず、基準時点の実働を直接確認できないためUNKNOWN。"
+    }
+  ]
+}

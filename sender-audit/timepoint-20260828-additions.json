@@ -1,6 +1,6 @@
 {
   "region": "timepoint-20260828-additions",
-  "reference_at": "2026-08-28T22:13:00+09:00",
+  "reference_at": "2026-08-30T14:20:00+09:00",
   "entities": [
     {
       "entity": "中央区",
@@ -19,13 +19,14 @@
         "tokyo-wave-0821"
       ],
       "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0821"
       ],
-      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "品川区",
@@ -44,13 +45,14 @@
         "tokyo-wave-0821"
       ],
       "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0821"
       ],
-      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "豊島区",
@@ -69,13 +71,14 @@
         "tokyo-wave-0821"
       ],
       "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0821"
       ],
-      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "立川市",
@@ -94,13 +97,14 @@
         "tokyo-wave-0821"
       ],
       "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0821"
       ],
-      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "日野市",
@@ -119,13 +123,14 @@
         "tokyo-wave-0821"
       ],
       "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0821"
       ],
-      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "多摩市",
@@ -144,13 +149,14 @@
         "tokyo-wave-0821"
       ],
       "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0821"
       ],
-      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "稲城市",
@@ -169,13 +175,14 @@
         "tokyo-wave-0821"
       ],
       "evidence_note": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0821"
       ],
-      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。"
+      "reason": "東京都公式の派遣予定で候補確定。予定のみで実働・終了を推定しない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "港区",
@@ -194,13 +201,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "台東区",
@@ -219,13 +227,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "目黒区",
@@ -244,13 +253,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "練馬区",
@@ -269,13 +279,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "江戸川区",
@@ -294,13 +305,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "昭島市",
@@ -319,13 +331,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "国分寺市",
@@ -344,13 +357,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "国立市",
@@ -369,13 +383,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "東大和市",
@@ -394,13 +409,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "武蔵村山市",
@@ -419,13 +435,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "武蔵野市",
@@ -444,13 +461,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "三鷹市",
@@ -469,13 +487,14 @@
         "tokyo-wave-0828"
       ],
       "evidence_note": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokyo-wave-0828"
       ],
-      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。"
+      "reason": "8月28日開始予定を東京都公式が公表。予定時刻経過のみではCURRENTにしない。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "前橋市",
@@ -494,13 +513,14 @@
         "gunma-wave1-0805"
       ],
       "evidence_note": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "gunma-wave1-0805"
       ],
-      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。"
+      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "高崎市",
@@ -519,13 +539,14 @@
         "gunma-wave1-0805"
       ],
       "evidence_note": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "gunma-wave1-0805"
       ],
-      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。"
+      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "館林市",
@@ -544,13 +565,14 @@
         "gunma-wave1-0805"
       ],
       "evidence_note": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "gunma-wave1-0805"
       ],
-      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。"
+      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "藤岡市",
@@ -569,13 +591,14 @@
         "gunma-wave1-0805"
       ],
       "evidence_note": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "gunma-wave1-0805"
       ],
-      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。"
+      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "板倉町",
@@ -594,13 +617,14 @@
         "gunma-wave1-0805"
       ],
       "evidence_note": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "gunma-wave1-0805"
       ],
-      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。"
+      "reason": "群馬県公式の第1班派遣予定で候補確定。実派遣完了を直接確認できないためUNKNOWN。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "山口市",
@@ -619,13 +643,14 @@
         "yamaguchi-wave5-0827"
       ],
       "evidence_note": "8月28日開始予定を山口県公式が公表。実出発・実働を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "yamaguchi-wave5-0827"
       ],
-      "reason": "8月28日開始予定を山口県公式が公表。実出発・実働を直接確認できないためUNKNOWN。"
+      "reason": "8月28日開始予定を山口県公式が公表。実出発・実働を直接確認できないためUNKNOWN。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "萩市",
@@ -644,13 +669,14 @@
         "yamaguchi-wave5-0827"
       ],
       "evidence_note": "8月28日開始予定を山口県公式が公表。実出発・実働を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "yamaguchi-wave5-0827"
       ],
-      "reason": "8月28日開始予定を山口県公式が公表。実出発・実働を直接確認できないためUNKNOWN。"
+      "reason": "8月28日開始予定を山口県公式が公表。実出発・実働を直接確認できないためUNKNOWN。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "美馬市",
@@ -669,12 +695,13 @@
         "tokushima-0812"
       ],
       "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokushima-0812"
-      ]
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "勝浦町",
@@ -693,12 +720,13 @@
         "tokushima-0812"
       ],
       "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokushima-0812"
-      ]
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "三好市",
@@ -717,12 +745,13 @@
         "tokushima-0816"
       ],
       "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokushima-0816"
-      ]
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "東みよし町",
@@ -741,12 +770,13 @@
         "tokushima-0816"
       ],
       "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokushima-0816"
-      ]
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "徳島市",
@@ -765,12 +795,13 @@
         "tokushima-0820"
       ],
       "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokushima-0820"
-      ]
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "牟岐町",
@@ -789,12 +820,13 @@
         "tokushima-0820"
       ],
       "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokushima-0820"
-      ]
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "美波町",
@@ -813,12 +845,13 @@
         "tokushima-0823"
       ],
       "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokushima-0823"
-      ]
+      ],
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "小松島市",
@@ -826,7 +859,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "CURRENT",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -836,14 +869,15 @@
       "source_ids": [
         "tokushima-0828"
       ],
-      "evidence_note": "徳島県公式が8月28日に職員を派遣したことを明示し、派遣期間は9月3日まで。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokushima-0828"
       ],
-      "current_evidence_type": "actual_dispatch_confirmed"
+      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     },
     {
       "entity": "つるぎ町",
@@ -851,7 +885,7 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "CURRENT",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -861,14 +895,15 @@
       "source_ids": [
         "tokushima-0828"
       ],
-      "evidence_note": "徳島県公式が8月28日に職員を派遣したことを明示し、派遣期間は9月3日まで。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokushima-0828"
       ],
-      "current_evidence_type": "actual_dispatch_confirmed"
+      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     },
     {
       "entity": "うきは市",
@@ -887,13 +922,14 @@
         "fukuoka-wave-0828"
       ],
       "evidence_note": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "fukuoka-wave-0828"
       ],
-      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。"
+      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "新宮町",
@@ -912,13 +948,14 @@
         "fukuoka-wave-0828"
       ],
       "evidence_note": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "fukuoka-wave-0828"
       ],
-      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。"
+      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "久山町",
@@ -937,13 +974,14 @@
         "fukuoka-wave-0828"
       ],
       "evidence_note": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "fukuoka-wave-0828"
       ],
-      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。"
+      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "福智町",
@@ -962,13 +1000,14 @@
         "fukuoka-wave-0828"
       ],
       "evidence_note": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "fukuoka-wave-0828"
       ],
-      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。"
+      "reason": "福岡県公式が8月31日以降の派遣を公表。基準時点では開始前。",
+      "rechecked_at": "2026-08-30T14:35:00+09:00"
     },
     {
       "entity": "西海市",
@@ -976,7 +1015,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "CURRENT",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -987,15 +1026,16 @@
         "nagasaki-wave7-0824",
         "nagasaki-status-0827"
       ],
-      "evidence_note": "8月24日公表で派遣元を特定し、8月27日県公式の派遣状況集計で当該市町職員派遣が9月1日まで継続するコホートとして確認できる。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "nagasaki-wave7-0824",
         "nagasaki-status-0827"
       ],
-      "current_evidence_type": "actual_dispatch_confirmed"
+      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     },
     {
       "entity": "新上五島町",
@@ -1003,7 +1043,7 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "CURRENT",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -1014,15 +1054,16 @@
         "nagasaki-wave7-0824",
         "nagasaki-status-0827"
       ],
-      "evidence_note": "8月24日公表で派遣元を特定し、8月27日県公式の派遣状況集計で当該市町職員派遣が9月1日まで継続するコホートとして確認できる。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "nagasaki-wave7-0824",
         "nagasaki-status-0827"
       ],
-      "current_evidence_type": "actual_dispatch_confirmed"
+      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     },
     {
       "entity": "長崎市",
@@ -1030,7 +1071,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "CURRENT",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -1041,15 +1082,16 @@
         "nagasaki-wave7-0824",
         "nagasaki-status-0827"
       ],
-      "evidence_note": "8月24日公表で派遣元を特定し、8月27日県公式の派遣状況集計で当該市町職員派遣が9月1日まで継続するコホートとして確認できる。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "nagasaki-wave7-0824",
         "nagasaki-status-0827"
       ],
-      "current_evidence_type": "actual_dispatch_confirmed"
+      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     },
     {
       "entity": "諫早市",
@@ -1057,7 +1099,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "CURRENT",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -1068,15 +1110,16 @@
         "nagasaki-wave7-0824",
         "nagasaki-status-0827"
       ],
-      "evidence_note": "8月24日公表で派遣元を特定し、8月27日県公式の派遣状況集計で当該市町職員派遣が9月1日まで継続するコホートとして確認できる。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "nagasaki-wave7-0824",
         "nagasaki-status-0827"
       ],
-      "current_evidence_type": "actual_dispatch_confirmed"
+      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     },
     {
       "entity": "大村市",
@@ -1084,7 +1127,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "CURRENT",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -1095,15 +1138,18 @@
         "nagasaki-wave7-0824",
         "nagasaki-status-0827"
       ],
-      "evidence_note": "8月24日公表で派遣元を特定し、8月27日県公式の派遣状況集計で当該市町職員派遣が9月1日まで継続するコホートとして確認できる。",
-      "checked_at": "2026-08-28T22:13:00+09:00",
-      "next_review_at": "2026-08-29T09:00:00+09:00",
+      "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
+      "checked_at": "2026-08-30T14:35:00+09:00",
+      "next_review_at": "2026-08-31T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "nagasaki-wave7-0824",
         "nagasaki-status-0827"
       ],
-      "current_evidence_type": "actual_dispatch_confirmed"
+      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     }
-  ]
+  ],
+  "checked_at": "2026-08-30T14:35:00+09:00",
+  "rechecked_at": "2026-08-30T14:35:00+09:00"
 }
