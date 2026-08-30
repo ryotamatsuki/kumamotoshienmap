@@ -6,11 +6,11 @@
   "update_id": "refresh-20260830-1420",
   "release_id": "20260830-1420",
   "reference_at": "2026-08-30T14:20:00+09:00",
-  "rechecked_at": "2026-08-30T14:35:00+09:00",
+  "rechecked_at": "2026-08-30T15:03:17+09:00",
   "page_checked_at": null,
   "base_main_sha": "638192a5af73e5767f9dc48e06b18606e78a8127",
   "expected_changed_files": [
-    ".github/workflows/timepoint-refresh-20260830.yml",
+    ".github/workflows/post-deploy-pages-smoke.yml",
     "current-shelters.json",
     "ehime_kumamoto_support_geocoded_shelters_20260802.html",
     "municipal-support-audit.json",
@@ -59,7 +59,7 @@
       "publisher": "熊本県 防災情報ポータル",
       "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
       "source_as_of": "2026-08-30T15:03:17+09:00",
-      "checked_at": "2026-08-30T14:35:00+09:00"
+      "checked_at": "2026-08-30T15:03:17+09:00"
     },
     {
       "source_id": "kantei-0828",
