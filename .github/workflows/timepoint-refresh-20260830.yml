@@ -48,10 +48,13 @@ jobs:
           node --check scripts/validate-volunteer-data.mjs
           node --check scripts/validate-national-support-audit.mjs
           node --check scripts/sender-coverage-lib.mjs
-      - name: Remove temporary refresh machinery
+      - name: Remove temporary non-workflow machinery
+        env:
+          BASE_SHA: 638192a5af73e5767f9dc48e06b18606e78a8127
         run: |
           set -Eeuo pipefail
-          git rm -f .github/workflows/timepoint-refresh-20260830.yml scripts/timepoint-refresh-core-20260830.mjs scripts/timepoint-refresh-sender-20260830.mjs scripts/timepoint-finalize-patches-20260830.py
+          git rm -f scripts/timepoint-refresh-core-20260830.mjs scripts/timepoint-refresh-sender-20260830.mjs scripts/timepoint-finalize-patches-20260830.py
+          git checkout "$BASE_SHA" -- .github/workflows/post-deploy-pages-smoke.yml
       - name: Finalize exact ledger changed-file inventory
         env:
           BASE_SHA: 638192a5af73e5767f9dc48e06b18606e78a8127
