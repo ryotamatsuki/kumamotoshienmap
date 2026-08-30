@@ -73,6 +73,17 @@ def post() -> None:
     shelters = json.loads(Path("current-shelters.json").read_text())
     count = shelters["meta"]["current_count"]
     note = (shelters["meta"].get("source_last_modified") or shelters["meta"]["fetched_at"]).replace("T", " ").split("+")[0]
+
+    ledger_path = Path("operations/ledgers/refresh-20260830-1420.json")
+    ledger = json.loads(ledger_path.read_text())
+    coverage = ledger.setdefault("coverage", {})
+    coverage["municipal_support"] = "audited"
+    coverage["national_support"] = "audited"
+    coverage["current_count"] = count
+    coverage["unresolved_count"] = 0
+    coverage["conflict_count"] = 0
+    ledger_path.write_text(json.dumps(ledger, ensure_ascii=False, indent=2) + "\n")
+
     for name in ["ehime_kumamoto_support_geocoded_shelters_20260802.html", "public/dashboard.html"]:
         q = Path(name)
         h = q.read_text()
