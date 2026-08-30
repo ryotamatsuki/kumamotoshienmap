@@ -46,12 +46,22 @@ jobs:
           node scripts/timepoint-refresh-sender-20260830.mjs
           node scripts/timepoint-refresh-core-20260830.mjs
           python3 - <<'PY'
-          import json
+          import json,re
           from pathlib import Path
           p=Path('operations/audits/institution-coverage-20260830-1420.json')
           d=json.loads(p.read_text())
           d['operation_version']='2.5'
           p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+          shelters=json.loads(Path('current-shelters.json').read_text())
+          count=shelters['meta']['current_count']
+          note=(shelters['meta'].get('source_last_modified') or shelters['meta']['fetched_at']).replace('T',' ').split('+')[0]
+          for name in ['ehime_kumamoto_support_geocoded_shelters_20260802.html','public/dashboard.html']:
+              q=Path(name); h=q.read_text()
+              pat=r'<button class="overview-kpi" data-overview-impact="shelters"[\s\S]*?</button>'
+              repl=f'<button class="overview-kpi" data-overview-impact="shelters" type="button"><div class="overview-kpi-label">避難所</div><div class="overview-kpi-value">{count}<span class="overview-kpi-unit">か所</span></div><div class="overview-kpi-note">公式JSON現在・{note}</div></button>'
+              h,n=re.subn(pat,repl,h,count=1)
+              if n!=1: raise SystemExit(f'shelter KPI patch failed: {name}')
+              q.write_text(h)
           PY
       - name: Build all generated artifacts and run embedded validators
         run: |
