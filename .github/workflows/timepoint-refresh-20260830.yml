@@ -48,10 +48,12 @@ jobs:
           python3 - <<'PY'
           import json,re
           from pathlib import Path
+          REF='2026-08-30T14:20:00+09:00'
           p=Path('operations/audits/institution-coverage-20260830-1420.json')
           d=json.loads(p.read_text())
           d['operation_version']='2.5'
           p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+
           shelters=json.loads(Path('current-shelters.json').read_text())
           count=shelters['meta']['current_count']
           note=(shelters['meta'].get('source_last_modified') or shelters['meta']['fetched_at']).replace('T',' ').split('+')[0]
@@ -63,7 +65,15 @@ jobs:
               if n!=1: raise SystemExit(f'shelter KPI patch failed: {name}')
               h=h.replace('24市町の人的被害表内合計396人。県第45報の人的被害合計は402人','24市町の人的被害表内合計396人。県第49報の人的被害合計は402人')
               h=h.replace('住家被害の市町別旧スナップショット38,498棟と県第45報39,567棟は時点が異なるため単純差分を現況差と扱わない','住家被害の市町別旧スナップショット38,498棟と県第49報43,292棟は時点が異なるため単純差分を現況差と扱わない')
+              h=h.replace('8月26日19:26までに確認できた一次情報','8月30日14:20までに確認できた一次情報')
               q.write_text(h)
+
+          # The national generator owns the final current-state overlay; move its tags to report 49 too.
+          sn=Path('scripts/sync-national-support-audit.mjs')
+          s=sn.read_text().replace('tags:["熊本県第45報","8月26日8時","最新確認"]','tags:["熊本県第49報","8月28日8時","最新確認"]')
+          sn.write_text(s)
+
+          # Dashboard validator: retain strict checks but move expected current facts to this release.
           v=Path('scripts/validate-dashboard-current.mjs')
           s=v.read_text()
           replacements={
@@ -73,6 +83,24 @@ jobs:
           }
           for old,new in replacements.items(): s=s.replace(old,new)
           v.write_text(s)
+
+          # Current-state validator: distinguish report-49 snapshot from live shelter JSON and require the new page-wide reference.
+          v=Path('scripts/validate-current-state-audit.mjs')
+          s=v.read_text()
+          replacements={
+            '2026-08-26T19:26:53+09:00':REF,
+            'assert.ok(need("p-shelter").observed.includes("熊本県第45報"));':'assert.ok(need("p-shelter").observed.includes("熊本県第49報"));',
+            'assert.ok(event("t-current-status").tags.includes("熊本県第45報"));':'assert.ok(event("t-current-status").tags.includes("熊本県第49報"));',
+            'assert.equal(event("t-current-status").summary, "避難者2,589人、開設避難所64か所、人的被害402人、住家被害39,567棟。");':'assert.equal(event("t-current-status").summary, "避難者2,442人、開設避難所61か所、人的被害402人、住家被害43,292棟。");',
+            '["D+29", "行政応援971人", "8月26日19:26までに確認できた一次情報", "8月26日19:26基準で全件再監査"]':'["D+33", "行政応援971人", "8月30日14:20までに確認できた一次情報", "8月30日14:20基準で全件再監査"]'
+          }
+          for old,new in replacements.items(): s=s.replace(old,new)
+          v.write_text(s)
+
+          # Volunteer hard gate keeps its full field/state checks; only its audited reference day advances.
+          v=Path('scripts/validate-volunteer-data.mjs')
+          s=v.read_text().replace('data.meta.reference_at.startsWith("2026-08-26")','data.meta.reference_at.startsWith("2026-08-30")').replace('ボランティア情報の基準日が2026-08-26ではありません','ボランティア情報の基準日が2026-08-30ではありません')
+          v.write_text(s)
           PY
       - name: Build all generated artifacts and run embedded validators
         run: |
@@ -81,6 +109,8 @@ jobs:
           node --check scripts/sync-municipal-support-audit.mjs
           node --check scripts/sync-national-support-audit.mjs
           node --check scripts/validate-dashboard-current.mjs
+          node --check scripts/validate-current-state-audit.mjs
+          node --check scripts/validate-volunteer-data.mjs
           node --check scripts/validate-national-support-audit.mjs
           node --check scripts/sender-coverage-lib.mjs
       - name: Remove temporary refresh machinery
