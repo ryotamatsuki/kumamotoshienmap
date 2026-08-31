@@ -139,31 +139,24 @@ jobs:
           npm run validate:institution-coverage
           npm run validate:sender-coverage
           npm run validate:sender-dist
-      - name: Publish validated commit object through Git Data API
+      - name: Publish clean data-only transport commit
         shell: bash
         env:
-          GH_TOKEN: ${{ github.token }}
+          FINAL_BRANCH: audit/timepoint-20260831-1416-final
         run: |
           set -Eeuo pipefail
           parent="$(git rev-parse origin/main)"
-          base_tree="$(curl -fsSL -H "Authorization: Bearer ${GH_TOKEN}" -H 'Accept: application/vnd.github+json' "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/commits/${parent}" | jq -r '.tree.sha')"
-          test -n "$base_tree" && test "$base_tree" != null
-          : > /tmp/tree-entries.ndjson
-          jq -r '.expected_changed_files[]' operations/ledgers/refresh-20260831-1416.json | while IFS= read -r path; do
-            test -f "$path"
-            mode="$(git ls-files -s -- "$path" | awk 'NR==1{print $1}')"
-            test -n "$mode"
-            jq -n --rawfile content "$path" '{content:$content,encoding:"utf-8"}' > /tmp/blob.json
-            blob_sha="$(curl -fsSL -X POST -H "Authorization: Bearer ${GH_TOKEN}" -H 'Accept: application/vnd.github+json' -H 'Content-Type: application/json' "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/blobs" --data-binary @/tmp/blob.json | jq -r '.sha')"
-            test -n "$blob_sha" && test "$blob_sha" != null
-            jq -n --arg path "$path" --arg mode "$mode" --arg sha "$blob_sha" '{path:$path,mode:$mode,type:"blob",sha:$sha}' >> /tmp/tree-entries.ndjson
-          done
-          jq -s --arg base_tree "$base_tree" '{base_tree:$base_tree,tree:.}' /tmp/tree-entries.ndjson > /tmp/tree.json
-          tree_sha="$(curl -fsSL -X POST -H "Authorization: Bearer ${GH_TOKEN}" -H 'Accept: application/vnd.github+json' -H 'Content-Type: application/json' "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/trees" --data-binary @/tmp/tree.json | jq -r '.sha')"
-          test -n "$tree_sha" && test "$tree_sha" != null
-          jq -n --arg message 'data: full timepoint refresh at 2026-08-31 14:16 JST' --arg tree "$tree_sha" --arg parent "$parent" '{message:$message,tree:$tree,parents:[$parent]}' > /tmp/commit.json
-          commit_sha="$(curl -fsSL -X POST -H "Authorization: Bearer ${GH_TOKEN}" -H 'Accept: application/vnd.github+json' -H 'Content-Type: application/json' "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/commits" --data-binary @/tmp/commit.json | jq -r '.sha')"
-          test -n "$commit_sha" && test "$commit_sha" != null
-          echo "FINAL_API_COMMIT_SHA=${commit_sha}"
-          echo "FINAL_API_TREE_SHA=${tree_sha}"
-          echo "FINAL_API_PARENT_SHA=${parent}"
+          git checkout origin/main -- .github/workflows/post-deploy-pages-smoke.yml
+          node --input-type=module <<'NODE'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          const path='operations/ledgers/refresh-20260831-1416.json';
+          const ledger=JSON.parse(readFileSync(path,'utf8'));
+          ledger.expected_changed_files=ledger.expected_changed_files.filter(p=>p!=='.github/workflows/post-deploy-pages-smoke.yml');
+          writeFileSync(path,JSON.stringify(ledger,null,2)+'\n');
+          NODE
+          git add -A
+          tree_sha="$(git write-tree)"
+          transport_commit="$(printf '%s\n' 'data: transport validated 2026-08-31 refresh' | git commit-tree "$tree_sha" -p "$parent")"
+          echo "TRANSPORT_COMMIT=${transport_commit}"
+          npm run validate:release -- --ledger=operations/ledgers/refresh-20260831-1416.json --base=origin/main --head="$transport_commit" --require-ledger-if-data-change
+          git push origin "$transport_commit:refs/heads/${FINAL_BRANCH}"
