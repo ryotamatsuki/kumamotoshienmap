@@ -153,8 +153,8 @@ jobs:
             test -f "$path"
             mode="$(git ls-files -s -- "$path" | awk 'NR==1{print $1}')"
             test -n "$mode"
-            payload="$(jq -n --rawfile content "$path" '{content:$content,encoding:"utf-8"}')"
-            blob_sha="$(curl -fsSL -X POST -H "Authorization: Bearer ${GH_TOKEN}" -H 'Accept: application/vnd.github+json' -H 'Content-Type: application/json' "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/blobs" -d "$payload" | jq -r '.sha')"
+            jq -n --rawfile content "$path" '{content:$content,encoding:"utf-8"}' > /tmp/blob.json
+            blob_sha="$(curl -fsSL -X POST -H "Authorization: Bearer ${GH_TOKEN}" -H 'Accept: application/vnd.github+json' -H 'Content-Type: application/json' "https://api.github.com/repos/${GITHUB_REPOSITORY}/git/blobs" --data-binary @/tmp/blob.json | jq -r '.sha')"
             test -n "$blob_sha" && test "$blob_sha" != null
             jq -n --arg path "$path" --arg mode "$mode" --arg sha "$blob_sha" '{path:$path,mode:$mode,type:"blob",sha:$sha}' >> /tmp/tree-entries.ndjson
           done
