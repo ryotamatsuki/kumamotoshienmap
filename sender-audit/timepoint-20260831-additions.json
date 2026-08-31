@@ -1,0 +1,158 @@
+{
+  "region": "timepoint-20260831-additions",
+  "reference_at": "2026-08-31T14:16:00+09:00",
+  "checked_at": "2026-08-31T14:28:00+09:00",
+  "entities": [
+    {
+      "entity": "島原市",
+      "prefecture": "長崎県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "美里町"
+      ],
+      "source_ids": [
+        "nagasaki-wave-0831"
+      ],
+      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として島原市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "source_as_of": "2026-08-31T00:00:00+09:00",
+      "sources_checked": [
+        "nagasaki-wave-0831"
+      ],
+      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+    },
+    {
+      "entity": "平戸市",
+      "prefecture": "長崎県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "美里町"
+      ],
+      "source_ids": [
+        "nagasaki-wave-0831"
+      ],
+      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として平戸市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "source_as_of": "2026-08-31T00:00:00+09:00",
+      "sources_checked": [
+        "nagasaki-wave-0831"
+      ],
+      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+    },
+    {
+      "entity": "五島市",
+      "prefecture": "長崎県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "美里町"
+      ],
+      "source_ids": [
+        "nagasaki-wave-0831"
+      ],
+      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として五島市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "source_as_of": "2026-08-31T00:00:00+09:00",
+      "sources_checked": [
+        "nagasaki-wave-0831"
+      ],
+      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+    },
+    {
+      "entity": "雲仙市",
+      "prefecture": "長崎県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "美里町"
+      ],
+      "source_ids": [
+        "nagasaki-wave-0831"
+      ],
+      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として雲仙市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "source_as_of": "2026-08-31T00:00:00+09:00",
+      "sources_checked": [
+        "nagasaki-wave-0831"
+      ],
+      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+    },
+    {
+      "entity": "佐世保市",
+      "prefecture": "長崎県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "八代市"
+      ],
+      "source_ids": [
+        "nagasaki-wave-0831"
+      ],
+      "evidence_note": "長崎県が8月31日に、9月1日からの八代市派遣陣として佐世保市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "source_as_of": "2026-08-31T00:00:00+09:00",
+      "sources_checked": [
+        "nagasaki-wave-0831"
+      ],
+      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+    },
+    {
+      "entity": "小値賀町",
+      "prefecture": "長崎県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "八代市"
+      ],
+      "source_ids": [
+        "nagasaki-wave-0831"
+      ],
+      "evidence_note": "長崎県が8月31日に、9月1日からの八代市派遣陣として小値賀町職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "source_as_of": "2026-08-31T00:00:00+09:00",
+      "sources_checked": [
+        "nagasaki-wave-0831"
+      ],
+      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+    }
+  ],
+  "rechecked_at": "2026-08-31T14:28:00+09:00"
+}

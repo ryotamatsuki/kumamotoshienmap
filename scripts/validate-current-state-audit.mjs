@@ -4,7 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { assertCurrentPageMetadataSynced } from "./current-page-metadata.mjs";
 
-const REFERENCE_AT = "2026-08-30T14:20:00+09:00";
+const REFERENCE_AT = "2026-08-31T14:16:00+09:00";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const [html, publicHtml, shelterText, municipalText, nationalText] = await Promise.all([
   readFile(resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html"), "utf8"),
@@ -88,7 +88,7 @@ assert.ok(pageMeta.rows.some((row) => row.section === "他自治体等" && row.c
 assert.ok(pageMeta.rows.some((row) => row.section === "愛媛県支援"));
 
 const currentDisplay = html.slice(0, html.indexOf('<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js">'));
-for (const value of ["D+33", "行政応援971人", "8月30日14:20までに確認できた一次情報", "8月30日14:20基準で全件再監査"]) assert.ok(currentDisplay.includes(value), `初期表示に ${value} がありません`);
+for (const value of ["D+33", "行政応援971人", "8月31日14:16までに確認できた一次情報", "8月31日14:16基準で全件再監査"]) assert.ok(currentDisplay.includes(value), `初期表示に ${value} がありません`);
 for (const value of ["D+14", "計10市町へ行政応援925人（関係機関含む計1,005人）", "<div class=\"snap\"><strong>925</strong>", "第14回政府現地本部会議（8月15日資料）まで確認", "仮置場11市町開設"]) assert.ok(!currentDisplay.includes(value), `旧い現行表示が残っています: ${value}`);
 
 assert.ok(Number.isFinite(Date.parse(shelterData.meta.fetched_at)), "避難所fetched_atが不正です");

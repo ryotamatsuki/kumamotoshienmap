@@ -1,6 +1,6 @@
 {
   "region": "chubu",
-  "reference_at": "2026-08-30T14:20:00+09:00",
+  "reference_at": "2026-08-31T14:16:00+09:00",
   "entities": [
     {
       "entity": "新潟市",
@@ -19,14 +19,14 @@
         "repository-municipal-audit-0826"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "repository-municipal-audit-0826"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "上市町",
@@ -45,13 +45,13 @@
         "toyama-support"
       ],
       "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "入善町",
@@ -70,13 +70,13 @@
         "toyama-support"
       ],
       "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "南砺市",
@@ -95,13 +95,13 @@
         "toyama-support"
       ],
       "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "富山市",
@@ -120,13 +120,13 @@
         "toyama-support"
       ],
       "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "朝日町",
@@ -145,13 +145,13 @@
         "toyama-support"
       ],
       "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "rechecked_at": "2026-08-31T14:28:00+09:00",
       "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     },
     {
@@ -171,13 +171,13 @@
         "toyama-support"
       ],
       "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "滑川市",
@@ -196,13 +196,13 @@
         "toyama-support"
       ],
       "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "砺波市",
@@ -221,13 +221,13 @@
         "toyama-support"
       ],
       "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "舟橋村",
@@ -246,13 +246,13 @@
         "toyama-support"
       ],
       "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "rechecked_at": "2026-08-31T14:28:00+09:00",
       "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     },
     {
@@ -272,13 +272,13 @@
         "toyama-support"
       ],
       "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "魚津市",
@@ -297,13 +297,13 @@
         "toyama-support"
       ],
       "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "rechecked_at": "2026-08-31T14:28:00+09:00",
       "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     },
     {
@@ -323,13 +323,13 @@
         "toyama-support"
       ],
       "evidence_note": "富山県公式の派遣実施一覧で終了済みの班として確認。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "toyama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "浜松市",
@@ -348,14 +348,14 @@
         "repository-municipal-audit-0826"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "repository-municipal-audit-0826"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "静岡市",
@@ -374,14 +374,14 @@
         "repository-municipal-audit-0826"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "repository-municipal-audit-0826"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "名古屋市",
@@ -400,16 +400,16 @@
         "baseline-nagoya"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "baseline-nagoya"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     }
   ],
-  "checked_at": "2026-08-30T14:35:00+09:00",
-  "rechecked_at": "2026-08-30T14:35:00+09:00"
+  "checked_at": "2026-08-31T14:28:00+09:00",
+  "rechecked_at": "2026-08-31T14:28:00+09:00"
 }

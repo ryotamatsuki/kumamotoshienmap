@@ -3,8 +3,8 @@
   "repository": "ryotamatsuki/kumamotoshienmap",
   "audit_type": "sender_municipality_coverage",
   "policy_version": "2.6",
-  "reference_at": "2026-08-30T14:20:00+09:00",
-  "checked_at": "2026-08-30T14:35:00+09:00",
+  "reference_at": "2026-08-31T14:16:00+09:00",
+  "checked_at": "2026-08-31T14:28:00+09:00",
   "base_main_sha": "638192a5af73e5767f9dc48e06b18606e78a8127",
   "entity_files": [
     "sender-audit/ehime.json",
@@ -16,7 +16,8 @@
     "sender-audit/kyushu-okinawa.json",
     "sender-audit/crosscutting-additions.json",
     "sender-audit/timepoint-20260828-additions.json",
-    "sender-audit/timepoint-20260830-additions.json"
+    "sender-audit/timepoint-20260830-additions.json",
+    "sender-audit/timepoint-20260831-additions.json"
   ],
   "sources_file": "sender-audit/sources.json",
   "sources_additions_file": "sender-audit/sources-additions.json",
@@ -286,28 +287,30 @@
         "UNKNOWN": 8,
         "NO_EVIDENCE": 0,
         "CONFLICT": 0
-      }
+      },
+      "blocking_conflicts": 0
     },
     "nationwide": {
       "prefecture_discovery_checked": 47,
-      "discovered_basic_municipality_senders": 309,
-      "adjudicated_basic_municipality_senders": 309,
+      "discovered_basic_municipality_senders": 314,
+      "adjudicated_basic_municipality_senders": 314,
       "unadjudicated_discovered_senders": [],
-      "source_mentions": 309,
+      "source_mentions": 314,
       "orphan_source_mentions": [],
       "invalid_current": [],
       "blocking_conflicts": 0,
       "states": {
         "CURRENT": 11,
-        "PLANNED": 5,
+        "PLANNED": 14,
         "HISTORICAL": 17,
-        "UNKNOWN": 276,
+        "UNKNOWN": 272,
         "NO_EVIDENCE": 0,
         "CONFLICT": 0
       }
     }
   },
   "blocking_unresolved": [],
-  "timepoint_note": "2026-08-30 14:20 JST sender exhaustive refresh; 47/47 prefecture discovery rechecked. Schedule-only evidence remains non-CURRENT; newly discovered Gunma municipalities are UNKNOWN pending direct activity evidence.",
-  "rechecked_at": "2026-08-30T14:35:00+09:00"
+  "timepoint_note": "2026年8月31日14:16基準。愛媛20市町をゼロベース再確認し、全国47都道府県discoveryを再実施。予定期間到来のみではCURRENTにせず、長崎県8月31日発表で新たに発見した5市町をPLANNED追加し、既収載4市も翌日派遣予定としてPLANNEDへ更新。",
+  "rechecked_at": "2026-08-31T14:28:00+09:00",
+  "release_id": "20260831-1416"
 }

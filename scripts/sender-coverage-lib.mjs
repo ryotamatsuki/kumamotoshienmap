@@ -7,7 +7,7 @@ export const PREFECTURES = ["北海道","青森県","岩手県","宮城県","秋
 export const EHIME_REQUIRED = ["松山市","今治市","宇和島市","八幡浜市","新居浜市","西条市","大洲市","伊予市","四国中央市","西予市","東温市","上島町","久万高原町","松前町","砥部町","内子町","伊方町","松野町","鬼北町","愛南町"];
 const VALID_STATES = new Set(["CURRENT","PLANNED","HISTORICAL","UNKNOWN","NO_EVIDENCE","CONFLICT"]);
 const CURRENT_EVIDENCE = new Set(["explicit_current_activity","continuation_explicit","actual_dispatch_confirmed","actual_presence_confirmed","active_collection_explicit"]);
-const NEXT_REVIEW_AT = "2026-08-31T09:00:00+09:00";
+const NEXT_REVIEW_AT = "2026-09-01T09:00:00+09:00";
 
 function json(path){ return JSON.parse(readFileSync(resolve(ROOT,path),"utf8")); }
 function equalSet(a,b){ return a.length===b.length && a.every(v=>b.includes(v)); }

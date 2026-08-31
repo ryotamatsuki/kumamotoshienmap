@@ -1,6 +1,6 @@
 {
   "region": "crosscutting-additions",
-  "reference_at": "2026-08-30T14:20:00+09:00",
+  "reference_at": "2026-08-31T14:16:00+09:00",
   "compact_entities": [
     [
       "三重県",
@@ -760,15 +760,6 @@
     ],
     [
       "長崎県",
-      "佐世保市",
-      "city",
-      "proxy-yatsushiro-registry",
-      "八代市",
-      "災害支援代理寄附",
-      "UNKNOWN"
-    ],
-    [
-      "長崎県",
       "壱岐市",
       "city",
       "proxy-uki-registry",
@@ -885,6 +876,6 @@
       "UNKNOWN"
     ]
   ],
-  "checked_at": "2026-08-30T14:35:00+09:00",
-  "rechecked_at": "2026-08-30T14:35:00+09:00"
+  "checked_at": "2026-08-31T14:28:00+09:00",
+  "rechecked_at": "2026-08-31T14:28:00+09:00"
 }
