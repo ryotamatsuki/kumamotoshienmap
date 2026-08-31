@@ -1,0 +1,37 @@
+name: Temporary inspect refresh targets 20260831
+on:
+  push:
+    branches: [audit/timepoint-20260831-1416]
+    paths: [.github/workflows/tmp-inspect-targets-20260831.yml]
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Inspect target structures
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          node --input-type=module <<'NODE'
+          import {readFileSync} from 'node:fs';
+          const n=JSON.parse(readFileSync('national-support-audit.json','utf8'));
+          console.log('HAKU_SOURCE',JSON.stringify(n.sources.filter(x=>/hakuo/i.test(x.source_id)||JSON.stringify(x).includes('はくおう'))));
+          console.log('HAKU_RECORD',JSON.stringify(n.records.filter(x=>/hakuo/i.test(x.record_id)||JSON.stringify(x).includes('はくおう'))));
+          console.log('NATIONAL_SUMMARY_KEYS',Object.keys(n));
+          const m=JSON.parse(readFileSync('municipal-support-audit.json','utf8'));
+          console.log('MUNICIPAL_KEYS',Object.keys(m));
+          console.log('MUNICIPAL_REFERENCE',m.reference_at,m.checked_at,m.release_id);
+          for(const f of ['research_official_north.json','research_official_south.json','research_official_statewide.json']){
+            const x=JSON.parse(readFileSync(f,'utf8'));
+            console.log('RESEARCH_META',f,JSON.stringify({keys:Object.keys(x),reference_at:x.reference_at,checked_at:x.checked_at,release_id:x.release_id}));
+          }
+          const sm=JSON.parse(readFileSync('sender-municipality-audit.json','utf8'));
+          const candidates=['島原市','平戸市','五島市','雲仙市','長崎市','佐世保市','諫早市','大村市','小値賀町','うきは市','新宮町','久山町','福智町','松山市'];
+          console.log('CANDIDATES',JSON.stringify(candidates.map(name=>({name,mentioned:sm.source_mentions.includes(name)}))));
+          NODE
+          echo '=== HTML old-reference occurrences ==='
+          grep -nE '2026-08-30T14:20|2026年8月30日14:20|20260830-1420|8月30日14:20' ehime_kumamoto_support_geocoded_shelters_20260802.html | head -120 || true
+          echo '=== sender old-reference occurrences ==='
+          grep -RniE '2026-08-30T14:20|2026年8月30日14:20|8月30日14:20|2026-08-30T14:35' sender-audit sender-municipality-audit.json | head -160 || true
