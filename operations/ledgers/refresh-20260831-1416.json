@@ -10,6 +10,7 @@
   "page_checked_at": null,
   "base_main_sha": "576b8c908e0a9012b7431ba97ec43ea9727bb9b4",
   "expected_changed_files": [
+    ".github/workflows/post-deploy-pages-smoke.yml",
     "current-shelters.json",
     "ehime_kumamoto_support_geocoded_shelters_20260802.html",
     "municipal-support-audit.json",
