@@ -1,6 +1,6 @@
 {
   "region": "chugoku-shikoku",
-  "reference_at": "2026-08-30T14:20:00+09:00",
+  "reference_at": "2026-08-31T14:16:00+09:00",
   "entities": [
     {
       "entity": "井原市",
@@ -19,14 +19,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "倉敷市",
@@ -45,14 +45,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "備前市",
@@ -71,14 +71,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "吉備中央町",
@@ -97,14 +97,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "新見市",
@@ -123,14 +123,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "早島町",
@@ -149,14 +149,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "津山市",
@@ -175,14 +175,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "浅口市",
@@ -201,14 +201,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "瀬戸内市",
@@ -227,14 +227,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "玉野市",
@@ -253,14 +253,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "真庭市",
@@ -279,14 +279,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "矢掛町",
@@ -305,14 +305,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "笠岡市",
@@ -331,14 +331,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "総社市",
@@ -357,14 +357,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "美作市",
@@ -383,14 +383,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "美咲町",
@@ -409,14 +409,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "赤磐市",
@@ -435,14 +435,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "里庄町",
@@ -461,14 +461,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "鏡野町",
@@ -487,14 +487,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "高梁市",
@@ -513,14 +513,14 @@
         "okayama-support"
       ],
       "evidence_note": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "岡山県公式のチーム構成に記載。予定・過去班の記載だけで基準時点状態を推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "okayama-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "広島市",
@@ -539,14 +539,14 @@
         "repository-municipal-audit-0826"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "repository-municipal-audit-0826"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "下関市",
@@ -565,14 +565,14 @@
         "yamaguchi-support"
       ],
       "evidence_note": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
       "source_as_of": null,
       "sources_checked": [
         "yamaguchi-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "周南市",
@@ -591,14 +591,14 @@
         "yamaguchi-support"
       ],
       "evidence_note": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
       "source_as_of": null,
       "sources_checked": [
         "yamaguchi-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "宇部市",
@@ -617,14 +617,14 @@
         "yamaguchi-support"
       ],
       "evidence_note": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
       "source_as_of": null,
       "sources_checked": [
         "yamaguchi-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "山陽小野田市",
@@ -643,14 +643,14 @@
         "yamaguchi-support"
       ],
       "evidence_note": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
       "source_as_of": null,
       "sources_checked": [
         "yamaguchi-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "長門市",
@@ -669,14 +669,14 @@
         "yamaguchi-support"
       ],
       "evidence_note": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
       "source_as_of": null,
       "sources_checked": [
         "yamaguchi-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "防府市",
@@ -695,14 +695,14 @@
         "yamaguchi-support"
       ],
       "evidence_note": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "reason": "山口県公式の派遣班に記載。基準時点を含む予定期間でも実働を直接確認できないためUNKNOWN。",
       "source_as_of": null,
       "sources_checked": [
         "yamaguchi-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00"
+      "rechecked_at": "2026-08-31T14:28:00+09:00"
     },
     {
       "entity": "那賀町",
@@ -721,13 +721,13 @@
         "tokushima-support"
       ],
       "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokushima-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "rechecked_at": "2026-08-31T14:28:00+09:00",
       "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     },
     {
@@ -747,16 +747,16 @@
         "tokushima-support"
       ],
       "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
-      "checked_at": "2026-08-30T14:35:00+09:00",
-      "next_review_at": "2026-08-31T09:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00",
+      "next_review_at": "2026-09-01T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "tokushima-support"
       ],
-      "rechecked_at": "2026-08-30T14:35:00+09:00",
+      "rechecked_at": "2026-08-31T14:28:00+09:00",
       "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     }
   ],
-  "checked_at": "2026-08-30T14:35:00+09:00",
-  "rechecked_at": "2026-08-30T14:35:00+09:00"
+  "checked_at": "2026-08-31T14:28:00+09:00",
+  "rechecked_at": "2026-08-31T14:28:00+09:00"
 }

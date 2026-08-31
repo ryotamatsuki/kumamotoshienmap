@@ -71,6 +71,7 @@ jobs:
             sender-audit/kyushu-okinawa.json
             sender-audit/crosscutting-additions.json
             sender-audit/timepoint-20260830-additions.json
+            sender-audit/timepoint-20260831-additions.json
             sender-audit/sources.json
             sender-audit/sources-additions.json
             sender-audit/discovery.json
@@ -90,9 +91,9 @@ jobs:
           grep -F '送出基礎自治体 Coverage' /tmp/root.html
 
           grep -F 'NATIONAL_SUPPORT_AUDIT_START' /tmp/deployed-dashboard.html
-          grep -F '8月30日14:20基準で全件再監査' /tmp/deployed-dashboard.html
-          grep -F '国交省第50報（8/27）を最新インフラ履歴として確認。8/30ははくおう2宿泊支援をCURRENT、同一定義の実働を直接確認できない項目はUNKNOWN' /tmp/deployed-dashboard.html
-          grep -F '8月27日支援パッケージ・8月28日予備費使用決定を確認し、8月30日実働主体を再監査' /tmp/deployed-dashboard.html
+          grep -F '8月31日14:16基準で全件再監査' /tmp/deployed-dashboard.html
+          grep -F '国交省第50報（8/27）を最新インフラ履歴として確認。8/31もはくおう2宿泊支援をCURRENT、同一定義の実働を直接確認できない項目はUNKNOWN' /tmp/deployed-dashboard.html
+          grep -F '8月27日支援パッケージ・8月28日予備費使用決定を確認し、8月31日実働主体を再監査' /tmp/deployed-dashboard.html
           grep -F 'national-accommodation-hakuo2' /tmp/deployed-dashboard.html
           grep -F '8月30日13:00～9月1日10:00' /tmp/deployed-dashboard.html
           grep -F '住まいサポートダイヤル（住宅復旧・改修相談）' /tmp/deployed-dashboard.html
