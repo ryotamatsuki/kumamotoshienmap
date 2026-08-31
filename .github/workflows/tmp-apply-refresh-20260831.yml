@@ -31,38 +31,25 @@ jobs:
           cp /tmp/current-shelters-candidate.json current-shelters.json
       - name: Apply audited 2026-08-31 point-in-time changes
         run: node scripts/tmp-apply-refresh-20260831.mjs
-      - name: Normalize already-adjudicated Sasebo sender
+      - name: Normalize already-adjudicated Sasebo compact sender
         shell: bash
         run: |
           set -Eeuo pipefail
           node --input-type=module <<'NODE'
           import {readFileSync,writeFileSync} from 'node:fs';
-          const REF='2026-08-31T14:16:00+09:00', CHECKED='2026-08-31T14:28:00+09:00', NEXT='2026-09-01T09:00:00+09:00', SRC='nagasaki-wave-0831';
           const read=p=>JSON.parse(readFileSync(p,'utf8'));
           const write=(p,x)=>writeFileSync(p,JSON.stringify(x,null,2)+'\n');
-          const uniq=a=>[...new Set(a)];
           const manifest=read('sender-municipality-audit.json');
-          const newPath='sender-audit/timepoint-20260831-additions.json';
-          const added=read(newPath);
-          added.entities=added.entities.filter(e=>!(e.prefecture==='長崎県'&&e.entity==='佐世保市'));
-          write(newPath,added);
-          let found=0;
-          for(const p of manifest.entity_files.filter(p=>p!==newPath)){
-            const x=read(p); let changed=false;
-            for(const e of x.entities||[]){
-              if(e.prefecture==='長崎県'&&e.entity==='佐世保市'){
-                found++; changed=true; e.state='PLANNED'; e.checked_at=CHECKED; e.next_review_at=NEXT;
-                e.source_ids=uniq([...(e.source_ids||[]),SRC]); e.sources_checked=uniq([...(e.sources_checked||[]),SRC]);
-                e.support_types=uniq([...(e.support_types||[]),'職員派遣']); e.destinations=uniq([...(e.destinations||[]),'八代市']);
-                e.source_as_of='2026-08-31T00:00:00+09:00';
-                e.evidence_note='長崎県が8月31日に、9月1日からの八代市第6陣として佐世保市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。';
-                e.reason='翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。';
-                delete e.current_evidence_type;
-              }
-            }
-            if(changed) write(p,x);
+          let removed=0;
+          for(const p of manifest.entity_files.filter(p=>p!=='sender-audit/timepoint-20260831-additions.json')){
+            const x=read(p);
+            if(!Array.isArray(x.compact_entities)) continue;
+            const before=x.compact_entities.length;
+            x.compact_entities=x.compact_entities.filter(row=>!(row?.[0]==='長崎県'&&row?.[1]==='佐世保市'));
+            const delta=before-x.compact_entities.length;
+            if(delta){ removed+=delta; write(p,x); }
           }
-          if(found!==1) throw new Error(`佐世保市 existing sender expected 1, got ${found}`);
+          if(removed!==1) throw new Error(`佐世保市 compact sender expected 1, removed ${removed}`);
           const {loadSenderAudit,senderSummary}=await import('./scripts/sender-coverage-lib.mjs');
           const ss=senderSummary(loadSenderAudit());
           const m=read('sender-municipality-audit.json');
@@ -72,7 +59,7 @@ jobs:
           m.summary.nationwide.adjudicated_basic_municipality_senders=ss.nationwide.entities;
           m.summary.nationwide.source_mentions=ss.sourceMentions;
           m.summary.nationwide.states=ss.nationwide.states;
-          m.timepoint_note='2026年8月31日14:16基準。愛媛20市町をゼロベース再確認し、全国47都道府県discoveryを再実施。予定期間到来のみではCURRENTにせず、長崎県8月31日発表の翌日派遣5新規市町をPLANNEDとして追加し、既収載4市もPLANNEDへ更新。';
+          m.timepoint_note='2026年8月31日14:16基準。愛媛20市町をゼロベース再確認し、全国47都道府県discoveryを再実施。予定期間到来のみではCURRENTにせず、長崎県8月31日発表で新たに発見した5市町をPLANNED追加し、既収載4市も翌日派遣予定としてPLANNEDへ更新。';
           write('sender-municipality-audit.json',m);
           const ledger=read('operations/ledgers/refresh-20260831-1416.json');
           ledger.coverage.prefecture_discovery_checked=ss.prefecturesChecked;
@@ -86,7 +73,7 @@ jobs:
             s=s.replaceAll('翌日派遣6新規市町','翌日派遣5新規市町');
             writeFileSync(p,s);
           }
-          console.log(JSON.stringify({foundExistingSasebo:found,senderSummary:ss},null,2));
+          console.log(JSON.stringify({removedCompactSasebo:removed,senderSummary:ss},null,2));
           NODE
       - name: Advance exact volunteer reference-date assertion
         shell: bash
@@ -101,6 +88,18 @@ jobs:
           if old not in s:
               raise SystemExit('expected volunteer reference-date assertion not found')
           p.write_text(s.replace(old,new))
+          PY
+      - name: Align post-deploy smoke with refreshed page wording
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('.github/workflows/post-deploy-pages-smoke.yml')
+          s=p.read_text()
+          s=s.replace('8/30ははくおう2宿泊支援をCURRENT','8/31もはくおう2宿泊支援をCURRENT')
+          s=s.replace('8月30日実働主体を再監査','8月31日実働主体を再監査')
+          p.write_text(s)
           PY
       - name: Build and run all content gates
         shell: bash
