@@ -1,0 +1,144 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260831-1500",
+  "release_id": "20260831-1416",
+  "reference_at": "2026-08-31T14:16:00+09:00",
+  "rechecked_at": "2026-08-31T14:28:00+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "8d47357983eac4b2d4a830418b3879b2ac51e624",
+  "expected_changed_files": [
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "operations/ledgers/refresh-20260831-1500.json",
+    "public/dashboard.html",
+    "scripts/sync-national-support-audit.mjs",
+    "scripts/validate-dashboard-current.mjs"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-damage-0828",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/222/276831.html",
+      "source_as_of": "2026-08-28T08:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00"
+    },
+    {
+      "source_id": "kantei-0828",
+      "publisher": "首相官邸",
+      "url": "https://www.kantei.go.jp/jp/kikikanri/earthquake20260728.html",
+      "source_as_of": "2026-08-28T10:35:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00"
+    },
+    {
+      "source_id": "mod-hakuo2-0830",
+      "publisher": "防衛省・自衛隊",
+      "url": "https://www.mod.go.jp/j/approach/defense/saigai/index.html",
+      "source_as_of": "2026-08-30T13:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00"
+    },
+    {
+      "source_id": "gunma-sender-0818",
+      "publisher": "群馬県",
+      "url": "https://www.pref.gunma.jp/site/houdou/771457.html",
+      "source_as_of": "2026-08-18T00:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00"
+    },
+    {
+      "source_id": "volunteer-bus-0827",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/27/278033.html",
+      "source_as_of": "2026-08-27T00:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-current-shelters-0831",
+      "publisher": "熊本県 防災情報ポータル",
+      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+      "source_as_of": "2026-08-31T13:59:45+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00"
+    },
+    {
+      "source_id": "nagasaki-wave-0831",
+      "publisher": "長崎県",
+      "url": "https://www.pref.nagasaki.jp/press-contents/52044.html",
+      "source_as_of": "2026-08-31T00:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00"
+    },
+    {
+      "source_id": "ehime-support-index-0831",
+      "publisher": "愛媛県",
+      "url": "https://www.pref.ehime.jp/page/154856.html",
+      "source_as_of": "2026-08-28T12:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00"
+    },
+    {
+      "source_id": "volunteer-bus-0831-recheck",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/27/278033.html",
+      "source_as_of": "2026-08-27T00:00:00+09:00",
+      "checked_at": "2026-08-31T14:28:00+09:00"
+    }
+  ],
+  "coverage": {
+    "recipient_municipalities": 45,
+    "institution_missing": 0,
+    "institution_orphan_source_mentions": 0,
+    "current_shelters": 58,
+    "current_shelter_coordinates_confirmed": 58,
+    "current_shelter_unresolved": 0,
+    "ehime_required": 20,
+    "ehime_adjudicated": 20,
+    "ehime_missing": 0,
+    "prefecture_discovery_checked": 47,
+    "sender_entities_discovered": 314,
+    "sender_entities_adjudicated": 314,
+    "sender_orphan_source_mentions": 0,
+    "sender_blocking_conflicts": 0,
+    "sender_states": {
+      "CURRENT": 11,
+      "PLANNED": 14,
+      "HISTORICAL": 17,
+      "UNKNOWN": 272,
+      "NO_EVIDENCE": 0,
+      "CONFLICT": 0
+    },
+    "municipal_support": "audited",
+    "national_support": "audited",
+    "current_count": 58,
+    "unresolved_count": 0,
+    "conflict_count": 0
+  },
+  "snapshots": {
+    "page_reference_at": "2026-08-31T14:16:00+09:00",
+    "damage_source_as_of": "2026-08-28T08:00:00+09:00",
+    "damage_report": 49,
+    "current_shelters": 58,
+    "shelter_source_last_modified": "2026-08-31T13:59:45+09:00",
+    "sender_reference_at": "2026-08-31T14:16:00+09:00"
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {
+      "issue_id": "national-same-definition-continuity",
+      "state": "UNKNOWN",
+      "reason": "国・関係機関の一部は最新の同一定義実働を直接確認できず、過去値をCURRENTへ流用しない。",
+      "owner": "timepoint-audit",
+      "source_ids": [
+        "kantei-0828"
+      ],
+      "next_review_at": "2026-09-01T09:00:00+09:00"
+    },
+    {
+      "issue_id": "sender-direct-activity",
+      "state": "UNKNOWN",
+      "reason": "全国senderは予定期間到来や旧CURRENTを根拠に継続推定せず、直接実働を再確認できないものをUNKNOWN、翌日開始が一次確認できたものをPLANNEDとした。",
+      "owner": "sender-audit",
+      "source_ids": [
+        "gunma-sender-0818"
+      ],
+      "next_review_at": "2026-09-01T09:00:00+09:00"
+    }
+  ]
+}
