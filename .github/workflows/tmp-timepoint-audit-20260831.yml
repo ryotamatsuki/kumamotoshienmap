@@ -1,0 +1,75 @@
+name: Temporary timepoint audit 20260831
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260831-1416
+    paths:
+      - .github/workflows/tmp-timepoint-audit-20260831.yml
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Inspect current sender states
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const manifest=JSON.parse(readFileSync('sender-municipality-audit.json','utf8'));
+          const rows=[];
+          for(const file of manifest.entity_files){
+            const data=JSON.parse(readFileSync(file,'utf8'));
+            for(const e of data.entities||[]) rows.push({...e,_file:file});
+          }
+          console.log('SENDER_TOTAL', rows.length);
+          for(const state of ['CURRENT','PLANNED','CONFLICT']){
+            console.log(`=== ${state} ===`);
+            for(const e of rows.filter(x=>x.state===state)) console.log(JSON.stringify({entity:e.entity,prefecture:e.prefecture,state:e.state,support_types:e.support_types,destinations:e.destinations,source_ids:e.source_ids,current_evidence_type:e.current_evidence_type,evidence_note:e.evidence_note,reason:e.reason,file:e._file}));
+          }
+          console.log('=== EHIME ===');
+          for(const name of manifest.ehime_required_entities){
+            const matches=rows.filter(x=>x.entity===name && x.prefecture==='愛媛県');
+            console.log(JSON.stringify({name,matches:matches.map(e=>({state:e.state,support_types:e.support_types,source_ids:e.source_ids,evidence_note:e.evidence_note,reason:e.reason,file:e._file}))}));
+          }
+          NODE
+      - name: Inspect official current shelter JSON
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          curl -fsSL --retry 3 --connect-timeout 15 --max-time 60 'https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json' -o /tmp/live-shelter.json
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const raw=JSON.parse(readFileSync('/tmp/live-shelter.json','utf8'));
+          const arr=Array.isArray(raw)?raw:(raw.shelters||raw.data||raw.features||[]);
+          const current=arr.filter(x=>{
+            const p=x.properties||x;
+            return p.shelterStartTimestamp && !p.shelterEndTimestamp;
+          });
+          console.log('LIVE_TOP_LEVEL', Array.isArray(raw)?'array':Object.keys(raw));
+          console.log('LIVE_TOTAL',arr.length);
+          console.log('LIVE_CURRENT',current.length);
+          console.log('LIVE_CURRENT_SAMPLE',JSON.stringify(current.slice(0,3)));
+          NODE
+      - name: Run dry-run current shelter updater
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          npm run update:current-shelters -- --dry-run --candidate-output /tmp/current-shelters-candidate.json
+          node scripts/validate-current-shelters.mjs --candidate=/tmp/current-shelters-candidate.json
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const x=JSON.parse(readFileSync('/tmp/current-shelters-candidate.json','utf8'));
+          console.log('CANDIDATE_META',JSON.stringify(x.meta));
+          console.log('CANDIDATE_COUNT',x.shelters.length);
+          console.log('CANDIDATE_MUNICIPALITIES',JSON.stringify([...new Set(x.shelters.map(s=>s.municipality))].sort()));
+          NODE
