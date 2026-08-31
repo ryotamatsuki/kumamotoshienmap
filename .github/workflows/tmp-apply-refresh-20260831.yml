@@ -1,0 +1,75 @@
+name: Temporary apply full timepoint refresh 20260831
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260831-1416
+    paths:
+      - .github/workflows/tmp-apply-refresh-20260831.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Fetch latest official current-shelter candidate
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          npm run update:current-shelters -- --dry-run --candidate-output /tmp/current-shelters-candidate.json
+          node scripts/validate-current-shelters.mjs --candidate=/tmp/current-shelters-candidate.json
+          cp /tmp/current-shelters-candidate.json current-shelters.json
+      - name: Apply audited 2026-08-31 point-in-time changes
+        run: node scripts/tmp-apply-refresh-20260831.mjs
+      - name: Build and run all content gates
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          npm run build
+          npm run test:release-gate
+      - name: Remove temporary diagnostics and finalize ledger changed-file set
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git fetch origin main --depth=1
+          rm -f .github/workflows/tmp-timepoint-audit-20260831.yml \
+                .github/workflows/tmp-inspect-targets-20260831.yml \
+                .github/workflows/tmp-apply-refresh-20260831.yml \
+                scripts/tmp-apply-refresh-20260831.mjs
+          ledger='operations/ledgers/refresh-20260831-1416.json'
+          mapfile -t tracked < <(git diff --name-only origin/main)
+          mapfile -t untracked < <(git ls-files --others --exclude-standard)
+          printf '%s\n' "${tracked[@]}" "${untracked[@]}" | sed '/^$/d' | sort -u > /tmp/expected-files.txt
+          node --input-type=module <<'NODE'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          const path='operations/ledgers/refresh-20260831-1416.json';
+          const ledger=JSON.parse(readFileSync(path,'utf8'));
+          ledger.expected_changed_files=readFileSync('/tmp/expected-files.txt','utf8').trim().split(/\r?\n/u).filter(Boolean);
+          writeFileSync(path,JSON.stringify(ledger,null,2)+'\n');
+          console.log(JSON.stringify({expectedChangedFiles:ledger.expected_changed_files},null,2));
+          NODE
+          git status --short
+          git add -A
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'data: full timepoint refresh at 2026-08-31 14:16 JST'
+      - name: Run final release gate against latest main
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          npm run validate:release -- --ledger=operations/ledgers/refresh-20260831-1416.json --base=origin/main --head=HEAD --require-ledger-if-data-change
+          npm run validate:institution-coverage
+          npm run validate:sender-coverage
+          npm run validate:sender-dist
+      - name: Push validated release commit
+        run: git push origin HEAD:audit/timepoint-20260831-1416
