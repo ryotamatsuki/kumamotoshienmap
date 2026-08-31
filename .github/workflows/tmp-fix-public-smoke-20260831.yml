@@ -35,6 +35,7 @@ jobs:
           }
           for name in [
               'scripts/sync-national-support-audit.mjs',
+              'scripts/validate-dashboard-current.mjs',
               'ehime_kumamoto_support_geocoded_shelters_20260802.html',
               'public/dashboard.html',
           ]:
@@ -61,7 +62,8 @@ jobs:
             'ehime_kumamoto_support_geocoded_shelters_20260802.html',
             'operations/ledgers/refresh-20260831-1500.json',
             'public/dashboard.html',
-            'scripts/sync-national-support-audit.mjs'
+            'scripts/sync-national-support-audit.mjs',
+            'scripts/validate-dashboard-current.mjs'
           ];
           writeFileSync(target,JSON.stringify(ledger,null,2)+'\n');
           NODE
@@ -78,6 +80,7 @@ jobs:
         run: |
           set -Eeuo pipefail
           git add scripts/sync-national-support-audit.mjs \
+                  scripts/validate-dashboard-current.mjs \
                   ehime_kumamoto_support_geocoded_shelters_20260802.html \
                   public/dashboard.html \
                   operations/ledgers/refresh-20260831-1500.json
