@@ -31,6 +31,20 @@ jobs:
           cp /tmp/current-shelters-candidate.json current-shelters.json
       - name: Apply audited 2026-08-31 point-in-time changes
         run: node scripts/tmp-apply-refresh-20260831.mjs
+      - name: Advance exact volunteer reference-date assertion
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/validate-volunteer-data.mjs')
+          s=p.read_text()
+          old='assert(data.meta.reference_at.startsWith("2026-08-30"),"ボランティア情報の基準日が2026-08-30ではありません");'
+          new='assert(data.meta.reference_at.startsWith("2026-08-31"),"ボランティア情報の基準日が2026-08-31ではありません");'
+          if old not in s:
+              raise SystemExit('expected volunteer reference-date assertion not found')
+          p.write_text(s.replace(old,new))
+          PY
       - name: Build and run all content gates
         shell: bash
         run: |
