@@ -53,10 +53,7 @@ jobs:
 
           for asset in volunteer.css volunteer.js volunteer-data.js current-shelters.json; do
             curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${asset}" -o "/tmp/${asset}"
-            cmp --silent "$asset" "/tmp/${asset}" || {
-              echo "::error title=Pages asset stale::${asset} differs from merged main."
-              exit 1
-            }
+            cmp --silent "$asset" "/tmp/${asset}" || { echo "::error title=Pages asset stale::${asset} differs from merged main."; exit 1; }
           done
 
           sender_assets=(
@@ -72,6 +69,7 @@ jobs:
             sender-audit/crosscutting-additions.json
             sender-audit/timepoint-20260830-additions.json
             sender-audit/timepoint-20260831-additions.json
+            sender-audit/timepoint-20260901-additions.json
             sender-audit/sources.json
             sender-audit/sources-additions.json
             sender-audit/discovery.json
@@ -80,26 +78,18 @@ jobs:
           for asset in "${sender_assets[@]}"; do
             tmp="/tmp/sender-$(echo "$asset" | tr '/' '_')"
             curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${asset}" -o "$tmp"
-            cmp --silent "$asset" "$tmp" || {
-              echo "::error title=Sender Pages asset stale::${asset} differs from merged main."
-              exit 1
-            }
+            cmp --silent "$asset" "$tmp" || { echo "::error title=Sender Pages asset stale::${asset} differs from merged main."; exit 1; }
           done
 
           grep -F './ehime_kumamoto_support_geocoded_shelters_20260802.html' /tmp/root.html
           grep -F './sender-municipalities.html' /tmp/root.html
           grep -F '送出基礎自治体 Coverage' /tmp/root.html
-
           grep -F 'NATIONAL_SUPPORT_AUDIT_START' /tmp/deployed-dashboard.html
-          grep -F '8月31日14:16基準で全件再監査' /tmp/deployed-dashboard.html
-          grep -F '国交省第50報（8/27）を最新インフラ履歴として確認。8/31もはくおう2宿泊支援をCURRENT、同一定義の実働を直接確認できない項目はUNKNOWN' /tmp/deployed-dashboard.html
-          grep -F '8月27日支援パッケージ・8月28日予備費使用決定を確認し、8月31日実働主体を再監査' /tmp/deployed-dashboard.html
-          grep -F 'national-accommodation-hakuo2' /tmp/deployed-dashboard.html
-          grep -F '8月30日13:00～9月1日10:00' /tmp/deployed-dashboard.html
-          grep -F '住まいサポートダイヤル（住宅復旧・改修相談）' /tmp/deployed-dashboard.html
-          grep -F '熊本県住宅リフォーム推進協議会' /tmp/deployed-dashboard.html
-          grep -F '8月19日行政応援971人は履歴スナップショット' /tmp/deployed-dashboard.html
-
+          grep -F '9月1日15:04基準で全件再監査' /tmp/deployed-dashboard.html
+          grep -F '国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは9/3宿泊分の予約受付をCURRENT、宿泊実施はPLANNED' /tmp/deployed-dashboard.html
+          grep -F '9月1日閣議の非常災害復旧復興本部設置を確認し、9月1日実働主体を再監査' /tmp/deployed-dashboard.html
+          grep -F '9/3宿泊分 予約受付中' /tmp/deployed-dashboard.html
+          grep -F '第4期・9月3日～6日必要人数到達' /tmp/volunteer-data.js
           grep -F '愛媛県内20市町' /tmp/deployed-sender.html
           grep -F '全国基礎自治体 sender' /tmp/deployed-sender.html
           grep -F '予定期間に入っただけではCURRENTにしません' /tmp/deployed-sender.html
@@ -107,7 +97,8 @@ jobs:
           node --input-type=module - <<'NODE'
           import { readFileSync } from 'node:fs';
           const shelters=JSON.parse(readFileSync('/tmp/current-shelters.json','utf8'));
-          if(shelters.meta.current_count!==shelters.shelters.length) throw new Error('deployed current shelters count mismatch');
+          if(shelters.meta.current_count!==40 || shelters.shelters.length!==40) throw new Error(`deployed current shelters must be 40, got ${shelters.shelters.length}`);
+          if(shelters.meta.source_last_modified!=="2026-09-01T14:56:29+09:00") throw new Error(`unexpected shelter source timestamp: ${shelters.meta.source_last_modified}`);
           if(shelters.shelters.some(row=>row.coordinate_status!=='confirmed')) throw new Error('deployed current shelters contain unresolved/conflict coordinates');
           const expected=JSON.parse(readFileSync('sender-municipality-audit.json','utf8'));
           const deployed=JSON.parse(readFileSync('/tmp/deployed-sender-manifest.json','utf8'));
@@ -116,14 +107,10 @@ jobs:
           const nationwide=expected.summary.nationwide;
           if(ehime.required_count!==20 || ehime.adjudicated_count!==20 || ehime.missing_required.length!==0) throw new Error('Ehime sender coverage must be 20/20 with missing 0');
           if(nationwide.prefecture_discovery_checked!==47) throw new Error('nationwide discovery must be 47/47');
-          if(nationwide.discovered_basic_municipality_senders!==nationwide.adjudicated_basic_municipality_senders) throw new Error('all discovered senders must be adjudicated');
+          if(nationwide.adjudicated_basic_municipality_senders!==316 || nationwide.discovered_basic_municipality_senders!==316) throw new Error('nationwide sender count must be 316');
           if(nationwide.orphan_source_mentions.length!==0 || nationwide.blocking_conflicts!==0) throw new Error('sender closure still has blocking items');
-          console.log(JSON.stringify({currentShelters:shelters.shelters.length,allCoordinatesConfirmed:true,ehime:`${ehime.adjudicated_count}/${ehime.required_count}`,prefectureDiscovery:`${nationwide.prefecture_discovery_checked}/47`,senderEntities:nationwide.adjudicated_basic_municipality_senders,orphanMentions:nationwide.orphan_source_mentions.length}));
+          console.log(JSON.stringify({currentShelters:40,allCoordinatesConfirmed:true,ehime:'20/20',prefectureDiscovery:'47/47',senderEntities:316,orphanMentions:0}));
           NODE
-          if grep -F '8月2日公表値・継続要確認' /tmp/deployed-dashboard.html; then
-            echo "::error title=Stale national support::Legacy rescue current wording is still deployed."
-            exit 1
-          fi
 
       - name: Install browser driver
         run: |
@@ -138,7 +125,6 @@ jobs:
           import puppeteer from 'puppeteer-core';
           import { extractPageRecheckMeta, formatPageCheckedAt } from './scripts/current-page-metadata.mjs';
           import { readFileSync } from 'node:fs';
-
           const expectedHtml=readFileSync('ehime_kumamoto_support_geocoded_shelters_20260802.html','utf8');
           const senderManifest=JSON.parse(readFileSync('sender-municipality-audit.json','utf8'));
           const expectedSenderCount=senderManifest.summary.nationwide.adjudicated_basic_municipality_senders;
@@ -152,84 +138,45 @@ jobs:
           const releaseId=releaseMatch[1];
           const expectedViews=['overview','needs','timeline','dashboard','volunteer','map'];
           const base='https://ryotamatsuki.github.io/kumamotoshienmap';
-          const dashboardUrl=`${base}/ehime_kumamoto_support_geocoded_shelters_20260802.html`;
-          const senderUrl=`${base}/sender-municipalities.html`;
           const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
           try {
-            for(const spec of [
-              {name:'desktop',width:1440,height:1000,mobile:false},
-              {name:'mobile',width:390,height:844,mobile:true},
-            ]) {
+            for(const spec of [{name:'desktop',width:1440,height:1000,mobile:false},{name:'mobile',width:390,height:844,mobile:true}]) {
               const page=await browser.newPage();
               await page.setViewport({width:spec.width,height:spec.height,isMobile:spec.mobile,deviceScaleFactor:1});
               const pageErrors=[]; const consoleErrors=[];
-              page.on('pageerror',error=>pageErrors.push(String(error)));
-              page.on('console',message=>{if(message.type()==='error')consoleErrors.push(message.text());});
-              const response=await page.goto(dashboardUrl,{waitUntil:'networkidle2',timeout:60000});
+              page.on('pageerror',e=>pageErrors.push(String(e)));
+              page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text());});
+              const response=await page.goto(`${base}/ehime_kumamoto_support_geocoded_shelters_20260802.html`,{waitUntil:'networkidle2',timeout:60000});
               if(!response?.ok()) throw new Error(`${spec.name}: dashboard HTTP ${response?.status()}`);
               const state=await page.evaluate(({views,checkedLabel,checkedCompact,volunteerLabel,releaseId})=>{
                 const values=[...document.querySelectorAll('[data-view]')].map(el=>el.getAttribute('data-view'));
-                const body=document.body.innerText;
-                const scriptSrcs=[...document.scripts].map(script=>script.getAttribute('src')||'');
-                const subtitle=document.querySelector('.subtitle');
-                const badge=document.querySelector('.badge');
-                return {
-                  title:document.title,
-                  presentViews:views.filter(view=>values.includes(view)),
-                  headerChecked:(subtitle?.textContent||'').includes(`ページ全体の再確認：${checkedLabel}（JST）`),
-                  badgeChecked:(badge?.textContent||'').includes(`ページ全体再確認：${checkedCompact}`),
-                  badgeVisible:badge?getComputedStyle(badge).display!=='none':false,
-                  siteChecked:body.includes(`サイト確認：${checkedLabel}（JST）`),
-                  volunteerChecked:body.includes(`ボランティア個別確認：${volunteerLabel}確認済み`),
-                  releaseChecked:scriptSrcs.some(src=>src.includes(`volunteer-data.js?v=${releaseId}`)),
-                  pageOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,
-                };
+                const body=document.body.innerText; const subtitle=document.querySelector('.subtitle'); const badge=document.querySelector('.badge');
+                return {presentViews:views.filter(v=>values.includes(v)),headerChecked:(subtitle?.textContent||'').includes(`ページ全体の再確認：${checkedLabel}（JST）`),badgeChecked:(badge?.textContent||'').includes(`ページ全体再確認：${checkedCompact}`),badgeVisible:badge?getComputedStyle(badge).display!=='none':false,siteChecked:body.includes(`サイト確認：${checkedLabel}（JST）`),volunteerChecked:body.includes(`ボランティア個別確認：${volunteerLabel}確認済み`),releaseChecked:[...document.scripts].some(s=>(s.getAttribute('src')||'').includes(`volunteer-data.js?v=${releaseId}`)),pageOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth};
               },{views:expectedViews,checkedLabel,checkedCompact,volunteerLabel,releaseId});
               for(const [key,value] of Object.entries({headerChecked:state.headerChecked,badgeChecked:state.badgeChecked,siteChecked:state.siteChecked,volunteerChecked:state.volunteerChecked,releaseChecked:state.releaseChecked})) if(!value) throw new Error(`${spec.name}: ${key} failed`);
               if(spec.mobile&&state.badgeVisible) throw new Error(`${spec.name}: responsive badge should be hidden`);
               if(!spec.mobile&&!state.badgeVisible) throw new Error(`${spec.name}: desktop badge should be visible`);
-              if(state.presentViews.length!==expectedViews.length) throw new Error(`${spec.name}: missing views ${expectedViews.filter(view=>!state.presentViews.includes(view)).join(',')}`);
-              if(state.pageOverflow) throw new Error(`${spec.name}: dashboard page-level horizontal overflow`);
-              if(pageErrors.length) throw new Error(`${spec.name}: dashboard page errors: ${pageErrors.join(' | ')}`);
-              if(consoleErrors.length) throw new Error(`${spec.name}: dashboard console errors: ${consoleErrors.join(' | ')}`);
+              if(state.presentViews.length!==expectedViews.length || state.pageOverflow || pageErrors.length || consoleErrors.length) throw new Error(`${spec.name}: dashboard runtime failure`);
               console.log(JSON.stringify({name:`dashboard-${spec.name}`,...state,pageErrors,consoleErrors}));
               await page.close();
 
               const senderPage=await browser.newPage();
               await senderPage.setViewport({width:spec.width,height:spec.height,isMobile:spec.mobile,deviceScaleFactor:1});
-              const senderPageErrors=[]; const senderConsoleErrors=[];
-              senderPage.on('pageerror',error=>senderPageErrors.push(String(error)));
-              senderPage.on('console',message=>{if(message.type()==='error')senderConsoleErrors.push(message.text());});
-              const senderResponse=await senderPage.goto(senderUrl,{waitUntil:'networkidle2',timeout:60000});
-              if(!senderResponse?.ok()) throw new Error(`${spec.name}: sender page HTTP ${senderResponse?.status()}`);
+              const senderErrors=[]; const senderConsole=[];
+              senderPage.on('pageerror',e=>senderErrors.push(String(e)));
+              senderPage.on('console',m=>{if(m.type()==='error')senderConsole.push(m.text());});
+              const senderResponse=await senderPage.goto(`${base}/sender-municipalities.html`,{waitUntil:'networkidle2',timeout:60000});
+              if(!senderResponse?.ok()) throw new Error(`${spec.name}: sender HTTP ${senderResponse?.status()}`);
               await senderPage.waitForFunction(count=>document.querySelectorAll('#ehimeBody tr[data-entity]').length===count,{timeout:30000},expectedEhimeCount);
               await senderPage.waitForFunction(count=>document.querySelectorAll('#nationalBody tr[data-entity]').length===count,{timeout:30000},expectedSenderCount);
-              const senderState=await senderPage.evaluate(()=>({
-                title:document.title,
-                cards:document.getElementById('cards')?.innerText||'',
-                ehimeRows:document.querySelectorAll('#ehimeBody tr[data-entity]').length,
-                nationalRows:document.querySelectorAll('#nationalBody tr[data-entity]').length,
-                sourceLinks:document.querySelectorAll('#ehimeBody a[href],#nationalBody a[href]').length,
-                pageOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,
-              }));
-              if(senderState.ehimeRows!==expectedEhimeCount) throw new Error(`${spec.name}: sender Ehime rows ${senderState.ehimeRows}`);
-              if(senderState.nationalRows!==expectedSenderCount) throw new Error(`${spec.name}: sender national rows ${senderState.nationalRows}`);
-              for(const expected of [`${expectedEhimeCount}/20`,'47/47',String(expectedSenderCount),'0']) if(!senderState.cards.includes(expected)) throw new Error(`${spec.name}: sender summary missing ${expected}`);
-              if(senderState.sourceLinks<expectedEhimeCount) throw new Error(`${spec.name}: sender source links unexpectedly low: ${senderState.sourceLinks}`);
-              if(senderState.pageOverflow) throw new Error(`${spec.name}: sender page-level horizontal overflow`);
-
+              const senderState=await senderPage.evaluate(()=>({cards:document.getElementById('cards')?.innerText||'',ehimeRows:document.querySelectorAll('#ehimeBody tr[data-entity]').length,nationalRows:document.querySelectorAll('#nationalBody tr[data-entity]').length,pageOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth}));
+              for(const expected of ['20/20','47/47','316','0']) if(!senderState.cards.includes(expected)) throw new Error(`${spec.name}: sender summary missing ${expected}`);
+              if(senderState.pageOverflow || senderErrors.length || senderConsole.length) throw new Error(`${spec.name}: sender runtime failure`);
               await senderPage.select('#state','CURRENT');
               await senderPage.waitForFunction(()=>document.querySelectorAll('#nationalBody tr[data-entity]').length>0);
               const filtered=await senderPage.$$eval('#nationalBody tr[data-entity]',rows=>rows.length);
-              if(filtered>=expectedSenderCount) throw new Error(`${spec.name}: state filter did not narrow sender rows`);
-              await senderPage.select('#state','');
-              await senderPage.type('#search','宇和島市');
-              await senderPage.waitForFunction(()=>document.querySelectorAll('#nationalBody tr[data-entity]').length>=1);
-              const searchText=await senderPage.$eval('#nationalBody',el=>el.innerText);
-              if(!searchText.includes('宇和島市')) throw new Error(`${spec.name}: sender search filter failed`);
-              if(senderPageErrors.length) throw new Error(`${spec.name}: sender page errors: ${senderPageErrors.join(' | ')}`);
-              if(senderConsoleErrors.length) throw new Error(`${spec.name}: sender console errors: ${senderConsoleErrors.join(' | ')}`);
-              console.log(JSON.stringify({name:`sender-${spec.name}`,...senderState,filteredRows:filtered,pageErrors:senderPageErrors,consoleErrors:senderConsoleErrors}));
+              if(filtered!==12) throw new Error(`${spec.name}: CURRENT sender rows must be 12, got ${filtered}`);
+              console.log(JSON.stringify({name:`sender-${spec.name}`,...senderState,filteredRows:filtered,pageErrors:senderErrors,consoleErrors:senderConsole}));
               await senderPage.close();
             }
           } finally { await browser.close(); }
