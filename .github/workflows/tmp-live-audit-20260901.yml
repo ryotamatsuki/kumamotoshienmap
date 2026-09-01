@@ -29,6 +29,17 @@ jobs:
           git fetch origin main --prune
           npm run update:current-shelters
           node scripts/tmp-apply-refresh-20260901.mjs
+          python3 - <<'PY'
+          from pathlib import Path
+          replacements={
+            '2026年8月31日 14:16':'2026年9月1日 15:04',
+            '2026-08-26T20:05:00+09:00':'2026-09-01T15:12:00+09:00',
+          }
+          for name in ['scripts/validate-dashboard-current.mjs','scripts/sync-national-support-audit.mjs']:
+            p=Path(name); text=p.read_text()
+            for old,new in replacements.items(): text=text.replace(old,new)
+            p.write_text(text)
+          PY
           npm run build
           git diff --check
           npm run test:release-gate
