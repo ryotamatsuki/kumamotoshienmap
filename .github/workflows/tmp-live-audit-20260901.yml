@@ -43,6 +43,7 @@ jobs:
           for name in ['ehime_kumamoto_support_geocoded_shelters_20260802.html','public/dashboard.html']:
             p=Path(name); text=p.read_text()
             text=re.sub(r'("volunteerCheckedAt"\s*:\s*)"[^"]+"',r'\1"2026-09-01T15:12:00+09:00"',text)
+            text=text.replace('8月31日14:16までに確認できた一次情報','9月1日15:04までに確認できた一次情報')
             p.write_text(text)
           PY
           npm run build
