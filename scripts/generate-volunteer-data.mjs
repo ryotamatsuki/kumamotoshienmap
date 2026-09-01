@@ -466,6 +466,18 @@ const currentCalendarOverrides20260824 = {
   }
 };
 Object.assign(currentCalendarOverrides, currentCalendarOverrides20260824);
+const currentCalendarOverrides20260901 = {
+  "熊本市": {
+    "2026-08-31": {key:"unknown",label:"ニーズ調査活動・一般募集なし",countable:false},
+    "2026-09-01": {key:"unknown",label:"ニーズ調査活動・一般募集なし",countable:false},
+    "2026-09-02": {key:"unknown",label:"ニーズ調査活動・一般募集なし",countable:false},
+    "2026-09-03": {key:"full",label:"第4期必要人数到達・受付終了",countable:false},
+    "2026-09-04": {key:"full",label:"第4期必要人数到達・受付終了",countable:false},
+    "2026-09-05": {key:"full",label:"第4期必要人数到達・受付終了",countable:false},
+    "2026-09-06": {key:"full",label:"第4期必要人数到達・受付終了",countable:false}
+  }
+};
+Object.assign(currentCalendarOverrides, currentCalendarOverrides20260901);
 for(const center of centers){
   const override = currentCalendarOverrides[center.municipality] || calendarOverrides[center.municipality];
   if(override) center.calendar_overrides = override;

@@ -36,7 +36,7 @@ assert(unique(data.all_municipalities),"全市町村一覧に重複がありま�
 assert(unique(data.all_centers.map((center)=>center.municipality)),"共通表示用データに重複があります");
 assert(data.all_centers.every((center)=>data.all_municipalities.includes(center.municipality)),"県内市町村一覧と共通表示用データが一致しません");
 assert(isIso(data.meta.checked_at) && isIso(data.meta.reference_at),"情報基準日時がISO形式ではありません");
-assert(data.meta.reference_at.startsWith("2026-08-31"),"ボランティア情報の基準日が2026-08-31ではありません");
+assert(data.meta.reference_at.startsWith("2026-09-01"),"ボランティア情報の基準日が2026-09-01ではありません");
 assert(data.meta.checked_at === pageMeta.volunteerCheckedAt, "ボランティア情報の最終確認時刻がPAGE_RECHECK_META.volunteerCheckedAtと一致しません");
 
 for(const center of data.all_centers){
@@ -62,18 +62,18 @@ assert(JSON.stringify(disclosedCapacityMunicipalities) === JSON.stringify(["宇�
 const kumamotoDistricts = data.centers.find((center)=>center.municipality === "熊本市")?.district_capacities;
 assert(kumamotoDistricts === null,"熊本市の第1期地区別人数を現況フィールドに残してはいけません");
 const kumamoto = data.centers.find((center)=>center.municipality === "熊本市");
-assert(kumamoto?.recruitment_status === "受付終了（第3期・8月26日～30日必要人数到達）・8月31日以降未定","熊本市の現況募集状態が一致しません");
-assert(kumamoto?.official_source_title === "8/21時点での第3期ボランティア募集状況のお知らせ","熊本市の第3期公式告知が現況ソースではありません");
+assert(kumamoto?.recruitment_status === "受付終了（第4期・9月3日～6日必要人数到達）・9月7日以降未定","熊本市の現況募集状態が一致しません");
+assert(kumamoto?.official_source_title === "8/28時点での第4期ボランティア募集状況のお知らせ","熊本市の第4期公式告知が現況ソースではありません");
 assert(kumamoto?.application_url === null,"熊本市の第3期申込フォームが一致しません");
-assert(kumamoto?.activity_start_date === "2026-08-26" && kumamoto?.activity_end_date === "2026-08-30","熊本市の第3期活動期間が一致しません");
-assert(Array.isArray(kumamoto?.activity_windows) && kumamoto.activity_windows.length === 2,"熊本市の休止・第3期活動期間が分離されていません");
-assert(kumamoto.activity_windows[0].status === "活動休止" && Boolean(kumamoto.activity_windows[1]),"熊本市の休止・募集状態が一致しません");
+assert(kumamoto?.activity_start_date === "2026-08-31" && kumamoto?.activity_end_date === "2026-09-06","熊本市の現行活動期間が一致しません");
+assert(Array.isArray(kumamoto?.activity_windows) && kumamoto.activity_windows.length === 2,"熊本市のニーズ調査・第4期活動期間が分離されていません");
+assert(kumamoto.activity_windows[0].status === "ニーズ調査活動" && kumamoto.activity_windows[1].status.includes("受付終了"),"熊本市のニーズ調査・第4期受付終了状態が一致しません");
 assert(kumamoto?.meeting_place?.includes("熊本市城南福祉センター"),"熊本市の南区サテライト集約が反映されていません");
-assert(kumamoto?.capacity_disclosed === null && kumamoto?.daily_capacity === null,"熊本市第3期に非公表人数を持ち込んでいます");
+assert(kumamoto?.capacity_disclosed === null && kumamoto?.daily_capacity === null,"熊本市第4期に非公表人数を持ち込んでいます");
 const kumamotoCalendar = kumamoto?.calendar_overrides || {};
-for(const date of ["2026-08-24","2026-08-25"]){assert(kumamotoCalendar[date]?.key === "paused" && kumamotoCalendar[date]?.countable === false,`熊本市の${date}が活動休止として扱われていません`);}
-for(const date of ["2026-08-26","2026-08-27","2026-08-28","2026-08-29","2026-08-30"]){assert(kumamotoCalendar[date]?.key === "full" && kumamotoCalendar[date]?.countable === false,`熊本市の${date}が第3期受付終了として扱われていません`);}
-assert(kumamoto?.sources?.some((item)=>String(item.title || "").includes("第3期")),"熊本市の第3期一次情報がsourceにありません");
+for(const date of ["2026-08-31","2026-09-01","2026-09-02"]){assert(kumamotoCalendar[date]?.key === "unknown" && kumamotoCalendar[date]?.countable === false,`熊本市の${date}がニーズ調査・一般募集なしとして扱われていません`);}
+for(const date of ["2026-09-03","2026-09-04","2026-09-05","2026-09-06"]){assert(kumamotoCalendar[date]?.key === "full" && kumamotoCalendar[date]?.countable === false,`熊本市の${date}が第4期受付終了として扱われていません`);}
+assert(kumamoto?.sources?.some((item)=>String(item.title || "").includes("第4期")),"熊本市の第4期一次情報がsourceにありません");
 assert(kumamoto?.sources?.some((item)=>String(item.title || "").includes("第1期")),"熊本市の第1期情報が履歴/sourceにありません");
 assert(data.centers.filter((center)=>center.ehime_dispatch_status === "団体派遣可能と公式確認").length === 0,"愛媛県からの団体受入れを過大判定しています");
 assert(data.centers.find((center)=>center.municipality === "宇土市")?.ehime_participation_allowed === true,"宇土市の全国募集が欠落しています");
