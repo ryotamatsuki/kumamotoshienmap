@@ -1,6 +1,6 @@
 {
   "region": "crosscutting-additions",
-  "reference_at": "2026-08-31T14:16:00+09:00",
+  "reference_at": "2026-09-01T15:04:00+09:00",
   "compact_entities": [
     [
       "三重県",
@@ -876,6 +876,6 @@
       "UNKNOWN"
     ]
   ],
-  "checked_at": "2026-08-31T14:28:00+09:00",
-  "rechecked_at": "2026-08-31T14:28:00+09:00"
+  "checked_at": "2026-09-01T15:12:00+09:00",
+  "rechecked_at": "2026-09-01T15:12:00+09:00"
 }

@@ -1,6 +1,6 @@
 {
   "region": "kinki",
-  "reference_at": "2026-08-31T14:16:00+09:00",
+  "reference_at": "2026-09-01T15:04:00+09:00",
   "entities": [
     {
       "entity": "大津市",
@@ -20,14 +20,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "守山市",
@@ -47,14 +47,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "彦根市",
@@ -74,14 +74,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "愛荘町",
@@ -101,14 +101,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "日野町",
@@ -128,14 +128,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "東近江市",
@@ -155,14 +155,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "栗東市",
@@ -182,14 +182,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "湖南市",
@@ -209,14 +209,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "米原市",
@@ -236,14 +236,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "草津市",
@@ -263,14 +263,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "近江八幡市",
@@ -290,14 +290,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "野洲市",
@@ -317,14 +317,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "長浜市",
@@ -344,14 +344,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "高島市",
@@ -371,14 +371,14 @@
         "shiga-support"
       ],
       "evidence_note": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "滋賀県公式の派遣班構成に記載。班予定期間のみから基準時点CURRENTを推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "shiga-support"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "京都市",
@@ -397,14 +397,14 @@
         "baseline-kyoto"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "baseline-kyoto"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "堺市",
@@ -423,14 +423,14 @@
         "repository-municipal-audit-0826"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "repository-municipal-audit-0826"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "大阪市",
@@ -449,16 +449,16 @@
         "baseline-osaka"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "baseline-osaka"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     }
   ],
-  "checked_at": "2026-08-31T14:28:00+09:00",
-  "rechecked_at": "2026-08-31T14:28:00+09:00"
+  "checked_at": "2026-09-01T15:12:00+09:00",
+  "rechecked_at": "2026-09-01T15:12:00+09:00"
 }

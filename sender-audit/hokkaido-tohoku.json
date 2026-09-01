@@ -1,6 +1,6 @@
 {
   "region": "hokkaido-tohoku",
-  "reference_at": "2026-08-31T14:16:00+09:00",
+  "reference_at": "2026-09-01T15:04:00+09:00",
   "entities": [
     {
       "entity": "札幌市",
@@ -19,14 +19,14 @@
         "baseline-sapporo"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "baseline-sapporo"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "仙台市",
@@ -45,13 +45,13 @@
         "miyagi-sendai-health-plan"
       ],
       "evidence_note": "9月1日以降の派遣予定。基準時点では未開始。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "miyagi-sendai-health-plan"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "大館市",
@@ -70,14 +70,14 @@
         "akita-municipal-wave2"
       ],
       "evidence_note": "8月15日～23日の第2陣構成として公式に記載。基準時点の実派遣完了を直接確認できず、HISTORICALへ推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "8月15日～23日の第2陣構成として公式に記載。基準時点の実派遣完了を直接確認できず、HISTORICALへ推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "akita-municipal-wave2"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "由利本荘市",
@@ -96,14 +96,14 @@
         "akita-municipal-wave2"
       ],
       "evidence_note": "8月15日～23日の第2陣構成として公式に記載。基準時点の実派遣完了を直接確認できず、HISTORICALへ推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "8月15日～23日の第2陣構成として公式に記載。基準時点の実派遣完了を直接確認できず、HISTORICALへ推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "akita-municipal-wave2"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     },
     {
       "entity": "秋田市",
@@ -122,16 +122,16 @@
         "akita-municipal-wave2"
       ],
       "evidence_note": "8月15日～23日の第2陣構成として公式に記載。基準時点の実派遣完了を直接確認できず、HISTORICALへ推定しない。",
-      "checked_at": "2026-08-31T14:28:00+09:00",
-      "next_review_at": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
+      "next_review_at": "2026-09-02T09:00:00+09:00",
       "reason": "8月15日～23日の第2陣構成として公式に記載。基準時点の実派遣完了を直接確認できず、HISTORICALへ推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "akita-municipal-wave2"
       ],
-      "rechecked_at": "2026-08-31T14:28:00+09:00"
+      "rechecked_at": "2026-09-01T15:12:00+09:00"
     }
   ],
-  "checked_at": "2026-08-31T14:28:00+09:00",
-  "rechecked_at": "2026-08-31T14:28:00+09:00"
+  "checked_at": "2026-09-01T15:12:00+09:00",
+  "rechecked_at": "2026-09-01T15:12:00+09:00"
 }

@@ -3,9 +3,9 @@
   "repository": "ryotamatsuki/kumamotoshienmap",
   "audit_type": "sender_municipality_coverage",
   "policy_version": "2.6",
-  "reference_at": "2026-08-31T14:16:00+09:00",
-  "checked_at": "2026-08-31T14:28:00+09:00",
-  "base_main_sha": "638192a5af73e5767f9dc48e06b18606e78a8127",
+  "reference_at": "2026-09-01T15:04:00+09:00",
+  "checked_at": "2026-09-01T15:12:00+09:00",
+  "base_main_sha": "46da78b94752c906e0b1975636aaf8a64443500c",
   "entity_files": [
     "sender-audit/ehime.json",
     "sender-audit/hokkaido-tohoku.json",
@@ -17,7 +17,8 @@
     "sender-audit/crosscutting-additions.json",
     "sender-audit/timepoint-20260828-additions.json",
     "sender-audit/timepoint-20260830-additions.json",
-    "sender-audit/timepoint-20260831-additions.json"
+    "sender-audit/timepoint-20260831-additions.json",
+    "sender-audit/timepoint-20260901-additions.json"
   ],
   "sources_file": "sender-audit/sources.json",
   "sources_additions_file": "sender-audit/sources-additions.json",
@@ -292,16 +293,16 @@
     },
     "nationwide": {
       "prefecture_discovery_checked": 47,
-      "discovered_basic_municipality_senders": 314,
-      "adjudicated_basic_municipality_senders": 314,
+      "discovered_basic_municipality_senders": 316,
+      "adjudicated_basic_municipality_senders": 316,
       "unadjudicated_discovered_senders": [],
-      "source_mentions": 314,
+      "source_mentions": 316,
       "orphan_source_mentions": [],
       "invalid_current": [],
       "blocking_conflicts": 0,
       "states": {
-        "CURRENT": 11,
-        "PLANNED": 14,
+        "CURRENT": 12,
+        "PLANNED": 15,
         "HISTORICAL": 17,
         "UNKNOWN": 272,
         "NO_EVIDENCE": 0,
@@ -310,7 +311,7 @@
     }
   },
   "blocking_unresolved": [],
-  "timepoint_note": "2026年8月31日14:16基準。愛媛20市町をゼロベース再確認し、全国47都道府県discoveryを再実施。予定期間到来のみではCURRENTにせず、長崎県8月31日発表で新たに発見した5市町をPLANNED追加し、既収載4市も翌日派遣予定としてPLANNEDへ更新。",
-  "rechecked_at": "2026-08-31T14:28:00+09:00",
-  "release_id": "20260831-1416"
+  "timepoint_note": "2026年9月1日15:04基準。愛媛20市町をゼロベース再確認し、全国47都道府県discoveryを再実施。予定期間到来のみではCURRENTにせず、新宮市は市公式の現在形の派遣記載によりCURRENT追加、武雄市は募集開始のみのためPLANNED追加。長崎9市町は前日発表の派遣予定だけでは実働を確認できないためPLANNEDを維持。",
+  "rechecked_at": "2026-09-01T15:12:00+09:00",
+  "release_id": "20260901-1504"
 }

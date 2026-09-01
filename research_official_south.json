@@ -1,6 +1,6 @@
 {
   "research_scope": "令和8年熊本地震に伴う災害ボランティアセンター・募集情報（南部担当）",
-  "checked_at": "2026-08-31T14:28:00+09:00",
+  "checked_at": "2026-09-01T15:12:00+09:00",
   "timezone": "Asia/Tokyo",
   "source_policy": "熊本県、熊本県社会福祉協議会、市町、市町社会福祉協議会、災害ボランティアセンターの公式Webページおよび公式SNSのみ。報道、まとめサイト、非公式SNS、過去災害資料は現状判定に使用していない。",
   "null_policy": {
@@ -14,7 +14,7 @@
       "publisher": "熊本県社会福祉協議会（熊本県災害ボランティアセンター）",
       "title": "熊本県災害ボランティア情報",
       "url": "https://www.fukushi-kumamoto.or.jp/kvc/",
-      "checked_at": "2026-08-31T14:28:00+09:00"
+      "checked_at": "2026-09-01T15:12:00+09:00"
     },
     "municipalities_linked_as_current_centers_on_prefectural_portal": [
       "八代市",
@@ -89,7 +89,7 @@
       "official_source_url": "https://www.mashiki-shakyo.or.jp/news/2068/",
       "source_published_at": "2026-08-06",
       "source_updated_at": null,
-      "checked_at": "2026-08-31T14:28:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
       "recheck_status": "再確認済み",
       "recheck_note": "2026年8月24日に公式一次情報を再確認。新しい確定情報がある項目のみ更新。",
       "change_status": "第3期募集日程更新",
@@ -105,7 +105,7 @@
           "url": "https://www.mashiki-shakyo.or.jp/news/2068/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "第3期8月24～28日、各日30人"
         },
         {
@@ -114,7 +114,7 @@
           "url": "https://www.mashiki-shakyo.or.jp/news/2010/",
           "published_at": "2026-08-06",
           "updated_at": "2026-08-06",
-          "checked_at": "2026-08-31T14:28:00+09:00"
+          "checked_at": "2026-09-01T15:12:00+09:00"
         },
         {
           "publisher": "益城町社会福祉協議会",
@@ -122,7 +122,7 @@
           "url": "https://www.mashiki-shakyo.or.jp/news/2000/",
           "published_at": "2026-08-06",
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "8月7日～10日、70人程度／日、軽トラック"
         }
       ],
@@ -197,7 +197,7 @@
       "official_source_url": "https://kosa-shakyo.or.jp/pages/50/",
       "source_published_at": null,
       "source_updated_at": null,
-      "checked_at": "2026-08-31T14:28:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
       "recheck_status": "再確認済み",
       "recheck_note": "2026年8月24日に公式一次情報を再確認。新しい確定情報がある項目のみ更新。",
       "change_status": "受付終了・以降未定へ更新",
@@ -213,7 +213,7 @@
           "url": "https://kosa-shakyo.or.jp/pages/50/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "8月29日まで必要人数到達で受付終了、8月30日以降は未定"
         }
       ],
@@ -276,7 +276,7 @@
       "official_source_url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
       "source_published_at": "2026-08-10",
       "source_updated_at": null,
-      "checked_at": "2026-08-31T14:28:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
       "recheck_status": "再確認済み",
       "recheck_note": "2026年8月24日に公式一次情報を再確認。新しい確定情報がある項目のみ更新。",
       "change_status": "個人・団体募集日程更新",
@@ -292,7 +292,7 @@
           "url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "個人8月24～31日、団体5人以上8月24日～9月30日"
         }
       ],
@@ -380,7 +380,7 @@
       "official_source_url": "https://hikawa-syakyo.jp/news/",
       "source_published_at": "2026-08-24",
       "source_updated_at": "2026-08-24",
-      "checked_at": "2026-08-31T14:28:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
       "recheck_status": "再確認済み",
       "recheck_note": "2026年8月24日に公式一次情報を再確認。新しい確定情報がある項目のみ更新。",
       "change_status": "次期募集8月28日～9月3日へ更新",
@@ -396,7 +396,7 @@
           "url": "https://hikawa-syakyo.jp/news/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "8月21～27日募集、8月24日休止"
         },
         {
@@ -405,7 +405,7 @@
           "url": "https://hikawa-syakyo.jp/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%E3%80%90%EF%BC%98-%EF%BC%91%EF%BC%94%EF%BD%9E%EF%BC%92%EF%BC%90%E3%80%91/",
           "published_at": "2026-08-09",
           "updated_at": "2026-08-09",
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "8月14～20日の募集フォーム、中学生以上等の参加条件"
         },
         {
@@ -414,7 +414,7 @@
           "url": "https://hikawa-syakyo.jp/news/%E6%B0%B7%E5%B7%9D%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BC%91%E6%89%80%E6%97%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
           "published_at": "2026-08-16",
           "updated_at": "2026-08-16",
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "8月17・24・31日の活動休止と、それ以外は通常活動予定という8月16日告知"
         },
         {
@@ -423,7 +423,7 @@
           "url": "https://hikawa-syakyo.jp/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%83%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8b%9f%e9%9b%86%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b%e3%80%90%ef%bc%98-%ef%bc%91%ef%bc%94%ef%bd%9e%ef%bc%92%ef%bc%90/",
           "published_at": "2026-08-09",
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00"
+          "checked_at": "2026-09-01T15:12:00+09:00"
         },
         {
           "publisher": "氷川町社会福祉協議会",
@@ -431,7 +431,7 @@
           "url": "https://hikawa-syakyo.jp/news/%E3%80%90%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%EF%BC%88%E5%85%A8%E5%9B%BD%E5%8B%9F%E9%9B%86%EF%BC%89/",
           "published_at": "2026-08-05",
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "8月8日～12日、全国募集、熱中症時の変更又は中止"
         }
       ],
@@ -503,7 +503,7 @@
       "official_source_url": "https://www.ashikita-shakyo.com/news/%E3%80%90%E9%87%8D%E8%A6%81%E3%80%91%E8%8A%A6%E5%8C%97%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%81%8B%E5%96%B6%E4%BD%93%E5%88%B6%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
       "source_published_at": "2026-08-17",
       "source_updated_at": null,
-      "checked_at": "2026-08-31T14:28:00+09:00",
+      "checked_at": "2026-09-01T15:12:00+09:00",
       "recheck_status": "再確認済み",
       "recheck_note": "2026年8月24日に公式一次情報を再確認。新しい確定情報がある項目のみ更新。",
       "change_status": "通常運営方式更新",
@@ -519,7 +519,7 @@
           "url": "https://www.ashikita-shakyo.com/news/%E3%80%90%E9%87%8D%E8%A6%81%E3%80%91%E8%8A%A6%E5%8C%97%E7%94%BA%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E4%BB%8A%E5%BE%8C%E3%81%AE%E9%81%8B%E5%96%B6%E4%BD%93%E5%88%B6%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "一般公開募集終了、事前登録者へ必要時に個別依頼"
         },
         {
@@ -528,7 +528,7 @@
           "url": "https://www.ashikita-shakyo.com/news/%e7%81%bd%e5%ae%b3%e3%83%9c%e3%a9%e3%83%b3%e3%83%86%e3%82%a3%e3%82%a2%e5%8b%9f%e9%9b%86%e7%b5%82%e4%ba%86%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
           "published_at": "2026-08-10",
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00"
+          "checked_at": "2026-09-01T15:12:00+09:00"
         },
         {
           "publisher": "芦北町社会福祉協議会",
@@ -536,7 +536,7 @@
           "url": "https://www.ashikita-shakyo.com/news/%E7%81%BD%E5%AE%B3%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
           "published_at": "2026-08-05",
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "活動開始、対象地域、年齢、個人・団体フォーム"
         },
         {
@@ -545,7 +545,7 @@
           "url": "https://forms.gle/eq2e9DF5WBhT8Xd48",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "8月9日～14日の受付と動的残枠"
         },
         {
@@ -554,7 +554,7 @@
           "url": "https://forms.gle/MxJ1PGtwxKXFfLMd9",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-08-31T14:28:00+09:00",
+          "checked_at": "2026-09-01T15:12:00+09:00",
           "facts_used": "8月7日～14日、参加人数、交通手段"
         }
       ],

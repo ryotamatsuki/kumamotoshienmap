@@ -4,7 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { runInNewContext } from "node:vm";
 
-const REFERENCE_AT = "2026-08-31T14:16:00+09:00";
+const REFERENCE_AT = "2026-09-01T15:04:00+09:00";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html");
 const publicPath = resolve(root, "public", "dashboard.html");
@@ -15,7 +15,7 @@ const [html, publicHtml, volunteerCss, currentShelterText, municipalAuditText, n
   readFile(resolve(root, "current-shelters.json"), "utf8"),
   readFile(resolve(root, "municipal-support-audit.json"), "utf8"),
   readFile(resolve(root, "national-support-audit.json"), "utf8"),
-  readFile(resolve(root, "operations/audits/institution-coverage-20260831-1416.json"), "utf8"),
+  readFile(resolve(root, "operations/audits/institution-coverage-20260901-1504.json"), "utf8"),
 ]);
 
 const currentShelterData = JSON.parse(currentShelterText);
@@ -38,9 +38,9 @@ const requiredText = [
   "約4,300戸",
   "履歴スナップショット",
   "対口支援・他自治体支援を全件再監査",
-  "8月31日14:16に対口支援・他自治体支援を全件再監査",
-  "国交省第50報（8/27）を最新インフラ履歴として確認。8/31もはくおう2宿泊支援をCURRENT、同一定義の実働を直接確認できない項目はUNKNOWN",
-  "8月27日支援パッケージ・8月28日予備費使用決定を確認し、8月31日実働主体を再監査",
+  "9月1日15:04に対口支援・他自治体支援を全件再監査",
+  "国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは9/3宿泊分の予約受付をCURRENT、宿泊実施はPLANNED",
+  "8月27日支援パッケージ・8月28日予備費使用決定を確認し、9月1日実働主体を再監査",
   "現在開設避難所総数",
   "地図表示数",
   "座標未確認数",
@@ -62,9 +62,9 @@ const runtimeScriptStart = html.indexOf('<script src="https://cdn.jsdelivr.net/n
 assert.ok(runtimeScriptStart > 0, "公開HTMLの初期表示領域を特定できません");
 const currentDisplayHtml = html.slice(0, runtimeScriptStart);
 for (const value of [
-  "2026年8月31日 14:16",
-  "8月31日14:16基準で全件再監査",
-  "国交省第50報（8/27）を最新インフラ履歴として確認。8/31もはくおう2宿泊支援をCURRENT、同一定義の実働を直接確認できない項目はUNKNOWN",
+  "2026年9月1日 15:04",
+  "9月1日15:04基準で全件再監査",
+  "国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは9/3宿泊分の予約受付をCURRENT、宿泊実施はPLANNED",
   "8月19日行政応援971人は履歴スナップショット",
 ]) assert.ok(currentDisplayHtml.includes(value), `初期表示の最新値がありません: ${value}`);
 
