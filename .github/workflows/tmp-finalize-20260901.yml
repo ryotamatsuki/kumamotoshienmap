@@ -1,0 +1,49 @@
+name: Temporary finalize 20260901
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260901-1504
+    paths:
+      - .github/workflows/tmp-finalize-20260901.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Align national overview with 9/1 recovery headquarters
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          old='8月27日支援パッケージ・8月28日予備費使用決定を確認し、9月1日実働主体を再監査'
+          new='9月1日閣議の非常災害復旧復興本部設置を確認し、9月1日実働主体を再監査'
+          for name in ['scripts/sync-national-support-audit.mjs','scripts/validate-dashboard-current.mjs']:
+            p=Path(name); text=p.read_text()
+            if old not in text: raise SystemExit(f'expected text missing: {name}')
+            p.write_text(text.replace(old,new))
+          PY
+          npm run build
+          git diff --check
+          npm run test:release-gate
+      - name: Commit regenerated current files
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git add scripts/sync-national-support-audit.mjs scripts/validate-dashboard-current.mjs ehime_kumamoto_support_geocoded_shelters_20260802.html public/dashboard.html
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'fix: align 9/1 national recovery overview'
+          git push origin HEAD:audit/timepoint-20260901-1504
