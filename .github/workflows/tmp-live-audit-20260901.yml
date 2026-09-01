@@ -31,20 +31,84 @@ jobs:
           node scripts/tmp-apply-refresh-20260901.mjs
           python3 - <<'PY'
           from pathlib import Path
-          import re
-          replacements={
-            '2026年8月31日 14:16':'2026年9月1日 15:04',
-            '2026-08-26T20:05:00+09:00':'2026-09-01T15:12:00+09:00',
-          }
+          import json,re
+          REF='2026-09-01T15:04:00+09:00'
+          CHECK='2026-09-01T15:12:00+09:00'
+          latest_url='https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%92%EF%BC%98%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%94%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/'
+          recruit_url='https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC%EF%BC%94%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/'
+          p=Path('research_official_north.json'); d=json.loads(p.read_text());
+          d['scope']='令和8年熊本地震・災害ボランティア公式一次情報（熊本市、宇土市、宇城市、美里町、御船町、嘉島町）・2026年9月1日再確認'
+          k=next(x for x in d['municipalities'] if x['municipality']=='熊本市')
+          k.update({
+            'center_status':'開設・活動中（ニーズ調査）',
+            'recruitment_status':'受付終了（第4期・9月3日～6日必要人数到達）・9月7日以降未定',
+            'activity_start_date':'2026-08-31','activity_end_date':'2026-09-06',
+            'activity_dates_text':'8月31日～9月2日はニーズ調査活動。第4期9月3日～6日のボランティア募集は必要人数に達したため受付終了。9月7日以降は住民ニーズを踏まえ改めて募集予定。',
+            'activity_windows':[
+              {'start_date':'2026-08-31','end_date':'2026-09-02','status':'ニーズ調査活動','form_status':'一般ボランティア募集なし'},
+              {'start_date':'2026-09-03','end_date':'2026-09-06','status':'受付終了（必要人数到達）','form_status':'受付終了（必要人数到達）'}
+            ],
+            'application_required':None,'application_method':'第4期9月3日～6日は必要人数到達により受付終了。9月7日以降は公式の再告知を確認。','application_url':None,
+            'application_deadline':'第4期は受付終了。9月7日以降の募集条件は未公表。',
+            'group_dispatch_assessment':'第4期は必要人数到達で受付終了。9月7日以降の団体受入条件は未公表のため要再確認。',
+            'ehime_dispatch_status':'第4期受付終了・9月7日以降要再確認',
+            'official_source_name':'熊本市社会福祉協議会','official_source_title':'8/28時点での第4期ボランティア募集状況のお知らせ','official_source_url':latest_url,
+            'source_published_at':'2026-08-31','source_updated_at':'2026-08-31','checked_at':CHECK,
+            'recheck_status':'差分あり','recheck_note':'2026年9月1日に公式一次情報を再確認。8月31日～9月2日はニーズ調査、第4期9月3日～6日は必要人数到達で受付終了を確認。',
+            'change_status':'第4期必要人数到達・受付終了／ニーズ調査活動へ更新',
+            'change_from_previous':'第3期締切・8月31日以降未定から、8月31日～9月2日のニーズ調査活動と第4期9月3日～6日の必要人数到達を確認。',
+            'previous_known_state':'受付終了（第3期・8月26日～30日必要人数到達）・8月31日以降未定',
+            'needs_reconfirmation':True,'remarks':'8月31日～9月2日はニーズ調査活動。第4期9月3日～6日は必要人数到達で受付終了。9月7日以降は再告知待ちのため条件を推測しない。',
+            'application_form_status':'第4期必要人数到達・受付終了、9月7日以降未定','application_urls':None,'eligibility_currently_applicable':False
+          })
+          sources=k.setdefault('sources',[])
+          for src in [
+            {'publisher':'熊本市社会福祉協議会','title':'8/28時点での第4期ボランティア募集状況のお知らせ','url':latest_url,'published_at':'2026-08-31','updated_at':'2026-08-31','checked_at':CHECK,'facts_used':'第4期9月3日～6日は必要人数到達で受付終了、9月7日以降は改めて募集予定'},
+            {'publisher':'熊本市社会福祉協議会','title':'第4期 ボランティア募集について','url':recruit_url,'published_at':'2026-08-28','updated_at':'2026-08-28','checked_at':CHECK,'facts_used':'8月31日～9月2日はニーズ調査活動、第4期活動期間9月3日～6日'}
+          ]:
+            if not any(x.get('url')==src['url'] for x in sources): sources.insert(0,src)
+          p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+
+          # Remove the temporary incorrect Kumamoto City URL added by the generic recheck and replace with the latest primary source.
+          p=Path('research_official_statewide.json'); s=json.loads(p.read_text())
+          s['sources']=[x for x in s.get('sources',[]) if x.get('url')!='https://www.city.kumamoto.jp/kiji00370938/index.html']
+          if not any(x.get('url')==latest_url for x in s['sources']):
+            s['sources'].append({'publisher':'熊本市社会福祉協議会','title':'8/28時点での第4期ボランティア募集状況のお知らせ','url':latest_url,'published_at':'2026-08-31','updated_at':'2026-08-31','checked_at':CHECK,'facts_used':'第4期9月3日～6日の必要人数到達・受付終了、9月7日以降未定','rechecked_at':CHECK})
+          p.write_text(json.dumps(s,ensure_ascii=False,indent=2)+'\n')
+
+          # Add current 9/1 calendar semantics after the older fixed-date overrides.
+          p=Path('scripts/generate-volunteer-data.mjs'); text=p.read_text()
+          marker='Object.assign(currentCalendarOverrides, currentCalendarOverrides20260824);'
+          injection='''\nconst currentCalendarOverrides20260901 = {\n  "熊本市": {\n    "2026-08-31": {key:"unknown",label:"ニーズ調査活動・一般募集なし",countable:false},\n    "2026-09-01": {key:"unknown",label:"ニーズ調査活動・一般募集なし",countable:false},\n    "2026-09-02": {key:"unknown",label:"ニーズ調査活動・一般募集なし",countable:false},\n    "2026-09-03": {key:"full",label:"第4期必要人数到達・受付終了",countable:false},\n    "2026-09-04": {key:"full",label:"第4期必要人数到達・受付終了",countable:false},\n    "2026-09-05": {key:"full",label:"第4期必要人数到達・受付終了",countable:false},\n    "2026-09-06": {key:"full",label:"第4期必要人数到達・受付終了",countable:false}\n  }\n};\nObject.assign(currentCalendarOverrides, currentCalendarOverrides20260901);'''
+          if 'currentCalendarOverrides20260901' not in text: text=text.replace(marker,marker+injection)
+          p.write_text(text)
+
+          # Current page metadata and fixed display strings.
+          replacements={'2026年8月31日 14:16':'2026年9月1日 15:04','2026-08-26T20:05:00+09:00':CHECK}
           for name in ['scripts/validate-dashboard-current.mjs','scripts/sync-national-support-audit.mjs']:
-            p=Path(name); text=p.read_text()
-            for old,new in replacements.items(): text=text.replace(old,new)
-            p.write_text(text)
+            pp=Path(name); txt=pp.read_text()
+            for old,new in replacements.items(): txt=txt.replace(old,new)
+            pp.write_text(txt)
           for name in ['ehime_kumamoto_support_geocoded_shelters_20260802.html','public/dashboard.html']:
-            p=Path(name); text=p.read_text()
-            text=re.sub(r'("volunteerCheckedAt"\s*:\s*)"[^"]+"',r'\1"2026-09-01T15:12:00+09:00"',text)
-            text=text.replace('8月31日14:16までに確認できた一次情報','9月1日15:04までに確認できた一次情報')
-            p.write_text(text)
+            pp=Path(name); txt=pp.read_text()
+            txt=re.sub(r'("volunteerCheckedAt"\s*:\s*)"[^"]+"',r'\1"'+CHECK+'"',txt)
+            txt=txt.replace('8月31日14:16までに確認できた一次情報','9月1日15:04までに確認できた一次情報')
+            pp.write_text(txt)
+
+          # Volunteer validator: advance reference and assert the latest Kumamoto City state rather than the superseded third period.
+          p=Path('scripts/validate-volunteer-data.mjs'); text=p.read_text()
+          text=text.replace('data.meta.reference_at.startsWith("2026-08-31")','data.meta.reference_at.startsWith("2026-09-01")').replace('ボランティア情報の基準日が2026-08-31ではありません','ボランティア情報の基準日が2026-09-01ではありません')
+          text=text.replace('受付終了（第3期・8月26日～30日必要人数到達）・8月31日以降未定','受付終了（第4期・9月3日～6日必要人数到達）・9月7日以降未定')
+          text=text.replace('8/21時点での第3期ボランティア募集状況のお知らせ','8/28時点での第4期ボランティア募集状況のお知らせ')
+          text=text.replace('熊本市の第3期公式告知が現況ソースではありません','熊本市の第4期公式告知が現況ソースではありません')
+          text=text.replace('assert(kumamoto?.activity_start_date === "2026-08-26" && kumamoto?.activity_end_date === "2026-08-30","熊本市の第3期活動期間が一致しません");','assert(kumamoto?.activity_start_date === "2026-08-31" && kumamoto?.activity_end_date === "2026-09-06","熊本市の現行活動期間が一致しません");')
+          text=text.replace('assert(Array.isArray(kumamoto?.activity_windows) && kumamoto.activity_windows.length === 2,"熊本市の休止・第3期活動期間が分離されていません");','assert(Array.isArray(kumamoto?.activity_windows) && kumamoto.activity_windows.length === 2,"熊本市のニーズ調査・第4期活動期間が分離されていません");')
+          text=text.replace('assert(kumamoto.activity_windows[0].status === "活動休止" && Boolean(kumamoto.activity_windows[1]),"熊本市の休止・募集状態が一致しません");','assert(kumamoto.activity_windows[0].status === "ニーズ調査活動" && kumamoto.activity_windows[1].status.includes("受付終了"),"熊本市のニーズ調査・第4期受付終了状態が一致しません");')
+          text=text.replace('assert(kumamoto?.capacity_disclosed === null && kumamoto?.daily_capacity === null,"熊本市第3期に非公表人数を持ち込んでいます");','assert(kumamoto?.capacity_disclosed === null && kumamoto?.daily_capacity === null,"熊本市第4期に非公表人数を持ち込んでいます");')
+          text=text.replace('for(const date of ["2026-08-24","2026-08-25"]){assert(kumamotoCalendar[date]?.key === "paused" && kumamotoCalendar[date]?.countable === false,`熊本市の${date}が活動休止として扱われていません`);}','for(const date of ["2026-08-31","2026-09-01","2026-09-02"]){assert(kumamotoCalendar[date]?.key === "unknown" && kumamotoCalendar[date]?.countable === false,`熊本市の${date}がニーズ調査・一般募集なしとして扱われていません`);}')
+          text=text.replace('for(const date of ["2026-08-26","2026-08-27","2026-08-28","2026-08-29","2026-08-30"]){assert(kumamotoCalendar[date]?.key === "full" && kumamotoCalendar[date]?.countable === false,`熊本市の${date}が第3期受付終了として扱われていません`);}','for(const date of ["2026-09-03","2026-09-04","2026-09-05","2026-09-06"]){assert(kumamotoCalendar[date]?.key === "full" && kumamotoCalendar[date]?.countable === false,`熊本市の${date}が第4期受付終了として扱われていません`);}')
+          text=text.replace('assert(kumamoto?.sources?.some((item)=>String(item.title || "").includes("第3期")),"熊本市の第3期一次情報がsourceにありません");','assert(kumamoto?.sources?.some((item)=>String(item.title || "").includes("第4期")),"熊本市の第4期一次情報がsourceにありません");')
+          p.write_text(text)
           PY
           npm run build
           git diff --check
