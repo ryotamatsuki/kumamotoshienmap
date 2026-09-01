@@ -16,26 +16,11 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 22.x
-      - name: Fetch official current shelters and inspect audit targets
+      - name: Inventory fixed literals
         shell: bash
         run: |
           set -Eeuo pipefail
-          npm run update:current-shelters
-          node --input-type=module <<'NODE'
-          import { readFileSync, readdirSync } from 'node:fs';
-          const shelters=JSON.parse(readFileSync('current-shelters.json','utf8'));
-          console.log('SHELTERS',JSON.stringify({meta:shelters.meta,currentCount:shelters.shelters.length,confirmed:shelters.shelters.filter(x=>x.coordinate_status==='confirmed').length,conflicts:shelters.shelters.filter(x=>x.coordinate_status==='conflict').length,unresolved:shelters.shelters.filter(x=>x.coordinate_status==='unresolved').length},null,2));
-          const names=new Set(['松山市','西条市','島原市','平戸市','五島市','雲仙市','長崎市','佐世保市','諫早市','大村市','小値賀町','新宮市','武雄市','筑後市','うきは市','嘉麻市','朝倉市','志免町','新宮町','水巻町','筑前町','添田町','大牟田市','久留米市','直方市','行橋市','筑紫野市','みやま市','宇美町','久山町','岡垣町','大刀洗町','大木町','福智町','上毛町']);
-          for(const file of readdirSync('sender-audit').filter(x=>x.endsWith('.json'))){
-            let data; try{data=JSON.parse(readFileSync('sender-audit/'+file,'utf8'));}catch{continue;}
-            for(const e of data.entities||[]) if(names.has(e.entity)) console.log('SENDER',file,JSON.stringify(e));
-          }
-          const national=JSON.parse(readFileSync('national-support-audit.json','utf8'));
-          console.log('NATIONAL_SUMMARY',JSON.stringify(national.summary));
-          for(const id of ['national-coordination','national-bath','national-accommodation-hakuo2','national-tec','national-water']) console.log('NATIONAL',id,JSON.stringify(national.records.find(r=>r.record_id===id)));
-          const municipal=JSON.parse(readFileSync('municipal-support-audit.json','utf8'));
-          console.log('MUNICIPAL_SUMMARY',JSON.stringify(municipal.summary));
-          NODE
+          echo '=== reference literal files ==='
+          grep -RIl --exclude-dir=.git -E '2026-08-31T14:16:00\+09:00|20260831-1416|8月31日14:16|2026年8月31日14:16|国交省第50報|8/31もはくおう2|8月31日実働主体' . | sort || true
+          echo '=== old checked timestamp files ==='
+          grep -RIl --exclude-dir=.git '2026-08-31T14:28:00+09:00' . | sort || true
