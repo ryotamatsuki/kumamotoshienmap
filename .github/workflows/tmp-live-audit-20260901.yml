@@ -8,19 +8,40 @@ on:
       - .github/workflows/tmp-live-audit-20260901.yml
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   live-audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
-      - name: Inventory fixed literals
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Apply full timepoint refresh
         shell: bash
         run: |
           set -Eeuo pipefail
-          echo '=== reference literal files ==='
-          grep -RIl --exclude-dir=.git -E '2026-08-31T14:16:00\+09:00|20260831-1416|8月31日14:16|2026年8月31日14:16|国交省第50報|8/31もはくおう2|8月31日実働主体' . | sort || true
-          echo '=== old checked timestamp files ==='
-          grep -RIl --exclude-dir=.git '2026-08-31T14:28:00+09:00' . | sort || true
+          git fetch origin main --prune
+          npm run update:current-shelters
+          node scripts/tmp-apply-refresh-20260901.mjs
+          npm run build
+          git diff --check
+          npm run test:release-gate
+          npm run validate:sender-coverage
+          npm run validate:sender-dist
+          echo '=== changed files before commit ==='
+          git status --short
+      - name: Commit refreshed data and code
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git add -A
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'data: full timepoint refresh at 2026-09-01 15:04 JST'
+          git push origin HEAD:audit/timepoint-20260901-1504
