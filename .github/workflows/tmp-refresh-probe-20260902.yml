@@ -27,7 +27,7 @@ jobs:
         run: npm run update:current-shelters
       - name: Validate current shelters
         run: npm run validate:current-shelters
-      - name: Probe official source URLs
+      - name: Probe official source URLs and audit digest
         run: node scripts/tmp-source-probe-20260902.mjs
       - uses: actions/upload-artifact@v4
         with:
@@ -35,6 +35,7 @@ jobs:
           path: |
             current-shelters.json
             /tmp/source-probe-20260902.json
+            /tmp/audit-digest-20260902.json
           if-no-files-found: error
       - name: Commit refreshed current shelters
         if: github.event_name == 'push'
