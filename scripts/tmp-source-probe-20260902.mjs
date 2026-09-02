@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 
 const files = [
@@ -112,4 +112,52 @@ const report = {
   results,
 };
 await writeFile('/tmp/source-probe-20260902.json', `${JSON.stringify(report, null, 2)}\n`, 'utf8');
-console.log(JSON.stringify({ url_count: report.url_count, ok_count: report.ok_count, failed_count: report.failed_count }));
+
+const senderFiles = (await readdir('sender-audit')).filter((name) => name.endsWith('.json'));
+const senderEntities = [];
+for (const name of senderFiles) {
+  const data = JSON.parse(await readFile(`sender-audit/${name}`, 'utf8'));
+  if (!Array.isArray(data.entities)) continue;
+  for (const entity of data.entities) {
+    senderEntities.push({
+      file: name,
+      entity: entity.entity,
+      prefecture: entity.prefecture,
+      state: entity.state,
+      support_types: entity.support_types,
+      destinations: entity.destinations,
+      source_ids: entity.source_ids,
+      evidence_note: entity.evidence_note,
+      reason: entity.reason,
+      current_evidence_type: entity.current_evidence_type,
+      next_review_at: entity.next_review_at,
+      checked_at: entity.checked_at,
+    });
+  }
+}
+const byState = Object.groupBy(senderEntities, (row) => row.state ?? 'NULL');
+const due = senderEntities.filter((row) => row.next_review_at && row.next_review_at <= '2026-09-02T16:16:00+09:00');
+const national = JSON.parse(await readFile('national-support-audit.json', 'utf8'));
+const municipal = JSON.parse(await readFile('municipal-support-audit.json', 'utf8'));
+const statewide = JSON.parse(await readFile('research_official_statewide.json', 'utf8'));
+const digest = {
+  generated_at: new Date().toISOString(),
+  sender_total_rows: senderEntities.length,
+  sender_state_counts: Object.fromEntries(Object.entries(byState).map(([k,v]) => [k,v.length])),
+  planned: senderEntities.filter((row) => row.state === 'PLANNED'),
+  current: senderEntities.filter((row) => row.state === 'CURRENT'),
+  due_review_count: due.length,
+  due_reviews: due,
+  national_summary: national.summary,
+  national_records: national.records?.map((row) => ({record_id: row.record_id, state: row.state, display: row.display})) ?? [],
+  municipal_summary: municipal.summary ?? null,
+  municipal_records: municipal.records?.map((row) => ({record_id: row.record_id, state: row.state, display: row.display})) ?? [],
+  volunteer: {
+    reference_at: statewide.reference_at,
+    checked_at: statewide.checked_at,
+    linked_municipal_centers: statewide.statewide_facts?.linked_municipal_centers,
+    observations: statewide.additional_official_observations,
+  },
+};
+await writeFile('/tmp/audit-digest-20260902.json', `${JSON.stringify(digest, null, 2)}\n`, 'utf8');
+console.log(JSON.stringify({ url_count: report.url_count, ok_count: report.ok_count, failed_count: report.failed_count, sender_state_counts: digest.sender_state_counts, due_review_count: digest.due_review_count }));
