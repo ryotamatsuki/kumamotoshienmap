@@ -1,21 +1,18 @@
-name: Temporary 2026-09-02 refresh probe
+name: Temporary 2026-09-02 full refresh finalizer
 
 on:
   push:
     branches:
       - audit/timepoint-20260902-1616
-  pull_request:
-    branches:
-      - main
 
 permissions:
   contents: write
 
 jobs:
-  probe:
+  finalize:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,29 +20,61 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Refresh current shelters
-        run: npm run update:current-shelters
-      - name: Validate current shelters
-        run: npm run validate:current-shelters
-      - name: Probe official source URLs and audit digest
-        run: node scripts/tmp-source-probe-20260902.mjs
-      - uses: actions/upload-artifact@v4
-        with:
-          name: refresh-probe-20260902-${{ github.run_id }}
-          path: |
-            current-shelters.json
-            /tmp/source-probe-20260902.json
-            /tmp/audit-digest-20260902.json
-          if-no-files-found: error
-      - name: Commit refreshed current shelters
-        if: github.event_name == 'push'
+
+      - name: Refresh official current shelters
         run: |
+          set -Eeuo pipefail
+          npm run update:current-shelters
+          npm run validate:current-shelters
+
+      - name: Apply 2026-09-02 full refresh
+        run: |
+          set -Eeuo pipefail
+          node scripts/tmp-source-probe-20260902.mjs
+
+      - name: Build and run semantic gates
+        run: |
+          set -Eeuo pipefail
+          npm run build
+          npm run test:release-gate
+          npm run validate:ehime-sender-coverage
+          npm run validate:nationwide-sender-coverage
+          npm run validate:sender-source-mentions
+
+      - name: Remove temporary machinery and finalize ledger
+        run: |
+          set -Eeuo pipefail
+          rm scripts/tmp-source-probe-20260902.mjs .github/workflows/tmp-refresh-probe-20260902.yml
+          node --input-type=module <<'NODE'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          const base='62e4c9c805ba0c2333d44b10706b0cf30d59041e';
+          const ledgerPath='operations/ledgers/refresh-20260902-1616.json';
+          const ledger=JSON.parse(readFileSync(ledgerPath,'utf8'));
+          let files=execFileSync('git',['-c','core.quotePath=false','diff','--name-only',base],{encoding:'utf8'}).trim().split(/\r?\n/u).filter(Boolean);
+          files=files.filter(p=>!['scripts/tmp-source-probe-20260902.mjs','.github/workflows/tmp-refresh-probe-20260902.yml'].includes(p));
+          files=[...new Set([...files,ledgerPath])].sort();
+          ledger.expected_changed_files=files;
+          writeFileSync(ledgerPath,JSON.stringify(ledger,null,2)+'\n');
+          console.log(JSON.stringify({expectedChangedFiles:files.length,files}));
+          NODE
+
+      - name: Create local final-head commit
+        run: |
+          set -Eeuo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add current-shelters.json
-          if git diff --cached --quiet; then
-            echo "No current-shelter changes"
-            exit 0
-          fi
-          git commit -m "data: refresh current shelters for 2026-09-02 audit"
-          git push origin HEAD:audit/timepoint-20260902-1616
+          git add -A
+          git diff --cached --check
+          git commit -m "data: full timepoint refresh at 2026-09-02 16:16 JST"
+
+      - name: Full Release Gate on final head
+        run: |
+          set -Eeuo pipefail
+          npm run validate:release -- --base=62e4c9c805ba0c2333d44b10706b0cf30d59041e --ledger=operations/ledgers/refresh-20260902-1616.json
+          git diff --check 62e4c9c805ba0c2333d44b10706b0cf30d59041e...HEAD
+          test ! -e scripts/tmp-source-probe-20260902.mjs
+          test ! -e .github/workflows/tmp-refresh-probe-20260902.yml
+
+      - name: Push validated final head
+        run: git push origin HEAD:audit/timepoint-20260902-1616
