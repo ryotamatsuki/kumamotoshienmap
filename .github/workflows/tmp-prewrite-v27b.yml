@@ -1,0 +1,37 @@
+name: Temporary prewrite operation v2.7b
+on:
+  push:
+    branches:
+      - fix/page-snapshot-consistency-20260902
+permissions:
+  contents: write
+jobs:
+  update-doc:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: fix/page-snapshot-consistency-20260902
+      - name: Record current snapshot consistency gate
+        env:
+          VERSION_B64: PiBWZXJzaW9uIDIuN++8iDIwMjYtMDktMDLmlLnoqILvvIkKPgo+IFZlcnNpb24gMi4244G+44Gn44GuR2F0ZeODu+ebo+afu+ODu3NlbmRlciBjb3ZlcmFnZeODu1BhZ2VzIFByb2R1Y3Rpb24gUUHjgpLjgZnjgbnjgabntq3mjIHjgZnjgovjgIIKPgo+IFZlcnNpb24gMi4344Gn44Gv44CB5ZCM5LiA44Oa44O844K45YaF44Gn44CM5pyA5paw44CN44Go44GX44Gm6KGo56S644GZ44KL6KKr5a6z44O76YG/6Zuj44K544OK44OD44OX44K344On44OD44OI44KScmVsZWFzZSBsZWRnZXLjgajkuIDoh7TjgZXjgZvjgosgKipDdXJyZW50IFNuYXBzaG90IENvbnNpc3RlbmN5IEdhdGUqKiDjgpLov73liqDjgZnjgovjgILjgr/jgqTjg6Djg6njgqTjg7PjgaDjgZHmm7TmlrDjgZfjgablho3norroqo3jgrXjg57jg6rjg7zjgIFPdmVydmlld+OAgU1hcOOAgU5lZWRz562J44GM5pen5aCx44Gu44G+44G+5q6L44KL5pu05paw44KS56aB5q2i44GZ44KL44CCCj4K
+          GATE_B64: IyMjIDE2LjEg5ZCM5LiA44Oa44O844K4IEN1cnJlbnQgU25hcHNob3QgQ29uc2lzdGVuY3kgR2F0Ze+8iFZlcnNpb24gMi436L+95Yqg77yJCgrmnIDmlrDooqvlrrPjg7vpgb/pm6Pjgrnjg4rjg4Pjg5fjgrfjg6fjg4Pjg4jjga5jYW5vbmljYWzln7rmupbjga/jgIHlvZPoqbJyZWxlYXNl44GuIGBvcGVyYXRpb25zL2xlZGdlcnMvcmVmcmVzaC0qLmpzb25gIOOBq+OBguOCiyBgcmVmZXJlbmNlX2F0YOOAgWBzbmFwc2hvdHMuZGFtYWdlX3JlcG9ydGDjgIFgc25hcHNob3RzLmRhbWFnZV9zb3VyY2VfYXNfb2ZgIOOBqOOBmeOCi+OAggoK5qyh44GuQ1VSUkVOVO+8j+OAjOebtOi/keOAjeihqOekuuOBr+OAgeWQjOOBmOWgseeVquWPt+ODu+WQjOOBmOecjOWFqOS9k+WApOOBuOaPg+OCj+OBquOBkeOCjOOBsOOBquOCieOBquOBhOOAggoKLSBPdmVydmlld+OBruiiq+Wus+ODu+mBv+mbo0tQSe+8iOmBv+mbo+iAheOAgeS6uueahOiiq+Wus+OAgeS9j+Wutuiiq+Wus++8iQotIGBQQUdFX1JFQ0hFQ0tfTUVUQWAg44Gu44CM6KKr5a6z44O75pSv5o+044CN44CM6YG/6Zuj5omA44CN44CM5pSv5o+044OL44O844K66KaL6YCa44GX44CN44CM55m654G95b6M44K/44Kk44Og44Op44Kk44Oz44CN44CM5pSv5o+044OA44OD44K344Ol44Oc44O844OJ44CNCi0g55m654G95b6M44K/44Kk44Og44Op44Kk44Oz5LiK6YOo44Gu44CM44Oa44O844K45YWo5L2T5YaN56K66KqN44CN6KGo56S6Ci0gYFRJTUVMSU5FX0VWRU5UU2Ag44GuIGB0LWN1cnJlbnQtc3RhdHVzYO+8iHRpdGxlIC8gc3VtbWFyeSAvIHNvdXJjZUxhYmVsIC8gdGFnc++8iQotIE5lZWRz44Gu55yM5YWo5L2T6KKr5a6z44O76YG/6Zuj6Kaz5ris5YCkCi0gTWFw44Gu55yM5aCx44K544OK44OD44OX44K344On44OD44OI44Go55yM5aCx55Sx5p2lbWV0cmljCi0gZGVjaXNpb24gYm9hcmTnrYnjgafjgIznj77lnKjjga7liKTmlq3moLnmi6DjgI3jgajjgZfjgabnpLrjgZnnnIzlhajkvZPlgKQKCuePvuihjOmBv+mbo+aJgOWFrOW8j0pTT07jga/nnIzloLHjgajjga/liKXlrprnvqnjg7vliKXmmYLngrnjgafjgYLjgovjgZ/jgoHjgIFgY3VycmVudF9zaGVsdGVyc2Ag44KS55yM5aCx6YG/6Zuj5omA5pWw44G45ZCI44KP44Gb44Gm44Gv44Gq44KJ44Gq44GE44CC5Lih6ICF44KS5L216KiY44GZ44KL5aC05ZCI44Gv44CM55yM5aCx44K544OK44OD44OX44K344On44OD44OI44CN44Go44CM5YWs5byPSlNPTuePvuWcqOOAjeOCkuaYjuekuuOBl+OBpuWIhumbouOBmeOCi+OAggoK5biC55S65Yil5YaF6Kiz562J44Gn5paw44GX44GE5ZCM5LiA5a6a576p6LOH5paZ44KS5Y+W5b6X44Gn44GN44Gq44GE5aC05ZCI44CB5pen6LOH5paZ44KS5q6L44GZ44GT44Go44Gv6Kix5a6544GZ44KL44CC44Gf44Gg44GX5b+F44Ga44CM5pen44K544OK44OD44OX44K344On44OD44OI44CN44CMSElTVE9SSUNBTOOAjeOAjOaZgueCueOBjOeVsOOBquOCi+OAjeetieOCkuaYjuekuuOBl+OAgWDnm7Tov5Fg44CBYOacgOaWsGDjgIFgQ1VSUkVOVGDjgajjgZfjgabooajnpLrjgZfjgabjga/jgarjgonjgarjgYTjgILml6fluILnlLrliKXlgKTjgpLmlrDjgZfjgYTnnIzoqIjjgbjmqZ/morDnmoTjgavlho3phY3liIbjgZfjgarjgYTjgIIKCnByb2R1Y2VyIGlzb2xhdGlvbuOCkuWuiOOCi+OAgmBzeW5jOm11bmljaXBhbC1zdXBwb3J0YOOAgWBzeW5jOm5hdGlvbmFsLXN1cHBvcnRgIOetieOBruWAi+WIpeebo+afu3N5bmPjgYzjgIHoh6rliIbjga7mi4XlvZPlpJbjgafjgYLjgovooqvlrrPloLHnlarlj7fjg7vooqvlrrPkuIDmrKHmg4XloLFVUkzjg7vku5ZzZWN0aW9u44GucmVjaGVjayBtZXRhZGF0YeOCkuaXp+WApOOBuOabuOOBjeaIu+OBl+OBpuOBr+OBquOCieOBquOBhOOAguOChOOCgOOCkuW+l+OBmmN1cnJlbnQgZGFtYWdlIG92ZXJsYXnjgpLnlJ/miJDjgZnjgovlh6bnkIbjga/jgIHlv4XjgZpyZWxlYXNlIGxlZGdlcuOBqOWQjOWApOOBp+OBquOBkeOCjOOBsOOBquOCieOBquOBhOOAggoKYHJlbmRlclBhZ2VSZWNoZWNrKClgIOetieOBrnJlbmRlcmVy44G45aCx55Wq5Y+344KE55yM5aCx5Lu25pWw44KSaGFyZC1jb2Rl44GX44Gm44Gv44Gq44KJ44Gq44GE44CCcmVuZGVyZXLjga9jYW5vbmljYWwgbWV0YWRhdGHjgpLooajnpLrjgZnjgovjgaDjgZHjgajjgZfjgIHloLHnlarlj7fjg7vku7bmlbDjga7mhI/lkbPoq5bjgpLliKXntYzot6/jgafkuIrmm7jjgY3jgZfjgarjgYTjgIIKCmBucG0gcnVuIGJ1aWxkYCDlhoXjga4gYHZhbGlkYXRlOmRhc2hib2FyZGAg44Gv44CBZWZmZWN0aXZlIHJ1bnRpbWUgZGF0YeOAgeWIneacn+ihqOekukhUTUzjgIFyZWxlYXNlIGxlZGdlcuOCkuebuOS6kuavlOi8g+OBl+OAgeS4iuiomOOBruOBhOOBmuOCjOOBi+OBjOS4jeS4gOiHtOOBquOCiUZBSUzjgZnjgovjgILmmYLliLvjgaDjgZHkuIDoh7TjgZfjgabjgYTjgabjgoJzZW1hbnRpYyBzbmFwc2hvdOOBjOS4jeS4gOiHtOOBquOCiVJlbGVhc2UgR2F0ZeOBr+mAmuOBleOBquOBhOOAggoKUFLliY3jgavmnIDkvY7pmZDjgIHmrKHjgpLnorroqo3jgZnjgovjgIIKCmBgYHNoCm5wbSBydW4gYnVpbGQKbnBtIHJ1biB2YWxpZGF0ZTpkYXNoYm9hcmQKbnBtIHJ1biB2YWxpZGF0ZTpjdXJyZW50LXN0YXRlCm5wbSBydW4gdmFsaWRhdGU6dGltZWxpbmUKbnBtIHJ1biB0ZXN0OnJlbGVhc2UtZ2F0ZQpucG0gcnVuIHZhbGlkYXRlOnJlbGVhc2UKZ2l0IGRpZmYgLS1jaGVjawpgYGAKClBhZ2Vz5Y+N5pig5b6M44GvRGVza3RvcCAxNDQww5cxMDAw44CBTW9iaWxlIDM5MMOXODQ044Gu5Y+M5pa544Gn44CBT3ZlcnZpZXcg4oaSIOeZuueBveW+jOOCv+OCpOODoOODqeOCpOODsyDihpIgTmVlZHMg4oaSIE1hcOOCkuWun+mam+OBq+WIh+OCiuabv+OBiOOAgeWQjOOBmOacgOaWsOecjOWgseeVquWPt+OBjGN1cnJlbnTooajnpLrpnaLjgafntq3mjIHjgZXjgozjgabjgYTjgovjgZPjgajjgpLnorroqo3jgZnjgovjgIIKCg==
+        run: |
+          node --input-type=module - <<'NODE'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          const p='時点修正更新オペレーション.md';
+          let s=readFileSync(p,'utf8');
+          const version=Buffer.from(process.env.VERSION_B64,'base64').toString('utf8');
+          const gate=Buffer.from(process.env.GATE_B64,'base64').toString('utf8');
+          if(!s.includes('> Version 2.7（2026-09-02改訂）')) s=s.replace('> Version 2.6（2026-08-27改訂）',version+'> Version 2.6（2026-08-27改訂）');
+          if(!s.includes('### 16.1 同一ページ Current Snapshot Consistency Gate（Version 2.7追加）')) s=s.replace('## 17. Sender Gate自己破壊テスト',gate+'## 17. Sender Gate自己破壊テスト');
+          writeFileSync(p,s);
+          NODE
+          git diff --check
+          if git diff --quiet; then echo 'Operation v2.7 already present.'; exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add '時点修正更新オペレーション.md'
+          git commit -m 'docs: add current snapshot consistency gate'
+          git push origin HEAD:fix/page-snapshot-consistency-20260902
