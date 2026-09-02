@@ -43,6 +43,8 @@ jobs:
             .replaceAll('2026年9月1日 15:04','2026年9月2日 16:16')
             .replaceAll('国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは9/3宿泊分の予約受付をCURRENT、宿泊実施はPLANNED','国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは予約受付終了、9/3宿泊実施はPLANNED')
             .replace('assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-08-28"','assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-09-02"'));
+          patch('scripts/sync-national-support-audit.mjs',text=>text
+            .replace('date:"2026-08-28",dateLabel:"8月28日",weekday:"金",time:"08:00"','date:"2026-09-02",dateLabel:"9月2日",weekday:"水",time:"14:00"'));
           const shelters=JSON.parse(readFileSync('current-shelters.json','utf8'));
           const sourceAt=shelters.meta.source_last_modified;
           patch('.github/workflows/post-deploy-pages-smoke.yml',text=>text
