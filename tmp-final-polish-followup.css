@@ -1,8 +1,0 @@
-/* FINAL_VISUAL_POLISH_TOUCH_TARGET_FOLLOWUP_START */
-body .vol-alert-close{display:grid!important;place-items:center!important;width:40px!important;height:40px!important;padding:0!important;border-radius:6px!important}
-body .vol-check{min-height:40px!important;border-radius:6px!important;font-size:11px!important}
-@media(max-width:760px){
-  body .vol-alert-close{width:44px!important;height:44px!important}
-  body .vol-check{min-height:44px!important}
-}
-/* FINAL_VISUAL_POLISH_TOUCH_TARGET_FOLLOWUP_END */
