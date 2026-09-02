@@ -41,6 +41,7 @@ jobs:
           patch('scripts/validate-dashboard-current.mjs',text=>text
             .replaceAll('9月1日閣議の非常災害復旧復興本部設置を確認し、9月1日実働主体を再監査','9月1日設置の非常災害復旧復興本部を確認し、9月2日実働主体を再監査')
             .replaceAll('2026年9月1日 15:04','2026年9月2日 16:16')
+            .replaceAll('国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは9/3宿泊分の予約受付をCURRENT、宿泊実施はPLANNED','国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは予約受付終了、9/3宿泊実施はPLANNED')
             .replace('assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-08-28"','assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-09-02"'));
           const shelters=JSON.parse(readFileSync('current-shelters.json','utf8'));
           const sourceAt=shelters.meta.source_last_modified;
