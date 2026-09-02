@@ -12,6 +12,7 @@ const specs=[
 ];
 
 function assert(condition,message){if(!condition) throw new Error(message)}
+function responseOk(response){const status=response?.status?.();return Number.isInteger(status)&&status>=200&&status<400}
 async function collectErrors(page){
   const pageErrors=[]; const consoleErrors=[];
   page.on('pageerror',e=>pageErrors.push(String(e)));
@@ -26,7 +27,7 @@ try{
     await landing.setViewport({width:spec.width,height:spec.height,isMobile:spec.mobile,deviceScaleFactor:1});
     const landingErrors=await collectErrors(landing);
     const response=await landing.goto(`${base}/`,{waitUntil:'networkidle2',timeout:60000});
-    assert(response?.ok(),`${spec.name} landing HTTP ${response?.status()}`);
+    assert(responseOk(response),`${spec.name} landing HTTP ${response?.status()}`);
     const landingState=await landing.evaluate(()=>{
       const body=getComputedStyle(document.body);
       const card=document.querySelector('.card'); const cardStyle=card?getComputedStyle(card):null;
@@ -53,7 +54,7 @@ try{
     await dashboard.setViewport({width:spec.width,height:spec.height,isMobile:spec.mobile,deviceScaleFactor:1});
     const dashErrors=await collectErrors(dashboard);
     const dres=await dashboard.goto(`${base}/ehime_kumamoto_support_geocoded_shelters_20260802.html`,{waitUntil:'networkidle2',timeout:60000});
-    assert(dres?.ok(),`${spec.name}: dashboard HTTP ${dres?.status()}`);
+    assert(responseOk(dres),`${spec.name}: dashboard HTTP ${dres?.status()}`);
     await dashboard.waitForSelector('.view-tab[data-view="overview"]',{timeout:30000});
     const baseState=await dashboard.evaluate((views)=>{
       const tabs=[...document.querySelectorAll('.view-tab[data-view]')];
@@ -94,7 +95,7 @@ try{
     await sender.setViewport({width:spec.width,height:spec.height,isMobile:spec.mobile,deviceScaleFactor:1});
     const senderErrors=await collectErrors(sender);
     const sres=await sender.goto(`${base}/sender-municipalities.html`,{waitUntil:'networkidle2',timeout:60000});
-    assert(sres?.ok(),`${spec.name}: sender HTTP ${sres?.status()}`);
+    assert(responseOk(sres),`${spec.name}: sender HTTP ${sres?.status()}`);
     await sender.waitForFunction(count=>document.querySelectorAll('#ehimeBody tr[data-entity]').length===count,{timeout:30000},expectedEhime);
     await sender.waitForFunction(count=>document.querySelectorAll('#nationalBody tr[data-entity]').length===count,{timeout:30000},expectedSender);
     const senderState=await sender.evaluate(()=>{
