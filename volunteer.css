@@ -1164,3 +1164,7 @@ body .vol-row-details>summary{display:flex!important;align-items:center!importan
 body button[data-needs-table-municipal]{display:inline-flex!important;align-items:center!important;min-height:40px!important;padding:6px 4px!important;font-size:11px!important;font-weight:650!important;color:inherit!important}
 @media(max-width:760px){body button[data-needs-table-municipal]{min-height:44px!important}}
 /* FINAL_VISUAL_POLISH_NEEDS_TABLE_BUTTONS_END */
+/* FINAL_VISUAL_POLISH_MAP_TAB_TARGET_START */
+body .tabs > .tab{min-height:40px!important}
+@media(max-width:760px){body .tabs > .tab{min-height:44px!important}}
+/* FINAL_VISUAL_POLISH_MAP_TAB_TARGET_END */
