@@ -1,0 +1,106 @@
+name: Temporary final visual QA
+
+on:
+  push:
+    branches:
+      - audit/final-visual-qa
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Install browser tooling
+        run: npm install --no-save --ignore-scripts --no-audit --no-fund --package-lock=false puppeteer-core
+      - name: Run pixel consistency audit
+        run: |
+          mkdir -p visual-audit
+          node --input-type=module - <<'NODE'
+          import puppeteer from 'puppeteer-core';
+          import {writeFileSync} from 'node:fs';
+
+          const base='https://ryotamatsuki.github.io/kumamotoshienmap';
+          const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
+          const out={generatedAt:new Date().toISOString(),base,viewports:{}};
+
+          const selectors={
+            landing:['body','main','.eyebrow','h1','.lede','.meta','.routes','.route','.route-title','.route-desc','.policy'],
+            common:['header','header h1','.subtitle','.view-switch','.view-tab','.badge','.overview-shell','.dashboard-shell','.timeline-shell','.vol-shell','.overview-hero','.dashboard-hero','.timeline-hero','.vol-hero','.overview-update','.dashboard-update','.timeline-update','.vol-meta','.overview-kpis','.dashboard-metrics','.timeline-metrics','.vol-summary','.overview-kpi','.dashboard-metric','.timeline-metric','.vol-summary-card','.section-title','.overview-section-head','.dashboard-section-head','.vol-section-head','.source-link','.record','.dashboard-record','.timeline-event','.vol-section','.vol-detail-item','.control','.legend','.shelter-toolbar','.timeline-filterbar','.dashboard-filterbar'],
+            sender:['body','main','h1','.meta','.cards','.card','.section','.section h2','.filters','.filters input','.filters select','.tablebox','table','th','td','.state','.notice','.nav a','.foot']
+          };
+
+          function cleanClass(v){return String(v||'').trim().replace(/\s+/g,'.').slice(0,120)}
+          async function inspect(page,kind){
+            return await page.evaluate(({kind,selectors})=>{
+              const visible=el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&r.width>0&&r.height>0};
+              const round=n=>Math.round(n*10)/10;
+              const style=el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect();return {tag:el.tagName.toLowerCase(),id:el.id||'',className:String(el.className||'').trim().replace(/\s+/g,'.').slice(0,120),x:round(r.x),y:round(r.y),w:round(r.width),h:round(r.height),fontSize:round(parseFloat(s.fontSize)||0),fontWeight:s.fontWeight,lineHeight:s.lineHeight,letterSpacing:s.letterSpacing,padding:[s.paddingTop,s.paddingRight,s.paddingBottom,s.paddingLeft],margin:[s.marginTop,s.marginRight,s.marginBottom,s.marginLeft],borderRadius:s.borderRadius,boxShadow:s.boxShadow,background:s.backgroundColor,color:s.color,borderTop:s.borderTopWidth+' '+s.borderTopStyle+' '+s.borderTopColor,borderRight:s.borderRightWidth+' '+s.borderRightStyle+' '+s.borderRightColor,borderBottom:s.borderBottomWidth+' '+s.borderBottomStyle+' '+s.borderBottomColor,borderLeft:s.borderLeftWidth+' '+s.borderLeftStyle+' '+s.borderLeftColor,text:(el.innerText||el.textContent||'').trim().replace(/\s+/g,' ').slice(0,100)}};
+              const wanted=selectors[kind==='landing'?'landing':kind==='sender'?'sender':'common'];
+              const metrics={};
+              for(const sel of wanted){const els=[...document.querySelectorAll(sel)].filter(visible).slice(0,12);if(els.length)metrics[sel]=els.map(style)}
+
+              const all=[...document.querySelectorAll('body *')].filter(visible);
+              const leaf=all.filter(el=>el.children.length===0&&(el.textContent||'').trim());
+              const smallText=leaf.map(style).filter(x=>x.fontSize>0&&x.fontSize<11).slice(0,80);
+              const tinyText=leaf.map(style).filter(x=>x.fontSize>0&&x.fontSize<10).slice(0,80);
+              const controls=[...document.querySelectorAll('button,input,select,textarea,a.btn,a.route,a.map-btn,a.block-map-btn')].filter(visible).map(style);
+              const lowControls=controls.filter(x=>x.h<(innerWidth<=520?43.5:39.5)).slice(0,80);
+              const rounded=all.map(style).filter(x=>{const nums=x.borderRadius.match(/[\d.]+/g)||[];return nums.some(v=>parseFloat(v)>10)}).filter(x=>!x.className.includes('leaflet')).slice(0,100);
+              const shadows=all.map(style).filter(x=>x.boxShadow&&x.boxShadow!=='none'&&!x.className.includes('leaflet')).slice(0,80);
+              const filledSurfaces=all.map(style).filter(x=>x.background!=='rgba(0, 0, 0, 0)'&&x.background!=='rgb(255, 255, 255)'&&x.background!=='transparent').filter(x=>x.w>80&&x.h>24).slice(0,100);
+              const surfaceCandidates=[...document.querySelectorAll('[class*="card"],[class*="record"],[class*="section"],[class*="detail"],[class*="metric"]')].filter(visible);
+              const nested=[];
+              for(const el of surfaceCandidates){let p=el.parentElement;while(p&&p!==document.body){if(surfaceCandidates.includes(p)){const a=style(el),b=style(p);nested.push({child:a.className,parent:b.className,childRadius:a.borderRadius,parentRadius:b.borderRadius,childBg:a.background,parentBg:b.background});break}p=p.parentElement}}
+              const sectionHeads=[...document.querySelectorAll('.overview-section-head,.dashboard-section-head,.vol-section-head,.section-title,.section h2')].filter(visible).map(style);
+              const anchorXs=sectionHeads.map(x=>x.x);
+              const xSpread=anchorXs.length?round(Math.max(...anchorXs)-Math.min(...anchorXs)):0;
+              const headings=[...document.querySelectorAll('h1,h2,h3,.section-title,.overview-section-head h3,.dashboard-section-head h3,.vol-section-head h3')].filter(visible).map(style);
+              const fontHistogram={}; for(const x of leaf.map(style)){const k=String(x.fontSize);fontHistogram[k]=(fontHistogram[k]||0)+1}
+              return {viewport:{w:innerWidth,h:innerHeight},overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth,clientWidth:document.documentElement.clientWidth,metrics,smallText,tinyText,controls:controls.slice(0,100),lowControls,rounded,shadows,filledSurfaces,nested:nested.slice(0,100),sectionHeadXSpread:xSpread,headings,fontHistogram};
+            },{kind,selectors});
+          }
+
+          try{
+            for(const spec of [{name:'desktop',width:1440,height:1000,mobile:false},{name:'mobile',width:390,height:844,mobile:true}]){
+              const bucket={}; out.viewports[spec.name]=bucket;
+              const page=await browser.newPage(); await page.setViewport({width:spec.width,height:spec.height,isMobile:spec.mobile,deviceScaleFactor:1});
+              await page.goto(`${base}/`,{waitUntil:'networkidle2',timeout:60000}); bucket.landing=await inspect(page,'landing'); await page.screenshot({path:`visual-audit/${spec.name}-landing.png`,fullPage:true});
+              await page.goto(`${base}/ehime_kumamoto_support_geocoded_shelters_20260802.html`,{waitUntil:'networkidle2',timeout:60000});
+              for(const view of ['overview','needs','timeline','dashboard','volunteer','map']){
+                const tab=await page.$(`[data-view="${view}"]`); if(tab){await tab.click(); await new Promise(r=>setTimeout(r,300));}
+                bucket[view]=await inspect(page,'dashboard');
+                await page.screenshot({path:`visual-audit/${spec.name}-${view}.png`,fullPage:view!=='map'});
+              }
+              await page.close();
+              const sender=await browser.newPage(); await sender.setViewport({width:spec.width,height:spec.height,isMobile:spec.mobile,deviceScaleFactor:1});
+              await sender.goto(`${base}/sender-municipalities.html`,{waitUntil:'networkidle2',timeout:60000});
+              bucket.sender=await inspect(sender,'sender'); await sender.screenshot({path:`visual-audit/${spec.name}-sender.png`,fullPage:true}); await sender.close();
+            }
+          } finally {await browser.close()}
+
+          writeFileSync('visual-audit/audit.json',JSON.stringify(out,null,2));
+          const issue=[];
+          for(const [vp,b] of Object.entries(out.viewports)){
+            for(const [view,m] of Object.entries(b)){
+              if(m.overflow) issue.push({severity:'P1',vp,view,type:'overflow',detail:`scrollWidth ${m.scrollWidth} > ${m.clientWidth}`});
+              if(m.tinyText.length) issue.push({severity:'P2',vp,view,type:'tiny-text',count:m.tinyText.length,samples:m.tinyText.slice(0,8).map(x=>`${x.className||x.tag}:${x.fontSize}px ${x.text.slice(0,35)}`)});
+              if(m.lowControls.length) issue.push({severity:'P2',vp,view,type:'small-control',count:m.lowControls.length,samples:m.lowControls.slice(0,8).map(x=>`${x.className||x.tag}:${x.h}px ${x.text.slice(0,30)}`)});
+              if(m.sectionHeadXSpread>2) issue.push({severity:'P2',vp,view,type:'section-anchor-spread',detail:`${m.sectionHeadXSpread}px`});
+              const legacyRounded=m.rounded.filter(x=>!/(badge|status|dot|marker|pill)/i.test(x.className)); if(legacyRounded.length) issue.push({severity:'P3',vp,view,type:'large-radius',count:legacyRounded.length,samples:legacyRounded.slice(0,6).map(x=>`${x.className||x.tag}:${x.borderRadius}`)});
+              const legacyShadow=m.shadows.filter(x=>!/(control|legend|toolbar|popup|marker|map)/i.test(x.className)); if(legacyShadow.length) issue.push({severity:'P3',vp,view,type:'nonfloating-shadow',count:legacyShadow.length,samples:legacyShadow.slice(0,6).map(x=>`${x.className||x.tag}:${x.boxShadow}`)});
+            }
+          }
+          console.log('AUDIT_SUMMARY_START'); console.log(JSON.stringify(issue,null,2)); console.log('AUDIT_SUMMARY_END');
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: final-visual-audit
+          path: visual-audit
+          retention-days: 2
