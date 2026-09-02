@@ -93,10 +93,11 @@ jobs:
           import {execFileSync} from 'node:child_process';
           const base='62e4c9c805ba0c2333d44b10706b0cf30d59041e';
           const ledgerPath='operations/ledgers/refresh-20260902-1616.json';
+          const coveragePath='operations/audits/institution-coverage-20260902-1616.json';
           const ledger=JSON.parse(readFileSync(ledgerPath,'utf8'));
           let files=execFileSync('git',['-c','core.quotePath=false','diff','--name-only',base],{encoding:'utf8'}).trim().split(/\r?\n/u).filter(Boolean);
           files=files.filter(p=>!['scripts/tmp-source-probe-20260902.mjs','.github/workflows/tmp-refresh-probe-20260902.yml'].includes(p));
-          files=[...new Set([...files,ledgerPath])].sort();
+          files=[...new Set([...files,ledgerPath,coveragePath])].sort();
           ledger.expected_changed_files=files;
           writeFileSync(ledgerPath,JSON.stringify(ledger,null,2)+'\n');
           console.log(JSON.stringify({expectedChangedFiles:files.length,files}));
