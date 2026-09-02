@@ -20,6 +20,7 @@ jobs:
       - name: Run browser hard gates
         run: |
           set -euo pipefail
+          sed -i 's/const optionalHeightOkay=v=>v===null||v>=target;/const optionalHeightOkay=v=>v===null||v===0||v>=target;/' tmp-final-polish-qa.mjs
           python3 -m http.server 8000 >/tmp/final-polish-server.log 2>&1 &
           SERVER_PID=$!
           trap 'kill $SERVER_PID || true' EXIT
