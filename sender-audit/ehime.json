@@ -1,6 +1,6 @@
 {
   "region": "ehime",
-  "reference_at": "2026-09-01T15:04:00+09:00",
+  "reference_at": "2026-09-02T16:16:00+09:00",
   "entities": [
     {
       "entity": "上島町",
@@ -19,14 +19,14 @@
         "ehime-proxy-discovery"
       ],
       "evidence_note": "候補発見資料には登場するが、町公式一次情報で基準時点の活動を確認できず。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "reason": "候補発見資料には登場するが、町公式一次情報で基準時点の活動を確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "ehime-proxy-discovery"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "久万高原町",
@@ -47,15 +47,15 @@
         "ehime-proxy-discovery"
       ],
       "evidence_note": "町公式に日本赤十字社義援金案内はあるが、町自身の送出支援の基準時点状態を直接確定できず。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "reason": "町公式に日本赤十字社義援金案内はあるが、町自身の送出支援の基準時点状態を直接確定できず。",
       "source_as_of": null,
       "sources_checked": [
         "ehime-kumakogen-jrc",
         "ehime-proxy-discovery"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "今治市",
@@ -74,14 +74,14 @@
         "ehime-imabari-donation"
       ],
       "evidence_note": "市公式が義援金を受け付けている旨と受付開始を明示。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "current_evidence_type": "active_collection_explicit",
       "source_as_of": null,
       "sources_checked": [
         "ehime-imabari-donation"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "伊予市",
@@ -101,14 +101,14 @@
         "ehime-iyo-support"
       ],
       "evidence_note": "市公式が義援金箱を2026年10月30日まで設置。職員派遣実績も明示。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "current_evidence_type": "active_collection_explicit",
       "source_as_of": null,
       "sources_checked": [
         "ehime-iyo-support"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "伊方町",
@@ -127,14 +127,14 @@
         "ehime-ikata-donation"
       ],
       "evidence_note": "町公式に募金箱設置開始はあるが、8月28日基準までの受付継続期間を直接示す記載を確認できない。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "ehime-ikata-donation"
       ],
       "reason": "開始告知の掲載だけで基準時点の継続を推定せずUNKNOWN。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "八幡浜市",
@@ -155,15 +155,15 @@
         "ehime-proxy-discovery"
       ],
       "evidence_note": "市公式に義援金支援情報はあるが、基準時点の受付継続期間を直接確認できず。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "reason": "市公式に義援金支援情報はあるが、基準時点の受付継続期間を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "ehime-yawatahama-listing",
         "ehime-proxy-discovery"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "内子町",
@@ -185,15 +185,15 @@
         "ehime-uchiko-proxy-0817"
       ],
       "evidence_note": "8月13～19日の職員派遣実績に加え、町公式が熊本地震の代理寄附を現在形で受け付けていると明示。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "source_as_of": "2026-08-17T00:00:00+09:00",
       "sources_checked": [
         "ehime-uchiko-dispatch",
         "ehime-uchiko-proxy-0817"
       ],
       "current_evidence_type": "active_collection_explicit",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "四国中央市",
@@ -212,14 +212,14 @@
         "ehime-shikokuchuo-current"
       ],
       "evidence_note": "市公式サイトで「受付中」と明示。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "current_evidence_type": "active_collection_explicit",
       "source_as_of": null,
       "sources_checked": [
         "ehime-shikokuchuo-current"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "大洲市",
@@ -238,14 +238,14 @@
         "ehime-ozu-donation"
       ],
       "evidence_note": "市公式が義援金箱の設置と2026年10月30日までの受付を明示。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "current_evidence_type": "active_collection_explicit",
       "source_as_of": null,
       "sources_checked": [
         "ehime-ozu-donation"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "宇和島市",
@@ -268,15 +268,15 @@
         "ehime-uwajima-jrat-0821"
       ],
       "evidence_note": "市立宇和島病院職員の愛媛JRAT派遣（8月20～24日）は実績確認済み。一方、他の市送出支援が基準時点で継続中かは直接確定できない。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "reason": "JRAT派遣はHISTORICALと確認できるが、二次情報で発見した他支援の基準時点継続を市一次情報で閉じられないためUNKNOWN。",
       "source_as_of": "2026-08-21T00:00:00+09:00",
       "sources_checked": [
         "ehime-proxy-discovery",
         "ehime-uwajima-jrat-0821"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "愛南町",
@@ -295,14 +295,14 @@
         "ehime-ainan-listing"
       ],
       "evidence_note": "町公式に募金箱設置情報はあるが、基準時点までの受付継続を直接確認できず。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "reason": "町公式に募金箱設置情報はあるが、基準時点までの受付継続を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "ehime-ainan-listing"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "新居浜市",
@@ -324,15 +324,15 @@
         "ehime-proxy-discovery"
       ],
       "evidence_note": "市公式が義援金を2026年12月25日まで受け付ける旨を明示。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "source_as_of": "2026-08-25T00:00:00+09:00",
       "sources_checked": [
         "ehime-niihama-donation-0825",
         "ehime-proxy-discovery"
       ],
       "current_evidence_type": "active_collection_explicit",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "東温市",
@@ -352,14 +352,14 @@
         "ehime-toon-report-0827"
       ],
       "evidence_note": "市公式広報で8月13～19日に氷川町へ市職員2名を実派遣したことを確認。基準時点では当該派遣は終了。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "source_as_of": "2026-08-27T00:00:00+09:00",
       "sources_checked": [
         "ehime-toon-dispatch",
         "ehime-toon-report-0827"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "松前町",
@@ -378,14 +378,14 @@
         "ehime-masaki-donation"
       ],
       "evidence_note": "町公式が義援金を2026年10月29日まで受け付ける旨を明示。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "current_evidence_type": "active_collection_explicit",
       "source_as_of": null,
       "sources_checked": [
         "ehime-masaki-donation"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "松山市",
@@ -408,14 +408,14 @@
         "ehime-matsuyama-current"
       ],
       "evidence_note": "市公式が職員・給水車等を「派遣している」旨を現在形で明示。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
       "source_as_of": null,
       "sources_checked": [
         "ehime-matsuyama-current"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "松野町",
@@ -434,14 +434,14 @@
         "ehime-proxy-discovery"
       ],
       "evidence_note": "候補発見資料には登場するが、町公式一次情報で基準時点の状態を確認できず。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "reason": "候補発見資料には登場するが、町公式一次情報で基準時点の状態を確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "ehime-proxy-discovery"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "砥部町",
@@ -460,14 +460,14 @@
         "ehime-tobe-donation"
       ],
       "evidence_note": "町公式が義援金募金箱を2026年10月23日まで設置すると明示。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "current_evidence_type": "active_collection_explicit",
       "source_as_of": null,
       "sources_checked": [
         "ehime-tobe-donation"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "西予市",
@@ -490,15 +490,15 @@
         "ehime-seiyo-dispatch"
       ],
       "evidence_note": "市公式で受付開始・派遣予定を確認したが、基準時点の継続受付又は実働を直接示す更新を確認できず。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "reason": "市公式で受付開始・派遣予定を確認したが、基準時点の継続受付又は実働を直接示す更新を確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "ehime-seiyo-proxy",
         "ehime-seiyo-dispatch"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "西条市",
@@ -523,8 +523,8 @@
         "ehime-proxy-discovery"
       ],
       "evidence_note": "8月27日市公式が義援金・益城町代理寄附を実施中と明記。派遣実績と次回派遣予定も掲載。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "source_as_of": "2026-08-27T00:00:00+09:00",
       "sources_checked": [
         "ehime-saijo-0827",
@@ -532,7 +532,7 @@
         "ehime-proxy-discovery"
       ],
       "current_evidence_type": "explicit_current_activity",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "entity": "鬼北町",
@@ -553,16 +553,16 @@
         "ehime-kihoku-support"
       ],
       "evidence_note": "町公式が8月21日時点で募金箱を「設置しています」と明示。派遣予定は別軸で推定しない。",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "next_review_at": "2026-09-02T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "next_review_at": "2026-09-03T09:00:00+09:00",
       "current_evidence_type": "active_collection_explicit",
       "source_as_of": null,
       "sources_checked": [
         "ehime-kihoku-support"
       ],
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     }
   ],
-  "checked_at": "2026-09-01T15:12:00+09:00",
-  "rechecked_at": "2026-09-01T15:12:00+09:00"
+  "checked_at": "2026-09-02T16:35:00+09:00",
+  "rechecked_at": "2026-09-02T16:35:00+09:00"
 }

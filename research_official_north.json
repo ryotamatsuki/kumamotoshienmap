@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "scope": "令和8年熊本地震・災害ボランティア公式一次情報（熊本市、宇土市、宇城市、美里町、御船町、嘉島町）・2026年9月1日再確認",
-  "checked_at": "2026-09-01T15:12:00+09:00",
+  "checked_at": "2026-09-02T16:35:00+09:00",
   "verification_policy": {
     "official_sources_only": true,
     "unknown_values_are_null": true,
@@ -105,7 +105,7 @@
       "official_source_url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%92%EF%BC%98%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%94%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
       "source_published_at": "2026-08-31",
       "source_updated_at": "2026-08-31",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "recheck_status": "差分あり",
       "recheck_note": "2026年9月1日に公式一次情報を再確認。8月31日～9月2日はニーズ調査、第4期9月3日～6日は必要人数到達で受付終了を確認。",
       "change_status": "第4期必要人数到達・受付終了／ニーズ調査活動へ更新",
@@ -125,7 +125,7 @@
           "url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC%EF%BC%94%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
           "published_at": "2026-08-28",
           "updated_at": "2026-08-28",
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "8月31日～9月2日はニーズ調査活動、第4期活動期間9月3日～6日"
         },
         {
@@ -134,7 +134,7 @@
           "url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%92%EF%BC%98%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%94%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
           "published_at": "2026-08-31",
           "updated_at": "2026-08-31",
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "第4期9月3日～6日は必要人数到達で受付終了、9月7日以降は改めて募集予定"
         },
         {
@@ -143,7 +143,7 @@
           "url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC%EF%BC%93%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
           "published_at": "2026-08-21",
           "updated_at": "2026-08-21",
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "8月24・25日活動休止、第3期8月26～30日、南区サテライト、高校生以上、活動内容、申込フォーム"
         },
         {
@@ -152,7 +152,7 @@
           "url": "https://www.kumamoto-city-csw.or.jp/%EF%BC%98-%EF%BC%91%EF%BC%93%E6%99%82%E7%82%B9%E3%81%A7%E3%81%AE%E7%AC%AC%EF%BC%92%E6%9C%9F%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E5%8B%9F%E9%9B%86%E7%8A%B6%E6%B3%81%E3%81%AE%E3%81%8A/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "第2期8月16～23日の必要人数到達による締切、8月24日以降の再告知予定"
         },
         {
@@ -161,7 +161,7 @@
           "url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
           "published_at": "2026-08-07",
           "updated_at": "2026-08-07",
-          "checked_at": "2026-09-01T15:12:00+09:00"
+          "checked_at": "2026-09-02T16:35:00+09:00"
         }
       ],
       "application_form_status": "第4期必要人数到達・受付終了、9月7日以降未定",
@@ -237,7 +237,7 @@
       "official_source_url": "https://www.utoshakyou.jp/volunteer_2026.html",
       "source_published_at": null,
       "source_updated_at": null,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "recheck_status": "再確認済み",
       "recheck_note": "2026年8月24日に公式一次情報を再確認。新しい確定情報がある項目のみ更新。",
       "change_status": "第3期・団体日程更新",
@@ -259,7 +259,7 @@
           "url": "https://www.utoshakyou.jp/volunteer_2026.html",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "個人8月20～27日、8月25・26日活動なし、団体5人以上8月28日～9月6日"
         },
         {
@@ -268,7 +268,7 @@
           "url": "https://forms.gle/FCwVAHmc4htUM5Au8",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "申込受付"
         }
       ],
@@ -347,7 +347,7 @@
       "official_source_url": "https://www.shakyou-uki.jp/oshirase/12239/",
       "source_published_at": "2026-08-23",
       "source_updated_at": "2026-08-23",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "recheck_status": "再確認済み",
       "recheck_note": "2026年8月24日に公式一次情報を再確認。新しい確定情報がある項目のみ更新。",
       "change_status": "旧日別募集ページ404・現況日程をUNKNOWNへ",
@@ -367,7 +367,7 @@
           "url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "個人8月20～24日・26～31日、8月25日休止、団体申込一時休止"
         }
       ],
@@ -438,7 +438,7 @@
       "official_source_url": "https://misatoshakyo.or.jp/pages/467/",
       "source_published_at": null,
       "source_updated_at": null,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "recheck_status": "再確認済み",
       "recheck_note": "2026年8月24日に公式一次情報を再確認。新しい確定情報がある項目のみ更新。",
       "change_status": "募集再開・日程更新",
@@ -458,7 +458,7 @@
           "url": "https://misatoshakyo.or.jp/pages/467/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "8月22～30日、各日約40人"
         },
         {
@@ -467,7 +467,7 @@
           "url": "https://misatoshakyo.or.jp/pages/455/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00"
+          "checked_at": "2026-09-02T16:35:00+09:00"
         }
       ],
       "application_form_status": "募集案内掲載・現行フォーム受付終了",
@@ -550,7 +550,7 @@
       "official_source_url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D56",
       "source_published_at": "2026-08-04",
       "source_updated_at": null,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "recheck_status": "再確認済み",
       "recheck_note": "2026年8月24日に公式一次情報を再確認。新しい確定情報がある項目のみ更新。",
       "change_status": "現行日程更新",
@@ -569,7 +569,7 @@
           "url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D56",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "8月24日団体、8月25・27～29日活動、8月26・30・31日休止"
         },
         {
@@ -578,7 +578,7 @@
           "url": "https://mifune-shakyo.jp/pages/51/detail=1/b_id=269/r_id=55#block269-55",
           "published_at": "2026-08-04",
           "updated_at": "2026-08-07",
-          "checked_at": "2026-09-01T15:12:00+09:00"
+          "checked_at": "2026-09-02T16:35:00+09:00"
         },
         {
           "publisher": "御船町社会福祉協議会",
@@ -586,7 +586,7 @@
           "url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D53",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "既知募集期間、8月9日以降の追加予定、軽トラック協力"
         }
       ],
@@ -657,7 +657,7 @@
       "official_source_url": "https://kashima-shakyo.or.jp/",
       "source_published_at": "2026-08-05",
       "source_updated_at": null,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "recheck_status": "再確認済み",
       "recheck_note": "2026年8月24日に公式一次情報を再確認。新しい確定情報がある項目のみ更新。",
       "change_status": "公式サイト取得不能のためUNKNOWN",
@@ -677,7 +677,7 @@
           "url": "https://kashima-shakyo.or.jp/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "8月21～22日の事前受付案内、現行フォーム受付終了"
         },
         {
@@ -686,7 +686,7 @@
           "url": "https://kashima-shakyo.or.jp/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "8月21～22日の事前受付案内、現行フォーム受付終了"
         },
         {
@@ -695,7 +695,7 @@
           "url": "https://kashima-shakyo.or.jp/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "8月21～22日の事前受付案内、現行フォーム受付終了"
         },
         {
@@ -704,7 +704,7 @@
           "url": "https://kashima-shakyo.or.jp/",
           "published_at": null,
           "updated_at": null,
-          "checked_at": "2026-09-01T15:12:00+09:00",
+          "checked_at": "2026-09-02T16:35:00+09:00",
           "facts_used": "8月21～22日の事前受付案内、現行フォーム受付終了"
         }
       ],
@@ -721,7 +721,7 @@
       "url": "https://www.kumamoto-city-csw.or.jp/%E3%80%90%E7%AC%AC1%E6%9C%9F%E3%80%80%E3%83%9C%E3%83%A9%E3%83%B3%E3%83%86%E3%82%A3%E3%82%A2%E8%BF%BD%E5%8A%A0%E5%8B%9F%E9%9B%86%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%91/",
       "published_at": "2026-08-07",
       "updated_at": null,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "facts_used": "本部・南区サテライトの活動期間、地区別受入目安、募集締切、年齢、軽トラック"
     },
     {
@@ -730,7 +730,7 @@
       "url": "https://www.utoshakyou.jp/volunteer_2026.html",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "facts_used": "第2期8月13日～19日、50人程度／日、全国、高校生以上、活動時間、保険"
     },
     {
@@ -739,7 +739,7 @@
       "url": "https://forms.gle/FCwVAHmc4htUM5Au8",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "facts_used": "申込受付"
     },
     {
@@ -748,7 +748,7 @@
       "url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
       "published_at": "2026-08-08",
       "updated_at": "2026-08-08",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "facts_used": "8月15日～23日の日別申込、活動内容、軽トラック協力"
     },
     {
@@ -757,7 +757,7 @@
       "url": "https://misatoshakyo.or.jp/pages/455/",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "facts_used": "申込定員到達による募集休止、車両・移動条件"
     },
     {
@@ -766,7 +766,7 @@
       "url": "https://mifune-shakyo.jp/pages/51/detail%3D1/b_id%3D269/r_id%3D53",
       "published_at": null,
       "updated_at": null,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "facts_used": "既知募集期間、8月9日以降の追加予定、軽トラック協力"
     },
     {
@@ -775,7 +775,7 @@
       "url": "https://kashima-shakyo.or.jp/",
       "published_at": "2026-08-03",
       "updated_at": null,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "facts_used": "8月8日～10日、30人程度／日、熊本県内、中学生以上、フォーム終了"
     },
     {
@@ -784,10 +784,10 @@
       "url": "https://kashima-shakyo.or.jp/",
       "published_at": "2026-08-05",
       "updated_at": null,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "facts_used": "8月11日～16日の活動休止"
     }
   ],
-  "rechecked_at": "2026-09-01T15:12:00+09:00",
-  "reference_at": "2026-09-01T15:04:00+09:00"
+  "rechecked_at": "2026-09-02T16:35:00+09:00",
+  "reference_at": "2026-09-02T16:16:00+09:00"
 }

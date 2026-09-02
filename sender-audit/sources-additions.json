@@ -1,5 +1,5 @@
 {
-  "reference_at": "2026-09-01T15:04:00+09:00",
+  "reference_at": "2026-09-02T16:16:00+09:00",
   "sources": [
     {
       "source_id": "tokyo-wave-0814",
@@ -7,9 +7,9 @@
       "title": "令和8年熊本地震への都の対応（第24報）",
       "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026081410",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "特別区5区、市5市を派遣職員内訳として明記。予定期間だけで8月27日CURRENT/HISTORICALを推定しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "himeji-current",
@@ -17,9 +17,9 @@
       "title": "令和8年熊本地震に伴う被災自治体への応援派遣",
       "url": "https://www.city.himeji.lg.jp/anzen/0000033697.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "市公式が応援派遣を行っている旨を明示し、災害用トイレトレーラーの宇城市派遣期間を8月21日～9月4日と掲載。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "shinonsen-support",
@@ -27,9 +27,9 @@
       "title": "令和8年熊本地震被災地支援に係る職員・給水車等の派遣・活動状況",
       "url": "https://www.town.shinonsen.hyogo.jp/page/index.php?cate_id=C3505&mode=page_list",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "町公式防災一覧で給水車・トイレカー派遣と活動状況更新を確認。8月27日状態は直接確定できずUNKNOWN。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-uki-registry",
@@ -37,9 +37,9 @@
       "title": "熊本県宇城市 災害支援・協力自治体一覧",
       "url": "https://www.furusato-tax.jp/saigai/detail/2851",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。CURRENT裁定には使用しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-misato-registry",
@@ -47,9 +47,9 @@
       "title": "熊本県美里町 災害支援・協力自治体一覧",
       "url": "https://www.furusato-tax.jp/saigai/detail/2811",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。CURRENT裁定には使用しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-kamiamakusa-registry",
@@ -57,9 +57,9 @@
       "title": "熊本県上天草市 災害支援・協力自治体一覧",
       "url": "https://www.furusato-tax.jp/saigai/detail/2876",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。CURRENT裁定には使用しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-mifune-registry",
@@ -67,9 +67,9 @@
       "title": "熊本県御船町 災害支援・協力自治体一覧",
       "url": "https://www.furusato-tax.jp/saigai/detail/2966",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。CURRENT裁定には使用しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-mashiki-registry",
@@ -77,9 +77,9 @@
       "title": "熊本県益城町 災害支援・協力自治体一覧",
       "url": "https://www.furusato-tax.jp/saigai/detail/3199",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。CURRENT裁定には使用しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-kashima-registry",
@@ -87,9 +87,9 @@
       "title": "熊本県嘉島町 災害支援・協力自治体一覧",
       "url": "https://www.furusato-tax.jp/saigai/detail/2801",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。CURRENT裁定には使用しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-yatsushiro-registry",
@@ -97,9 +97,9 @@
       "title": "熊本県八代市 災害支援・協力自治体一覧",
       "url": "https://www.furusato-tax.jp/saigai/detail/2800",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。CURRENT裁定には使用しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-hikawa-registry",
@@ -107,9 +107,9 @@
       "title": "熊本県氷川町 災害支援協力自治体の発見",
       "url": "https://www.furusato-tax.jp/saigai/detail/2997",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。CURRENT裁定には使用しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-mashiki-seiyo-registry",
@@ -117,9 +117,9 @@
       "title": "熊本県益城町 災害支援・協力自治体一覧（西予市代理ページ）",
       "url": "https://www.furusato-tax.jp/saigai/detail/3168",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "会津若松市・国東市・日南市・香春町等のcandidate discovery専用。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-maizuru-yatsushiro",
@@ -127,9 +127,9 @@
       "title": "八代市代理寄附（舞鶴市）",
       "url": "https://www.furusato-tax.jp/saigai/detail/2922",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-kawachinagano-yatsushiro",
@@ -137,9 +137,9 @@
       "title": "八代市代理寄附（河内長野市）",
       "url": "https://www.furusato-tax.jp/saigai/detail/2950",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-akitakata-hikawa",
@@ -147,9 +147,9 @@
       "title": "氷川町代理寄附（安芸高田市）",
       "url": "https://www.furusato-tax.jp/saigai/detail/3162",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-kunohe-hikawa",
@@ -157,9 +157,9 @@
       "title": "氷川町代理寄附（九戸村）",
       "url": "https://www.furusato-tax.jp/saigai/detail/3226",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-yuki-hikawa",
@@ -167,9 +167,9 @@
       "title": "氷川町代理寄附（結城市）",
       "url": "https://www.furusato-tax.jp/saigai/detail/3016",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "proxy-izumisano-hikawa",
@@ -177,9 +177,9 @@
       "title": "氷川町代理寄附（泉佐野市）",
       "url": "https://www.furusato-tax.jp/saigai/detail/2997",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "sender candidate discovery専用。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-niihama-donation-0825",
@@ -188,9 +188,9 @@
       "url": "https://www.city.niihama.lg.jp/soshiki/kikikanri/notogiennkinn.html",
       "tier": 1,
       "source_as_of": "2026-08-25T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "12月25日までの義援金受付を市公式が明示。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-saijo-0827",
@@ -199,9 +199,9 @@
       "url": "https://www.city.saijo.ehime.jp/soshiki/kikikanri/kumamotohaken2.html",
       "tier": 1,
       "source_as_of": "2026-08-27T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "義援金・代理寄附を実施中と明示し、派遣実績と9月2日以降の追加派遣予定も掲載。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-uchiko-proxy-0817",
@@ -210,9 +210,9 @@
       "url": "https://cms2021.town.uchiko.ehime.jp/soshiki/53/furusatoouenkifukin2.html",
       "tier": 1,
       "source_as_of": "2026-08-17T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "熊本地震に伴う代理寄附を「受け付けています」と町公式が明示。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-toon-report-0827",
@@ -221,9 +221,9 @@
       "url": "https://www.city.toon.ehime.jp/site/pr/33798.html",
       "tier": 1,
       "source_as_of": "2026-08-27T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "8月13日から19日まで氷川町へ市職員2人を派遣した実績を市公式広報で確認。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-uwajima-jrat-0821",
@@ -232,9 +232,9 @@
       "url": "https://www.uwajima-mh.jp/info/other/39727",
       "tier": 1,
       "source_as_of": "2026-08-21T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "8月20日から24日まで職員1名を愛媛JRATの一員として派遣。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "tokyo-wave-0821",
@@ -243,9 +243,9 @@
       "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082106",
       "tier": 2,
       "source_as_of": "2026-08-21T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "特別区・市職員の派遣予定を明記。予定のみではCURRENTにしない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "tokyo-wave-0828",
@@ -254,9 +254,9 @@
       "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082806",
       "tier": 2,
       "source_as_of": "2026-08-28T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "8月28日開始の特別区・市職員派遣予定を明記。予定のみではCURRENTにしない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "gunma-wave1-0805",
@@ -265,9 +265,9 @@
       "url": "https://www.pref.gunma.jp/site/houdou/769933.html",
       "tier": 2,
       "source_as_of": "2026-08-05T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "前橋市・高崎市・館林市・藤岡市・板倉町を第1班派遣元として明記。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "yamaguchi-wave5-0827",
@@ -276,9 +276,9 @@
       "url": "https://www.pref.yamaguchi.lg.jp/press/360430.html",
       "tier": 2,
       "source_as_of": "2026-08-27T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "山口市・萩市を8月28日開始予定の第5陣派遣元として明記。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "tokushima-0812",
@@ -287,9 +287,9 @@
       "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315640/",
       "tier": 2,
       "source_as_of": "2026-08-12T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "美馬市・勝浦町職員を派遣したことを明示。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "tokushima-0816",
@@ -298,9 +298,9 @@
       "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315706/",
       "tier": 2,
       "source_as_of": "2026-08-16T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "三好市・東みよし町職員を派遣したことを明示。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "tokushima-0820",
@@ -309,9 +309,9 @@
       "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315791/",
       "tier": 2,
       "source_as_of": "2026-08-20T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "徳島市・牟岐町職員を派遣したことを明示。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "tokushima-0823",
@@ -320,9 +320,9 @@
       "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315841/",
       "tier": 2,
       "source_as_of": "2026-08-23T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "徳島市・美波町職員を派遣したことを明示。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "tokushima-0828",
@@ -331,9 +331,9 @@
       "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315969/",
       "tier": 2,
       "source_as_of": "2026-08-28T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "小松島市・つるぎ町職員を8月28日に派遣したことを明示。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "fukuoka-wave-0828",
@@ -342,9 +342,9 @@
       "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken6.html",
       "tier": 2,
       "source_as_of": "2026-08-28T11:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "8月31日以降の市町村合同派遣を公表。基準時点ではPLANNED。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "nagasaki-wave7-0824",
@@ -353,9 +353,9 @@
       "url": "https://www.pref.nagasaki.jp/press-contents/51710.html",
       "tier": 2,
       "source_as_of": "2026-08-24T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "西海市・新上五島町・長崎市・諫早市・大村市等の市町職員を第7陣等として明記。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "nagasaki-status-0827",
@@ -364,9 +364,9 @@
       "url": "https://www.pref.nagasaki.jp/press-contents/51933.html",
       "tier": 2,
       "source_as_of": "2026-08-27T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "8月27日時点の派遣状況として美里町・八代市・宇城市の市町職員派遣を9月1日まで含めて集計。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "gunma-wave4-0818",
@@ -375,8 +375,8 @@
       "url": "https://www.pref.gunma.jp/site/houdou/771457.html",
       "tier": 2,
       "source_as_of": "2026-08-18T00:00:00+09:00",
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00",
       "note": "第4班の派遣元基礎自治体を候補化。派遣予定期間内という理由だけではCURRENTとしない。"
     },
     {
@@ -385,9 +385,9 @@
       "title": "令和8年熊本地震に係る長崎県及び県内市町職員の派遣（美里町第8陣・八代市第6陣）",
       "url": "https://www.pref.nagasaki.jp/press-contents/52044.html",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "2026年8月31日発表。9月1日から美里町・八代市へ派遣する県内市町職員の内訳を公式発表。予定情報のためCURRENT裁定には用いない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "wakayama-shingu-0828",
@@ -395,9 +395,9 @@
       "title": "令和8年熊本地震被災地への職員派遣",
       "url": "https://www.city.shingu.lg.jp/info/3055",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "市公式が被災地への職員派遣を「行っています」と現在形で明示し、宇城市での住家被害認定調査を9月1日～7日と掲載。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "takeo-volunteer-0831",
@@ -405,9 +405,9 @@
       "title": "令和8年熊本地震被災地への災害ボランティア派遣（第2陣）",
       "url": "https://www.city.takeo.lg.jp/information/2026/08/015981.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "市公式が第2陣の募集と9月1日受付開始を事前公表。開始日到来だけで実活動CURRENTとしない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     }
   ]
 }
