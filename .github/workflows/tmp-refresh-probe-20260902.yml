@@ -84,20 +84,22 @@ jobs:
           npm run validate:nationwide-sender-coverage
           npm run validate:sender-source-mentions
 
-      - name: Remove temporary machinery and finalize ledger
+      - name: Prepare pushable final data commit
         run: |
           set -Eeuo pipefail
-          rm scripts/tmp-source-probe-20260902.mjs .github/workflows/tmp-refresh-probe-20260902.yml
+          rm scripts/tmp-source-probe-20260902.mjs
+          git restore --source=HEAD -- .github/workflows/post-deploy-pages-smoke.yml
           node --input-type=module <<'NODE'
           import {readFileSync,writeFileSync} from 'node:fs';
           import {execFileSync} from 'node:child_process';
           const base='62e4c9c805ba0c2333d44b10706b0cf30d59041e';
           const ledgerPath='operations/ledgers/refresh-20260902-1616.json';
           const coveragePath='operations/audits/institution-coverage-20260902-1616.json';
+          const tempWorkflowPath='.github/workflows/tmp-refresh-probe-20260902.yml';
           const ledger=JSON.parse(readFileSync(ledgerPath,'utf8'));
           let files=execFileSync('git',['-c','core.quotePath=false','diff','--name-only',base],{encoding:'utf8'}).trim().split(/\r?\n/u).filter(Boolean);
-          files=files.filter(p=>!['scripts/tmp-source-probe-20260902.mjs','.github/workflows/tmp-refresh-probe-20260902.yml'].includes(p));
-          files=[...new Set([...files,ledgerPath,coveragePath])].sort();
+          files=files.filter(p=>p!=='scripts/tmp-source-probe-20260902.mjs');
+          files=[...new Set([...files,ledgerPath,coveragePath,tempWorkflowPath])].sort();
           ledger.expected_changed_files=files;
           writeFileSync(ledgerPath,JSON.stringify(ledger,null,2)+'\n');
           console.log(JSON.stringify({expectedChangedFiles:files.length,files}));
@@ -112,13 +114,13 @@ jobs:
           git diff --cached --check
           git commit -m "data: full timepoint refresh at 2026-09-02 16:16 JST"
 
-      - name: Full Release Gate on final head
+      - name: Full Release Gate on pushable head
         run: |
           set -Eeuo pipefail
           npm run validate:release -- --base=62e4c9c805ba0c2333d44b10706b0cf30d59041e --ledger=operations/ledgers/refresh-20260902-1616.json
           git diff --check 62e4c9c805ba0c2333d44b10706b0cf30d59041e...HEAD
           test ! -e scripts/tmp-source-probe-20260902.mjs
-          test ! -e .github/workflows/tmp-refresh-probe-20260902.yml
+          test -e .github/workflows/tmp-refresh-probe-20260902.yml
 
-      - name: Push validated final head
+      - name: Push validated data head
         run: git push origin HEAD:audit/timepoint-20260902-1616
