@@ -22,6 +22,16 @@ const currentShelterData = JSON.parse(currentShelterText);
 const municipalAudit = JSON.parse(municipalAuditText);
 const nationalAudit = JSON.parse(nationalAuditText);
 const coverage = JSON.parse(coverageText);
+const referenceParts = REFERENCE_AT.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/u);
+assert.ok(referenceParts, "REFERENCE_AT format invalid");
+const ledgerReleaseId = `${referenceParts[1]}${referenceParts[2]}${referenceParts[3]}-${referenceParts[4]}${referenceParts[5]}`;
+const releaseLedger = JSON.parse(await readFile(resolve(root, `operations/ledgers/refresh-${ledgerReleaseId}.json`), "utf8"));
+assert.equal(releaseLedger.reference_at, REFERENCE_AT, "release ledger reference_at mismatch");
+const currentDamageReport = Number(releaseLedger.snapshots.damage_report);
+const ledgerCurrentShelters = Number(releaseLedger.snapshots.current_shelters);
+const damageSource = releaseLedger.sources.find((source) => String(source.source_id || "").startsWith("kumamoto-damage"));
+assert.ok(Number.isInteger(currentDamageReport) && currentDamageReport > 0, "release ledger damage report missing");
+assert.ok(damageSource?.url, "release ledger damage source missing");
 
 assert.equal(publicHtml, html, "公開用HTMLがレビュー元HTMLと一致していません");
 assert.equal(municipalAudit.reference_at, REFERENCE_AT, "municipal audit reference_at mismatch");
@@ -113,7 +123,7 @@ const dataStart = html.indexOf("const HUBS=");
 const dataEnd = html.indexOf("/* MUNICIPAL_SUPPORT_AUDIT_END */") + "/* MUNICIPAL_SUPPORT_AUDIT_END */".length;
 assert.ok(dataStart >= 0 && dataEnd > dataStart, "補正後のダッシュボードデータを抽出できません");
 const sandbox = {};
-runInNewContext(`${html.slice(dataStart, dataEnd)}\nglobalThis.__result={HUBS,NEED_MUNICIPALITIES,PROVINCE_NEEDS,TIMELINE_EVENTS,RECORDS,CURRENT_SHELTER_META,CURRENT_SHELTER_ROWS,CURRENT_SHELTERS,SUPPORT_BLOCKS};`, sandbox, { timeout: 5_000 });
+runInNewContext(`${html.slice(dataStart, dataEnd)}\nglobalThis.__result={HUBS,NEED_MUNICIPALITIES,PROVINCE_NEEDS,TIMELINE_EVENTS,RECORDS,CURRENT_SHELTER_META,CURRENT_SHELTER_ROWS,CURRENT_SHELTERS,SUPPORT_BLOCKS,PAGE_RECHECK_META};`, sandbox, { timeout: 5_000 });
 const runtime = sandbox.__result;
 
 const currentRows = currentShelterData.shelters;
@@ -131,7 +141,39 @@ assert.ok(html.includes("filteredShelters().filter(isCurrentShelterMappable)"), 
 assert.ok(runtime.HUBS.some((hub) => hub.id === "mifune"));
 assert.ok(runtime.HUBS.some((hub) => hub.id === "ashikita"));
 assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("61,996棟"));
-assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-09-02", "主要公表値の時点日が不正です");
+const currentEvent = runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status");
+assert.equal(currentEvent.date, "2026-09-02", "主要公表値の時点日が不正です");
+assert.ok(currentEvent.title.includes(`第${currentDamageReport}報`), "タイムライン最新イベントの報番号がledgerと不一致です");
+assert.equal(currentEvent.sourceLabel, `熊本県 被害情報 第${currentDamageReport}報`, "タイムライン最新イベントのsourceLabelがledgerと不一致です");
+assert.ok(currentEvent.tags.includes(`熊本県第${currentDamageReport}報`), "タイムライン最新イベントのtagがledgerと不一致です");
+const currentSummary = currentEvent.summary.match(/避難者([\d,]+)人、開設避難所([\d,]+)か所、人的被害([\d,]+)人、住家被害([\d,]+)棟/u);
+assert.ok(currentSummary, "タイムライン最新イベントの4指標を抽出できません");
+const parseCount = (value) => Number(String(value).replaceAll(",", ""));
+const currentCounts = { evacuees: parseCount(currentSummary[1]), reportedShelters: parseCount(currentSummary[2]), human: parseCount(currentSummary[3]), housing: parseCount(currentSummary[4]) };
+const pShelter = runtime.PROVINCE_NEEDS.find((item) => item.id === "p-shelter");
+assert.ok(pShelter.observed.includes(`第${currentDamageReport}報`) && pShelter.observed.includes(`避難所${currentCounts.reportedShelters.toLocaleString("ja-JP")}か所`) && pShelter.observed.includes(`避難者${currentCounts.evacuees.toLocaleString("ja-JP")}人`), "Needsの県全体避難値が最新タイムラインと不一致です");
+for (const section of ["被害・支援","避難所","支援ニーズ見通し","発災後タイムライン","支援ダッシュボード"]) {
+  const row = runtime.PAGE_RECHECK_META.rows.find((item) => item.section === section);
+  assert.ok(row, `PAGE_RECHECK_META missing: ${section}`);
+  assert.ok(`${row.current} ${row.source} ${row.difference}`.includes(`第${currentDamageReport}報`), `PAGE_RECHECK_META ${section} が最新報と不一致です`);
+}
+assert.equal(runtime.PAGE_RECHECK_META.rows.find((item) => item.section === "被害・支援").url, damageSource.url, "被害・支援recheckの一次情報URLがledgerと不一致です");
+const recheckFunctionStart = html.indexOf("function renderPageRecheck(){");
+const recheckFunctionEnd = html.indexOf("const PROVIDER_LABEL", recheckFunctionStart);
+assert.ok(recheckFunctionStart >= 0 && recheckFunctionEnd > recheckFunctionStart, "renderPageRecheckを抽出できません");
+assert.ok(!/第\d+報/u.test(html.slice(recheckFunctionStart, recheckFunctionEnd)), "renderPageRecheckで報番号をhard-codeしてはいけません");
+const timelineUpdateMatch = currentDisplayHtml.match(/<div class="timeline-update">([\s\S]*?)<\/div>/u);
+assert.ok(timelineUpdateMatch?.[1].includes(`第${currentDamageReport}報`), "トップの発災後タイムライン再確認表示が最新報と不一致です");
+const overviewKpiStart = currentDisplayHtml.indexOf('aria-label="被害・避難状況"');
+const overviewKpiEnd = currentDisplayHtml.indexOf('<div class="overview-layout">', overviewKpiStart);
+const overviewKpis = currentDisplayHtml.slice(overviewKpiStart, overviewKpiEnd);
+assert.ok(overviewKpis.includes(`${currentCounts.evacuees.toLocaleString("ja-JP")}<span class="overview-kpi-unit">人`) && overviewKpis.includes(`${currentCounts.human.toLocaleString("ja-JP")}<span class="overview-kpi-unit">人`) && overviewKpis.includes(`${currentCounts.housing.toLocaleString("ja-JP")}<span class="overview-kpi-unit">棟`), "Overview KPIが最新タイムラインと不一致です");
+assert.ok(overviewKpis.includes(`${ledgerCurrentShelters.toLocaleString("ja-JP")}<span class="overview-kpi-unit">か所`) && overviewKpis.includes("公式JSON現在"), "Overviewの現在避難所数がledgerと不一致です");
+assert.ok(overviewKpis.includes(`熊本県第${currentDamageReport}報`), "Overview KPIの報番号がledgerと不一致です");
+const mapStart = currentDisplayHtml.indexOf('id="mapView"');
+const mapSummary = currentDisplayHtml.slice(mapStart);
+for (const value of [`熊本県第${currentDamageReport}報`, `避難所${currentCounts.reportedShelters.toLocaleString("ja-JP")}か所`, `避難者${currentCounts.evacuees.toLocaleString("ja-JP")}人`, `<div class="metric-label">県報避難所</div><div class="metric-value">${currentCounts.reportedShelters.toLocaleString("ja-JP")}<span`, `<div class="metric-label">人的被害</div><div class="metric-value">${currentCounts.human.toLocaleString("ja-JP")}<span`, `<div class="metric-label">住家被害</div><div class="metric-value">${currentCounts.housing.toLocaleString("ja-JP")}<span`]) assert.ok(mapSummary.includes(value), `Map current summary mismatch: ${value}`);
+assert.ok(currentDisplayHtml.includes(`熊本県第${currentDamageReport}報（9月2日14時）では住家被害${currentCounts.housing.toLocaleString("ja-JP")}棟`), "decision boardの住家被害根拠が最新報と不一致です");
 assert.ok(runtime.TIMELINE_EVENTS.every((event) => Array.isArray(event.tags)), "タイムラインの全イベントにtags配列が必要です");
 
 const auditedKumamoto = runtime.RECORDS.find((record) => record.id === "pair-kumamoto");

@@ -41,11 +41,9 @@ function targetPageMeta(html) {
   meta.rows.push(municipalRow);
   const dashboard = meta.rows.find((row) => row.section === "支援ダッシュボード");
   if (dashboard) {
-    dashboard.current = "県被害・愛媛県支援に加え、他自治体支援を9月2日16:16全件再監査";
-    dashboard.previous = "県第42報・愛媛県8月24日資料／他自治体支援は8月8～19日資料混在";
-    dashboard.difference = "対口支援・他自治体等は割当履歴と現況を分離し、派遣元公式情報に基づくCURRENT／PLANNED／HISTORICAL／UNKNOWNへ更新。";
-    dashboard.source = "熊本県第42報・愛媛県8月24日資料・他自治体支援全件監査";
-    dashboard.url = municipalRow.url;
+    const auditSuffix = `他自治体支援は${auditCheckedLabel}に全件再監査`;
+    if (!dashboard.current.includes(auditSuffix)) dashboard.current = `${dashboard.current}／${auditSuffix}`;
+    if (!dashboard.difference.includes('他自治体支援')) dashboard.difference = `${dashboard.difference} 他自治体支援は派遣元公式情報でCURRENT／PLANNED／HISTORICAL／UNKNOWNを全件再裁定。`;
   }
   return { match, meta };
 }
