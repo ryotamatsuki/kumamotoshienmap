@@ -1,0 +1,90 @@
+/* STAGE3_DETAIL_UI_POLISH_START */
+body .overview-update,body .dashboard-update,body .timeline-update,body .vol-meta{position:relative;border-radius:0!important;background:transparent!important;color:#4f555a!important;font-variant-numeric:tabular-nums}
+body .overview-update::before,body .dashboard-update::before,body .timeline-update::before,body .vol-meta::before{content:"VERIFICATION";display:block;margin-bottom:5px;color:#777d82;font-size:10px;font-weight:650;letter-spacing:.08em}
+body .source-link{position:relative;display:block;margin-top:10px;padding:9px 0 0;border-top:1px solid var(--line);color:#174f79!important;font-size:11px!important;line-height:1.55;text-decoration:underline;text-decoration-color:rgba(23,79,121,.35);text-underline-offset:3px}
+body .source-link::before{content:"SOURCE";display:block;margin-bottom:3px;color:#777d82;font-size:10px;font-weight:650;letter-spacing:.08em;text-decoration:none}
+body .source-item{padding:11px 0;border-bottom:1px solid var(--line)}
+body .source-name{font-size:12px!important;font-weight:650!important}
+body .source-meta{margin-top:3px;color:#6a7075!important;font-variant-numeric:tabular-nums}
+body .source-url{font-size:10px!important;line-height:1.55}
+body .source-url a,body .popup-link,body .vol-link,body .vol-source-item a,body .timeline-detail-actions a{text-decoration:underline;text-decoration-color:rgba(23,79,121,.35);text-underline-offset:3px}
+body .record{border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;margin:0!important}
+body .record:first-of-type{border-top:1px solid var(--line)!important}
+body .record summary{padding:13px 0!important;background:transparent!important}
+body .record summary:hover{background:#fafafa!important}
+body .record-title{font-size:13px!important;font-weight:650!important;letter-spacing:-.005em}
+body .record-sub{margin-top:4px!important;font-size:11px!important;line-height:1.55!important}
+body .record-body{padding:0 0 14px!important;font-size:12px!important;line-height:1.65!important}
+body .record-body dl{grid-template-columns:82px minmax(0,1fr)!important;gap:6px 12px!important;margin:0!important;padding-top:10px;border-top:1px solid rgba(17,19,21,.08)}
+body .record-body dt{color:#747a7f!important;font-size:10px!important;font-weight:650!important;letter-spacing:.03em}
+body .record-body dd{font-size:12px;line-height:1.6}
+body .dashboard-detail{border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body .dashboard-record{border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;padding:13px 0!important}
+body .dashboard-record:first-child{border-top:1px solid var(--line)!important}
+body .dashboard-record-title{font-size:13px;font-weight:650!important}
+body .dashboard-record-meta{color:#6b7176;font-size:11px;line-height:1.55;font-variant-numeric:tabular-nums}
+body .dashboard-section-tag,body .overview-section-tag,body .decision-day,body .vol-section-tag{border:0!important;border-radius:0!important;background:transparent!important;padding:0!important;color:#747a7f!important;letter-spacing:.02em}
+body .timeline-stream{border-radius:0!important;background:transparent!important}
+body .timeline-event{border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;padding:13px 2px!important}
+body .timeline-event:last-child{border-bottom:1px solid var(--line)!important}
+body .timeline-event:hover{background:#fafafa!important}
+body .timeline-event.selected{background:#fafafa!important;box-shadow:inset 2px 0 0 #6b7379!important}
+body .timeline-event-time{font-variant-numeric:tabular-nums;font-weight:650!important;color:#4f555a}
+body .timeline-event-title{font-size:13px;font-weight:650!important}
+body .timeline-event-summary{font-size:11px!important;line-height:1.55;color:#656b70}
+body .timeline-tag{border:0!important;border-radius:0!important;background:transparent!important;padding:0!important;font-size:10px!important;font-weight:650!important}
+body .timeline-detail{border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body .timeline-detail-grid{gap:0!important}
+body .timeline-detail-grid>div{padding:9px 0;border-top:1px solid rgba(17,19,21,.09)}
+body .timeline-detail-grid dt{color:#747a7f;font-size:10px;font-weight:650!important}
+body .timeline-detail-grid dd{font-size:12px;line-height:1.6}
+body .btn,body .map-btn,body .block-map-btn,body .geo-quick button,body .dashboard-field input,body .dashboard-field select,body .timeline-field input,body .timeline-field select,body .filter-row input,body .filter-row select,body .vol-field input,body .vol-field select,body .vol-planning-select,body .vol-cost-row input,body .vol-cost-row select{min-height:42px!important;border:1px solid var(--line)!important;border-radius:6px!important;background:#fff!important;box-shadow:none!important;font-size:12px!important}
+body .btn:hover,body .map-btn:hover,body .block-map-btn:hover,body .geo-quick button:hover{background:#f6f6f4!important}
+body .vol-current,body .vol-stale,body .vol-status{border:0!important;border-radius:0!important;background:transparent!important;padding:2px 0!important;font-size:11px!important;font-weight:650!important}
+body .vol-current::before,body .vol-stale::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+body .vol-section{border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;padding:18px 0 0!important;margin:18px 0 0!important}
+body .vol-section-head{margin-bottom:13px!important}
+body .vol-section-head h3{font-size:16px!important;font-weight:650!important}
+body .vol-section-head p{font-size:11px!important;line-height:1.6!important}
+body .vol-common-grid{gap:0!important}
+body .vol-common-card{border:0!important;border-top:1px solid rgba(17,19,21,.09)!important;border-radius:0!important;background:transparent!important;padding:13px 0!important}
+body .vol-common-card dl{grid-template-columns:104px minmax(0,1fr)!important;gap:6px 12px!important}
+body .vol-common-card dt{color:#747a7f!important;font-size:10px!important}
+body .vol-detail-grid{gap:0!important}
+body .vol-detail-item{border:0!important;border-top:1px solid rgba(17,19,21,.09)!important;border-radius:0!important;background:transparent!important;padding:10px 0!important}
+body .vol-detail-item dt{color:#747a7f!important;font-size:10px!important;letter-spacing:.02em}
+body .vol-detail-item dd{font-size:12px!important;line-height:1.6!important}
+body .vol-application-entry{border-color:var(--line)!important;border-radius:6px!important;background:#fff!important}
+body .vol-filter-set{background:#fafafa!important;border-color:var(--line)!important;border-radius:6px!important}
+body .vol-check{min-height:38px;border-radius:6px!important;background:#fff!important}
+body .vol-check:has(input:checked){background:#f3f5f6!important;color:#26323a!important;border-color:#aeb5ba!important}
+body .vol-summary-detail{border-color:var(--line)!important;border-radius:0!important;background:transparent!important;padding:14px 0!important}
+body .vol-summary-detail-grid{gap:0!important}
+body .vol-summary-detail-item{border:0!important;border-top:1px solid rgba(17,19,21,.09)!important;border-radius:0!important;background:transparent!important;padding:11px 0!important}
+body .vol-selected{border:0!important;border-top:2px solid #747a7f!important;border-radius:0!important;background:#fafafa!important;padding:13px 0!important}
+body .vol-source-item,body .vol-recheck-item{border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body .vol-table-wrap{border-color:var(--line)!important;border-radius:6px!important;background:#fff}
+body .vol-table{font-size:11px!important;background:#fff!important}
+body .vol-table thead th{background:#fff!important;color:#555b60!important;border-bottom:1px solid var(--line)!important;font-size:10px!important;font-weight:650!important;letter-spacing:.01em}
+body .vol-table th,body .vol-table td{padding:10px 8px!important;line-height:1.55!important}
+body .vol-table tbody tr:hover td,body .vol-table tbody tr:hover td:first-child{background:#fafafa!important}
+body .vol-table .vol-detail-row td{background:#fafafa!important}
+body .vol-row-details>summary{padding:9px 12px!important;text-decoration:underline;text-underline-offset:3px}
+body .control,body .legend,body .shelter-toolbar,body .vol-map-main-legend{border:1px solid var(--line)!important;border-radius:6px!important;background:rgba(255,255,255,.98)!important;box-shadow:0 3px 12px rgba(17,19,21,.09)!important}
+body .legend{padding:9px 10px!important}
+body .legend-title,body .control-label{font-size:10px!important;font-weight:650!important;letter-spacing:.02em}
+body .leaflet-popup-content-wrapper,body .leaflet-popup-tip{box-shadow:0 5px 18px rgba(17,19,21,.14)!important}
+body .leaflet-popup-content-wrapper{border-radius:6px!important}
+body .leaflet-popup-content{margin:14px 14px!important;line-height:1.55!important}
+body .popup-title{font-size:15px!important;font-weight:650!important;letter-spacing:-.01em}
+body .popup-address{font-size:11px!important;line-height:1.5!important;margin:4px 0 9px!important}
+body .popup-row{padding:9px 0!important;border-top:1px solid var(--line)!important}
+body .popup-provider{font-size:10px!important;font-weight:650!important;letter-spacing:.02em}
+body .popup-action{font-size:12px!important;font-weight:650!important;line-height:1.5}
+body .popup-meta{font-size:11px!important;color:#62686d!important;line-height:1.55!important;font-variant-numeric:tabular-nums}
+body .popup-link{font-size:11px!important;margin-top:6px!important}
+body .rep-note{margin-top:9px!important;padding:8px 0 0!important;border-top:1px solid rgba(17,19,21,.09)!important;border-radius:0!important;background:transparent!important;font-size:10px!important;line-height:1.55!important}
+body a:focus-visible,body button:focus-visible,body summary:focus-visible,body input:focus-visible,body select:focus-visible{outline:3px solid rgba(24,104,219,.22)!important;outline-offset:2px!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media(max-width:650px){body .btn,body .map-btn,body .block-map-btn,body .geo-quick button,body .dashboard-field input,body .dashboard-field select,body .timeline-field input,body .timeline-field select,body .filter-row input,body .filter-row select,body .vol-field input,body .vol-field select,body .vol-planning-select{min-height:44px!important}body .record-body dl{grid-template-columns:1fr!important;gap:2px!important}body .record-body dt{margin-top:7px}body .vol-common-card dl{grid-template-columns:1fr!important;gap:2px!important}body .vol-common-card dt{margin-top:6px}body .vol-detail-grid{grid-template-columns:1fr!important}body .timeline-detail-grid{grid-template-columns:1fr!important}body .leaflet-popup-content{min-width:0!important;max-width:270px!important}}
+/* STAGE3_DETAIL_UI_POLISH_END */
