@@ -3,8 +3,8 @@
   "meta": {
     "source_url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
     "source_kind": "熊本県公式避難所JSON",
-    "fetched_at": "2026-09-01T15:22:03+09:00",
-    "source_last_modified": "2026-09-01T14:56:29+09:00",
+    "fetched_at": "2026-09-02T16:22:11+09:00",
+    "source_last_modified": "2026-09-02T15:42:44+09:00",
     "current_definition": "熊本県公式の現在開設中一覧（shelterStartTimestampあり・shelterEndTimestamp空）",
     "current_count": 40,
     "coordinate_priority": [
@@ -35,7 +35,7 @@
       "coordinate_master_id": "00000124",
       "lat": 32.71606,
       "lng": 130.677994,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -65,7 +65,7 @@
       "coordinate_master_id": "00000136",
       "lat": 32.709103500000005,
       "lng": 130.7288158,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -95,7 +95,7 @@
       "coordinate_master_id": "00000138",
       "lat": 32.70747,
       "lng": 130.739995,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -125,7 +125,7 @@
       "coordinate_master_id": "00000694",
       "lat": 32.507089,
       "lng": 130.597324,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -155,7 +155,7 @@
       "coordinate_master_id": null,
       "lat": 32.50734,
       "lng": 130.608834,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": null,
       "candidate_master_ids": []
     },
@@ -175,7 +175,7 @@
       "coordinate_master_id": "00000669",
       "lat": 32.504782,
       "lng": 130.610442,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -205,7 +205,7 @@
       "coordinate_master_id": "00000682",
       "lat": 32.515254,
       "lng": 130.630074,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -226,7 +226,7 @@
       "name": "太田郷小学校",
       "address": "八代市日置町445",
       "status": "開設",
-      "congestion": "1",
+      "congestion": null,
       "opened_at": "2026-08-30 12:00:00",
       "closed_at": null,
       "coordinate_status": "confirmed",
@@ -235,7 +235,7 @@
       "coordinate_master_id": null,
       "lat": 32.510321,
       "lng": 130.62218,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": null,
       "candidate_master_ids": []
     },
@@ -255,7 +255,7 @@
       "coordinate_master_id": "00000714",
       "lat": 32.510926,
       "lng": 130.62463,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -285,7 +285,7 @@
       "coordinate_master_id": "00000677",
       "lat": 32.497581,
       "lng": 130.592541,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -315,7 +315,7 @@
       "coordinate_master_id": "00000698",
       "lat": 32.518414,
       "lng": 130.6142,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -345,7 +345,7 @@
       "coordinate_master_id": "00000691",
       "lat": 32.487086,
       "lng": 130.616723,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -375,7 +375,7 @@
       "coordinate_master_id": "00000735",
       "lat": 32.483684,
       "lng": 130.615509,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -405,7 +405,7 @@
       "coordinate_master_id": "00000782",
       "lat": 32.487897,
       "lng": 130.609082,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -435,7 +435,7 @@
       "coordinate_master_id": "00000706",
       "lat": 32.434993,
       "lng": 130.578835,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -465,7 +465,7 @@
       "coordinate_master_id": "00000720",
       "lat": 32.439129,
       "lng": 130.581568,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -486,7 +486,7 @@
       "name": "千丁コミュニティセンター",
       "address": "八代市千丁町新牟田1434",
       "status": "開設",
-      "congestion": null,
+      "congestion": "1",
       "opened_at": "2026-07-28 16:27:00",
       "closed_at": null,
       "coordinate_status": "confirmed",
@@ -495,7 +495,7 @@
       "coordinate_master_id": "00000705",
       "lat": 32.535033,
       "lng": 130.633638,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -525,7 +525,7 @@
       "coordinate_master_id": "00000684",
       "lat": 32.562104,
       "lng": 130.644848,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -555,7 +555,7 @@
       "coordinate_master_id": null,
       "lat": 32.560646,
       "lng": 130.645834,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": null,
       "candidate_master_ids": []
     },
@@ -575,7 +575,7 @@
       "coordinate_master_id": "00000767",
       "lat": 32.567757,
       "lng": 130.662366,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -605,7 +605,7 @@
       "coordinate_master_id": null,
       "lat": 32.684182,
       "lng": 130.664418,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": null,
       "candidate_master_ids": []
     },
@@ -625,7 +625,7 @@
       "coordinate_master_id": "00002151",
       "lat": 32.64628604433004,
       "lng": 130.66802859306335,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -655,7 +655,7 @@
       "coordinate_master_id": "00002192",
       "lat": 32.64785704367983,
       "lng": 130.68436411272134,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -685,7 +685,7 @@
       "coordinate_master_id": "00002193",
       "lat": 32.652025512723746,
       "lng": 130.67878183007937,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -715,7 +715,7 @@
       "coordinate_master_id": "00002194",
       "lat": 32.59117304361442,
       "lng": 130.70501291133147,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -745,7 +745,7 @@
       "coordinate_master_id": null,
       "lat": 32.63585132615984,
       "lng": 130.7519531247817,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": null,
       "candidate_master_ids": []
     },
@@ -765,7 +765,7 @@
       "coordinate_master_id": "00001161",
       "lat": 32.606915,
       "lng": 130.718937,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -795,7 +795,7 @@
       "coordinate_master_id": "00001162",
       "lat": 32.590645,
       "lng": 130.713716,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -825,7 +825,7 @@
       "coordinate_master_id": null,
       "lat": 32.645966,
       "lng": 130.66853,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": null,
       "candidate_master_ids": []
     },
@@ -845,7 +845,7 @@
       "coordinate_master_id": "00001423",
       "lat": 32.633125,
       "lng": 130.808814,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -875,7 +875,7 @@
       "coordinate_master_id": "00001694",
       "lat": 32.715084,
       "lng": 130.801403,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -905,7 +905,7 @@
       "coordinate_master_id": "00001728",
       "lat": 32.74009,
       "lng": 130.758587,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -935,7 +935,7 @@
       "coordinate_master_id": "00001729",
       "lat": 32.74009,
       "lng": 130.758587,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -965,7 +965,7 @@
       "coordinate_master_id": null,
       "lat": 32.8001832836204,
       "lng": 130.817423509106,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": null,
       "candidate_master_ids": []
     },
@@ -985,7 +985,7 @@
       "coordinate_master_id": "00002335",
       "lat": 32.65073059352114,
       "lng": 130.8116501569748,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -1015,7 +1015,7 @@
       "coordinate_master_id": null,
       "lat": 32.582578,
       "lng": 130.675944,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": null,
       "candidate_master_ids": []
     },
@@ -1035,7 +1035,7 @@
       "coordinate_master_id": "00001858",
       "lat": 32.553425,
       "lng": 130.674219,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -1065,7 +1065,7 @@
       "coordinate_master_id": "00001859",
       "lat": 32.554026,
       "lng": 130.679363,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
@@ -1095,7 +1095,7 @@
       "coordinate_master_id": null,
       "lat": 32.554276,
       "lng": 130.682351,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": null,
       "candidate_master_ids": []
     },
@@ -1115,7 +1115,7 @@
       "coordinate_master_id": "00001864",
       "lat": 32.363993,
       "lng": 130.508023,
-      "coordinate_source_as_of": "2026-09-01T14:56:29+09:00",
+      "coordinate_source_as_of": "2026-09-02T15:42:44+09:00",
       "coordinate_crosscheck": {
         "status": "within_threshold",
         "threshold_m": 100,
