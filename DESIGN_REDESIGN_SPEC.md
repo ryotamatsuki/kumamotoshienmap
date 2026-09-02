@@ -1,11 +1,11 @@
 # 熊本支援HP — 現行画面 → 改修後のデザイン方針
 
-Status: **DESIGN SPEC ONLY / 実装変更なし**  
-Target: `index.html` / `ehime_kumamoto_support_geocoded_shelters_20260802.html` / sender coverage UI  
-Reference: `ryotamatsuki/design-md-references`  
-Primary style: `openai/DESIGN.md`  
-Secondary style: `atlassian/DESIGN.md`  
-Limited references: `linear/DESIGN.md`（操作部の密度・整列） / `perplexity/DESIGN.md`（根拠・出典の見せ方）
+- Status: **DESIGN SPEC ONLY / 実装変更なし**
+- Target: `index.html` / `ehime_kumamoto_support_geocoded_shelters_20260802.html` / sender coverage UI
+- Reference: `ryotamatsuki/design-md-references`
+- Primary style: `openai/DESIGN.md`
+- Secondary style: `atlassian/DESIGN.md`
+- Limited references: `linear/DESIGN.md`（操作部の密度・整列） / `perplexity/DESIGN.md`（根拠・出典の見せ方）
 
 ---
 
