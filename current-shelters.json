@@ -3,7 +3,7 @@
   "meta": {
     "source_url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
     "source_kind": "熊本県公式避難所JSON",
-    "fetched_at": "2026-09-02T16:22:11+09:00",
+    "fetched_at": "2026-09-02T16:27:54+09:00",
     "source_last_modified": "2026-09-02T15:42:44+09:00",
     "current_definition": "熊本県公式の現在開設中一覧（shelterStartTimestampあり・shelterEndTimestamp空）",
     "current_count": 40,
