@@ -4,7 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { runInNewContext } from "node:vm";
 
-const REFERENCE_AT = "2026-09-01T15:04:00+09:00";
+const REFERENCE_AT = "2026-09-02T16:16:00+09:00";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html");
 const publicPath = resolve(root, "public", "dashboard.html");
@@ -15,7 +15,7 @@ const [html, publicHtml, volunteerCss, currentShelterText, municipalAuditText, n
   readFile(resolve(root, "current-shelters.json"), "utf8"),
   readFile(resolve(root, "municipal-support-audit.json"), "utf8"),
   readFile(resolve(root, "national-support-audit.json"), "utf8"),
-  readFile(resolve(root, "operations/audits/institution-coverage-20260901-1504.json"), "utf8"),
+  readFile(resolve(root, "operations/audits/institution-coverage-20260902-1616.json"), "utf8"),
 ]);
 
 const currentShelterData = JSON.parse(currentShelterText);
@@ -27,20 +27,20 @@ assert.equal(publicHtml, html, "公開用HTMLがレビュー元HTMLと一致し�
 assert.equal(municipalAudit.reference_at, REFERENCE_AT, "municipal audit reference_at mismatch");
 assert.equal(nationalAudit.reference_at, REFERENCE_AT, "national audit reference_at mismatch");
 assert.equal(coverage.reference_at, REFERENCE_AT, "institution coverage reference_at mismatch");
-assert.equal(coverage.operation_version, "2.5", "institution coverage must use operation v2.5");
+assert.equal(coverage.operation_version, "2.6", "institution coverage must use operation v2.5");
 
 const requiredText = [
-  "経過日 D+33（県第49報：8月28日8時）",
-  "2,442<span class=\"overview-kpi-unit\">人",
-  "64<span class=\"overview-kpi-unit\">か所",
-  "402<span class=\"overview-kpi-unit\">人",
-  "43,292<span class=\"overview-kpi-unit\">棟",
+  "経過日 D+36（県第51報：9月2日14時）",
+  "2,035<span class=\"overview-kpi-unit\">人",
+  "40<span class=\"overview-kpi-unit\">か所",
+  "404<span class=\"overview-kpi-unit\">人",
+  "61,996<span class=\"overview-kpi-unit\">棟",
   "約4,300戸",
   "履歴スナップショット",
   "対口支援・他自治体支援を全件再監査",
-  "9月1日15:04に対口支援・他自治体支援を全件再監査",
-  "国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは9/3宿泊分の予約受付をCURRENT、宿泊実施はPLANNED",
-  "9月1日閣議の非常災害復旧復興本部設置を確認し、9月1日実働主体を再監査",
+  "9月2日16:16に対口支援・他自治体支援を全件再監査",
+  "国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは予約受付終了、9/3宿泊実施はPLANNED",
+  "9月1日設置の非常災害復旧復興本部を確認し、9月2日実働主体を再監査",
   "現在開設避難所総数",
   "地図表示数",
   "座標未確認数",
@@ -62,9 +62,9 @@ const runtimeScriptStart = html.indexOf('<script src="https://cdn.jsdelivr.net/n
 assert.ok(runtimeScriptStart > 0, "公開HTMLの初期表示領域を特定できません");
 const currentDisplayHtml = html.slice(0, runtimeScriptStart);
 for (const value of [
-  "2026年9月1日 15:04",
-  "9月1日15:04基準で全件再監査",
-  "国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは9/3宿泊分の予約受付をCURRENT、宿泊実施はPLANNED",
+  "2026年9月2日 16:16",
+  "9月2日16:16基準で全件再監査",
+  "国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは予約受付終了、9/3宿泊実施はPLANNED",
   "8月19日行政応援971人は履歴スナップショット",
 ]) assert.ok(currentDisplayHtml.includes(value), `初期表示の最新値がありません: ${value}`);
 
@@ -106,8 +106,8 @@ const rawTotals = needs.reduce((totals, row) => {
   return totals;
 }, { shelters: 0, evacuees: 0, waterOutage: 0, housing: 0, human: 0 });
 assert.deepEqual(rawTotals, { shelters: 65, evacuees: 2_709, waterOutage: 4_284, housing: 38_498, human: 396 });
-assert.ok(html.includes("24市町の人的被害表内合計396人。県第49報の人的被害合計は402人"));
-assert.ok(html.includes("住家被害の市町別旧スナップショット38,498棟と県第49報43,292棟は時点が異なるため単純差分を現況差と扱わない"));
+assert.ok(html.includes("24市町の人的被害表内合計396人。県第51報の人的被害合計は404人"));
+assert.ok(html.includes("住家被害の市町別旧スナップショット38,498棟と県第51報61,996棟は時点が異なるため単純差分を現況差と扱わない"));
 
 const dataStart = html.indexOf("const HUBS=");
 const dataEnd = html.indexOf("/* MUNICIPAL_SUPPORT_AUDIT_END */") + "/* MUNICIPAL_SUPPORT_AUDIT_END */".length;
@@ -130,8 +130,8 @@ assert.ok(html.includes("filteredShelters().filter(isCurrentShelterMappable)"), 
 
 assert.ok(runtime.HUBS.some((hub) => hub.id === "mifune"));
 assert.ok(runtime.HUBS.some((hub) => hub.id === "ashikita"));
-assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("43,292棟"));
-assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-08-28", "主要公表値の時点日が不正です");
+assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("61,996棟"));
+assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-09-02", "主要公表値の時点日が不正です");
 assert.ok(runtime.TIMELINE_EVENTS.every((event) => Array.isArray(event.tags)), "タイムラインの全イベントにtags配列が必要です");
 
 const auditedKumamoto = runtime.RECORDS.find((record) => record.id === "pair-kumamoto");

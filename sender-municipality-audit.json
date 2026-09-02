@@ -3,9 +3,9 @@
   "repository": "ryotamatsuki/kumamotoshienmap",
   "audit_type": "sender_municipality_coverage",
   "policy_version": "2.6",
-  "reference_at": "2026-09-01T15:04:00+09:00",
-  "checked_at": "2026-09-01T15:12:00+09:00",
-  "base_main_sha": "46da78b94752c906e0b1975636aaf8a64443500c",
+  "reference_at": "2026-09-02T16:16:00+09:00",
+  "checked_at": "2026-09-02T16:35:00+09:00",
+  "base_main_sha": "62e4c9c805ba0c2333d44b10706b0cf30d59041e",
   "entity_files": [
     "sender-audit/ehime.json",
     "sender-audit/hokkaido-tohoku.json",
@@ -312,6 +312,6 @@
   },
   "blocking_unresolved": [],
   "timepoint_note": "2026年9月1日15:04基準。愛媛20市町をゼロベース再確認し、全国47都道府県discoveryを再実施。予定期間到来のみではCURRENTにせず、新宮市は市公式の現在形の派遣記載によりCURRENT追加、武雄市は募集開始のみのためPLANNED追加。長崎9市町は前日発表の派遣予定だけでは実働を確認できないためPLANNEDを維持。",
-  "rechecked_at": "2026-09-01T15:12:00+09:00",
+  "rechecked_at": "2026-09-02T16:35:00+09:00",
   "release_id": "20260901-1504"
 }

@@ -54,14 +54,15 @@ for (let index = 1; index < sorted.length; index += 1) {
 }
 
 const indexOf = (id) => sorted.findIndex((item) => item.id === id);
-for (const id of ["t-kumamoto-0816", "t-kumamoto-0819", "t-kumamoto-0821", "t-ehime-end"]) {
+for (const id of ["t-kumamoto-0816", "t-kumamoto-0819", "t-kumamoto-0821", "t-ehime-end", "t-current-status"]) {
   if (indexOf(id) < 0) fail(`回帰確認対象${id}が見つかりません。`);
 }
 if (!(indexOf("t-kumamoto-0816") < indexOf("t-kumamoto-0819")
   && indexOf("t-kumamoto-0819") < indexOf("t-kumamoto-0821")
-  && indexOf("t-kumamoto-0821") < indexOf("t-ehime-end"))) {
-  fail("8/16→8/19→8/21→8/31の表示順が保証されていません。");
+  && indexOf("t-kumamoto-0821") < indexOf("t-ehime-end")
+  && indexOf("t-ehime-end") < indexOf("t-current-status"))) {
+  fail("8/16→8/19→8/21→8/31→9/2の表示順が保証されていません。");
 }
-if (sorted.at(-1)?.id !== "t-ehime-end") fail("8/31予定終期がタイムライン末尾になっていません。");
+if (sorted.at(-1)?.id !== "t-current-status") fail("9/2最新被害スナップショットがタイムライン末尾になっていません。");
 
 console.log(JSON.stringify({ status: "PASS", events: events.length, first: sorted[0]?.date, last: sorted.at(-1)?.date }));

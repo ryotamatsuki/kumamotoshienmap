@@ -1,5 +1,5 @@
 {
-  "reference_at": "2026-09-01T15:04:00+09:00",
+  "reference_at": "2026-09-02T16:16:00+09:00",
   "sources": [
     {
       "source_id": "ehime-matsuyama-current",
@@ -7,8 +7,8 @@
       "title": "令和8年熊本地震への松山市の対応状況",
       "url": "https://www.city.matsuyama.ehime.jp/kurashi/bosai/bousai/kouhou/r8kumamoto/taiouzyoukyou.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-imabari-donation",
@@ -16,8 +16,8 @@
       "title": "令和8年熊本地震災害義援金",
       "url": "https://www.city.imabari.ehime.jp/fukusis/gienkin/R8-kumamoto.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-ozu-donation",
@@ -25,8 +25,8 @@
       "title": "令和8年熊本地震災害義援金",
       "url": "https://www.city.ozu.ehime.jp/soshiki/syakaifukushi/74478.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-iyo-support",
@@ -34,8 +34,8 @@
       "title": "令和8年熊本地震に対する支援",
       "url": "https://www.city.iyo.lg.jp/soumukikaku/enjo/2026kumamoto.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-shikokuchuo-current",
@@ -43,9 +43,9 @@
       "title": "令和8年熊本地震災害義援金",
       "url": "https://www.city.shikokuchuo.ehime.jp/",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "市公式サイトで「令和8年熊本地震災害義援金 受付中」を確認。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-seiyo-proxy",
@@ -53,8 +53,8 @@
       "title": "令和8年熊本地震災害支援代理寄附受付",
       "url": "https://www.city.seiyo.ehime.jp/shisei/kumamotozisinnsien/18773.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-seiyo-dispatch",
@@ -62,9 +62,9 @@
       "title": "熊本地震被災地への職員派遣",
       "url": "https://www.city.seiyo.ehime.jp/",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "派遣予定期間の記載。基準時点実働の直接根拠には用いない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-toon-dispatch",
@@ -72,8 +72,8 @@
       "title": "熊本県氷川町への職員派遣",
       "url": "https://www.city.toon.ehime.jp/soshiki/5/33683.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-kumakogen-jrc",
@@ -81,9 +81,9 @@
       "title": "令和8年熊本地震災害義援金",
       "url": "https://www.kumakogen.jp/",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "町公式で日本赤十字社義援金案内を確認。町自身の送出活動の継続状態は別途裁定。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-masaki-donation",
@@ -91,8 +91,8 @@
       "title": "令和8年熊本地震災害義援金",
       "url": "https://www.town.masaki.ehime.jp/soshiki/2/36255.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-tobe-donation",
@@ -100,8 +100,8 @@
       "title": "令和8年熊本地震災害義援金",
       "url": "https://www.town.tobe.ehime.jp/kurashi_tetsuzuki/sumai_machizukuri/6/5724.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-uchiko-dispatch",
@@ -109,8 +109,8 @@
       "title": "令和8年熊本地震被災地支援（町長室）",
       "url": "https://www.town.uchiko.ehime.jp/site/tyoutyoushitsuheyokoso/cyoucyouaisatsu202608.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-ikata-donation",
@@ -118,8 +118,8 @@
       "title": "令和8年熊本地震災害義援金",
       "url": "https://www.town.ikata.ehime.jp/soshiki/1/27491.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-kihoku-support",
@@ -127,8 +127,8 @@
       "title": "令和8年熊本地震に伴う支援",
       "url": "https://www.town.kihoku.ehime.jp/soshiki/bousai/35733.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-ainan-listing",
@@ -136,9 +136,9 @@
       "title": "令和8年熊本地震災害義援金募金箱の設置",
       "url": "https://www.town.ainan.ehime.jp/",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "町公式サイト掲載を確認したが基準時点の受付継続期間を直接確認できず。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-yawatahama-listing",
@@ -146,9 +146,9 @@
       "title": "令和8年熊本地震義援金へのご協力のお願い",
       "url": "https://www.city.yawatahama.ehime.jp/",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "市公式サイト掲載を確認したが基準時点の受付継続期間を直接確認できず。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-saijo-listing",
@@ -156,9 +156,9 @@
       "title": "令和8年熊本地震 被災地支援情報",
       "url": "https://www.city.saijo.ehime.jp/",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "市公式サイトの支援情報掲載を確認。基準時点の個別活動継続を直接確認できず。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "ehime-proxy-discovery",
@@ -166,9 +166,9 @@
       "title": "令和8年熊本地震 災害支援代理寄附（愛媛県内協力自治体の発見）",
       "url": "https://www.furusato-tax.jp/saigai/detail/3144",
       "tier": 5,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "候補発見専用。CURRENT裁定には使用しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "akita-municipal-wave2",
@@ -176,8 +176,8 @@
       "title": "令和8年熊本地震被災地への応援職員派遣（第2陣）",
       "url": "https://www.pref.akita.lg.jp/pages/archive/98658",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "miyagi-current-roster",
@@ -185,8 +185,8 @@
       "title": "令和8年熊本地震に係る宮城県の対応",
       "url": "https://www.pref.miyagi.jp/soshiki/kikisom/kumamoto-tokusethu.html",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "miyagi-sendai-health-plan",
@@ -194,9 +194,9 @@
       "title": "熊本県への保健師等チーム派遣",
       "url": "https://www.pref.miyagi.jp/",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "仙台市を含む9月派遣予定を確認。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "kanagawa-wave1",
@@ -204,8 +204,8 @@
       "title": "熊本県への応援職員派遣",
       "url": "https://www.pref.kanagawa.jp/docs/bu4/prs/r7010643.html",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "toyama-support",
@@ -213,8 +213,8 @@
       "title": "令和8年熊本地震に係る対口支援職員等の派遣状況",
       "url": "https://www.pref.toyama.jp/1902/bousaianzen/bousai/jishin/kumamotozishin.html",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "shiga-support",
@@ -222,8 +222,8 @@
       "title": "令和8年熊本地震への応援職員派遣",
       "url": "https://www.pref.shiga.lg.jp/kensei/koho/e-shinbun/oshirase/352146.html",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "okayama-support",
@@ -231,8 +231,8 @@
       "title": "令和8年熊本地震に係るチームおかやま派遣",
       "url": "https://www.pref.okayama.jp/page/1051632.html",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "yamaguchi-support",
@@ -240,8 +240,8 @@
       "title": "令和8年熊本地震被災地への職員派遣",
       "url": "https://www.pref.yamaguchi.lg.jp/press/359667.html",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "tokushima-support",
@@ -249,8 +249,8 @@
       "title": "令和8年熊本地震被災地への職員派遣",
       "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315847/",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "fukuoka-support",
@@ -258,8 +258,8 @@
       "title": "令和8年熊本地震による被害に係る職員の派遣等",
       "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken5.html",
       "tier": 2,
-      "checked_at": "2026-09-01T15:12:00+09:00",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "checked_at": "2026-09-02T16:35:00+09:00",
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "baseline-sapporo",
@@ -267,9 +267,9 @@
       "title": "令和8年熊本地震に伴う札幌市の対応",
       "url": "https://www.city.sapporo.jp/kinkyu/202607_kumamotojishin.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "既存監査で把握済みの送出自治体。8月27日基準CURRENTは推定しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "baseline-tokorozawa",
@@ -277,9 +277,9 @@
       "title": "熊本市への災害応援職員派遣",
       "url": "https://www.city.tokorozawa.saitama.jp/tokoronews/press/r8/08/kumamotoouennsyokuinn0820.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "既存監査で把握済みの送出自治体。8月27日基準CURRENTは推定しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "baseline-koshigaya",
@@ -287,9 +287,9 @@
       "title": "令和8年熊本地震における支援の状況",
       "url": "https://www.city.koshigaya.saitama.jp/anzen_anshin/bosai/oshirase/kumamoto_sien.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "既存監査で把握済みの送出自治体。8月27日基準CURRENTは推定しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "baseline-chiba",
@@ -297,9 +297,9 @@
       "title": "令和8年熊本地震に対する支援・取り組み",
       "url": "https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/01r8kumamotozisin2.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "既存監査で把握済みの送出自治体。8月27日基準CURRENTは推定しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "baseline-kawasaki",
@@ -307,9 +307,9 @@
       "title": "住家被害認定調査チーム派遣（第2報）",
       "url": "https://www.city.kawasaki.jp/templates/prs/601/0000189631.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "既存監査で把握済みの送出自治体。8月27日基準CURRENTは推定しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "baseline-nagoya",
@@ -317,9 +317,9 @@
       "title": "熊本県八代市への職員派遣",
       "url": "https://www.city.nagoya.jp/houdou/3003942/3003947/3005441.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "既存監査で把握済みの送出自治体。8月27日基準CURRENTは推定しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "baseline-kyoto",
@@ -327,9 +327,9 @@
       "title": "令和8年熊本地震に伴う京都市の支援状況",
       "url": "https://www.city.kyoto.lg.jp/gyozai/page/0000357660.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "既存監査で把握済みの送出自治体。8月27日基準CURRENTは推定しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "baseline-osaka",
@@ -337,9 +337,9 @@
       "title": "令和8年熊本地震に対する本市の対応状況",
       "url": "https://www.city.osaka.lg.jp/kikikanrishitsu/page/0000684623.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "既存監査で把握済みの送出自治体。8月27日基準CURRENTは推定しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "baseline-kitakyushu",
@@ -347,9 +347,9 @@
       "title": "令和8年熊本地震への支援",
       "url": "https://ssl.city.kitakyushu.lg.jp/contents/90000638_00003.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "既存監査で把握済みの送出自治体。8月27日基準CURRENTは推定しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "baseline-saiki",
@@ -357,9 +357,9 @@
       "title": "熊本地震被災地への給水支援",
       "url": "https://www.city.saiki.oita.jp/kiji00311824/index.html",
       "tier": 1,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "既存監査で把握済みの送出自治体。8月27日基準CURRENTは推定しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     },
     {
       "source_id": "repository-municipal-audit-0826",
@@ -367,9 +367,9 @@
       "title": "municipal-support-audit.json（2026-08-26既存監査）",
       "url": "https://github.com/ryotamatsuki/kumamotoshienmap/blob/c3a216faa48062d14cb88b07a36a4c23e705a43a/municipal-support-audit.json",
       "tier": 4,
-      "checked_at": "2026-09-01T15:12:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00",
       "note": "前回監査からのrequired universe継承専用。CURRENT裁定の根拠には使用しない。",
-      "rechecked_at": "2026-09-01T15:12:00+09:00"
+      "rechecked_at": "2026-09-02T16:35:00+09:00"
     }
   ]
 }

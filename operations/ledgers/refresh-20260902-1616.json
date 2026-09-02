@@ -1,0 +1,191 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260902-1616",
+  "release_id": "20260902-1616",
+  "reference_at": "2026-09-02T16:16:00+09:00",
+  "rechecked_at": "2026-09-02T16:35:00+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "62e4c9c805ba0c2333d44b10706b0cf30d59041e",
+  "expected_changed_files": [
+    ".github/workflows/post-deploy-pages-smoke.yml",
+    "current-shelters.json",
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "municipal-support-audit.json",
+    "national-support-audit.json",
+    "operations/audits/institution-coverage-20260902-1616.json",
+    "operations/ledgers/refresh-20260902-1616.json",
+    "public/dashboard.html",
+    "research_official_north.json",
+    "research_official_south.json",
+    "research_official_statewide.json",
+    "scripts/sender-coverage-lib.mjs",
+    "scripts/sync-municipal-support-audit.mjs",
+    "scripts/sync-national-support-audit.mjs",
+    "scripts/validate-current-state-audit.mjs",
+    "scripts/validate-dashboard-current.mjs",
+    "scripts/validate-institution-coverage.mjs",
+    "scripts/validate-national-support-audit.mjs",
+    "scripts/validate-timeline-order.mjs",
+    "scripts/validate-volunteer-data.mjs",
+    "sender-audit/chubu.json",
+    "sender-audit/chugoku-shikoku.json",
+    "sender-audit/crosscutting-additions.json",
+    "sender-audit/discovery-additions.json",
+    "sender-audit/discovery.json",
+    "sender-audit/ehime.json",
+    "sender-audit/hokkaido-tohoku.json",
+    "sender-audit/kanto.json",
+    "sender-audit/kinki.json",
+    "sender-audit/kyushu-okinawa.json",
+    "sender-audit/sources-additions.json",
+    "sender-audit/sources.json",
+    "sender-audit/timepoint-20260828-additions.json",
+    "sender-audit/timepoint-20260830-additions.json",
+    "sender-audit/timepoint-20260831-additions.json",
+    "sender-audit/timepoint-20260901-additions.json",
+    "sender-municipality-audit.json",
+    "volunteer-data.js"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-damage51-0902",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/222/276831.html",
+      "source_as_of": "2026-09-02T14:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-current-shelters-0902",
+      "publisher": "熊本県 防災情報ポータル",
+      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+      "source_as_of": "2026-09-02T19:01:02+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-volunteer-activity-0902",
+      "publisher": "熊本県社会福祉協議会",
+      "url": "https://www.fukushi-kumamoto.or.jp/files/libs/8662/202609021133091423.pdf",
+      "source_as_of": "2026-09-02",
+      "checked_at": "2026-09-02T16:35:00+09:00"
+    },
+    {
+      "source_id": "jwa-purifier-complete-0828",
+      "publisher": "水資源機構",
+      "url": "https://www.water.go.jp/honsya/honsya/bousai/r807kumamotojishin/index.html",
+      "source_as_of": "2026-08-28",
+      "checked_at": "2026-09-02T16:35:00+09:00"
+    },
+    {
+      "source_id": "saiki-water-ended-0901",
+      "publisher": "佐伯市",
+      "url": "https://www.city.saiki.oita.jp/kiji00311824/index.html",
+      "source_as_of": "2026-09-01",
+      "checked_at": "2026-09-02T16:35:00+09:00"
+    },
+    {
+      "source_id": "mlit-report51-0831",
+      "publisher": "国土交通省",
+      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
+      "source_as_of": "2026-08-31T17:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00"
+    },
+    {
+      "source_id": "mod-hakuo2-0901-reservation",
+      "publisher": "防衛省・自衛隊",
+      "url": "https://www.mod.go.jp/j/approach/defense/saigai/index.html",
+      "source_as_of": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-02T16:35:00+09:00"
+    },
+    {
+      "source_id": "nagasaki-wave-0831",
+      "publisher": "長崎県",
+      "url": "https://www.pref.nagasaki.jp/press-contents/52044.html",
+      "source_as_of": "2026-08-31",
+      "checked_at": "2026-09-02T16:35:00+09:00"
+    },
+    {
+      "source_id": "takeo-volunteer-0831",
+      "publisher": "武雄市",
+      "url": "https://www.city.takeo.lg.jp/information/2026/08/015981.html",
+      "source_as_of": "2026-08-31",
+      "checked_at": "2026-09-02T16:35:00+09:00"
+    },
+    {
+      "source_id": "wakayama-shingu-0828",
+      "publisher": "新宮市",
+      "url": "https://www.city.shingu.lg.jp/info/3055",
+      "source_as_of": "2026-08-28",
+      "checked_at": "2026-09-02T16:35:00+09:00"
+    }
+  ],
+  "coverage": {
+    "recipient_municipalities": 45,
+    "institution_missing": 0,
+    "institution_orphan_source_mentions": 0,
+    "current_shelters": 40,
+    "current_shelter_coordinates_confirmed": 40,
+    "current_shelter_unresolved": 0,
+    "ehime_required": 20,
+    "ehime_adjudicated": 20,
+    "ehime_missing": 0,
+    "prefecture_discovery_checked": 47,
+    "sender_entities_discovered": 316,
+    "sender_entities_adjudicated": 316,
+    "sender_orphan_source_mentions": 0,
+    "sender_blocking_conflicts": 0,
+    "sender_states": {
+      "CURRENT": 12,
+      "PLANNED": 15,
+      "HISTORICAL": 17,
+      "UNKNOWN": 272,
+      "NO_EVIDENCE": 0,
+      "CONFLICT": 0
+    },
+    "municipal_support": "audited",
+    "national_support": "audited",
+    "current_count": 40,
+    "unresolved_count": 0,
+    "conflict_count": 0
+  },
+  "snapshots": {
+    "page_reference_at": "2026-09-02T16:16:00+09:00",
+    "damage_source_as_of": "2026-09-02T14:00:00+09:00",
+    "damage_report": 51,
+    "current_shelters": 40,
+    "shelter_source_last_modified": "2026-09-02T19:01:02+09:00",
+    "sender_reference_at": "2026-09-02T16:16:00+09:00",
+    "volunteer_activity_0902": {
+      "participants": 108,
+      "new_requests": 60,
+      "activities": 24,
+      "completed": 24
+    }
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {
+      "issue_id": "national-same-definition-continuity",
+      "state": "UNKNOWN",
+      "reason": "国・関係機関の一部は9月2日16:16基準の同一定義実働を直接確認できず、過去値をCURRENTへ流用しない。",
+      "owner": "timepoint-audit",
+      "source_ids": [
+        "mlit-report51-0831"
+      ],
+      "next_review_at": "2026-09-03T09:00:00+09:00"
+    },
+    {
+      "issue_id": "sender-direct-activity",
+      "state": "PLANNED",
+      "reason": "予定期間到来や募集開始だけでは実派遣・実活動をCURRENTと推定せず、直接実働を確認できないsenderはPLANNEDとして保持する。",
+      "owner": "sender-audit",
+      "source_ids": [
+        "nagasaki-wave-0831",
+        "takeo-volunteer-0831"
+      ],
+      "next_review_at": "2026-09-03T09:00:00+09:00"
+    }
+  ]
+}

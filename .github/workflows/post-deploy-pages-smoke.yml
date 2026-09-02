@@ -85,10 +85,10 @@ jobs:
           grep -F './sender-municipalities.html' /tmp/root.html
           grep -F '送出基礎自治体 Coverage' /tmp/root.html
           grep -F 'NATIONAL_SUPPORT_AUDIT_START' /tmp/deployed-dashboard.html
-          grep -F '9月1日15:04基準で全件再監査' /tmp/deployed-dashboard.html
-          grep -F '国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは9/3宿泊分の予約受付をCURRENT、宿泊実施はPLANNED' /tmp/deployed-dashboard.html
-          grep -F '9月1日閣議の非常災害復旧復興本部設置を確認し、9月1日実働主体を再監査' /tmp/deployed-dashboard.html
-          grep -F '9/3宿泊分 予約受付中' /tmp/deployed-dashboard.html
+          grep -F '9月2日16:16基準で全件再監査' /tmp/deployed-dashboard.html
+          grep -F '国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは予約受付終了、9/3宿泊実施はPLANNED' /tmp/deployed-dashboard.html
+          grep -F '9月1日設置の非常災害復旧復興本部を確認し、9月2日実働主体を再監査' /tmp/deployed-dashboard.html
+          grep -F '予約受付終了' /tmp/deployed-dashboard.html
           grep -F '第4期・9月3日～6日必要人数到達' /tmp/volunteer-data.js
           grep -F '愛媛県内20市町' /tmp/deployed-sender.html
           grep -F '全国基礎自治体 sender' /tmp/deployed-sender.html
@@ -98,7 +98,7 @@ jobs:
           import { readFileSync } from 'node:fs';
           const shelters=JSON.parse(readFileSync('/tmp/current-shelters.json','utf8'));
           if(shelters.meta.current_count!==40 || shelters.shelters.length!==40) throw new Error(`deployed current shelters must be 40, got ${shelters.shelters.length}`);
-          if(shelters.meta.source_last_modified!=="2026-09-01T14:56:29+09:00") throw new Error(`unexpected shelter source timestamp: ${shelters.meta.source_last_modified}`);
+          if(shelters.meta.source_last_modified!=="2026-09-02T19:01:02+09:00") throw new Error(`unexpected shelter source timestamp: ${shelters.meta.source_last_modified}`);
           if(shelters.shelters.some(row=>row.coordinate_status!=='confirmed')) throw new Error('deployed current shelters contain unresolved/conflict coordinates');
           const expected=JSON.parse(readFileSync('sender-municipality-audit.json','utf8'));
           const deployed=JSON.parse(readFileSync('/tmp/deployed-sender-manifest.json','utf8'));
