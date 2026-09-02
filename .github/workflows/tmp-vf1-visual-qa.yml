@@ -1,0 +1,34 @@
+name: Temporary VF1 browser QA
+
+on:
+  push:
+    branches:
+      - design/visual-foundation-v1
+
+permissions:
+  contents: read
+
+jobs:
+  browser-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: design/visual-foundation-v1
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Install browser driver
+        run: |
+          set -Eeuo pipefail
+          npm install --no-save --ignore-scripts --no-audit --no-fund --package-lock=false puppeteer-core
+          command -v google-chrome
+      - name: Serve branch files
+        run: |
+          python3 -m http.server 8000 >/tmp/vf1-http.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8000/ >/dev/null && exit 0; sleep 1; done
+          cat /tmp/vf1-http.log
+          exit 1
+      - name: Run desktop and mobile visual QA
+        run: node scripts/tmp-vf1-visual-qa.mjs
