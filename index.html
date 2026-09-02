@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link href="data:," rel="icon">
   <title>令和8年熊本地震 支援・受援状況</title>
   <style>
     :root{
@@ -14,38 +16,96 @@
       --muted:#62676d;
       --line:rgba(17,19,21,.13);
       --soft:#f7f7f5;
-      --radius-sm:6px;
-      --radius-md:8px;
+      --focus:rgba(24,104,219,.28);
       --space-1:4px;
       --space-2:8px;
       --space-3:12px;
       --space-4:16px;
       --space-5:24px;
       --space-6:32px;
+      --space-7:48px;
+      --space-8:72px;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:var(--canvas);color:var(--ink);line-height:1.6}
-    a:focus-visible{outline:3px solid rgba(24,104,219,.28);outline-offset:3px}
-    .wrap{max-width:900px;margin:0 auto;padding:var(--space-6) 18px}
-    h1{font-size:30px;font-weight:650;letter-spacing:-.02em;line-height:1.25;margin:0 0 var(--space-2)}
-    .lead{max-width:720px;color:var(--muted);font-size:14px;line-height:1.75;margin:0 0 var(--space-5)}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}
-    .card{display:block;background:var(--canvas);border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px;text-decoration:none;color:inherit;transition:background .15s ease,border-color .15s ease}
-    .card:hover{background:var(--soft);border-color:rgba(17,19,21,.24)}
-    .card h2{font-size:18px;font-weight:650;letter-spacing:-.01em;line-height:1.35;margin:0 0 var(--space-2)}
-    .card p{font-size:13px;color:var(--muted);line-height:1.7;margin:0}
-    .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.04em;background:var(--soft);color:#41464b;border:1px solid var(--line);border-radius:999px;padding:3px 7px;margin-bottom:var(--space-3)}
-    .note{margin-top:var(--space-4);padding-top:var(--space-3);border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.75}
-    @media(max-width:680px){.wrap{padding:24px 14px}h1{font-size:25px}.grid{grid-template-columns:1fr}.card{padding:18px}}
+    html{background:var(--canvas)}
+    body{margin:0;background:var(--canvas);color:var(--ink);line-height:1.65}
+    a{color:inherit}
+    a:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+    .page{width:min(1120px,calc(100% - 40px));margin:0 auto;padding:44px 0 72px}
+    .masthead{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+    .identity{font-size:12px;font-weight:650;letter-spacing:.02em}
+    .principle{color:var(--muted);font-size:11px;white-space:nowrap}
+    .hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,.6fr);gap:56px;padding:68px 0 62px;border-bottom:1px solid var(--line)}
+    .eyebrow{margin:0 0 14px;color:var(--muted);font-size:12px;font-weight:650;letter-spacing:.06em;text-transform:uppercase}
+    h1{max-width:760px;margin:0;font-size:clamp(34px,4.8vw,58px);font-weight:620;letter-spacing:-.045em;line-height:1.08}
+    .lead{max-width:720px;margin:22px 0 0;color:#454a4f;font-size:15px;line-height:1.85}
+    .hero-meta{align-self:end;padding-left:22px;border-left:1px solid var(--line)}
+    .hero-meta strong{display:block;margin-bottom:7px;font-size:12px;font-weight:650}
+    .hero-meta p{margin:0;color:var(--muted);font-size:12px;line-height:1.75}
+    .routes{padding-top:10px}
+    .route{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:24px;align-items:center;padding:28px 0;border-bottom:1px solid var(--line);text-decoration:none}
+    .route:hover .route-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+    .route-kicker{color:var(--muted);font-size:11px;font-weight:650;letter-spacing:.04em}
+    .route-title{margin:0;font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.35}
+    .route-desc{max-width:690px;margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.7}
+    .route-arrow{font-size:22px;font-weight:400;line-height:1;transition:transform .15s ease}
+    .route:hover .route-arrow{transform:translateX(3px)}
+    .route.primary{padding-top:32px}
+    .route.primary .route-title{font-size:26px}
+    .footer-note{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;padding-top:28px;color:var(--muted);font-size:12px;line-height:1.8}
+    .footer-note strong{color:#41464b;font-size:11px;font-weight:650;letter-spacing:.04em}
+    @media(max-width:760px){
+      .page{width:min(100% - 28px,1120px);padding:26px 0 48px}
+      .masthead{align-items:flex-start;flex-direction:column;gap:5px;padding-bottom:14px}
+      .principle{white-space:normal}
+      .hero{grid-template-columns:1fr;gap:28px;padding:44px 0 40px}
+      h1{font-size:clamp(32px,11vw,44px)}
+      .lead{font-size:14px;margin-top:18px}
+      .hero-meta{padding:16px 0 0;border-left:0;border-top:1px solid var(--line)}
+      .route{grid-template-columns:1fr auto;gap:10px 18px;padding:24px 0}
+      .route-kicker{grid-column:1/-1}
+      .route-desc{font-size:12px}
+      .route.primary .route-title{font-size:22px}
+      .footer-note{grid-template-columns:1fr;gap:6px;padding-top:24px}
+    }
   </style>
 </head>
-<body><main class="wrap">
-  <h1>令和8年熊本地震 支援・受援状況</h1>
-  <p class="lead">公式情報を時点・根拠とともに整理したダッシュボードです。公開情報で確認できない内容は推測で補完しません。</p>
-  <div class="grid">
-    <a class="card" href="./ehime_kumamoto_support_geocoded_shelters_20260802.html"><span class="tag">MAIN DASHBOARD</span><h2>支援・受援状況</h2><p>被害、避難所、愛媛県支援、他自治体支援、国・関係機関、ボランティア、地図を俯瞰します。</p></a>
-    <a class="card" href="./sender-municipalities.html"><span class="tag">SENDER COVERAGE</span><h2>送出基礎自治体 Coverage</h2><p>愛媛県内20市町の全件監査と、全国47都道府県から発見した基礎自治体senderの裁定状況を確認します。</p></a>
-  </div>
-  <p class="note">送出側Coverageでは、予定期間に入っただけではCURRENTにせず、一次情報等で実働を直接確認できないものはUNKNOWN等として保持します。</p>
-</main></body>
+<body>
+<main class="page">
+  <header class="masthead">
+    <div class="identity">令和8年熊本地震</div>
+    <div class="principle">公式情報を時点・根拠とともに整理</div>
+  </header>
+
+  <section class="hero" aria-labelledby="pageTitle">
+    <div>
+      <p class="eyebrow">Kumamoto Earthquake Support Overview</p>
+      <h1 id="pageTitle">支援・受援状況を、現在地から根拠まで。</h1>
+      <p class="lead">被害・避難所、愛媛県からの支援、全国自治体・国・関係機関、災害ボランティアの公開情報を一つの画面で確認できます。公開情報で確認できない内容は推測で補完しません。</p>
+    </div>
+    <aside class="hero-meta" aria-label="確認方針">
+      <strong>確認方針</strong>
+      <p>状態・時点・一次情報を分けて表示します。予定期間に入ったことだけを根拠にCURRENTへ変更することはありません。</p>
+    </aside>
+  </section>
+
+  <nav class="routes" aria-label="主要ページ">
+    <a class="route primary" href="./ehime_kumamoto_support_geocoded_shelters_20260802.html">
+      <span class="route-kicker">MAIN DASHBOARD</span>
+      <span><span class="route-title">支援・受援状況</span><span class="route-desc">被害、避難所、愛媛県支援、他自治体支援、国・関係機関、ボランティア、地図を俯瞰します。</span></span>
+      <span class="route-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="route" href="./sender-municipalities.html">
+      <span class="route-kicker">SENDER COVERAGE</span>
+      <span><span class="route-title">送出基礎自治体 Coverage</span><span class="route-desc">愛媛県内20市町の全件監査と、全国47都道府県から発見した基礎自治体senderの裁定状況を確認します。</span></span>
+      <span class="route-arrow" aria-hidden="true">→</span>
+    </a>
+  </nav>
+
+  <footer class="footer-note">
+    <strong>STATUS POLICY</strong>
+    <span>送出側Coverageでは、予定期間に入っただけではCURRENTにせず、一次情報等で実働を直接確認できないものはUNKNOWN等として保持します。</span>
+  </footer>
+</main>
+</body>
 </html>
