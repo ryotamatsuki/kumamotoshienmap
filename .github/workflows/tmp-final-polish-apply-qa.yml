@@ -1,0 +1,221 @@
+name: Temporary final visual polish applicator and QA
+on:
+  push:
+    branches:
+      - design/final-visual-polish
+permissions:
+  contents: write
+jobs:
+  apply-and-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: design/final-visual-polish
+      - name: Apply presentation-only final polish
+        run: |
+          set -euo pipefail
+          if ! grep -q 'FINAL_VISUAL_POLISH_START' volunteer.css; then
+            cat >> volunteer.css <<'CSS'
+
+/* FINAL_VISUAL_POLISH_START
+   Presentation-only convergence from the 2026-09-02 pixel-level audit.
+   No data, JavaScript, audit semantics, counts, coordinates or source logic change. */
+
+/* Needs: converge the last legacy card-heavy view on the shared editorial system. */
+body .needs-view{background:#fff!important;padding:16px 18px 36px!important}
+body .needs-shell{max-width:1500px}
+body .needs-hero{gap:20px!important;align-items:start}
+body .needs-intro{padding:14px 0 20px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body .needs-intro h2{font-size:clamp(28px,3vw,36px)!important;font-weight:620!important;letter-spacing:-.035em!important;line-height:1.16!important}
+body .needs-intro p{margin-top:8px!important;font-size:13px!important;line-height:1.75!important}
+body .needs-formula{margin-top:14px!important;gap:8px!important}
+body .needs-formula span{border:1px solid var(--line)!important;border-radius:6px!important;background:#fff!important;padding:7px 9px!important;font-size:11px!important;font-weight:600!important}
+body .needs-formula b{color:#858b90!important;font-weight:600!important}
+body .needs-caution{padding:14px 16px!important;border:0!important;border-left:3px solid #b36b00!important;border-radius:6px!important;background:#fffaf1!important;box-shadow:none!important}
+body .needs-caution strong{font-size:12px!important;font-weight:650!important}
+body .needs-caution p{font-size:11px!important;line-height:1.65!important}
+body .needs-kpis{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:0!important;margin-top:0!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
+body .needs-kpi{padding:18px 16px 17px!important;border:0!important;border-right:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body .needs-kpi:last-child{border-right:0!important}
+body .needs-kpi-label{font-size:11px!important;font-weight:600!important;color:var(--muted)!important}
+body .needs-kpi-value{margin-top:7px!important;font-size:29px!important;font-weight:680!important;letter-spacing:-.035em!important;line-height:1!important}
+body .needs-kpi-note{margin-top:7px!important;font-size:11px!important;line-height:1.5!important;color:var(--muted)!important}
+body .needs-phasebar{gap:8px!important;margin-top:18px!important;padding:12px 0!important;border:0!important;border-top:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;background:#fff!important}
+body .needs-phasebar button{min-height:40px!important;padding:8px 11px!important;border:1px solid var(--line)!important;border-radius:6px!important;background:#fff!important;color:#4f555a!important;font-size:11px!important;font-weight:600!important;box-shadow:none!important}
+body .needs-phasebar button.active{border-color:#9fa7ac!important;background:#f3f5f6!important;color:var(--ink)!important}
+body .needs-phase-desc{font-size:11px!important;line-height:1.55!important}
+body .needs-section{margin-top:0!important;padding:26px 0 28px!important;border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body .needs-section-head{margin-bottom:16px!important;align-items:flex-end!important}
+body .needs-section-head h3{font-size:17px!important;font-weight:620!important;letter-spacing:-.015em!important}
+body .needs-section-head p{font-size:11px!important;line-height:1.55!important}
+body .needs-section-tag{padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;color:#747a7f!important;font-size:10px!important;font-weight:600!important}
+body .province-needs-grid,body .municipal-needs-grid,body .lesson-grid,body .readiness-grid{gap:8px!important}
+body .province-need-card,body .municipal-need-card,body .lesson-card,body .readiness-card{border:1px solid var(--line)!important;border-radius:6px!important;background:#fff!important;box-shadow:none!important}
+body .province-need-card:hover,body .province-need-card.selected,body .municipal-need-card:hover,body .municipal-need-card.selected,body .lesson-card:hover,body .readiness-card:hover{border-color:#9ba8b0!important;background:#fafafa!important;box-shadow:none!important}
+body .need-card-title,body .municipal-name{font-size:13px!important;font-weight:650!important}
+body .need-level{border-radius:4px!important;font-size:10px!important;font-weight:650!important}
+body .province-observed,body .province-next{font-size:11px!important;line-height:1.55!important}
+body .municipal-stats{font-size:10px!important;line-height:1.45!important}
+body .municipal-tag{border-radius:4px!important;font-size:10px!important;font-weight:600!important}
+body .municipal-support-line{font-size:11px!important;line-height:1.5!important}
+body .needs-main{gap:20px!important;margin-top:0!important}
+body .needs-list-panel{padding:24px 0 28px!important;border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body .needs-detail{padding:16px!important;border:1px solid var(--line)!important;border-radius:6px!important;background:#fff!important;box-shadow:none!important}
+body .needs-tools{gap:8px!important;margin-bottom:14px!important}
+body .needs-field label{font-size:11px!important;font-weight:600!important;color:#4d5358!important}
+body .needs-field input,body .needs-field select{min-height:42px!important;border:1px solid var(--line)!important;border-radius:6px!important;background:#fff!important;padding:8px 10px!important;font-size:12px!important}
+body .needs-detail-empty{font-size:11px!important;line-height:1.65!important}
+body .needs-detail-head h3{font-size:17px!important;font-weight:650!important}
+body .needs-detail-sub{font-size:11px!important;line-height:1.5!important}
+body .needs-confidence{border-radius:4px!important;font-size:10px!important;font-weight:600!important}
+body .reason-step{border-radius:6px!important;padding:10px 11px 10px 36px!important;font-size:12px!important;line-height:1.6!important}
+body .reason-step:before{font-size:10px!important;font-weight:650!important}
+body .needs-detail-block h4{font-size:11px!important;font-weight:650!important}
+body .needs-detail-list{font-size:11px!important;line-height:1.65!important}
+body .needs-chip{min-height:40px!important;border:1px solid var(--line)!important;border-radius:6px!important;background:#fff!important;padding:7px 9px!important;font-size:11px!important;font-weight:600!important}
+body .needs-watch{border-radius:6px!important;font-size:11px!important;line-height:1.6!important}
+body .needs-actions a,body .needs-actions button{display:inline-flex!important;align-items:center!important;min-height:40px!important;border:1px solid var(--line)!important;border-radius:6px!important;background:#fff!important;padding:8px 10px!important;font-size:11px!important;font-weight:600!important}
+body .lesson-disaster{font-size:10px!important;font-weight:650!important}
+body .lesson-title{font-size:12px!important;font-weight:650!important}
+body .lesson-applied{font-size:11px!important;line-height:1.55!important}
+body .readiness-title{font-size:12px!important;font-weight:650!important}
+body .readiness-phase{font-size:10px!important;font-weight:600!important}
+body .readiness-prepare{font-size:11px!important;line-height:1.55!important}
+body .readiness-target{font-size:10px!important;line-height:1.5!important}
+body .signal-table-wrap{border-color:var(--line)!important;border-radius:6px!important}
+body .signal-table{font-size:10px!important}
+body .signal-table th,body .signal-table td{padding:7px 6px!important}
+body .signal-table th{background:#fff!important;font-size:10px!important;font-weight:650!important}
+body .signal-cell{font-size:10px!important}
+body .needs-method{border-color:#b9c0c5!important;border-radius:6px!important;background:#fafafa!important;font-size:11px!important;line-height:1.6!important}
+
+/* Volunteer: readable secondary actions and consistent hit areas without hiding content. */
+body .vol-summary-open{font-size:11px!important;font-weight:600!important}
+body .vol-summary-jump{display:inline-flex!important;align-items:center!important;min-height:40px!important;border-color:var(--line)!important;border-radius:6px!important;background:#fff!important;padding:8px 10px!important;font-size:11px!important;font-weight:600!important}
+body .vol-summary-help{display:grid!important;place-items:center!important;width:40px!important;height:40px!important;top:4px!important;right:4px!important;border:0!important;border-radius:6px!important;background:transparent!important;font-size:12px!important}
+body .vol-municipality-button{display:inline-flex!important;align-items:center!important;min-height:40px!important;padding:6px 0!important;font-size:11px!important}
+body .vol-table thead th{font-size:11px!important}
+body .vol-field label,body .vol-cost-row label,body .vol-filter-set legend{font-size:11px!important}
+
+/* Dashboard detail microtype / hit area only. */
+body .support-matrix th{font-size:11px!important;font-weight:600!important}
+body .support-matrix td:first-child{font-size:11px!important;font-weight:650!important}
+body .matrix-label{font-size:11px!important}
+body .region-count,body .region-chip,body .region-ehime{font-size:10px!important}
+body .region-chip{border-radius:4px!important}
+body .category-name{font-size:11px!important;font-weight:650!important}
+body .category-row{min-height:40px!important;padding:8px 0!important}
+
+/* Map navigation: larger, restrained controls; preserve markers and floating elevation. */
+body .tabs{gap:0!important;padding:10px 11px 9px!important;border-bottom:1px solid var(--line)!important}
+body .tabs > .tab{min-height:38px!important;border:0!important;border-bottom:2px solid transparent!important;border-radius:0!important;background:transparent!important;padding:8px 10px!important;color:#666c71!important;font-size:11px!important;font-weight:600!important;box-shadow:none!important}
+body .tabs > .tab.active{border-bottom-color:#5c6971!important;background:transparent!important;color:var(--ink)!important}
+body .map-note{font-size:11px!important;line-height:1.5!important}
+
+/* Overview verification metadata: remove final 8–9px microtype island. */
+body .page-recheck-meta span{font-size:11px!important;font-weight:600!important}
+body .page-recheck-status{font-size:11px!important;font-weight:600!important}
+body .page-recheck-line,body .page-recheck-line b{font-size:11px!important;line-height:1.55!important}
+body .page-recheck-source{font-size:11px!important;line-height:1.55!important}
+
+/* Timeline: one remaining undersized action. */
+body .timeline-detail-actions a,body .timeline-detail-actions button{display:inline-flex!important;align-items:center!important;min-height:40px!important;padding:8px 10px!important;font-size:11px!important;font-weight:600!important}
+
+@media(max-width:760px){
+  body .needs-view{padding:12px 14px 42px!important}
+  body .needs-intro h2{font-size:25px!important}
+  body .needs-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  body .needs-kpi:nth-child(2n){border-right:0!important}
+  body .needs-kpi:nth-child(-n+2){border-bottom:1px solid var(--line)!important}
+  body .needs-phasebar button,body .needs-field input,body .needs-field select,body .needs-chip,body .needs-actions a,body .needs-actions button{min-height:44px!important}
+  body .needs-detail{position:relative!important;top:auto!important;max-height:none!important}
+  body .vol-summary-jump,body .vol-municipality-button{min-height:44px!important}
+  body .vol-summary-help{width:44px!important;height:44px!important}
+  body .vol-field input,body .vol-field select,body .vol-planning-select,body .vol-cost-row input,body .vol-cost-row select{min-height:44px!important}
+  body .category-row{min-height:44px!important}
+  body .tabs > .tab{min-height:44px!important;padding:10px 10px!important}
+  body .timeline-detail-actions a,body .timeline-detail-actions button{min-height:44px!important}
+}
+/* FINAL_VISUAL_POLISH_END */
+CSS
+            printf '\n' >> volunteer.css
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add volunteer.css
+            git diff --cached --check
+            git commit -m 'design: apply final visual polish'
+            git push origin HEAD:design/final-visual-polish
+          else
+            echo 'Final polish already present; no append needed.'
+          fi
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Install browser tooling
+        run: npm install --no-save --ignore-scripts --no-audit --no-fund --package-lock=false puppeteer-core
+      - name: Run focused browser hard gates
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8000 >/tmp/final-polish-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 2
+          node --input-type=module - <<'NODE'
+          import puppeteer from 'puppeteer-core';
+          const base='http://127.0.0.1:8000';
+          const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--disable-dev-shm-usage']});
+          const expectedViews=['overview','needs','timeline','dashboard','volunteer','map'];
+          try{
+            for(const spec of [{name:'desktop',w:1440,h:1000,mobile:false},{name:'mobile',w:390,h:844,mobile:true}]){
+              const page=await browser.newPage();
+              await page.setViewport({width:spec.w,height:spec.h,isMobile:spec.mobile,deviceScaleFactor:1});
+              const errs=[],logs=[]; page.on('pageerror',e=>errs.push(String(e))); page.on('console',m=>{if(m.type()==='error')logs.push(m.text())});
+              const res=await page.goto(`${base}/ehime_kumamoto_support_geocoded_shelters_20260802.html`,{waitUntil:'networkidle2',timeout:60000});
+              if(!res?.ok()) throw new Error(`${spec.name}: dashboard HTTP ${res?.status()}`);
+              for(const view of expectedViews){const tab=await page.$(`[data-view="${view}"]`); if(!tab) throw new Error(`${spec.name}: missing view ${view}`); await tab.click(); await new Promise(r=>setTimeout(r,200));}
+              const measured=await page.evaluate(()=>{
+                const n=s=>document.querySelector(s), all=s=>[...document.querySelectorAll(s)];
+                const fs=s=>n(s)?parseFloat(getComputedStyle(n(s)).fontSize):null;
+                const h=s=>n(s)?.getBoundingClientRect().height??null;
+                const radius=s=>n(s)?parseFloat(getComputedStyle(n(s)).borderTopLeftRadius)||0:null;
+                const needsTiny=all('#needsView *').filter(el=>el.children.length===0&&(el.textContent||'').trim()&&getComputedStyle(el).display!=='none').filter(el=>parseFloat(getComputedStyle(el).fontSize)<10).length;
+                const nonFloatingNeedsShadow=all('#needsView .needs-intro,#needsView .needs-section,#needsView .needs-list-panel,#needsView .needs-kpi').filter(el=>getComputedStyle(el).boxShadow!=='none').length;
+                return {
+                  overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,
+                  needsH2:fs('.needs-intro h2'),needsTiny,needsPhase:h('.needs-phasebar button'),needsField:h('.needs-field input'),needsShadow:nonFloatingNeedsShadow,
+                  volunteerOpen:fs('.vol-summary-open'),volJump:h('.vol-summary-jump'),volHelp:h('.vol-summary-help'),volMunicipality:h('.vol-municipality-button'),
+                  matrixLabel:fs('.matrix-label'),categoryRow:h('.category-row'),
+                  mapTab:h('.tabs > .tab'),mapTabRadius:radius('.tabs > .tab'),mapNote:fs('.map-note'),
+                  recheckStatus:fs('.page-recheck-status'),recheckSource:fs('.page-recheck-source'),
+                  timelineAction:h('.timeline-detail-actions button'),
+                };
+              });
+              const target=spec.mobile?43.5:39.5;
+              if(measured.overflow) throw new Error(`${spec.name}: horizontal overflow`);
+              if(measured.needsH2 < (spec.mobile?22:28)) throw new Error(`${spec.name}: Needs H2 ${measured.needsH2}`);
+              if(measured.needsTiny!==0) throw new Error(`${spec.name}: Needs routine text <10px count ${measured.needsTiny}`);
+              if(measured.needsPhase<target||measured.needsField<target) throw new Error(`${spec.name}: Needs controls undersized ${JSON.stringify(measured)}`);
+              if(measured.needsShadow!==0) throw new Error(`${spec.name}: Needs routine shadow remains`);
+              if(measured.volunteerOpen<11||measured.volJump<target||measured.volHelp<target||measured.volMunicipality<target) throw new Error(`${spec.name}: Volunteer control gate ${JSON.stringify(measured)}`);
+              if(measured.matrixLabel<10||measured.categoryRow<target) throw new Error(`${spec.name}: Dashboard microtype gate ${JSON.stringify(measured)}`);
+              if(measured.mapTab<(spec.mobile?43.5:35.5)||measured.mapTabRadius>8||measured.mapNote<10) throw new Error(`${spec.name}: Map gate ${JSON.stringify(measured)}`);
+              if(measured.recheckStatus<10||measured.recheckSource<10) throw new Error(`${spec.name}: Overview metadata gate ${JSON.stringify(measured)}`);
+              if(measured.timelineAction!==null&&measured.timelineAction<target) throw new Error(`${spec.name}: Timeline action gate ${JSON.stringify(measured)}`);
+              if(errs.length||logs.length) throw new Error(`${spec.name}: runtime errors page=${errs.length} console=${logs.length}`);
+              console.log(JSON.stringify({name:spec.name,...measured,pageErrors:errs,consoleErrors:logs}));
+              await page.close();
+
+              const sender=await browser.newPage(); await sender.setViewport({width:spec.w,height:spec.h,isMobile:spec.mobile,deviceScaleFactor:1});
+              const senderErr=[],senderLog=[]; sender.on('pageerror',e=>senderErr.push(String(e))); sender.on('console',m=>{if(m.type()==='error')senderLog.push(m.text())});
+              await sender.goto(`${base}/sender-municipalities.html`,{waitUntil:'networkidle2',timeout:60000});
+              await sender.waitForFunction(()=>document.querySelectorAll('#nationalBody tr[data-entity]').length===316,{timeout:30000});
+              const senderState=await sender.evaluate(()=>({ehime:document.querySelectorAll('#ehimeBody tr[data-entity]').length,national:document.querySelectorAll('#nationalBody tr[data-entity]').length,overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth}));
+              await sender.select('#state','CURRENT'); await sender.waitForFunction(()=>document.querySelectorAll('#nationalBody tr[data-entity]').length>0); const current=await sender.$$eval('#nationalBody tr[data-entity]',r=>r.length);
+              if(senderState.ehime!==20||senderState.national!==316||current!==12||senderState.overflow||senderErr.length||senderLog.length) throw new Error(`${spec.name}: sender regression ${JSON.stringify({senderState,current,senderErr,senderLog})}`);
+              console.log(JSON.stringify({name:`sender-${spec.name}`,...senderState,current,pageErrors:senderErr,consoleErrors:senderLog}));
+              await sender.close();
+            }
+          } finally {await browser.close()}
+          NODE
