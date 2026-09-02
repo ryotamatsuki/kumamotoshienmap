@@ -39,7 +39,6 @@ jobs:
           const base='http://127.0.0.1:8000';
           const views=['overview','needs','timeline','dashboard','volunteer','map'];
           const activate=async(p,v)=>{await p.click(`[data-view="${v}"]`);await new Promise(r=>setTimeout(r,180));};
-          const visible=(el)=>{const s=getComputedStyle(el),r=el.getBoundingClientRect();return s.display!=='none'&&s.visibility!=='hidden'&&r.width>0&&r.height>0};
           try {
             for(const spec of [{name:'desktop',w:1440,h:1000,target:39.5},{name:'mobile',w:390,h:844,target:43.5}]){
               const p=await browser.newPage(); await p.setViewport({width:spec.w,height:spec.h,isMobile:spec.name==='mobile'});
@@ -55,36 +54,40 @@ jobs:
                 const buttons=all('#needsView button').filter(vis).map(el=>({h:el.getBoundingClientRect().height,text:(el.textContent||'').trim().slice(0,30),municipal:el.hasAttribute('data-needs-table-municipal')}));
                 const municipal=buttons.filter(x=>x.municipal); const shadows=all('#needsView .needs-intro,#needsView .needs-section,#needsView .needs-list-panel,#needsView .needs-kpi').filter(vis).filter(el=>getComputedStyle(el).boxShadow!=='none').length;
                 const h2=document.querySelector('.needs-intro h2'); const heads=all('#needsView .needs-section-head').filter(vis).map(el=>el.getBoundingClientRect().x);
-                return {tiny:tiny.length,low:buttons.filter(x=>x.h<39.5),municipalMin:municipal.length?Math.min(...municipal.map(x=>x.h)):null,shadows,h2:h2?parseFloat(getComputedStyle(h2).fontSize):null,xSpread:heads.length?Math.max(...heads)-Math.min(...heads):0};
+                return {tiny:tiny.length,buttons,municipalMin:municipal.length?Math.min(...municipal.map(x=>x.h)):null,shadows,h2:h2?parseFloat(getComputedStyle(h2).fontSize):null,xSpread:heads.length?Math.max(...heads)-Math.min(...heads):0};
               });
               const expectedH2=spec.name==='mobile'?22:28;
-              if(needs.tiny!==0||needs.shadows!==0||needs.h2<expectedH2||needs.xSpread>2||needs.municipalMin===null||needs.municipalMin<spec.target)throw new Error(`${spec.name}: Needs ${JSON.stringify(needs)}`);
+              const needsLow=needs.buttons.filter(x=>x.h<spec.target);
+              if(needs.tiny!==0||needs.shadows!==0||needs.h2<expectedH2||needs.xSpread>2||needs.municipalMin===null||needs.municipalMin<spec.target||needsLow.length)throw new Error(`${spec.name}: Needs ${JSON.stringify({...needs,needsLow})}`);
               await activate(p,'volunteer');
-              const vol=await p.evaluate(()=>{const h=s=>document.querySelector(s)?.getBoundingClientRect().height??null,fs=s=>document.querySelector(s)?parseFloat(getComputedStyle(document.querySelector(s)).fontSize):null;return {open:fs('.vol-summary-open'),jump:h('.vol-summary-jump'),help:h('.vol-help-button'),field:h('#volunteerView select,#volunteerView input:not([type="checkbox"])'),check:h('.vol-check-label')};});
+              const vol=await p.evaluate(()=>{const h=s=>document.querySelector(s)?.getBoundingClientRect().height??null,fs=s=>document.querySelector(s)?parseFloat(getComputedStyle(document.querySelector(s)).fontSize):null;return {open:fs('.vol-summary-open'),jump:h('.vol-summary-jump'),help:h('.vol-summary-help'),field:h('#volunteerView select,#volunteerView input:not([type="checkbox"])'),check:h('.vol-check')};});
               for(const [k,v] of Object.entries(vol)){if(v!==null&&v<(k==='open'?11:spec.target))throw new Error(`${spec.name}: Volunteer ${JSON.stringify(vol)}`)}
               await activate(p,'dashboard');
               const dash=await p.evaluate(()=>({matrix:parseFloat(getComputedStyle(document.querySelector('.matrix-label')).fontSize),category:document.querySelector('.category-row')?.getBoundingClientRect().height??null,region:parseFloat(getComputedStyle(document.querySelector('.region-chip')).fontSize)}));
               if(dash.matrix<10||dash.region<10||(dash.category!==null&&dash.category<spec.target))throw new Error(`${spec.name}: Dashboard ${JSON.stringify(dash)}`);
               await activate(p,'map');
-              const map=await p.evaluate(()=>({tab:document.querySelector('.map-tab')?.getBoundingClientRect().height??null,note:parseFloat(getComputedStyle(document.querySelector('.map-note')).fontSize)}));
-              if(map.tab<spec.target||map.note<10)throw new Error(`${spec.name}: Map ${JSON.stringify(map)}`);
+              const map=await p.evaluate(()=>({tab:document.querySelector('.tabs > .tab')?.getBoundingClientRect().height??null,note:parseFloat(getComputedStyle(document.querySelector('.map-note')).fontSize),radius:document.querySelector('.tabs > .tab')?getComputedStyle(document.querySelector('.tabs > .tab')).borderRadius:null}));
+              if(map.tab===null||map.tab<spec.target||map.note<10)throw new Error(`${spec.name}: Map ${JSON.stringify(map)}`);
               await activate(p,'overview');
               const over=await p.evaluate(()=>({status:parseFloat(getComputedStyle(document.querySelector('.page-recheck-status')).fontSize),source:parseFloat(getComputedStyle(document.querySelector('.page-recheck-source')).fontSize)}));
               if(over.status<10||over.source<10)throw new Error(`${spec.name}: Overview ${JSON.stringify(over)}`);
               await activate(p,'timeline');
-              const timeline=await p.evaluate(()=>document.querySelector('[data-timeline-map-action],.timeline-map-action')?.getBoundingClientRect().height??null);
-              if(timeline!==null&&timeline<spec.target)throw new Error(`${spec.name}: Timeline ${timeline}`);
+              const timeline=await p.evaluate(()=>document.querySelector('.timeline-detail-actions a,.timeline-detail-actions button')?.getBoundingClientRect().height??null);
+              if(timeline===null||timeline<spec.target)throw new Error(`${spec.name}: Timeline ${timeline}`);
               if(pe.length||ce.length)throw new Error(`${spec.name}: runtime errors ${JSON.stringify({pe,ce})}`);
-              console.log(JSON.stringify({spec:spec.name,needs,vol,dash,map,over,timeline}));
+              console.log(JSON.stringify({spec:spec.name,needsTiny:needs.tiny,needsLow:needsLow.length,municipalMin:needs.municipalMin,needsH2:needs.h2,shadows:needs.shadows,xSpread:needs.xSpread,vol,dash,map,over,timeline}));
               await p.close();
             }
             for(const spec of [{name:'sender-desktop',w:1440,h:1000},{name:'sender-mobile',w:390,h:844}]){
               const p=await browser.newPage(); await p.setViewport({width:spec.w,height:spec.h,isMobile:spec.w<500});
               const pe=[],ce=[];p.on('pageerror',e=>pe.push(String(e)));p.on('console',m=>{if(m.type()==='error')ce.push(m.text())});
               await p.goto(`${base}/sender-municipalities.html`,{waitUntil:'networkidle2',timeout:60000});
-              const out=await p.evaluate(()=>{const txt=document.body.innerText;const select=document.querySelector('select');return {overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,txt,hasSelect:!!select};});
-              if(out.overflow||pe.length||ce.length||!out.txt.includes('20')||!out.txt.includes('316'))throw new Error(`${spec.name}: sender regression`);
-              console.log(JSON.stringify({spec:spec.name,overflow:out.overflow,errors:pe.length+ce.length}));await p.close();
+              let out=await p.evaluate(()=>({overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,ehime:document.querySelectorAll('#ehimeBody tr').length,national:document.querySelectorAll('#nationalBody tr').length}));
+              if(out.overflow||pe.length||ce.length||out.ehime!==20||out.national!==316)throw new Error(`${spec.name}: sender regression ${JSON.stringify({out,pe,ce})}`);
+              await p.select('#state','CURRENT'); await new Promise(r=>setTimeout(r,150));
+              const current=await p.evaluate(()=>document.querySelectorAll('#nationalBody tr').length);
+              if(current!==12)throw new Error(`${spec.name}: sender CURRENT ${current}`);
+              console.log(JSON.stringify({spec:spec.name,...out,current,errors:pe.length+ce.length}));await p.close();
             }
             console.log('FINAL_VISUAL_POLISH_HARD_GATE_PASS');
           } finally {await browser.close();}
