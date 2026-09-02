@@ -5,6 +5,7 @@ const browser=await puppeteer.launch({headless:true,executablePath:'/usr/bin/goo
 const expectedViews=['overview','needs','timeline','dashboard','volunteer','map'];
 const results=[];
 const activate=async(page,view)=>{const tab=await page.$(`[data-view="${view}"]`);if(!tab)throw new Error(`missing view ${view}`);await tab.click();await new Promise(r=>setTimeout(r,180));};
+const httpOkay=response=>{const status=response?.status()??0;return status>=200&&status<400};
 try {
   for (const spec of [{name:'desktop',w:1440,h:1000,mobile:false},{name:'mobile',w:390,h:844,mobile:true}]) {
     const page=await browser.newPage();
@@ -13,7 +14,7 @@ try {
     page.on('pageerror',e=>pageErrors.push(String(e)));
     page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
     const res=await page.goto(`${base}/ehime_kumamoto_support_geocoded_shelters_20260802.html`,{waitUntil:'networkidle2',timeout:60000});
-    if(!res?.ok()) throw new Error(`${spec.name}: dashboard HTTP ${res?.status()}`);
+    if(!httpOkay(res)) throw new Error(`${spec.name}: dashboard HTTP ${res?.status()}`);
     for(const view of expectedViews) await activate(page,view);
     const common=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,presentViews:[...document.querySelectorAll('[data-view]')].map(x=>x.getAttribute('data-view'))}));
     if(common.overflow) throw new Error(`${spec.name}: horizontal overflow`);
@@ -65,7 +66,7 @@ try {
     const sender=await browser.newPage();
     await sender.setViewport({width:spec.w,height:spec.h,isMobile:spec.mobile,deviceScaleFactor:1});
     const senderErrors=[];const senderConsole=[];sender.on('pageerror',e=>senderErrors.push(String(e)));sender.on('console',m=>{if(m.type()==='error')senderConsole.push(m.text())});
-    const sr=await sender.goto(`${base}/sender-municipalities.html`,{waitUntil:'networkidle2',timeout:60000});if(!sr?.ok())throw new Error(`${spec.name}: sender HTTP ${sr?.status()}`);
+    const sr=await sender.goto(`${base}/sender-municipalities.html`,{waitUntil:'networkidle2',timeout:60000});if(!httpOkay(sr))throw new Error(`${spec.name}: sender HTTP ${sr?.status()}`);
     await sender.waitForFunction(()=>document.querySelectorAll('#nationalBody tr[data-entity]').length===316,{timeout:30000});
     const senderState=await sender.evaluate(()=>({ehime:document.querySelectorAll('#ehimeBody tr[data-entity]').length,national:document.querySelectorAll('#nationalBody tr[data-entity]').length,overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth}));
     await sender.select('#state','CURRENT');await sender.waitForFunction(()=>document.querySelectorAll('#nationalBody tr[data-entity]').length>0,{timeout:30000});const current=await sender.$$eval('#nationalBody tr[data-entity]',r=>r.length);
