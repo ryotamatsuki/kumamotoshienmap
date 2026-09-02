@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - audit/timepoint-20260902-1616
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -28,12 +31,13 @@ jobs:
         run: node scripts/tmp-source-probe-20260902.mjs
       - uses: actions/upload-artifact@v4
         with:
-          name: refresh-probe-20260902
+          name: refresh-probe-20260902-${{ github.run_id }}
           path: |
             current-shelters.json
             /tmp/source-probe-20260902.json
           if-no-files-found: error
       - name: Commit refreshed current shelters
+        if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
