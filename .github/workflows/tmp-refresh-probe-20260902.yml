@@ -45,6 +45,12 @@ jobs:
             .replace('assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-08-28"','assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-09-02"'));
           patch('scripts/sync-national-support-audit.mjs',text=>text
             .replace('date:"2026-08-28",dateLabel:"8月28日",weekday:"金",time:"08:00"','date:"2026-09-02",dateLabel:"9月2日",weekday:"水",time:"14:00"'));
+          for (const path of ['ehime_kumamoto_support_geocoded_shelters_20260802.html','public/dashboard.html']) {
+            patch(path,text=>text
+              .replaceAll('熊本県第49報（8月28日8時）では避難所61か所、避難者2,442人。現行公式避難所JSONは取得時点の開設施設を別定義で表示する。','熊本県第51報（9月2日14時）では避難所38か所、避難者2,035人。現行公式避難所JSONは取得時点の開設施設を別定義で表示する。')
+              .replaceAll('熊本県第49報では住家被害43,292棟。市町別旧スナップショットとは時点が異なるため、県計と旧内訳を分離して表示する。','熊本県第51報では住家被害61,996棟。市町別旧スナップショットとは時点が異なるため、県計と旧内訳を分離して表示する。')
+              .replaceAll('熊本県第49報では住家被害43,292棟。被害区分別の現況は確認できた県計の範囲を超えて推測せず、旧区分値を現況として流用しない。','熊本県第51報では住家被害61,996棟。被害区分別の現況は確認できた県計の範囲を超えて推測せず、旧区分値を現況として流用しない。'));
+          }
           const shelters=JSON.parse(readFileSync('current-shelters.json','utf8'));
           const sourceAt=shelters.meta.source_last_modified;
           patch('.github/workflows/post-deploy-pages-smoke.yml',text=>text
