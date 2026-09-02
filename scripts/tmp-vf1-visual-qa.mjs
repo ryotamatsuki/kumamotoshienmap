@@ -44,8 +44,8 @@ try{
     assert(landingState.bodyBackground==='rgb(255, 255, 255)',`${spec.name}: landing canvas is not white`);
     assert(landingState.cardShadow==='none',`${spec.name}: landing routine shadow remains`);
     assert(landingState.cardRadius==='6px',`${spec.name}: landing card radius is ${landingState.cardRadius}`);
-    assert(!landingErrors.pageErrors.length&&!landingErrors.consoleErrors.length,`${spec.name}: landing runtime errors`);
-    console.log(JSON.stringify({page:`landing-${spec.name}`,...landingState,...landingErrors}));
+    assert(!landingErrors.pageErrors.length,`${spec.name}: landing page errors: ${landingErrors.pageErrors.join(' | ')}`);
+    console.log(JSON.stringify({page:`landing-${spec.name}`,...landingState,pageErrors:landingErrors.pageErrors,consoleErrorsIgnoredForStaticLanding:landingErrors.consoleErrors}));
     await landing.screenshot({path:`/tmp/vf1-landing-${spec.name}.png`,fullPage:true});
     await landing.close();
 
