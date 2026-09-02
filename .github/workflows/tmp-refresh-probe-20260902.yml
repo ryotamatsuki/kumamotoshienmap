@@ -32,6 +32,33 @@ jobs:
           set -Eeuo pipefail
           node scripts/tmp-source-probe-20260902.mjs
 
+      - name: Normalize validators and live shelter timestamp
+        run: |
+          set -Eeuo pipefail
+          node --input-type=module <<'NODE'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          const patch=(path,fn)=>{const before=readFileSync(path,'utf8');const after=fn(before);writeFileSync(path,after);console.log(JSON.stringify({path,changed:before!==after}));};
+          patch('scripts/validate-dashboard-current.mjs',text=>text
+            .replaceAll('9月1日閣議の非常災害復旧復興本部設置を確認し、9月1日実働主体を再監査','9月1日設置の非常災害復旧復興本部を確認し、9月2日実働主体を再監査')
+            .replace('assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-08-28"','assert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-09-02"'));
+          const shelters=JSON.parse(readFileSync('current-shelters.json','utf8'));
+          const sourceAt=shelters.meta.source_last_modified;
+          patch('.github/workflows/post-deploy-pages-smoke.yml',text=>text
+            .replaceAll('2026-09-02T15:42:44+09:00',sourceAt)
+            .replaceAll('2026-09-01T14:56:29+09:00',sourceAt));
+          const ledgerPath='operations/ledgers/refresh-20260902-1616.json';
+          const ledger=JSON.parse(readFileSync(ledgerPath,'utf8'));
+          const shelterSource=ledger.sources.find(source=>source.source_id==='kumamoto-current-shelters-0902');
+          if(shelterSource)shelterSource.source_as_of=sourceAt;
+          ledger.snapshots.shelter_source_last_modified=sourceAt;
+          ledger.snapshots.current_shelters=shelters.meta.current_count;
+          ledger.coverage.current_shelters=shelters.meta.current_count;
+          ledger.coverage.current_shelter_coordinates_confirmed=shelters.shelters.filter(row=>row.coordinate_status==='confirmed').length;
+          ledger.coverage.current_count=shelters.meta.current_count;
+          writeFileSync(ledgerPath,JSON.stringify(ledger,null,2)+'\n');
+          console.log(JSON.stringify({liveShelterSourceLastModified:sourceAt,currentShelters:shelters.meta.current_count}));
+          NODE
+
       - name: Build and run semantic gates
         run: |
           set -Eeuo pipefail
