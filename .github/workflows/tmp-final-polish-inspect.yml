@@ -1,0 +1,25 @@
+name: Temporary final polish selector inspection
+on:
+  push:
+    branches:
+      - design/final-visual-polish
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Inspect final-polish selectors
+        run: |
+          set -euo pipefail
+          echo '=== NEEDS ROOT / TITLE / CONTROLS ==='
+          grep -n -E 'needs-(view|shell|title|hero|intro|caution|kpi|phase|filter|municip|severity|section|list-panel)' ehime_kumamoto_support_geocoded_shelters_20260802.html | head -n 120 || true
+          echo '=== DASHBOARD MICROTYPE ==='
+          grep -n -E 'matrix-label|category-row|region-chip' ehime_kumamoto_support_geocoded_shelters_20260802.html | head -n 80 || true
+          echo '=== OVERVIEW RECHECK ==='
+          grep -n -E 'page-recheck-(status|source|meta|values|diff)' ehime_kumamoto_support_geocoded_shelters_20260802.html | head -n 80 || true
+          echo '=== TIMELINE MAP ACTION ==='
+          grep -n -E '地図で地域を確認|timeline-detail-actions' ehime_kumamoto_support_geocoded_shelters_20260802.html | head -n 40 || true
+          echo '=== MAP TABS ==='
+          grep -n -E 'class="tab|class=.tab|map-note' ehime_kumamoto_support_geocoded_shelters_20260802.html | head -n 60 || true
