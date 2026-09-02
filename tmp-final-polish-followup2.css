@@ -1,0 +1,4 @@
+/* FINAL_VISUAL_POLISH_DETAIL_OPEN_FOLLOWUP_START */
+body .vol-row-details>summary{display:flex!important;align-items:center!important;min-height:40px!important;padding:8px 11px!important;font-size:11px!important}
+@media(max-width:760px){body .vol-row-details>summary{min-height:44px!important}}
+/* FINAL_VISUAL_POLISH_DETAIL_OPEN_FOLLOWUP_END */
