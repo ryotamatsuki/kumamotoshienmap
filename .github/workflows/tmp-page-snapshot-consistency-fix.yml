@@ -1,0 +1,183 @@
+name: Temporary page snapshot consistency fix
+on:
+  push:
+    branches:
+      - fix/page-snapshot-consistency-20260902
+permissions:
+  contents: write
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: fix/page-snapshot-consistency-20260902
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Repair current snapshot surfaces and add recurrence gate
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+
+          root=Path('.')
+          source=root/'ehime_kumamoto_support_geocoded_shelters_20260802.html'
+          public=root/'public/dashboard.html'
+          municipal=root/'scripts/sync-municipal-support-audit.mjs'
+          national=root/'scripts/sync-national-support-audit.mjs'
+          validator=root/'scripts/validate-dashboard-current.mjs'
+          operation=root/'時点修正更新オペレーション.md'
+
+          def replace_once(text, old, new, label):
+              if old not in text:
+                  raise SystemExit(f'missing replacement target: {label}')
+              return text.replace(old,new,1)
+
+          # 1) Stop producer-specific syncs from reintroducing old damage snapshots.
+          n=national.read_text()
+          n=replace_once(n,'第49報の県計へ機械的に再配分しない','第51報の県計へ機械的に再配分しない','national event detail report')
+          n=replace_once(n,'sourceLabel:"熊本県 被害情報 第49報"','sourceLabel:"熊本県 被害情報 第51報"','national event source label')
+          n=replace_once(n,'熊本県第51報（9月2日14時）では避難所61か所、避難者2,442人。現行公式避難所JSONは取得時点の開設施設を別定義で表示する。','熊本県第51報（9月2日14時）では避難所38か所、避難者2,035人。現行公式避難所JSONは取得時点の開設施設を別定義で表示する。','national province needs report values')
+          national.write_text(n)
+
+          m=municipal.read_text()
+          start=m.index('  const dashboard = meta.rows.find((row) => row.section === "支援ダッシュボード");')
+          end=m.index('  return { match, meta };',start)
+          replacement='''  const dashboard = meta.rows.find((row) => row.section === "支援ダッシュボード");\n  if (dashboard) {\n    const auditSuffix = `他自治体支援は${auditCheckedLabel}に全件再監査`;\n    if (!dashboard.current.includes(auditSuffix)) dashboard.current = `${dashboard.current}／${auditSuffix}`;\n    if (!dashboard.difference.includes('他自治体支援')) dashboard.difference = `${dashboard.difference} 他自治体支援は派遣元公式情報でCURRENT／PLANNED／HISTORICAL／UNKNOWNを全件再裁定。`;\n  }\n'''
+          m=m[:start]+replacement+m[end:]
+          municipal.write_text(m)
+
+          # 2) Repair canonical page metadata and all visible CURRENT-summary surfaces.
+          html=source.read_text()
+          meta_match=re.search(r'const\s+PAGE_RECHECK_META\s*=\s*(\{[^\n]*\});',html)
+          if not meta_match:
+              raise SystemExit('PAGE_RECHECK_META not found')
+          meta=json.loads(meta_match.group(1))
+          rows={row['section']:row for row in meta['rows']}
+          damage_url='https://www.pref.kumamoto.jp/soshiki/222/276831.html'
+          rows['被害・支援'].update({
+              'status':'差分あり',
+              'current':'9月2日14時の熊本県第51報へ更新',
+              'previous':'8月28日8時の第49報',
+              'difference':'第51報で避難者2,035人、避難所38か所、人的被害404人、住家被害61,996棟へ更新。現在避難所は公式ライブJSONを別定義で表示。',
+              'source':'熊本県 被害情報 第51報','url':damage_url})
+          rows['愛媛県支援'].update({
+              'current':'9月2日再確認：県総括の最新掲載は8月28日12時版',
+              'previous':'8月28日12時資料',
+              'difference':'9月2日に県総括を再確認。最新掲載は8月28日12時版のため、支援内容はその公表時点を維持し、個別senderは別監査で9月2日時点を再裁定。'})
+          rows['避難所'].update({
+              'current':'熊本県第51報：38か所・避難者2,035人／公式JSON現在40施設／位置履歴206点',
+              'previous':'熊本県第49報61か所／公式JSON 8月31日取得58施設',
+              'difference':'県報は第51報へ更新。公式ライブJSONは現在40施設、座標40/40 confirmed。県報38か所とは時点・定義を分離。',
+              'source':'熊本県第51報・避難所公式JSON','url':damage_url})
+          rows['支援ニーズ見通し'].update({
+              'current':'県全体の避難・人的・住家を熊本県第51報へ更新。市町別内訳は旧スナップショットとして分離',
+              'previous':'第42報等の市町別スナップショット',
+              'difference':'県全体の最新値は第51報へ更新。市町別旧内訳は時点が異なるため、最新県計へ機械的に再配分しない。断水等は各一次資料の対象時点を保持。',
+              'source':'熊本県第51報・各分野一次資料','url':damage_url})
+          rows['発災後タイムライン'].update({
+              'current':'9月2日熊本県第51報まで追加。愛媛県支援は各資料の確認時点を履歴として保持',
+              'previous':'8月24日第42報・愛媛県8月24日支援まで',
+              'difference':'第51報の被害・避難更新を時系列へ追加。既存の過去イベントは履歴として保持し、最新値とは分離。',
+              'source':'熊本県第51報・愛媛県支援履歴','url':damage_url})
+          rows['支援ダッシュボード'].update({
+              'current':'熊本県第51報（9月2日14時）の被害・避難状況を反映／他自治体支援は9月2日16:16全件再監査',
+              'previous':'熊本県第49報／他自治体支援の前回監査',
+              'difference':'県被害・避難は第51報へ更新。他自治体等は割当履歴と現況を分離し、派遣元公式情報に基づき全件再裁定。',
+              'source':'熊本県第51報','url':damage_url})
+          rows['災害ボランティア'].update({
+              'current':'9月2日に県・県社協・市町Vセンター情報を再確認',
+              'previous':'8月31日確認',
+              'difference':'9月2日実績は11市町VC、参加108人、新規依頼60件、活動24件、完了24件を確認。推測で受付状態を補完しない。'})
+          rows['地図・境界'].update({
+              'difference':'ライブ避難所座標は公式JSON現在40件を採用し、40/40 confirmed。8月2日の206点位置履歴とは分離。'})
+          meta_json=json.dumps(meta,ensure_ascii=False,separators=(',',':'))
+          html=html[:meta_match.start()]+f'const PAGE_RECHECK_META={meta_json};'+html[meta_match.end():]
+
+          # Historical one-shot refresh must never overwrite canonical recheck rows again.
+          legacy_start=html.find('const currentStateRefreshPageMeta20260824=')
+          legacy_end=html.find('/* CURRENT_STATE_REFRESH_20260824_END */',legacy_start)
+          if legacy_start<0 or legacy_end<0:
+              raise SystemExit('legacy page-meta refresh block not found')
+          html=html[:legacy_start]+'/* PAGE_RECHECK_META is canonical; historical 20260824 refresh must not overwrite current recheck rows. */\n'+html[legacy_end:]
+
+          # Rendering may not hard-code a report number/count over PAGE_RECHECK_META.
+          fn_start=html.index('function renderPageRecheck(){')
+          keep_end=html.index('if(!el)return;',fn_start)+len('if(!el)return;')
+          render_start=html.index('el.innerHTML=rows.map',keep_end)
+          html=html[:keep_end]+'const rows=PAGE_RECHECK_META.rows;'+html[render_start:]
+
+          html=replace_once(html,
+              '<div class="timeline-update"><strong>ページ全体再確認</strong><br/>2026年9月2日 16:16（JST）<br/>8月24日第42報・愛媛県8月24日支援まで更新<br/>予定は実働確認なしに実績化しない</div>',
+              '<div class="timeline-update"><strong>ページ全体再確認</strong><br/>2026年9月2日 16:16（JST）<br/>熊本県第51報（9月2日14時）まで更新。愛媛県支援は資料ごとの確認時点を保持<br/>予定は実働確認なしに実績化しない</div>',
+              'timeline update banner')
+          html=replace_once(html,'<div class="overview-kpi-note">8月28日8時時点</div>','<div class="overview-kpi-note">9月2日14時・熊本県第51報</div>','overview evacuee note')
+          html=replace_once(html,'<div class="overview-kpi-note">公式JSON現在・2026-08-30 15:03:17</div>','<div class="overview-kpi-note">公式JSON現在・最終更新2026-09-02 19:01:02</div>','overview current shelter note')
+          html=html.replace('<div class="overview-kpi-note">熊本県第49報</div>','<div class="overview-kpi-note">熊本県第51報</div>')
+          html=replace_once(html,'熊本県第49報では住家被害43,292棟。','熊本県第51報（9月2日14時）では住家被害61,996棟。','decision board housing')
+          html=replace_once(html,'宇城市・八代市で避難者2,268人。','市町別旧スナップショットでは宇城市・八代市の避難者計2,268人。9月2日第51報の県計2,035人とは時点・集計範囲が異なるため、旧市町別値を現在値として扱わない。','decision board evacuees')
+          html=replace_once(html,
+              '被害・避難状況のスナップショットは熊本県第49報（8月28日8時）の避難所61か所です。現行避難所地図は熊本県公式避難所JSONの取得時点の現在開設施設（<span id="shelterNoticeCurrentCount">0</span>施設）を表示し、8月2日23時21分の206施設は位置履歴として別レイヤーで表示します。',
+              '被害・避難状況の県報スナップショットは熊本県第51報（9月2日14時）の避難所38か所・避難者2,035人です。現行避難所地図は熊本県公式避難所JSONの取得時点の現在開設施設（<span id="shelterNoticeCurrentCount">0</span>施設）を表示し、8月2日23時21分の206施設は位置履歴として別レイヤーで表示します。',
+              'map notice')
+          html=replace_once(html,'<div class="metric"><div class="metric-label">避難者</div><div class="metric-value">2,709<span class="metric-unit">人</span></div></div>','<div class="metric"><div class="metric-label">避難者</div><div class="metric-value">2,035<span class="metric-unit">人</span></div></div>','map evacuees')
+          html=replace_once(html,'<div class="metric"><div class="metric-label">避難所</div><div class="metric-value">69<span class="metric-unit">か所</span></div></div>','<div class="metric"><div class="metric-label">県報避難所</div><div class="metric-value">38<span class="metric-unit">か所</span></div></div>','map reported shelters')
+          html=replace_once(html,'<div class="metric"><div class="metric-label">人的被害</div><div class="metric-value">398<span class="metric-unit">人</span></div></div>','<div class="metric"><div class="metric-label">人的被害</div><div class="metric-value">404<span class="metric-unit">人</span></div></div>','map human damage')
+          html=replace_once(html,'<div class="metric"><div class="metric-label">住家被害</div><div class="metric-value">38,537<span class="metric-unit">棟</span></div></div>','<div class="metric"><div class="metric-label">住家被害</div><div class="metric-value">61,996<span class="metric-unit">棟</span></div></div>','map housing damage')
+          html=replace_once(html,'<div class="overview-detail-sub">熊本県公表 2026年8月20日14時時点</div>','<div class="overview-detail-sub">市町別旧スナップショット（県全体の最新値は第51報）</div>','overview historical detail label')
+          html=replace_once(html,'>熊本県公式資料</a>${followup}','>市町別旧スナップショット資料</a>${followup}','overview historical detail link label')
+          old_caution='<div class="overview-caution">第42報の避難所65か所・避難者2,709人は2026年8月24日8時の被害・避難状況スナップショットです.現行避難所地図は公式JSON最終更新 ${esc(currentAsOf)} の現在開設${currentCount}施設で、8月2日23時21分の206施設は別の位置履歴レイヤーです。これらは時点とデータ定義が異なります。</div>'
+          new_caution='<div class="overview-caution">市町別内訳は第42報等の旧スナップショットです。県全体の最新確認は第51報（9月2日14時：避難者2,035人、避難所38か所、人的被害404人、住家被害61,996棟）。現行避難所地図は公式JSON最終更新 ${esc(currentAsOf)} の現在開設${currentCount}施設で、8月2日23時21分の206施設は位置履歴です。時点と定義が異なるため、旧内訳を最新県計へ機械的に再配分しません。</div>'
+          html=replace_once(html,old_caution,new_caution,'overview old snapshot caution')
+
+          source.write_text(html)
+          public.write_text(html)
+
+          # 3) Strengthen existing build validator: compare effective runtime surfaces with the release ledger.
+          v=validator.read_text()
+          ledger_anchor='const coverage = JSON.parse(coverageText);\n'
+          ledger_code='''const coverage = JSON.parse(coverageText);\nconst referenceParts = REFERENCE_AT.match(/^(\\d{4})-(\\d{2})-(\\d{2})T(\\d{2}):(\\d{2})/u);\nassert.ok(referenceParts, "REFERENCE_AT format invalid");\nconst ledgerReleaseId = `${referenceParts[1]}${referenceParts[2]}${referenceParts[3]}-${referenceParts[4]}${referenceParts[5]}`;\nconst releaseLedger = JSON.parse(await readFile(resolve(root, `operations/ledgers/refresh-${ledgerReleaseId}.json`), "utf8"));\nassert.equal(releaseLedger.reference_at, REFERENCE_AT, "release ledger reference_at mismatch");\nconst currentDamageReport = Number(releaseLedger.snapshots.damage_report);\nconst ledgerCurrentShelters = Number(releaseLedger.snapshots.current_shelters);\nconst damageSource = releaseLedger.sources.find((source) => String(source.source_id || "").startsWith("kumamoto-damage"));\nassert.ok(Number.isInteger(currentDamageReport) && currentDamageReport > 0, "release ledger damage report missing");\nassert.ok(damageSource?.url, "release ledger damage source missing");\n'''
+          v=replace_once(v,ledger_anchor,ledger_code,'validator ledger anchor')
+          v=replace_once(v,'globalThis.__result={HUBS,NEED_MUNICIPALITIES,PROVINCE_NEEDS,TIMELINE_EVENTS,RECORDS,CURRENT_SHELTER_META,CURRENT_SHELTER_ROWS,CURRENT_SHELTERS,SUPPORT_BLOCKS};','globalThis.__result={HUBS,NEED_MUNICIPALITIES,PROVINCE_NEEDS,TIMELINE_EVENTS,RECORDS,CURRENT_SHELTER_META,CURRENT_SHELTER_ROWS,CURRENT_SHELTERS,SUPPORT_BLOCKS,PAGE_RECHECK_META};','validator runtime result')
+          old_runtime='''assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("61,996棟"));\nassert.equal(runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status").date, "2026-09-02", "主要公表値の時点日が不正です");\nassert.ok(runtime.TIMELINE_EVENTS.every((event) => Array.isArray(event.tags)), "タイムラインの全イベントにtags配列が必要です");\n'''
+          new_runtime='''assert.ok(runtime.PROVINCE_NEEDS.find((item) => item.id === "p-admin").observed.includes("61,996棟"));\nconst currentEvent = runtime.TIMELINE_EVENTS.find((event) => event.id === "t-current-status");\nassert.equal(currentEvent.date, "2026-09-02", "主要公表値の時点日が不正です");\nassert.ok(currentEvent.title.includes(`第${currentDamageReport}報`), "タイムライン最新イベントの報番号がledgerと不一致です");\nassert.equal(currentEvent.sourceLabel, `熊本県 被害情報 第${currentDamageReport}報`, "タイムライン最新イベントのsourceLabelがledgerと不一致です");\nassert.ok(currentEvent.tags.includes(`熊本県第${currentDamageReport}報`), "タイムライン最新イベントのtagがledgerと不一致です");\nconst currentSummary = currentEvent.summary.match(/避難者([\\d,]+)人、開設避難所([\\d,]+)か所、人的被害([\\d,]+)人、住家被害([\\d,]+)棟/u);\nassert.ok(currentSummary, "タイムライン最新イベントの4指標を抽出できません");\nconst parseCount = (value) => Number(String(value).replaceAll(",", ""));\nconst currentCounts = { evacuees: parseCount(currentSummary[1]), reportedShelters: parseCount(currentSummary[2]), human: parseCount(currentSummary[3]), housing: parseCount(currentSummary[4]) };\nconst pShelter = runtime.PROVINCE_NEEDS.find((item) => item.id === "p-shelter");\nassert.ok(pShelter.observed.includes(`第${currentDamageReport}報`) && pShelter.observed.includes(`避難所${currentCounts.reportedShelters.toLocaleString("ja-JP")}か所`) && pShelter.observed.includes(`避難者${currentCounts.evacuees.toLocaleString("ja-JP")}人`), "Needsの県全体避難値が最新タイムラインと不一致です");\nfor (const section of ["被害・支援","避難所","支援ニーズ見通し","発災後タイムライン","支援ダッシュボード"]) {\n  const row = runtime.PAGE_RECHECK_META.rows.find((item) => item.section === section);\n  assert.ok(row, `PAGE_RECHECK_META missing: ${section}`);\n  assert.ok(`${row.current} ${row.source} ${row.difference}`.includes(`第${currentDamageReport}報`), `PAGE_RECHECK_META ${section} が最新報と不一致です`);\n}\nassert.equal(runtime.PAGE_RECHECK_META.rows.find((item) => item.section === "被害・支援").url, damageSource.url, "被害・支援recheckの一次情報URLがledgerと不一致です");\nconst recheckFunctionStart = html.indexOf("function renderPageRecheck(){");\nconst recheckFunctionEnd = html.indexOf("const PROVIDER_LABEL", recheckFunctionStart);\nassert.ok(recheckFunctionStart >= 0 && recheckFunctionEnd > recheckFunctionStart, "renderPageRecheckを抽出できません");\nassert.ok(!/第\\d+報/u.test(html.slice(recheckFunctionStart, recheckFunctionEnd)), "renderPageRecheckで報番号をhard-codeしてはいけません");\nconst timelineUpdateMatch = currentDisplayHtml.match(/<div class="timeline-update">([\\s\\S]*?)<\\/div>/u);\nassert.ok(timelineUpdateMatch?.[1].includes(`第${currentDamageReport}報`), "トップの発災後タイムライン再確認表示が最新報と不一致です");\nconst overviewKpiStart = currentDisplayHtml.indexOf('aria-label="被害・避難状況"');\nconst overviewKpiEnd = currentDisplayHtml.indexOf('<div class="overview-layout">', overviewKpiStart);\nconst overviewKpis = currentDisplayHtml.slice(overviewKpiStart, overviewKpiEnd);\nassert.ok(overviewKpis.includes(`${currentCounts.evacuees.toLocaleString("ja-JP")}<span class="overview-kpi-unit">人`) && overviewKpis.includes(`${currentCounts.human.toLocaleString("ja-JP")}<span class="overview-kpi-unit">人`) && overviewKpis.includes(`${currentCounts.housing.toLocaleString("ja-JP")}<span class="overview-kpi-unit">棟`), "Overview KPIが最新タイムラインと不一致です");\nassert.ok(overviewKpis.includes(`${ledgerCurrentShelters.toLocaleString("ja-JP")}<span class="overview-kpi-unit">か所`) && overviewKpis.includes("公式JSON現在"), "Overviewの現在避難所数がledgerと不一致です");\nassert.ok(overviewKpis.includes(`熊本県第${currentDamageReport}報`), "Overview KPIの報番号がledgerと不一致です");\nconst mapStart = currentDisplayHtml.indexOf('id="mapView"');\nconst mapSummary = currentDisplayHtml.slice(mapStart);\nfor (const value of [`熊本県第${currentDamageReport}報`, `避難所${currentCounts.reportedShelters.toLocaleString("ja-JP")}か所`, `避難者${currentCounts.evacuees.toLocaleString("ja-JP")}人`, `<div class="metric-label">県報避難所</div><div class="metric-value">${currentCounts.reportedShelters.toLocaleString("ja-JP")}<span`, `<div class="metric-label">人的被害</div><div class="metric-value">${currentCounts.human.toLocaleString("ja-JP")}<span`, `<div class="metric-label">住家被害</div><div class="metric-value">${currentCounts.housing.toLocaleString("ja-JP")}<span`]) assert.ok(mapSummary.includes(value), `Map current summary mismatch: ${value}`);\nassert.ok(currentDisplayHtml.includes(`熊本県第${currentDamageReport}報（9月2日14時）では住家被害${currentCounts.housing.toLocaleString("ja-JP")}棟`), "decision boardの住家被害根拠が最新報と不一致です");\nassert.ok(runtime.TIMELINE_EVENTS.every((event) => Array.isArray(event.tags)), "タイムラインの全イベントにtags配列が必要です");\n'''
+          v=replace_once(v,old_runtime,new_runtime,'validator runtime consistency assertions')
+          validator.write_text(v)
+
+          # 4) Record the invariant in the canonical update operation (v2.7).
+          doc=operation.read_text()
+          if '> Version 2.7（2026-09-02改訂）' not in doc:
+              version='''> Version 2.7（2026-09-02改訂）\n>\n> Version 2.6までのGate・監査・sender coverage・Pages Production QAをすべて維持する。\n>\n> Version 2.7では、同一ページ内で「最新」として表示する被害・避難スナップショットをrelease ledgerと一致させる **Current Snapshot Consistency Gate** を追加する。タイムラインだけ更新して再確認サマリー、Overview、Map、Needs等が旧報のまま残る更新を禁止する。\n>\n'''
+              doc=doc.replace('> Version 2.6（2026-08-27改訂）',version+'> Version 2.6（2026-08-27改訂）',1)
+          gate='''### 16.1 同一ページ Current Snapshot Consistency Gate（Version 2.7追加）\n\n最新被害・避難スナップショットのcanonical基準は、当該releaseの `operations/ledgers/refresh-*.json` にある `reference_at`、`snapshots.damage_report`、`snapshots.damage_source_as_of` とする。\n\n次のCURRENT／「直近」表示は、同じ報番号・同じ県全体値へ揃わなければならない。\n\n- Overviewの被害・避難KPI（避難者、人的被害、住家被害）\n- `PAGE_RECHECK_META` の「被害・支援」「避難所」「支援ニーズ見通し」「発災後タイムライン」「支援ダッシュボード」\n- 発災後タイムライン上部の「ページ全体再確認」表示\n- `TIMELINE_EVENTS` の `t-current-status`（title / summary / sourceLabel / tags）\n- Needsの県全体被害・避難観測値\n- Mapの県報スナップショットと県報由来metric\n- decision board等で「現在の判断根拠」として示す県全体値\n\n現行避難所公式JSONは県報とは別定義・別時点であるため、`current_shelters` を県報避難所数へ合わせてはならない。両者を併記する場合は「県報スナップショット」と「公式JSON現在」を明示して分離する。\n\n市町別内訳等で新しい同一定義資料を取得できない場合、旧資料を残すことは許容する。ただし必ず「旧スナップショット」「HISTORICAL」「時点が異なる」等を明示し、`直近`、`最新`、`CURRENT`として表示してはならない。旧市町別値を新しい県計へ機械的に再配分しない。\n\nproducer isolationを守る。`sync:municipal-support`、`sync:national-support` 等の個別監査syncが、自分の担当外である被害報番号・被害一次情報URL・他sectionのrecheck metadataを旧値へ書き戻してはならない。やむを得ずcurrent damage overlayを生成する処理は、必ずrelease ledgerと同値でなければならない。\n\n`renderPageRecheck()` 等のrendererへ報番号や県報件数をhard-codeしてはならない。rendererはcanonical metadataを表示するだけとし、報番号・件数の意味論を別経路で上書きしない。\n\n`npm run build` 内の `validate:dashboard` は、effective runtime data、初期表示HTML、release ledgerを相互比較し、上記のいずれかが不一致ならFAILする。時刻だけ一致していてもsemantic snapshotが不一致ならRelease Gateは通さない。\n\nPR前に最低限、次を確認する。\n\n```sh\nnpm run build\nnpm run validate:dashboard\nnpm run validate:current-state\nnpm run validate:timeline\nnpm run test:release-gate\nnpm run validate:release\ngit diff --check\n```\n\nPages反映後はDesktop 1440×1000、Mobile 390×844の双方で、Overview → 発災後タイムライン → Needs → Mapを実際に切り替え、同じ最新県報番号がcurrent表示面で維持されていることを確認する。\n\n'''
+          if '### 16.1 同一ページ Current Snapshot Consistency Gate（Version 2.7追加）' not in doc:
+              doc=doc.replace('## 17. Sender Gate自己破壊テスト',gate+'## 17. Sender Gate自己破壊テスト',1)
+          operation.write_text(doc)
+          PY
+
+          npm run build
+          npm run test:release-gate
+          npm run validate:release
+          git diff --check
+
+          changed="$(git diff --name-only)"
+          echo "$changed"
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            case "$file" in
+              ehime_kumamoto_support_geocoded_shelters_20260802.html|public/dashboard.html|scripts/sync-municipal-support-audit.mjs|scripts/sync-national-support-audit.mjs|scripts/validate-dashboard-current.mjs|時点修正更新オペレーション.md) ;;
+              *) echo "Unexpected changed file: $file" >&2; exit 1;;
+            esac
+          done <<< "$changed"
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add ehime_kumamoto_support_geocoded_shelters_20260802.html public/dashboard.html scripts/sync-municipal-support-audit.mjs scripts/sync-national-support-audit.mjs scripts/validate-dashboard-current.mjs '時点修正更新オペレーション.md'
+          git diff --cached --check
+          git commit -m 'fix: enforce current snapshot consistency'
+          git push origin HEAD:fix/page-snapshot-consistency-20260902
