@@ -40,6 +40,16 @@ coverage['release_id'] = RELEASE
 touch(coverage)
 new_coverage.write_text(json.dumps(coverage, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
+# The base dashboard also contains a static current-audit sentence and a runtime replacement target.
+# Move both occurrences forward before source/public parity is established and generators run.
+replace_required(
+    ROOT / 'ehime_kumamoto_support_geocoded_shelters_20260802.html',
+    {
+        '9月2日16:16までに確認できた一次情報': '9月3日14:57までに確認できた一次情報',
+    },
+    'canonical dashboard static audit label',
+)
+
 # Generation scripts are release-pinned: move their current-audit labels to the new timepoint.
 replace_required(
     ROOT / 'scripts/sync-municipal-support-audit.mjs',
