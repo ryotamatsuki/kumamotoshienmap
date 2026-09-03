@@ -13,29 +13,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Probe official current sources
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - name: Probe and validate live current shelters
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p /tmp/probe
-
-          echo '=== CURRENT SHELTERS ==='
-          curl -fLsS -D /tmp/probe/shelter.headers 'https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json' -o /tmp/probe/shelter.json
-          grep -iE '^(last-modified|date|etag):' /tmp/probe/shelter.headers || true
+          npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+          npm run update:current-shelters -- --dry-run --candidate-output /tmp/probe/current-shelters-candidate.json
+          node scripts/validate-current-shelters.mjs --candidate=/tmp/probe/current-shelters-candidate.json
           node - <<'NODE'
           const fs=require('fs');
-          const v=JSON.parse(fs.readFileSync('/tmp/probe/shelter.json','utf8'));
-          const rows=Array.isArray(v)?v:(Array.isArray(v?.data)?v.data:(Array.isArray(v?.features)?v.features:[]));
-          console.log(JSON.stringify({topType:Array.isArray(v)?'array':typeof v, keys:Array.isArray(v)?[]:Object.keys(v||{}), rowCount:rows.length, sample:rows[0]??null},null,2));
+          const v=JSON.parse(fs.readFileSync('/tmp/probe/current-shelters-candidate.json','utf8'));
+          console.log('CURRENT_SHELTER_META='+JSON.stringify(v.meta));
+          console.log('CURRENT_SHELTER_COUNT='+v.shelters.length);
+          console.log('CURRENT_SHELTER_MUNICIPALITIES='+JSON.stringify([...new Set(v.shelters.map(x=>x.municipality))].sort()));
           NODE
 
+      - name: Probe official current sources
+        shell: bash
+        run: |
+          set -euo pipefail
           echo '=== EHIME SUPPORT PAGE / LATEST PDF ==='
           curl -fLsS 'https://www.pref.ehime.jp/page/154856.html' -o /tmp/probe/ehime.html
           python3 - <<'PY'
           import re, html
           from urllib.parse import urljoin
           text=open('/tmp/probe/ehime.html',encoding='utf-8').read()
-          # pair anchor hrefs with visible text; current CMS may include nested tags
           for m in re.finditer(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', text, re.I|re.S):
               visible=re.sub(r'<[^>]+>','',m.group(2))
               visible=html.unescape(visible).strip()
@@ -43,26 +49,6 @@ jobs:
                   print('EHIME_PDF_URL='+urljoin('https://www.pref.ehime.jp/page/154856.html',m.group(1)))
                   print('EHIME_PDF_TEXT='+visible)
           PY
-          EHIME_PDF_URL=$(python3 - <<'PY'
-          import re, html
-          from urllib.parse import urljoin
-          text=open('/tmp/probe/ehime.html',encoding='utf-8').read()
-          for m in re.finditer(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', text, re.I|re.S):
-              visible=re.sub(r'<[^>]+>','',m.group(2))
-              visible=html.unescape(visible).strip()
-              if '9月1日12時00分時点' in visible and '熊本地震' in visible:
-                  print(urljoin('https://www.pref.ehime.jp/page/154856.html',m.group(1))); break
-          PY
-          )
-          if [ -n "$EHIME_PDF_URL" ]; then
-            curl -fLsS "$EHIME_PDF_URL" -o /tmp/probe/ehime-latest.pdf
-            if command -v pdftotext >/dev/null; then
-              pdftotext -layout /tmp/probe/ehime-latest.pdf /tmp/probe/ehime-latest.txt
-              cat /tmp/probe/ehime-latest.txt
-            else
-              echo 'pdftotext not available'
-            fi
-          fi
 
           echo '=== KUMAMOTO DAMAGE PAGE RECENT LINKS ==='
           curl -fLsS 'https://www.pref.kumamoto.jp/soshiki/222/276831.html' -o /tmp/probe/kumamoto-damage.html
@@ -73,19 +59,6 @@ jobs:
           plain=re.sub(r'\s+',' ',plain)
           for pat in [r'第\s*5[0-9]\s*報.{0,150}', r'9月\s*[123]日.{0,150}']:
               for x in re.findall(pat,plain): print(x)
-          PY
-
-          echo '=== KUMAMOTO VOLUNTEER PAGE RECENT ==='
-          curl -fLsS 'https://www.pref.kumamoto.jp/soshiki/27/278033.html' -o /tmp/probe/volunteer.html || true
-          python3 - <<'PY'
-          import re, html, os
-          p='/tmp/probe/volunteer.html'
-          if os.path.exists(p):
-              text=open(p,encoding='utf-8').read()
-              plain=html.unescape(re.sub(r'<[^>]+>',' ',text))
-              plain=re.sub(r'\s+',' ',plain)
-              for pat in [r'9月\s*[123]日.{0,250}', r'災害ボランティア.{0,250}']:
-                  for x in re.findall(pat,plain)[:20]: print(x)
           PY
 
       - name: Upload probe files
