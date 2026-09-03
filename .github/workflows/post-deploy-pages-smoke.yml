@@ -56,60 +56,68 @@ jobs:
             cmp --silent "$asset" "/tmp/${asset}" || { echo "::error title=Pages asset stale::${asset} differs from merged main."; exit 1; }
           done
 
-          sender_assets=(
-            sender-municipalities.html
-            sender-municipality-audit.json
-            sender-audit/ehime.json
-            sender-audit/hokkaido-tohoku.json
-            sender-audit/kanto.json
-            sender-audit/chubu.json
-            sender-audit/kinki.json
-            sender-audit/chugoku-shikoku.json
-            sender-audit/kyushu-okinawa.json
-            sender-audit/crosscutting-additions.json
-            sender-audit/timepoint-20260830-additions.json
-            sender-audit/timepoint-20260831-additions.json
-            sender-audit/timepoint-20260901-additions.json
-            sender-audit/sources.json
-            sender-audit/sources-additions.json
-            sender-audit/discovery.json
-            sender-audit/discovery-additions.json
-          )
+          node --input-type=module - <<'NODE' > /tmp/sender-assets.txt
+          import { existsSync, readFileSync } from 'node:fs';
+          const manifest=JSON.parse(readFileSync('sender-municipality-audit.json','utf8'));
+          const assets=[
+            'sender-municipalities.html',
+            'sender-municipality-audit.json',
+            ...(manifest.entity_files||[]),
+            manifest.sources_file,
+            manifest.sources_additions_file,
+            manifest.discovery_file,
+            manifest.discovery_additions_file,
+          ].filter(Boolean);
+          for(const asset of [...new Set(assets)]) {
+            if(!existsSync(asset)) throw new Error(`sender asset referenced by manifest is missing: ${asset}`);
+            console.log(asset);
+          }
+          NODE
+          mapfile -t sender_assets < /tmp/sender-assets.txt
           for asset in "${sender_assets[@]}"; do
             tmp="/tmp/sender-$(echo "$asset" | tr '/' '_')"
             curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${asset}" -o "$tmp"
             cmp --silent "$asset" "$tmp" || { echo "::error title=Sender Pages asset stale::${asset} differs from merged main."; exit 1; }
           done
 
+          # Structural smoke only. Release-specific dates/counts are validated from the checked-in data below.
           grep -F './ehime_kumamoto_support_geocoded_shelters_20260802.html' /tmp/root.html
           grep -F './sender-municipalities.html' /tmp/root.html
           grep -F '送出基礎自治体 Coverage' /tmp/root.html
           grep -F 'NATIONAL_SUPPORT_AUDIT_START' /tmp/deployed-dashboard.html
-          grep -F '9月2日16:16基準で全件再監査' /tmp/deployed-dashboard.html
-          grep -F '国交省第51報（8/31 17:00）を最新インフラ履歴として確認。はくおうIIは予約受付終了、9/3宿泊実施はPLANNED' /tmp/deployed-dashboard.html
-          grep -F '9月1日設置の非常災害復旧復興本部を確認し、9月2日実働主体を再監査' /tmp/deployed-dashboard.html
-          grep -F '予約受付終了' /tmp/deployed-dashboard.html
-          grep -F '第4期・9月3日～6日必要人数到達' /tmp/volunteer-data.js
           grep -F '愛媛県内20市町' /tmp/deployed-sender.html
           grep -F '全国基礎自治体 sender' /tmp/deployed-sender.html
           grep -F '予定期間に入っただけではCURRENTにしません' /tmp/deployed-sender.html
 
           node --input-type=module - <<'NODE'
           import { readFileSync } from 'node:fs';
+          const expectedShelters=JSON.parse(readFileSync('current-shelters.json','utf8'));
           const shelters=JSON.parse(readFileSync('/tmp/current-shelters.json','utf8'));
-          if(shelters.meta.current_count!==40 || shelters.shelters.length!==40) throw new Error(`deployed current shelters must be 40, got ${shelters.shelters.length}`);
-          if(shelters.meta.source_last_modified!=="2026-09-02T19:01:02+09:00") throw new Error(`unexpected shelter source timestamp: ${shelters.meta.source_last_modified}`);
+          if(JSON.stringify(expectedShelters)!==JSON.stringify(shelters)) throw new Error('deployed current shelters differ semantically from merged main');
+          const currentCount=shelters.shelters.length;
+          if(currentCount<=0 || shelters.meta.current_count!==currentCount) throw new Error(`deployed current shelter count is inconsistent: meta=${shelters.meta.current_count} rows=${currentCount}`);
+          if(Number.isNaN(Date.parse(shelters.meta.source_last_modified))) throw new Error(`invalid shelter source timestamp: ${shelters.meta.source_last_modified}`);
           if(shelters.shelters.some(row=>row.coordinate_status!=='confirmed')) throw new Error('deployed current shelters contain unresolved/conflict coordinates');
+
           const expected=JSON.parse(readFileSync('sender-municipality-audit.json','utf8'));
           const deployed=JSON.parse(readFileSync('/tmp/deployed-sender-manifest.json','utf8'));
           if(JSON.stringify(expected)!==JSON.stringify(deployed)) throw new Error('deployed sender manifest differs semantically');
           const ehime=expected.summary.ehime;
           const nationwide=expected.summary.nationwide;
-          if(ehime.required_count!==20 || ehime.adjudicated_count!==20 || ehime.missing_required.length!==0) throw new Error('Ehime sender coverage must be 20/20 with missing 0');
+          if(ehime.required_count!==expected.ehime_required_entities.length || ehime.adjudicated_count!==ehime.required_count || ehime.missing_required.length!==0) throw new Error('Ehime sender coverage is incomplete');
           if(nationwide.prefecture_discovery_checked!==47) throw new Error('nationwide discovery must be 47/47');
-          if(nationwide.adjudicated_basic_municipality_senders!==316 || nationwide.discovered_basic_municipality_senders!==316) throw new Error('nationwide sender count must be 316');
-          if(nationwide.orphan_source_mentions.length!==0 || nationwide.blocking_conflicts!==0) throw new Error('sender closure still has blocking items');
-          console.log(JSON.stringify({currentShelters:40,allCoordinatesConfirmed:true,ehime:'20/20',prefectureDiscovery:'47/47',senderEntities:316,orphanMentions:0}));
+          if(nationwide.adjudicated_basic_municipality_senders!==nationwide.discovered_basic_municipality_senders) throw new Error('nationwide discovered/adjudicated sender counts differ');
+          if(nationwide.orphan_source_mentions.length!==0 || nationwide.blocking_conflicts!==0 || nationwide.invalid_current.length!==0) throw new Error('sender closure still has blocking items');
+          console.log(JSON.stringify({
+            currentShelters:currentCount,
+            shelterSourceLastModified:shelters.meta.source_last_modified,
+            allCoordinatesConfirmed:true,
+            ehime:`${ehime.adjudicated_count}/${ehime.required_count}`,
+            prefectureDiscovery:`${nationwide.prefecture_discovery_checked}/47`,
+            senderEntities:nationwide.adjudicated_basic_municipality_senders,
+            currentSenders:nationwide.states.CURRENT,
+            orphanMentions:nationwide.orphan_source_mentions.length,
+          }));
           NODE
 
       - name: Install browser driver
@@ -127,8 +135,17 @@ jobs:
           import { readFileSync } from 'node:fs';
           const expectedHtml=readFileSync('ehime_kumamoto_support_geocoded_shelters_20260802.html','utf8');
           const senderManifest=JSON.parse(readFileSync('sender-municipality-audit.json','utf8'));
-          const expectedSenderCount=senderManifest.summary.nationwide.adjudicated_basic_municipality_senders;
-          const expectedEhimeCount=senderManifest.summary.ehime.adjudicated_count;
+          const ehimeSummary=senderManifest.summary.ehime;
+          const nationwideSummary=senderManifest.summary.nationwide;
+          const expectedSenderCount=nationwideSummary.adjudicated_basic_municipality_senders;
+          const expectedEhimeCount=ehimeSummary.adjudicated_count;
+          const expectedCurrentCount=nationwideSummary.states.CURRENT;
+          const expectedCardValues=[
+            `${ehimeSummary.adjudicated_count}/${ehimeSummary.required_count}`,
+            `${nationwideSummary.prefecture_discovery_checked}/47`,
+            String(expectedSenderCount),
+            String(nationwideSummary.orphan_source_mentions.length),
+          ];
           const meta=extractPageRecheckMeta(expectedHtml);
           const checkedLabel=formatPageCheckedAt(meta.checkedAt);
           const checkedCompact=formatPageCheckedAt(meta.checkedAt,{compact:true});
@@ -170,12 +187,12 @@ jobs:
               await senderPage.waitForFunction(count=>document.querySelectorAll('#ehimeBody tr[data-entity]').length===count,{timeout:30000},expectedEhimeCount);
               await senderPage.waitForFunction(count=>document.querySelectorAll('#nationalBody tr[data-entity]').length===count,{timeout:30000},expectedSenderCount);
               const senderState=await senderPage.evaluate(()=>({cards:document.getElementById('cards')?.innerText||'',ehimeRows:document.querySelectorAll('#ehimeBody tr[data-entity]').length,nationalRows:document.querySelectorAll('#nationalBody tr[data-entity]').length,pageOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth}));
-              for(const expected of ['20/20','47/47','316','0']) if(!senderState.cards.includes(expected)) throw new Error(`${spec.name}: sender summary missing ${expected}`);
+              for(const expected of expectedCardValues) if(!senderState.cards.includes(expected)) throw new Error(`${spec.name}: sender summary missing ${expected}`);
               if(senderState.pageOverflow || senderErrors.length || senderConsole.length) throw new Error(`${spec.name}: sender runtime failure`);
               await senderPage.select('#state','CURRENT');
-              await senderPage.waitForFunction(()=>document.querySelectorAll('#nationalBody tr[data-entity]').length>0);
+              await senderPage.waitForFunction(count=>document.querySelectorAll('#nationalBody tr[data-entity]').length===count,{timeout:30000},expectedCurrentCount);
               const filtered=await senderPage.$$eval('#nationalBody tr[data-entity]',rows=>rows.length);
-              if(filtered!==12) throw new Error(`${spec.name}: CURRENT sender rows must be 12, got ${filtered}`);
+              if(filtered!==expectedCurrentCount) throw new Error(`${spec.name}: CURRENT sender rows must be ${expectedCurrentCount}, got ${filtered}`);
               console.log(JSON.stringify({name:`sender-${spec.name}`,...senderState,filteredRows:filtered,pageErrors:senderErrors,consoleErrors:senderConsole}));
               await senderPage.close();
             }
