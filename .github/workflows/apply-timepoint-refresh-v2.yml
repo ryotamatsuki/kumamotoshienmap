@@ -27,6 +27,7 @@ jobs:
           npm install --ignore-scripts --no-audit --no-fund --package-lock=false
           npm run update:current-shelters
           python3 scripts/apply-timepoint-refresh-20260903.py
+          python3 scripts/patch-timepoint-validators-20260903.py
 
           # Generators require canonical/public parity before they start.
           cp ehime_kumamoto_support_geocoded_shelters_20260802.html public/dashboard.html
@@ -46,6 +47,7 @@ jobs:
           excluded={
             '.github/workflows/apply-timepoint-refresh-v2.yml',
             'scripts/apply-timepoint-refresh-20260903.py',
+            'scripts/patch-timepoint-validators-20260903.py',
           }
           files=sorted({x for x in committed+working+untracked if x and x not in excluded})
           if str(ledger) not in files:
@@ -75,7 +77,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git reset .github/workflows/apply-timepoint-refresh-v2.yml scripts/apply-timepoint-refresh-20260903.py
+          git reset .github/workflows/apply-timepoint-refresh-v2.yml scripts/apply-timepoint-refresh-20260903.py scripts/patch-timepoint-validators-20260903.py
           if git diff --cached --quiet; then
             echo 'No generated refresh diff to commit.'
             exit 0
