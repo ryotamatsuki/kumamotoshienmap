@@ -1,5 +1,5 @@
 {
-  "reference_at": "2026-09-02T16:16:00+09:00",
+  "reference_at": "2026-09-03T14:57:25+09:00",
   "prefecture_discovery": [
     {
       "prefecture": "北海道",
@@ -9,8 +9,8 @@
       "sender_candidates_found": [
         "札幌市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "青森県",
@@ -18,8 +18,8 @@
       "search_query": "青森県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "岩手県",
@@ -27,8 +27,8 @@
       "search_query": "岩手県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "宮城県",
@@ -41,8 +41,8 @@
       "sender_candidates_found": [
         "仙台市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "秋田県",
@@ -56,8 +56,8 @@
         "由利本荘市",
         "秋田市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "山形県",
@@ -65,8 +65,8 @@
       "search_query": "山形県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "福島県",
@@ -74,8 +74,8 @@
       "search_query": "福島県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "茨城県",
@@ -83,8 +83,8 @@
       "search_query": "茨城県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "栃木県",
@@ -92,8 +92,8 @@
       "search_query": "栃木県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "群馬県",
@@ -117,8 +117,8 @@
         "草津町",
         "高山村"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "埼玉県",
@@ -130,8 +130,8 @@
         "所沢市",
         "越谷市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "千葉県",
@@ -141,8 +141,8 @@
       "sender_candidates_found": [
         "千葉市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "東京都",
@@ -173,8 +173,8 @@
         "武蔵野市",
         "三鷹市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "神奈川県",
@@ -212,8 +212,8 @@
         "鎌倉市",
         "開成町"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "新潟県",
@@ -223,8 +223,8 @@
       "sender_candidates_found": [
         "新潟市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "富山県",
@@ -247,8 +247,8 @@
         "魚津市",
         "黒部市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "石川県",
@@ -256,8 +256,8 @@
       "search_query": "石川県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "福井県",
@@ -265,8 +265,8 @@
       "search_query": "福井県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "山梨県",
@@ -274,8 +274,8 @@
       "search_query": "山梨県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "長野県",
@@ -283,8 +283,8 @@
       "search_query": "長野県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "岐阜県",
@@ -292,8 +292,8 @@
       "search_query": "岐阜県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "静岡県",
@@ -304,8 +304,8 @@
         "浜松市",
         "静岡市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "愛知県",
@@ -315,8 +315,8 @@
       "sender_candidates_found": [
         "名古屋市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "三重県",
@@ -324,8 +324,8 @@
       "search_query": "三重県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "滋賀県",
@@ -350,8 +350,8 @@
         "長浜市",
         "高島市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "京都府",
@@ -361,8 +361,8 @@
       "sender_candidates_found": [
         "京都市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "大阪府",
@@ -373,8 +373,8 @@
         "堺市",
         "大阪市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "兵庫県",
@@ -382,8 +382,8 @@
       "search_query": "兵庫県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "奈良県",
@@ -391,8 +391,8 @@
       "search_query": "奈良県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "和歌山県",
@@ -400,8 +400,8 @@
       "search_query": "和歌山県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "鳥取県",
@@ -409,8 +409,8 @@
       "search_query": "鳥取県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "島根県",
@@ -418,8 +418,8 @@
       "search_query": "島根県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "岡山県",
@@ -450,8 +450,8 @@
         "鏡野町",
         "高梁市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "広島県",
@@ -461,8 +461,8 @@
       "sender_candidates_found": [
         "広島市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "山口県",
@@ -482,8 +482,8 @@
         "山口市",
         "萩市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "徳島県",
@@ -495,23 +495,28 @@
         "tokushima-0816",
         "tokushima-0820",
         "tokushima-0823",
-        "tokushima-0828"
+        "tokushima-0828",
+        "tokushima-housing-wave3-0903",
+        "tokushima-liaison-wave10-0901"
       ],
       "sender_candidates_found": [
-        "那賀町",
-        "鳴門市",
-        "美馬市",
-        "勝浦町",
+        "つるぎ町",
         "三好市",
-        "東みよし町",
-        "徳島市",
-        "牟岐町",
-        "美波町",
+        "佐那河内村",
+        "勝浦町",
         "小松島市",
-        "つるぎ町"
+        "徳島市",
+        "東みよし町",
+        "牟岐町",
+        "石井町",
+        "美波町",
+        "美馬市",
+        "那賀町",
+        "阿南市",
+        "鳴門市"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "香川県",
@@ -519,8 +524,8 @@
       "search_query": "香川県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "愛媛県",
@@ -568,8 +573,8 @@
         "西条市",
         "鬼北町"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "高知県",
@@ -577,8 +582,8 @@
       "search_query": "高知県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "福岡県",
@@ -635,8 +640,8 @@
         "久山町",
         "福智町"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "佐賀県",
@@ -644,8 +649,8 @@
       "search_query": "佐賀県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "長崎県",
@@ -669,8 +674,8 @@
         "佐世保市",
         "小値賀町"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "熊本県",
@@ -678,19 +683,22 @@
       "search_query": "熊本県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "大分県",
       "discovery_state": "CHECKED",
       "search_query": "大分県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
-      "sources_checked": [],
-      "sender_candidates_found": [
-        "佐伯市"
+      "sources_checked": [
+        "taketa-cert-wave-0903"
       ],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "sender_candidates_found": [
+        "佐伯市",
+        "竹田市"
+      ],
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "宮崎県",
@@ -698,8 +706,8 @@
       "search_query": "宮崎県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "鹿児島県",
@@ -707,8 +715,8 @@
       "search_query": "鹿児島県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "prefecture": "沖縄県",
@@ -716,8 +724,10 @@
       "search_query": "沖縄県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [],
       "sender_candidates_found": [],
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     }
-  ]
+  ],
+  "checked_at": "2026-09-03T14:57:25+09:00",
+  "rechecked_at": "2026-09-03T14:57:25+09:00"
 }

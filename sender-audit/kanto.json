@@ -1,6 +1,6 @@
 {
   "region": "kanto",
-  "reference_at": "2026-09-02T16:16:00+09:00",
+  "reference_at": "2026-09-03T14:57:25+09:00",
   "entities": [
     {
       "entity": "さいたま市",
@@ -19,14 +19,14 @@
         "repository-municipal-audit-0826"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "repository-municipal-audit-0826"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "所沢市",
@@ -45,14 +45,14 @@
         "baseline-tokorozawa"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "baseline-tokorozawa"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "越谷市",
@@ -71,14 +71,14 @@
         "baseline-koshigaya"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "baseline-koshigaya"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "千葉市",
@@ -97,14 +97,14 @@
         "baseline-chiba"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "baseline-chiba"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "三浦市",
@@ -123,14 +123,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "二宮町",
@@ -149,14 +149,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "南足柄市",
@@ -175,14 +175,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "厚木市",
@@ -201,14 +201,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "大井町",
@@ -227,14 +227,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "大和市",
@@ -253,14 +253,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "大磯町",
@@ -279,14 +279,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "寒川町",
@@ -305,14 +305,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "小田原市",
@@ -331,14 +331,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "山北町",
@@ -357,14 +357,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "川崎市",
@@ -383,14 +383,14 @@
         "baseline-kawasaki"
       ],
       "evidence_note": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "既存監査又は公式送出ページで支援主体として確認済みだが、8月27日基準の継続実働を直接確認できず。",
       "source_as_of": null,
       "sources_checked": [
         "baseline-kawasaki"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "平塚市",
@@ -409,14 +409,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "座間市",
@@ -435,14 +435,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "愛川町",
@@ -461,14 +461,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "松田町",
@@ -487,14 +487,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "横須賀市",
@@ -513,14 +513,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "海老名市",
@@ -539,14 +539,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "湯河原町",
@@ -565,14 +565,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "秦野市",
@@ -591,14 +591,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "箱根町",
@@ -617,14 +617,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "綾瀬市",
@@ -643,14 +643,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "茅ヶ崎市",
@@ -669,14 +669,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "葉山町",
@@ -695,14 +695,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "藤沢市",
@@ -721,14 +721,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "逗子市",
@@ -747,14 +747,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "鎌倉市",
@@ -773,14 +773,14 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "開成町",
@@ -799,16 +799,16 @@
         "kanagawa-wave1"
       ],
       "evidence_note": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "神奈川県公式の派遣班構成に記載。予定期間到来だけではCURRENTへ昇格しない。",
       "source_as_of": null,
       "sources_checked": [
         "kanagawa-wave1"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     }
   ],
-  "checked_at": "2026-09-02T16:35:00+09:00",
-  "rechecked_at": "2026-09-02T16:35:00+09:00"
+  "checked_at": "2026-09-03T14:57:25+09:00",
+  "rechecked_at": "2026-09-03T14:57:25+09:00"
 }

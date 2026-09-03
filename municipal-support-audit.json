@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "repository": "ryotamatsuki/kumamotoshienmap",
-  "reference_at": "2026-09-02T16:16:00+09:00",
-  "checked_at": "2026-09-02T16:35:00+09:00",
-  "release_id": "20260902-1616",
+  "reference_at": "2026-09-03T14:57:25+09:00",
+  "checked_at": "2026-09-03T14:57:25+09:00",
+  "release_id": "20260903-1457",
   "policy": {
     "historical_roster_is_not_current": true,
     "secondary_sources_for_discovery_only": true,
@@ -32,8 +32,8 @@
       "as_of": "2026-08-11T14:00:00+09:00",
       "url": "https://www.pref.kumamoto.jp/uploaded/attachment/316600.pdf",
       "role": "historical_roster",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "kumamoto-aggregate-0819",
@@ -42,8 +42,8 @@
       "as_of": "2026-08-19T14:00:00+09:00",
       "url": "https://www.pref.kumamoto.jp/uploaded/attachment/317153.pdf",
       "role": "historical_aggregate",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "chiba-0819",
@@ -52,8 +52,8 @@
       "as_of": "2026-08-19",
       "url": "https://www.pref.chiba.lg.jp/bousai/kouikiouen/r8kumamoto-taiou.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "tokyo-0820",
@@ -62,8 +62,8 @@
       "as_of": "2026-08-20",
       "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082015",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "tokyo-0821",
@@ -72,8 +72,8 @@
       "as_of": "2026-08-21",
       "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082106",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "kanagawa-0821",
@@ -82,8 +82,8 @@
       "as_of": "2026-08-21",
       "url": "https://www.pref.kanagawa.jp/docs/bu4/prs/r7010643.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "saitama-tokorozawa-0820",
@@ -92,8 +92,8 @@
       "as_of": "2026-08-20",
       "url": "https://www.city.tokorozawa.saitama.jp/tokoronews/press/r8/08/kumamotoouennsyokuinn0820.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "saitama-koshigaya-0821",
@@ -102,8 +102,8 @@
       "as_of": "2026-08-21",
       "url": "https://www.city.koshigaya.saitama.jp/anzen_anshin/bosai/oshirase/kumamoto_sien.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "kawasaki-0812",
@@ -112,8 +112,8 @@
       "as_of": "2026-08-12",
       "url": "https://www.city.kawasaki.jp/templates/prs/601/0000189384.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "kawasaki-0824",
@@ -122,8 +122,8 @@
       "as_of": "2026-08-24",
       "url": "https://www.city.kawasaki.jp/templates/prs/601/0000189631.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "osaka-0814",
@@ -132,8 +132,8 @@
       "as_of": "2026-08-14",
       "url": "https://www.city.osaka.lg.jp/kikikanrishitsu/page/0000684623.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "okayama-0820",
@@ -142,8 +142,8 @@
       "as_of": "2026-08-20",
       "url": "https://www.pref.okayama.jp/page/1051632.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "yamaguchi-0820",
@@ -152,8 +152,8 @@
       "as_of": "2026-08-20",
       "url": "https://www.pref.yamaguchi.lg.jp/press/359667.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "nagoya-0813",
@@ -162,8 +162,8 @@
       "as_of": "2026-08-13",
       "url": "https://www.city.nagoya.jp/houdou/3003942/3003947/3005441.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "nagasaki-0817",
@@ -172,8 +172,8 @@
       "as_of": "2026-08-17",
       "url": "https://www.pref.nagasaki.jp/press-contents/51537.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "nagasaki-health",
@@ -182,8 +182,8 @@
       "as_of": "2026-07-30",
       "url": "https://www.pref.nagasaki.jp/press-contents/50893.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "fukuoka-0821",
@@ -192,8 +192,8 @@
       "as_of": "2026-08-21",
       "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken5.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "tokushima-0824",
@@ -202,8 +202,8 @@
       "as_of": "2026-08-24",
       "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315847/",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "shiga-0821",
@@ -212,8 +212,8 @@
       "as_of": "2026-08-21",
       "url": "https://www.pref.shiga.lg.jp/kensei/koho/e-shinbun/oshirase/352146.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "toyama-0821",
@@ -222,8 +222,8 @@
       "as_of": "2026-08-21",
       "url": "https://www.pref.toyama.jp/1902/bousaianzen/bousai/jishin/kumamotozishin.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "kyoto-press-0820",
@@ -232,8 +232,8 @@
       "as_of": "2026-08-20",
       "url": "https://www.pref.kyoto.jp/press/",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "hokkaido-0820",
@@ -242,8 +242,8 @@
       "as_of": "2026-08-20",
       "url": "https://www.pref.hokkaido.lg.jp/sm/ktk/175789.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "aomori-0821",
@@ -252,8 +252,8 @@
       "as_of": "2026-08-21",
       "url": "https://www.pref.aomori.lg.jp/release/2026/81234.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "hiroshima-city-0813",
@@ -262,8 +262,8 @@
       "as_of": "2026-08-13",
       "url": "https://www.city.hiroshima.lg.jp/shisei/kouhou/1004010/1045546/1050818/1052407.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "saga-0810",
@@ -272,8 +272,8 @@
       "as_of": "2026-08-10",
       "url": "https://www.pref.saga.lg.jp/kiji003120626/index.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "saga-health-0730",
@@ -282,8 +282,8 @@
       "as_of": "2026-07-30",
       "url": "https://www.pref.saga.lg.jp/kiji003120545/index.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "saga-dwat-0805",
@@ -292,8 +292,8 @@
       "as_of": "2026-08-05",
       "url": "https://www.pref.saga.lg.jp/kiji003120569/index.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "pharmacy-secondary-0814",
@@ -302,26 +302,26 @@
       "as_of": "2026-08-14",
       "url": "https://mf.jiho.jp/article/269763",
       "role": "secondary_discovery_only",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "ehime-0824",
       "role": "sender_official",
       "name": "愛媛県 本県の支援状況について（8月24日12時版）",
       "as_of": "2026-08-24T12:00:00+09:00",
-      "checked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
       "url": "https://www.pref.ehime.jp/uploaded/attachment/188555.pdf",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "kumamoto-pharmacy-0808",
       "role": "historical_activity",
       "name": "熊本県 第21回災害対策本部会議資料（モバイルファーマシー活動履歴）",
       "as_of": "2026-08-08T14:00:00+09:00",
-      "checked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
       "url": "https://www.pref.kumamoto.jp/uploaded/attachment/316443.pdf",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "chiba-city-support-0819",
@@ -329,8 +329,8 @@
       "role": "dispatch_origin_official",
       "url": "https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/01r8kumamotozisin2.html",
       "as_of": "2026-08-19",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
       "primary": true,
       "note": "人的派遣は8月10日までの実績のみ現行ページに掲載。8月25日CURRENT根拠にはしない。"
     },
@@ -340,8 +340,8 @@
       "role": "dispatch_origin_official",
       "url": "https://www.pref.wakayama.lg.jp/prefg/011900/d00222719.html",
       "as_of": "2026-08-25 recheck",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
       "primary": true,
       "note": "宇城市への第2次以降を順次派遣し継続して支援と明示。"
     },
@@ -351,8 +351,8 @@
       "role": "dispatch_origin_official",
       "url": "https://www.pref.kanagawa.jp/docs/bu4/prs/r7010643.html",
       "as_of": "2026-08-21",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
       "primary": true,
       "note": "8月3日より職員を派遣しているところと明示し、第5陣へ引継ぎ。"
     },
@@ -362,8 +362,8 @@
       "role": "dispatch_origin_official",
       "url": "https://ssl.city.kitakyushu.lg.jp/contents/90000638_00003.html",
       "as_of": "2026-08-23",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
       "primary": true,
       "note": "8月24日更新、8月23日時点。八代市等への複数班を随時更新し、開始済み・終了日未定の支援を確認。"
     },
@@ -373,8 +373,8 @@
       "role": "dispatch_origin_official",
       "url": "https://www.pref.saga.lg.jp/kiji003120626/index.html",
       "as_of": "2026-08-10",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
       "primary": true,
       "note": "氷川町に職員を派遣しています、住家被害認定調査を進めていますと現在形で明示。"
     },
@@ -384,8 +384,8 @@
       "role": "crosscutting_official",
       "url": "https://www.pref.kumamoto.jp/soshiki/27/275523.html",
       "as_of": "2026-08-24",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
       "primary": true,
       "note": "県内災害VCの横断一次情報。"
     },
@@ -395,8 +395,8 @@
       "role": "dispatch_origin_official",
       "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082015",
       "as_of": "2026-08-20",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
       "primary": true,
       "note": "8月20-28の派遣を告知。基準日時点の継続実働を同日資料だけで推定しない。"
     },
@@ -406,8 +406,8 @@
       "role": "dispatch_origin_official",
       "url": "https://www.city.nagoya.jp/houdou/3003942/3003947/3005441.html",
       "as_of": "2026-08-13",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
       "primary": true,
       "note": "8月17-30を派遣することとした旨の告知。実働の新規確認なし。"
     },
@@ -417,8 +417,8 @@
       "role": "dispatch_origin_official",
       "url": "https://www.city.osaka.lg.jp/kikikanrishitsu/page/0000684623.html",
       "as_of": "2026-08-14",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
       "primary": true,
       "note": "8月14日現在のローテーション予定を掲載。開始日経過のみでCURRENT化しない。"
     },
@@ -428,8 +428,8 @@
       "role": "dispatch_origin_official",
       "url": "https://www.pref.aomori.lg.jp/release/2026/81234.html",
       "as_of": "2026-08-21",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
       "primary": true,
       "note": "第3班8月22-31、現地業務23-30の派遣告知。実働開始の直接確認なし。"
     },
@@ -439,8 +439,8 @@
       "role": "dispatch_origin_official",
       "url": "https://www.city.sapporo.jp/kinkyu/202607_kumamotojishin.html",
       "as_of": "2026-08-10",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
       "primary": true,
       "note": "8月10日更新で罹災証明発行支援の職員4名が熊本市で従事開始と確認。8月25日基準の継続・終了を直接示す更新は未確認のためUNKNOWN根拠として使用。"
     },
@@ -451,8 +451,8 @@
       "role": "provider_current",
       "primary": true,
       "as_of": "2026-08-21",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "nagasaki-0825-departure-plan",
@@ -461,8 +461,8 @@
       "role": "provider_schedule_recheck",
       "primary": true,
       "as_of": "2026-08-24",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "gyokuto-volunteer-0820",
@@ -471,8 +471,8 @@
       "role": "provider_schedule_recheck",
       "primary": true,
       "as_of": "2026-08-20",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "source_id": "fukuoka-0828-current",
@@ -481,8 +481,8 @@
       "as_of": "2026-08-28",
       "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken6.html",
       "role": "sender_official",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     }
   ],
   "records": [
@@ -1354,6 +1354,6 @@
   "discovery_only_notes": [
     "モバイルファーマシーについて二次情報では8/12までに全車撤収と報じられたが、一次情報で再確認できなかったため終了確定には使用せずUNKNOWNとした。"
   ],
-  "rechecked_at": "2026-09-02T16:35:00+09:00",
+  "rechecked_at": "2026-09-03T14:57:25+09:00",
   "blocking_unresolved": []
 }

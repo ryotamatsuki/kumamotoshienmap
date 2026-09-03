@@ -1,0 +1,115 @@
+{
+  "region": "timepoint-20260903-additions",
+  "reference_at": "2026-09-03T14:57:25+09:00",
+  "entities": [
+    {
+      "entity": "阿南市",
+      "prefecture": "徳島県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "住家被害認定調査",
+        "避難所支援"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-housing-wave3-0903",
+        "tokushima-liaison-wave10-0901"
+      ],
+      "evidence_note": "徳島県公式が9月1日の派遣に続き、9月3日にも阿南市職員1名を含む住家被害認定調査チームを実際に派遣したと明示。",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "current_evidence_type": "actual_dispatch_confirmed",
+      "source_as_of": "2026-09-03T00:00:00+09:00",
+      "sources_checked": [
+        "tokushima-housing-wave3-0903",
+        "tokushima-liaison-wave10-0901"
+      ]
+    },
+    {
+      "entity": "佐那河内村",
+      "prefecture": "徳島県",
+      "municipality_type": "village",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "避難所支援"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-liaison-wave10-0901"
+      ],
+      "evidence_note": "徳島県公式が佐那河内村職員1名を含む避難所支援チームを9月1日に実際に派遣し、派遣期間を9月1日～7日と明示。",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "current_evidence_type": "actual_dispatch_confirmed",
+      "source_as_of": "2026-09-01T00:00:00+09:00",
+      "sources_checked": [
+        "tokushima-liaison-wave10-0901"
+      ]
+    },
+    {
+      "entity": "石井町",
+      "prefecture": "徳島県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "住家被害認定調査"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-housing-wave3-0903"
+      ],
+      "evidence_note": "徳島県公式が2026年9月3日に石井町職員1名を含む住家被害認定調査チームを宇土市へ派遣したと明示。",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "current_evidence_type": "actual_dispatch_confirmed",
+      "source_as_of": "2026-09-03T00:00:00+09:00",
+      "sources_checked": [
+        "tokushima-housing-wave3-0903"
+      ]
+    },
+    {
+      "entity": "竹田市",
+      "prefecture": "大分県",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "罹災証明発行事務支援"
+      ],
+      "destinations": [
+        "八代市"
+      ],
+      "source_ids": [
+        "taketa-cert-wave-0903"
+      ],
+      "evidence_note": "竹田市公式が9月3日～9日に八代市へ2名を派遣すると公表。基準時点で実出発・実活動を直接確認できないため予定期間開始のみでCURRENTへ昇格しない。",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "rechecked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "reason": "「派遣します」という予定公表であり、実出発・実活動の直接根拠ではないためPLANNED。",
+      "source_as_of": "2026-09-03T00:00:00+09:00",
+      "sources_checked": [
+        "taketa-cert-wave-0903"
+      ]
+    }
+  ],
+  "checked_at": "2026-09-03T14:57:25+09:00",
+  "rechecked_at": "2026-09-03T14:57:25+09:00"
+}

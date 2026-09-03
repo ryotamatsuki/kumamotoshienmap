@@ -1,5 +1,5 @@
 {
-  "reference_at": "2026-09-02T16:16:00+09:00",
+  "reference_at": "2026-09-03T14:57:25+09:00",
   "entities": [
     {
       "entity": "新宮市",
@@ -18,14 +18,14 @@
         "wakayama-shingu-0828"
       ],
       "evidence_note": "市公式が被災地への職員派遣を「行っています」と現在形で明示し、宇城市での住家被害認定調査を9月1日～7日と掲載。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
       "source_as_of": "2026-08-28T00:00:00+09:00",
       "sources_checked": [
         "wakayama-shingu-0828"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     },
     {
       "entity": "武雄市",
@@ -44,16 +44,16 @@
         "takeo-volunteer-0831"
       ],
       "evidence_note": "市公式が第2陣の派遣募集と9月1日受付開始を公表。募集開始日到来のみでは実派遣・現地活動を直接確認できないためPLANNED。",
-      "checked_at": "2026-09-02T16:35:00+09:00",
-      "next_review_at": "2026-09-03T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00",
+      "next_review_at": "2026-09-04T09:00:00+09:00",
       "reason": "募集開始は確認できるが、基準時点の実派遣・実活動を直接確認できないためPLANNED。",
       "source_as_of": "2026-08-31T00:00:00+09:00",
       "sources_checked": [
         "takeo-volunteer-0831"
       ],
-      "rechecked_at": "2026-09-02T16:35:00+09:00"
+      "rechecked_at": "2026-09-03T14:57:25+09:00"
     }
   ],
-  "checked_at": "2026-09-02T16:35:00+09:00",
-  "rechecked_at": "2026-09-02T16:35:00+09:00"
+  "checked_at": "2026-09-03T14:57:25+09:00",
+  "rechecked_at": "2026-09-03T14:57:25+09:00"
 }
