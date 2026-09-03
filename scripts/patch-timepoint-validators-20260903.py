@@ -41,7 +41,6 @@ touch(coverage)
 new_coverage.write_text(json.dumps(coverage, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
 # The base dashboard also contains a static current-audit sentence and a runtime replacement target.
-# Move both occurrences forward before source/public parity is established and generators run.
 replace_required(
     ROOT / 'ehime_kumamoto_support_geocoded_shelters_20260802.html',
     {
@@ -96,6 +95,16 @@ for old, new in replacements.items():
         raise SystemExit(f'validate-current-state-audit replacement target missing: {old}')
     text = text.replace(old, new)
 current_state.write_text(text, encoding='utf-8')
+
+# National audit validator is also release-pinned.
+replace_required(
+    ROOT / 'scripts/validate-national-support-audit.mjs',
+    {
+        "if(audit.reference_at!=='2026-09-02T16:16:00+09:00')fail('reference_at');": f"if(audit.reference_at!=='{REF}')fail('reference_at');",
+        "if(!html.includes('9月2日16:16基準で全件再監査'))fail('actor not updated');": "if(!html.includes('9月3日14:57基準で全件再監査'))fail('actor not updated');",
+    },
+    'validate-national-support-audit',
+)
 
 # Institution-coverage validator follows the new immutable audit file.
 replace_required(
