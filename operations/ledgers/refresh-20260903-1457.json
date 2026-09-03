@@ -1,0 +1,186 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260903-1457",
+  "release_id": "20260903-1457",
+  "reference_at": "2026-09-03T14:57:25+09:00",
+  "rechecked_at": "2026-09-03T14:57:25+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "cca0eb8fbbcc293d515eb99570ade50b8af660f6",
+  "expected_changed_files": [
+    "current-shelters.json",
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "municipal-support-audit.json",
+    "national-support-audit.json",
+    "operations/audits/institution-coverage-20260903-1457.json",
+    "operations/ledgers/refresh-20260903-1457.json",
+    "public/dashboard.html",
+    "scripts/sender-coverage-lib.mjs",
+    "scripts/sync-municipal-support-audit.mjs",
+    "scripts/sync-national-support-audit.mjs",
+    "scripts/validate-current-state-audit.mjs",
+    "scripts/validate-dashboard-current.mjs",
+    "scripts/validate-institution-coverage.mjs",
+    "scripts/validate-national-support-audit.mjs",
+    "sender-audit/chubu.json",
+    "sender-audit/chugoku-shikoku.json",
+    "sender-audit/crosscutting-additions.json",
+    "sender-audit/discovery-additions.json",
+    "sender-audit/discovery.json",
+    "sender-audit/ehime.json",
+    "sender-audit/hokkaido-tohoku.json",
+    "sender-audit/kanto.json",
+    "sender-audit/kinki.json",
+    "sender-audit/kyushu-okinawa.json",
+    "sender-audit/sources-additions.json",
+    "sender-audit/timepoint-20260828-additions.json",
+    "sender-audit/timepoint-20260830-additions.json",
+    "sender-audit/timepoint-20260831-additions.json",
+    "sender-audit/timepoint-20260901-additions.json",
+    "sender-audit/timepoint-20260903-additions.json",
+    "sender-municipality-audit.json"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-damage51-0902",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/222/276831.html",
+      "source_as_of": "2026-09-02T14:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00"
+    },
+    {
+      "source_id": "kumamoto-current-shelters-0903",
+      "publisher": "熊本県 防災情報ポータル",
+      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+      "source_as_of": "2026-09-03T15:08:46+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00"
+    },
+    {
+      "source_id": "kumamoto-volunteer-activity-0902",
+      "publisher": "熊本県社会福祉協議会",
+      "url": "https://www.fukushi-kumamoto.or.jp/files/libs/8662/202609021133091423.pdf",
+      "source_as_of": "2026-09-02",
+      "checked_at": "2026-09-02T16:35:00+09:00"
+    },
+    {
+      "source_id": "ehime-support-0901",
+      "publisher": "愛媛県",
+      "url": "https://www.pref.ehime.jp/page/154856.html",
+      "source_as_of": "2026-09-01T12:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00"
+    },
+    {
+      "source_id": "mlit-report51-0831",
+      "publisher": "国土交通省",
+      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
+      "source_as_of": "2026-08-31T17:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00"
+    },
+    {
+      "source_id": "mod-hakuo2-0901-reservation",
+      "publisher": "防衛省・自衛隊",
+      "url": "https://www.mod.go.jp/j/approach/defense/saigai/index.html",
+      "source_as_of": "2026-09-01T09:00:00+09:00",
+      "checked_at": "2026-09-03T14:57:25+09:00"
+    },
+    {
+      "source_id": "tokushima-housing-wave3-0903",
+      "publisher": "徳島県",
+      "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7316123/",
+      "source_as_of": "2026-09-03",
+      "checked_at": "2026-09-03T14:57:25+09:00"
+    },
+    {
+      "source_id": "tokushima-liaison-wave10-0901",
+      "publisher": "徳島県",
+      "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7316047/",
+      "source_as_of": "2026-09-01",
+      "checked_at": "2026-09-03T14:57:25+09:00"
+    },
+    {
+      "source_id": "taketa-cert-wave-0903",
+      "publisher": "竹田市",
+      "url": "https://www.city.taketa.oita.jp/kurashi_tetsuzuki/bosai_kyukyu/reiwa8nenkumamotojishin/13115.html",
+      "source_as_of": "2026-09-03",
+      "checked_at": "2026-09-03T14:57:25+09:00"
+    }
+  ],
+  "coverage": {
+    "recipient_municipalities": 45,
+    "institution_missing": 0,
+    "institution_orphan_source_mentions": 0,
+    "current_shelters": 40,
+    "current_shelter_coordinates_confirmed": 40,
+    "current_shelter_unresolved": 0,
+    "ehime_required": 20,
+    "ehime_adjudicated": 20,
+    "ehime_missing": 0,
+    "prefecture_discovery_checked": 47,
+    "sender_entities_discovered": 320,
+    "sender_entities_adjudicated": 320,
+    "sender_orphan_source_mentions": 0,
+    "sender_blocking_conflicts": 0,
+    "sender_states": {
+      "CURRENT": 16,
+      "PLANNED": 16,
+      "HISTORICAL": 17,
+      "UNKNOWN": 271,
+      "NO_EVIDENCE": 0,
+      "CONFLICT": 0
+    },
+    "municipal_support": "audited",
+    "national_support": "audited",
+    "current_count": 40,
+    "unresolved_count": 0,
+    "conflict_count": 0
+  },
+  "snapshots": {
+    "page_reference_at": "2026-09-03T14:57:25+09:00",
+    "damage_source_as_of": "2026-09-02T14:00:00+09:00",
+    "damage_report": 51,
+    "current_shelters": 40,
+    "shelter_source_last_modified": "2026-09-03T15:08:46+09:00",
+    "sender_reference_at": "2026-09-03T14:57:25+09:00",
+    "volunteer_activity_0902": {
+      "participants": 108,
+      "new_requests": 60,
+      "activities": 24,
+      "completed": 24
+    }
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {
+      "issue_id": "national-same-definition-continuity",
+      "state": "UNKNOWN",
+      "reason": "国・関係機関の一部は9月3日14:57基準の同一定義実働を直接確認できず、過去値をCURRENTへ流用しない。",
+      "owner": "timepoint-audit",
+      "source_ids": [
+        "mlit-report51-0831"
+      ],
+      "next_review_at": "2026-09-04T09:00:00+09:00"
+    },
+    {
+      "issue_id": "hakuo2-actual-operation",
+      "state": "PLANNED",
+      "reason": "9月3日13時の宿泊受付予定は確認できるが、予定時刻経過だけでは実運用開始をCURRENTと推定しない。",
+      "owner": "national-support-audit",
+      "source_ids": [
+        "mod-hakuo2-0901-reservation"
+      ],
+      "next_review_at": "2026-09-04T09:00:00+09:00"
+    },
+    {
+      "issue_id": "taketa-direct-activity",
+      "state": "PLANNED",
+      "reason": "竹田市は派遣期間を9月3日開始と公表したが、表現は「派遣します」で実出発を直接確認できないためPLANNED。",
+      "owner": "sender-audit",
+      "source_ids": [
+        "taketa-cert-wave-0903"
+      ],
+      "next_review_at": "2026-09-04T09:00:00+09:00"
+    }
+  ]
+}

@@ -3,9 +3,9 @@
   "repository": "ryotamatsuki/kumamotoshienmap",
   "audit_type": "sender_municipality_coverage",
   "policy_version": "2.6",
-  "reference_at": "2026-09-02T16:16:00+09:00",
-  "checked_at": "2026-09-02T16:35:00+09:00",
-  "base_main_sha": "62e4c9c805ba0c2333d44b10706b0cf30d59041e",
+  "reference_at": "2026-09-03T14:57:25+09:00",
+  "checked_at": "2026-09-03T14:57:25+09:00",
+  "base_main_sha": "cca0eb8fbbcc293d515eb99570ade50b8af660f6",
   "entity_files": [
     "sender-audit/ehime.json",
     "sender-audit/hokkaido-tohoku.json",
@@ -18,7 +18,8 @@
     "sender-audit/timepoint-20260828-additions.json",
     "sender-audit/timepoint-20260830-additions.json",
     "sender-audit/timepoint-20260831-additions.json",
-    "sender-audit/timepoint-20260901-additions.json"
+    "sender-audit/timepoint-20260901-additions.json",
+    "sender-audit/timepoint-20260903-additions.json"
   ],
   "sources_file": "sender-audit/sources.json",
   "sources_additions_file": "sender-audit/sources-additions.json",
@@ -293,25 +294,25 @@
     },
     "nationwide": {
       "prefecture_discovery_checked": 47,
-      "discovered_basic_municipality_senders": 316,
-      "adjudicated_basic_municipality_senders": 316,
+      "discovered_basic_municipality_senders": 320,
+      "adjudicated_basic_municipality_senders": 320,
       "unadjudicated_discovered_senders": [],
-      "source_mentions": 316,
+      "source_mentions": 320,
       "orphan_source_mentions": [],
       "invalid_current": [],
       "blocking_conflicts": 0,
       "states": {
-        "CURRENT": 12,
-        "PLANNED": 15,
+        "CURRENT": 16,
+        "PLANNED": 16,
         "HISTORICAL": 17,
-        "UNKNOWN": 272,
+        "UNKNOWN": 271,
         "NO_EVIDENCE": 0,
         "CONFLICT": 0
       }
     }
   },
   "blocking_unresolved": [],
-  "timepoint_note": "2026年9月1日15:04基準。愛媛20市町をゼロベース再確認し、全国47都道府県discoveryを再実施。予定期間到来のみではCURRENTにせず、新宮市は市公式の現在形の派遣記載によりCURRENT追加、武雄市は募集開始のみのためPLANNED追加。長崎9市町は前日発表の派遣予定だけでは実働を確認できないためPLANNEDを維持。",
-  "rechecked_at": "2026-09-02T16:35:00+09:00",
-  "release_id": "20260901-1504"
+  "timepoint_note": "2026年9月3日14:57基準。愛媛20市町と全国47都道府県discoveryを再監査。徳島県9月3日一次情報で小松島市・阿南市・石井町の実派遣をCURRENT、9月1日実派遣が継続期間内の佐那河内村をCURRENT追加。竹田市は「派遣します」の予定公表のみのためPLANNED。予定期間到来だけではCURRENTにしない。",
+  "rechecked_at": "2026-09-03T14:57:25+09:00",
+  "release_id": "20260903-1457"
 }

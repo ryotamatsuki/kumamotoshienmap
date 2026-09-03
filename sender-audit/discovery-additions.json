@@ -1,5 +1,5 @@
 {
-  "reference_at": "2026-09-02T16:16:00+09:00",
+  "reference_at": "2026-09-03T14:57:25+09:00",
   "source_mentions": [
     [
       "三重県",
@@ -560,7 +560,28 @@
       "佐賀県",
       "武雄市",
       "takeo-volunteer-0831"
+    ],
+    [
+      "徳島県",
+      "阿南市",
+      "tokushima-housing-wave3-0903"
+    ],
+    [
+      "徳島県",
+      "佐那河内村",
+      "tokushima-liaison-wave10-0901"
+    ],
+    [
+      "徳島県",
+      "石井町",
+      "tokushima-housing-wave3-0903"
+    ],
+    [
+      "大分県",
+      "竹田市",
+      "taketa-cert-wave-0903"
     ]
   ],
-  "checked_at": "2026-09-02T16:35:00+09:00"
+  "checked_at": "2026-09-03T14:57:25+09:00",
+  "rechecked_at": "2026-09-03T14:57:25+09:00"
 }

@@ -9,7 +9,7 @@ const publicHtml=readFileSync(resolve(root,'public/dashboard.html'),'utf8');
 const fail=(message)=>{throw new Error('[NATIONAL SUPPORT AUDIT FAIL] '+message);};
 
 if(html!==publicHtml)fail('source/public parity');
-if(audit.reference_at!=='2026-09-02T16:16:00+09:00')fail('reference_at');
+if(audit.reference_at!=='2026-09-03T14:57:25+09:00')fail('reference_at');
 if(audit.inventory.audit_record_count!==audit.records.length)fail('record count');
 const expectedRecordIds=[...new Set([...(audit.inventory.existing_record_ids||[]),...(audit.inventory.generated_record_ids||[])])];
 const actualRecordIds=audit.records.map((record)=>record.record_id);
@@ -35,7 +35,7 @@ for(const record of audit.records){
 for(const state of ['CURRENT','HISTORICAL','PLANNED','UNKNOWN','CONFLICT'])if(audit.summary[state]!==audit.records.filter((record)=>record.state===state).length)fail('summary '+state);
 if(audit.summary.blocking_unresolved_count!==0)fail('blocking unresolved');
 for(const agency of ['内閣府','消防庁','国土交通省','厚生労働省','防衛省','警察庁','財務省','経済産業省'])if(!(audit.agency_coverage||[]).some((item)=>item.agency.includes(agency)))fail('agency '+agency);
-if(!html.includes('9月2日16:16基準で全件再監査'))fail('actor not updated');
+if(!html.includes('9月3日14:57基準で全件再監査'))fail('actor not updated');
 if(!html.includes('national-sme-loan'))fail('new policy record not generated');
 if(!html.includes('national-accommodation-hakuo2'))fail('planned accommodation record not generated');
 console.log(JSON.stringify({status:'PASS',reference_at:audit.reference_at,rechecked_at:audit.rechecked_at,records:audit.records.length,summary:audit.summary}));
