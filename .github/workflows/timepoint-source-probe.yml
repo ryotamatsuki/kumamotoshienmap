@@ -1,0 +1,96 @@
+name: Timepoint source probe
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260903-1450
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe official current sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/probe
+
+          echo '=== CURRENT SHELTERS ==='
+          curl -fLsS -D /tmp/probe/shelter.headers 'https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json' -o /tmp/probe/shelter.json
+          grep -iE '^(last-modified|date|etag):' /tmp/probe/shelter.headers || true
+          node - <<'NODE'
+          const fs=require('fs');
+          const v=JSON.parse(fs.readFileSync('/tmp/probe/shelter.json','utf8'));
+          const rows=Array.isArray(v)?v:(Array.isArray(v?.data)?v.data:(Array.isArray(v?.features)?v.features:[]));
+          console.log(JSON.stringify({topType:Array.isArray(v)?'array':typeof v, keys:Array.isArray(v)?[]:Object.keys(v||{}), rowCount:rows.length, sample:rows[0]??null},null,2));
+          NODE
+
+          echo '=== EHIME SUPPORT PAGE / LATEST PDF ==='
+          curl -fLsS 'https://www.pref.ehime.jp/page/154856.html' -o /tmp/probe/ehime.html
+          python3 - <<'PY'
+          import re, html
+          from urllib.parse import urljoin
+          text=open('/tmp/probe/ehime.html',encoding='utf-8').read()
+          # pair anchor hrefs with visible text; current CMS may include nested tags
+          for m in re.finditer(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', text, re.I|re.S):
+              visible=re.sub(r'<[^>]+>','',m.group(2))
+              visible=html.unescape(visible).strip()
+              if '9月1日12時00分時点' in visible and '熊本地震' in visible:
+                  print('EHIME_PDF_URL='+urljoin('https://www.pref.ehime.jp/page/154856.html',m.group(1)))
+                  print('EHIME_PDF_TEXT='+visible)
+          PY
+          EHIME_PDF_URL=$(python3 - <<'PY'
+          import re, html
+          from urllib.parse import urljoin
+          text=open('/tmp/probe/ehime.html',encoding='utf-8').read()
+          for m in re.finditer(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', text, re.I|re.S):
+              visible=re.sub(r'<[^>]+>','',m.group(2))
+              visible=html.unescape(visible).strip()
+              if '9月1日12時00分時点' in visible and '熊本地震' in visible:
+                  print(urljoin('https://www.pref.ehime.jp/page/154856.html',m.group(1))); break
+          PY
+          )
+          if [ -n "$EHIME_PDF_URL" ]; then
+            curl -fLsS "$EHIME_PDF_URL" -o /tmp/probe/ehime-latest.pdf
+            if command -v pdftotext >/dev/null; then
+              pdftotext -layout /tmp/probe/ehime-latest.pdf /tmp/probe/ehime-latest.txt
+              cat /tmp/probe/ehime-latest.txt
+            else
+              echo 'pdftotext not available'
+            fi
+          fi
+
+          echo '=== KUMAMOTO DAMAGE PAGE RECENT LINKS ==='
+          curl -fLsS 'https://www.pref.kumamoto.jp/soshiki/222/276831.html' -o /tmp/probe/kumamoto-damage.html
+          python3 - <<'PY'
+          import re, html
+          text=open('/tmp/probe/kumamoto-damage.html',encoding='utf-8').read()
+          plain=html.unescape(re.sub(r'<[^>]+>',' ',text))
+          plain=re.sub(r'\s+',' ',plain)
+          for pat in [r'第\s*5[0-9]\s*報.{0,150}', r'9月\s*[123]日.{0,150}']:
+              for x in re.findall(pat,plain): print(x)
+          PY
+
+          echo '=== KUMAMOTO VOLUNTEER PAGE RECENT ==='
+          curl -fLsS 'https://www.pref.kumamoto.jp/soshiki/27/278033.html' -o /tmp/probe/volunteer.html || true
+          python3 - <<'PY'
+          import re, html, os
+          p='/tmp/probe/volunteer.html'
+          if os.path.exists(p):
+              text=open(p,encoding='utf-8').read()
+              plain=html.unescape(re.sub(r'<[^>]+>',' ',text))
+              plain=re.sub(r'\s+',' ',plain)
+              for pat in [r'9月\s*[123]日.{0,250}', r'災害ボランティア.{0,250}']:
+                  for x in re.findall(pat,plain)[:20]: print(x)
+          PY
+
+      - name: Upload probe files
+        uses: actions/upload-artifact@v4
+        with:
+          name: timepoint-source-probe
+          path: /tmp/probe
+          if-no-files-found: error
