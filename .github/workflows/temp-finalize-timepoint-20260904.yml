@@ -38,12 +38,16 @@ jobs:
           set -Eeuo pipefail
           node --input-type=module <<'NODE'
           import {readFileSync, writeFileSync} from 'node:fs';
-          const path='scripts/sync-current-release.mjs';
-          let text=readFileSync(path,'utf8');
+          const syncPath='scripts/sync-current-release.mjs';
+          let sync=readFileSync(syncPath,'utf8');
           const marker="html=html.replaceAll('旧割当履歴＋9月3日14:57個別再監査'";
-          if (!text.includes(marker)) throw new Error('sync-current-release patch marker not found');
-          text=text.replace(marker,"html=html.replaceAll('9月4日22:38に対口支援・他自治体支援を全件再監査','9月3日14:57全件再監査を基礎に、9月4日22:38愛媛県差分を再監査').replaceAll('旧割当履歴＋9月3日14:57個別再監査'");
-          writeFileSync(path,text);
+          if (!sync.includes(marker)) throw new Error('sync-current-release patch marker not found');
+          sync=sync.replace(marker,"html=html.replaceAll('9月4日22:38に対口支援・他自治体支援を全件再監査','9月3日14:57全件再監査を基礎に、9月4日22:38愛媛県差分を再監査').replaceAll('旧割当履歴＋9月3日14:57個別再監査'");
+          writeFileSync(syncPath,sync);
+          const validatorPath='scripts/validate-dashboard-current.mjs';
+          let validator=readFileSync(validatorPath,'utf8');
+          validator=validator.replaceAll('9月3日14:57全件再監査を基礎に、9月4日22:38愛媛県差分を再監査','9月3日14:57全件再監査を基礎に、9月4日22:38愛媛県の氷川町支援を差分再監査');
+          writeFileSync(validatorPath,validator);
           NODE
       - name: Build and validate generated site
         run: |
