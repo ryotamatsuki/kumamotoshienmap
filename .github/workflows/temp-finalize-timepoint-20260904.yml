@@ -1,0 +1,105 @@
+name: Temporary finalize timepoint 20260904
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260904-1509
+    paths:
+      - 'scripts/temp-finalize-timepoint-20260904.mjs'
+      - '.github/workflows/temp-finalize-timepoint-20260904.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: ${{ !contains(github.event.head_commit.message, '[finalize-result]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: audit/timepoint-20260904-1509
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Install npm metadata
+        run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+      - name: Refresh live current shelters
+        run: |
+          set -Eeuo pipefail
+          npm run update:current-shelters
+          npm run validate:current-shelters
+      - name: Apply audited 2026-09-04 release
+        run: node scripts/temp-finalize-timepoint-20260904.mjs
+      - name: Build and validate generated site
+        run: |
+          set -Eeuo pipefail
+          npm run build
+          npm run validate:sender-coverage
+          npm run test:release-gate
+      - name: Remove temporary audit/probe machinery
+        run: |
+          set -Eeuo pipefail
+          git rm -f \
+            .github/workflows/temp-link-probe-20260904.yml \
+            .github/workflows/temp-pdf-stage-20260904.yml \
+            .github/workflows/temp-pdf-text-20260904.yml \
+            .github/workflows/temp-source-probe-20260904.yml \
+            .github/workflows/temp-finalize-timepoint-20260904.yml \
+            scripts/temp-link-probe-20260904.mjs \
+            scripts/temp-source-probe-20260904.mjs \
+            scripts/temp-finalize-timepoint-20260904.mjs \
+            operations/audits/temp-ehime-support-20260903.pdf \
+            operations/audits/temp-kumamoto-damage52-20260904.pdf \
+            operations/audits/temp-link-probe-20260904.json \
+            operations/audits/temp-pdf-text-20260904.txt \
+            operations/audits/temp-source-probe-20260904.json
+      - name: Commit canonical release content
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'chore: finalize 2026-09-04 timepoint refresh [finalize-result]'
+      - name: Finalize ledger changed-file manifest
+        run: |
+          set -Eeuo pipefail
+          git fetch --no-tags origin main --prune
+          node --input-type=module <<'NODE'
+          import {execFileSync} from 'node:child_process';
+          import {readFileSync,writeFileSync} from 'node:fs';
+          const path='operations/ledgers/refresh-20260904-2238.json';
+          const ledger=JSON.parse(readFileSync(path,'utf8'));
+          const files=execFileSync('git',['diff','--name-only','origin/main...HEAD'],{encoding:'utf8'}).trim().split(/\r?\n/).filter(Boolean).sort();
+          ledger.expected_changed_files=files;
+          ledger.base_main_sha=execFileSync('git',['rev-parse','origin/main'],{encoding:'utf8'}).trim();
+          writeFileSync(path,JSON.stringify(ledger,null,2)+'\n');
+          NODE
+          git add operations/ledgers/refresh-20260904-2238.json
+          git commit -m 'chore: seal 2026-09-04 release ledger [finalize-result]'
+      - name: Push finalized branch
+        run: git push origin HEAD:audit/timepoint-20260904-1509
+      - name: Rebuild reproducibly from committed inputs
+        run: |
+          set -Eeuo pipefail
+          npm run build
+          if ! git diff --quiet; then
+            echo 'Build rewrote tracked files:'
+            git status --short
+            git diff --stat
+            exit 1
+          fi
+          test -z "$(git ls-files --others --exclude-standard)"
+      - name: Run final Release Gate
+        run: |
+          set -Eeuo pipefail
+          npm run validate:ehime-sender-coverage
+          npm run validate:nationwide-sender-coverage
+          npm run validate:sender-source-mentions
+          npm run validate:sender-coverage
+          npm run validate:sender-dist
+          npm run test:release-gate
+          npm run validate:release -- --base=origin/main --ledger=operations/ledgers/refresh-20260904-2238.json --require-ledger-if-data-change
+          git diff --check origin/main...HEAD
