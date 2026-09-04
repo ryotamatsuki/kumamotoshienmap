@@ -53,8 +53,12 @@ jobs:
           let validator=readFileSync(validatorPath,'utf8');
           validator=validator
             .replaceAll('9月3日14:57全件再監査を基礎に、9月4日22:38愛媛県差分を再監査','9月3日14:57全件再監査を基礎に、9月4日22:38愛媛県の氷川町支援を差分再監査')
-            .replaceAll('9月1日設置の非常災害復旧復興本部を確認し、9月4日国関係主体を再監査','9月4日22:38基準で国関係15件を再監査');
+            .replaceAll('9月1日設置の非常災害復旧復興本部を確認し、9月4日国関係主体を再監査','9月4日22:38基準で国関係15件を再監査')
+            .replaceAll('9月2日14時','9月3日14時');
           writeFileSync(validatorPath,validator);
+          const currentStatePath='scripts/validate-current-state-audit.mjs';
+          let currentState=readFileSync(currentStatePath,'utf8').replaceAll('9月2日14時','9月3日14時');
+          writeFileSync(currentStatePath,currentState);
           NODE
       - name: Build and validate generated site
         run: |
