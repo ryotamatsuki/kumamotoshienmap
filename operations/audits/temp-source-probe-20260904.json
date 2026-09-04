@@ -1,0 +1,145 @@
+{
+  "reference_at": "2026-09-04T15:09:00+09:00",
+  "generated_at": "2026-09-04T15:18:05+09:00",
+  "source_probe": [
+    {
+      "id": "kumamoto-damage",
+      "url": "https://www.pref.kumamoto.jp/soshiki/222/276831.html",
+      "status": 200,
+      "ok": true,
+      "content_type": "text/html",
+      "last_modified": "Fri, 04 Sep 2026 05:03:59 GMT",
+      "fetched_at": "2026-09-04T15:17:54+09:00",
+      "length": 25410,
+      "markers": {
+        "report51": true,
+        "report52": true,
+        "sep3": true,
+        "sep4": false,
+        "current": false
+      },
+      "excerpt": "<!DOCTYPE html> <html lang=\"ja\"> <head> <!-- Google Tag Manager --> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-MHNSL4B');</script> <!-- End Google Tag Manager --> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <meta charset=\"utf-8\"> <meta name=\"keywords\" content=\"熊本地震,被害\"> <meta name=\"description\" content=\"\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <title>令和8年熊本地震に係る被害情報 - 熊本県ホームページ</title> <link rel=\"shortcut icon\" href=\"/favicon.ico\" type=\"image/vnd.microsoft."
+    },
+    {
+      "id": "kumamoto-current-shelters",
+      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+      "status": 200,
+      "ok": true,
+      "content_type": "application/json",
+      "last_modified": "Fri, 04 Sep 2026 06:13:58 GMT",
+      "fetched_at": "2026-09-04T15:17:55+09:00",
+      "length": 1666127,
+      "markers": {
+        "report51": false,
+        "report52": false,
+        "sep3": false,
+        "sep4": false,
+        "current": false
+      },
+      "excerpt": "{ \"items\" : [ { \"facilityId\" : \"00000035\", \"name\" : \"春竹小学校\", \"capacity\" : 0, \"address\" : \"熊本県熊本市中央区琴平1丁目9-43\", \"latitude\" : \"32.788124\", \"longitude\" : \"130.707608\", \"availableFlg\" : \"1\", \"publicFlg\" : \"1\", \"floodShFlg\" : \"1\", \"sedimentDisasterShFlg\" : \"1\", \"stormSurgeShFlg\" : \"1\", \"earthquakeShFlg\" : \"1\", \"tsunamiShFlg\" : \"1\", \"landsideWaterShFlg\" : \"1\", \"edesignatedEvacShFlg\" : \"1\", \"designatedEvacShFlg\" : \"1\", \"welfareEvacShFlg\" : \"0\", \"temporaryEvacShFlg\" : \"0\", \"municipalityCd\" : \"431001\", \"municipalityName\" : \"熊本市\", \"shelterId\" : 108324, \"shelterAdmId\" : \"\", \"shelterIndex\" : 1, \"shelterStartTimestamp\" : \"2026-07-28 19:00:00\", \"shelterEndTimestamp\" : \"2026-08-05 18:08:00\", \"crowdedStatus\" : null }, { \"facilityId\" : \"00000040\", \"name\" : \"東野中学校\", \"capacity\" : 0, \"address\" : \"熊本県熊本市東区東野3丁"
+    },
+    {
+      "id": "ehime-support",
+      "url": "https://www.pref.ehime.jp/page/154856.html",
+      "status": 200,
+      "ok": true,
+      "content_type": "text/html",
+      "last_modified": "Thu, 03 Sep 2026 16:06:46 GMT",
+      "fetched_at": "2026-09-04T15:17:58+09:00",
+      "length": 26527,
+      "markers": {
+        "report51": false,
+        "report52": false,
+        "sep3": true,
+        "sep4": false,
+        "current": false
+      },
+      "excerpt": "<!DOCTYPE html> <html lang=\"ja\"> <head> <meta charset=\"utf-8\"> <!-- Google Tag Manager --> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PHQ65GK');</script> <!-- End Google Tag Manager --> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <meta name=\"keywords\" content=\"\"> <meta name=\"description\" content=\"\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <title>令和8年熊本地震被災地への支援について - 愛媛県庁公式ホームページ（防災危機管理課）</title> <link rel=\"shortcut icon\" href=\"/favicon.ico\" type=\"image/vnd.m"
+    },
+    {
+      "id": "kumamoto-volunteer",
+      "url": "https://www.fukushi-kumamoto.or.jp/",
+      "status": 200,
+      "ok": true,
+      "content_type": "text/html; charset=UTF-8",
+      "last_modified": null,
+      "fetched_at": "2026-09-04T15:18:01+09:00",
+      "length": 140078,
+      "markers": {
+        "report51": false,
+        "report52": false,
+        "sep3": false,
+        "sep4": false,
+        "current": false
+      },
+      "excerpt": "<!doctype html><html lang=\"ja\"><head prefix=\"og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#\"><meta charset=\"utf-8\"><title>社会福祉法人熊本県社会福祉協議会（公式ホームページ）</title><!--dsbrand_speedup--><script src=\"https://cdn.jsdelivr.net/npm/viewport-extra@1.0.4/dist/viewport-extra.min.js\"></script><meta name=\"format-detection\" content=\"telephone=no\"><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"><meta name=\"author\" content=\"\"><!--=====OGP=====--><link rel=\"alternate\" media=\"only screen and (max-width: 768px)\" href=\"https://www.fukushi-kumamoto.or.jp/\" /><meta name=\"robots\" content=\"index,follow\"><meta name=\"description\" content=\"社会福祉法人熊本県社会福祉協議会のHOMEです\"><meta name=\"twitter:card\" content=\"summary\" /><meta property=\"og:site_name\" name=\"og:site_name\" content=\"社会福祉法人熊本県社"
+    },
+    {
+      "id": "mlit",
+      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
+      "status": 404,
+      "ok": false,
+      "content_type": "text/html",
+      "last_modified": "Wed, 11 Sep 2024 11:32:31 GMT",
+      "fetched_at": "2026-09-04T15:18:01+09:00",
+      "length": 234,
+      "markers": {
+        "report51": false,
+        "report52": false,
+        "sep3": false,
+        "sep4": false,
+        "current": false
+      },
+      "excerpt": " <!--Status: 404 Not Found--> <meta Content-type: text/html> <!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\"> <html><head> <title>404 Not Found</title> </head><body> <h1>404 Not Found</h1> <p></p> <hr> </body></html> "
+    },
+    {
+      "id": "mod",
+      "url": "https://www.mod.go.jp/j/approach/defense/saigai/index.html",
+      "status": 403,
+      "ok": false,
+      "content_type": "text/html; charset=UTF-8",
+      "last_modified": null,
+      "fetched_at": "2026-09-04T15:18:02+09:00",
+      "length": 5661,
+      "markers": {
+        "report51": false,
+        "report52": false,
+        "sep3": false,
+        "sep4": false,
+        "current": false
+      },
+      "excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-rAGMsnLaTRHYu54ZJkxAoe&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare."
+    },
+    {
+      "id": "taketa",
+      "url": "https://www.city.taketa.oita.jp/kurashi_tetsuzuki/bosai_kyukyu/reiwa8nenkumamotojishin/13115.html",
+      "status": 200,
+      "ok": true,
+      "content_type": "text/html",
+      "last_modified": "Thu, 03 Sep 2026 03:23:40 GMT",
+      "fetched_at": "2026-09-04T15:18:05+09:00",
+      "length": 51701,
+      "markers": {
+        "report51": false,
+        "report52": false,
+        "sep3": true,
+        "sep4": false,
+        "current": false
+      },
+      "excerpt": "<!DOCTYPE HTML> <html lang=\"ja\"> <head> <meta charset=\"utf-8\"> <meta name=\"keywords\" content=\"熊本地震”,”支援\"> <meta name=\"description\" content=\"\"> <meta property=\"og:title\" content=\"令和8年熊本地震の被災地に職員を派遣します（証明発行事務支援）|竹田市\"> <meta property=\"og:type\" content=\"article\"> <meta property=\"og:url\" content=\"https://www.city.taketa.oita.jp/kurashi_tetsuzuki/bosai_kyukyu/reiwa8nenkumamotojishin/13115.html\"> <meta property=\"og:image\" content=\"//www.city.taketa.oita.jp/theme/base/img_common/ogp_noimage.png\" /> <meta property=\"og:description\" content=\" 7月28日に発生した令和8年熊本地震により、熊本県内において、家屋の倒壊や半壊、一部破損が多数発生しています。このたび、大分県を通じた対口支援として、罹災証明発行事務の支援に職員を派遣します。 \" /> <meta name=\"viewport\" content=\"width=750, user-scalable=yes\"> <meta name=\"nsls:timestamp\" content=\"Thu, 03 Sep 2026 02:00:00 GMT\"> <title>令和8年熊本地震の被災地に職員を派遣します（"
+    }
+  ],
+  "current_shelter_candidate": {
+    "fetched_at": null,
+    "source_last_modified": null,
+    "source_as_of": null,
+    "count": 40,
+    "unresolved": null,
+    "conflicts": null,
+    "raw_keys": [
+      "schema_version",
+      "meta",
+      "shelters"
+    ]
+  }
+}
