@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "repository": "ryotamatsuki/kumamotoshienmap",
-  "reference_at": "2026-09-03T14:57:25+09:00",
-  "checked_at": "2026-09-03T14:57:25+09:00",
-  "release_id": "20260903-1457",
+  "reference_at": "2026-09-04T22:38:00+09:00",
+  "checked_at": "2026-09-04T22:38:00+09:00",
+  "release_id": "20260904-2238",
   "policy": {
     "historical_roster_is_not_current": true,
     "secondary_sources_for_discovery_only": true,
@@ -483,6 +483,16 @@
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
       "rechecked_at": "2026-09-03T14:57:25+09:00"
+    },
+    {
+      "source_id": "ehime-support-0904",
+      "publisher": "愛媛県",
+      "title": "令和8年熊本地震に対する本県の支援状況について（9月4日12時）",
+      "as_of": "2026-09-04T12:00:00+09:00",
+      "url": "https://www.pref.ehime.jp/uploaded/attachment/189500.pdf",
+      "role": "sender_official",
+      "checked_at": "2026-09-04T22:38:00+09:00",
+      "rechecked_at": "2026-09-04T22:38:00+09:00"
     }
   ],
   "records": [
@@ -1100,7 +1110,7 @@
     {
       "id": "pair-hikawa",
       "destination": "氷川町",
-      "record_state": "UNKNOWN",
+      "record_state": "CURRENT",
       "historical_roster_as_of": "2026-08-11T14:00:00+09:00",
       "historical_roster": [
         "鳥取県",
@@ -1114,11 +1124,11 @@
       "provider_statuses": [
         {
           "name": "愛媛県",
-          "state": "UNKNOWN",
+          "state": "CURRENT",
           "source_ids": [
-            "ehime-0824"
+            "ehime-support-0904"
           ],
-          "note": "8/24 12時の派遣確認は前日時点の一次スナップショット。8/25基準の同一支援継続を直接示す更新は取得できず推定しない。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。"
+          "note": "愛媛県9月4日12時公式資料で、氷川町の災害応急対策職員（現地災害対策本部連絡員含む）を8月1日～終期未定として掲載し、第1～7陣・第9陣まで準備済みと直接確認。"
         },
         {
           "name": "佐賀県",
@@ -1189,15 +1199,16 @@
       ],
       "recheck_queries": [
         "氷川町 対口支援 支援主体 2026年8月25日 一次情報 継続 終了 実働",
-        "2026-08-26 19:26 JST 一次情報再確認 / 予定期間のみではCURRENTとしない"
+        "2026-08-26 19:26 JST 一次情報再確認 / 予定期間のみではCURRENTとしない",
+        "2026-09-04 22:38 JST 愛媛県9月4日12時版で氷川町支援継続を直接確認"
       ],
       "display": {
-        "status": "9月2日16:16全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 9",
-        "scale": "CURRENT確証なし",
-        "period": "2026年9月2日16:16基準・同15:12確認",
-        "detail": "旧割当名簿と過去の実働実績は履歴として保持。基準時点のCURRENTは現在形の継続記載又は実働を直接確認できたものだけに限定し、予定期間到来だけでは昇格しない。",
-        "asOf": "2026年9月2日16:16再監査",
-        "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
+        "status": "9月4日22:38差分再監査：CURRENT 1／PLANNED 0／HISTORICAL 0／UNKNOWN 8",
+        "scale": "CURRENT確認：愛媛県",
+        "period": "2026年9月4日22:38基準",
+        "detail": "9月3日全件監査を基礎に、愛媛県9月4日12時版を差分確認。予定期間到来だけではCURRENTにせず、現在形・終期未定の直接記載により愛媛県のみCURRENTへ更新。",
+        "asOf": "2026年9月4日22:38差分再監査",
+        "sourceLabel": "愛媛県最新一次情報＋前回全件監査"
       }
     },
     {
