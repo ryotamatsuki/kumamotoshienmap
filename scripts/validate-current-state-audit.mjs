@@ -4,7 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { assertCurrentPageMetadataSynced } from "./current-page-metadata.mjs";
 
-const REFERENCE_AT = "2026-09-03T14:57:25+09:00";
+const REFERENCE_AT = "2026-09-04T22:38:00+09:00";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const [html, publicHtml, shelterText, municipalText, nationalText] = await Promise.all([
   readFile(resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html"), "utf8"),
@@ -61,9 +61,9 @@ const record = (id) => { const value = records.find((item) => item.id === id); a
 const need = (id) => { const value = provinceNeeds.find((item) => item.id === id); assert.ok(value, `県ニーズ ${id} がありません`); return value; };
 const event = (id) => { const value = timeline.find((item) => item.id === id); assert.ok(value, `タイムライン ${id} がありません`); return value; };
 
-assert.ok(record("ehime-management").scale.includes("67人"));
+assert.ok(record("ehime-management").scale.includes("96人"));
 assert.ok(record("ehime-management").period.includes("終期未定"));
-assert.ok(record("ehime-health").scale.includes("17人"));
+assert.ok(record("ehime-health").scale.includes("25人"));
 assert.ok(record("ehime-dmat").scale.includes("4人"));
 assert.ok(record("ehime-dpat").status.includes("活動終了"));
 assert.ok(record("ehime-assessor").status.includes("活動終了"));
@@ -72,15 +72,15 @@ for (const id of ["ehime-pair", "pair-hikawa", "pair-kashima"]) {
   assert.ok(!record(id).status.includes("活動中"), `${id}のraw履歴レコードに活動中表示があります`);
 }
 
-assert.ok(need("p-shelter").observed.includes("熊本県第51報"));
+assert.ok(need("p-shelter").observed.includes("熊本県第52報"));
 assert.ok(need("p-waste").observed.includes("10市町村"));
 assert.ok(need("p-agri").observed.includes("7,881件、約1,559億円"));
 for (const name of ["熊本市", "八代市", "宇土市", "宇城市", "美里町", "御船町", "嘉島町", "益城町", "甲佐町", "氷川町", "芦北町"]) assert.ok(Array.isArray(municipalities.find((item) => item.name === name)?.currentSupport), `${name}の支援情報配列がありません`);
 
-assert.ok(event("t-current-status").tags.includes("熊本県第51報"));
+assert.ok(event("t-current-status").tags.includes("熊本県第52報"));
 assert.ok(event("t-kumamoto-0816").tags.includes("過去スナップショット"));
 assert.ok(event("t-kumamoto-0819").summary.includes("971人"));
-assert.equal(event("t-current-status").summary, "避難者2,035人、開設避難所38か所、人的被害404人、住家被害61,996棟。");
+assert.equal(event("t-current-status").summary, "避難者2,000人、開設避難所38か所、人的被害404人、住家被害63,878棟。");
 
 assert.equal(pageMeta.checkedAt, REFERENCE_AT);
 assert.ok(Number.isFinite(Date.parse(pageMeta.volunteerCheckedAt)), "volunteer確認時刻が不正です");
@@ -88,7 +88,7 @@ assert.ok(pageMeta.rows.some((row) => row.section === "他自治体等" && row.c
 assert.ok(pageMeta.rows.some((row) => row.section === "愛媛県支援"));
 
 const currentDisplay = html.slice(0, html.indexOf('<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js">'));
-for (const value of ["D+36", "行政応援971人", "9月3日14:57までに確認できた一次情報", "9月3日14:57基準で全件再監査"]) assert.ok(currentDisplay.includes(value), `初期表示に ${value} がありません`);
+for (const value of ["D+38", "行政応援971人", "9月4日22:38までに確認できた一次情報", "9月4日22:38基準で国関係15件を再監査"]) assert.ok(currentDisplay.includes(value), `初期表示に ${value} がありません`);
 for (const value of ["D+14", "計10市町へ行政応援925人（関係機関含む計1,005人）", "<div class=\"snap\"><strong>925</strong>", "第14回政府現地本部会議（8月15日資料）まで確認", "仮置場11市町開設"]) assert.ok(!currentDisplay.includes(value), `旧い現行表示が残っています: ${value}`);
 
 assert.ok(Number.isFinite(Date.parse(shelterData.meta.fetched_at)), "避難所fetched_atが不正です");
