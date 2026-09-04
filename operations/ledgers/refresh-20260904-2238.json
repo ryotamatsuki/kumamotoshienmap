@@ -9,7 +9,22 @@
   "rechecked_at": "2026-09-04T23:02:19+09:00",
   "page_checked_at": null,
   "base_main_sha": "eb0e6713023a08663a7e5d01a2635fa41ba7f61a",
-  "expected_changed_files": [],
+  "expected_changed_files": [
+    "current-shelters.json",
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "municipal-support-audit.json",
+    "national-support-audit.json",
+    "operations/audits/institution-coverage-20260904-2238.json",
+    "operations/audits/national-source-recheck-20260904-2238.json",
+    "operations/ledgers/refresh-20260904-2238.json",
+    "package.json",
+    "public/dashboard.html",
+    "scripts/sync-current-release.mjs",
+    "scripts/validate-current-state-audit.mjs",
+    "scripts/validate-dashboard-current.mjs",
+    "scripts/validate-institution-coverage.mjs",
+    "scripts/validate-national-support-audit.mjs"
+  ],
   "sources": [
     {
       "source_id": "kumamoto-damage52-0903",
