@@ -55,6 +55,7 @@
 ./.github/workflows/finalize-ehime-20260907.yml:87:            grep -F '対口支援96人（県38・市町58）、延481人日' "$f"
 ./.github/workflows/finalize-ehime-20260907.yml:93:            grep -F '58人（延396人日）' "$f"
 ./.github/workflows/finalize-ehime-20260907.yml:97:          ! grep -F '人的支援総計253人・延1,228人日' ehime_kumamoto_support_geocoded_shelters_20260802.html
+./.github/workflows/diagnose-ehime-stale-20260907.yml:30:          grep -n -C 3 -F '人的支援総計253人・延1,228人日' ehime_kumamoto_support_geocoded_shelters_20260802.html || true
 ./.github/workflows/ehime-source-fetch-20260907.yml:41:            grep -RInE --exclude-dir=.git --exclude='ehime-source-20260907.txt' --exclude='ehime-site-matches-20260907.txt' '1,228|1,773|26,880,978|35,624,556|253人|457人|延べ1,228|延べ1,773|96人|119人|439人日|512人日' . || true
 ./.github/workflows/finalize-ehime-20260907-v3.yml:46:            grep -F '対口支援96人（県38・市町58）、延481人日' "$f"
 ./.github/workflows/finalize-ehime-20260907-v3.yml:52:            grep -F '58人（延396人日）' "$f"
