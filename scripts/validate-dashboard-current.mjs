@@ -4,7 +4,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { runInNewContext } from "node:vm";
 
-const REFERENCE_AT = "2026-09-04T22:38:00+09:00";
+const REFERENCE_AT = "2026-09-07T15:22:00+09:00";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html");
 const publicPath = resolve(root, "public", "dashboard.html");
@@ -15,7 +15,7 @@ const [html, publicHtml, volunteerCss, currentShelterText, municipalAuditText, n
   readFile(resolve(root, "current-shelters.json"), "utf8"),
   readFile(resolve(root, "municipal-support-audit.json"), "utf8"),
   readFile(resolve(root, "national-support-audit.json"), "utf8"),
-  readFile(resolve(root, "operations/audits/institution-coverage-20260904-2238.json"), "utf8"),
+  readFile(resolve(root, "operations/audits/institution-coverage-20260907-1522.json"), "utf8"),
 ]);
 
 const currentShelterData = JSON.parse(currentShelterText);
@@ -48,9 +48,9 @@ const requiredText = [
   "約4,300戸",
   "履歴スナップショット",
   "対口支援・他自治体支援を全件再監査",
-  "9月3日14:57全件再監査を基礎に、9月4日22:38愛媛県の氷川町支援を差分再監査",
+  "9月3日14:57全件再監査を基礎に、9月7日15:22愛媛県の氷川町支援を差分再監査",
   "国交省第51報（8/31 17:00）を最新インフラ履歴として確認",
-  "9月4日22:38基準で国関係15件を再監査",
+  "9月7日15:22基準で国関係15件を再監査",
   "現在開設避難所総数",
   "地図表示数",
   "座標未確認数",
@@ -72,8 +72,8 @@ const runtimeScriptStart = html.indexOf('<script src="https://cdn.jsdelivr.net/n
 assert.ok(runtimeScriptStart > 0, "公開HTMLの初期表示領域を特定できません");
 const currentDisplayHtml = html.slice(0, runtimeScriptStart);
 for (const value of [
-  "2026年9月4日 22:38",
-  "9月4日22:38基準で国関係15件を再監査",
+  "2026年9月7日 15:22",
+  "9月7日15:22基準で国関係15件を再監査",
   "国交省第51報（8/31 17:00）を最新インフラ履歴として確認",
   "8月19日行政応援971人は履歴スナップショット",
 ]) assert.ok(currentDisplayHtml.includes(value), `初期表示の最新値がありません: ${value}`);
