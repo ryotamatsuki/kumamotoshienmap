@@ -1,0 +1,22 @@
+url=https://www.pref.ehime.jp/uploaded/attachment/189556.pdf
+fetched_at=2026-09-07T07:58:22Z
+9e70fc8d13e1e1aaf16072557013cbac5c292e9f4403c2d9d5baf31b8c079216  /tmp/ehime-20260907.pdf
+Author:          塩田伸平
+Creator:         Microsoft® Excel® for Microsoft 365
+Producer:        Microsoft® Excel® for Microsoft 365
+CreationDate:    Mon Sep  7 05:09:09 2026 UTC
+ModDate:         Mon Sep  7 05:09:09 2026 UTC
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          yes
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           4
+Encrypted:       no
+Page size:       595.2 x 841.68 pts (A4)
+Page rot:        0
+File size:       364984 bytes
+Optimized:       no
+PDF version:     1.7
