@@ -1,0 +1,47 @@
+name: Fetch Ehime 2026-09-07 source
+
+on:
+  push:
+    branches:
+      - audit/ehime-20260907-v2
+    paths-ignore:
+      - operations/audits/ehime-source-20260907.txt
+      - operations/audits/ehime-source-20260907-meta.txt
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-source:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PDF tools
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Fetch official Ehime source
+        run: |
+          set -euo pipefail
+          mkdir -p operations/audits
+          curl -L --fail --retry 3 --retry-delay 2 \
+            'https://www.pref.ehime.jp/uploaded/attachment/189556.pdf' \
+            -o /tmp/ehime-20260907.pdf
+          pdftotext -layout /tmp/ehime-20260907.pdf operations/audits/ehime-source-20260907.txt
+          {
+            echo 'url=https://www.pref.ehime.jp/uploaded/attachment/189556.pdf'
+            echo "fetched_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            sha256sum /tmp/ehime-20260907.pdf
+            pdfinfo /tmp/ehime-20260907.pdf
+          } > operations/audits/ehime-source-20260907-meta.txt
+      - name: Commit extracted source
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add operations/audits/ehime-source-20260907.txt operations/audits/ehime-source-20260907-meta.txt
+          if git diff --cached --quiet; then
+            echo 'No source changes'
+            exit 0
+          fi
+          git commit -m 'audit: capture Ehime 2026-09-07 support source'
+          git push
