@@ -53,3 +53,10 @@
 ./.github/workflows/finalize-ehime-20260907.yml:93:            grep -F '58人（延396人日）' "$f"
 ./.github/workflows/finalize-ehime-20260907.yml:97:          ! grep -F '人的支援総計253人・延1,228人日' ehime_kumamoto_support_geocoded_shelters_20260802.html
 ./.github/workflows/ehime-source-fetch-20260907.yml:41:            grep -RInE --exclude-dir=.git --exclude='ehime-source-20260907.txt' --exclude='ehime-site-matches-20260907.txt' '1,228|1,773|26,880,978|35,624,556|253人|457人|延べ1,228|延べ1,773|96人|119人|439人日|512人日' . || true
+./.github/workflows/finalize-ehime-20260907-v2.yml:34:            "ehime-management": {"status":"現行派遣・終期未定（9月7日12時資料）","scale":"96人（県38・市町58）／延481人日","period":"8月1日～終期未定","detail":"先遣隊は8月8日活動終了。災害応急対策職員は氷川町で8月1日～終期未定。第1～7陣、第9陣まで準備済み。竜北中学校での避難所支援は9月7日まで、住家被害認定調査の二次調査は9月7日から。","asOf":"愛媛県 9月7日12時"},
+./.github/workflows/finalize-ehime-20260907-v2.yml:39:            "ehime-police": {"status":"派遣継続予定を含む（9月7日12時資料）","scale":"58人（延396人日）","period":"8月1日～9月8日予定を含む","detail":"特別自動車警ら部隊等の予定を掲載。予定期間のみで当日実働を推定しない。","asOf":"愛媛県 9月7日12時"},
+./.github/workflows/finalize-ehime-20260907-v2.yml:54:          overview_sync = "html=html.replace('対口支援96人（県38・市町58）、延439人日。災害応急対策職員は終期未定','対口支援96人（県38・市町58）、延481人日。災害応急対策職員は終期未定').replace('保健師等25人・DWAT25人は9月30日まで予定','保健師等29人・DWAT28人は9月30日まで予定').replace('県大型トイレカーは竜北中学校で運用中。人的支援総計253人・延1,228人日','県大型トイレカーは9月7日に運用終了。人的支援総計260人・延1,307人日');\n"
+./.github/workflows/finalize-ehime-20260907-v2.yml:61:            "9月4日12時版：対口支援96人・延439人日、人的支援総計253人・延1,228人日": "9月7日12時版：対口支援96人・延481人日、人的支援総計260人・延1,307人日",
+./.github/workflows/finalize-ehime-20260907-v2.yml:83:            grep -F '対口支援96人（県38・市町58）、延481人日' "$f"
+./.github/workflows/finalize-ehime-20260907-v2.yml:89:            grep -F '58人（延396人日）' "$f"
+./.github/workflows/finalize-ehime-20260907-v2.yml:93:          ! grep -F '人的支援総計253人・延1,228人日' ehime_kumamoto_support_geocoded_shelters_20260802.html
