@@ -1,4 +1,4 @@
-# retry after aligning the correction ledger with the current main baseline
+# rerun 5
 name: Finalize Ehime 2026-09-07 correction v4
 
 on:
