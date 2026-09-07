@@ -27,6 +27,7 @@
 ./operations/audits/ehime-source-recheck-20260907-1704.json:55:    "義援金額は9月7日公表資料中も9月3日時点の26,880,978円であり、9月7日時点の入金額として読み替えない。",
 ./scripts/validate-dashboard-current.mjs:119:assert.ok(html.includes("24市町の人的被害表内合計396人。県第52報の人的被害合計は404人"));
 ./scripts/validate-current-state-audit.mjs:64:assert.ok(record("ehime-management").scale.includes("96人"));
+./scripts/validate-current-state-audit.mjs:71:assert.ok(record("ehime-police").scale.includes("延396人日"));
 ./scripts/update-pagewide-20260821.mjs:412:    { section: "被害・支援", status: "差分あり", current: "8月20日14時の熊本県第36報へ更新", previous: "熊本県第30報：8月16日14時", difference: "避難所69か所、避難者2,925人、人的被害398人、住家被害35,048棟。市町別表は人的396人・住家35,040棟で県計と分けて表示。", source: "熊本県 第36報", url: prefectureReportUrl },
 ./scripts/update-pagewide-20260821.mjs:538:  ["人的被害は県資料の合計欄394人。市町別24行の人的被害表内合計は391人。住家被害31,728棟のうち市町別24行は31,723棟で、差5棟は収録対象外市町村分を含みます。", "人的被害は県資料の合計欄398人。市町別24行の人的被害表内合計は396人。住家被害35,048棟のうち市町別24行は35,040棟で、差8棟は収録対象外市町村分を含みます。"],
 ./scripts/update-pagewide-20260821.mjs:540:  ["24市町の人的被害表内合計391人。県速報の人的被害合計は394人", "24市町の人的被害表内合計396人。県速報の人的被害合計は398人"],
