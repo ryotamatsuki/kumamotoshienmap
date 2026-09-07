@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "audit_id": "ehime-source-recheck-20260907-1704",
+  "publisher": "愛媛県",
+  "source_url": "https://www.pref.ehime.jp/uploaded/attachment/189556.pdf",
+  "source_page_url": "https://www.pref.ehime.jp/page/154856.html",
+  "source_as_of": "2026-09-07T12:00:00+09:00",
+  "checked_at": "2026-09-07T17:04:00+09:00",
+  "title": "令和8年熊本地震に対する本県の支援状況について",
+  "adjudication": "CURRENT_OFFICIAL_SNAPSHOT",
+  "human_support": {
+    "total": {"persons": 260, "person_days": 1307},
+    "counterpart_support": {"persons": 96, "person_days": 481, "prefecture_persons": 38, "municipal_persons": 58},
+    "dmat": {"persons": 39, "person_days": 150},
+    "dpat": {"persons": 8, "person_days": 32},
+    "public_health": {"persons": 29, "person_days": 158, "planned_through": "2026-09-30"},
+    "dwat": {"persons": 28, "person_days": 84, "planned_through": "2026-09-30"},
+    "building_safety": {"persons": 2, "person_days": 6},
+    "police": {"persons": 58, "person_days": 396}
+  },
+  "material_support": {
+    "prefectural_large_toilet_truck": {"location": "竜北中学校", "ended_on": "2026-09-07"},
+    "portable_shower_handwash": {"ended_on": "2026-08-26"},
+    "kitchen_car_meals_provided": 1920,
+    "public_housing_available_units": 175
+  },
+  "resident_support": {
+    "donations_yen": 26880978,
+    "donations_as_of": "2026-09-03",
+    "disaster_volunteer": {"persons": 19, "person_days": 38}
+  },
+  "other_organizations": {
+    "red_cross_relief_team": {"persons": 20, "person_days": 94, "planned_through": "2026-09-21"},
+    "red_cross_medical_coordination": {"persons": 3, "person_days": 18, "ended_on": "2026-08-25"},
+    "red_cross_mental_care": {"persons": 4, "person_days": 20, "ended_on": "2026-08-27"},
+    "jrat": {"persons": 12, "person_days": 45, "planned_through": "2026-09-25"},
+    "social_welfare_council_staff": {"persons": 9, "person_days": 45, "planned_through": "2026-10-15"},
+    "social_welfare_facility_staff": {"persons": 4, "person_days": 10, "planned_through": "2026-09-26"}
+  },
+  "changes_from_2026_09_04_snapshot": [
+    "counterpart_support.person_days: 439 -> 481",
+    "public_health.persons: 25 -> 29",
+    "public_health.person_days: 142 -> 158",
+    "dwat.persons: 25 -> 28",
+    "dwat.person_days: 75 -> 84",
+    "police.person_days: 384 -> 396",
+    "human_support.total.persons: 253 -> 260",
+    "human_support.total.person_days: 1228 -> 1307",
+    "prefectural_large_toilet_truck: operating -> ended 2026-09-07",
+    "red_cross_relief_team.person_days: 76 -> 94",
+    "jrat: 9 persons / 36 person-days through 2026-09-09 -> 12 persons / 45 person-days through 2026-09-25",
+    "social_welfare_council_staff.person_days: 42 -> 45"
+  ],
+  "notes": [
+    "義援金額は9月7日公表資料中も9月3日時点の26,880,978円であり、9月7日時点の入金額として読み替えない。",
+    "災害ボランティアは19人・延38人日で前回値から変更なし。",
+    "予定期間のみを根拠に当日実働を推定しない。"
+  ]
+}
