@@ -20,7 +20,7 @@ const expected = [
   "20人（延94人日）",
   "12人（延45人日）",
   "人的支援総計260人・延1,307人日",
-  "県大型トイレカーは9月7日に運用終了",
+  "県大型トイレカーは竜北中学校で9月7日に運用終了",
   "愛媛県 9月7日12時",
 ];
 for (const value of expected) assert.ok(html.includes(value), `愛媛県9月7日現況値がHTMLにありません: ${value}`);
@@ -34,4 +34,4 @@ for (const stale of [
 assert.ok(producer.includes("https://www.pref.ehime.jp/uploaded/attachment/189556.pdf"), "愛媛県9月7日公式PDFがproducerに設定されていません");
 assert.ok(!producer.includes("https://www.pref.ehime.jp/uploaded/attachment/189500.pdf"), "愛媛県9月4日旧PDFがproducerに残っています");
 
-console.log(JSON.stringify({status:"PASS",source:"attachment/189556.pdf",humanSupport:{persons:260,personDays:1307},counterpart:{persons:96,personDays:481},health:{persons:29,personDays:158},dwat:{persons:28,personDays:84}}));
+console.log(JSON.stringify({status:"PASS",source:"attachment/189556.pdf",humanSupport:{persons:260,personDays:1307},counterpart:{persons:96,personDays:481},health:{persons:29,personDays:158},dwat:{persons:28,personDays:84},toiletTruck:{endedOn:"2026-09-07"}}));
