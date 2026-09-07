@@ -1,0 +1,32 @@
+name: Diagnose Ehime stale aggregate
+
+on:
+  push:
+    branches:
+      - audit/ehime-20260907-v2
+    paths:
+      - .github/workflows/diagnose-ehime-stale-20260907.yml
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply same audited producer patch and inspect stale aggregate
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          src=Path('.github/workflows/finalize-ehime-20260907-v2.yml').read_text()
+          a=src.index("          python3 - <<'PY'\n") + len("          python3 - <<'PY'\n")
+          b=src.index("\n          PY\n", a)
+          lines=src[a:b].splitlines()
+          code='\n'.join(line[10:] if line.startswith('          ') else line for line in lines)+'\n'
+          Path('/tmp/ehime_patch.py').write_text(code)
+          PY
+          python3 /tmp/ehime_patch.py
+          node scripts/sync-current-release.mjs
+          echo '=== stale aggregate context ==='
+          grep -n -C 3 -F '人的支援総計253人・延1,228人日' ehime_kumamoto_support_geocoded_shelters_20260802.html || true
+          echo '=== new aggregate context ==='
+          grep -n -C 3 -F '人的支援総計260人・延1,307人日' ehime_kumamoto_support_geocoded_shelters_20260802.html || true
