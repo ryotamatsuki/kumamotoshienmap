@@ -26,6 +26,11 @@ function displayJst(value) {
   return match ? `${match[1]}-${match[2]}-${match[3]} ${match[4]}:${match[5]}:${match[6]}` : String(value || "確認時点不明");
 }
 
+function displayReference(value) {
+  const match = String(value || "").match(/^\d{4}-(\d{2})-(\d{2})T(\d{2}):(\d{2})/u);
+  return match ? `${Number(match[1])}月${Number(match[2])}日${match[3]}:${match[4]}` : null;
+}
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -44,6 +49,12 @@ html = html.replace(shelterCardPattern, `$1${currentCount}$2公式JSON現在・�
 // Report 52 is the 2026-09-03 14:00 prefectural snapshot. Keep the static note aligned with its canonical timestamp.
 html = html.replaceAll("9月2日14時・熊本県第52報", "9月3日14時・熊本県第52報");
 
+// Keep the visible dashboard reference label tied to the structured audit reference rather than a prior release's cleanup overlay.
+const referenceLabel = displayReference(national.reference_at);
+if (referenceLabel) {
+  html = html.replace(/\d{1,2}月\d{1,2}日\d{2}:\d{2}までに確認できた一次情報を反映/gu, `${referenceLabel}までに確認できた一次情報を反映`);
+}
+
 // The national overview is a static summary surface. Derive the Hakuo II line from the structured national audit instead of retaining a prior release's prose.
 const hakuo = national.records?.find((record) => record.record_id === "national-accommodation-hakuo2");
 if (hakuo) {
@@ -57,6 +68,7 @@ await writeFile(sourcePath, html, "utf8");
 await writeFile(publicPath, html, "utf8");
 console.log(JSON.stringify({
   status: "PASS",
+  referenceAt: national.reference_at || null,
   currentShelters: currentCount,
   shelterSourceAsOf: shelters?.meta?.source_last_modified || shelters?.meta?.fetched_at || null,
   hakuoState: hakuo?.state || null,
