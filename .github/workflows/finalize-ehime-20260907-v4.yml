@@ -1,4 +1,4 @@
-# retry after scoping stale-value checks to the current display
+# retry after aligning the correction ledger with the current main baseline
 name: Finalize Ehime 2026-09-07 correction v4
 
 on:
@@ -63,6 +63,7 @@ jobs:
           from pathlib import Path
           base=os.environ['BASE']; path=Path(os.environ['LEDGER'])
           ledger=json.loads(path.read_text())
+          ledger['base_main_sha']=base
           ledger['rechecked_at']='2026-09-07T17:04:00+09:00'
           found=False
           for source in ledger.get('sources',[]):
