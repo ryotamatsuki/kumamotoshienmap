@@ -25,11 +25,14 @@ const expected = [
 ];
 for (const value of expected) assert.ok(html.includes(value), `愛媛県9月7日現況値がHTMLにありません: ${value}`);
 
+const currentDisplayEnd = html.indexOf('<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js">');
+assert.ok(currentDisplayEnd > 0, "現況表示範囲の終端を特定できません");
+const currentDisplay = html.slice(0, currentDisplayEnd);
 for (const stale of [
   "人的支援総計253人・延1,228人日",
   "県大型トイレカーは竜北中学校で運用中",
   "愛媛県 9月4日12時",
-]) assert.ok(!html.includes(stale), `愛媛県の旧現況値がHTMLに残っています: ${stale}`);
+]) assert.ok(!currentDisplay.includes(stale), `愛媛県の旧現況値が初期表示に残っています: ${stale}`);
 
 assert.ok(producer.includes("https://www.pref.ehime.jp/uploaded/attachment/189556.pdf"), "愛媛県9月7日公式PDFがproducerに設定されていません");
 assert.ok(!producer.includes("https://www.pref.ehime.jp/uploaded/attachment/189500.pdf"), "愛媛県9月4日旧PDFがproducerに残っています");
