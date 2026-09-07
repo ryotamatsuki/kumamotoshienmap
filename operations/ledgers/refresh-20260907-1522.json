@@ -6,25 +6,19 @@
   "update_id": "refresh-20260907-1522",
   "release_id": "20260907-1522",
   "reference_at": "2026-09-07T15:22:00+09:00",
-  "rechecked_at": "2026-09-07T15:22:00+09:00",
+  "rechecked_at": "2026-09-07T17:04:00+09:00",
   "page_checked_at": null,
-  "base_main_sha": "12b6d3187e85e96070157f7ee4cfe63aed1ec705",
+  "base_main_sha": "f484fbb5b526c69a0ba758cbb183ff0583b210a5",
   "expected_changed_files": [
-    "current-shelters.json",
     "ehime_kumamoto_support_geocoded_shelters_20260802.html",
-    "municipal-support-audit.json",
-    "national-support-audit.json",
-    "operations/audits/institution-coverage-20260907-1522.json",
-    "operations/audits/national-source-recheck-20260907-1522.json",
+    "operations/audits/ehime-source-recheck-20260907-1704.json",
     "operations/ledgers/refresh-20260907-1522.json",
     "package.json",
     "public/dashboard.html",
     "scripts/sync-current-overview-summary.mjs",
     "scripts/sync-current-release.mjs",
     "scripts/validate-current-state-audit.mjs",
-    "scripts/validate-dashboard-current.mjs",
-    "scripts/validate-institution-coverage.mjs",
-    "scripts/validate-national-support-audit.mjs"
+    "scripts/validate-ehime-current.mjs"
   ],
   "sources": [
     {
@@ -56,11 +50,11 @@
       "checked_at": "2026-09-07T15:22:00+09:00"
     },
     {
-      "source_id": "ehime-support-0904",
+      "source_id": "ehime-support-0907",
       "publisher": "愛媛県",
-      "url": "https://www.pref.ehime.jp/uploaded/attachment/189500.pdf",
-      "source_as_of": "2026-09-04T12:00:00+09:00",
-      "checked_at": "2026-09-07T15:22:00+09:00"
+      "url": "https://www.pref.ehime.jp/uploaded/attachment/189556.pdf",
+      "source_as_of": "2026-09-07T12:00:00+09:00",
+      "checked_at": "2026-09-07T17:04:00+09:00"
     },
     {
       "source_id": "mlit-report51-0831",
@@ -146,7 +140,14 @@
       "new_requests": 60,
       "activities": 24,
       "completed": 24
-    }
+    },
+    "ehime_support_as_of": "2026-09-07T12:00:00+09:00",
+    "ehime_human_support_persons": 260,
+    "ehime_human_support_person_days": 1307,
+    "ehime_counterpart_persons": 96,
+    "ehime_counterpart_person_days": 481,
+    "ehime_donations_yen": 26880978,
+    "ehime_donations_as_of": "2026-09-03"
   },
   "blocking_unresolved": [],
   "accepted_unresolved": [

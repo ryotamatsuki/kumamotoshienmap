@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, readdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -7,12 +7,14 @@ const sourcePath = resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260
 const publicPath = resolve(root, "public", "dashboard.html");
 const shelterPath = resolve(root, "current-shelters.json");
 const nationalPath = resolve(root, "national-support-audit.json");
+const auditDir = resolve(root, "operations", "audits");
 
-const [sourceHtml, publicHtml, shelterText, nationalText] = await Promise.all([
+const [sourceHtml, publicHtml, shelterText, nationalText, auditFiles] = await Promise.all([
   readFile(sourcePath, "utf8"),
   readFile(publicPath, "utf8"),
   readFile(shelterPath, "utf8"),
   readFile(nationalPath, "utf8"),
+  readdir(auditDir),
 ]);
 if (sourceHtml !== publicHtml) throw new Error("source/public parity required before overview synchronization");
 
@@ -29,6 +31,11 @@ function displayJst(value) {
 function displayReference(value) {
   const match = String(value || "").match(/^\d{4}-(\d{2})-(\d{2})T(\d{2}):(\d{2})/u);
   return match ? `${Number(match[1])}月${Number(match[2])}日${match[3]}:${match[4]}` : null;
+}
+
+function displayMonthDay(value) {
+  const match = String(value || "").match(/^\d{4}-(\d{2})-(\d{2})/u);
+  return match ? `${Number(match[1])}月${Number(match[2])}日` : String(value || "日付要確認");
 }
 
 function escapeHtml(value) {
@@ -64,6 +71,31 @@ if (hakuo) {
   html = html.replace(nationalActorPattern, `$1${escapeHtml(line)}$2`);
 }
 
+// Keep the Ehime overview tied to the latest committed official-source recheck, rather than stale prose embedded in the base HTML.
+const ehimeAuditName = auditFiles
+  .filter((name) => /^ehime-source-recheck-\d{8}-\d{4}\.json$/u.test(name))
+  .sort()
+  .at(-1);
+let ehimeAudit = null;
+if (ehimeAuditName) {
+  ehimeAudit = JSON.parse(await readFile(resolve(auditDir, ehimeAuditName), "utf8"));
+  const total = ehimeAudit?.human_support?.total;
+  const counterpart = ehimeAudit?.human_support?.counterpart_support;
+  const health = ehimeAudit?.human_support?.public_health;
+  const dwat = ehimeAudit?.human_support?.dwat;
+  const truck = ehimeAudit?.material_support?.prefectural_large_toilet_truck;
+  for (const [label, value] of Object.entries({ total, counterpart, health, dwat, truck })) {
+    if (!value) throw new Error(`Ehime overview audit is missing ${label}`);
+  }
+  const ehimeActorPattern = /<button class="overview-actor" data-overview-provider="ehime" type="button">[\s\S]*?<\/button>/u;
+  if (!ehimeActorPattern.test(html)) throw new Error("Ehime overview actor card not found");
+  const line1 = `対口支援${counterpart.persons}人（県${counterpart.prefecture_persons}・市町${counterpart.municipal_persons}）、延${Number(counterpart.person_days).toLocaleString("ja-JP")}人日。災害応急対策職員は終期未定`;
+  const line2 = `保健師等${health.persons}人・DWAT${dwat.persons}人は${displayMonthDay(health.planned_through)}まで予定`;
+  const line3 = `県大型トイレカーは${escapeHtml(truck.location)}で${displayMonthDay(truck.ended_on)}に運用終了。人的支援総計${total.persons}人・延${Number(total.person_days).toLocaleString("ja-JP")}人日`;
+  const replacement = `<button class="overview-actor" data-overview-provider="ehime" type="button"><div class="overview-actor-head"><i class="dot ehime"></i>愛媛県</div><ul><li>${escapeHtml(line1)}</li><li>${escapeHtml(line2)}</li><li>${line3}</li></ul><span class="overview-more">支援全体を確認 →</span></button>`;
+  html = html.replace(ehimeActorPattern, replacement);
+}
+
 await writeFile(sourcePath, html, "utf8");
 await writeFile(publicPath, html, "utf8");
 console.log(JSON.stringify({
@@ -72,4 +104,6 @@ console.log(JSON.stringify({
   currentShelters: currentCount,
   shelterSourceAsOf: shelters?.meta?.source_last_modified || shelters?.meta?.fetched_at || null,
   hakuoState: hakuo?.state || null,
+  ehimeAudit: ehimeAuditName || null,
+  ehimeSourceAsOf: ehimeAudit?.source_as_of || null,
 }));

@@ -62,8 +62,13 @@ const need = (id) => { const value = provinceNeeds.find((item) => item.id === id
 const event = (id) => { const value = timeline.find((item) => item.id === id); assert.ok(value, `タイムライン ${id} がありません`); return value; };
 
 assert.ok(record("ehime-management").scale.includes("96人"));
+assert.ok(record("ehime-management").scale.includes("延481人日"));
 assert.ok(record("ehime-management").period.includes("終期未定"));
-assert.ok(record("ehime-health").scale.includes("25人"));
+assert.ok(record("ehime-health").scale.includes("29人"));
+assert.ok(record("ehime-health").scale.includes("延158人日"));
+assert.ok(record("ehime-dwat").scale.includes("28人"));
+assert.ok(record("ehime-dwat").scale.includes("延84人日"));
+assert.ok(record("ehime-police").scale.includes("延396人日"));
 assert.ok(record("ehime-dmat").scale.includes("4人"));
 assert.ok(record("ehime-dpat").status.includes("活動終了"));
 assert.ok(record("ehime-assessor").status.includes("活動終了"));
