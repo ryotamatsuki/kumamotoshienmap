@@ -7,6 +7,7 @@ on:
     paths-ignore:
       - operations/audits/ehime-source-20260907.txt
       - operations/audits/ehime-source-20260907-meta.txt
+      - operations/audits/ehime-site-matches-20260907.txt
 
 permissions:
   contents: write
@@ -19,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install PDF tools
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
-      - name: Fetch official Ehime source
+      - name: Fetch official Ehime source and inspect current site values
         run: |
           set -euo pipefail
           mkdir -p operations/audits
@@ -33,15 +34,21 @@ jobs:
             sha256sum /tmp/ehime-20260907.pdf
             pdfinfo /tmp/ehime-20260907.pdf
           } > operations/audits/ehime-source-20260907-meta.txt
-      - name: Commit extracted source
+          {
+            echo '=== source matches ==='
+            grep -nE '合計|義援金額|対口支援|災害ボランティア|県営住宅|相談窓口' operations/audits/ehime-source-20260907.txt || true
+            echo '=== repository matches for old/current aggregate values ==='
+            grep -RInE --exclude-dir=.git --exclude='ehime-source-20260907.txt' --exclude='ehime-site-matches-20260907.txt' '1,228|1,773|26,880,978|35,624,556|253人|457人|延べ1,228|延べ1,773|96人|119人|439人日|512人日' . || true
+          } > operations/audits/ehime-site-matches-20260907.txt
+      - name: Commit extracted source and inspection
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add operations/audits/ehime-source-20260907.txt operations/audits/ehime-source-20260907-meta.txt
+          git add operations/audits/ehime-source-20260907.txt operations/audits/ehime-source-20260907-meta.txt operations/audits/ehime-site-matches-20260907.txt
           if git diff --cached --quiet; then
             echo 'No source changes'
             exit 0
           fi
-          git commit -m 'audit: capture Ehime 2026-09-07 support source'
+          git commit -m 'audit: inspect Ehime 2026-09-07 support values'
           git push
