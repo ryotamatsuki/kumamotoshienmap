@@ -1,4 +1,4 @@
-# retry after aligning rendered truck wording
+# retry after scoping stale-value checks to the current display
 name: Finalize Ehime 2026-09-07 correction v4
 
 on:
@@ -48,6 +48,7 @@ jobs:
           rm -f .github/workflows/finalize-ehime-20260907-v2.yml
           rm -f .github/workflows/finalize-ehime-20260907-v3.yml
           rm -f .github/workflows/finalize-ehime-20260907-v4.yml
+          rm -f .github/workflows/diagnose-ehime-stale-20260907.yml
           rm -f operations/audits/ehime-source-20260907.txt
           rm -f operations/audits/ehime-source-20260907-meta.txt
           rm -f operations/audits/ehime-site-matches-20260907.txt
