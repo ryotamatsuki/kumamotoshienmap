@@ -1,0 +1,133 @@
+name: Source snapshot 2026-09-10
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260910-2239
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/timepoint-20260910-2239
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - name: Acquire official sources
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p /tmp/source-snapshot
+          python3 - <<'PY'
+          import json, re, urllib.request
+          from html.parser import HTMLParser
+          from pathlib import Path
+          OUT=Path('/tmp/source-snapshot')
+          UA={'User-Agent':'Mozilla/5.0 (compatible; kumamotoshienmap-audit/1.0)'}
+          def get(url, binary=False):
+              req=urllib.request.Request(url, headers=UA)
+              with urllib.request.urlopen(req, timeout=45) as r:
+                  data=r.read()
+                  return data if binary else data.decode('utf-8','replace')
+          urls={
+            'ehime_support_page':'https://www.pref.ehime.jp/page/154856.html',
+            'kumamoto_damage_page':'https://www.pref.kumamoto.jp/soshiki/222/276831.html',
+            'kumamoto_info_page':'https://www.pref.kumamoto.jp/soshiki/1/274517.html',
+            'kumamoto_recovery_page':'https://www.pref.kumamoto.jp/soshiki/5/278881.html',
+            'kumamoto_volunteer_bus':'https://www.pref.kumamoto.jp/soshiki/27/278033.html',
+            'mod_disaster':'https://www.mod.go.jp/j/approach/defense/saigai/index.html',
+            'mhlw_response':'https://www.mhlw.go.jp/stf/newpage_73935.html',
+            'mlit_disaster':'https://www.mlit.go.jp/saigai/saigai_260728.html',
+            'current_shelters':'https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json',
+          }
+          meta={}
+          for key,url in urls.items():
+              try:
+                  data=get(url, binary=(key=='current_shelters'))
+                  p=OUT/(key+('.json' if key=='current_shelters' else '.html'))
+                  p.write_bytes(data if isinstance(data,bytes) else data.encode())
+                  meta[key]={'url':url,'ok':True,'bytes':p.stat().st_size}
+              except Exception as e:
+                  meta[key]={'url':url,'ok':False,'error':repr(e)}
+          class P(HTMLParser):
+              def __init__(self): super().__init__(); self.links=[]; self.href=None; self.text=[]
+              def handle_starttag(self,tag,attrs):
+                  if tag=='a': self.href=dict(attrs).get('href'); self.text=[]
+              def handle_data(self,data):
+                  if self.href is not None: self.text.append(data)
+              def handle_endtag(self,tag):
+                  if tag=='a' and self.href is not None:
+                      self.links.append((self.href,''.join(self.text).strip())); self.href=None; self.text=[]
+          ep=OUT/'ehime_support_page.html'
+          if ep.exists():
+              parser=P(); parser.feed(ep.read_text(errors='replace'))
+              matches=[]
+              for href,text in parser.links:
+                  if '9月9日' in text and '熊本地震' in text:
+                      if href.startswith('/'): href='https://www.pref.ehime.jp'+href
+                      matches.append({'href':href,'text':text})
+              meta['ehime_latest_matches']=matches
+              if matches:
+                  try:
+                      pdf=get(matches[0]['href'],binary=True)
+                      (OUT/'ehime_latest.pdf').write_bytes(pdf)
+                      meta['ehime_latest_pdf']={'url':matches[0]['href'],'ok':True,'bytes':len(pdf)}
+                  except Exception as e:
+                      meta['ehime_latest_pdf']={'url':matches[0]['href'],'ok':False,'error':repr(e)}
+          # Recheck every stored sender/discovery source URL for reachability.
+          sender=[]
+          for fn in ['sender-audit/sources.json','sender-audit/sources-additions.json']:
+              p=Path(fn)
+              if p.exists():
+                  for s in json.loads(p.read_text()).get('sources',[]):
+                      url=s.get('url')
+                      if not url: continue
+                      row={'source_id':s.get('source_id'),'url':url,'tier':s.get('tier')}
+                      try:
+                          req=urllib.request.Request(url, headers=UA, method='GET')
+                          with urllib.request.urlopen(req, timeout=20) as r:
+                              row.update(ok=True,status=getattr(r,'status',200),final_url=r.geturl(),content_type=r.headers.get('content-type'))
+                              # Read only a bounded prefix; enough for current-page markers without bloating artifact.
+                              prefix=r.read(200000)
+                              txt=prefix.decode('utf-8','replace')
+                              row['mentions_kumamoto']=('熊本' in txt)
+                              row['mentions_reiwa8']=('令和8' in txt or '令和８' in txt)
+                      except Exception as e:
+                          row.update(ok=False,error=repr(e))
+                      sender.append(row)
+          (OUT/'sender-source-recheck.json').write_text(json.dumps(sender,ensure_ascii=False,indent=2))
+          meta['sender_sources']={'total':len(sender),'ok':sum(1 for x in sender if x.get('ok')),'failed':sum(1 for x in sender if not x.get('ok'))}
+          (OUT/'snapshot-meta.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2))
+          PY
+          if [[ -f /tmp/source-snapshot/ehime_latest.pdf ]]; then
+            if command -v pdftotext >/dev/null 2>&1; then
+              pdftotext -layout /tmp/source-snapshot/ehime_latest.pdf /tmp/source-snapshot/ehime_latest.txt || true
+            else
+              python3 -m pip install --quiet pypdf
+              python3 - <<'PY'
+          from pypdf import PdfReader
+          p='/tmp/source-snapshot/ehime_latest.pdf'
+          out='\n\n'.join((x.extract_text() or '') for x in PdfReader(p).pages)
+          open('/tmp/source-snapshot/ehime_latest.txt','w').write(out)
+          PY
+            fi
+          fi
+          npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+          npm run update:current-shelters -- --dry-run --candidate-output /tmp/source-snapshot/current-shelters-candidate.json || true
+          node scripts/validate-current-shelters.mjs --candidate=/tmp/source-snapshot/current-shelters-candidate.json > /tmp/source-snapshot/current-shelters-validation.txt 2>&1 || true
+          echo '=== SNAPSHOT META ==='
+          cat /tmp/source-snapshot/snapshot-meta.json
+          echo '=== EHIME LATEST TEXT ==='
+          if [[ -f /tmp/source-snapshot/ehime_latest.txt ]]; then sed -n '1,260p' /tmp/source-snapshot/ehime_latest.txt; fi
+          echo '=== CURRENT SHELTER VALIDATION ==='
+          cat /tmp/source-snapshot/current-shelters-validation.txt || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-snapshot-20260910-2239
+          path: /tmp/source-snapshot
+          if-no-files-found: error
