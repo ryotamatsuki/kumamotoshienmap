@@ -1,0 +1,41 @@
+name: Diagnose 2026-09-11 audit state
+on:
+  push:
+    branches: [audit/timepoint-20260911-1521]
+    paths: ['.github/workflows/diagnose-20260911.yml']
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/timepoint-20260911-1521
+      - name: Print current adjudications
+        run: |
+          python3 - <<'PY'
+          import json,glob
+          m=json.load(open('municipal-support-audit.json'))
+          print('=== MUNICIPAL CURRENT/PLANNED ===')
+          for r in m['records']:
+            for x in r.get('provider_statuses',[])+r.get('additional_statuses',[]):
+              if x.get('state') in ('CURRENT','PLANNED'):
+                print(r['id'],x)
+          n=json.load(open('national-support-audit.json'))
+          print('=== NATIONAL RECORDS ===')
+          for r in n['records']:
+            print(r.get('record_id'),r.get('state'),r.get('display'),r.get('evidence_source_ids') or r.get('source_ids'))
+          sm=json.load(open('sender-municipality-audit.json'))
+          print('=== SENDER CURRENT/PLANNED ===')
+          for fn in sm['entity_files']:
+            d=json.load(open(fn)); rows=d.get('entities',[])
+            if not rows and d.get('compact_entities'):
+              for ce in d['compact_entities']:
+                pref,name,mt,src,dest,support,state=ce
+                if state in ('CURRENT','PLANNED'): print(pref,name,state,[src])
+            else:
+              for e in rows:
+                if e.get('state') in ('CURRENT','PLANNED'):
+                  print(e.get('prefecture'),e.get('entity'),e.get('state'),e.get('source_ids'))
+          PY
