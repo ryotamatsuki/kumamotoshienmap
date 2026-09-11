@@ -1,0 +1,30 @@
+name: Repo audit snapshot 2026-09-11
+on:
+  push:
+    branches: [audit/timepoint-20260911-1521]
+    paths: ['.github/workflows/repo-audit-snapshot-20260911.yml']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/timepoint-20260911-1521
+      - name: Collect audit inputs
+        run: |
+          mkdir -p /tmp/repo-audit
+          cp package.json current-shelters.json municipal-support-audit.json national-support-audit.json sender-municipality-audit.json /tmp/repo-audit/
+          cp -R sender-audit /tmp/repo-audit/
+          mkdir -p /tmp/repo-audit/scripts /tmp/repo-audit/operations/audits /tmp/repo-audit/operations/ledgers
+          cp scripts/*.mjs /tmp/repo-audit/scripts/
+          cp operations/audits/institution-coverage-20260907-1522.json /tmp/repo-audit/operations/audits/
+          cp operations/audits/national-source-recheck-20260907-1522.json /tmp/repo-audit/operations/audits/
+          cp operations/audits/ehime-source-recheck-20260907-1704.json /tmp/repo-audit/operations/audits/
+          cp operations/ledgers/refresh-20260907-1522.json /tmp/repo-audit/operations/ledgers/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: repo-audit-snapshot-20260911
+          path: /tmp/repo-audit
+          if-no-files-found: error
