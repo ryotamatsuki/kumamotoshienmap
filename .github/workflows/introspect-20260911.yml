@@ -1,0 +1,39 @@
+name: Introspect refresh 2026-09-11
+on:
+  push:
+    branches: [tmp/introspect-20260911]
+    paths: ['.github/workflows/introspect-20260911.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: tmp/introspect-20260911
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+      - name: Print audit shapes
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile } from 'node:fs/promises';
+          for (const fn of ['national-support-audit.json','municipal-support-audit.json','sender-municipality-audit.json','operations/audits/institution-coverage-20260907-1522.json']) {
+            const d=JSON.parse(await readFile(fn,'utf8'));
+            console.log('===FILE',fn,'===');
+            console.log('keys',Object.keys(d));
+            console.log('reference',d.reference_at,d.checked_at,d.rechecked_at,d.release_id);
+            if (d.summary) console.log('summary',JSON.stringify(d.summary));
+            if (d.records) console.log('records',JSON.stringify(d.records.map(r=>({id:r.record_id||r.id,state:r.state,provider:r.provider,category:r.category,display:r.display,sourceIds:r.source_ids,adjudications:r.adjudications?.slice(-2)})),null,2));
+            if (d.entities) console.log('entities-count',d.entities.length);
+            if (d.sources) console.log('sources-count',d.sources.length);
+          }
+          NODE
+          echo '=== SYNC NATIONAL ==='
+          sed -n '1,260p' scripts/sync-national-support-audit.mjs
+          echo '=== VALIDATE NATIONAL ==='
+          sed -n '1,320p' scripts/validate-national-support-audit.mjs
+          echo '=== VALIDATE RELEASE HEAD ==='
+          sed -n '1,420p' scripts/validate-update-release.mjs
