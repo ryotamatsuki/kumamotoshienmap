@@ -12,30 +12,46 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: audit/timepoint-20260911-1521
-      - name: Print current adjudications
+      - name: Print current adjudications and live snippets
         run: |
           python3 - <<'PY'
-          import json,glob
+          import json,glob,re,urllib.request,html
           m=json.load(open('municipal-support-audit.json'))
           print('=== MUNICIPAL CURRENT/PLANNED ===')
           for r in m['records']:
             for x in r.get('provider_statuses',[])+r.get('additional_statuses',[]):
-              if x.get('state') in ('CURRENT','PLANNED'):
-                print(r['id'],x)
+              if x.get('state') in ('CURRENT','PLANNED'): print(r['id'],x)
           n=json.load(open('national-support-audit.json'))
           print('=== NATIONAL RECORDS ===')
-          for r in n['records']:
-            print(r.get('record_id'),r.get('state'),r.get('display'),r.get('evidence_source_ids') or r.get('source_ids'))
+          for r in n['records']: print(r.get('record_id'),r.get('state'),r.get('display'),r.get('evidence_source_ids') or r.get('source_ids'))
           sm=json.load(open('sender-municipality-audit.json'))
+          curr=[]
           print('=== SENDER CURRENT/PLANNED ===')
           for fn in sm['entity_files']:
             d=json.load(open(fn)); rows=d.get('entities',[])
             if not rows and d.get('compact_entities'):
               for ce in d['compact_entities']:
                 pref,name,mt,src,dest,support,state=ce
-                if state in ('CURRENT','PLANNED'): print(pref,name,state,[src])
+                if state in ('CURRENT','PLANNED'):
+                  print(pref,name,state,[src]); curr.append((pref,name,state,[src]))
             else:
               for e in rows:
                 if e.get('state') in ('CURRENT','PLANNED'):
-                  print(e.get('prefecture'),e.get('entity'),e.get('state'),e.get('source_ids'))
+                  print(e.get('prefecture'),e.get('entity'),e.get('state'),e.get('source_ids')); curr.append((e.get('prefecture'),e.get('entity'),e.get('state'),e.get('source_ids')))
+          sources={}
+          for fn in [sm['sources_file'],sm['sources_additions_file']]:
+            for s in json.load(open(fn)).get('sources',[]): sources[s['source_id']]=s
+          ids=sorted({sid for pref,name,state,sids in curr if pref!='愛媛県' for sid in sids})
+          print('=== LIVE SOURCE SNIPPETS FOR NON-EHIME CURRENT/PLANNED ===')
+          for sid in ids:
+            s=sources.get(sid,{}); u=s.get('url'); print('\nSOURCE',sid,'tier',s.get('tier'),u)
+            if not u: continue
+            try:
+              req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0 (compatible; kumamotoshienmap-audit/1.0)'})
+              with urllib.request.urlopen(req,timeout=25) as r: raw=r.read(600000)
+              txt=raw.decode('utf-8','replace'); txt=html.unescape(re.sub(r'<[^>]*>',' ',txt)); txt=re.sub(r'\s+',' ',txt)
+              for marker in ['熊本','受付中','受け付けています','実施中','派遣中','活動中','派遣している','派遣しています','派遣しました','活動しました','終了','予定']:
+                pos=txt.find(marker)
+                if pos>=0: print(marker,txt[max(0,pos-180):pos+380])
+            except Exception as e: print('ERROR',repr(e))
           PY
