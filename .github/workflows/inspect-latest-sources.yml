@@ -1,0 +1,79 @@
+name: Inspect latest official sources
+
+on:
+  push:
+    branches:
+      - audit/timepoint-20260915-0028
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: audit/timepoint-20260915-0028
+          fetch-depth: 0
+      - name: Install PDF text tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - name: Fetch and inspect primary sources
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from urllib.request import Request, urlopen
+          from urllib.parse import urljoin
+          import pathlib
+
+          class P(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.a=[]; self.href=None; self.buf=[]
+              def handle_starttag(self, tag, attrs):
+                  if tag=='a': self.href=dict(attrs).get('href'); self.buf=[]
+              def handle_data(self, data):
+                  if self.href is not None: self.buf.append(data)
+              def handle_endtag(self, tag):
+                  if tag=='a' and self.href is not None:
+                      self.a.append((self.href, ''.join(self.buf).strip())); self.href=None; self.buf=[]
+
+          def get(url):
+              return urlopen(Request(url,headers={'User-Agent':'Mozilla/5.0'}),timeout=30).read()
+          def pick(page, needle):
+              raw=get(page); p=P(); p.feed(raw.decode('utf-8','ignore'))
+              found=[(urljoin(page,h),t) for h,t in p.a if needle in t]
+              if not found: raise SystemExit(f'anchor not found: {needle} on {page}')
+              return found[0][0]
+          sources=[
+              ('kumamoto','https://www.pref.kumamoto.jp/soshiki/222/276831.html','第56報'),
+              ('ehime','https://www.pref.ehime.jp/page/154856.html','9月11日12時00分時点'),
+              ('mlit','https://www.mlit.go.jp/saigai/saigai_260728.html','第52報'),
+          ]
+          for name,page,needle in sources:
+              url=pick(page,needle)
+              print(f'RESOLVED {name}: {url}')
+              pathlib.Path(f'/tmp/{name}.pdf').write_bytes(get(url))
+          PY
+          for n in kumamoto ehime mlit; do
+            pdftotext -layout "/tmp/$n.pdf" "/tmp/$n.txt"
+            echo "===== $n SOURCE TEXT ====="
+            if [[ "$n" == "kumamoto" ]]; then grep -n -E '避難所|避難者|人的被害|住家被害|死者|負傷|全壊|半壊|一部破損' "/tmp/$n.txt" | head -n 160 || true; fi
+            if [[ "$n" == "ehime" ]]; then sed -n '1,420p' "/tmp/$n.txt"; fi
+            if [[ "$n" == "mlit" ]]; then grep -n -E '断水|給水車|TEC-FORCE|リエゾン|被災状況調査|応急住宅|仮設住宅|道路|鉄道' "/tmp/$n.txt" | head -n 260 || true; fi
+          done
+      - name: Remove one-shot workflow
+        if: always()
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          rm -f .github/workflows/inspect-latest-sources.yml
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: remove one-shot source inspection workflow'
+            git push origin HEAD:audit/timepoint-20260915-0028
+          fi
