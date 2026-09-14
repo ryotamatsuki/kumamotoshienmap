@@ -1,0 +1,33 @@
+name: Inspect volunteer state
+on:
+  push:
+    branches: [audit/timepoint-20260915-0028]
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: audit/timepoint-20260915-0028
+      - name: Inspect volunteer records
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const s=fs.readFileSync('volunteer-data.js','utf8');
+          const m=s.match(/^globalThis\.VOLUNTEER_DATA = Object\.freeze\(([\s\S]+)\);\s*$/);
+          const d=JSON.parse(m[1]);
+          console.log('META',JSON.stringify(d.meta));
+          for(const c of d.centers){console.log('\n###',c.municipality);console.log(JSON.stringify({status:c.center_status,recruitment:c.recruitment_status,start:c.activity_start_date,end:c.activity_end_date,recheck:c.recheck_status,source:c.official_source_url,sourceTitle:c.official_source_title,updated:c.source_updated_at,form:c.application_form_status,ehime:c.ehime_participation_allowed},null,2));}
+          console.log('\nSOURCES',d.sources.length);
+          for(const x of d.sources)console.log(x.url);
+          NODE
+      - name: Remove one-shot workflow
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          rm -f .github/workflows/inspect-volunteer-state.yml
+          git add -A
+          if ! git diff --cached --quiet; then git commit -m 'chore: remove volunteer inspection workflow' && git push origin HEAD:audit/timepoint-20260915-0028; fi
