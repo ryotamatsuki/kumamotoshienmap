@@ -22,6 +22,7 @@ jobs:
         run: |
           set -Eeuo pipefail
           npm run build
+          git add -A
           npm run validate:release
           npm run test:release-gate
       - name: Commit audited refresh
