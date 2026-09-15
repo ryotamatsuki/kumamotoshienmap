@@ -28,8 +28,11 @@ for (const value of [
   "2026年9月15日確認",
   "<span>主要数値：9月11日14:00</span>",
   "復旧・生活再建段階（熊本県最新被害等：9月11日14:00）",
-  "避難者1,771人、避難所37か所、人的被害407人、住家被害68,851棟へ更新。",
-  `公式JSON現在${shelters.meta.current_count}施設`,
+  "1,771<span class=\"overview-kpi-unit\">人",
+  `${shelters.meta.current_count}<span class="overview-kpi-unit">か所`,
+  "407<span class=\"overview-kpi-unit\">人",
+  "68,851<span class=\"overview-kpi-unit\">棟",
+  `公式JSON現在・最終更新2026-09-15 00:29:57`,
   "9月15日01:05基準で対口支援・他自治体支援を全件再監査",
   "福岡県→宇土市",
   "愛媛県→氷川町",
@@ -53,6 +56,9 @@ const bySection = new Map((meta.rows || []).map((row) => [row.section, row]));
 for (const section of ["被害・支援","愛媛県支援","避難所","支援ニーズ見通し","発災後タイムライン","支援ダッシュボード","災害ボランティア","地図・境界","他自治体等","国・関係機関"]) assert.ok(bySection.has(section), `PAGE_RECHECK_META row missing: ${section}`);
 assert.ok(bySection.get("被害・支援").current.includes("9月11日14:00"));
 assert.ok(bySection.get("被害・支援").current.includes("9月15日19:42"));
+assert.ok(bySection.get("被害・支援").difference.includes("避難者1,771人"));
+assert.ok(bySection.get("被害・支援").difference.includes("人的被害407人"));
+assert.ok(bySection.get("被害・支援").difference.includes("住家被害68,851棟"));
 assert.ok(bySection.get("避難所").current.includes(`公式JSON現在${shelters.meta.current_count}施設`));
 assert.ok(bySection.get("他自治体等").current.includes("福岡県→宇土市"));
 assert.ok(bySection.get("他自治体等").current.includes("愛媛県→氷川町"));
