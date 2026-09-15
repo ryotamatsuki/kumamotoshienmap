@@ -69,8 +69,9 @@ replaceOverviewCard('houses',snapshot.housing_damage,'棟',prefNote);
 html=html.replace('熊本県第52報（9月3日14時）では住家被害63,878棟。被害区分・市町別旧スナップショットは対象時点が異なるため、県計へ機械的に再配分しない。',`熊本県9月11日14時参考資料では住家被害${n(snapshot.housing_damage)}棟。市町別旧スナップショットは対象時点が異なるため、最新県計へ機械的に再配分しない。`);
 
 const provinceActionsPattern=/<div class="needs-actions"><a href="https:\/\/www\.pref\.kumamoto\.jp\/uploaded\/attachment\/316600\.pdf" target="_blank" rel="noopener">熊本県本部資料<\/a><a href="https:\/\/www\.pref\.kumamoto\.jp\/uploaded\/life\/277838_875456_misc\.pdf" target="_blank" rel="noopener">市町村別被害表<\/a><\/div>/u;
-if(!provinceActionsPattern.test(html))throw new Error('province need hard-coded source actions not found');
-html=html.replace(provinceActionsPattern,'<div class="needs-actions"><a href="${esc(x.sourceUrl||\'https://www.pref.kumamoto.jp/soshiki/5/278881.html\')}" target="_blank" rel="noopener noreferrer">${esc(x.sourceLabel||\'現在データの公式根拠\')} ↗</a></div>');
+const dynamicProvinceActions='<div class="needs-actions"><a href="${esc(x.sourceUrl||\'https://www.pref.kumamoto.jp/soshiki/5/278881.html\')}" target="_blank" rel="noopener noreferrer">${esc(x.sourceLabel||\'現在データの公式根拠\')} ↗</a></div>';
+if(provinceActionsPattern.test(html))html=html.replace(provinceActionsPattern,dynamicProvinceActions);
+else if(!html.includes(dynamicProvinceActions))throw new Error('province need source actions not found');
 
 const overlayStart='/* NEEDS_KPI_SOURCE_FIX_20260915_START */';
 const overlayEnd='/* NEEDS_KPI_SOURCE_FIX_20260915_END */';
