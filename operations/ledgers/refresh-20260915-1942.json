@@ -1,0 +1,88 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260915-1942",
+  "release_id": "20260915-0105",
+  "reference_at": "2026-09-15T01:05:48+09:00",
+  "rechecked_at": "2026-09-15T19:42:09+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "03fd167a4e03cb065e0116b48ef6c7a7ddc78707",
+  "expected_changed_files": [
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "operations/audits/needs-kpi-source-recheck-20260915-1942.json",
+    "operations/ledgers/refresh-20260915-1942.json",
+    "package.json",
+    "public/dashboard.html",
+    "scripts/sync-needs-kpis.mjs",
+    "scripts/validate-dashboard-current.mjs",
+    "scripts/validate-needs-kpis.mjs"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-recovery-hq-20260911",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/5/278881.html",
+      "source_as_of": "2026-09-11T14:00:00+09:00",
+      "checked_at": "2026-09-15T19:42:09+09:00"
+    },
+    {
+      "source_id": "kumamoto-recovery-hq-water-20260831",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/5/278881.html",
+      "source_as_of": "2026-08-31T17:00:00+09:00",
+      "checked_at": "2026-09-15T19:42:09+09:00"
+    },
+    {
+      "source_id": "env-waste-20260911",
+      "publisher": "環境省",
+      "url": "https://www.env.go.jp/saigai/kumamoto_earthquake_202607/index.html",
+      "source_as_of": "2026-09-11T00:00:00+09:00",
+      "checked_at": "2026-09-15T19:42:09+09:00"
+    }
+  ],
+  "coverage": {
+    "current_count": 38,
+    "unresolved_count": 0,
+    "conflict_count": 0,
+    "municipal_support": "audited",
+    "national_support": "audited",
+    "needs_kpis": {
+      "required": 4,
+      "linked_to_official_sources": 4,
+      "stale_current_values": 0
+    },
+    "recipient_municipalities": 45,
+    "ehime_required": 20,
+    "ehime_adjudicated": 20,
+    "prefecture_discovery_checked": 47,
+    "sender_entities_adjudicated": 320,
+    "sender_orphan_source_mentions": 0
+  },
+  "snapshots": {
+    "page_reference_at": "2026-09-15T01:05:48+09:00",
+    "needs_kpi_rechecked_at": "2026-09-15T19:42:09+09:00",
+    "damage_source_as_of": "2026-09-11T14:00:00+09:00",
+    "evacuees": 1771,
+    "evacuee_municipalities": 10,
+    "reported_shelters": 37,
+    "shelter_municipalities": 11,
+    "human_damage": 407,
+    "housing_damage": 68851,
+    "housing_breakdown": {
+      "destroyed": 2285,
+      "large_scale_half_destroyed": 841,
+      "half_destroyed": 5234,
+      "partially_damaged": 40714,
+      "unclassified": 19777
+    },
+    "current_shelters_json": 38,
+    "water_display": "解消確認",
+    "water_resolution_source_as_of": "2026-08-31T17:00:00+09:00",
+    "waste_display": "処理継続",
+    "waste_source_as_of": "2026-09-11T00:00:00+09:00"
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": []
+}
