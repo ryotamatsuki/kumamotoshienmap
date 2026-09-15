@@ -1,0 +1,39 @@
+name: Needs KPI correction release gate
+on:
+  push:
+    branches:
+      - fix/needs-kpi-current-sources-20260915
+permissions:
+  contents: write
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: fix/needs-kpi-current-sources-20260915
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+      - name: Install
+        run: npm install --ignore-scripts --no-audit --no-fund --package-lock=false
+      - name: Rebuild deterministically
+        run: |
+          set -Eeuo pipefail
+          npm run build
+          git diff --exit-code
+      - name: Validate exact ledger diff and release gates
+        run: |
+          set -Eeuo pipefail
+          npm run validate:release -- --ledger=operations/ledgers/refresh-20260915-1942.json --base=03fd167a4e03cb065e0116b48ef6c7a7ddc78707 --head=HEAD^
+          npm run test:release-gate
+      - name: Remove one-shot ledger gate
+        run: |
+          set -Eeuo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          rm -f .github/workflows/needs-kpi-ledger-gate.yml
+          git add -A
+          git commit -m 'chore: remove needs KPI correction gate'
+          git push origin HEAD:fix/needs-kpi-current-sources-20260915
