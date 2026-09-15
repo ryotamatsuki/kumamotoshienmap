@@ -1,11 +1,14 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root=resolve(fileURLToPath(new URL('../',import.meta.url)));
 const sourcePath=resolve(root,'ehime_kumamoto_support_geocoded_shelters_20260802.html');
 const publicPath=resolve(root,'public/dashboard.html');
-const auditPath=resolve(root,'operations/audits/needs-kpi-source-recheck-20260915-1942.json');
+const auditNames=(await readdir(resolve(root,'operations','audits'))).filter(name=>/^needs-kpi-source-recheck-\d{8}-\d{4}\.json$/u.test(name)).sort();
+const latestNeedsAudit=auditNames.at(-1);
+if(!latestNeedsAudit)throw new Error('latest needs KPI audit missing');
+const auditPath=resolve(root,'operations','audits',latestNeedsAudit);
 const [sourceHtml,publicHtml,auditText]=await Promise.all([
   readFile(sourcePath,'utf8'),
   readFile(publicPath,'utf8'),
