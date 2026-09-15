@@ -1,5 +1,71 @@
-import assert from "node:assert/strict"; import {readFile} from "node:fs/promises"; import {dirname,resolve} from "node:path"; import {fileURLToPath} from "node:url"; import {assertCurrentPageMetadataSynced} from "./current-page-metadata.mjs";
-const REF="2026-09-15T01:05:48+09:00",root=resolve(dirname(fileURLToPath(import.meta.url)),".."); const [html,pub,st,mt,nt]=await Promise.all([readFile(resolve(root,"ehime_kumamoto_support_geocoded_shelters_20260802.html"),"utf8"),readFile(resolve(root,"public/dashboard.html"),"utf8"),readFile(resolve(root,"current-shelters.json"),"utf8"),readFile(resolve(root,"municipal-support-audit.json"),"utf8"),readFile(resolve(root,"national-support-audit.json"),"utf8")]); const shelters=JSON.parse(st),ma=JSON.parse(mt),na=JSON.parse(nt); assert.equal(html,pub); assert.equal(ma.reference_at,REF); assert.equal(na.reference_at,REF);
-function ex(name,next){const marker=`const ${name}=`,s=html.indexOf(marker);assert.ok(s>=0);const v=s+marker.length,n=html.indexOf(next,v);let depth=0,str=false,esc=false,end=-1;for(let i=v;i<n;i++){const c=html[i];if(str){if(esc)esc=false;else if(c==='\\')esc=true;else if(c==='"')str=false;continue;}if(c==='"'){str=true;continue;}if(c==='['||c==='{')depth++;else if(c===']'||c==='}'){depth--;if(depth===0){end=i;break;}}}return JSON.parse(html.slice(v,end+1));}
-const records=ex("RECORDS","const SHELTER_MUNICIPALITIES="),timeline=ex("TIMELINE_EVENTS","const RECORDS="),needs=ex("PROVINCE_NEEDS","const NEED_READINESS="),meta=ex("PAGE_RECHECK_META","const PROVIDER_LABEL="); assertCurrentPageMetadataSynced(html,meta); const rec=id=>records.find(x=>x.id===id),ev=id=>timeline.find(x=>x.id===id),need=id=>needs.find(x=>x.id===id);
-assert.equal(meta.checkedAt,REF); assert.equal(meta.volunteerCheckedAt,REF); assert.equal(ev("t-current-status").summary,"避難者1,780人、開設避難所37か所、人的被害406人、住家被害68,033棟。"); assert.ok(ev("t-current-status").tags.includes("熊本県第56報")); assert.ok(need("p-shelter").observed.includes("第56報")); assert.ok(need("p-shelter").observed.includes("1,780人")); assert.ok(rec("ehime-management").scale.includes("109人")&&rec("ehime-management").scale.includes("延534人日")); assert.ok(rec("ehime-health").scale.includes("33人")&&rec("ehime-dwat").scale.includes("34人")); const display=html.slice(0,html.indexOf('<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js">')); for(const v of ["復旧・生活再建段階（熊本県最新被害等：9月11日14:00）","9月15日01:05までに確認できた一次情報","9月15日01:05基準で国関係15件を再監査"])assert.ok(display.includes(v),`初期表示に${v}がありません`); assert.equal(shelters.meta.current_count,38); assert.equal(shelters.shelters.length,38); assert.ok(shelters.shelters.every(x=>x.coordinate_status==="confirmed")); assert.equal(shelters.shelters.filter(x=>x.coordinate_status==="conflict").length,0); console.log(JSON.stringify({status:"PASS",checkedAt:meta.checkedAt,shelters:38,nationalStates:na.summary}));
+import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+import { readFile, readdir } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { assertCurrentPageMetadataSynced } from './current-page-metadata.mjs';
+
+const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const [html, pub, sheltersText, municipalText, nationalText, auditNames] = await Promise.all([
+  readFile(resolve(root, 'ehime_kumamoto_support_geocoded_shelters_20260802.html'), 'utf8'),
+  readFile(resolve(root, 'public/dashboard.html'), 'utf8'),
+  readFile(resolve(root, 'current-shelters.json'), 'utf8'),
+  readFile(resolve(root, 'municipal-support-audit.json'), 'utf8'),
+  readFile(resolve(root, 'national-support-audit.json'), 'utf8'),
+  readdir(resolve(root, 'operations', 'audits')),
+]);
+const shelters = JSON.parse(sheltersText);
+const municipal = JSON.parse(municipalText);
+const national = JSON.parse(nationalText);
+assert.equal(html, pub, 'source/public parity');
+assert.equal(municipal.reference_at, national.reference_at, 'municipal/national reference_at mismatch');
+
+const needsAuditName = auditNames.filter((name) => /^needs-kpi-source-recheck-\d{8}-\d{4}\.json$/u.test(name)).sort().at(-1);
+assert.ok(needsAuditName, 'latest needs currentness audit missing');
+const needsAudit = JSON.parse(await readFile(resolve(root, 'operations', 'audits', needsAuditName), 'utf8'));
+const snapshot = needsAudit.prefectural_snapshot;
+assert.ok(snapshot, 'prefectural current snapshot missing');
+
+const metaMatch = html.match(/const\s+PAGE_RECHECK_META\s*=\s*(\{[^\n]*\});/u);
+assert.ok(metaMatch, 'PAGE_RECHECK_META missing');
+const meta = JSON.parse(metaMatch[1]);
+assertCurrentPageMetadataSynced(html, meta);
+assert.equal(meta.checkedAt, national.reference_at, 'PAGE_RECHECK_META.checkedAt must match page-wide national/municipal reference_at');
+assert.equal(meta.volunteerCheckedAt, national.reference_at, 'PAGE_RECHECK_META.volunteerCheckedAt mismatch');
+
+assert.equal(shelters.meta.current_count, shelters.shelters.length, 'current shelter count mismatch');
+assert.ok(shelters.shelters.length > 0, 'current shelters must not be empty');
+assert.ok(shelters.shelters.every((row) => row.coordinate_status === 'confirmed'), 'current shelters contain unresolved/conflict coordinates');
+assert.equal(shelters.shelters.filter((row) => row.coordinate_status === 'conflict').length, 0, 'current shelter coordinate conflict');
+
+// Current-stateの意味論は横断Gateへ一本化し、旧報番号・旧人数の固定値をここへ再導入しない。
+try {
+  execFileSync(process.execPath, [resolve(root, 'scripts', 'validate-currentness-surfaces.mjs')], {
+    cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'],
+  });
+} catch (error) {
+  throw new Error(`currentness surface gate failed from current-state audit: ${error.stderr || error.stdout || error.message}`);
+}
+
+const majorLabel = (() => {
+  const m = String(snapshot.as_of).match(/^\d{4}-(\d{2})-(\d{2})T(\d{2}):(\d{2})/u);
+  return m ? `${Number(m[1])}月${Number(m[2])}日${m[3]}:${m[4]}` : String(snapshot.as_of);
+})();
+const display = html.slice(0, html.indexOf('<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js">'));
+for (const value of [
+  `復旧・生活再建段階（熊本県最新被害等：${majorLabel}）`,
+  `${Number(snapshot.evacuees).toLocaleString('ja-JP')}<span class="overview-kpi-unit">人</span>`,
+  `${Number(snapshot.housing_damage).toLocaleString('ja-JP')}<span class="overview-kpi-unit">棟</span>`,
+]) assert.ok(display.includes(value), `current display missing canonical value: ${value}`);
+
+console.log(JSON.stringify({
+  status: 'PASS',
+  checkedAt: meta.checkedAt,
+  currentnessAudit: needsAuditName,
+  damageSourceAsOf: snapshot.as_of,
+  evacuees: snapshot.evacuees,
+  humanDamage: snapshot.human_damage,
+  housingDamage: snapshot.housing_damage,
+  shelters: shelters.shelters.length,
+  nationalStates: national.summary,
+}));
