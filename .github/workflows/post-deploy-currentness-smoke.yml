@@ -1,0 +1,118 @@
+name: Post-deploy currentness smoke
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: post-deploy-currentness-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  currentness-smoke:
+    name: Verify deployed currentness and source links
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+
+      - name: Wait for deployed dashboard to match merged main
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          base="https://ryotamatsuki.github.io/kumamotoshienmap"
+          dashboard="ehime_kumamoto_support_geocoded_shelters_20260802.html"
+          matched=false
+          for attempt in $(seq 1 36); do
+            if curl -fsSL --connect-timeout 10 --max-time 30 "${base}/${dashboard}" -o /tmp/deployed-dashboard.html \
+              && cmp --silent "$dashboard" /tmp/deployed-dashboard.html; then
+              matched=true
+              break
+            fi
+            echo "Pages has not reached merged main ${GITHUB_SHA} yet (attempt ${attempt})."
+            sleep 10
+          done
+          if [[ "$matched" != true ]]; then
+            echo "::error title=Pages deployment stale::Deployed dashboard did not converge to merged main."
+            exit 1
+          fi
+
+      - name: Verify currentness and official-source link closure
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          node --input-type=module - <<'NODE'
+          import { readFileSync, readdirSync } from 'node:fs';
+
+          const auditName=readdirSync('operations/audits')
+            .filter(name=>/^needs-kpi-source-recheck-\d{8}-\d{4}\.json$/u.test(name))
+            .sort().at(-1);
+          if(!auditName) throw new Error('latest needs currentness audit missing');
+          const audit=JSON.parse(readFileSync(`operations/audits/${auditName}`,'utf8'));
+          const shelters=JSON.parse(readFileSync('current-shelters.json','utf8'));
+          const html=readFileSync('/tmp/deployed-dashboard.html','utf8');
+          const snapshot=audit.prefectural_snapshot;
+          const sourceById=new Map(audit.sources.map(source=>[source.source_id,source]));
+          const expectedLinks=new Map([
+            ['evacuees',sourceById.get(snapshot.source_id)?.url],
+            ['housing',sourceById.get(snapshot.source_id)?.url],
+            ['water',sourceById.get(audit.water.source_id)?.url],
+            ['waste',sourceById.get(audit.waste.source_id)?.url],
+          ]);
+          if([...expectedLinks.values()].some(url=>!/^https:\/\//u.test(url||''))) throw new Error('official currentness source URL missing');
+
+          const start=html.indexOf('<div class="needs-kpis">');
+          const end=html.indexOf('<div class="needs-phasebar"',start);
+          if(start<0||end<0) throw new Error('deployed needs KPI block missing');
+          const block=html.slice(start,end);
+          const tags=[...block.matchAll(/<a class="needs-kpi"[^>]*data-needs-kpi="([^"]+)"[^>]*href="([^"]+)"[^>]*>/gu)];
+          if(tags.length!==4) throw new Error(`deployed needs KPI links must be 4, got ${tags.length}`);
+          for(const match of tags){
+            const expected=expectedLinks.get(match[1]);
+            if(!expected) throw new Error(`unexpected deployed KPI id: ${match[1]}`);
+            if(match[2]!==expected) throw new Error(`deployed KPI href mismatch: ${match[1]} expected=${expected} actual=${match[2]}`);
+            if(!/target="_blank"/u.test(match[0])||!/rel="[^"]*noopener/u.test(match[0])) throw new Error(`deployed KPI link safety attrs missing: ${match[1]}`);
+          }
+
+          const n=value=>Number(value).toLocaleString('ja-JP');
+          for(const value of [`${n(snapshot.evacuees)}人`,`${n(snapshot.housing_damage)}棟`,audit.water.display_value,audit.waste.display_value]) {
+            if(!block.includes(value)) throw new Error(`deployed needs KPI current value missing: ${value}`);
+          }
+          for(const stale of audit.water.historical_values_not_current||[]) {
+            if(block.includes(`<div class="needs-kpi-value">${stale}</div>`)) throw new Error(`historical water value promoted to current: ${stale}`);
+          }
+
+          const es=html.indexOf('<div aria-labelledby="overviewViewTab"');
+          const ee=html.indexOf('<div aria-labelledby="needsViewTab"',es);
+          if(es<0||ee<0) throw new Error('deployed executive summary missing');
+          const executive=html.slice(es,ee);
+          for(const value of [
+            `${n(snapshot.evacuees)}<span class="overview-kpi-unit">人</span>`,
+            `${n(snapshot.human_damage)}<span class="overview-kpi-unit">人</span>`,
+            `${n(snapshot.housing_damage)}<span class="overview-kpi-unit">棟</span>`,
+            `${shelters.meta.current_count}<span class="overview-kpi-unit">か所</span>`,
+          ]) if(!executive.includes(value)) throw new Error(`deployed executive current value missing: ${value}`);
+          if(!executive.includes('公式JSON現在')) throw new Error('deployed executive summary does not separate live shelter JSON definition');
+
+          console.log(JSON.stringify({
+            status:'PASS',
+            audit:auditName,
+            sourceAsOf:snapshot.as_of,
+            needsLinks:tags.length,
+            evacuees:snapshot.evacuees,
+            humanDamage:snapshot.human_damage,
+            housingDamage:snapshot.housing_damage,
+            reportedShelters:snapshot.shelters,
+            currentShelters:shelters.meta.current_count,
+          }));
+          NODE
