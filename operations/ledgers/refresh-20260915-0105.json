@@ -35,90 +35,18 @@
     "volunteer-data.js"
   ],
   "sources": [
-    {
-      "source_id": "kumamoto-damage56-0910",
-      "publisher": "熊本県",
-      "url": "https://www.pref.kumamoto.jp/soshiki/222/276831.html",
-      "source_as_of": "2026-09-10T14:00:00+09:00",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    },
-    {
-      "source_id": "kumamoto-current-shelters-0915",
-      "publisher": "熊本県 防災情報ポータル",
-      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
-      "source_as_of": "2026-09-15T00:29:57+09:00",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    },
-    {
-      "source_id": "ehime-support-0911",
-      "publisher": "愛媛県",
-      "url": "https://www.pref.ehime.jp/page/154856.html",
-      "source_as_of": "2026-09-11T12:00:00+09:00",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    },
-    {
-      "source_id": "mlit-report52-0909",
-      "publisher": "国土交通省",
-      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
-      "source_as_of": "2026-09-09T12:00:00+09:00",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    },
-    {
-      "source_id": "mod-hakuo2-ended-0913",
-      "publisher": "防衛省・自衛隊",
-      "url": "https://www.mod.go.jp/j/approach/defense/saigai/index.html",
-      "source_as_of": "2026-09-13T13:00:00+09:00",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    },
-    {
-      "source_id": "fukuoka-0910-current",
-      "publisher": "福岡県",
-      "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken8.html",
-      "source_as_of": "2026-09-10T11:00:00+09:00",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    },
-    {
-      "source_id": "kumamoto-volunteer-statewide-0915",
-      "publisher": "熊本県社会福祉協議会",
-      "url": "https://www.fukushi-kumamoto.or.jp/kvc/",
-      "source_as_of": "2026-09-15T01:05:48+09:00",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    },
-    {
-      "source_id": "kumamoto-city-volunteer-0911",
-      "publisher": "熊本市社会福祉協議会",
-      "url": "https://www.kumamoto-city-csw.or.jp/news/saigai.php",
-      "source_as_of": "2026-09-11",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    },
-    {
-      "source_id": "uto-volunteer-0915",
-      "publisher": "宇土市社会福祉協議会",
-      "url": "https://www.utoshakyou.jp/volunteer_2026.html",
-      "source_as_of": "2026-09-15T01:05:48+09:00",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    },
-    {
-      "source_id": "yatsushiro-volunteer-0910",
-      "publisher": "八代市社会福祉協議会",
-      "url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
-      "source_as_of": "2026-09-10",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    },
-    {
-      "source_id": "misato-volunteer-0915",
-      "publisher": "美里町社会福祉協議会",
-      "url": "https://misatoshakyo.or.jp/pages/455/",
-      "source_as_of": "2026-09-15T01:05:48+09:00",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    },
-    {
-      "source_id": "ashikita-volunteer-0831",
-      "publisher": "芦北町社会福祉協議会",
-      "url": "https://www.ashikita-shakyo.com/news/",
-      "source_as_of": "2026-08-31",
-      "checked_at": "2026-09-15T01:05:48+09:00"
-    }
+    {"source_id":"kumamoto-damage56-0910","publisher":"熊本県","url":"https://www.pref.kumamoto.jp/soshiki/222/276831.html","source_as_of":"2026-09-10T14:00:00+09:00","checked_at":"2026-09-15T01:05:48+09:00"},
+    {"source_id":"kumamoto-current-shelters-0915","publisher":"熊本県 防災情報ポータル","url":"https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json","source_as_of":"2026-09-15T00:29:57+09:00","checked_at":"2026-09-15T01:05:48+09:00"},
+    {"source_id":"ehime-support-0911","publisher":"愛媛県","url":"https://www.pref.ehime.jp/page/154856.html","source_as_of":"2026-09-11T12:00:00+09:00","checked_at":"2026-09-15T01:05:48+09:00"},
+    {"source_id":"mlit-report52-0909","publisher":"国土交通省","url":"https://www.mlit.go.jp/saigai/saigai_260728.html","source_as_of":"2026-09-09T12:00:00+09:00","checked_at":"2026-09-15T01:05:48+09:00"},
+    {"source_id":"mod-hakuo2-ended-0913","publisher":"防衛省・自衛隊","url":"https://www.mod.go.jp/j/approach/defense/saigai/index.html","source_as_of":"2026-09-13T13:00:00+09:00","checked_at":"2026-09-15T01:05:48+09:00"},
+    {"source_id":"fukuoka-0910-current","publisher":"福岡県","url":"https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken8.html","source_as_of":"2026-09-10T11:00:00+09:00","checked_at":"2026-09-15T01:05:48+09:00"},
+    {"source_id":"kumamoto-volunteer-statewide-0915","publisher":"熊本県社会福祉協議会","url":"https://www.fukushi-kumamoto.or.jp/kvc/","source_as_of":"2026-09-15T01:05:48+09:00","checked_at":"2026-09-15T01:05:48+09:00"},
+    {"source_id":"kumamoto-city-volunteer-0911","publisher":"熊本市社会福祉協議会","url":"https://www.kumamoto-city-csw.or.jp/news/saigai.php","source_as_of":"2026-09-11","checked_at":"2026-09-15T01:05:48+09:00"},
+    {"source_id":"uto-volunteer-0915","publisher":"宇土市社会福祉協議会","url":"https://www.utoshakyou.jp/volunteer_2026.html","source_as_of":"2026-09-15T01:05:48+09:00","checked_at":"2026-09-15T01:05:48+09:00"},
+    {"source_id":"yatsushiro-volunteer-0910","publisher":"八代市社会福祉協議会","url":"https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html","source_as_of":"2026-09-10","checked_at":"2026-09-15T01:05:48+09:00"},
+    {"source_id":"misato-volunteer-0915","publisher":"美里町社会福祉協議会","url":"https://misatoshakyo.or.jp/pages/455/","source_as_of":"2026-09-15T01:05:48+09:00","checked_at":"2026-09-15T01:05:48+09:00"},
+    {"source_id":"ashikita-volunteer-0831","publisher":"芦北町社会福祉協議会","url":"https://www.ashikita-shakyo.com/news/","source_as_of":"2026-08-31","checked_at":"2026-09-15T01:05:48+09:00"}
   ],
   "coverage": {
     "recipient_municipalities": 45,
@@ -129,6 +57,9 @@
     "current_shelter_coordinates_confirmed": 38,
     "current_shelter_unresolved": 0,
     "current_shelter_conflicts": 0,
+    "current_count": 38,
+    "unresolved_count": 0,
+    "conflict_count": 0,
     "ehime_required": 20,
     "ehime_adjudicated": 20,
     "ehime_missing": 0,
@@ -137,28 +68,11 @@
     "sender_entities_adjudicated": 320,
     "sender_orphan_source_mentions": 0,
     "sender_blocking_conflicts": 0,
-    "sender_states": {
-      "CURRENT": 16,
-      "PLANNED": 16,
-      "HISTORICAL": 17,
-      "UNKNOWN": 271,
-      "NO_EVIDENCE": 0,
-      "CONFLICT": 0
-    },
-    "municipal_support": {
-      "CURRENT": 2,
-      "PLANNED": 0,
-      "HISTORICAL": 7,
-      "UNKNOWN": 64
-    },
-    "national_support": {
-      "CURRENT": 0,
-      "HISTORICAL": 3,
-      "PLANNED": 0,
-      "UNKNOWN": 12,
-      "CONFLICT": 0,
-      "blocking_unresolved_count": 0
-    }
+    "sender_states": {"CURRENT":16,"PLANNED":16,"HISTORICAL":17,"UNKNOWN":271,"NO_EVIDENCE":0,"CONFLICT":0},
+    "municipal_support": "audited",
+    "national_support": "audited",
+    "municipal_support_states": {"CURRENT":2,"PLANNED":0,"HISTORICAL":7,"UNKNOWN":64},
+    "national_support_states": {"CURRENT":0,"HISTORICAL":3,"PLANNED":0,"UNKNOWN":12,"CONFLICT":0,"blocking_unresolved_count":0}
   },
   "snapshots": {
     "page_reference_at": "2026-09-15T01:05:48+09:00",
@@ -183,15 +97,8 @@
     "tec_force_latest_history_persons": 45,
     "tec_force_latest_history_person_days": 5731,
     "hakuo2_ended_on": "2026-09-13",
-    "volunteer_currently_accepting": [
-      "熊本市",
-      "宇土市",
-      "美里町",
-      "八代市"
-    ],
-    "volunteer_closed": [
-      "芦北町"
-    ]
+    "volunteer_currently_accepting": ["熊本市","宇土市","美里町","八代市"],
+    "volunteer_closed": ["芦北町"]
   },
   "blocking_unresolved": [],
   "accepted_unresolved": [
@@ -200,9 +107,7 @@
       "state": "UNKNOWN",
       "reason": "国・関係機関の12レコードは、9月15日基準の同一定義実働を最新一次情報で直接確認できないため、過去値や予定期間からCURRENTへ推定しない。",
       "owner": "timepoint-audit",
-      "source_ids": [
-        "mlit-report52-0909"
-      ],
+      "source_ids": ["mlit-report52-0909"],
       "next_review_at": "2026-09-16T09:00:00+09:00"
     },
     {
@@ -210,9 +115,7 @@
       "state": "UNKNOWN",
       "reason": "宇城市・御船町・嘉島町・益城町・甲佐町・氷川町は、旧募集日程だけでは9月15日現在の活動・募集を確定できないため現行募集数へ算入しない。",
       "owner": "volunteer-audit",
-      "source_ids": [
-        "kumamoto-volunteer-statewide-0915"
-      ],
+      "source_ids": ["kumamoto-volunteer-statewide-0915"],
       "next_review_at": "2026-09-16T09:00:00+09:00"
     }
   ]
