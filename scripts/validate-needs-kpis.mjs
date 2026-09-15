@@ -22,12 +22,15 @@ for(const stale of ['2,709人','約4,300戸','4,284戸','給水車129台','38,53
   if(block.includes(stale))throw new Error(`stale needs KPI value remains: ${stale}`);
 }
 if(block.includes('<div class="needs-kpi-value">10市町村</div>'))throw new Error('historical waste municipality count remains as current KPI value');
-for(const expected of [Number(snapshot.evacuees).toLocaleString('ja-JP')+'人',Number(snapshot.housing_damage).toLocaleString('ja-JP')+'棟','解消確認','処理継続','公式根拠']){
+for(const expected of [Number(snapshot.evacuees).toLocaleString('ja-JP')+'人',Number(snapshot.housing_damage).toLocaleString('ja-JP')+'棟','解消確認','処理継続']){
   if(!block.includes(expected))throw new Error(`current needs KPI value/source missing: ${expected}`);
 }
 const hrefs=[...block.matchAll(/<a class="needs-kpi"[^>]+href="([^"]+)"/gu)].map(match=>match[1]);
 if(hrefs.length!==4)throw new Error(`needs KPI href count must be 4, got ${hrefs.length}`);
 if(hrefs.some(url=>!/^https:\/\/(www\.pref\.kumamoto\.jp|www\.env\.go\.jp)\//u.test(url)))throw new Error(`needs KPI contains non-official source URL: ${JSON.stringify(hrefs)}`);
+const sourceLinkLabels=[...block.matchAll(/<div class="needs-kpi-source">([^<]+)<\/div>/gu)].map(match=>match[1]);
+if(sourceLinkLabels.length!==4||sourceLinkLabels.some(label=>!label.includes('を開く ↗')))throw new Error(`needs KPI source link labels incomplete: ${JSON.stringify(sourceLinkLabels)}`);
+if(!sourceLinkLabels.some(label=>label.includes('熊本県'))||!sourceLinkLabels.some(label=>label.includes('環境省')))throw new Error('needs KPI source publishers are not explicit');
 if(!sourceHtml.includes('熊本県9月11日14時参考資料では住家被害68,851棟'))throw new Error('province need current housing evidence not synchronized');
 if(!sourceHtml.includes('旧8月21日の約4,300戸・給水車129台は履歴値で、現況値として使用しない'))throw new Error('historical water value is not explicitly demoted');
 if(!sourceHtml.includes('旧8月19日の「10市町村」を現況値として使用しない'))throw new Error('historical waste value is not explicitly demoted');
