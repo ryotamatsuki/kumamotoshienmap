@@ -27,7 +27,6 @@ jobs:
           body=textwrap.dedent(raw[start:end])
           exec(compile(body,'recovered-core-refresh.py','exec'),{'__name__':'__main__'})
           root=pathlib.Path('.')
-          # Keep the new Ehime source audit compatible with the overview renderer without inventing unverified splits.
           p=root/'operations/audits/ehime-source-recheck-20260915-0105.json'
           a=json.loads(p.read_text(encoding='utf-8'))
           a['human_support']={
@@ -44,7 +43,14 @@ jobs:
           new='const split = Number.isFinite(Number(counterpart.prefecture_persons)) && Number.isFinite(Number(counterpart.municipal_persons)) ? `（県${counterpart.prefecture_persons}・市町${counterpart.municipal_persons}）` : "";\n  const line1 = `対口支援${counterpart.persons}人${split}、延${Number(counterpart.person_days).toLocaleString("ja-JP")}人日。災害応急対策職員は最新資料で継続確認`;'
           if old in s: s=s.replace(old,new,1)
           q.write_text(s,encoding='utf-8')
-          # Replace the old 9/7 hard-coded dashboard gate with a 9/15 gate that checks the same invariants against the current audited state.
+          # Make the visible prefectural KPIs reproducibly follow report 56; the live shelter KPI remains separately driven by official JSON.
+          rp=root/'scripts/sync-current-release.mjs'
+          rs=rp.read_text(encoding='utf-8')
+          needle='const finalOverlay=cs+'
+          kpi="""html=html.replaceAll('2,000<span class=\"overview-kpi-unit\">人','1,780<span class=\"overview-kpi-unit\">人').replaceAll('404<span class=\"overview-kpi-unit\">人','406<span class=\"overview-kpi-unit\">人').replaceAll('63,878<span class=\"overview-kpi-unit\">棟','68,033<span class=\"overview-kpi-unit\">棟');\n"""
+          if needle not in rs: raise SystemExit('sync-current-release finalOverlay anchor missing')
+          rs=rs.replace(needle,kpi+needle,1)
+          rp.write_text(rs,encoding='utf-8')
           gate=r'''import assert from "node:assert/strict";
           import { readFile } from "node:fs/promises";
           import { dirname, resolve } from "node:path";
