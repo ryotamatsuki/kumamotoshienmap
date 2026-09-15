@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-02T16:35:00+09:00",
+  "checked_at": "2026-09-15T01:05:48+09:00",
   "sources": [
     {
       "publisher": "熊本県",
@@ -110,6 +110,46 @@
       "checked_at": "2026-09-02T16:35:00+09:00",
       "rechecked_at": "2026-09-02T16:35:00+09:00",
       "facts_used": "9月2日速報：11市町VC合計で参加108人、新規依頼60件、活動24件、完了24件。"
+    },
+    {
+      "publisher": "熊本市社会福祉協議会",
+      "title": "第6期ボランティア募集",
+      "url": "https://www.kumamoto-city-csw.or.jp/news/saigai.php",
+      "published_at": "2026-09-11",
+      "updated_at": "2026-09-11",
+      "checked_at": "2026-09-15T01:05:48+09:00",
+      "rechecked_at": "2026-09-15T01:05:48+09:00",
+      "facts_used": "第6期9月19～20日募集"
+    },
+    {
+      "publisher": "宇土市社会福祉協議会",
+      "title": "災害ボランティア第6期募集",
+      "url": "https://www.utoshakyou.jp/volunteer_2026.html",
+      "published_at": null,
+      "updated_at": null,
+      "checked_at": "2026-09-15T01:05:48+09:00",
+      "rechecked_at": "2026-09-15T01:05:48+09:00",
+      "facts_used": "9月14～20日、全国募集、9月15日活動休止"
+    },
+    {
+      "publisher": "八代市社会福祉協議会",
+      "title": "ボランティア募集第6弾／団体第5弾",
+      "url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
+      "published_at": "2026-09-10",
+      "updated_at": "2026-09-10",
+      "checked_at": "2026-09-15T01:05:48+09:00",
+      "rechecked_at": "2026-09-15T01:05:48+09:00",
+      "facts_used": "個人9月14～30日、団体10月1～14日"
+    },
+    {
+      "publisher": "芦北町社会福祉協議会",
+      "title": "災害ボランティアセンター閉所",
+      "url": "https://www.ashikita-shakyo.com/news/",
+      "published_at": "2026-08-31",
+      "updated_at": "2026-08-31",
+      "checked_at": "2026-09-15T01:05:48+09:00",
+      "rechecked_at": "2026-09-15T01:05:48+09:00",
+      "facts_used": "8月31日閉所"
     }
   ],
   "statewide_facts": {
@@ -132,8 +172,8 @@
     "toll_exemption_end_date": "2026-10-31",
     "toll_requires_request_or_acceptance": true,
     "toll_requires_prior_procedure": true,
-    "checked_at": "2026-09-02T16:35:00+09:00",
-    "latest_checked_at": "2026-09-02T16:35:00+09:00",
+    "checked_at": "2026-09-15T01:05:48+09:00",
+    "latest_checked_at": "2026-09-15T01:05:48+09:00",
     "activity_snapshot": {
       "source_as_of": "2026-09-02",
       "participants": 108,
@@ -165,8 +205,15 @@
       "observation": "熊本県社会福祉協議会の9月2日速報で、11市町の災害VC合計として参加108人、新規依頼60件、活動24件、完了24件を確認。募集可否とは別の活動実績として扱う。",
       "url": "https://www.fukushi-kumamoto.or.jp/files/libs/8662/202609021133091423.pdf",
       "checked_at": "2026-09-02T16:35:00+09:00"
+    },
+    {
+      "subject": "9月15日募集現況再監査",
+      "state": "CURRENT",
+      "observation": "現行募集を直接確認できたのは熊本市、宇土市、美里町、八代市。旧募集期間だけでは現行扱いしない。",
+      "checked_at": "2026-09-15T01:05:48+09:00",
+      "url": "https://www.fukushi-kumamoto.or.jp/kvc/"
     }
   ],
-  "rechecked_at": "2026-09-02T16:35:00+09:00",
-  "reference_at": "2026-09-02T16:16:00+09:00"
+  "rechecked_at": "2026-09-15T01:05:48+09:00",
+  "reference_at": "2026-09-15T01:05:48+09:00"
 }

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "reference_at": "2026-09-15T01:05:48+09:00",
+  "checked_at": "2026-09-15T01:05:48+09:00",
+  "source_url": "https://www.pref.ehime.jp/page/154856.html",
+  "source_as_of": "2026-09-11T12:00:00+09:00",
+  "human_support": {
+    "total": {
+      "persons": 283,
+      "person_days": 1396
+    },
+    "counterpart_support": {
+      "persons": 109,
+      "person_days": 534
+    },
+    "public_health": {
+      "persons": 33,
+      "person_days": 178,
+      "planned_through": null
+    },
+    "dwat": {
+      "persons": 34,
+      "person_days": 96,
+      "planned_through": null
+    }
+  },
+  "counterpart": {
+    "persons": 109,
+    "person_days": 534
+  },
+  "health": {
+    "persons": 33,
+    "person_days": 178
+  },
+  "dwat": {
+    "persons": 34,
+    "person_days": 96
+  },
+  "blocking_unresolved": [],
+  "material_support": {
+    "prefectural_large_toilet_truck": {
+      "location": "竜北中学校",
+      "ended_on": "2026-09-07"
+    }
+  }
+}
