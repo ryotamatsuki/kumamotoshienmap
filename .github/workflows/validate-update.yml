@@ -114,6 +114,8 @@ jobs:
               echo "- Ledger path: (none; required automatically if sensitive timepoint data changes)"
             fi
             echo "- Sender audit manifest: sender-municipality-audit.json"
+            echo "- Currentness surface gate: mandatory"
+            echo "- Needs source-link closure: mandatory"
             echo "- Live official JSON fetch: not used"
           } >> "$GITHUB_STEP_SUMMARY"
 
@@ -156,6 +158,8 @@ jobs:
           node --check scripts/build-sites.mjs
           node --check scripts/validate-update-release.mjs
           node --check scripts/test-release-gate.mjs
+          node --check scripts/validate-currentness-surfaces.mjs
+          node --check scripts/test-currentness-surface-gates.mjs
           node --check scripts/sync-national-support-audit.mjs
           node --check scripts/validate-national-support-audit.mjs
           node --check scripts/sender-coverage-lib.mjs
@@ -164,6 +168,12 @@ jobs:
           node --check scripts/validate-release-with-sender.mjs
           node --check scripts/sync-sender-dist.mjs
           node --check scripts/validate-sender-dist.mjs
+
+      - name: Run currentness and source-link hard gate explicitly
+        run: |
+          set -Eeuo pipefail
+          npm run validate:currentness-surfaces
+          npm run test:currentness-surfaces
 
       - name: Run sender coverage hard gates explicitly
         run: |
@@ -207,4 +217,4 @@ jobs:
         if: ${{ success() }}
         run: |
           set -Eeuo pipefail
-          echo "Release Gate passed: existing v2.5 gates, Ehime 20/20 sender gate, nationwide 47-prefecture discovery gate, source-mention closure, build, self-tests, syntax checks and diff checks all succeeded."
+          echo "Release Gate passed: currentness surface/source-link closure, existing timepoint gates, Ehime 20/20 sender gate, nationwide 47-prefecture discovery gate, source-mention closure, build, fault-injection self-tests, syntax checks and diff checks all succeeded."
