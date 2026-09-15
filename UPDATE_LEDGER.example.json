@@ -39,6 +39,26 @@
       "current_count": 0,
       "unresolved": 0,
       "conflicts": 0
+    },
+    "current_surface_sync": {
+      "overview": "synced",
+      "executive_summary": "synced",
+      "needs_kpis": "synced",
+      "page_recheck_meta": "synced",
+      "timeline": "synced",
+      "dashboard": "synced",
+      "map": "synced"
+    },
+    "source_link_closure": {
+      "current_cards_with_required_links": 4,
+      "unlinked_current_cards": 0,
+      "official_source_only": true
+    },
+    "production_verification": {
+      "pages_deploy_required": true,
+      "desktop_smoke_required": true,
+      "mobile_smoke_required": true,
+      "completion_may_be_declared_before_smoke": false
     }
   },
   "snapshots": {},
