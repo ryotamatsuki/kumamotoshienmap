@@ -1,0 +1,97 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260915-2043",
+  "release_id": "20260915-0105",
+  "reference_at": "2026-09-15T01:05:48+09:00",
+  "rechecked_at": "2026-09-15T20:43:00+09:00",
+  "page_checked_at": "2026-09-15T01:05:48+09:00",
+  "base_main_sha": "e7709050504218c437e9e44cfe37f66f051f0626",
+  "expected_changed_files": [
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "operations/ledgers/refresh-20260915-2043.json",
+    "package.json",
+    "public/dashboard.html",
+    "scripts/sync-executive-summary.mjs",
+    "scripts/validate-current-state-audit.mjs",
+    "scripts/validate-executive-summary.mjs",
+    "scripts/validate-municipal-support-audit.mjs"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-recovery-hq-20260911",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/5/278881.html",
+      "source_as_of": "2026-09-11T14:00:00+09:00",
+      "checked_at": "2026-09-15T19:42:09+09:00"
+    },
+    {
+      "source_id": "kumamoto-current-shelters-20260915",
+      "publisher": "熊本県 防災情報ポータル",
+      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+      "source_as_of": "2026-09-15T00:29:57+09:00",
+      "checked_at": "2026-09-15T01:05:48+09:00"
+    },
+    {
+      "source_id": "ehime-support-20260911",
+      "publisher": "愛媛県",
+      "url": "https://www.pref.ehime.jp/page/154856.html",
+      "source_as_of": "2026-09-11T12:00:00+09:00",
+      "checked_at": "2026-09-15T01:05:48+09:00"
+    },
+    {
+      "source_id": "env-waste-20260911",
+      "publisher": "環境省",
+      "url": "https://www.env.go.jp/saigai/kumamoto_earthquake_202607/index.html",
+      "source_as_of": "2026-09-11T00:00:00+09:00",
+      "checked_at": "2026-09-15T19:42:09+09:00"
+    }
+  ],
+  "coverage": {
+    "current_count": 38,
+    "unresolved_count": 0,
+    "conflict_count": 0,
+    "municipal_support": "audited",
+    "national_support": "audited",
+    "recipient_municipalities": 45,
+    "ehime_required": 20,
+    "ehime_adjudicated": 20,
+    "prefecture_discovery_checked": 47,
+    "sender_entities_adjudicated": 320,
+    "sender_orphan_source_mentions": 0,
+    "executive_summary": {
+      "major_damage_as_of": "2026-09-11T14:00:00+09:00",
+      "major_damage_rechecked_at": "2026-09-15T19:42:09+09:00",
+      "shelter_json_as_of": "2026-09-15T00:29:57+09:00",
+      "ehime_as_of": "2026-09-11T12:00:00+09:00",
+      "metadata_rows": 10,
+      "stale_visible_timepoints": 0
+    }
+  },
+  "snapshots": {
+    "page_reference_at": "2026-09-15T01:05:48+09:00",
+    "damage_source_as_of": "2026-09-11T14:00:00+09:00",
+    "damage_rechecked_at": "2026-09-15T19:42:09+09:00",
+    "evacuees": 1771,
+    "reported_shelters": 37,
+    "human_damage": 407,
+    "housing_damage": 68851,
+    "current_shelters": 38,
+    "shelter_source_last_modified": "2026-09-15T00:29:57+09:00",
+    "ehime_source_as_of": "2026-09-11T12:00:00+09:00",
+    "ehime_human_support_persons": 283,
+    "ehime_human_support_person_days": 1396,
+    "ehime_counterpart_persons": 109,
+    "ehime_counterpart_person_days": 534,
+    "ehime_public_health_persons": 33,
+    "ehime_dwat_persons": 34,
+    "municipal_reference_at": "2026-09-15T01:05:48+09:00",
+    "municipal_current_directly_confirmed": ["福岡県→宇土市", "愛媛県→氷川町"],
+    "national_reference_at": "2026-09-15T01:05:48+09:00",
+    "national_records": 15
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": []
+}
