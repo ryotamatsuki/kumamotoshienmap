@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "reference_at": "2026-09-15T01:05:48+09:00",
+  "checked_at": "2026-09-15T01:05:48+09:00",
+  "currently_accepting": [
+    "熊本市",
+    "宇土市",
+    "美里町",
+    "八代市"
+  ],
+  "closed": [
+    "芦北町"
+  ],
+  "unknown_or_date_unconfirmed": [
+    "宇城市",
+    "御船町",
+    "嘉島町",
+    "益城町",
+    "甲佐町",
+    "氷川町"
+  ],
+  "policy": "旧日程・予定期間から現況を推定しない",
+  "blocking_unresolved": []
+}

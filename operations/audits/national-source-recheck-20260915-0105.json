@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "reference_at": "2026-09-15T01:05:48+09:00",
+  "checked_at": "2026-09-15T01:05:48+09:00",
+  "sources": [
+    {
+      "source_id": "mlit-report52-0909",
+      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
+      "source_as_of": "2026-09-09T12:00:00+09:00"
+    },
+    {
+      "source_id": "mod-hakuo2-ended-0913",
+      "url": "https://www.mod.go.jp/j/approach/defense/saigai/index.html",
+      "source_as_of": "2026-09-13T13:00:00+09:00"
+    }
+  ],
+  "findings": {
+    "tec_force_latest_history": "45人・累計5,731人日（9月9日12時）",
+    "hakuo2": "9月13日終了",
+    "same_definition_current": "UNKNOWN"
+  }
+}

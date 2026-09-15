@@ -67,7 +67,7 @@ const hakuo = national.records?.find((record) => record.record_id === "national-
 if (hakuo) {
   const nationalActorPattern = /(<button class="overview-actor" data-overview-provider="national" type="button">[\s\S]*?<ul>[\s\S]*?<li>[\s\S]*?<\/li>[\s\S]*?<li>[\s\S]*?<\/li>[\s\S]*?<li>)[\s\S]*?(<\/li>[\s\S]*?<\/ul>)/u;
   if (!nationalActorPattern.test(html)) throw new Error("national overview actor card not found");
-  const line = `はくおうⅡ宿泊支援：${hakuo.display?.status || hakuo.state}／${hakuo.display?.period || "期間要確認"}`;
+  const line = `はくおうⅡ入浴・休憩・宿泊支援：${hakuo.display?.status || hakuo.state}／${hakuo.display?.period || "期間要確認"}`;
   html = html.replace(nationalActorPattern, `$1${escapeHtml(line)}$2`);
 }
 
@@ -89,7 +89,8 @@ if (ehimeAuditName) {
   }
   const ehimeActorPattern = /<button class="overview-actor" data-overview-provider="ehime" type="button">[\s\S]*?<\/button>/u;
   if (!ehimeActorPattern.test(html)) throw new Error("Ehime overview actor card not found");
-  const line1 = `対口支援${counterpart.persons}人（県${counterpart.prefecture_persons}・市町${counterpart.municipal_persons}）、延${Number(counterpart.person_days).toLocaleString("ja-JP")}人日。災害応急対策職員は終期未定`;
+  const split = Number.isFinite(Number(counterpart.prefecture_persons)) && Number.isFinite(Number(counterpart.municipal_persons)) ? `（県${counterpart.prefecture_persons}・市町${counterpart.municipal_persons}）` : "";
+  const line1 = `対口支援${counterpart.persons}人${split}、延${Number(counterpart.person_days).toLocaleString("ja-JP")}人日。災害応急対策職員は最新資料で継続確認`;
   const line2 = `保健師等${health.persons}人・DWAT${dwat.persons}人は${displayMonthDay(health.planned_through)}まで予定`;
   const line3 = `県大型トイレカーは${escapeHtml(truck.location)}で${displayMonthDay(truck.ended_on)}に運用終了。人的支援総計${total.persons}人・延${Number(total.person_days).toLocaleString("ja-JP")}人日`;
   const replacement = `<button class="overview-actor" data-overview-provider="ehime" type="button"><div class="overview-actor-head"><i class="dot ehime"></i>愛媛県</div><ul><li>${escapeHtml(line1)}</li><li>${escapeHtml(line2)}</li><li>${line3}</li></ul><span class="overview-more">支援全体を確認 →</span></button>`;
