@@ -101,9 +101,9 @@ const rows = [
   },
   {
     section: "避難所", status: "差分あり",
-    current: `熊本県${mdhm(majorAsOf)}資料：${damage.shelters}か所・避難者${damage.evacuees.toLocaleString("ja-JP")}人／公式JSON現在${currentCount}施設（最終更新${jst(shelterAsOf)}）`,
+    current: `熊本県${mdhm(majorAsOf)}資料：${damage.shelters}か所・避難者${damage.evacuees.toLocaleString("ja-JP")}人／地図JSON最終取得${currentCount}施設（${jst(shelterAsOf)}）`,
     previous: "熊本県第56報・公式JSON前回取得",
-    difference: "県公表の避難所数と公式JSONの現在開設施設数は、時点・定義を分離して表示。",
+    difference: "県公表の最新避難所数を現況表示し、9月15日最終取得の地図JSONは参考レイヤとして時点・定義を分離。",
     source: "熊本県復旧・復興本部／公式避難所JSON", url: prefSource.url,
   },
   {
@@ -136,9 +136,9 @@ const rows = [
   },
   {
     section: "地図・境界", status: "再確認",
-    current: `公式JSON現在${currentCount}施設・全件座標confirmed（最終更新${jst(shelterAsOf)}）`,
+    current: `地図JSON最終取得${currentCount}施設・全件座標confirmed（${jst(shelterAsOf)}）。最新県公表は${damage.shelters}か所（${mdhm(majorAsOf)}）`,
     previous: "前回JSON",
-    difference: "ライブJSONと位置履歴スナップショットを分離。",
+    difference: "9月15日最終取得の地図JSONを最新県公表値と混同せず、参考レイヤとして分離。",
     source: "熊本県公式避難所JSON", url: shelters.meta?.source_url || "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
   },
   {
