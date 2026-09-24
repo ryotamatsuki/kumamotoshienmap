@@ -181,13 +181,13 @@ html = replaceOnce(html, /<button class="overview-actor" data-overview-provider=
 
 html = replaceJsonConst(html, "PAGE_RECHECK_META", (meta) => {
   meta.checkedAt = pageCheckedAt;
-  meta.volunteerCheckedAt = meta.volunteerCheckedAt || pageCheckedAt;
+  meta.volunteerCheckedAt = pageCheckedAt;
   meta.rows = rows;
 });
 if (/const\s+MUNICIPAL_SUPPORT_PAGE_META\s*=\s*\{/u.test(html)) {
   html = replaceJsonConst(html, "MUNICIPAL_SUPPORT_PAGE_META", (meta) => {
     meta.checkedAt = pageCheckedAt;
-    meta.volunteerCheckedAt = meta.volunteerCheckedAt || pageCheckedAt;
+    meta.volunteerCheckedAt = pageCheckedAt;
     meta.rows = rows.filter((row) => row.section !== "国・関係機関");
   });
 }
