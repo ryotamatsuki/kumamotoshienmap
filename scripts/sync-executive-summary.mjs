@@ -69,7 +69,7 @@ const ehimeTotal = ehimeAudit.human_support?.total;
 const ehimeCounterpart = ehimeAudit.human_support?.counterpart_support;
 const ehimeHealth = ehimeAudit.human_support?.public_health;
 const ehimeDwat = ehimeAudit.human_support?.dwat;
-const toiletTruck = ehimeAudit.material_support?.prefectural_large_toilet_truck;
+const toiletTruck = ehimeAudit.material_support?.prefectural_large_toilet_truck;\nconst ehimeAsOf = ehimeAudit.source_as_of || ehimeAudit.checked_at || ehimeAudit.reference_at;\nconst ehimeLabel = mdhm(ehimeAsOf);
 if (!ehimeTotal || !ehimeCounterpart || !ehimeHealth || !ehimeDwat || !toiletTruck) throw new Error("Ehime executive summary data missing");
 
 const pageCheckedAt = national.reference_at;
@@ -88,13 +88,13 @@ const rows = [
     current: `${mdhm(needsAudit.reference_at)}再確認：熊本県の最新公表県計は${mdhm(majorAsOf)}の復旧・復興本部参考資料`,
     previous: "9月10日14:00・熊本県第56報",
     difference: `避難者${damage.evacuees.toLocaleString("ja-JP")}人、避難所${damage.shelters}か所、人的被害${damage.human_damage}人、住家被害${damage.housing_damage.toLocaleString("ja-JP")}棟へ更新。`,
-    source: "熊本県 第3回復旧・復興本部 参考資料", url: prefSource.url,
+    source: prefSource.title || "熊本県 復旧・復興本部資料", url: prefSource.url,
   },
   {
     section: "愛媛県支援", status: "差分あり",
-    current: `9月11日12時版：対口支援${ehimeCounterpart.persons}人・延${Number(ehimeCounterpart.person_days).toLocaleString("ja-JP")}人日、人的支援総計${ehimeTotal.persons}人・延${Number(ehimeTotal.person_days).toLocaleString("ja-JP")}人日`,
+    current: `${ehimeLabel}版：対口支援${ehimeCounterpart.persons}人・延${Number(ehimeCounterpart.person_days).toLocaleString("ja-JP")}人日、人的支援総計${ehimeTotal.persons}人・延${Number(ehimeTotal.person_days).toLocaleString("ja-JP")}人日`,
     previous: "9月7日12時版",
-    difference: `保健師等${ehimeHealth.persons}人・DWAT${ehimeDwat.persons}人を9月11日資料で確認。県大型トイレカーは${toiletTruck.location}で9月7日に運用終了。`,
+    difference: `保健師等${ehimeHealth.persons}人・DWAT${ehimeDwat.persons}人を${ehimeLabel}資料で確認。県大型トイレカーは${toiletTruck.location}で9月7日に運用終了。`,
     source: "愛媛県 本県の支援状況", url: ehimeAudit.source_url,
   },
   {
@@ -106,21 +106,21 @@ const rows = [
   },
   {
     section: "支援ニーズ見通し", status: "差分あり",
-    current: `県全体は${mdhm(majorAsOf)}の熊本県参考資料へ更新。上水道断水は解消確認、災害廃棄物は9月11日時点の処理継続を表示。`,
+    current: `県全体は${mdhm(majorAsOf)}の熊本県参考資料へ更新。上水道断水は解消確認、災害廃棄物は${mdhm(needsAudit.waste?.source_as_of || needsAudit.sources.find(s=>s.source_id===needsAudit.waste?.source_id)?.source_as_of)}時点の処理継続を表示。`,
     previous: "8月時点の静的KPI",
     difference: "旧避難者・断水戸数・住家被害・仮置場数を現況表示から撤去し、一次情報リンクを付与。",
     source: "熊本県復旧・復興本部／環境省", url: prefSource.url,
   },
   {
     section: "発災後タイムライン", status: "差分あり",
-    current: `熊本県${mdhm(majorAsOf)}、愛媛県9月11日12時、国・関係機関${mdhm(national.reference_at)}再監査まで反映`,
+    current: `熊本県${mdhm(majorAsOf)}、愛媛県${ehimeLabel}、国・関係機関${mdhm(national.reference_at)}再監査まで反映`,
     previous: "熊本県第52報等",
     difference: "県全体被害・避難、愛媛県支援、国関係の最新確認時点へ同期。",
     source: "熊本県・愛媛県・国関係一次情報", url: prefSource.url,
   },
   {
     section: "支援ダッシュボード", status: "差分あり",
-    current: `熊本県${mdhm(majorAsOf)}／愛媛県9月11日12時／国・他自治体${mdhm(pageCheckedAt)}再監査`,
+    current: `熊本県${mdhm(majorAsOf)}／愛媛県${ehimeLabel}／国・他自治体${mdhm(pageCheckedAt)}再監査`,
     previous: "複数の旧時点表示が混在",
     difference: "知事・幹部向けサマリーを含め、現況と履歴を分離。",
     source: "一次情報・監査データ", url: prefSource.url,
@@ -174,7 +174,7 @@ html = replaceOnce(html, /(<div class="page-recheck-meta"><span>サイト確認�
 const municipalActor = `<button class="overview-actor" data-overview-provider="municipal" type="button"><div class="overview-actor-head"><i class="dot municipal"></i>他自治体等</div><ul><li>${mdhm(municipal.reference_at)}基準で対口支援・他自治体支援を全件再監査</li><li>CURRENT直接確認：${esc(confirmedProviders.length ? confirmedProviders.join("、") : "なし")}</li><li>8月19日行政応援971人などの旧集計は履歴スナップショットとして分離</li></ul><span class="overview-more">支援全体を確認 →</span></button>`;
 html = replaceOnce(html, /<button class="overview-actor" data-overview-provider="municipal" type="button">[\s\S]*?<\/button>/u, municipalActor, "municipal actor");
 
-const ehimeActor = `<button class="overview-actor" data-overview-provider="ehime" type="button"><div class="overview-actor-head"><i class="dot ehime"></i>愛媛県</div><ul><li>対口支援${ehimeCounterpart.persons}人、延${Number(ehimeCounterpart.person_days).toLocaleString("ja-JP")}人日。9月11日12時資料で継続確認</li><li>保健師等${ehimeHealth.persons}人・DWAT${ehimeDwat.persons}人を9月11日12時資料で確認。終了予定日は同資料で特定せず</li><li>県大型トイレカーは${esc(toiletTruck.location)}で9月7日に運用終了。人的支援総計${ehimeTotal.persons}人・延${Number(ehimeTotal.person_days).toLocaleString("ja-JP")}人日</li></ul><span class="overview-more">支援全体を確認 →</span></button>`;
+const ehimeActor = `<button class="overview-actor" data-overview-provider="ehime" type="button"><div class="overview-actor-head"><i class="dot ehime"></i>愛媛県</div><ul><li>対口支援${ehimeCounterpart.persons}人、延${Number(ehimeCounterpart.person_days).toLocaleString("ja-JP")}人日。${ehimeLabel}資料で継続確認</li><li>保健師等${ehimeHealth.persons}人・DWAT${ehimeDwat.persons}人を${ehimeLabel}資料で確認</li><li>県大型トイレカーは${esc(toiletTruck.location)}で9月7日に運用終了。人的支援総計${ehimeTotal.persons}人・延${Number(ehimeTotal.person_days).toLocaleString("ja-JP")}人日</li></ul><span class="overview-more">支援全体を確認 →</span></button>`;
 html = replaceOnce(html, /<button class="overview-actor" data-overview-provider="ehime" type="button">[\s\S]*?<\/button>/u, ehimeActor, "Ehime actor");
 
 html = replaceJsonConst(html, "PAGE_RECHECK_META", (meta) => {
