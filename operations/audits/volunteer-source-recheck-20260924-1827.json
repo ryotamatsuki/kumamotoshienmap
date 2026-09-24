@@ -42,31 +42,31 @@
     {
       "municipality": "宇城市",
       "center_status": "開設・活動中",
-      "recruitment_status": "募集中（日別事前申込・9月20日～10月12日、10月5日休止）",
+      "recruitment_status": "募集中（日別事前申込・9月20日～10月13日、10月5日休止）",
       "activity_start_date": "2026-09-20",
-      "activity_end_date": "2026-10-12",
-      "activity_dates_text": "9月20日～10月4日と10月6日～12日に日別事前申込。10月5日はニーズ整理のため休止。",
+      "activity_end_date": "2026-10-13",
+      "activity_dates_text": "9月20日～10月4日と10月6日～13日に日別事前申込。10月5日はニーズ整理のため休止。",
       "eligibility_currently_applicable": true,
       "official_source_name": "宇城市社会福祉協議会",
       "official_source_title": "災害ボランティアセンター活動日程",
       "official_source_url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
-      "source_updated_at": "2026-09-19",
+      "source_updated_at": "2026-09-20",
       "checked_at": "2026-09-24T18:27:00+09:00",
       "recheck_status": "2026年9月24日再確認済み"
     },
     {
       "municipality": "八代市",
       "center_status": "開設・活動中",
-      "recruitment_status": "募集中（個人第6弾9月14日～30日／団体第5弾10月1日～14日）",
+      "recruitment_status": "募集中（個人第6弾9月14日～30日／個人第7弾10月1日～14日／団体第6弾10月15日～28日）",
       "activity_start_date": "2026-09-14",
-      "activity_end_date": "2026-10-14",
-      "activity_dates_text": "個人第6弾は9月14日～30日。5人以上の団体第5弾は10月1日～14日。",
+      "activity_end_date": "2026-10-28",
+      "activity_dates_text": "個人第6弾は9月14日～30日、個人第7弾は10月1日～14日。5人以上の団体第6弾は10月15日～28日。",
       "eligibility_currently_applicable": true,
       "group_allowed": true,
       "official_source_name": "八代市社会福祉協議会",
       "official_source_title": "令和8年熊本地震 災害ボランティア募集",
       "official_source_url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
-      "source_updated_at": "2026-09-10",
+      "source_updated_at": "2026-09-24",
       "checked_at": "2026-09-24T18:27:00+09:00",
       "recheck_status": "2026年9月24日再確認済み"
     },
@@ -107,14 +107,24 @@
       "source_updated_at": "2026-08-31",
       "checked_at": "2026-09-24T18:27:00+09:00",
       "recheck_status": "2026年9月24日再確認済み"
+    },
+    {
+      "municipality": "御船町",
+      "center_status": "開設・活動中",
+      "recruitment_status": "募集中（9月10日以降。毎週日曜・火曜・水曜は活動休止）",
+      "activity_start_date": "2026-09-10",
+      "activity_end_date": null,
+      "activity_dates_text": "9月10日以降募集。災害ごみ仮置場の受入れに合わせ、毎週日曜・火曜・水曜は活動休止。事前登録制。",
+      "eligibility_currently_applicable": true,
+      "official_source_name": "御船町社会福祉協議会",
+      "official_source_title": "急募！！御船町災害ボランティアセンターよりお知らせです（9/11以降の活動について）",
+      "official_source_url": "https://mifune-shakyo.jp/pages/51/detail=1/b_id=269/r_id=61",
+      "source_updated_at": "2026-09-10",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "recheck_status": "2026年9月24日再確認済み"
     }
   ],
   "accepted_unresolved": [
-    {
-      "municipality": "御船町",
-      "state": "UNKNOWN",
-      "reason": "9月24日現在の新しい活動日程を一次情報で確認できないため旧日程を現況へ流用しない。"
-    },
     {
       "municipality": "嘉島町",
       "state": "UNKNOWN",
