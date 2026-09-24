@@ -1,78 +1,73 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const [html, pub, needsText, sheltersText, municipalText, nationalText] = await Promise.all([
-  readFile(resolve(root, "ehime_kumamoto_support_geocoded_shelters_20260802.html"), "utf8"),
-  readFile(resolve(root, "public", "dashboard.html"), "utf8"),
-  readFile(resolve(root, "operations", "audits", "needs-kpi-source-recheck-20260915-1942.json"), "utf8"),
-  readFile(resolve(root, "current-shelters.json"), "utf8"),
-  readFile(resolve(root, "municipal-support-audit.json"), "utf8"),
-  readFile(resolve(root, "national-support-audit.json"), "utf8"),
+const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
+const auditDir=resolve(root,"operations","audits");
+const names=await readdir(auditDir);
+const latest=(re,label)=>{const name=names.filter(n=>re.test(n)).sort().at(-1);assert.ok(name,`${label} audit missing`);return name;};
+const needsName=latest(/^needs-kpi-source-recheck-\d{8}-\d{4}\.json$/u,"needs");
+const ehimeName=latest(/^ehime-source-recheck-\d{8}-\d{4}\.json$/u,"Ehime");
+const volunteerName=latest(/^volunteer-source-recheck-\d{8}-\d{4}\.json$/u,"volunteer");
+const [html,pub,needsText,ehimeText,volunteerText,sheltersText,municipalText,nationalText]=await Promise.all([
+  readFile(resolve(root,"ehime_kumamoto_support_geocoded_shelters_20260802.html"),"utf8"),
+  readFile(resolve(root,"public","dashboard.html"),"utf8"),
+  readFile(resolve(auditDir,needsName),"utf8"),
+  readFile(resolve(auditDir,ehimeName),"utf8"),
+  readFile(resolve(auditDir,volunteerName),"utf8"),
+  readFile(resolve(root,"current-shelters.json"),"utf8"),
+  readFile(resolve(root,"municipal-support-audit.json"),"utf8"),
+  readFile(resolve(root,"national-support-audit.json"),"utf8")
 ]);
-assert.equal(html, pub, "source/public parity");
-const needs = JSON.parse(needsText);
-const shelters = JSON.parse(sheltersText);
-const municipal = JSON.parse(municipalText);
-const national = JSON.parse(nationalText);
-const executiveStart = html.indexOf('<div aria-labelledby="overviewViewTab"');
-const executiveEnd = html.indexOf('<div aria-labelledby="needsViewTab"');
-assert.ok(executiveStart >= 0 && executiveEnd > executiveStart, "executive summary range missing");
-const executive = html.slice(executiveStart, executiveEnd);
+assert.equal(html,pub,"source/public parity");
+const needs=JSON.parse(needsText),ehime=JSON.parse(ehimeText),volunteer=JSON.parse(volunteerText);
+const shelters=JSON.parse(sheltersText),municipal=JSON.parse(municipalText),national=JSON.parse(nationalText);
+const d=needs.prefectural_snapshot;
+const n=v=>Number(v).toLocaleString("ja-JP");
+const mdhm=v=>{const m=String(v||"").match(/^\d{4}-(\d{2})-(\d{2})T(\d{2}):(\d{2})/u);return m?`${Number(m[1])}月${Number(m[2])}日${m[3]}:${m[4]}`:String(v||"");};
+const ymd=v=>{const m=String(v||"").match(/^(\d{4})-(\d{2})-(\d{2})/u);return m?`${m[1]}年${Number(m[2])}月${Number(m[3])}日`:String(v||"");};
 
-for (const value of [
+const s=html.indexOf('<div aria-labelledby="overviewViewTab"'),e=html.indexOf('<div aria-labelledby="needsViewTab"');
+assert.ok(s>=0&&e>s,"executive summary range missing");
+const executive=html.slice(s,e);
+for(const value of [
   "知事・幹部向け 意思決定サマリー",
-  "主要数値：9月11日14:00（9月15日19:42再確認）",
-  "2026年9月15日確認",
-  "<span>主要数値：9月11日14:00</span>",
-  "復旧・生活再建段階（熊本県最新被害等：9月11日14:00）",
-  "1,771<span class=\"overview-kpi-unit\">人",
-  `${shelters.meta.current_count}<span class="overview-kpi-unit">か所`,
-  "407<span class=\"overview-kpi-unit\">人",
-  "68,851<span class=\"overview-kpi-unit\">棟",
-  `公式JSON現在・最終更新2026-09-15 00:29:57`,
-  "9月15日01:05基準で対口支援・他自治体支援を全件再監査",
-  "福岡県→宇土市",
-  "愛媛県→氷川町",
-  "終了予定日は同資料で特定せず",
-]) assert.ok(executive.includes(value), `executive summary missing: ${value}`);
+  `主要数値：${mdhm(d.as_of)}`,
+  `${ymd(national.reference_at)}確認`,
+  `復旧・生活再建段階（熊本県最新被害等：${mdhm(d.as_of)}）`,
+  `${n(d.evacuees)}<span class="overview-kpi-unit">人`,
+  `${d.shelters}<span class="overview-kpi-unit">か所`,
+  `${n(d.human_damage)}<span class="overview-kpi-unit">人`,
+  `${n(d.housing_damage)}<span class="overview-kpi-unit">棟`,
+  "地図JSON最終取得",
+  `対口支援${ehime.human_support.counterpart_support.persons}人`,
+  `人的支援総計${ehime.human_support.total.persons}人・延${n(ehime.human_support.total.person_days)}人日`
+])assert.ok(executive.includes(value),`executive summary missing: ${value}`);
 
-for (const stale of [
-  "主要数値：9月3日14:00",
-  "2026年8月24日確認",
-  "主要数値：8月24日8:00",
-  "8月20日時点で確認できない施設単位情報",
-  "8月24日22:38に対口支援・他自治体支援を全件再監査",
-  "日付要確認まで予定",
-]) assert.ok(!executive.includes(stale), `stale executive summary remains: ${stale}`);
+const currentProviders=[];
+for(const r of municipal.records||[])for(const item of [...(r.provider_statuses||[]),...(r.additional_statuses||[])])if(item.state==="CURRENT")currentProviders.push(`${item.name}→${r.destination}`);
+for(const provider of [...new Set(currentProviders)])assert.ok(executive.includes(provider),`municipal CURRENT provider missing from executive: ${provider}`);
 
-const metaMatch = html.match(/const\s+PAGE_RECHECK_META\s*=\s*(\{[^\n]*\});/u);
-assert.ok(metaMatch, "PAGE_RECHECK_META missing");
-const meta = JSON.parse(metaMatch[1]);
-assert.equal(meta.checkedAt, national.reference_at, "PAGE_RECHECK_META checkedAt");
-const bySection = new Map((meta.rows || []).map((row) => [row.section, row]));
-for (const section of ["被害・支援","愛媛県支援","避難所","支援ニーズ見通し","発災後タイムライン","支援ダッシュボード","災害ボランティア","地図・境界","他自治体等","国・関係機関"]) assert.ok(bySection.has(section), `PAGE_RECHECK_META row missing: ${section}`);
-assert.ok(bySection.get("被害・支援").current.includes("9月11日14:00"));
-assert.ok(bySection.get("被害・支援").current.includes("9月15日19:42"));
-assert.ok(bySection.get("被害・支援").difference.includes("避難者1,771人"));
-assert.ok(bySection.get("被害・支援").difference.includes("人的被害407人"));
-assert.ok(bySection.get("被害・支援").difference.includes("住家被害68,851棟"));
-assert.ok(bySection.get("避難所").current.includes(`公式JSON現在${shelters.meta.current_count}施設`));
-assert.ok(bySection.get("他自治体等").current.includes("福岡県→宇土市"));
-assert.ok(bySection.get("他自治体等").current.includes("愛媛県→氷川町"));
-assert.ok(bySection.get("国・関係機関").current.includes(`${national.inventory.audit_record_count}件`));
-assert.equal(needs.prefectural_snapshot.evacuees, 1771);
-assert.equal(needs.prefectural_snapshot.human_damage, 407);
-assert.equal(needs.prefectural_snapshot.housing_damage, 68851);
-assert.equal(municipal.reference_at, "2026-09-15T01:05:48+09:00");
+const metaMatch=html.match(/const\s+PAGE_RECHECK_META\s*=\s*(\{[^\n]*\});/u);
+assert.ok(metaMatch,"PAGE_RECHECK_META missing");
+const meta=JSON.parse(metaMatch[1]);
+assert.equal(meta.checkedAt,national.reference_at,"PAGE_RECHECK_META checkedAt");
+assert.equal(meta.volunteerCheckedAt,volunteer.checked_at,"PAGE_RECHECK_META volunteerCheckedAt");
+const bySection=new Map((meta.rows||[]).map(row=>[row.section,row]));
+for(const section of ["被害・支援","愛媛県支援","避難所","支援ニーズ見通し","発災後タイムライン","支援ダッシュボード","災害ボランティア","地図・境界","他自治体等","国・関係機関"])assert.ok(bySection.has(section),`PAGE_RECHECK_META row missing: ${section}`);
+const damageText=JSON.stringify(bySection.get("被害・支援"));
+for(const value of [mdhm(d.as_of),n(d.evacuees),String(d.human_damage),n(d.housing_damage)])assert.ok(damageText.includes(value),`damage row missing ${value}`);
+const shelterText=JSON.stringify(bySection.get("避難所"));
+assert.ok(shelterText.includes(`${d.shelters}か所`),"reported shelter count missing");
+assert.ok(shelterText.includes(`地図JSON最終取得${shelters.meta.current_count}施設`),"last-fetched map shelter count missing");
+const ehimeRow=JSON.stringify(bySection.get("愛媛県支援"));
+for(const value of [String(ehime.human_support.counterpart_support.persons),n(ehime.human_support.counterpart_support.person_days),String(ehime.human_support.total.persons),n(ehime.human_support.total.person_days)])assert.ok(ehimeRow.includes(value),`Ehime row missing ${value}`);
+assert.ok(JSON.stringify(bySection.get("国・関係機関")).includes(String(national.inventory.audit_record_count)),"national record count missing");
+assert.equal(municipal.reference_at,national.reference_at,"municipal/national reference mismatch");
 
 console.log(JSON.stringify({
-  status: "PASS",
-  major_as_of: needs.prefectural_snapshot.as_of,
-  needs_rechecked_at: needs.reference_at,
-  page_checked_at: national.reference_at,
-  current_shelters: shelters.meta.current_count,
-  executive_rows: meta.rows.length,
+  status:"PASS",needsAudit:needsName,ehimeAudit:ehimeName,volunteerAudit:volunteerName,
+  major_as_of:d.as_of,page_checked_at:national.reference_at,reported_shelters:d.shelters,
+  last_fetched_map_shelters:shelters.meta.current_count,executive_rows:meta.rows.length
 }));
