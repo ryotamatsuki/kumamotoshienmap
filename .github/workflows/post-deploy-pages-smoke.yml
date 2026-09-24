@@ -173,7 +173,11 @@ jobs:
               for(const [key,value] of Object.entries({headerChecked:state.headerChecked,badgeChecked:state.badgeChecked,siteChecked:state.siteChecked,volunteerChecked:state.volunteerChecked,releaseChecked:state.releaseChecked})) if(!value) throw new Error(`${spec.name}: ${key} failed`);
               if(spec.mobile&&state.badgeVisible) throw new Error(`${spec.name}: responsive badge should be hidden`);
               if(!spec.mobile&&!state.badgeVisible) throw new Error(`${spec.name}: desktop badge should be visible`);
-              if(state.presentViews.length!==expectedViews.length || state.pageOverflow || pageErrors.length || consoleErrors.length) throw new Error(`${spec.name}: dashboard runtime failure`);
+              if(state.presentViews.length!==expectedViews.length || state.pageOverflow || pageErrors.length || consoleErrors.length) {
+                const diagnostic={name:`dashboard-${spec.name}`,...state,pageErrors,consoleErrors};
+                console.error(JSON.stringify(diagnostic));
+                throw new Error(`${spec.name}: dashboard runtime failure: ${JSON.stringify(diagnostic)}`);
+              }
               console.log(JSON.stringify({name:`dashboard-${spec.name}`,...state,pageErrors,consoleErrors}));
               await page.close();
 
@@ -188,7 +192,11 @@ jobs:
               await senderPage.waitForFunction(count=>document.querySelectorAll('#nationalBody tr[data-entity]').length===count,{timeout:30000},expectedSenderCount);
               const senderState=await senderPage.evaluate(()=>({cards:document.getElementById('cards')?.innerText||'',ehimeRows:document.querySelectorAll('#ehimeBody tr[data-entity]').length,nationalRows:document.querySelectorAll('#nationalBody tr[data-entity]').length,pageOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth}));
               for(const expected of expectedCardValues) if(!senderState.cards.includes(expected)) throw new Error(`${spec.name}: sender summary missing ${expected}`);
-              if(senderState.pageOverflow || senderErrors.length || senderConsole.length) throw new Error(`${spec.name}: sender runtime failure`);
+              if(senderState.pageOverflow || senderErrors.length || senderConsole.length) {
+                const diagnostic={name:`sender-${spec.name}`,...senderState,pageErrors:senderErrors,consoleErrors:senderConsole};
+                console.error(JSON.stringify(diagnostic));
+                throw new Error(`${spec.name}: sender runtime failure: ${JSON.stringify(diagnostic)}`);
+              }
               await senderPage.select('#state','CURRENT');
               await senderPage.waitForFunction(count=>document.querySelectorAll('#nationalBody tr[data-entity]').length===count,{timeout:30000},expectedCurrentCount);
               const filtered=await senderPage.$$eval('#nationalBody tr[data-entity]',rows=>rows.length);
