@@ -25,7 +25,7 @@ function isoDate(v){return String(v||'').slice(0,10);}
 function weekday(v){const d=new Date(v);return Number.isNaN(d.getTime())?'':new Intl.DateTimeFormat('ja-JP',{weekday:'short',timeZone:'Asia/Tokyo'}).format(d).replace('曜日','');}
 
 let html=sourceHtml;
-const sourceLabel=(source,fallback)=>source.title||source.publisher||fallback;
+const sourceLabel=(source,fallback)=>[source?.publisher,source?.title].filter(Boolean).join(' ')||fallback;
 const cards=[
  {id:'evacuees',label:'避難生活',value:`${n(snapshot.evacuees)}人`,note:`${snapshot.shelters}避難所・${snapshot.shelter_municipalities}市町／避難者${snapshot.evacuee_municipalities}市町（熊本県 ${mdhm(snapshot.as_of)}）`,href:prefectureSource.url,source:sourceLabel(prefectureSource,'熊本県 復旧・復興本部資料')},
  {id:'water',label:'上水道断水',value:water.display_value,note:water.display_note,href:waterSource.url,source:sourceLabel(waterSource,'熊本県 復旧・復興本部資料')},
