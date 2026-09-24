@@ -679,7 +679,7 @@
       "checked_at": "2026-09-15T01:05:48+09:00",
       "rechecked_at": "2026-09-24T18:27:00+09:00",
       "primary": true,
-      "notes": "第52報。TEC-FORCE現時点45人・累計5,731人日を最新履歴として確認。9月15日の同一定義CURRENTとはみなさない。",
+      "notes": "第52報。TEC-FORCE45人・累計5,731人日を9月9日12時の最新本省履歴として確認。9月24日基準の同一定義CURRENTには流用しない。",
       "recheck_result": "200"
     },
     {
@@ -1847,7 +1847,7 @@
     "PLANNED": 0,
     "UNKNOWN": 12,
     "CONFLICT": 0,
-    "accepted_unresolved_count": 2,
+    "accepted_unresolved_count": 1,
     "blocking_unresolved_count": 0
   },
   "rechecked_at": "2026-09-24T18:27:00+09:00",
@@ -1860,7 +1860,7 @@
       "source_ids": [
         "kkr-tec5-0824"
       ],
-      "next_review_at": "2026-09-08T09:00:00+09:00"
+      "next_review_at": "2026-09-25T09:00:00+09:00"
     }
   ],
   "blocking_unresolved": []
