@@ -698,31 +698,31 @@
       "recheck_result": "200"
     },
     {
-      "id": "qsr-report45-0918",
       "publisher": "国土交通省九州地方整備局",
       "url": "https://www.qsr.mlit.go.jp/bousai_joho/r80728kumamotozisinn.html",
       "source_as_of": "2026-09-18T15:00:00+09:00",
       "checked_at": "2026-09-24T18:27:00+09:00",
       "rechecked_at": "2026-09-24T18:27:00+09:00",
-      "primary": true
+      "primary": true,
+      "source_id": "qsr-report45-0918"
     },
     {
-      "id": "mlit-recovery-support-0918",
       "publisher": "国土交通省",
       "url": "https://www.mlit.go.jp/page/kanbo01_hy_011018.html",
       "source_as_of": "2026-09-18T00:00:00+09:00",
       "checked_at": "2026-09-24T18:27:00+09:00",
       "rechecked_at": "2026-09-24T18:27:00+09:00",
-      "primary": true
+      "primary": true,
+      "source_id": "mlit-recovery-support-0918"
     },
     {
-      "id": "env-waste-0918",
       "publisher": "環境省",
       "url": "https://www.env.go.jp/saigai/kumamoto_earthquake_202607/index.html",
       "source_as_of": "2026-09-18T00:00:00+09:00",
       "checked_at": "2026-09-24T18:27:00+09:00",
       "rechecked_at": "2026-09-24T18:27:00+09:00",
-      "primary": true
+      "primary": true,
+      "source_id": "env-waste-0918"
     }
   ],
   "agency_coverage": [
