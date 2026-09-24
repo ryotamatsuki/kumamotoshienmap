@@ -1,0 +1,107 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260924-2200",
+  "release_id": "20260924-1827",
+  "reference_at": "2026-09-24T18:27:00+09:00",
+  "rechecked_at": "2026-09-24T22:00:00+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "91f519e1b9e23414d95437034153f871f5e4346a",
+  "expected_changed_files": [
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "operations/ledgers/refresh-20260924-2200.json",
+    "public/dashboard.html",
+    "scripts/sync-current-release.mjs"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-recovery-hq-20260918",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/5/278881.html",
+      "source_as_of": "2026-09-18T14:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-current-shelters-lastfetched-0915",
+      "publisher": "熊本県 防災情報ポータル",
+      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+      "source_as_of": "2026-09-15T00:29:57+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "mlit-report52-0909",
+      "publisher": "国土交通省",
+      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
+      "source_as_of": "2026-09-09T12:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "qsr-report45-0918",
+      "publisher": "国土交通省九州地方整備局",
+      "url": "https://www.qsr.mlit.go.jp/bousai_joho/r80728kumamotozisinn.html",
+      "source_as_of": "2026-09-18T15:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-volunteer-statewide-0924",
+      "publisher": "熊本県社会福祉協議会",
+      "url": "https://www.fukushi-kumamoto.or.jp/kvc/",
+      "source_as_of": "2026-09-24T18:27:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    }
+  ],
+  "coverage": {
+    "current_count": 38,
+    "unresolved_count": 0,
+    "conflict_count": 0,
+    "municipal_support": "audited",
+    "national_support": "audited"
+  },
+  "snapshots": {
+    "purpose": "post-deploy runtime schema repair after 2026-09-24 refresh",
+    "reported_shelters": 36,
+    "last_fetched_map_shelters": 38,
+    "ehime_generated_records_repaired": [
+      "ehime-volunteer-dispatch",
+      "ehime-social-welfare-facility"
+    ],
+    "data_values_changed": false
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {
+      "issue_id": "current-shelter-live-json-20260924",
+      "state": "UNKNOWN",
+      "reason": "熊本県公式避難所JSONは今回の更新環境から新規取得できなかったため、9月15日最終取得の38施設を地図用参考レイヤとして保持し、最新県公表の36か所（9月18日14時）とは明確に分離した。",
+      "owner": "timepoint-audit",
+      "source_ids": [
+        "kumamoto-current-shelters-lastfetched-0915",
+        "kumamoto-recovery-hq-20260918"
+      ],
+      "next_review_at": "2026-09-25T09:00:00+09:00"
+    },
+    {
+      "issue_id": "national-same-definition-continuity-20260924",
+      "state": "UNKNOWN",
+      "reason": "国・関係機関の複数支援は9月24日基準の同一定義実働総数を直接確認できないため、過去値や予定期間からCURRENTへ推定しない。",
+      "owner": "national-audit",
+      "source_ids": [
+        "mlit-report52-0909",
+        "qsr-report45-0918"
+      ],
+      "next_review_at": "2026-09-25T09:00:00+09:00"
+    },
+    {
+      "issue_id": "volunteer-dates-unconfirmed-20260924",
+      "state": "UNKNOWN",
+      "reason": "嘉島町・甲佐町・氷川町は、最新募集日程を一次情報で直接確認できず、旧募集日程から現況を推定しない。",
+      "owner": "volunteer-audit",
+      "source_ids": [
+        "kumamoto-volunteer-statewide-0924"
+      ],
+      "next_review_at": "2026-09-25T09:00:00+09:00"
+    }
+  ]
+}

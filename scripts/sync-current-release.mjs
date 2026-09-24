@@ -55,8 +55,8 @@ const updates={
   'ehime-social-welfare':{status:'第1～7班派遣（10月15日まで予定）',scale:`${p.social_welfare_council_staff?.persons??15}人（延${Number(p.social_welfare_council_staff?.person_days??75).toLocaleString('ja-JP')}人日）`,period:'8月16日～10月15日予定',detail:'県・市町社会福祉協議会職員を宇城市災害ボランティアセンター等へ派遣。',asOf}
 };
 const additions=[
- {id:'ehime-volunteer-dispatch',provider:'ehime',category:'volunteer',hubIds:['uki','yatsushiro'],title:'愛媛県災害ボランティア派遣',status:'活動終了（9月22日）',scale:`${p.volunteer_dispatch?.persons??55}人（延${Number(p.volunteer_dispatch?.person_days??110).toLocaleString('ja-JP')}人日）`,period:'8月27日～9月22日',detail:'愛媛県の災害ボランティア第1～3陣は宇城市・八代市での活動を終了。',asOf,sourceLabel:'愛媛県 本県の支援状況（2026年9月24日12時）',sourceUrl},
- {id:'ehime-social-welfare-facility',provider:'ehime',category:'health',hubIds:['kumamoto-hq'],title:'社会福祉施設職員派遣',status:'派遣継続予定を含む（9月28日まで）',scale:`${p.social_welfare_facility_staff?.persons??7}人（延${Number(p.social_welfare_facility_staff?.person_days??29).toLocaleString('ja-JP')}人日）`,period:'9月5日～9月28日予定',detail:'社会福祉施設職員第1班以降を被災地へ派遣。',asOf,sourceLabel:'愛媛県 本県の支援状況（2026年9月24日12時）',sourceUrl}
+ {id:'ehime-volunteer-dispatch',provider:'ehime',category:'volunteer',hubIds:['uki','yatsushiro'],title:'愛媛県災害ボランティア派遣',providers:['愛媛県'],status:'活動終了（9月22日）',scale:`${p.volunteer_dispatch?.persons??55}人（延${Number(p.volunteer_dispatch?.person_days??110).toLocaleString('ja-JP')}人日）`,period:'8月27日～9月22日',detail:'愛媛県の災害ボランティア第1～3陣は宇城市・八代市での活動を終了。',asOf,sourceLabel:'愛媛県 本県の支援状況（2026年9月24日12時）',sourceUrl},
+ {id:'ehime-social-welfare-facility',provider:'ehime',category:'health',hubIds:['kumamoto-hq'],title:'社会福祉施設職員派遣',providers:['愛媛県'],status:'派遣継続予定を含む（9月28日まで）',scale:`${p.social_welfare_facility_staff?.persons??7}人（延${Number(p.social_welfare_facility_staff?.person_days??29).toLocaleString('ja-JP')}人日）`,period:'9月5日～9月28日予定',detail:'社会福祉施設職員第1班以降を被災地へ派遣。',asOf,sourceLabel:'愛媛県 本県の支援状況（2026年9月24日12時）',sourceUrl}
 ];
 const overlay=`/* EHIME_CURRENT_20260915_START */
 const EHIME_CURRENT_AUDIT=${JSON.stringify({referenceAt:ehime.reference_at,sourceAsOf:ehime.source_as_of,total})};
