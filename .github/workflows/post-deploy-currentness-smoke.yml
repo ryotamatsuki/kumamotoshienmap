@@ -100,9 +100,11 @@ jobs:
             `${n(snapshot.evacuees)}<span class="overview-kpi-unit">人</span>`,
             `${n(snapshot.human_damage)}<span class="overview-kpi-unit">人</span>`,
             `${n(snapshot.housing_damage)}<span class="overview-kpi-unit">棟</span>`,
-            `${shelters.meta.current_count}<span class="overview-kpi-unit">か所</span>`,
+            `${snapshot.shelters}<span class="overview-kpi-unit">か所</span>`,
           ]) if(!executive.includes(value)) throw new Error(`deployed executive current value missing: ${value}`);
-          if(!executive.includes('公式JSON現在')) throw new Error('deployed executive summary does not separate live shelter JSON definition');
+          if(!executive.includes('地図JSON最終取得')) throw new Error('deployed executive summary does not label the last-fetched shelter JSON separately');
+          const shelterFetchedAt=String(shelters.meta.source_last_modified).replace('T',' ').replace('+09:00','');
+          if(!executive.includes(shelterFetchedAt)) throw new Error(`deployed executive last-fetched shelter JSON timestamp missing: ${shelterFetchedAt}`);
 
           console.log(JSON.stringify({
             status:'PASS',
@@ -113,6 +115,6 @@ jobs:
             humanDamage:snapshot.human_damage,
             housingDamage:snapshot.housing_damage,
             reportedShelters:snapshot.shelters,
-            currentShelters:shelters.meta.current_count,
+            lastFetchedMapShelters:shelters.meta.current_count,
           }));
           NODE
