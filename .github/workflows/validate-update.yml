@@ -21,7 +21,7 @@ on:
         type: string
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: validate-timepoint-update-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -42,7 +42,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
-          persist-credentials: true
+          persist-credentials: false
 
       - name: Set up Node.js LTS
         uses: actions/setup-node@v7
@@ -128,20 +128,6 @@ jobs:
         run: |
           set -Eeuo pipefail
           npm run build
-
-      - name: Commit generated timepoint artifacts
-        if: github.event_name == 'pull_request' && github.head_ref == 'audit/timepoint-20260924-1827'
-        run: |
-          set -Eeuo pipefail
-          if git diff --quiet && git diff --cached --quiet; then
-            echo "No generated changes to commit."
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "chore: sync generated 2026-09-24 artifacts"
-            git push origin HEAD:"${{ github.head_ref }}"
-          fi
 
       - name: Ensure build did not rewrite tracked inputs
         run: |
