@@ -64,6 +64,14 @@ function buildOverlay(pageMeta) {
       additionalStatuses: record.additional_statuses || [],
     }];
   }));
+  const generatedRecords = audit.records.map((record) => ({
+    id: record.id,
+    provider: "municipal",
+    category: "administration",
+    hubIds: [],
+    title: `${record.destination || record.id}への他自治体支援`,
+    ...recordUpdates[record.id],
+  }));
   const supportByDestination = Object.fromEntries(audit.records
     .filter((record) => record.destination && !record.destination.includes("・") && record.id.startsWith("pair-"))
     .map((record) => [record.destination, `${record.display.period}：${record.display.status}。${record.display.scale}`]));
@@ -77,10 +85,12 @@ function buildOverlay(pageMeta) {
     startMarker,
     `const MUNICIPAL_SUPPORT_AUDIT_META=${JSON.stringify({referenceAt:audit.reference_at,checkedAt:audit.checked_at,releaseId:audit.release_id})};`,
     `const MUNICIPAL_SUPPORT_RECORD_UPDATES=${JSON.stringify(recordUpdates)};`,
+    `const MUNICIPAL_SUPPORT_GENERATED_RECORDS=${JSON.stringify(generatedRecords)};`,
     `const MUNICIPAL_SUPPORT_BY_DESTINATION=${JSON.stringify(supportByDestination)};`,
     `const MUNICIPAL_SUPPORT_AUDIT_SOURCES=${JSON.stringify(sourceRows)};`,
     `const MUNICIPAL_SUPPORT_PAGE_META=${JSON.stringify(pageMeta)};`,
     `Object.entries(MUNICIPAL_SUPPORT_RECORD_UPDATES).forEach(([id,values])=>{const record=RECORDS.find((item)=>item.id===id);if(record)Object.assign(record,values);});`,
+    `MUNICIPAL_SUPPORT_GENERATED_RECORDS.forEach((record)=>{if(!RECORDS.some((item)=>item.id===record.id))RECORDS.push(record);});`,
     `Object.entries(MUNICIPAL_SUPPORT_BY_DESTINATION).forEach(([name,text])=>{const municipality=NEED_MUNICIPALITIES.find((item)=>item.name===name);if(municipality){municipality.currentSupport=(municipality.currentSupport||[]).filter((value)=>!String(value).includes('8月19日資料')&&!String(value).includes('8月11日資料'));municipality.currentSupport.unshift(text);}});`,
     `SUPPORT_BLOCKS.forEach((block)=>{if(block.id!=='internal-coordination'){block.badge='旧割当履歴＋9月3日14:57個別再監査';block.note='割当名簿は履歴表示。現在の活動は派遣元公式情報を個別再監査し、CURRENT／PLANNED／HISTORICAL／UNKNOWNを分離。';}});`,
     `MUNICIPAL_SUPPORT_AUDIT_SOURCES.forEach((source)=>{if(!SOURCES.some((item)=>item.url===source.url))SOURCES.push(source);});`,

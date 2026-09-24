@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "reference_at": "2026-09-24T18:27:00+09:00",
+  "checked_at": "2026-09-24T18:27:00+09:00",
+  "sources": [
+    {
+      "source_id": "mlit-report52-0909",
+      "publisher": "国土交通省",
+      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
+      "source_as_of": "2026-09-09T12:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "qsr-report45-0918",
+      "publisher": "国土交通省九州地方整備局",
+      "url": "https://www.qsr.mlit.go.jp/bousai_joho/r80728kumamotozisinn.html",
+      "source_as_of": "2026-09-18T15:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "mlit-recovery-support-0918",
+      "publisher": "国土交通省",
+      "url": "https://www.mlit.go.jp/page/kanbo01_hy_011018.html",
+      "source_as_of": "2026-09-18T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "mod-hakuo2-ended-0913",
+      "publisher": "防衛省・自衛隊",
+      "url": "https://www.mod.go.jp/j/approach/defense/saigai/index.html",
+      "source_as_of": "2026-09-13T13:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "env-waste-0918",
+      "publisher": "環境省",
+      "url": "https://www.env.go.jp/saigai/kumamoto_earthquake_202607/index.html",
+      "source_as_of": "2026-09-18T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    }
+  ],
+  "findings": {
+    "mlit_headquarters_latest": "第52報・2026年9月9日12時",
+    "kyushu_regional_latest": "第45報・2026年9月18日15時",
+    "tec_force_latest_history": "45人・累計5,731人日（国交省本省第52報・9月9日12時）",
+    "recovery_support": "9月18日に災害査定の迅速化等の復旧・復興支援を追加確認",
+    "hakuo2": "9月13日終了",
+    "same_definition_current": "UNKNOWN"
+  }
+}

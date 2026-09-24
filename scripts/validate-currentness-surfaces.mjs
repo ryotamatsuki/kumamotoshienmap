@@ -110,10 +110,10 @@ for (const value of [
   `${n(snapshot.evacuees)}<span class="overview-kpi-unit">人</span>`,
   `${n(snapshot.human_damage)}<span class="overview-kpi-unit">人</span>`,
   `${n(snapshot.housing_damage)}<span class="overview-kpi-unit">棟</span>`,
-  `${shelters.meta.current_count}<span class="overview-kpi-unit">か所</span>`,
+  `${snapshot.shelters}<span class="overview-kpi-unit">か所</span>`,
   mdhm(snapshot.as_of),
 ]) assert.ok(executive.includes(value), `executive summary current value/timepoint missing: ${value}`);
-assert.ok(executive.includes('公式JSON現在'), 'executive summary must label live shelter JSON separately');
+assert.ok(executive.includes('地図JSON最終取得'), 'executive summary must label last-fetched shelter JSON separately');
 assert.ok(executive.includes(String(shelters.meta.source_last_modified).replace('T', ' ').replace('+09:00', '')), 'executive summary shelter JSON timestamp missing');
 
 // 3) PAGE_RECHECK_META: 全派生面をcoverage rowとして保持し、同じcanonical snapshotへ同期する。
@@ -127,7 +127,7 @@ for (const value of [n(snapshot.evacuees), String(snapshot.human_damage), n(snap
 }
 const shelterRowText = JSON.stringify(rows.get('避難所'));
 assert.ok(shelterRowText.includes(`${snapshot.shelters}か所`), 'reported shelter snapshot missing from PAGE_RECHECK_META');
-assert.ok(shelterRowText.includes(`公式JSON現在${shelters.meta.current_count}施設`), 'live shelter JSON count missing from PAGE_RECHECK_META');
+assert.ok(shelterRowText.includes(`地図JSON最終取得${shelters.meta.current_count}施設`), 'last-fetched shelter JSON count missing from PAGE_RECHECK_META');
 for (const section of ['支援ニーズ見通し', '発災後タイムライン', '支援ダッシュボード']) {
   assert.ok(JSON.stringify(rows.get(section)).includes(mdhm(snapshot.as_of)), `${section} timepoint is not synchronized`);
 }

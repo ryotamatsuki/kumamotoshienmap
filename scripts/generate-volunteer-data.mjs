@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -699,6 +699,52 @@ const data = {
   ],
   planning_items:planningItems,cost_items:costItems,update_history:updateHistory,sources
 };
+const volunteerAuditNames = readdirSync(join(root, "operations", "audits"))
+  .filter((name)=>/^volunteer-source-recheck-\d{8}-\d{4}\.json$/u.test(name)).sort();
+const latestVolunteerAudit = volunteerAuditNames.at(-1);
+if(latestVolunteerAudit){
+  const audit = JSON.parse(readFileSync(join(root, "operations", "audits", latestVolunteerAudit), "utf8"));
+  for(const override of audit.municipality_overrides || []){
+    for(const list of [data.centers, data.all_centers]){
+      const center=list.find((item)=>item.municipality===override.municipality);
+      if(center)Object.assign(center,override);
+    }
+    const center=data.centers.find((item)=>item.municipality===override.municipality);
+    if(center){
+      data.rechecks.push({
+        municipality:override.municipality,
+        checked_at:audit.checked_at,
+        official_source_url:override.official_source_url,
+        result:override.recruitment_status,
+        source:"最新ボランティア一次情報監査"
+      });
+      data.update_history.unshift({
+        changed_at:audit.checked_at,
+        municipality:override.municipality,
+        before:null,
+        after:override.recruitment_status,
+        change_type:"時点修正",
+        publisher:override.official_source_name || "公式情報",
+        official_updated_at:override.source_updated_at,
+        official_url:override.official_source_url
+      });
+      if(override.official_source_url && !data.sources.some((s)=>s.url===override.official_source_url)){
+        data.sources.push({
+          publisher:override.official_source_name || override.municipality,
+          title:override.official_source_title || "災害ボランティア最新情報",
+          url:override.official_source_url,
+          published_at:override.source_updated_at || null,
+          checked_at:audit.checked_at,
+          category:"municipal_current"
+        });
+      }
+    }
+  }
+  data.meta.reference_at=audit.reference_at;
+  data.meta.reference_date=String(audit.reference_at).slice(0,10);
+  data.meta.checked_at=audit.checked_at;
+  data.meta.latest_audit=latestVolunteerAudit;
+}
 const output = "globalThis.VOLUNTEER_DATA = Object.freeze("+JSON.stringify(data,null,2)+");\n";
 writeFileSync(join(root, "volunteer-data.js"), output, "utf8");
 console.log("Generated volunteer-data.js with "+centers.length+" researched municipalities and "+sources.length+" official sources.");

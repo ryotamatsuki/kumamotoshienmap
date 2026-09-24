@@ -1,6 +1,6 @@
 {
   "region": "kyushu-okinawa",
-  "reference_at": "2026-09-03T14:57:25+09:00",
+  "reference_at": "2026-09-24T18:27:00+09:00",
   "entities": [
     {
       "entity": "みやま市",
@@ -294,25 +294,27 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "職員派遣"
+        "住家被害認定調査",
+        "罹災証明・復興相談支援"
       ],
       "destinations": [
-        "熊本県内"
+        "宇土市"
       ],
       "source_ids": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "evidence_note": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "source_as_of": null,
+      "evidence_note": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。9月24日時点のCURRENT根拠。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。",
+      "source_as_of": "2026-09-17T11:00:00+09:00",
       "sources_checked": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "小竹町",
@@ -346,25 +348,27 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "職員派遣"
+        "住家被害認定調査",
+        "罹災証明・復興相談支援"
       ],
       "destinations": [
-        "熊本県内"
+        "宇土市"
       ],
       "source_ids": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "evidence_note": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "source_as_of": null,
+      "evidence_note": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。9月24日時点のCURRENT根拠。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。",
+      "source_as_of": "2026-09-17T11:00:00+09:00",
       "sources_checked": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "岡垣町",
@@ -398,25 +402,27 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "職員派遣"
+        "住家被害認定調査",
+        "罹災証明・復興相談支援"
       ],
       "destinations": [
-        "熊本県内"
+        "宇土市"
       ],
       "source_ids": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "evidence_note": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "source_as_of": null,
+      "evidence_note": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。9月24日時点のCURRENT根拠。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。",
+      "source_as_of": "2026-09-17T11:00:00+09:00",
       "sources_checked": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "志免町",
@@ -424,25 +430,27 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "職員派遣"
+        "住家被害認定調査",
+        "罹災証明・復興相談支援"
       ],
       "destinations": [
-        "熊本県内"
+        "宇土市"
       ],
       "source_ids": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "evidence_note": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "source_as_of": null,
+      "evidence_note": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。9月24日時点のCURRENT根拠。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。",
+      "source_as_of": "2026-09-17T11:00:00+09:00",
       "sources_checked": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "春日市",
@@ -788,25 +796,27 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "職員派遣"
+        "住家被害認定調査",
+        "罹災証明・復興相談支援"
       ],
       "destinations": [
-        "熊本県内"
+        "宇土市"
       ],
       "source_ids": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "evidence_note": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "source_as_of": null,
+      "evidence_note": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。9月24日時点のCURRENT根拠。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。",
+      "source_as_of": "2026-09-17T11:00:00+09:00",
       "sources_checked": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "篠栗町",
@@ -814,25 +824,27 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "職員派遣"
+        "住家被害認定調査",
+        "罹災証明・復興相談支援"
       ],
       "destinations": [
-        "熊本県内"
+        "宇土市"
       ],
       "source_ids": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "evidence_note": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "source_as_of": null,
+      "evidence_note": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。9月24日時点のCURRENT根拠。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。",
+      "source_as_of": "2026-09-17T11:00:00+09:00",
       "sources_checked": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "糸島市",
@@ -866,25 +878,27 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "職員派遣"
+        "住家被害認定調査",
+        "罹災証明・復興相談支援"
       ],
       "destinations": [
-        "熊本県内"
+        "宇土市"
       ],
       "source_ids": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "evidence_note": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "source_as_of": null,
+      "evidence_note": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。9月24日時点のCURRENT根拠。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。",
+      "source_as_of": "2026-09-17T11:00:00+09:00",
       "sources_checked": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "苅田町",
@@ -892,25 +906,27 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "職員派遣"
+        "住家被害認定調査",
+        "罹災証明・復興相談支援"
       ],
       "destinations": [
-        "熊本県内"
+        "宇土市"
       ],
       "source_ids": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "evidence_note": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "source_as_of": null,
+      "evidence_note": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。9月24日時点のCURRENT根拠。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。",
+      "source_as_of": "2026-09-17T11:00:00+09:00",
       "sources_checked": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "行橋市",
@@ -918,25 +934,27 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "職員派遣"
+        "住家被害認定調査",
+        "罹災証明・復興相談支援"
       ],
       "destinations": [
-        "熊本県内"
+        "宇土市"
       ],
       "source_ids": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "evidence_note": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "福岡県公式の派遣構成に記載。予定期間到来のみではCURRENTへ昇格しない。",
-      "source_as_of": null,
+      "evidence_note": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。9月24日時点のCURRENT根拠。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。",
+      "source_as_of": "2026-09-17T11:00:00+09:00",
       "sources_checked": [
-        "fukuoka-support"
+        "fukuoka-support-0917"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "豊前市",
@@ -1093,8 +1111,35 @@
         "baseline-saiki"
       ],
       "rechecked_at": "2026-09-03T14:57:25+09:00"
+    },
+    {
+      "entity": "広川町",
+      "prefecture": "福岡県",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "罹災証明・復興相談支援"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "fukuoka-support-0917"
+      ],
+      "evidence_note": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。9月24日時点のCURRENT根拠。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "福岡県9月17日公表で宇土市への職員派遣を9月25日まで直接確認。",
+      "source_as_of": "2026-09-17T11:00:00+09:00",
+      "sources_checked": [
+        "fukuoka-support-0917"
+      ],
+      "current_evidence_type": "explicit_current_activity"
     }
   ],
-  "checked_at": "2026-09-03T14:57:25+09:00",
-  "rechecked_at": "2026-09-03T14:57:25+09:00"
+  "checked_at": "2026-09-24T18:27:00+09:00",
+  "rechecked_at": "2026-09-24T18:27:00+09:00"
 }

@@ -159,7 +159,7 @@ test("release_id mismatch is blocked", () => {
     const oldId = releaseId(root);
     const newId = oldId === "20990101-0000" ? "20990101-0001" : "20990101-0000";
     for (const relativePath of ["ehime_kumamoto_support_geocoded_shelters_20260802.html", "public/dashboard.html", "dist/dashboard.html", "dist/server/index.js"]) {
-      mutate(resolve(root, relativePath), (value) => value.replaceAll(oldId, newId));
+      mutate(resolve(root, relativePath), (value) => value.replaceAll(`volunteer-data.js?v=${oldId}`, `volunteer-data.js?v=${newId}`));
     }
     writeLedger(root, ledger(root, [
       "UPDATE_LEDGER.json",

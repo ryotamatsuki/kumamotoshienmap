@@ -1,6 +1,6 @@
 {
   "region": "hokkaido-tohoku",
-  "reference_at": "2026-09-03T14:57:25+09:00",
+  "reference_at": "2026-09-24T18:27:00+09:00",
   "entities": [
     {
       "entity": "札幌市",
@@ -34,7 +34,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "保健師等派遣"
       ],
@@ -44,14 +44,15 @@
       "source_ids": [
         "miyagi-sendai-health-plan"
       ],
-      "evidence_note": "9月1日以降の派遣予定。基準時点では未開始。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "9月1日以降の派遣予定。基準時点では未開始。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "miyagi-sendai-health-plan"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "9月1日以降の派遣予定。基準時点では未開始。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。"
     },
     {
       "entity": "大館市",
@@ -132,6 +133,6 @@
       "rechecked_at": "2026-09-03T14:57:25+09:00"
     }
   ],
-  "checked_at": "2026-09-03T14:57:25+09:00",
-  "rechecked_at": "2026-09-03T14:57:25+09:00"
+  "checked_at": "2026-09-24T18:27:00+09:00",
+  "rechecked_at": "2026-09-24T18:27:00+09:00"
 }

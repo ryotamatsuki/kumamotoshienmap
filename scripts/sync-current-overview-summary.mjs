@@ -22,6 +22,11 @@ const shelters = JSON.parse(shelterText);
 const national = JSON.parse(nationalText);
 const currentCount = Number(shelters?.meta?.current_count);
 if (!Number.isInteger(currentCount) || currentCount < 0) throw new Error("current shelter count is invalid");
+const needsAuditName = auditFiles.filter((name) => /^needs-kpi-source-recheck-\d{8}-\d{4}\.json$/u.test(name)).sort().at(-1);
+if (!needsAuditName) throw new Error("latest needs audit missing");
+const needsAudit = JSON.parse(await readFile(resolve(auditDir, needsAuditName), "utf8"));
+const reportedShelterCount = Number(needsAudit?.prefectural_snapshot?.shelters);
+if (!Number.isInteger(reportedShelterCount) || reportedShelterCount < 0) throw new Error("reported shelter count is invalid");
 
 function displayJst(value) {
   const match = String(value || "").match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})/u);
@@ -51,7 +56,7 @@ let html = sourceHtml;
 const shelterCardPattern = /(<button class="overview-kpi" data-overview-impact="shelters" type="button">[\s\S]*?<div class="overview-kpi-value">)\d+(<span class="overview-kpi-unit">か所<\/span><\/div><div class="overview-kpi-note">)[^<]*(<\/div><\/button>)/u;
 if (!shelterCardPattern.test(html)) throw new Error("overview shelter KPI card not found");
 const shelterAsOf = displayJst(shelters?.meta?.source_last_modified || shelters?.meta?.fetched_at);
-html = html.replace(shelterCardPattern, `$1${currentCount}$2公式JSON現在・最終更新${shelterAsOf}$3`);
+html = html.replace(shelterCardPattern, `$1${reportedShelterCount}$2熊本県公表 ${displayReference(needsAudit.prefectural_snapshot.as_of)}・地図JSON最終取得${shelterAsOf}は${currentCount}施設$3`);
 
 // Report 52 is the 2026-09-03 14:00 prefectural snapshot. Keep the static note aligned with its canonical timestamp.
 html = html.replaceAll("9月2日14時・熊本県第52報", "9月3日14時・熊本県第52報");
@@ -102,7 +107,8 @@ await writeFile(publicPath, html, "utf8");
 console.log(JSON.stringify({
   status: "PASS",
   referenceAt: national.reference_at || null,
-  currentShelters: currentCount,
+  reportedShelters: reportedShelterCount,
+  lastFetchedShelters: currentCount,
   shelterSourceAsOf: shelters?.meta?.source_last_modified || shelters?.meta?.fetched_at || null,
   hakuoState: hakuo?.state || null,
   ehimeAudit: ehimeAuditName || null,

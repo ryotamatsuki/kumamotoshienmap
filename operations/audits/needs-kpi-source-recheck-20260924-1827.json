@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "reference_at": "2026-09-24T18:27:00+09:00",
+  "purpose": "支援ニーズ見通しの県全体KPIを2026年9月24日確認時点の最新一次情報へ同期し、旧スナップショットを現況表示から除外する。",
+  "policy": {
+    "primary_source_required": true,
+    "older_snapshot_must_not_display_as_current": true,
+    "live_shelter_json_is_separate_definition": true,
+    "municipal_old_snapshots_are_not_reallocated_to_latest_prefectural_total": true
+  },
+  "sources": [
+    {
+      "source_id": "kumamoto-recovery-hq-20260918",
+      "publisher": "熊本県",
+      "title": "第4回令和8年熊本地震復旧・復興本部会議",
+      "url": "https://www.pref.kumamoto.jp/soshiki/5/278881.html",
+      "source_as_of": "2026-09-18T14:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "notes": "9月18日14時時点の人的被害、避難、住家被害を確認。"
+    },
+    {
+      "source_id": "kumamoto-recovery-hq-water-20260831",
+      "publisher": "熊本県",
+      "title": "第1回令和8年熊本地震復旧・復興本部会議",
+      "url": "https://www.pref.kumamoto.jp/soshiki/5/278881.html",
+      "source_as_of": "2026-08-31T17:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "notes": "上水道の断水解消を明記。旧断水戸数は現況値として扱わない。"
+    },
+    {
+      "source_id": "env-waste-20260918",
+      "publisher": "環境省",
+      "title": "令和8年熊本地震における災害廃棄物対策",
+      "url": "https://www.env.go.jp/saigai/kumamoto_earthquake_202607/index.html",
+      "source_as_of": "2026-09-18T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "notes": "9月18日時点の災害廃棄物対策更新を確認。旧仮置場数を現況値として流用しない。"
+    }
+  ],
+  "prefectural_snapshot": {
+    "source_id": "kumamoto-recovery-hq-20260918",
+    "as_of": "2026-09-18T14:00:00+09:00",
+    "human_damage": 408,
+    "deaths": 38,
+    "evacuees": 1626,
+    "evacuee_municipalities": 10,
+    "shelters": 36,
+    "shelter_municipalities": 11,
+    "housing_damage": 70086,
+    "housing_breakdown": {
+      "destroyed": 2283,
+      "large_scale_half_destroyed": 819,
+      "half_destroyed": 5971,
+      "partially_damaged": 46266,
+      "unclassified": 14747
+    },
+    "certification_progress": {
+      "as_of": "2026-09-16T00:00:00+09:00",
+      "applications": 84359,
+      "actual_application_households": 76175,
+      "surveys": 77637,
+      "certificates": 54797,
+      "survey_rate_percent": 92,
+      "delivery_rate_percent": 71.9
+    }
+  },
+  "water": {
+    "source_id": "kumamoto-recovery-hq-water-20260831",
+    "state": "RESOLVED_REPORTED",
+    "display_value": "解消確認",
+    "display_note": "8月31日、熊本県復旧・復興本部で上水道の断水解消を公表。井戸等の生活用水復旧支援は継続。",
+    "historical_values_not_current": [
+      "約4,300戸",
+      "4,284戸",
+      "給水車129台"
+    ]
+  },
+  "waste": {
+    "source_id": "env-waste-20260918",
+    "state": "ONGOING",
+    "display_value": "処理継続",
+    "display_note": "環境省が9月18日時点の災害廃棄物対策を更新。仮置場数など旧時点の集計を現況値として使用しない。"
+  }
+}

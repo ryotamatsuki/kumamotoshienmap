@@ -1,6 +1,6 @@
 {
   "region": "timepoint-20260828-additions",
-  "reference_at": "2026-09-03T14:57:25+09:00",
+  "reference_at": "2026-09-24T18:27:00+09:00",
   "entities": [
     {
       "entity": "中央区",
@@ -859,7 +859,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "CURRENT",
+      "state": "UNKNOWN",
       "support_types": [
         "住家被害認定調査",
         "職員派遣"
@@ -871,16 +871,16 @@
         "tokushima-0828",
         "tokushima-housing-wave3-0903"
       ],
-      "evidence_note": "徳島県公式が2026年9月3日に小松島市職員1名を含む住家被害認定調査チームを宇土市へ派遣したと明示。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "徳島県公式が2026年9月3日に小松島市職員1名を含む住家被害認定調査チームを宇土市へ派遣したと明示。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": "2026-09-03T00:00:00+09:00",
       "sources_checked": [
         "tokushima-0828",
         "tokushima-housing-wave3-0903"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00",
-      "current_evidence_type": "actual_dispatch_confirmed"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "徳島県公式が2026年9月3日に小松島市職員1名を含む住家被害認定調査チームを宇土市へ派遣したと明示。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。"
     },
     {
       "entity": "つるぎ町",
@@ -914,7 +914,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -924,15 +924,15 @@
       "source_ids": [
         "fukuoka-wave-0828"
       ],
-      "evidence_note": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "fukuoka-wave-0828"
       ],
-      "reason": "公式な派遣予定は確認済みだが、市町別の実出発・実働を直接確認できないためPLANNEDを維持。",
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "reason": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "新宮町",
@@ -940,7 +940,7 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -950,15 +950,15 @@
       "source_ids": [
         "fukuoka-wave-0828"
       ],
-      "evidence_note": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "fukuoka-wave-0828"
       ],
-      "reason": "公式な派遣予定は確認済みだが、市町別の実出発・実働を直接確認できないためPLANNEDを維持。",
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "reason": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "久山町",
@@ -966,7 +966,7 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -976,15 +976,15 @@
       "source_ids": [
         "fukuoka-wave-0828"
       ],
-      "evidence_note": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "fukuoka-wave-0828"
       ],
-      "reason": "公式な派遣予定は確認済みだが、市町別の実出発・実働を直接確認できないためPLANNEDを維持。",
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "reason": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "福智町",
@@ -992,7 +992,7 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -1002,15 +1002,15 @@
       "source_ids": [
         "fukuoka-wave-0828"
       ],
-      "evidence_note": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "fukuoka-wave-0828"
       ],
-      "reason": "公式な派遣予定は確認済みだが、市町別の実出発・実働を直接確認できないためPLANNEDを維持。",
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "reason": "福岡県公式発表で8月31日以降の派遣予定主体として確認。8月31日が予定開始日だが、当該市町の実出発・実働を直接示す一次情報は未確認。予定日到来のみではCURRENTにしない。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "西海市",
@@ -1074,7 +1074,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -1086,17 +1086,17 @@
         "nagasaki-status-0827",
         "nagasaki-wave-0831"
       ],
-      "evidence_note": "長崎県が8月31日に、9月1日からの八代市第6陣として当該市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "長崎県が8月31日に、9月1日からの八代市第6陣として当該市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": "2026-08-31T00:00:00+09:00",
       "sources_checked": [
         "nagasaki-wave7-0824",
         "nagasaki-status-0827",
         "nagasaki-wave-0831"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00",
-      "reason": "翌日開始予定の一次情報はあるが、基準時点の実働ではないためCURRENTにしない。"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "長崎県が8月31日に、9月1日からの八代市第6陣として当該市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。"
     },
     {
       "entity": "諫早市",
@@ -1104,7 +1104,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -1116,17 +1116,17 @@
         "nagasaki-status-0827",
         "nagasaki-wave-0831"
       ],
-      "evidence_note": "長崎県が8月31日に、9月1日からの八代市第6陣として当該市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "長崎県が8月31日に、9月1日からの八代市第6陣として当該市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": "2026-08-31T00:00:00+09:00",
       "sources_checked": [
         "nagasaki-wave7-0824",
         "nagasaki-status-0827",
         "nagasaki-wave-0831"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00",
-      "reason": "翌日開始予定の一次情報はあるが、基準時点の実働ではないためCURRENTにしない。"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "長崎県が8月31日に、9月1日からの八代市第6陣として当該市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。"
     },
     {
       "entity": "大村市",
@@ -1134,7 +1134,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -1147,19 +1147,19 @@
         "nagasaki-status-0827",
         "nagasaki-wave-0831"
       ],
-      "evidence_note": "長崎県が8月31日に、9月1日からの八代市第6陣として当該市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "長崎県が8月31日に、9月1日からの八代市第6陣として当該市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": "2026-08-31T00:00:00+09:00",
       "sources_checked": [
         "nagasaki-wave7-0824",
         "nagasaki-status-0827",
         "nagasaki-wave-0831"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00",
-      "reason": "翌日開始予定の一次情報はあるが、基準時点の実働ではないためCURRENTにしない。"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "長崎県が8月31日に、9月1日からの八代市第6陣として当該市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。"
     }
   ],
-  "checked_at": "2026-09-03T14:57:25+09:00",
-  "rechecked_at": "2026-09-03T14:57:25+09:00"
+  "checked_at": "2026-09-24T18:27:00+09:00",
+  "rechecked_at": "2026-09-24T18:27:00+09:00"
 }

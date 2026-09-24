@@ -1,7 +1,7 @@
 {
   "region": "timepoint-20260831-additions",
-  "reference_at": "2026-09-03T14:57:25+09:00",
-  "checked_at": "2026-09-03T14:57:25+09:00",
+  "reference_at": "2026-09-24T18:27:00+09:00",
+  "checked_at": "2026-09-24T18:27:00+09:00",
   "entities": [
     {
       "entity": "島原市",
@@ -9,7 +9,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -19,14 +19,15 @@
       "source_ids": [
         "nagasaki-wave-0831"
       ],
-      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として島原市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として島原市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": "2026-08-31T00:00:00+09:00",
       "sources_checked": [
         "nagasaki-wave-0831"
       ],
-      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+      "reason": "長崎県が8月31日に、9月1日からの美里町派遣陣として島原市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "平戸市",
@@ -34,7 +35,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -44,14 +45,15 @@
       "source_ids": [
         "nagasaki-wave-0831"
       ],
-      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として平戸市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として平戸市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": "2026-08-31T00:00:00+09:00",
       "sources_checked": [
         "nagasaki-wave-0831"
       ],
-      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+      "reason": "長崎県が8月31日に、9月1日からの美里町派遣陣として平戸市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "五島市",
@@ -59,7 +61,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -69,14 +71,15 @@
       "source_ids": [
         "nagasaki-wave-0831"
       ],
-      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として五島市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として五島市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": "2026-08-31T00:00:00+09:00",
       "sources_checked": [
         "nagasaki-wave-0831"
       ],
-      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+      "reason": "長崎県が8月31日に、9月1日からの美里町派遣陣として五島市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "雲仙市",
@@ -84,7 +87,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -94,14 +97,15 @@
       "source_ids": [
         "nagasaki-wave-0831"
       ],
-      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として雲仙市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "長崎県が8月31日に、9月1日からの美里町派遣陣として雲仙市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": "2026-08-31T00:00:00+09:00",
       "sources_checked": [
         "nagasaki-wave-0831"
       ],
-      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+      "reason": "長崎県が8月31日に、9月1日からの美里町派遣陣として雲仙市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "佐世保市",
@@ -109,7 +113,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -119,14 +123,15 @@
       "source_ids": [
         "nagasaki-wave-0831"
       ],
-      "evidence_note": "長崎県が8月31日に、9月1日からの八代市派遣陣として佐世保市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "長崎県が8月31日に、9月1日からの八代市派遣陣として佐世保市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": "2026-08-31T00:00:00+09:00",
       "sources_checked": [
         "nagasaki-wave-0831"
       ],
-      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+      "reason": "長崎県が8月31日に、9月1日からの八代市派遣陣として佐世保市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "小値賀町",
@@ -134,7 +139,7 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "PLANNED",
+      "state": "UNKNOWN",
       "support_types": [
         "職員派遣"
       ],
@@ -144,15 +149,16 @@
       "source_ids": [
         "nagasaki-wave-0831"
       ],
-      "evidence_note": "長崎県が8月31日に、9月1日からの八代市派遣陣として小値賀町職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "長崎県が8月31日に、9月1日からの八代市派遣陣として小値賀町職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": "2026-08-31T00:00:00+09:00",
       "sources_checked": [
         "nagasaki-wave-0831"
       ],
-      "reason": "翌日開始予定の一次情報はあるが、基準時点の実出発・実働ではないためCURRENTにしない。"
+      "reason": "長崎県が8月31日に、9月1日からの八代市派遣陣として小値賀町職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。",
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     }
   ],
-  "rechecked_at": "2026-09-03T14:57:25+09:00"
+  "rechecked_at": "2026-09-24T18:27:00+09:00"
 }

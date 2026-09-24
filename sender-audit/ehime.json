@@ -1,6 +1,6 @@
 {
   "region": "ehime",
-  "reference_at": "2026-09-03T14:57:25+09:00",
+  "reference_at": "2026-09-24T18:27:00+09:00",
   "entities": [
     {
       "entity": "上島町",
@@ -18,15 +18,15 @@
       "source_ids": [
         "ehime-proxy-discovery"
       ],
-      "evidence_note": "候補発見資料には登場するが、町公式一次情報で基準時点の活動を確認できず。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "候補発見資料には登場するが、町公式一次情報で基準時点の活動を確認できず。",
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "ehime-proxy-discovery"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "久万高原町",
@@ -34,28 +34,26 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": true,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "義援金案内",
-        "災害支援代理寄附"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-kumakogen-jrc",
-        "ehime-proxy-discovery"
+        "ehime-support-0924"
       ],
-      "evidence_note": "町公式に日本赤十字社義援金案内はあるが、町自身の送出支援の基準時点状態を直接確定できず。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "町公式に日本赤十字社義援金案内はあるが、町自身の送出支援の基準時点状態を直接確定できず。",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-kumakogen-jrc",
-        "ehime-proxy-discovery"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "今治市",
@@ -65,23 +63,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "義援金"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "熊本県"
+        "熊本県内"
       ],
       "source_ids": [
-        "ehime-imabari-donation"
+        "ehime-support-0924"
       ],
-      "evidence_note": "市公式が義援金を受け付けている旨と受付開始を明示。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "current_evidence_type": "active_collection_explicit",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "current_evidence_type": "explicit_current_activity",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-imabari-donation"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
       "entity": "伊予市",
@@ -91,24 +90,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "義援金",
-        "職員派遣"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-iyo-support"
+        "ehime-support-0924"
       ],
-      "evidence_note": "市公式が義援金箱を2026年10月30日まで設置。職員派遣実績も明示。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "current_evidence_type": "active_collection_explicit",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "current_evidence_type": "explicit_current_activity",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-iyo-support"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
       "entity": "伊方町",
@@ -126,15 +125,15 @@
       "source_ids": [
         "ehime-ikata-donation"
       ],
-      "evidence_note": "町公式に募金箱設置開始はあるが、8月28日基準までの受付継続期間を直接示す記載を確認できない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "ehime-ikata-donation"
       ],
-      "reason": "開始告知の掲載だけで基準時点の継続を推定せずUNKNOWN。",
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "reason": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "八幡浜市",
@@ -142,28 +141,26 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": true,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "義援金",
-        "災害支援代理寄附"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "熊本県"
+        "熊本県内"
       ],
       "source_ids": [
-        "ehime-yawatahama-listing",
-        "ehime-proxy-discovery"
+        "ehime-support-0924"
       ],
-      "evidence_note": "市公式に義援金支援情報はあるが、基準時点の受付継続期間を直接確認できず。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "市公式に義援金支援情報はあるが、基準時点の受付継続期間を直接確認できず。",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-yawatahama-listing",
-        "ehime-proxy-discovery"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "内子町",
@@ -173,27 +170,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "職員派遣",
-        "災害支援代理寄附"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "氷川町",
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-uchiko-dispatch",
-        "ehime-uchiko-proxy-0817"
+        "ehime-support-0924"
       ],
-      "evidence_note": "8月13～19日の職員派遣実績に加え、町公式が熊本地震の代理寄附を現在形で受け付けていると明示。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "source_as_of": "2026-08-17T00:00:00+09:00",
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-uchiko-dispatch",
-        "ehime-uchiko-proxy-0817"
+        "ehime-support-0924"
       ],
-      "current_evidence_type": "active_collection_explicit",
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "current_evidence_type": "explicit_current_activity",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
       "entity": "四国中央市",
@@ -203,23 +197,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "義援金"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "熊本県"
+        "熊本県内"
       ],
       "source_ids": [
-        "ehime-shikokuchuo-current"
+        "ehime-support-0924"
       ],
-      "evidence_note": "市公式サイトで「受付中」と明示。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "current_evidence_type": "active_collection_explicit",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "current_evidence_type": "explicit_current_activity",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-shikokuchuo-current"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
       "entity": "大洲市",
@@ -229,23 +224,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "義援金"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "熊本県"
+        "熊本県内"
       ],
       "source_ids": [
-        "ehime-ozu-donation"
+        "ehime-support-0924"
       ],
-      "evidence_note": "市公式が義援金箱の設置と2026年10月30日までの受付を明示。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "current_evidence_type": "active_collection_explicit",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "current_evidence_type": "explicit_current_activity",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-ozu-donation"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
       "entity": "宇和島市",
@@ -253,30 +249,26 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": true,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "災害支援代理寄附",
-        "車両支援",
-        "JRAT職員派遣"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "熊本県内",
-        "熊本県"
+        "熊本県内"
       ],
       "source_ids": [
-        "ehime-proxy-discovery",
-        "ehime-uwajima-jrat-0821"
+        "ehime-support-0924"
       ],
-      "evidence_note": "市立宇和島病院職員の愛媛JRAT派遣（8月20～24日）は実績確認済み。一方、他の市送出支援が基準時点で継続中かは直接確定できない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "JRAT派遣はHISTORICALと確認できるが、二次情報で発見した他支援の基準時点継続を市一次情報で閉じられないためUNKNOWN。",
-      "source_as_of": "2026-08-21T00:00:00+09:00",
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-proxy-discovery",
-        "ehime-uwajima-jrat-0821"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "愛南町",
@@ -294,15 +286,15 @@
       "source_ids": [
         "ehime-ainan-listing"
       ],
-      "evidence_note": "町公式に募金箱設置情報はあるが、基準時点までの受付継続を直接確認できず。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "町公式に募金箱設置情報はあるが、基準時点までの受付継続を直接確認できず。",
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "ehime-ainan-listing"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00"
     },
     {
       "entity": "新居浜市",
@@ -312,27 +304,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "義援金",
-        "災害支援代理寄附"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "熊本県",
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-niihama-donation-0825",
-        "ehime-proxy-discovery"
+        "ehime-support-0924"
       ],
-      "evidence_note": "市公式が義援金を2026年12月25日まで受け付ける旨を明示。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "source_as_of": "2026-08-25T00:00:00+09:00",
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-niihama-donation-0825",
-        "ehime-proxy-discovery"
+        "ehime-support-0924"
       ],
-      "current_evidence_type": "active_collection_explicit",
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "current_evidence_type": "explicit_current_activity",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
       "entity": "東温市",
@@ -340,26 +329,26 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": true,
-      "state": "HISTORICAL",
+      "state": "CURRENT",
       "support_types": [
-        "職員派遣"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "氷川町"
+        "熊本県内"
       ],
       "source_ids": [
-        "ehime-toon-dispatch",
-        "ehime-toon-report-0827"
+        "ehime-support-0924"
       ],
-      "evidence_note": "市公式広報で8月13～19日に氷川町へ市職員2名を実派遣したことを確認。基準時点では当該派遣は終了。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "source_as_of": "2026-08-27T00:00:00+09:00",
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-toon-dispatch",
-        "ehime-toon-report-0827"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
       "entity": "松前町",
@@ -369,23 +358,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "義援金"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "熊本県"
+        "熊本県内"
       ],
       "source_ids": [
-        "ehime-masaki-donation"
+        "ehime-support-0924"
       ],
-      "evidence_note": "町公式が義援金を2026年10月29日まで受け付ける旨を明示。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "current_evidence_type": "active_collection_explicit",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "current_evidence_type": "explicit_current_activity",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-masaki-donation"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
       "entity": "松山市",
@@ -395,27 +385,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "職員派遣",
-        "給水",
-        "トイレカー",
-        "物資"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "熊本市",
-        "氷川町"
+        "熊本県内"
       ],
       "source_ids": [
-        "ehime-matsuyama-current"
+        "ehime-support-0924"
       ],
-      "evidence_note": "市公式が職員・給水車等を「派遣している」旨を現在形で明示。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
-      "source_as_of": null,
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-matsuyama-current"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
       "entity": "松野町",
@@ -423,25 +410,26 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": true,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "災害支援代理寄附"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-proxy-discovery"
+        "ehime-support-0924"
       ],
-      "evidence_note": "候補発見資料には登場するが、町公式一次情報で基準時点の状態を確認できず。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "候補発見資料には登場するが、町公式一次情報で基準時点の状態を確認できず。",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-proxy-discovery"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "砥部町",
@@ -454,20 +442,21 @@
         "義援金"
       ],
       "destinations": [
-        "熊本県"
+        "熊本県内"
       ],
       "source_ids": [
-        "ehime-tobe-donation"
+        "ehime-tobe-donation-current"
       ],
-      "evidence_note": "町公式が義援金募金箱を2026年10月23日まで設置すると明示。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
+      "evidence_note": "砥部町公式で熊本地震義援金を10月23日まで受け付けており、9月24日時点で現行受付を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
       "current_evidence_type": "active_collection_explicit",
-      "source_as_of": null,
+      "source_as_of": "2026-07-31T00:00:00+09:00",
       "sources_checked": [
-        "ehime-tobe-donation"
+        "ehime-tobe-donation-current"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "砥部町公式で熊本地震義援金を10月23日まで受け付けており、9月24日時点で現行受付を直接確認。"
     },
     {
       "entity": "西予市",
@@ -475,30 +464,26 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": true,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "災害支援代理寄附",
-        "職員派遣"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "熊本市",
-        "益城町",
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-seiyo-proxy",
-        "ehime-seiyo-dispatch"
+        "ehime-support-0924"
       ],
-      "evidence_note": "市公式で受付開始・派遣予定を確認したが、基準時点の継続受付又は実働を直接示す更新を確認できず。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "reason": "市公式で受付開始・派遣予定を確認したが、基準時点の継続受付又は実働を直接示す更新を確認できず。",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-seiyo-proxy",
-        "ehime-seiyo-dispatch"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "西条市",
@@ -508,31 +493,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "義援金",
-        "災害支援代理寄附",
-        "職員派遣"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "熊本県内",
-        "氷川町",
-        "益城町"
+        "熊本県内"
       ],
       "source_ids": [
-        "ehime-saijo-0827",
-        "ehime-saijo-listing",
-        "ehime-proxy-discovery"
+        "ehime-support-0924"
       ],
-      "evidence_note": "8月27日市公式が義援金・益城町代理寄附を実施中と明記。派遣実績と次回派遣予定も掲載。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "source_as_of": "2026-08-27T00:00:00+09:00",
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-saijo-0827",
-        "ehime-saijo-listing",
-        "ehime-proxy-discovery"
+        "ehime-support-0924"
       ],
       "current_evidence_type": "explicit_current_activity",
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
       "entity": "鬼北町",
@@ -542,27 +520,26 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "義援金",
-        "職員派遣"
+        "愛媛県公表の市町支援"
       ],
       "destinations": [
-        "熊本県",
-        "氷川町"
+        "熊本県内"
       ],
       "source_ids": [
-        "ehime-kihoku-support"
+        "ehime-support-0924"
       ],
-      "evidence_note": "町公式が8月21日時点で募金箱を「設置しています」と明示。派遣予定は別軸で推定しない。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "current_evidence_type": "active_collection_explicit",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "current_evidence_type": "explicit_current_activity",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
-        "ehime-kihoku-support"
+        "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     }
   ],
-  "checked_at": "2026-09-03T14:57:25+09:00",
-  "rechecked_at": "2026-09-03T14:57:25+09:00"
+  "checked_at": "2026-09-24T18:27:00+09:00",
+  "rechecked_at": "2026-09-24T18:27:00+09:00"
 }

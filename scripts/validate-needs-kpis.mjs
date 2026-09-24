@@ -5,43 +5,52 @@ import { fileURLToPath } from 'node:url';
 const root=resolve(fileURLToPath(new URL('../',import.meta.url)));
 const sourcePath=resolve(root,'ehime_kumamoto_support_geocoded_shelters_20260802.html');
 const publicPath=resolve(root,'public/dashboard.html');
-const auditNames=(await readdir(resolve(root,'operations','audits'))).filter(name=>/^needs-kpi-source-recheck-\d{8}-\d{4}\.json$/u.test(name)).sort();
-const latestNeedsAudit=auditNames.at(-1);
-if(!latestNeedsAudit)throw new Error('latest needs KPI audit missing');
-const auditPath=resolve(root,'operations','audits',latestNeedsAudit);
-const [sourceHtml,publicHtml,auditText]=await Promise.all([readFile(sourcePath,'utf8'),readFile(publicPath,'utf8'),readFile(auditPath,'utf8')]);
+const auditDir=resolve(root,'operations','audits');
+const auditNames=(await readdir(auditDir)).filter(name=>/^needs-kpi-source-recheck-\d{8}-\d{4}\.json$/u.test(name)).sort();
+const latest=auditNames.at(-1);
+if(!latest)throw new Error('latest needs KPI audit missing');
+const [sourceHtml,publicHtml,auditText]=await Promise.all([
+  readFile(sourcePath,'utf8'),readFile(publicPath,'utf8'),readFile(resolve(auditDir,latest),'utf8')
+]);
 if(sourceHtml!==publicHtml)throw new Error('needs KPI source/public parity failed');
-const audit=JSON.parse(auditText);
-const snapshot=audit.prefectural_snapshot;
-const start=sourceHtml.indexOf('<div class="needs-kpis">');
-const end=sourceHtml.indexOf('<div class="needs-phasebar"',start);
+const audit=JSON.parse(auditText),snapshot=audit.prefectural_snapshot;
+const byId=new Map((audit.sources||[]).map(s=>[s.source_id,s]));
+const expected={
+  evacuees:{value:Number(snapshot.evacuees).toLocaleString('ja-JP')+'人',source:byId.get(snapshot.source_id)},
+  water:{value:audit.water.display_value,source:byId.get(audit.water.source_id)},
+  housing:{value:Number(snapshot.housing_damage).toLocaleString('ja-JP')+'棟',source:byId.get(snapshot.source_id)},
+  waste:{value:audit.waste.display_value,source:byId.get(audit.waste.source_id)}
+};
+for(const [id,x] of Object.entries(expected)){
+  if(!x.source)throw new Error(`needs source missing: ${id}`);
+  if(!/^https:\/\//u.test(x.source.url))throw new Error(`needs source URL invalid: ${id}`);
+}
+const start=sourceHtml.indexOf('<div class="needs-kpis">'),end=sourceHtml.indexOf('<div class="needs-phasebar"',start);
 if(start<0||end<0)throw new Error('needs KPI block missing');
 const block=sourceHtml.slice(start,end);
-
-for(const id of ['evacuees','water','housing','waste']){
-  if(!block.includes(`data-needs-kpi="${id}"`))throw new Error(`needs KPI link missing: ${id}`);
+for(const [id,x] of Object.entries(expected)){
+  const tag=[...block.matchAll(new RegExp('<a class="needs-kpi"[^>]*data-needs-kpi="'+id+'"[^>]*href="([^"]+)"[^>]*>[\\s\\S]*?<div class="needs-kpi-source">([^<]+)<\\/div>','gu'))].at(0);
+  if(!tag)throw new Error(`needs KPI link missing: ${id}`);
+  if(tag[1]!==x.source.url)throw new Error(`needs KPI href mismatch: ${id}`);
+  if(!tag[2].includes(x.source.publisher))throw new Error(`needs KPI publisher missing: ${id}/${x.source.publisher}`);
+  if(!tag[2].includes('を開く ↗'))throw new Error(`needs KPI link label incomplete: ${id}`);
+  if(!block.includes(x.value))throw new Error(`needs KPI value missing: ${id}/${x.value}`);
 }
-for(const stale of ['2,709人','約4,300戸','4,284戸','給水車129台','38,537棟']){
-  if(block.includes(stale))throw new Error(`stale needs KPI value remains: ${stale}`);
+for(const stale of audit.water.historical_values_not_current||[]){
+  if(block.includes(`<div class="needs-kpi-value">${stale}</div>`))throw new Error(`historical water value remains current: ${stale}`);
 }
-if(block.includes('<div class="needs-kpi-value">10市町村</div>'))throw new Error('historical waste municipality count remains as current KPI value');
-for(const expected of [Number(snapshot.evacuees).toLocaleString('ja-JP')+'人',Number(snapshot.housing_damage).toLocaleString('ja-JP')+'棟','解消確認','処理継続']){
-  if(!block.includes(expected))throw new Error(`current needs KPI value/source missing: ${expected}`);
-}
-const hrefs=[...block.matchAll(/<a class="needs-kpi"[^>]+href="([^"]+)"/gu)].map(match=>match[1]);
-if(hrefs.length!==4)throw new Error(`needs KPI href count must be 4, got ${hrefs.length}`);
-if(hrefs.some(url=>!/^https:\/\/(www\.pref\.kumamoto\.jp|www\.env\.go\.jp)\//u.test(url)))throw new Error(`needs KPI contains non-official source URL: ${JSON.stringify(hrefs)}`);
-const sourceLinkLabels=[...block.matchAll(/<div class="needs-kpi-source">([^<]+)<\/div>/gu)].map(match=>match[1]);
-if(sourceLinkLabels.length!==4||sourceLinkLabels.some(label=>!label.includes('を開く ↗')))throw new Error(`needs KPI source link labels incomplete: ${JSON.stringify(sourceLinkLabels)}`);
-if(!sourceLinkLabels.some(label=>label.includes('熊本県'))||!sourceLinkLabels.some(label=>label.includes('環境省')))throw new Error('needs KPI source publishers are not explicit');
-if(!sourceHtml.includes('熊本県9月11日14時参考資料では住家被害68,851棟'))throw new Error('province need current housing evidence not synchronized');
-if(!sourceHtml.includes('旧8月21日の約4,300戸・給水車129台は履歴値で、現況値として使用しない'))throw new Error('historical water value is not explicitly demoted');
-if(!sourceHtml.includes('旧8月19日の「10市町村」を現況値として使用しない'))throw new Error('historical waste value is not explicitly demoted');
-if(!sourceHtml.includes('上水道の断水解消を確認'))throw new Error('water record resolution state missing');
+const n=v=>Number(v).toLocaleString('ja-JP');
+for(const current of [
+  `${n(snapshot.evacuees)}<span class="overview-kpi-unit">人</span>`,
+  `${n(snapshot.human_damage)}<span class="overview-kpi-unit">人</span>`,
+  `${n(snapshot.housing_damage)}<span class="overview-kpi-unit">棟</span>`
+])if(!sourceHtml.includes(current))throw new Error(`overview current value missing: ${current}`);
+if(!sourceHtml.includes(audit.water.display_note))throw new Error('water current evidence not synchronized');
+if(!sourceHtml.includes(audit.waste.display_note))throw new Error('waste current evidence not synchronized');
 if(!sourceHtml.includes("sourceUrl:SRC.prefecture.url"))throw new Error('province current source binding missing');
-if(!sourceHtml.includes('data-overview-impact="evacuees"')||!sourceHtml.includes('1,771<span class="overview-kpi-unit">人</span>'))throw new Error('overview evacuee KPI is not current');
-if(!sourceHtml.includes('407<span class="overview-kpi-unit">人</span>'))throw new Error('overview human-damage KPI is not current');
-if(!sourceHtml.includes('68,851<span class="overview-kpi-unit">棟</span>'))throw new Error('overview housing KPI is not current');
-if(!sourceHtml.includes('9月11日14時・熊本県復旧・復興本部参考資料'))throw new Error('overview current source note missing');
 
-console.log(JSON.stringify({status:'PASS',evacuees:snapshot.evacuees,housing_damage:snapshot.housing_damage,kpi_links:hrefs.length,official_domains:[...new Set(hrefs.map(url=>new URL(url).hostname))]}));
+console.log(JSON.stringify({
+  status:'PASS',audit:latest,source_as_of:snapshot.as_of,
+  evacuees:snapshot.evacuees,human_damage:snapshot.human_damage,
+  housing_damage:snapshot.housing_damage,kpi_links:Object.keys(expected).length
+}));
