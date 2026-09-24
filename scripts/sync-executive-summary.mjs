@@ -69,7 +69,9 @@ const ehimeTotal = ehimeAudit.human_support?.total;
 const ehimeCounterpart = ehimeAudit.human_support?.counterpart_support;
 const ehimeHealth = ehimeAudit.human_support?.public_health;
 const ehimeDwat = ehimeAudit.human_support?.dwat;
-const toiletTruck = ehimeAudit.material_support?.prefectural_large_toilet_truck;\nconst ehimeAsOf = ehimeAudit.source_as_of || ehimeAudit.checked_at || ehimeAudit.reference_at;\nconst ehimeLabel = mdhm(ehimeAsOf);
+const toiletTruck = ehimeAudit.material_support?.prefectural_large_toilet_truck;
+const ehimeAsOf = ehimeAudit.source_as_of || ehimeAudit.checked_at || ehimeAudit.reference_at;
+const ehimeLabel = mdhm(ehimeAsOf);
 if (!ehimeTotal || !ehimeCounterpart || !ehimeHealth || !ehimeDwat || !toiletTruck) throw new Error("Ehime executive summary data missing");
 
 const pageCheckedAt = national.reference_at;
