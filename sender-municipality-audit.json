@@ -3,9 +3,9 @@
   "repository": "ryotamatsuki/kumamotoshienmap",
   "audit_type": "sender_municipality_coverage",
   "policy_version": "2.6",
-  "reference_at": "2026-09-03T14:57:25+09:00",
-  "checked_at": "2026-09-03T14:57:25+09:00",
-  "base_main_sha": "cca0eb8fbbcc293d515eb99570ade50b8af660f6",
+  "reference_at": "2026-09-24T18:27:00+09:00",
+  "checked_at": "2026-09-24T18:27:00+09:00",
+  "base_main_sha": "8596eee104e8138e90ad17b29043b52e60d65f6d",
   "entity_files": [
     "sender-audit/ehime.json",
     "sender-audit/hokkaido-tohoku.json",
@@ -283,10 +283,10 @@
       "unadjudicated_source_mentions": [],
       "blocking_unresolved": 0,
       "states": {
-        "CURRENT": 11,
+        "CURRENT": 17,
         "PLANNED": 0,
-        "HISTORICAL": 1,
-        "UNKNOWN": 8,
+        "HISTORICAL": 0,
+        "UNKNOWN": 3,
         "NO_EVIDENCE": 0,
         "CONFLICT": 0
       },
@@ -294,18 +294,18 @@
     },
     "nationwide": {
       "prefecture_discovery_checked": 47,
-      "discovered_basic_municipality_senders": 320,
-      "adjudicated_basic_municipality_senders": 320,
+      "discovered_basic_municipality_senders": 321,
+      "adjudicated_basic_municipality_senders": 321,
       "unadjudicated_discovered_senders": [],
-      "source_mentions": 320,
+      "source_mentions": 321,
       "orphan_source_mentions": [],
       "invalid_current": [],
       "blocking_conflicts": 0,
       "states": {
-        "CURRENT": 16,
-        "PLANNED": 16,
-        "HISTORICAL": 17,
-        "UNKNOWN": 271,
+        "CURRENT": 27,
+        "PLANNED": 0,
+        "HISTORICAL": 16,
+        "UNKNOWN": 278,
         "NO_EVIDENCE": 0,
         "CONFLICT": 0
       }
@@ -313,6 +313,6 @@
   },
   "blocking_unresolved": [],
   "timepoint_note": "2026年9月3日14:57基準。愛媛20市町と全国47都道府県discoveryを再監査。徳島県9月3日一次情報で小松島市・阿南市・石井町の実派遣をCURRENT、9月1日実派遣が継続期間内の佐那河内村をCURRENT追加。竹田市は「派遣します」の予定公表のみのためPLANNED。予定期間到来だけではCURRENTにしない。",
-  "rechecked_at": "2026-09-03T14:57:25+09:00",
+  "rechecked_at": "2026-09-24T18:27:00+09:00",
   "release_id": "20260903-1457"
 }
