@@ -22,7 +22,7 @@ const shelters = JSON.parse(shelterText);
 const national = JSON.parse(nationalText);
 const currentCount = Number(shelters?.meta?.current_count);
 if (!Number.isInteger(currentCount) || currentCount < 0) throw new Error("current shelter count is invalid");
-const needsAuditName = auditFiles.filter((name) => /^needs-kpi-source-recheck-\\d{8}-\\d{4}\\.json$/u.test(name)).sort().at(-1);
+const needsAuditName = auditFiles.filter((name) => /^needs-kpi-source-recheck-\d{8}-\d{4}\.json$/u.test(name)).sort().at(-1);
 if (!needsAuditName) throw new Error("latest needs audit missing");
 const needsAudit = JSON.parse(await readFile(resolve(auditDir, needsAuditName), "utf8"));
 const reportedShelterCount = Number(needsAudit?.prefectural_snapshot?.shelters);
