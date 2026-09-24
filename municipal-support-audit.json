@@ -15,6 +15,7 @@
       "pair-uki",
       "pair-misato",
       "pair-hikawa",
+      "pair-mifune",
       "pair-kashima",
       "pharmacy",
       "kumamoto-internal"
@@ -579,13 +580,123 @@
       "as_of": "2026-09-24T12:00:00+09:00",
       "checked_at": "2026-09-24T18:27:00+09:00",
       "rechecked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "tokyo-0924-plan",
+      "publisher": "東京都",
+      "title": "令和8年熊本地震への都の対応（第39報）",
+      "as_of": "2026-09-24",
+      "url": "https://www.metro.tokyo.lg.jp/ja/information/press/2026/09/2026092416",
+      "role": "sender_official",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "recheck_result": "200"
+    },
+    {
+      "source_id": "saitama-0918-plan",
+      "publisher": "埼玉県",
+      "title": "令和8年熊本地震における人的派遣について（第8次）",
+      "as_of": "2026-09-18",
+      "url": "https://www.pref.saitama.lg.jp/a0402/news/page/news2026091801.html",
+      "role": "sender_official",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "recheck_result": "200"
+    },
+    {
+      "source_id": "gunma-0907-plan",
+      "publisher": "群馬県",
+      "title": "令和8年熊本地震に係る熊本県への応援職員の派遣",
+      "as_of": "2026-09-07",
+      "url": "https://www.pref.gunma.jp/site/houdou/774267.html",
+      "role": "sender_official",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "recheck_result": "200"
+    },
+    {
+      "source_id": "yamaguchi-0917-plan",
+      "publisher": "山口県",
+      "title": "令和8年熊本地震に係る職員の派遣について（第8陣）",
+      "as_of": "2026-09-17",
+      "url": "https://www.pref.yamaguchi.lg.jp/press/363234.html",
+      "role": "sender_official",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "recheck_result": "200"
+    },
+    {
+      "source_id": "yamaguchi-0924-plan",
+      "publisher": "山口県",
+      "title": "令和8年熊本地震に係る職員の派遣について（第9陣）",
+      "as_of": "2026-09-24",
+      "url": "https://www.pref.yamaguchi.lg.jp/press/363605.html",
+      "role": "sender_official",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "recheck_result": "200"
+    },
+    {
+      "source_id": "tokushima-0921-current",
+      "publisher": "徳島県",
+      "title": "リエゾン（第15陣）・住家被害認定後方支援チーム（第4陣）の派遣",
+      "as_of": "2026-09-21",
+      "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7316530/",
+      "role": "sender_official",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "recheck_result": "200"
+    },
+    {
+      "source_id": "shiga-0901-plan",
+      "publisher": "滋賀県",
+      "title": "住家被害認定関係職員の派遣期間の延長",
+      "as_of": "2026-09-01",
+      "url": "https://www.pref.shiga.lg.jp/kensei/koho/e-shinbun/oshirase/352239.html",
+      "role": "sender_official",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "recheck_result": "200"
+    },
+    {
+      "source_id": "hyogo-0918-plan",
+      "publisher": "兵庫県",
+      "title": "令和8年熊本地震に伴う兵庫県の対応・職員の派遣",
+      "as_of": "2026-09-18",
+      "url": "https://web.pref.hyogo.lg.jp/kk37/r8kumamoto_senkentai.html",
+      "role": "sender_official",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "recheck_result": "200"
+    },
+    {
+      "source_id": "nagasaki-0918-plan",
+      "publisher": "長崎県",
+      "title": "熊本地震にかかる職員の派遣について（9月22日出発分）",
+      "as_of": "2026-09-18",
+      "url": "https://www.pref.nagasaki.jp/press-contents/52872.html",
+      "role": "sender_official",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "recheck_result": "200"
+    },
+    {
+      "source_id": "miyagi-0918-current",
+      "publisher": "宮城県",
+      "title": "令和8年熊本地震に係る特設ページ・被災地への職員派遣状況",
+      "as_of": "2026-09-18",
+      "url": "https://www.pref.miyagi.jp/soshiki/kikisom/kumamoto-tokusethu.html",
+      "role": "sender_official",
+      "checked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "recheck_result": "200"
     }
   ],
   "records": [
     {
       "id": "pair-kumamoto",
       "destination": "熊本市",
-      "record_state": "UNKNOWN",
+      "record_state": "PLANNED",
       "historical_roster_as_of": "2026-08-11T14:00:00+09:00",
       "historical_roster": [
         "埼玉県",
@@ -612,12 +723,11 @@
       "provider_statuses": [
         {
           "name": "埼玉県",
-          "state": "UNKNOWN",
+          "state": "PLANNED",
           "source_ids": [
-            "saitama-tokorozawa-0820",
-            "saitama-koshigaya-0821"
+            "saitama-0918-plan"
           ],
-          "note": "埼玉県の派遣要請に基づく県内市職員が8/24～9/1に熊本市で活動予定。 2026年8月31日14:16基準で再監査したが、同時点の実働継続を直接確認できる新しい一次情報を取得できず、予定期間内・過去CURRENTだけでは継続推定しない。"
+          "note": "埼玉県9月18日公表で熊本市へ9月21日～10月1日に4名を派遣する計画を確認。期間到来のみではCURRENTに昇格せずPLANNED。"
         },
         {
           "name": "千葉県",
@@ -629,11 +739,11 @@
         },
         {
           "name": "東京都",
-          "state": "UNKNOWN",
+          "state": "PLANNED",
           "source_ids": [
-            "tokyo-0820-plan"
+            "tokyo-0924-plan"
           ],
-          "note": "8/20-28派遣告知は確認したが、8/25基準の継続実働を直接確認できる更新は未取得。予定期間内という理由だけでCURRENTにしない。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。"
+          "note": "東京都9月24日公表で、熊本市へ9月24日～10月1日に8名を派遣する計画を確認。開始日当日の予定公表であり、実出発を別の一次情報で直接確認していないためPLANNED。"
         },
         {
           "name": "神奈川県",
@@ -669,11 +779,11 @@
         },
         {
           "name": "群馬県",
-          "state": "UNKNOWN",
+          "state": "PLANNED",
           "source_ids": [
-            "kumamoto-roster-0811"
+            "gunma-0907-plan"
           ],
-          "note": "8/24再探索で、この旧割当主体の同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。"
+          "note": "群馬県公式で熊本市への第8班9月20日～28日、第9班9月27日～10月1日の派遣計画を確認。実働を9月24日時点の別一次情報で直接確認できないためPLANNED。"
         },
         {
           "name": "札幌市",
@@ -778,13 +888,13 @@
         "熊本市 対口支援 支援主体 2026年8月25日 一次情報 継続 終了 実働",
         "2026-08-26 19:26 JST 一次情報再確認 / 予定期間のみではCURRENTとしない",
         "2026-09-15 01:05 JST ゼロベース再監査／予定期間のみではCURRENTとしない",
-        "2026-09-24 18:27 JST ゼロベース再監査／予定期間のみではCURRENTとしない"
+        "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 5／UNKNOWN 15",
-        "scale": "CURRENT直接確認なし",
+        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 3／HISTORICAL 5／UNKNOWN 12",
+        "scale": "PLANNED確認：埼玉県、東京都、群馬県",
         "period": "2026年9月24日18:27基準",
-        "detail": "旧割当名簿は履歴として保持。基準時点のCURRENTは現在形の継続又は実働を最新一次情報で直接確認できた主体だけに限定し、予定期間到来だけでは昇格しない。",
+        "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
         "asOf": "2026年9月24日18:27全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
@@ -792,7 +902,7 @@
     {
       "id": "pair-yatsushiro",
       "destination": "八代市",
-      "record_state": "UNKNOWN",
+      "record_state": "PLANNED",
       "historical_roster_as_of": "2026-08-11T14:00:00+09:00",
       "historical_roster": [
         "福井県",
@@ -816,20 +926,20 @@
         },
         {
           "name": "山口県",
-          "state": "UNKNOWN",
+          "state": "PLANNED",
           "source_ids": [
-            "yamaguchi-0820"
+            "yamaguchi-0917-plan",
+            "yamaguchi-0924-plan"
           ],
-          "note": "第4陣8/21-28の派遣告知は確認済みだが、8/25の実働を直接確認する一次更新を取得できず。期間内だけでCURRENTにしない。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。"
+          "note": "山口県公式で第8陣9月18日～25日、第9陣9月25日～10月2日の八代市派遣を確認。予定公表のみのためPLANNEDとして表示。"
         },
         {
           "name": "長崎県",
-          "state": "UNKNOWN",
+          "state": "PLANNED",
           "source_ids": [
-            "nagasaki-0817",
-            "nagasaki-0825-departure-plan"
+            "nagasaki-0918-plan"
           ],
-          "note": "8月24日一次発表で第5陣を8月25日～9月1日に派遣する予定を確認。ただし実出発・基準日時点の活動を直接確認できないためUNKNOWN。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。"
+          "note": "長崎県9月18日公表で八代市第9陣を9月22日～29日に派遣する計画を確認。実出発を別一次情報で直接確認できないためPLANNED。"
         },
         {
           "name": "福井県",
@@ -918,13 +1028,13 @@
         "八代市 対口支援 支援主体 2026年8月25日 一次情報 継続 終了 実働",
         "2026-08-26 19:26 JST 一次情報再確認 / 予定期間のみではCURRENTとしない",
         "2026-09-15 01:05 JST ゼロベース再監査／予定期間のみではCURRENTとしない",
-        "2026-09-24 18:27 JST ゼロベース再監査／予定期間のみではCURRENTとしない"
+        "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 13",
-        "scale": "CURRENT直接確認なし",
+        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 2／HISTORICAL 0／UNKNOWN 11",
+        "scale": "PLANNED確認：山口県、長崎県",
         "period": "2026年9月24日18:27基準",
-        "detail": "旧割当名簿は履歴として保持。基準時点のCURRENTは現在形の継続又は実働を最新一次情報で直接確認できた主体だけに限定し、予定期間到来だけでは昇格しない。",
+        "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
         "asOf": "2026年9月24日18:27全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
@@ -960,11 +1070,11 @@
         },
         {
           "name": "徳島県",
-          "state": "UNKNOWN",
+          "state": "CURRENT",
           "source_ids": [
-            "tokushima-0824"
+            "tokushima-0921-current"
           ],
-          "note": "8/24～30、宇土市へ避難所支援チーム等を派遣。 2026年8月31日14:16基準で再監査したが、同時点の実働継続を直接確認できる新しい一次情報を取得できず、予定期間内・過去CURRENTだけでは継続推定しない。"
+          "note": "徳島県9月21日公式が県・徳島市・北島町職員計6名を『派遣しました』と明示。派遣期間9月21日～27日、宇土市で住家被害認定後方支援等に従事。"
         },
         {
           "name": "福岡県",
@@ -988,13 +1098,13 @@
         "宇土市 対口支援 支援主体 2026年8月25日 一次情報 継続 終了 実働",
         "2026-08-26 19:26 JST 一次情報再確認 / 予定期間のみではCURRENTとしない",
         "2026-09-15 01:05 JST ゼロベース再監査／予定期間のみではCURRENTとしない",
-        "2026-09-24 18:27 JST ゼロベース再監査／予定期間のみではCURRENTとしない"
+        "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 1／PLANNED 0／HISTORICAL 1／UNKNOWN 3",
-        "scale": "CURRENT確認：福岡県",
+        "status": "9月24日18:27全件再監査：CURRENT 2／PLANNED 0／HISTORICAL 1／UNKNOWN 2",
+        "scale": "CURRENT確認：徳島県、福岡県",
         "period": "2026年9月24日18:27基準",
-        "detail": "旧割当名簿は履歴として保持。基準時点のCURRENTは現在形の継続又は実働を最新一次情報で直接確認できた主体だけに限定し、予定期間到来だけでは昇格しない。",
+        "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
         "asOf": "2026年9月24日18:27全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
@@ -1002,7 +1112,7 @@
     {
       "id": "pair-uki",
       "destination": "宇城市",
-      "record_state": "UNKNOWN",
+      "record_state": "PLANNED",
       "historical_roster_as_of": "2026-08-11T14:00:00+09:00",
       "historical_roster": [
         "富山県",
@@ -1087,11 +1197,11 @@
         },
         {
           "name": "兵庫県",
-          "state": "UNKNOWN",
+          "state": "PLANNED",
           "source_ids": [
-            "kumamoto-roster-0811"
+            "hyogo-0918-plan"
           ],
-          "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。"
+          "note": "兵庫県9月18日更新で宇城市への第9陣9月20日～25日（市町職員12名）を掲載。基準日実働の直接確認ではないためPLANNED。"
         },
         {
           "name": "奈良県",
@@ -1129,11 +1239,11 @@
       "additional_statuses": [
         {
           "name": "滋賀県",
-          "state": "UNKNOWN",
+          "state": "PLANNED",
           "source_ids": [
-            "shiga-0821"
+            "shiga-0901-plan"
           ],
-          "note": "8/24～9/15、宇城市で住家被害認定調査。 2026年8月31日14:16基準で再監査したが、同時点の実働継続を直接確認できる新しい一次情報を取得できず、予定期間内・過去CURRENTだけでは継続推定しない。"
+          "note": "滋賀県9月1日公式で宇城市への支援を9月30日まで延長し、第8クール9月20日～25日、第9クール9月25日～30日を公表。基準日実働の直接更新がないためPLANNED。"
         },
         {
           "name": "川崎市",
@@ -1156,13 +1266,13 @@
         "宇城市 対口支援 支援主体 2026年8月25日 一次情報 継続 終了 実働",
         "2026-08-26 19:26 JST 一次情報再確認 / 予定期間のみではCURRENTとしない",
         "2026-09-15 01:05 JST ゼロベース再監査／予定期間のみではCURRENTとしない",
-        "2026-09-24 18:27 JST ゼロベース再監査／予定期間のみではCURRENTとしない"
+        "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 1／UNKNOWN 15",
-        "scale": "CURRENT直接確認なし",
+        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 2／HISTORICAL 1／UNKNOWN 13",
+        "scale": "PLANNED確認：兵庫県、滋賀県",
         "period": "2026年9月24日18:27基準",
-        "detail": "旧割当名簿は履歴として保持。基準時点のCURRENTは現在形の継続又は実働を最新一次情報で直接確認できた主体だけに限定し、予定期間到来だけでは昇格しない。",
+        "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
         "asOf": "2026年9月24日18:27全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
@@ -1170,7 +1280,7 @@
     {
       "id": "pair-misato",
       "destination": "美里町",
-      "record_state": "UNKNOWN",
+      "record_state": "PLANNED",
       "historical_roster_as_of": "2026-08-11T14:00:00+09:00",
       "historical_roster": [
         "長崎県"
@@ -1178,12 +1288,11 @@
       "provider_statuses": [
         {
           "name": "長崎県",
-          "state": "UNKNOWN",
+          "state": "PLANNED",
           "source_ids": [
-            "nagasaki-0817",
-            "nagasaki-0825-departure-plan"
+            "nagasaki-0918-plan"
           ],
-          "note": "8月24日一次発表で8月25日～9月1日の継続派遣予定を確認。ただし予定公表だけでは基準日時点の実働を確認できないためUNKNOWN。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。"
+          "note": "長崎県9月18日公表で美里町第11陣を9月22日～29日に派遣する計画を確認。実出発を別一次情報で直接確認できないためPLANNED。"
         }
       ],
       "additional_statuses": [],
@@ -1191,13 +1300,13 @@
         "美里町 対口支援 支援主体 2026年8月25日 一次情報 継続 終了 実働",
         "2026-08-26 19:26 JST 一次情報再確認 / 予定期間のみではCURRENTとしない",
         "2026-09-15 01:05 JST ゼロベース再監査／予定期間のみではCURRENTとしない",
-        "2026-09-24 18:27 JST ゼロベース再監査／予定期間のみではCURRENTとしない"
+        "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 1",
-        "scale": "CURRENT直接確認なし",
+        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 1／HISTORICAL 0／UNKNOWN 0",
+        "scale": "PLANNED確認：長崎県",
         "period": "2026年9月24日18:27基準",
-        "detail": "旧割当名簿は履歴として保持。基準時点のCURRENTは現在形の継続又は実働を最新一次情報で直接確認できた主体だけに限定し、予定期間到来だけでは昇格しない。",
+        "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
         "asOf": "2026年9月24日18:27全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
@@ -1297,13 +1406,45 @@
         "2026-08-26 19:26 JST 一次情報再確認 / 予定期間のみではCURRENTとしない",
         "2026-09-04 22:38 JST 愛媛県9月4日12時版で氷川町支援継続を直接確認",
         "2026-09-15 01:05 JST ゼロベース再監査／予定期間のみではCURRENTとしない",
-        "2026-09-24 18:27 JST ゼロベース再監査／予定期間のみではCURRENTとしない"
+        "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
         "status": "9月24日18:27全件再監査：CURRENT 1／PLANNED 0／HISTORICAL 0／UNKNOWN 8",
         "scale": "CURRENT確認：愛媛県",
         "period": "2026年9月24日18:27基準",
-        "detail": "旧割当名簿は履歴として保持。基準時点のCURRENTは現在形の継続又は実働を最新一次情報で直接確認できた主体だけに限定し、予定期間到来だけでは昇格しない。",
+        "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
+        "asOf": "2026年9月24日18:27全件再監査",
+        "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
+      }
+    },
+    {
+      "id": "pair-mifune",
+      "destination": "御船町",
+      "record_state": "CURRENT",
+      "historical_roster_as_of": null,
+      "historical_roster": [
+        "宮城県"
+      ],
+      "provider_statuses": [
+        {
+          "name": "宮城県",
+          "state": "CURRENT",
+          "source_ids": [
+            "miyagi-0918-current"
+          ],
+          "note": "宮城県公式の9月18日現在派遣状況で、御船町の住家被害認定調査に8名（うち市町村4名）を『派遣中』と明記。終了予定10月4日。"
+        }
+      ],
+      "additional_statuses": [],
+      "recheck_queries": [
+        "御船町 対口支援 宮城県 2026年9月24日 一次情報 派遣中",
+        "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
+      ],
+      "display": {
+        "status": "9月24日18:27全件再監査：CURRENT 1／PLANNED 0／HISTORICAL 0／UNKNOWN 0",
+        "scale": "CURRENT確認：宮城県",
+        "period": "2026年9月24日18:27基準",
+        "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
         "asOf": "2026年9月24日18:27全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
@@ -1358,13 +1499,13 @@
         "嘉島町 対口支援 支援主体 2026年8月25日 一次情報 継続 終了 実働",
         "2026-08-26 19:26 JST 一次情報再確認 / 予定期間のみではCURRENTとしない",
         "2026-09-15 01:05 JST ゼロベース再監査／予定期間のみではCURRENTとしない",
-        "2026-09-24 18:27 JST ゼロベース再監査／予定期間のみではCURRENTとしない"
+        "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
         "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 4",
         "scale": "CURRENT直接確認なし",
         "period": "2026年9月24日18:27基準",
-        "detail": "旧割当名簿は履歴として保持。基準時点のCURRENTは現在形の継続又は実働を最新一次情報で直接確認できた主体だけに限定し、予定期間到来だけでは昇格しない。",
+        "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
         "asOf": "2026年9月24日18:27全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
@@ -1410,13 +1551,13 @@
         "宇城市・八代市・氷川町 対口支援 支援主体 2026年8月25日 一次情報 継続 終了 実働",
         "2026-08-26 19:26 JST 一次情報再確認 / 予定期間のみではCURRENTとしない",
         "2026-09-15 01:05 JST ゼロベース再監査／予定期間のみではCURRENTとしない",
-        "2026-09-24 18:27 JST ゼロベース再監査／予定期間のみではCURRENTとしない"
+        "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
         "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 3",
         "scale": "CURRENT直接確認なし",
         "period": "2026年9月24日18:27基準",
-        "detail": "旧割当名簿は履歴として保持。基準時点のCURRENTは現在形の継続又は実働を最新一次情報で直接確認できた主体だけに限定し、予定期間到来だけでは昇格しない。",
+        "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
         "asOf": "2026年9月24日18:27全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
@@ -1453,13 +1594,13 @@
         "熊本県内 対口支援 支援主体 2026年8月25日 一次情報 継続 終了 実働",
         "2026-08-26 19:26 JST 一次情報再確認 / 予定期間のみではCURRENTとしない",
         "2026-09-15 01:05 JST ゼロベース再監査／予定期間のみではCURRENTとしない",
-        "2026-09-24 18:27 JST ゼロベース再監査／予定期間のみではCURRENTとしない"
+        "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
         "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 2",
         "scale": "CURRENT直接確認なし",
         "period": "2026年9月24日18:27基準",
-        "detail": "旧割当名簿は履歴として保持。基準時点のCURRENTは現在形の継続又は実働を最新一次情報で直接確認できた主体だけに限定し、予定期間到来だけでは昇格しない。",
+        "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
         "asOf": "2026年9月24日18:27全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
