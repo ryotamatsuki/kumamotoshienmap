@@ -10,7 +10,7 @@ const audit = JSON.parse(await readFile(resolve(root,"municipal-support-audit.js
 const html = await readFile(resolve(root,"ehime_kumamoto_support_geocoded_shelters_20260802.html"),"utf8");
 const publicHtml = await readFile(resolve(root,"public","dashboard.html"),"utf8");
 const allowedStates = new Set(["CURRENT","HISTORICAL","PLANNED","UNKNOWN"]);
-const requiredIds = ["pair-kumamoto","pair-yatsushiro","pair-uto","pair-uki","pair-misato","pair-hikawa","pair-kashima","pharmacy","kumamoto-internal"];
+const requiredIds = ["pair-kumamoto","pair-yatsushiro","pair-uto","pair-uki","pair-misato","pair-hikawa","pair-mifune","pair-kashima","pharmacy","kumamoto-internal"];
 
 assert.equal(audit.schema_version,1,"municipal-support-audit schema_versionは1で必要です");
 assert.equal(audit.repository,"ryotamatsuki/kumamotoshienmap","repositoryが不一致です");
