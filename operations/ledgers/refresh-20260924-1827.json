@@ -1,0 +1,288 @@
+{
+  "schema_version": 2,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "update_type": "timepoint_refresh",
+  "gate_phase": "pre_merge",
+  "update_id": "refresh-20260924-1827",
+  "release_id": "20260924-1827",
+  "reference_at": "2026-09-24T18:27:00+09:00",
+  "rechecked_at": "2026-09-24T18:27:00+09:00",
+  "page_checked_at": null,
+  "base_main_sha": "8596eee104e8138e90ad17b29043b52e60d65f6d",
+  "expected_changed_files": [
+    "ehime_kumamoto_support_geocoded_shelters_20260802.html",
+    "municipal-support-audit.json",
+    "national-support-audit.json",
+    "operations/audits/ehime-source-recheck-20260924-1827.json",
+    "operations/audits/national-source-recheck-20260924-1827.json",
+    "operations/audits/needs-kpi-source-recheck-20260924-1827.json",
+    "operations/audits/volunteer-source-recheck-20260924-1827.json",
+    "operations/ledgers/refresh-20260924-1827.json",
+    "public/dashboard.html",
+    "scripts/generate-volunteer-data.mjs",
+    "scripts/sync-current-overview-summary.mjs",
+    "scripts/sync-current-release.mjs",
+    "scripts/sync-executive-summary.mjs",
+    "scripts/sync-municipal-support-audit.mjs",
+    "scripts/sync-needs-kpis.mjs",
+    "scripts/test-release-gate.mjs",
+    "scripts/validate-currentness-surfaces.mjs",
+    "scripts/validate-dashboard-current.mjs",
+    "scripts/validate-ehime-current.mjs",
+    "scripts/validate-executive-summary.mjs",
+    "scripts/validate-municipal-support-audit.mjs",
+    "scripts/validate-national-support-audit.mjs",
+    "scripts/validate-needs-kpis.mjs",
+    "scripts/validate-volunteer-data.mjs",
+    "sender-audit/chubu.json",
+    "sender-audit/chugoku-shikoku.json",
+    "sender-audit/crosscutting-additions.json",
+    "sender-audit/discovery-additions.json",
+    "sender-audit/ehime.json",
+    "sender-audit/hokkaido-tohoku.json",
+    "sender-audit/kanto.json",
+    "sender-audit/kinki.json",
+    "sender-audit/kyushu-okinawa.json",
+    "sender-audit/sources-additions.json",
+    "sender-audit/timepoint-20260828-additions.json",
+    "sender-audit/timepoint-20260830-additions.json",
+    "sender-audit/timepoint-20260831-additions.json",
+    "sender-audit/timepoint-20260901-additions.json",
+    "sender-audit/timepoint-20260903-additions.json",
+    "sender-municipality-audit.json",
+    "volunteer-data.js"
+  ],
+  "sources": [
+    {
+      "source_id": "kumamoto-recovery-hq-20260918",
+      "publisher": "熊本県",
+      "url": "https://www.pref.kumamoto.jp/soshiki/5/278881.html",
+      "source_as_of": "2026-09-18T14:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "env-waste-20260918",
+      "publisher": "環境省",
+      "url": "https://www.env.go.jp/saigai/kumamoto_earthquake_202607/index.html",
+      "source_as_of": "2026-09-18T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "ehime-support-0924",
+      "publisher": "愛媛県",
+      "url": "https://www.pref.ehime.jp/page/154856.html",
+      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-current-shelters-lastfetched-0915",
+      "publisher": "熊本県 防災情報ポータル",
+      "url": "https://portal.bousai.pref.kumamoto.jp/data/shelter/shelter.json",
+      "source_as_of": "2026-09-15T00:29:57+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "fukuoka-support-0917",
+      "publisher": "福岡県",
+      "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken9.html",
+      "source_as_of": "2026-09-17T11:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "tokushima-0921-current",
+      "publisher": "徳島県",
+      "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7316530/",
+      "source_as_of": "2026-09-21T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "miyagi-0918-current",
+      "publisher": "宮城県",
+      "url": "https://www.pref.miyagi.jp/soshiki/kikisom/kumamoto-tokusethu.html",
+      "source_as_of": "2026-09-18T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "tokyo-0924-plan",
+      "publisher": "東京都",
+      "url": "https://www.metro.tokyo.lg.jp/ja/information/press/2026/09/2026092416",
+      "source_as_of": "2026-09-24T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "yamaguchi-0924-plan",
+      "publisher": "山口県",
+      "url": "https://www.pref.yamaguchi.lg.jp/press/363605.html",
+      "source_as_of": "2026-09-24T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "kumamoto-volunteer-statewide-0924",
+      "publisher": "熊本県社会福祉協議会",
+      "url": "https://www.fukushi-kumamoto.or.jp/kvc/",
+      "source_as_of": "2026-09-24T18:27:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "yatsushiro-volunteer-0924",
+      "publisher": "八代市社会福祉協議会",
+      "url": "https://www.yatsushiro-shakyo.jp/homepage_new/R08_saigai_vc_volunteer.html",
+      "source_as_of": "2026-09-24T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "uki-volunteer-0920",
+      "publisher": "宇城市社会福祉協議会",
+      "url": "https://www.shakyou-uki.jp/oshirase/12239-2/",
+      "source_as_of": "2026-09-20T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "uto-volunteer-0924",
+      "publisher": "宇土市社会福祉協議会",
+      "url": "https://www.utoshakyou.jp/volunteer_2026.html",
+      "source_as_of": "2026-09-24T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "mifune-volunteer-0910",
+      "publisher": "御船町社会福祉協議会",
+      "url": "https://mifune-shakyo.jp/pages/51/detail=1/b_id=269/r_id=61",
+      "source_as_of": "2026-09-10T00:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "mlit-report52-0909",
+      "publisher": "国土交通省",
+      "url": "https://www.mlit.go.jp/saigai/saigai_260728.html",
+      "source_as_of": "2026-09-09T12:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "qsr-report45-0918",
+      "publisher": "国土交通省九州地方整備局",
+      "url": "https://www.qsr.mlit.go.jp/bousai_joho/r80728kumamotozisinn.html",
+      "source_as_of": "2026-09-18T15:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    },
+    {
+      "source_id": "mod-hakuo2-ended-0913",
+      "publisher": "防衛省・自衛隊",
+      "url": "https://www.mod.go.jp/j/approach/defense/saigai/index.html",
+      "source_as_of": "2026-09-13T13:00:00+09:00",
+      "checked_at": "2026-09-24T18:27:00+09:00"
+    }
+  ],
+  "coverage": {
+    "recipient_municipalities": 45,
+    "institution_entities": 183,
+    "institution_source_mentions": 106,
+    "institution_missing": 0,
+    "current_shelters": 38,
+    "current_shelter_coordinates_confirmed": 38,
+    "current_shelter_unresolved": 0,
+    "current_shelter_conflicts": 0,
+    "current_count": 38,
+    "unresolved_count": 0,
+    "conflict_count": 0,
+    "ehime_required": 20,
+    "ehime_adjudicated": 20,
+    "ehime_missing": 0,
+    "prefecture_discovery_checked": 47,
+    "sender_entities_discovered": 321,
+    "sender_entities_adjudicated": 321,
+    "sender_orphan_source_mentions": 0,
+    "sender_blocking_conflicts": 0,
+    "sender_states": {
+      "CURRENT": 27,
+      "PLANNED": 0,
+      "HISTORICAL": 16,
+      "UNKNOWN": 278,
+      "NO_EVIDENCE": 0,
+      "CONFLICT": 0
+    },
+    "municipal_support": "audited",
+    "national_support": "audited",
+    "municipal_support_states": {
+      "CURRENT": 4,
+      "PLANNED": 8,
+      "HISTORICAL": 7,
+      "UNKNOWN": 55
+    },
+    "national_support_states": {
+      "CURRENT": 0,
+      "HISTORICAL": 3,
+      "PLANNED": 0,
+      "UNKNOWN": 12,
+      "CONFLICT": 0,
+      "blocking_unresolved_count": 0
+    }
+  },
+  "snapshots": {
+    "page_reference_at": "2026-09-24T18:27:00+09:00",
+    "damage_source_as_of": "2026-09-18T14:00:00+09:00",
+    "evacuees": 1626,
+    "reported_shelters": 36,
+    "human_damage": 408,
+    "housing_damage": 70086,
+    "last_fetched_map_shelters": 38,
+    "shelter_source_last_modified": "2026-09-15T00:29:57+09:00",
+    "ehime_support_as_of": "2026-09-24T12:00:00+09:00",
+    "ehime_human_support_persons": 334,
+    "ehime_human_support_person_days": 1699,
+    "ehime_counterpart_persons": 136,
+    "ehime_counterpart_person_days": 710,
+    "ehime_public_health_persons": 41,
+    "ehime_public_health_person_days": 238,
+    "ehime_dwat_persons": 46,
+    "ehime_dwat_person_days": 135,
+    "tec_force_latest_history_persons": 45,
+    "tec_force_latest_history_person_days": 5731,
+    "hakuo2_ended_on": "2026-09-13",
+    "volunteer_currently_accepting": [
+      "宇土市",
+      "宇城市",
+      "美里町",
+      "御船町",
+      "八代市"
+    ],
+    "volunteer_closed": [
+      "芦北町"
+    ]
+  },
+  "blocking_unresolved": [],
+  "accepted_unresolved": [
+    {
+      "issue_id": "current-shelter-live-json-20260924",
+      "state": "UNKNOWN",
+      "reason": "熊本県公式避難所JSONは今回の更新環境から新規取得できなかったため、9月15日最終取得の38施設を地図用参考レイヤとして保持し、最新県公表の36か所（9月18日14時）とは明確に分離した。",
+      "owner": "timepoint-audit",
+      "source_ids": [
+        "kumamoto-current-shelters-lastfetched-0915",
+        "kumamoto-recovery-hq-20260918"
+      ],
+      "next_review_at": "2026-09-25T09:00:00+09:00"
+    },
+    {
+      "issue_id": "national-same-definition-continuity-20260924",
+      "state": "UNKNOWN",
+      "reason": "国・関係機関の複数支援は9月24日基準の同一定義実働総数を直接確認できないため、過去値や予定期間からCURRENTへ推定しない。",
+      "owner": "national-audit",
+      "source_ids": [
+        "mlit-report52-0909",
+        "qsr-report45-0918"
+      ],
+      "next_review_at": "2026-09-25T09:00:00+09:00"
+    },
+    {
+      "issue_id": "volunteer-dates-unconfirmed-20260924",
+      "state": "UNKNOWN",
+      "reason": "嘉島町・甲佐町・氷川町は、最新募集日程を一次情報で直接確認できず、旧募集日程から現況を推定しない。",
+      "owner": "volunteer-audit",
+      "source_ids": [
+        "kumamoto-volunteer-statewide-0924"
+      ],
+      "next_review_at": "2026-09-25T09:00:00+09:00"
+    }
+  ]
+}
