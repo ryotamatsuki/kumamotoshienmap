@@ -3,9 +3,9 @@
   "repository": "ryotamatsuki/kumamotoshienmap",
   "audit_type": "sender_municipality_coverage",
   "policy_version": "2.6",
-  "reference_at": "2026-09-24T18:27:00+09:00",
-  "checked_at": "2026-09-24T18:27:00+09:00",
-  "base_main_sha": "8596eee104e8138e90ad17b29043b52e60d65f6d",
+  "reference_at": "2026-09-25T16:11:00+09:00",
+  "checked_at": "2026-09-25T16:11:00+09:00",
+  "base_main_sha": "80f703c7d07d1a1ee878c7d9cfd487518303f1fb",
   "entity_files": [
     "sender-audit/ehime.json",
     "sender-audit/hokkaido-tohoku.json",
@@ -312,7 +312,7 @@
     }
   },
   "blocking_unresolved": [],
-  "timepoint_note": "2026年9月24日18:27基準。愛媛県20市町、全国47都道府県の送出主体を再監査。愛媛県9月24日12時版・福岡県9月17日版等の最新一次情報を反映し、予定期間の経過だけではCURRENTへ昇格しない。",
-  "rechecked_at": "2026-09-24T18:27:00+09:00",
-  "release_id": "20260924-1827"
+  "timepoint_note": "2026年9月25日16:11基準。全国47都道府県の送出主体探索を再実施し、既発見321主体の裁定を保持。愛媛県20市町は最新の県公式支援資料を再確認。予定期間の到来だけではCURRENTへ昇格・HISTORICALへ移行しない。",
+  "rechecked_at": "2026-09-25T16:11:00+09:00",
+  "release_id": "20260925-1611"
 }

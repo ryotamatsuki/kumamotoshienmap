@@ -1,6 +1,6 @@
 {
   "region": "ehime",
-  "reference_at": "2026-09-24T18:27:00+09:00",
+  "reference_at": "2026-09-25T16:11:00+09:00",
   "entities": [
     {
       "entity": "上島町",
@@ -19,14 +19,14 @@
         "ehime-proxy-discovery"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "ehime-proxy-discovery"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00"
+      "rechecked_at": "2026-09-25T16:11:00+09:00"
     },
     {
       "entity": "久万高原町",
@@ -45,14 +45,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "current_evidence_type": "explicit_current_activity"
     },
     {
@@ -72,14 +72,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
@@ -99,14 +99,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
@@ -126,14 +126,14 @@
         "ehime-ikata-donation"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "source_as_of": null,
       "sources_checked": [
         "ehime-ikata-donation"
       ],
       "reason": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
-      "rechecked_at": "2026-09-24T18:27:00+09:00"
+      "rechecked_at": "2026-09-25T16:11:00+09:00"
     },
     {
       "entity": "八幡浜市",
@@ -152,14 +152,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "current_evidence_type": "explicit_current_activity"
     },
     {
@@ -179,14 +179,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
       "current_evidence_type": "explicit_current_activity",
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
@@ -206,14 +206,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
@@ -233,14 +233,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
@@ -260,14 +260,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "current_evidence_type": "explicit_current_activity"
     },
     {
@@ -287,14 +287,14 @@
         "ehime-ainan-listing"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
       "source_as_of": null,
       "sources_checked": [
         "ehime-ainan-listing"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00"
+      "rechecked_at": "2026-09-25T16:11:00+09:00"
     },
     {
       "entity": "新居浜市",
@@ -313,14 +313,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
       "current_evidence_type": "explicit_current_activity",
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
@@ -340,13 +340,13 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "current_evidence_type": "explicit_current_activity",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
@@ -367,14 +367,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
@@ -394,14 +394,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
@@ -421,14 +421,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "current_evidence_type": "explicit_current_activity"
     },
     {
@@ -448,14 +448,14 @@
         "ehime-tobe-donation-current"
       ],
       "evidence_note": "砥部町公式で熊本地震義援金を10月23日まで受け付けており、9月24日時点で現行受付を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "current_evidence_type": "active_collection_explicit",
       "source_as_of": "2026-07-31T00:00:00+09:00",
       "sources_checked": [
         "ehime-tobe-donation-current"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "reason": "砥部町公式で熊本地震義援金を10月23日まで受け付けており、9月24日時点で現行受付を直接確認。"
     },
     {
@@ -475,14 +475,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "current_evidence_type": "explicit_current_activity"
     },
     {
@@ -502,14 +502,14 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
       "current_evidence_type": "explicit_current_activity",
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     },
     {
@@ -529,17 +529,17 @@
         "ehime-support-0924"
       ],
       "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-24T18:27:00+09:00",
-      "next_review_at": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "next_review_at": "2026-09-26T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
       "source_as_of": "2026-09-24T12:00:00+09:00",
       "sources_checked": [
         "ehime-support-0924"
       ],
-      "rechecked_at": "2026-09-24T18:27:00+09:00",
+      "rechecked_at": "2026-09-25T16:11:00+09:00",
       "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
     }
   ],
-  "checked_at": "2026-09-24T18:27:00+09:00",
-  "rechecked_at": "2026-09-24T18:27:00+09:00"
+  "checked_at": "2026-09-25T16:11:00+09:00",
+  "rechecked_at": "2026-09-25T16:11:00+09:00"
 }

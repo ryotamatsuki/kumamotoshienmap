@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "reference_at": "2026-09-25T16:11:00+09:00",
+  "checked_at": "2026-09-25T16:11:00+09:00",
+  "source_url": "https://www.pref.ehime.jp/page/154856.html",
+  "source_as_of": "2026-09-24T12:00:00+09:00",
+  "human_support": {
+    "total": {
+      "persons": 334,
+      "person_days": 1699
+    },
+    "counterpart_support": {
+      "persons": 136,
+      "person_days": 710,
+      "current": true,
+      "planned_through": null
+    },
+    "public_health": {
+      "persons": 41,
+      "person_days": 238,
+      "planned_through": "2026-09-30"
+    },
+    "dwat": {
+      "persons": 46,
+      "person_days": 135,
+      "planned_through": "2026-09-30"
+    }
+  },
+  "counterpart": {
+    "persons": 136,
+    "person_days": 710
+  },
+  "health": {
+    "persons": 41,
+    "person_days": 238
+  },
+  "dwat": {
+    "persons": 46,
+    "person_days": 135
+  },
+  "programs": {
+    "dmat": {
+      "persons": 39,
+      "person_days": 150,
+      "state": "HISTORICAL",
+      "ended_on": "2026-09-05"
+    },
+    "dpat": {
+      "persons": 8,
+      "person_days": 32,
+      "state": "HISTORICAL",
+      "ended_on": "2026-08-12"
+    },
+    "police_total": {
+      "persons": 62,
+      "person_days": 428
+    },
+    "police_auto_patrol": {
+      "persons": 20,
+      "person_days": 156,
+      "planned_through": "2026-09-25"
+    },
+    "volunteer_dispatch": {
+      "persons": 55,
+      "person_days": 110,
+      "state": "HISTORICAL",
+      "ended_on": "2026-09-22"
+    },
+    "jrat": {
+      "persons": 15,
+      "person_days": 63,
+      "planned_through": "2026-09-25"
+    },
+    "social_welfare_council_staff": {
+      "persons": 15,
+      "person_days": 75,
+      "planned_through": "2026-10-15"
+    },
+    "social_welfare_facility_staff": {
+      "persons": 7,
+      "person_days": 29,
+      "planned_through": "2026-09-28"
+    },
+    "redcross_relief": {
+      "persons": 20,
+      "person_days": 106,
+      "state": "HISTORICAL",
+      "ended_on": "2026-09-09"
+    },
+    "redcross_medical_coordination": {
+      "persons": 3,
+      "person_days": 18,
+      "state": "HISTORICAL",
+      "ended_on": "2026-08-25"
+    },
+    "redcross_mental_care": {
+      "persons": 4,
+      "person_days": 20,
+      "state": "HISTORICAL",
+      "ended_on": "2026-08-27"
+    },
+    "building_risk_assessor": {
+      "persons": 2,
+      "person_days": 6,
+      "state": "HISTORICAL",
+      "ended_on": "2026-08-10"
+    }
+  },
+  "material_support": {
+    "prefectural_large_toilet_truck": {
+      "location": "竜北中学校",
+      "ended_on": "2026-09-07"
+    },
+    "shower_wash_system": {
+      "ended_on": "2026-08-26"
+    },
+    "consultation_housing": {
+      "available_units": 175
+    }
+  },
+  "donations": {
+    "amount_yen": 27765445,
+    "as_of": "2026-09-17"
+  },
+  "blocking_unresolved": [],
+  "recheck_note": "2026年9月25日16:11再確認。愛媛県公式ページの最新公表は9月24日12時資料のまま。予定日の到来だけで終了扱いにしない。"
+}

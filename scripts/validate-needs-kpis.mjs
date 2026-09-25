@@ -47,6 +47,9 @@ for(const current of [
 ])if(!sourceHtml.includes(current))throw new Error(`overview current value missing: ${current}`);
 if(!sourceHtml.includes(audit.water.display_note))throw new Error('water current evidence not synchronized');
 if(!sourceHtml.includes(audit.waste.display_note))throw new Error('waste current evidence not synchronized');
+if(audit.well_recovery&&!sourceHtml.includes(audit.well_recovery.display_note))throw new Error('well recovery evidence not synchronized');
+if(audit.material_support&&!sourceHtml.includes(audit.material_support.detail))throw new Error('material receipt closure not synchronized');
+for(const row of audit.local_shelter_updates||[])if(!sourceHtml.includes(row.note))throw new Error('local shelter update not synchronized: '+row.municipality);
 if(!sourceHtml.includes("sourceUrl:SRC.prefecture.url"))throw new Error('province current source binding missing');
 
 console.log(JSON.stringify({
