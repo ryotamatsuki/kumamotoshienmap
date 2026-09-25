@@ -55,9 +55,30 @@ const sourceJson={
  waste:{label:`${sourceLabel(wasteSource,'環境省 災害廃棄物対策')}（${md(wasteSource.source_as_of)}）`,url:wasteSource.url}
 };
 const d=isoDate(snapshot.as_of),dateLabel=md(snapshot.as_of),time=String(snapshot.as_of).slice(11,16),wd=weekday(snapshot.as_of);
-const overlay=`${start}
+let overlay=`${start}
 {const S=${JSON.stringify(snapshot)},SRC=${JSON.stringify(sourceJson)};const event=TIMELINE_EVENTS.find(v=>v.id==='t-current-status');if(event)Object.assign(event,{date:'${d}',dateLabel:'${dateLabel}',weekday:'${wd}',time:'${time}',phase:'recovery',actor:'kumamoto',title:'熊本県復旧・復興本部資料で被害・避難状況を更新',summary:'避難者'+S.evacuees.toLocaleString('ja-JP')+'人、開設避難所'+S.shelters+'か所、人的被害'+S.human_damage+'人、住家被害'+S.housing_damage.toLocaleString('ja-JP')+'棟。',detail:'熊本県復旧・復興本部の${mdhm(snapshot.as_of)}県全体値。公式避難所JSONは別定義・別時点で表示し、県公表'+S.shelters+'か所へ機械的に合わせない。',sourceLabel:SRC.prefecture.label,sourceUrl:SRC.prefecture.url,tags:['熊本県復旧・復興本部','${mdhm(snapshot.as_of)}','最新確認']});const U={'p-shelter':{title:'避難所運営・保健福祉',level:'very-high',observed:'熊本県${mdhm(snapshot.as_of)}資料では避難所'+S.shelters+'か所、避難者'+S.evacuees.toLocaleString('ja-JP')+'人。現行公式避難所JSONは取得時点の開設施設を別定義で表示する。',sourceLabel:SRC.prefecture.label,sourceUrl:SRC.prefecture.url},'p-water':{title:'井戸等の生活用水復旧・衛生支援',level:'medium',observed:${JSON.stringify(water.display_note)},sourceLabel:SRC.water.label,sourceUrl:SRC.water.url},'p-admin':{observed:'熊本県${mdhm(snapshot.as_of)}資料では住家被害'+S.housing_damage.toLocaleString('ja-JP')+'棟。市町別旧スナップショットとは時点が異なるため、県計と旧内訳を分離する。',sourceLabel:SRC.prefecture.label,sourceUrl:SRC.prefecture.url},'p-housing':{observed:'熊本県${mdhm(snapshot.as_of)}資料では住家被害'+S.housing_damage.toLocaleString('ja-JP')+'棟。確認済み県計を超えて推測しない。',sourceLabel:SRC.prefecture.label,sourceUrl:SRC.prefecture.url},'p-waste':{observed:${JSON.stringify(waste.display_note)},sourceLabel:SRC.waste.label,sourceUrl:SRC.waste.url}};for(const [id,v] of Object.entries(U)){const item=PROVINCE_NEEDS.find(q=>q.id===id);if(item)Object.assign(item,v);}const waterRecord=RECORDS.find(v=>v.id==='national-water');if(waterRecord)Object.assign(waterRecord,{status:'上水道の断水解消を確認',scale:'上水道断水：解消確認',period:'熊本県 8月31日復旧・復興本部',detail:${JSON.stringify(water.display_note)},asOf:'熊本県 8月31日',sourceLabel:SRC.water.label,sourceUrl:SRC.water.url});}
 ${end}`;
+
+const material=audit.material_support||null,wellRecovery=audit.well_recovery||null,localShelters=Array.isArray(audit.local_shelter_updates)?audit.local_shelter_updates:[];
+if(material&&wellRecovery){
+ const materialSource=sourceById.get(material.source_id),wellRecoverySource=sourceById.get(wellRecovery.source_id);
+ if(!materialSource||!wellRecoverySource)throw new Error('timepoint qualitative source missing');
+ const locals=localShelters.map(row=>({...row,source:sourceById.get(row.source_id)}));
+ if(locals.some(row=>!row.source))throw new Error('local shelter source missing');
+ const x={material:{...material,sourceLabel:sourceLabel(materialSource,'熊本県 支援物資'),sourceUrl:materialSource.url},well:{...wellRecovery,sourceLabel:sourceLabel(wellRecoverySource,'熊本県 被災井戸復旧'),sourceUrl:wellRecoverySource.url},locals:locals.map(row=>({...row,sourceLabel:sourceLabel(row.source,row.municipality),sourceUrl:row.source.url}))};
+ overlay+=`
+/* TIMEPOINT_DELTA_20260925_START */
+{const X=${JSON.stringify(x)};const addSrc=(name,url,asOf)=>{if(url&&!SOURCES.some(s=>s.url===url))SOURCES.push({group:'9月25日復旧局面',name,asOf,url});};addSrc(X.material.sourceLabel,X.material.sourceUrl,'9月25日');addSrc(X.well.sourceLabel,X.well.sourceUrl,'9月25日');for(const r of X.locals)addSrc(r.sourceLabel,r.sourceUrl,'9月25日');
+ const m=RECORDS.find(v=>v.id==='national-push');if(m)Object.assign(m,{status:X.material.status,scale:X.material.scale,period:X.material.period,detail:X.material.detail,asOf:'熊本県 9月25日',sourceLabel:X.material.sourceLabel,sourceUrl:X.material.sourceUrl,auditState:'HISTORICAL'});
+ const w=PROVINCE_NEEDS.find(v=>v.id==='p-water');if(w)Object.assign(w,{title:'生活用水・被災井戸の復旧',level:'high',observed:X.well.display_note,sourceLabel:X.well.sourceLabel,sourceUrl:X.well.sourceUrl});
+ const upsert=e=>{const i=TIMELINE_EVENTS.findIndex(v=>v.id===e.id);if(i>=0)TIMELINE_EVENTS[i]=e;else TIMELINE_EVENTS.push(e);};
+ upsert({id:'t-materials-20260925',date:'2026-09-25',dateLabel:'9月25日',weekday:'金',time:'00:00',phase:'recovery',actor:'kumamoto',title:'熊本県での支援物資受入を終了',summary:X.material.detail,detail:X.material.detail,place:'熊本県内',sourceLabel:X.material.sourceLabel,sourceUrl:X.material.sourceUrl,recordIds:['national-push'],hubIds:['kumamoto-hq'],tags:['支援物資','受入終了','復旧局面']});
+ upsert({id:'t-wells-20260925',date:'2026-09-25',dateLabel:'9月25日',weekday:'金',time:'00:00',phase:'recovery',actor:'kumamoto',title:'被災井戸復旧へ井戸掘削業者を全国募集',summary:X.well.display_note,detail:X.well.display_note,place:'八代市を中心とする被災地域',sourceLabel:X.well.sourceLabel,sourceUrl:X.well.sourceUrl,recordIds:['national-water'],hubIds:['yatsushiro'],tags:['井戸','生活用水','施工能力']});
+ for(const r of X.locals)upsert({id:'t-local-shelter-'+r.municipality,date:String(r.as_of).slice(0,10),dateLabel:'9月25日',weekday:'金',time:String(r.as_of).slice(11,16),phase:'recovery',actor:'kumamoto',title:r.municipality+'の全指定避難所を閉鎖',summary:r.note,detail:r.note,place:r.municipality,sourceLabel:r.sourceLabel,sourceUrl:r.sourceUrl,recordIds:[],hubIds:[],tags:['避難所','閉鎖','地域差分']});
+}
+/* TIMEPOINT_DELTA_20260925_END */`;
+}
+
 const marker='/* EHIME_CURRENT_20260915_START */',at=html.indexOf(marker);
 if(at<0)throw new Error('Ehime anchor missing');
 html=html.slice(0,at)+overlay+'\n\n'+html.slice(at);
