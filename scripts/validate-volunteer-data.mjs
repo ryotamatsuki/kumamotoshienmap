@@ -30,7 +30,7 @@ assert.equal(C["宇土市"].activity_start_date,"2026-09-28");
 assert.equal(C["宇土市"].activity_end_date,"2026-10-04");
 assert.ok(C["宇城市"].recruitment_status.startsWith("募集中"));
 assert.equal(C["宇城市"].eligibility_currently_applicable,true);
-assert.equal(C["宇城市"].activity_end_date,"2026-10-13");
+assert.equal(C["宇城市"].activity_end_date,null);
 assert.ok(C["美里町"].recruitment_status.startsWith("募集中"));
 assert.ok(C["八代市"].recruitment_status.startsWith("募集中")&&C["八代市"].recruitment_status.includes("第7弾")&&C["八代市"].recruitment_status.includes("団体第6弾"));
 assert.equal(C["八代市"].group_allowed,true);
