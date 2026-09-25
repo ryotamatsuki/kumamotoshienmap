@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "repository": "ryotamatsuki/kumamotoshienmap",
+  "reference_at": "2026-09-25T16:11:00+09:00",
+  "purpose": "2026年9月25日確認時点の県全体KPIを再検証し、支援物資受入終了・被災井戸復旧の施工能力不足・甲佐町全指定避難所閉鎖を復旧局面の差分として同期する。",
+  "policy": {
+    "primary_source_required": true,
+    "older_snapshot_must_not_display_as_current": true,
+    "live_shelter_json_is_separate_definition": true,
+    "municipal_old_snapshots_are_not_reallocated_to_latest_prefectural_total": true
+  },
+  "sources": [
+    {
+      "source_id": "kumamoto-recovery-hq-20260918",
+      "publisher": "熊本県",
+      "title": "第4回令和8年熊本地震復旧・復興本部会議",
+      "url": "https://www.pref.kumamoto.jp/soshiki/5/278881.html",
+      "source_as_of": "2026-09-18T14:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "notes": "9月18日14時時点の人的被害、避難、住家被害を確認。"
+    },
+    {
+      "source_id": "kumamoto-recovery-hq-water-20260831",
+      "publisher": "熊本県",
+      "title": "第1回令和8年熊本地震復旧・復興本部会議",
+      "url": "https://www.pref.kumamoto.jp/soshiki/5/278881.html",
+      "source_as_of": "2026-08-31T17:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "notes": "上水道の断水解消を明記。旧断水戸数は現況値として扱わない。"
+    },
+    {
+      "source_id": "env-waste-20260918",
+      "publisher": "環境省",
+      "title": "令和8年熊本地震における災害廃棄物対策",
+      "url": "https://www.env.go.jp/saigai/kumamoto_earthquake_202607/index.html",
+      "source_as_of": "2026-09-18T00:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "notes": "9月18日時点の災害廃棄物対策更新を確認。旧仮置場数を現況値として流用しない。"
+    },
+    {
+      "source_id": "kumamoto-well-drilling-20260925",
+      "publisher": "熊本県",
+      "title": "令和8年熊本地震における被災井戸復旧のための井戸掘削業者の募集について",
+      "url": "https://www.pref.kumamoto.jp/soshiki/51/280731.html",
+      "source_as_of": "2026-09-25T00:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "notes": "八代市内を中心に家庭井戸の被害が多く、県内業者数の制約から復旧待ち長期化が想定されるため全国から井戸掘削業者を募集。"
+    },
+    {
+      "source_id": "kumamoto-materials-closed-20260925",
+      "publisher": "熊本県",
+      "title": "令和8年熊本地震に伴う支援物資のお礼",
+      "url": "https://www.pref.kumamoto.jp/soshiki/27/275384.html",
+      "source_as_of": "2026-09-25T00:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "notes": "必要物資が概ね行き渡ったとして熊本県での支援物資受入を終了。義援金・寄附金は継続。"
+    },
+    {
+      "source_id": "kosa-shelters-closed-20260925",
+      "publisher": "甲佐町",
+      "title": "指定避難所の閉鎖について",
+      "url": "https://www.town.kosa.lg.jp/q/toppage.html",
+      "source_as_of": "2026-09-25T09:00:00+09:00",
+      "checked_at": "2026-09-25T16:11:00+09:00",
+      "notes": "9月25日午前9時、甲佐町が開設していた全指定避難所を閉鎖。"
+    }
+  ],
+  "prefectural_snapshot": {
+    "source_id": "kumamoto-recovery-hq-20260918",
+    "as_of": "2026-09-18T14:00:00+09:00",
+    "human_damage": 408,
+    "deaths": 38,
+    "evacuees": 1626,
+    "evacuee_municipalities": 10,
+    "shelters": 36,
+    "shelter_municipalities": 11,
+    "housing_damage": 70086,
+    "housing_breakdown": {
+      "destroyed": 2283,
+      "large_scale_half_destroyed": 819,
+      "half_destroyed": 5971,
+      "partially_damaged": 46266,
+      "unclassified": 14747
+    },
+    "certification_progress": {
+      "as_of": "2026-09-16T00:00:00+09:00",
+      "applications": 84359,
+      "actual_application_households": 76175,
+      "surveys": 77637,
+      "certificates": 54797,
+      "survey_rate_percent": 92,
+      "delivery_rate_percent": 71.9
+    }
+  },
+  "water": {
+    "source_id": "kumamoto-recovery-hq-water-20260831",
+    "state": "RESOLVED_REPORTED",
+    "display_value": "解消確認",
+    "display_note": "8月31日、熊本県復旧・復興本部で上水道の断水解消を公表。一方、9月25日には八代市内を中心とする被災井戸について、県内の井戸掘削業者数が限られ復旧待ちの長期化が想定されるとして、県が全国から施工業者の募集を開始。",
+    "historical_values_not_current": [
+      "約4,300戸",
+      "4,284戸",
+      "給水車129台"
+    ]
+  },
+  "waste": {
+    "source_id": "env-waste-20260918",
+    "state": "ONGOING",
+    "display_value": "処理継続",
+    "display_note": "環境省が9月18日時点の災害廃棄物対策を更新。仮置場数など旧時点の集計を現況値として使用しない。"
+  },
+  "well_recovery": {
+    "source_id": "kumamoto-well-drilling-20260925",
+    "state": "ONGOING_CAPACITY_CONSTRAINT",
+    "display_value": "井戸復旧継続",
+    "display_note": "八代市内を中心に家庭井戸の被害が残り、県内の井戸掘削業者数が限られるため復旧待ちの長期化が想定。熊本県が9月25日から全国の井戸掘削業者を募集。"
+  },
+  "material_support": {
+    "source_id": "kumamoto-materials-closed-20260925",
+    "state": "RECEIPT_ENDED",
+    "status": "県の支援物資受入終了",
+    "scale": "必要物資は概ね行き渡り",
+    "period": "熊本県 9月25日公表",
+    "detail": "全国からの支援により被災地に必要な物資が概ね行き渡ったとして、熊本県は県での支援物資受入を終了。義援金・寄附金の受付は継続。",
+    "as_of": "2026-09-25T00:00:00+09:00"
+  },
+  "local_shelter_updates": [
+    {
+      "municipality": "甲佐町",
+      "source_id": "kosa-shelters-closed-20260925",
+      "state": "ALL_DESIGNATED_SHELTERS_CLOSED",
+      "as_of": "2026-09-25T09:00:00+09:00",
+      "note": "9月25日午前9時、甲佐町農業研修センター「ろくじ館」を閉鎖し、甲佐町が開設していた全ての指定避難所が閉鎖。ホテル等避難も町の避難所閉鎖に伴い終了。"
+    }
+  ]
+}
