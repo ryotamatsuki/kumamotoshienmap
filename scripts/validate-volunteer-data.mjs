@@ -15,7 +15,7 @@ assert.equal(d.centers.length,11);
 assert.equal(d.all_municipalities.length,45);
 assert.equal(d.all_centers.length,45);
 const auditDir=join(root,"operations","audits");
-const latestAudit=readdirSync(auditDir).filter(name=>/^volunteer-source-recheck-\\d{8}-\\d{4}\\.json$/u.test(name)).sort().at(-1);
+const latestAudit=readdirSync(auditDir).filter(name=>/^volunteer-source-recheck-\d{8}-\d{4}\.json$/u.test(name)).sort().at(-1);
 assert.ok(latestAudit,"最新ボランティア監査ファイルがありません");
 const audit=JSON.parse(readFileSync(join(auditDir,latestAudit),"utf8"));
 assert.equal(d.meta.reference_at,audit.reference_at);
