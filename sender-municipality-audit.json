@@ -19,7 +19,8 @@
     "sender-audit/timepoint-20260830-additions.json",
     "sender-audit/timepoint-20260831-additions.json",
     "sender-audit/timepoint-20260901-additions.json",
-    "sender-audit/timepoint-20260903-additions.json"
+    "sender-audit/timepoint-20260903-additions.json",
+    "sender-audit/timepoint-20260929-additions.json"
   ],
   "sources_file": "sender-audit/sources.json",
   "sources_additions_file": "sender-audit/sources-additions.json",
@@ -294,25 +295,25 @@
     },
     "nationwide": {
       "prefecture_discovery_checked": 47,
-      "discovered_basic_municipality_senders": 321,
-      "adjudicated_basic_municipality_senders": 321,
+      "discovered_basic_municipality_senders": 331,
+      "adjudicated_basic_municipality_senders": 331,
       "unadjudicated_discovered_senders": [],
-      "source_mentions": 321,
+      "source_mentions": 331,
       "orphan_source_mentions": [],
       "invalid_current": [],
       "blocking_conflicts": 0,
       "states": {
         "CURRENT": 33,
-        "PLANNED": 0,
+        "PLANNED": 1,
         "HISTORICAL": 14,
-        "UNKNOWN": 274,
+        "UNKNOWN": 283,
         "NO_EVIDENCE": 0,
         "CONFLICT": 0
       }
     }
   },
   "blocking_unresolved": [],
-  "timepoint_note": "2026年9月29日07:23基準。全国47都道府県の送出主体探索を再実施し、既発見321主体を再裁定。愛媛県20市町は9月28日12時版の県公式資料で全20市町の災害支援代理寄附『実施中』を確認。徳島県9月28日公式により美馬市・三好市・那賀町の実派遣をCURRENTへ再裁定。予定期間の到来だけではCURRENTへ昇格・HISTORICALへ移行しない。",
+  "timepoint_note": "2026-09-29 07:23 JST。愛媛20市町は9月28日版の益城町ふるさと納税代理寄附『県及び県内20市町が実施中』でCURRENTを直接確認。47都道府県sender discoveryを再実施し、徳島・宮城・長崎の新規基礎自治体sender 10主体を追加裁定。予定期間の経過のみでCURRENT/HISTORICALへ推定しない。",
   "rechecked_at": "2026-09-29T07:23:00+09:00",
   "release_id": "20260929-0723"
 }
