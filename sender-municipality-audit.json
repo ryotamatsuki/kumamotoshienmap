@@ -3,9 +3,9 @@
   "repository": "ryotamatsuki/kumamotoshienmap",
   "audit_type": "sender_municipality_coverage",
   "policy_version": "2.6",
-  "reference_at": "2026-09-25T16:11:00+09:00",
-  "checked_at": "2026-09-25T16:11:00+09:00",
-  "base_main_sha": "80f703c7d07d1a1ee878c7d9cfd487518303f1fb",
+  "reference_at": "2026-09-29T07:23:00+09:00",
+  "checked_at": "2026-09-29T07:23:00+09:00",
+  "base_main_sha": "4c1464f2ba55933be792ec66dc79c982723b21f1",
   "entity_files": [
     "sender-audit/ehime.json",
     "sender-audit/hokkaido-tohoku.json",
@@ -283,10 +283,10 @@
       "unadjudicated_source_mentions": [],
       "blocking_unresolved": 0,
       "states": {
-        "CURRENT": 17,
+        "CURRENT": 20,
         "PLANNED": 0,
         "HISTORICAL": 0,
-        "UNKNOWN": 3,
+        "UNKNOWN": 0,
         "NO_EVIDENCE": 0,
         "CONFLICT": 0
       },
@@ -302,17 +302,17 @@
       "invalid_current": [],
       "blocking_conflicts": 0,
       "states": {
-        "CURRENT": 27,
+        "CURRENT": 33,
         "PLANNED": 0,
-        "HISTORICAL": 16,
-        "UNKNOWN": 278,
+        "HISTORICAL": 14,
+        "UNKNOWN": 274,
         "NO_EVIDENCE": 0,
         "CONFLICT": 0
       }
     }
   },
   "blocking_unresolved": [],
-  "timepoint_note": "2026年9月25日16:11基準。全国47都道府県の送出主体探索を再実施し、既発見321主体の裁定を保持。愛媛県20市町は最新の県公式支援資料を再確認。予定期間の到来だけではCURRENTへ昇格・HISTORICALへ移行しない。",
-  "rechecked_at": "2026-09-25T16:11:00+09:00",
-  "release_id": "20260925-1611"
+  "timepoint_note": "2026年9月29日07:23基準。全国47都道府県の送出主体探索を再実施し、既発見321主体を再裁定。愛媛県20市町は9月28日12時版の県公式資料で全20市町の災害支援代理寄附『実施中』を確認。徳島県9月28日公式により美馬市・三好市・那賀町の実派遣をCURRENTへ再裁定。予定期間の到来だけではCURRENTへ昇格・HISTORICALへ移行しない。",
+  "rechecked_at": "2026-09-29T07:23:00+09:00",
+  "release_id": "20260929-0723"
 }
