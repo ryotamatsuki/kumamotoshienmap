@@ -36,10 +36,19 @@
       "search_query": "宮城県 令和8年熊本地震 熊本 支援 職員派遣 市町村 公式",
       "sources_checked": [
         "miyagi-current-roster",
-        "miyagi-sendai-health-plan"
+        "miyagi-sendai-health-plan",
+        "miyagi-current-roster-0928"
       ],
       "sender_candidates_found": [
-        "仙台市"
+        "仙台市",
+        "富谷市",
+        "東松島市",
+        "気仙沼市",
+        "美里町",
+        "大郷町",
+        "名取市",
+        "白石市",
+        "南三陸町"
       ],
       "checked_at": "2026-09-29T07:23:00+09:00",
       "rechecked_at": "2026-09-29T07:23:00+09:00"
@@ -497,7 +506,10 @@
         "tokushima-0823",
         "tokushima-0828",
         "tokushima-housing-wave3-0903",
-        "tokushima-liaison-wave10-0901"
+        "tokushima-liaison-wave10-0901",
+        "tokushima-housing-wave7-0923",
+        "tokushima-liaison-wave16-0925",
+        "tokushima-housing-wave8-0928"
       ],
       "sender_candidates_found": [
         "つるぎ町",
@@ -513,7 +525,9 @@
         "美馬市",
         "那賀町",
         "阿南市",
-        "鳴門市"
+        "鳴門市",
+        "吉野川市",
+        "阿波市"
       ],
       "checked_at": "2026-09-29T07:23:00+09:00",
       "rechecked_at": "2026-09-29T07:23:00+09:00"
@@ -659,7 +673,10 @@
       "sources_checked": [
         "nagasaki-wave7-0824",
         "nagasaki-status-0827",
-        "nagasaki-wave-0831"
+        "nagasaki-wave-0831",
+        "nagasaki-wave-0908",
+        "nagasaki-wave-0922",
+        "isahaya-health-0928"
       ],
       "sender_candidates_found": [
         "西海市",
@@ -672,7 +689,10 @@
         "五島市",
         "雲仙市",
         "佐世保市",
-        "小値賀町"
+        "小値賀町",
+        "南島原市",
+        "対馬市",
+        "壱岐市"
       ],
       "checked_at": "2026-09-29T07:23:00+09:00",
       "rechecked_at": "2026-09-29T07:23:00+09:00"

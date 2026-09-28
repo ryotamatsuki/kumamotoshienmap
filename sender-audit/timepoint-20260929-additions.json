@@ -1,0 +1,266 @@
+{
+  "region": "timepoint-20260929-additions",
+  "reference_at": "2026-09-29T07:23:00+09:00",
+  "entities": [
+    {
+      "prefecture": "徳島県",
+      "entity": "吉野川市",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "住家被害認定調査"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-housing-wave7-0923"
+      ],
+      "evidence_note": "徳島県公式が9月23日に宇土市へ実派遣したと明示。派遣期間9月23日～9月29日。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-23T00:00:00+09:00",
+      "sources_checked": [
+        "tokushima-housing-wave7-0923"
+      ],
+      "current_evidence_type": "actual_dispatch_confirmed",
+      "rechecked_at": "2026-09-29T07:23:00+09:00"
+    },
+    {
+      "prefecture": "徳島県",
+      "entity": "阿波市",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "住家被害認定調査"
+      ],
+      "destinations": [
+        "宇土市"
+      ],
+      "source_ids": [
+        "tokushima-housing-wave7-0923"
+      ],
+      "evidence_note": "徳島県公式が9月23日に宇土市へ実派遣したと明示。派遣期間9月23日～9月29日。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-23T00:00:00+09:00",
+      "sources_checked": [
+        "tokushima-housing-wave7-0923"
+      ],
+      "current_evidence_type": "actual_dispatch_confirmed",
+      "rechecked_at": "2026-09-29T07:23:00+09:00"
+    },
+    {
+      "prefecture": "宮城県",
+      "entity": "大郷町",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "住家被害認定調査"
+      ],
+      "destinations": [
+        "御船町"
+      ],
+      "source_ids": [
+        "miyagi-current-roster-0928"
+      ],
+      "evidence_note": "宮城県9月28日現在の派遣状況で大郷町職員2名を御船町へ「派遣中」と明記。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T00:00:00+09:00",
+      "sources_checked": [
+        "miyagi-current-roster-0928"
+      ],
+      "current_evidence_type": "actual_presence_confirmed",
+      "rechecked_at": "2026-09-29T07:23:00+09:00"
+    },
+    {
+      "prefecture": "宮城県",
+      "entity": "名取市",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "住家被害認定調査"
+      ],
+      "destinations": [
+        "御船町"
+      ],
+      "source_ids": [
+        "miyagi-current-roster-0928"
+      ],
+      "evidence_note": "宮城県9月28日現在の派遣状況で名取市職員2名を御船町へ「派遣中」と明記。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T00:00:00+09:00",
+      "sources_checked": [
+        "miyagi-current-roster-0928"
+      ],
+      "current_evidence_type": "actual_presence_confirmed",
+      "rechecked_at": "2026-09-29T07:23:00+09:00"
+    },
+    {
+      "prefecture": "宮城県",
+      "entity": "白石市",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "住家被害認定調査"
+      ],
+      "destinations": [
+        "御船町"
+      ],
+      "source_ids": [
+        "miyagi-current-roster-0928"
+      ],
+      "evidence_note": "宮城県9月28日現在の派遣状況で白石市職員2名を御船町へ「派遣中」と明記。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T00:00:00+09:00",
+      "sources_checked": [
+        "miyagi-current-roster-0928"
+      ],
+      "current_evidence_type": "actual_presence_confirmed",
+      "rechecked_at": "2026-09-29T07:23:00+09:00"
+    },
+    {
+      "prefecture": "宮城県",
+      "entity": "南三陸町",
+      "municipality_type": "town",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "CURRENT",
+      "support_types": [
+        "住家被害認定調査"
+      ],
+      "destinations": [
+        "御船町"
+      ],
+      "source_ids": [
+        "miyagi-current-roster-0928"
+      ],
+      "evidence_note": "宮城県9月28日現在の派遣状況で南三陸町職員2名を御船町へ「派遣中」と明記。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T00:00:00+09:00",
+      "sources_checked": [
+        "miyagi-current-roster-0928"
+      ],
+      "current_evidence_type": "actual_presence_confirmed",
+      "rechecked_at": "2026-09-29T07:23:00+09:00"
+    },
+    {
+      "prefecture": "宮城県",
+      "entity": "東松島市",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "住家被害認定調査"
+      ],
+      "destinations": [
+        "御船町"
+      ],
+      "source_ids": [
+        "miyagi-current-roster-0928"
+      ],
+      "evidence_note": "宮城県9月28日現在の派遣状況で累計内訳に掲載される一方、派遣中内訳には掲載されていないため当該ローテーションはHISTORICALとして保持。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T00:00:00+09:00",
+      "sources_checked": [
+        "miyagi-current-roster-0928"
+      ],
+      "rechecked_at": "2026-09-29T07:23:00+09:00"
+    },
+    {
+      "prefecture": "宮城県",
+      "entity": "気仙沼市",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "HISTORICAL",
+      "support_types": [
+        "住家被害認定調査"
+      ],
+      "destinations": [
+        "御船町"
+      ],
+      "source_ids": [
+        "miyagi-current-roster-0928"
+      ],
+      "evidence_note": "宮城県9月28日現在の派遣状況で累計内訳に掲載される一方、派遣中内訳には掲載されていないため当該ローテーションはHISTORICALとして保持。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T00:00:00+09:00",
+      "sources_checked": [
+        "miyagi-current-roster-0928"
+      ],
+      "rechecked_at": "2026-09-29T07:23:00+09:00"
+    },
+    {
+      "prefecture": "長崎県",
+      "entity": "南島原市",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "PLANNED",
+      "support_types": [
+        "住家被害認定調査・罹災証明"
+      ],
+      "destinations": [
+        "美里町"
+      ],
+      "source_ids": [
+        "nagasaki-wave-0922"
+      ],
+      "evidence_note": "長崎県9月18日公表で美里町第11陣に南島原市職員2名を派遣すると明示。実派遣の直接確認ではないためPLANNED。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-18T00:00:00+09:00",
+      "sources_checked": [
+        "nagasaki-wave-0922"
+      ],
+      "reason": "長崎県9月18日公表で美里町第11陣に南島原市職員2名を派遣すると明示。実派遣の直接確認ではないためPLANNED。",
+      "rechecked_at": "2026-09-29T07:23:00+09:00"
+    },
+    {
+      "prefecture": "長崎県",
+      "entity": "対馬市",
+      "municipality_type": "city",
+      "kind": "basic_municipality_sender",
+      "required": false,
+      "state": "UNKNOWN",
+      "support_types": [
+        "職員派遣"
+      ],
+      "destinations": [
+        "八代市"
+      ],
+      "source_ids": [
+        "nagasaki-wave-0908"
+      ],
+      "evidence_note": "長崎県9月4日公表で八代市第7陣として対馬市職員2名を派遣予定と確認。9月29日基準の実働・終了を直接確認できないためUNKNOWN。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-04T00:00:00+09:00",
+      "sources_checked": [
+        "nagasaki-wave-0908"
+      ],
+      "reason": "長崎県9月4日公表で八代市第7陣として対馬市職員2名を派遣予定と確認。9月29日基準の実働・終了を直接確認できないためUNKNOWN。",
+      "rechecked_at": "2026-09-29T07:23:00+09:00"
+    }
+  ],
+  "checked_at": "2026-09-29T07:23:00+09:00",
+  "rechecked_at": "2026-09-29T07:23:00+09:00"
+}

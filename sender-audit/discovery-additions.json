@@ -1,5 +1,5 @@
 {
-  "reference_at": "2026-09-24T18:27:00+09:00",
+  "reference_at": "2026-09-29T07:23:00+09:00",
   "source_mentions": [
     [
       "三重県",
@@ -585,8 +585,58 @@
       "福岡県",
       "広川町",
       "fukuoka-support-0917"
+    ],
+    [
+      "徳島県",
+      "吉野川市",
+      "tokushima-housing-wave7-0923"
+    ],
+    [
+      "徳島県",
+      "阿波市",
+      "tokushima-housing-wave7-0923"
+    ],
+    [
+      "宮城県",
+      "大郷町",
+      "miyagi-current-roster-0928"
+    ],
+    [
+      "宮城県",
+      "名取市",
+      "miyagi-current-roster-0928"
+    ],
+    [
+      "宮城県",
+      "白石市",
+      "miyagi-current-roster-0928"
+    ],
+    [
+      "宮城県",
+      "南三陸町",
+      "miyagi-current-roster-0928"
+    ],
+    [
+      "宮城県",
+      "東松島市",
+      "miyagi-current-roster-0928"
+    ],
+    [
+      "宮城県",
+      "気仙沼市",
+      "miyagi-current-roster-0928"
+    ],
+    [
+      "長崎県",
+      "南島原市",
+      "nagasaki-wave-0922"
+    ],
+    [
+      "長崎県",
+      "対馬市",
+      "nagasaki-wave-0908"
     ]
   ],
-  "checked_at": "2026-09-24T18:27:00+09:00",
-  "rechecked_at": "2026-09-24T18:27:00+09:00"
+  "checked_at": "2026-09-29T07:23:00+09:00",
+  "rechecked_at": "2026-09-29T07:23:00+09:00"
 }

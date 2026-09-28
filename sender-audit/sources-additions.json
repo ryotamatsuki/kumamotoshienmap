@@ -496,6 +496,72 @@
       "checked_at": "2026-09-29T07:23:00+09:00",
       "rechecked_at": "2026-09-29T07:23:00+09:00",
       "note": "県職員3名、美馬市1名、三好市1名、那賀町1名の計6名を宇土市へ派遣したと明示。派遣期間9月28日～10月4日。"
+    },
+    {
+      "source_id": "isahaya-health-0928",
+      "publisher": "諫早市",
+      "title": "令和8年熊本地震避難所等における健康支援業務派遣",
+      "url": "https://www.city.isahaya.nagasaki.jp/soshiki/3/49882.html",
+      "tier": 1,
+      "source_as_of": "2026-09-28T00:00:00+09:00",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "note": "職員3名を八代市へ9月28日に派遣したと明示。派遣期間9月28日～10月4日。"
+    },
+    {
+      "source_id": "nagasaki-wave-0922",
+      "publisher": "長崎県",
+      "title": "熊本地震にかかる職員の派遣について（9月22日出発分）",
+      "url": "https://www.pref.nagasaki.jp/press-contents/52872.html",
+      "tier": 2,
+      "source_as_of": "2026-09-18T00:00:00+09:00",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "note": "美里町第11陣・八代市第9陣の市町職員派遣予定を公表。"
+    },
+    {
+      "source_id": "nagasaki-wave-0908",
+      "publisher": "長崎県",
+      "title": "熊本地震にかかる職員の派遣について（9月8日出発分）",
+      "url": "https://www.pref.nagasaki.jp/press-contents/52210.html",
+      "tier": 2,
+      "source_as_of": "2026-09-04T00:00:00+09:00",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "note": "八代市第7陣に長崎市・佐世保市・諫早市・対馬市・壱岐市を派遣予定と公表。"
+    },
+    {
+      "source_id": "tokushima-liaison-wave16-0925",
+      "publisher": "徳島県",
+      "title": "リエゾン（第16陣）・住家被害認定後方支援チーム（第5陣）の派遣",
+      "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7316578/",
+      "tier": 1,
+      "source_as_of": "2026-09-25T00:00:00+09:00",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "note": "鳴門市・勝浦町職員を熊本県庁・宇土市へ派遣したと明示。期間9月25日～10月1日。"
+    },
+    {
+      "source_id": "tokushima-housing-wave7-0923",
+      "publisher": "徳島県",
+      "title": "住家被害認定調査チーム（第7陣）の派遣",
+      "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7316533/",
+      "tier": 1,
+      "source_as_of": "2026-09-23T00:00:00+09:00",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "note": "吉野川市・阿波市・牟岐町職員を宇土市へ派遣したと明示。期間9月23日～9月29日。"
+    },
+    {
+      "source_id": "miyagi-current-roster-0928",
+      "publisher": "宮城県",
+      "title": "令和8年熊本地震に係る特設ページ・被災地への職員派遣状況",
+      "url": "https://www.pref.miyagi.jp/soshiki/kikisom/kumamoto-tokusethu.html",
+      "tier": 2,
+      "source_as_of": "2026-09-28T00:00:00+09:00",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "note": "御船町への住家被害認定調査で大郷町・名取市・白石市・南三陸町を派遣中と明記。"
     }
   ],
   "checked_at": "2026-09-29T07:23:00+09:00",
