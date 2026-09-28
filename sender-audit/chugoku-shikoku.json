@@ -1,6 +1,6 @@
 {
   "region": "chugoku-shikoku",
-  "reference_at": "2026-09-24T18:27:00+09:00",
+  "reference_at": "2026-09-29T07:23:00+09:00",
   "entities": [
     {
       "entity": "井原市",
@@ -710,25 +710,26 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
         "職員派遣"
       ],
       "destinations": [
-        "熊本県内"
+        "宇土市"
       ],
       "source_ids": [
-        "tokushima-support"
+        "tokushima-housing-wave8-0928"
       ],
-      "evidence_note": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "source_as_of": null,
+      "evidence_note": "徳島県9月28日公式が那賀町職員1名を含む住家被害認定調査チーム第8陣を宇土市へ『派遣しました』と明記。派遣期間9月28日～10月4日。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T00:00:00+09:00",
       "sources_checked": [
-        "tokushima-support"
+        "tokushima-housing-wave8-0928"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00",
-      "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "徳島県9月28日公式が那賀町職員1名を含む住家被害認定調査チーム第8陣を宇土市へ『派遣しました』と明記。派遣期間9月28日～10月4日。",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "鳴門市",
@@ -757,6 +758,6 @@
       "reason": "2026-08-30 14:20 JST基準で再監査。過去のCURRENT根拠は保持するが、同時点の実働継続を直接確認できる新しい一次情報がないため推測継続せずUNKNOWN。"
     }
   ],
-  "checked_at": "2026-09-24T18:27:00+09:00",
-  "rechecked_at": "2026-09-24T18:27:00+09:00"
+  "checked_at": "2026-09-29T07:23:00+09:00",
+  "rechecked_at": "2026-09-29T07:23:00+09:00"
 }
