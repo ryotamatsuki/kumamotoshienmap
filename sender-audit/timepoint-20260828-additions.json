@@ -1,6 +1,6 @@
 {
   "region": "timepoint-20260828-additions",
-  "reference_at": "2026-09-24T18:27:00+09:00",
+  "reference_at": "2026-09-29T07:23:00+09:00",
   "entities": [
     {
       "entity": "中央区",
@@ -684,7 +684,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "HISTORICAL",
+      "state": "CURRENT",
       "support_types": [
         "職員派遣"
       ],
@@ -692,16 +692,18 @@
         "宇土市"
       ],
       "source_ids": [
-        "tokushima-0812"
+        "tokushima-housing-wave8-0928"
       ],
-      "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "source_as_of": null,
+      "evidence_note": "徳島県9月28日公式が美馬市職員1名を含む住家被害認定調査チーム第8陣を宇土市へ『派遣しました』と明記。派遣期間9月28日～10月4日。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T00:00:00+09:00",
       "sources_checked": [
-        "tokushima-0812"
+        "tokushima-housing-wave8-0928"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "current_evidence_type": "explicit_current_activity",
+      "reason": "徳島県9月28日公式が美馬市職員1名を含む住家被害認定調査チーム第8陣を宇土市へ『派遣しました』と明記。派遣期間9月28日～10月4日。"
     },
     {
       "entity": "勝浦町",
@@ -734,7 +736,7 @@
       "municipality_type": "city",
       "kind": "basic_municipality_sender",
       "required": false,
-      "state": "HISTORICAL",
+      "state": "CURRENT",
       "support_types": [
         "職員派遣"
       ],
@@ -742,16 +744,18 @@
         "宇土市"
       ],
       "source_ids": [
-        "tokushima-0816"
+        "tokushima-housing-wave8-0928"
       ],
-      "evidence_note": "徳島県公式が職員を実際に派遣したことを明示し、掲載派遣期間は基準時点までに終了。",
-      "checked_at": "2026-09-03T14:57:25+09:00",
-      "next_review_at": "2026-09-04T09:00:00+09:00",
-      "source_as_of": null,
+      "evidence_note": "徳島県9月28日公式が三好市職員1名を含む住家被害認定調査チーム第8陣を宇土市へ『派遣しました』と明記。派遣期間9月28日～10月4日。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T00:00:00+09:00",
       "sources_checked": [
-        "tokushima-0816"
+        "tokushima-housing-wave8-0928"
       ],
-      "rechecked_at": "2026-09-03T14:57:25+09:00"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "current_evidence_type": "explicit_current_activity",
+      "reason": "徳島県9月28日公式が三好市職員1名を含む住家被害認定調査チーム第8陣を宇土市へ『派遣しました』と明記。派遣期間9月28日～10月4日。"
     },
     {
       "entity": "東みよし町",
@@ -1160,6 +1164,6 @@
       "reason": "長崎県が8月31日に、9月1日からの八代市第6陣として当該市職員を派遣すると公式発表。基準時点では翌日開始予定のためPLANNED。 2026年9月24日18:27基準では、新しい一次情報で継続実働を直接確認できないためUNKNOWNへ再裁定。予定期間の経過だけではCURRENTとしない。"
     }
   ],
-  "checked_at": "2026-09-24T18:27:00+09:00",
-  "rechecked_at": "2026-09-24T18:27:00+09:00"
+  "checked_at": "2026-09-29T07:23:00+09:00",
+  "rechecked_at": "2026-09-29T07:23:00+09:00"
 }
