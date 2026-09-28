@@ -1,6 +1,6 @@
 {
   "region": "ehime",
-  "reference_at": "2026-09-25T16:11:00+09:00",
+  "reference_at": "2026-09-29T07:23:00+09:00",
   "entities": [
     {
       "entity": "上島町",
@@ -8,7 +8,7 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": true,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
         "災害支援代理寄附"
       ],
@@ -16,17 +16,18 @@
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-proxy-discovery"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-proxy-discovery"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "久万高原町",
@@ -36,23 +37,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "current_evidence_type": "explicit_current_activity"
     },
     {
@@ -63,24 +65,25 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     },
     {
       "entity": "伊予市",
@@ -90,24 +93,25 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     },
     {
       "entity": "伊方町",
@@ -115,25 +119,27 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": true,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "義援金"
+        "義援金",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県"
       ],
       "source_ids": [
-        "ehime-ikata-donation"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-ikata-donation"
+        "ehime-support-0928"
       ],
-      "reason": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
-      "rechecked_at": "2026-09-25T16:11:00+09:00"
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "八幡浜市",
@@ -143,23 +149,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "current_evidence_type": "explicit_current_activity"
     },
     {
@@ -170,24 +177,25 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
       "current_evidence_type": "explicit_current_activity",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     },
     {
       "entity": "四国中央市",
@@ -197,24 +205,25 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     },
     {
       "entity": "大洲市",
@@ -224,24 +233,25 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     },
     {
       "entity": "宇和島市",
@@ -251,23 +261,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "current_evidence_type": "explicit_current_activity"
     },
     {
@@ -276,25 +287,27 @@
       "municipality_type": "town",
       "kind": "basic_municipality_sender",
       "required": true,
-      "state": "UNKNOWN",
+      "state": "CURRENT",
       "support_types": [
-        "義援金"
+        "義援金",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県"
       ],
       "source_ids": [
-        "ehime-ainan-listing"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧に現行支援を直接確認できず、個別一次情報でも9月24日時点のCURRENT根拠を今回確定できないためUNKNOWN。非掲載を終了とは推定しない。",
-      "source_as_of": null,
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-ainan-listing"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "current_evidence_type": "explicit_current_activity"
     },
     {
       "entity": "新居浜市",
@@ -304,24 +317,25 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
       "current_evidence_type": "explicit_current_activity",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     },
     {
       "entity": "東温市",
@@ -331,24 +345,25 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "current_evidence_type": "explicit_current_activity",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     },
     {
       "entity": "松前町",
@@ -358,24 +373,25 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     },
     {
       "entity": "松山市",
@@ -385,24 +401,25 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     },
     {
       "entity": "松野町",
@@ -412,23 +429,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "current_evidence_type": "explicit_current_activity"
     },
     {
@@ -439,24 +457,25 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "義援金"
+        "義援金",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-tobe-donation-current"
+        "ehime-support-0928"
       ],
-      "evidence_note": "砥部町公式で熊本地震義援金を10月23日まで受け付けており、9月24日時点で現行受付を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "current_evidence_type": "active_collection_explicit",
-      "source_as_of": "2026-07-31T00:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "current_evidence_type": "explicit_current_activity",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-tobe-donation-current"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
-      "reason": "砥部町公式で熊本地震義援金を10月23日まで受け付けており、9月24日時点で現行受付を直接確認。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     },
     {
       "entity": "西予市",
@@ -466,23 +485,24 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "current_evidence_type": "explicit_current_activity"
     },
     {
@@ -493,24 +513,25 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
       "current_evidence_type": "explicit_current_activity",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     },
     {
       "entity": "鬼北町",
@@ -520,26 +541,27 @@
       "required": true,
       "state": "CURRENT",
       "support_types": [
-        "愛媛県公表の市町支援"
+        "愛媛県公表の市町支援",
+        "災害支援代理寄附"
       ],
       "destinations": [
         "熊本県内"
       ],
       "source_ids": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "evidence_note": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。",
-      "checked_at": "2026-09-25T16:11:00+09:00",
-      "next_review_at": "2026-09-26T09:00:00+09:00",
+      "evidence_note": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "next_review_at": "2026-09-30T09:00:00+09:00",
       "current_evidence_type": "explicit_current_activity",
-      "source_as_of": "2026-09-24T12:00:00+09:00",
+      "source_as_of": "2026-09-28T12:00:00+09:00",
       "sources_checked": [
-        "ehime-support-0924"
+        "ehime-support-0928"
       ],
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
-      "reason": "愛媛県9月24日12時版の市町支援一覧で支援実施を直接確認。"
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "reason": "愛媛県9月28日12時版が、県及び県内20市町について益城町への災害支援代理寄附を『実施中』と明記。県・市町人的支援も同資料で更新。"
     }
   ],
-  "checked_at": "2026-09-25T16:11:00+09:00",
-  "rechecked_at": "2026-09-25T16:11:00+09:00"
+  "checked_at": "2026-09-29T07:23:00+09:00",
+  "rechecked_at": "2026-09-29T07:23:00+09:00"
 }
