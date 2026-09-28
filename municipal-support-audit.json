@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "repository": "ryotamatsuki/kumamotoshienmap",
-  "reference_at": "2026-09-25T16:11:00+09:00",
-  "checked_at": "2026-09-25T16:11:00+09:00",
-  "release_id": "20260925-1611",
+  "reference_at": "2026-09-29T07:23:00+09:00",
+  "checked_at": "2026-09-29T07:23:00+09:00",
+  "release_id": "20260929-0723",
   "policy": {
     "historical_roster_is_not_current": true,
     "secondary_sources_for_discovery_only": true,
@@ -34,7 +34,7 @@
       "url": "https://www.pref.kumamoto.jp/uploaded/attachment/316600.pdf",
       "role": "historical_roster",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -45,7 +45,7 @@
       "url": "https://www.pref.kumamoto.jp/uploaded/attachment/317153.pdf",
       "role": "historical_aggregate",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -56,7 +56,7 @@
       "url": "https://www.pref.chiba.lg.jp/bousai/kouikiouen/r8kumamoto-taiou.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -67,7 +67,7 @@
       "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082015",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "403"
     },
     {
@@ -78,7 +78,7 @@
       "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082106",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "403"
     },
     {
@@ -89,7 +89,7 @@
       "url": "https://www.pref.kanagawa.jp/docs/bu4/prs/r7010643.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -100,7 +100,7 @@
       "url": "https://www.city.tokorozawa.saitama.jp/tokoronews/press/r8/08/kumamotoouennsyokuinn0820.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -111,7 +111,7 @@
       "url": "https://www.city.koshigaya.saitama.jp/anzen_anshin/bosai/oshirase/kumamoto_sien.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -122,7 +122,7 @@
       "url": "https://www.city.kawasaki.jp/templates/prs/601/0000189384.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -133,7 +133,7 @@
       "url": "https://www.city.kawasaki.jp/templates/prs/601/0000189631.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -144,7 +144,7 @@
       "url": "https://www.city.osaka.lg.jp/kikikanrishitsu/page/0000684623.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -155,7 +155,7 @@
       "url": "https://www.pref.okayama.jp/page/1051632.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -166,7 +166,7 @@
       "url": "https://www.pref.yamaguchi.lg.jp/press/359667.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -177,7 +177,7 @@
       "url": "https://www.city.nagoya.jp/houdou/3003942/3003947/3005441.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "403"
     },
     {
@@ -188,7 +188,7 @@
       "url": "https://www.pref.nagasaki.jp/press-contents/51537.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -199,7 +199,7 @@
       "url": "https://www.pref.nagasaki.jp/press-contents/50893.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -210,7 +210,7 @@
       "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken5.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -221,7 +221,7 @@
       "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7315847/",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -232,7 +232,7 @@
       "url": "https://www.pref.shiga.lg.jp/kensei/koho/e-shinbun/oshirase/352146.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -243,7 +243,7 @@
       "url": "https://www.pref.toyama.jp/1902/bousaianzen/bousai/jishin/kumamotozishin.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -254,7 +254,7 @@
       "url": "https://www.pref.kyoto.jp/press/",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -265,7 +265,7 @@
       "url": "https://www.pref.hokkaido.lg.jp/sm/ktk/175789.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -276,7 +276,7 @@
       "url": "https://www.pref.aomori.lg.jp/release/2026/81234.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -287,7 +287,7 @@
       "url": "https://www.city.hiroshima.lg.jp/shisei/kouhou/1004010/1045546/1050818/1052407.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -298,7 +298,7 @@
       "url": "https://www.pref.saga.lg.jp/kiji003120626/index.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -309,7 +309,7 @@
       "url": "https://www.pref.saga.lg.jp/kiji003120545/index.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -320,7 +320,7 @@
       "url": "https://www.pref.saga.lg.jp/kiji003120569/index.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -331,7 +331,7 @@
       "url": "https://mf.jiho.jp/article/269763",
       "role": "secondary_discovery_only",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -341,7 +341,7 @@
       "as_of": "2026-08-24T12:00:00+09:00",
       "checked_at": "2026-09-03T14:57:25+09:00",
       "url": "https://www.pref.ehime.jp/uploaded/attachment/188555.pdf",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "404"
     },
     {
@@ -351,7 +351,7 @@
       "as_of": "2026-08-08T14:00:00+09:00",
       "checked_at": "2026-09-03T14:57:25+09:00",
       "url": "https://www.pref.kumamoto.jp/uploaded/attachment/316443.pdf",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -361,7 +361,7 @@
       "url": "https://www.city.chiba.jp/sogoseisaku/kikikanri/kikikanri/01r8kumamotozisin2.html",
       "as_of": "2026-08-19",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "primary": true,
       "note": "人的派遣は8月10日までの実績のみ現行ページに掲載。8月25日CURRENT根拠にはしない。",
       "recheck_result": "200"
@@ -373,7 +373,7 @@
       "url": "https://www.pref.wakayama.lg.jp/prefg/011900/d00222719.html",
       "as_of": "2026-08-25 recheck",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "primary": true,
       "note": "宇城市への第2次以降を順次派遣し継続して支援と明示。",
       "recheck_result": "200"
@@ -385,7 +385,7 @@
       "url": "https://www.pref.kanagawa.jp/docs/bu4/prs/r7010643.html",
       "as_of": "2026-08-21",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "primary": true,
       "note": "8月3日より職員を派遣しているところと明示し、第5陣へ引継ぎ。",
       "recheck_result": "200"
@@ -397,7 +397,7 @@
       "url": "https://ssl.city.kitakyushu.lg.jp/contents/90000638_00003.html",
       "as_of": "2026-08-23",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "primary": true,
       "note": "8月24日更新、8月23日時点。八代市等への複数班を随時更新し、開始済み・終了日未定の支援を確認。",
       "recheck_result": "200"
@@ -409,7 +409,7 @@
       "url": "https://www.pref.saga.lg.jp/kiji003120626/index.html",
       "as_of": "2026-08-10",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "primary": true,
       "note": "氷川町に職員を派遣しています、住家被害認定調査を進めていますと現在形で明示。",
       "recheck_result": "200"
@@ -421,7 +421,7 @@
       "url": "https://www.pref.kumamoto.jp/soshiki/27/275523.html",
       "as_of": "2026-08-24",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "primary": true,
       "note": "県内災害VCの横断一次情報。",
       "recheck_result": "200"
@@ -433,7 +433,7 @@
       "url": "https://www.metro.tokyo.lg.jp/information/press/2026/08/2026082015",
       "as_of": "2026-08-20",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "primary": true,
       "note": "8月20-28の派遣を告知。基準日時点の継続実働を同日資料だけで推定しない。",
       "recheck_result": "403"
@@ -445,7 +445,7 @@
       "url": "https://www.city.nagoya.jp/houdou/3003942/3003947/3005441.html",
       "as_of": "2026-08-13",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "primary": true,
       "note": "8月17-30を派遣することとした旨の告知。実働の新規確認なし。",
       "recheck_result": "403"
@@ -457,7 +457,7 @@
       "url": "https://www.city.osaka.lg.jp/kikikanrishitsu/page/0000684623.html",
       "as_of": "2026-08-14",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "primary": true,
       "note": "8月14日現在のローテーション予定を掲載。開始日経過のみでCURRENT化しない。",
       "recheck_result": "200"
@@ -469,7 +469,7 @@
       "url": "https://www.pref.aomori.lg.jp/release/2026/81234.html",
       "as_of": "2026-08-21",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "primary": true,
       "note": "第3班8月22-31、現地業務23-30の派遣告知。実働開始の直接確認なし。",
       "recheck_result": "200"
@@ -481,7 +481,7 @@
       "url": "https://www.city.sapporo.jp/kinkyu/202607_kumamotojishin.html",
       "as_of": "2026-08-10",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "primary": true,
       "note": "8月10日更新で罹災証明発行支援の職員4名が熊本市で従事開始と確認。8月25日基準の継続・終了を直接示す更新は未確認のためUNKNOWN根拠として使用。",
       "recheck_result": "200"
@@ -494,7 +494,7 @@
       "primary": true,
       "as_of": "2026-08-21",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -505,7 +505,7 @@
       "primary": true,
       "as_of": "2026-08-24",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -516,7 +516,7 @@
       "primary": true,
       "as_of": "2026-08-20",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -527,7 +527,7 @@
       "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken6.html",
       "role": "sender_official",
       "checked_at": "2026-09-03T14:57:25+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -538,7 +538,7 @@
       "url": "https://www.pref.ehime.jp/uploaded/attachment/189500.pdf",
       "role": "sender_official",
       "checked_at": "2026-09-04T22:38:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -549,7 +549,7 @@
       "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken8.html",
       "role": "sender_official",
       "checked_at": "2026-09-15T01:05:48+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -560,7 +560,7 @@
       "url": "https://www.pref.ehime.jp/page/154856.html",
       "role": "sender_official",
       "checked_at": "2026-09-15T01:05:48+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -570,7 +570,7 @@
       "url": "https://www.pref.fukuoka.lg.jp/press-release/r8kumamotojisinhaken9.html",
       "as_of": "2026-09-17T11:00:00+09:00",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "rechecked"
     },
     {
@@ -580,7 +580,7 @@
       "url": "https://www.pref.ehime.jp/page/154856.html",
       "as_of": "2026-09-24T12:00:00+09:00",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "rechecked"
     },
     {
@@ -591,7 +591,7 @@
       "url": "https://www.metro.tokyo.lg.jp/ja/information/press/2026/09/2026092416",
       "role": "sender_official",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -602,7 +602,7 @@
       "url": "https://www.pref.saitama.lg.jp/a0402/news/page/news2026091801.html",
       "role": "sender_official",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -613,7 +613,7 @@
       "url": "https://www.pref.gunma.jp/site/houdou/774267.html",
       "role": "sender_official",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -624,7 +624,7 @@
       "url": "https://www.pref.yamaguchi.lg.jp/press/363234.html",
       "role": "sender_official",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -635,7 +635,7 @@
       "url": "https://www.pref.yamaguchi.lg.jp/press/363605.html",
       "role": "sender_official",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -646,7 +646,7 @@
       "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7316530/",
       "role": "sender_official",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -657,7 +657,7 @@
       "url": "https://www.pref.shiga.lg.jp/kensei/koho/e-shinbun/oshirase/352239.html",
       "role": "sender_official",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -668,7 +668,7 @@
       "url": "https://web.pref.hyogo.lg.jp/kk37/r8kumamoto_senkentai.html",
       "role": "sender_official",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -679,7 +679,7 @@
       "url": "https://www.pref.nagasaki.jp/press-contents/52872.html",
       "role": "sender_official",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
     },
     {
@@ -690,8 +690,30 @@
       "url": "https://www.pref.miyagi.jp/soshiki/kikisom/kumamoto-tokusethu.html",
       "role": "sender_official",
       "checked_at": "2026-09-24T18:27:00+09:00",
-      "rechecked_at": "2026-09-25T16:11:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
       "recheck_result": "200"
+    },
+    {
+      "source_id": "tokushima-0928-current",
+      "publisher": "徳島県",
+      "title": "令和8年熊本地震に係る熊本県への住家被害認定調査チーム（第8陣）の派遣について",
+      "as_of": "2026-09-28T00:00:00+09:00",
+      "url": "https://www.pref.tokushima.lg.jp/anshin/kinkyu/saigai-info/7316627/",
+      "role": "current_primary",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "recheck_result": "県職員3名、美馬市1名、三好市1名、那賀町1名の計6名を9月28日～10月4日、宇土市へ『派遣しました』と明記。"
+    },
+    {
+      "source_id": "ehime-support-0928",
+      "publisher": "愛媛県",
+      "title": "令和8年熊本地震に係る本県の支援状況について（9月28日12時版）",
+      "as_of": "2026-09-28T12:00:00+09:00",
+      "url": "https://www.pref.ehime.jp/page/154856.html",
+      "role": "current_primary",
+      "checked_at": "2026-09-29T07:23:00+09:00",
+      "rechecked_at": "2026-09-29T07:23:00+09:00",
+      "recheck_result": "氷川町への災害応急対策職員等を継続。対口支援151人・延770人日。"
     }
   ],
   "records": [
@@ -730,7 +752,7 @@
             "saitama-0918-plan"
           ],
           "note": "埼玉県9月18日公表で熊本市へ9月21日～10月1日に4名を派遣する計画を確認。期間到来のみではCURRENTに昇格せずPLANNED。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "千葉県",
@@ -739,7 +761,7 @@
             "chiba-0819"
           ],
           "note": "熊本市への一般対口支援は8/14に終了。別分野支援は別管理。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "東京都",
@@ -748,7 +770,7 @@
             "tokyo-0924-plan"
           ],
           "note": "東京都9月24日公表で、熊本市へ9月24日～10月1日に8名を派遣する計画を確認。開始日当日の予定公表であり、実出発を別の一次情報で直接確認していないためPLANNED。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "神奈川県",
@@ -757,7 +779,7 @@
             "kanagawa-0821-current"
           ],
           "note": "8/21公式が「8月3日より…職員を派遣しているところ」と継続中を直接記載し、第5陣への引継ぎを公表。 2026年8月31日14:16基準で再監査したが、同時点の実働継続を直接確認できる新しい一次情報を取得できず、予定期間内・過去CURRENTだけでは継続推定しない。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "川崎市",
@@ -766,7 +788,7 @@
             "kawasaki-0812"
           ],
           "note": "熊本市の避難所運営支援は8/12で終了し、後続は宇城市へ。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "大阪市",
@@ -775,7 +797,7 @@
             "osaka-0814"
           ],
           "note": "熊本市の区役所職員による避難所支援は8/18まで。後続は八代市支援。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "山梨県",
@@ -784,7 +806,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で、この旧割当主体の同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "群馬県",
@@ -793,7 +815,7 @@
             "gunma-0907-plan"
           ],
           "note": "群馬県公式で熊本市への第8班9月20日～28日、第9班9月27日～10月1日の派遣計画を確認。実働を9月24日時点の別一次情報で直接確認できないためPLANNED。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "札幌市",
@@ -802,7 +824,7 @@
             "sapporo-current"
           ],
           "note": "8/10に罹災証明発行支援の従事開始は確認済みだが、8/25基準の継続又は終了を直接示す更新は未確認。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "さいたま市",
@@ -811,7 +833,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で、この旧割当主体の同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "千葉市",
@@ -820,7 +842,7 @@
             "chiba-city-support-0819"
           ],
           "note": "現行公式ページに掲載される熊本市への人的派遣は8/10まで。8/25の人的派遣CURRENT根拠は確認できないため履歴化。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "横浜市",
@@ -829,7 +851,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で、この旧割当主体の同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "相模原市",
@@ -838,7 +860,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で、この旧割当主体の同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "新潟市",
@@ -847,7 +869,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で、この旧割当主体の同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "静岡市",
@@ -856,7 +878,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で、この旧割当主体の同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "神戸市",
@@ -865,7 +887,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で、この旧割当主体の同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "京都市",
@@ -875,7 +897,7 @@
             "kyoto-city-0821"
           ],
           "note": "京都市公式の8月21日更新で熊本市派遣は第1・2陣（8月3日～14日）として終了済みを確認。現行派遣先は八代市へ移行。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "堺市",
@@ -884,7 +906,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で、この旧割当主体の同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "広島市",
@@ -893,7 +915,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で、この旧割当主体の同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "福岡市",
@@ -902,7 +924,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で、この旧割当主体の同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "additional_statuses": [],
@@ -913,11 +935,11 @@
         "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 3／HISTORICAL 5／UNKNOWN 12",
+        "status": "9月29日07:23全件再監査：CURRENT 0／PLANNED 3／HISTORICAL 5／UNKNOWN 12",
         "scale": "PLANNED確認：埼玉県、東京都、群馬県",
-        "period": "2026年9月24日18:27基準",
+        "period": "2026年9月29日07:23基準",
         "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
-        "asOf": "2026年9月24日18:27全件再監査",
+        "asOf": "2026年9月29日07:23全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
     },
@@ -945,7 +967,7 @@
             "okayama-0820"
           ],
           "note": "公式ページは8月20～26日の派遣予定を示すが、基準日時点の実働継続を直接確認できないためUNKNOWN。予定期間到来のみでCURRENTにしない。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "山口県",
@@ -955,7 +977,7 @@
             "yamaguchi-0924-plan"
           ],
           "note": "山口県公式で第8陣9月18日～25日、第9陣9月25日～10月2日の八代市派遣を確認。予定公表のみのためPLANNEDとして表示。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "長崎県",
@@ -964,7 +986,7 @@
             "nagasaki-0918-plan"
           ],
           "note": "長崎県9月18日公表で八代市第9陣を9月22日～29日に派遣する計画を確認。実出発を別一次情報で直接確認できないためPLANNED。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "福井県",
@@ -973,7 +995,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "大阪府",
@@ -982,7 +1004,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "大分県",
@@ -991,7 +1013,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "鹿児島県",
@@ -1000,7 +1022,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "沖縄県",
@@ -1009,7 +1031,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "北九州市",
@@ -1018,7 +1040,7 @@
             "kitakyushu-0824-current"
           ],
           "note": "8/24更新の公式支援ページで八代市への家屋被害認定第4班、避難所第8班、廃棄物第5班等の開始済み支援を現行掲載。 2026年8月31日14:16基準で再監査したが、同時点の実働継続を直接確認できる新しい一次情報を取得できず、予定期間内・過去CURRENTだけでは継続推定しない。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "additional_statuses": [
@@ -1029,7 +1051,7 @@
             "osaka-status-0814"
           ],
           "note": "8/14現在ページに8/24以降の第2次等を掲載するが、基準時点の実働開始は新しい一次情報で直接確認できない。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "名古屋市",
@@ -1038,7 +1060,7 @@
             "nagoya-0813-plan"
           ],
           "note": "8/17-30の派遣決定は確認したが、基準時点の継続実働を直接確認する新しい一次情報がない。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "京都府",
@@ -1047,7 +1069,7 @@
             "kyoto-press-0820"
           ],
           "note": "8/25以降八代市へ変更する予定は確認済み。実際の支援先変更・実働開始は基準時点で直接未確認。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "京都市",
@@ -1056,7 +1078,7 @@
             "kyoto-city-0821"
           ],
           "note": "京都市公式8月21日更新が「職員を派遣しています」と明記し、第5陣8月22～26日・第6陣8月26～31日、八代市で住家被害認定調査を実施。基準日時点を含むためCURRENT。 2026年8月31日14:16基準で再監査したが、同時点の実働継続を直接確認できる新しい一次情報を取得できず、予定期間内・過去CURRENTだけでは継続推定しない。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "recheck_queries": [
@@ -1066,11 +1088,11 @@
         "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 2／HISTORICAL 0／UNKNOWN 11",
+        "status": "9月29日07:23全件再監査：CURRENT 0／PLANNED 2／HISTORICAL 0／UNKNOWN 11",
         "scale": "PLANNED確認：山口県、長崎県",
-        "period": "2026年9月24日18:27基準",
+        "period": "2026年9月29日07:23基準",
         "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
-        "asOf": "2026年9月24日18:27全件再監査",
+        "asOf": "2026年9月29日07:23全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
     },
@@ -1094,7 +1116,7 @@
             "shiga-0821"
           ],
           "note": "宇土市への住家被害認定支援は8/24まで。同日から宇城市へ支援先を切替。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "京都府",
@@ -1103,25 +1125,25 @@
             "kyoto-press-0820"
           ],
           "note": "8/25以降八代市へ変更予定のため宇土市旧支援をCURRENTとはできず、変更実施の直接確認もないためUNKNOWN。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "徳島県",
           "state": "CURRENT",
           "source_ids": [
-            "tokushima-0921-current"
+            "tokushima-0928-current"
           ],
-          "note": "徳島県9月21日公式が県・徳島市・北島町職員計6名を『派遣しました』と明示。派遣期間9月21日～27日、宇土市で住家被害認定後方支援等に従事。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "note": "徳島県9月28日公式が県職員3名、美馬市1名、三好市1名、那賀町1名の計6名を宇土市へ『派遣しました』と明示。派遣期間9月28日～10月4日。",
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "福岡県",
-          "state": "CURRENT",
+          "state": "UNKNOWN",
           "source_ids": [
             "fukuoka-support-0917"
           ],
-          "note": "福岡県9月17日公表で、宇土市への住家被害認定調査を9月25日まで、罹災証明・復興相談支援を9月21日～25日に実施する派遣を直接確認。9月24日時点で期間内かつ最新公表が現在の派遣計画を明示。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "note": "福岡県9月17日公表では宇土市支援を9月25日までと確認。9月29日基準の継続・終了を直接示す新しい一次情報を確認できないため、予定日経過だけでHISTORICALへ移さずUNKNOWN。",
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "香川県",
@@ -1130,7 +1152,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "additional_statuses": [],
@@ -1141,11 +1163,11 @@
         "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 2／PLANNED 0／HISTORICAL 1／UNKNOWN 2",
-        "scale": "CURRENT確認：徳島県、福岡県",
-        "period": "2026年9月24日18:27基準",
+        "status": "9月29日07:23全件再監査：CURRENT 1／PLANNED 0／HISTORICAL 1／UNKNOWN 3",
+        "scale": "CURRENT確認：徳島県",
+        "period": "2026年9月29日07:23基準",
         "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
-        "asOf": "2026年9月24日18:27全件再監査",
+        "asOf": "2026年9月29日07:23全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
     },
@@ -1177,7 +1199,7 @@
             "toyama-0821"
           ],
           "note": "第5班5人、8/22～28、宇城市で罹災証明申請受付等。 2026年8月31日14:16基準で再監査したが、同時点の実働継続を直接確認できる新しい一次情報を取得できず、予定期間内・過去CURRENTだけでは継続推定しない。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "長崎県",
@@ -1187,7 +1209,7 @@
             "nagasaki-0825-departure-plan"
           ],
           "note": "8月24日一次発表で8月25日～9月1日の継続派遣予定を確認。ただし予定公表だけでは基準日時点の実働を確認できないためUNKNOWN。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "石川県",
@@ -1196,7 +1218,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "長野県",
@@ -1205,7 +1227,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "岐阜県",
@@ -1214,7 +1236,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "静岡県",
@@ -1223,7 +1245,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "愛知県",
@@ -1232,7 +1254,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "三重県",
@@ -1241,7 +1263,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "兵庫県",
@@ -1250,7 +1272,7 @@
             "hyogo-0918-plan"
           ],
           "note": "兵庫県9月18日更新で宇城市への第9陣9月20日～25日（市町職員12名）を掲載。基準日実働の直接確認ではないためPLANNED。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "奈良県",
@@ -1259,7 +1281,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "和歌山県",
@@ -1268,7 +1290,7 @@
             "wakayama-uki-current"
           ],
           "note": "県公式ページが宇城市への第2次以降を「順次派遣し継続して支援」と明示。再確認時も同記載。 2026年8月31日14:16基準で再監査したが、同時点の実働継続を直接確認できる新しい一次情報を取得できず、予定期間内・過去CURRENTだけでは継続推定しない。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "宮崎県",
@@ -1277,7 +1299,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "福岡市",
@@ -1286,7 +1308,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "additional_statuses": [
@@ -1297,7 +1319,7 @@
             "shiga-0901-plan"
           ],
           "note": "滋賀県9月1日公式で宇城市への支援を9月30日まで延長し、第8クール9月20日～25日、第9クール9月25日～30日を公表。基準日実働の直接更新がないためPLANNED。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "川崎市",
@@ -1306,7 +1328,7 @@
             "kawasaki-0824"
           ],
           "note": "8/17～31の住家被害認定調査を実施中。8/31～9/12の追加派遣も決定。 2026年8月31日14:16基準で再監査したが、同時点の実働継続を直接確認できる新しい一次情報を取得できず、予定期間内・過去CURRENTだけでは継続推定しない。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "福岡県",
@@ -1315,7 +1337,7 @@
             "fukuoka-0821"
           ],
           "note": "宇城市向け保健師等8/19-24は派遣実績として確認。8/25基準では過去期間のためHISTORICAL。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "recheck_queries": [
@@ -1325,11 +1347,11 @@
         "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 2／HISTORICAL 1／UNKNOWN 13",
+        "status": "9月29日07:23全件再監査：CURRENT 0／PLANNED 2／HISTORICAL 1／UNKNOWN 13",
         "scale": "PLANNED確認：兵庫県、滋賀県",
-        "period": "2026年9月24日18:27基準",
+        "period": "2026年9月29日07:23基準",
         "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
-        "asOf": "2026年9月24日18:27全件再監査",
+        "asOf": "2026年9月29日07:23全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
     },
@@ -1349,7 +1371,7 @@
             "nagasaki-0918-plan"
           ],
           "note": "長崎県9月18日公表で美里町第11陣を9月22日～29日に派遣する計画を確認。実出発を別一次情報で直接確認できないためPLANNED。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "additional_statuses": [],
@@ -1360,11 +1382,11 @@
         "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 1／HISTORICAL 0／UNKNOWN 0",
+        "status": "9月29日07:23全件再監査：CURRENT 0／PLANNED 1／HISTORICAL 0／UNKNOWN 0",
         "scale": "PLANNED確認：長崎県",
-        "period": "2026年9月24日18:27基準",
+        "period": "2026年9月29日07:23基準",
         "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
-        "asOf": "2026年9月24日18:27全件再監査",
+        "asOf": "2026年9月29日07:23全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
     },
@@ -1387,10 +1409,10 @@
           "name": "愛媛県",
           "state": "CURRENT",
           "source_ids": [
-            "ehime-support-0924"
+            "ehime-support-0928"
           ],
-          "note": "愛媛県9月24日12時版で氷川町への災害応急対策職員等の対口支援を継続確認。対口支援136人・延710人日。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "note": "愛媛県9月28日12時版で氷川町への災害応急対策職員等の対口支援を継続確認。対口支援151人・延770人日。",
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "佐賀県",
@@ -1399,7 +1421,7 @@
             "saga-hikawa-current"
           ],
           "note": "佐賀県の現行公式ページを再確認し、氷川町に職員を派遣しています・住家被害認定調査を進めていますと現在形で明示。 2026年8月31日14:16基準で再監査したが、同時点の実働継続を直接確認できる新しい一次情報を取得できず、予定期間内・過去CURRENTだけでは継続推定しない。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "鳥取県",
@@ -1408,7 +1430,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "島根県",
@@ -1417,7 +1439,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "広島県",
@@ -1426,7 +1448,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "高知県",
@@ -1435,7 +1457,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "浜松市",
@@ -1444,7 +1466,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で旧割当主体の同日時点の継続・終了を直接確定できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "additional_statuses": [
@@ -1455,7 +1477,7 @@
             "hiroshima-city-0813"
           ],
           "note": "8/23-30第2期の予定告知のみ。開始日経過だけで実働を推定しない。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "大阪市",
@@ -1464,7 +1486,7 @@
             "osaka-status-0814"
           ],
           "note": "8/14現在ページの後続班日程は確認できるが、8/25基準の実働を直接確認する更新がない。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "recheck_queries": [
@@ -1475,11 +1497,11 @@
         "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 1／PLANNED 0／HISTORICAL 0／UNKNOWN 8",
+        "status": "9月29日07:23全件再監査：CURRENT 1／PLANNED 0／HISTORICAL 0／UNKNOWN 8",
         "scale": "CURRENT確認：愛媛県",
-        "period": "2026年9月24日18:27基準",
+        "period": "2026年9月29日07:23基準",
         "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
-        "asOf": "2026年9月24日18:27全件再監査",
+        "asOf": "2026年9月29日07:23全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
     },
@@ -1499,7 +1521,7 @@
             "miyagi-0918-current"
           ],
           "note": "宮城県公式の9月18日現在派遣状況で、御船町の住家被害認定調査に8名（うち市町村4名）を『派遣中』と明記。終了予定10月4日。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "additional_statuses": [],
@@ -1508,11 +1530,11 @@
         "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 1／PLANNED 0／HISTORICAL 0／UNKNOWN 0",
+        "status": "9月29日07:23全件再監査：CURRENT 1／PLANNED 0／HISTORICAL 0／UNKNOWN 0",
         "scale": "CURRENT確認：宮城県",
-        "period": "2026年9月24日18:27基準",
+        "period": "2026年9月29日07:23基準",
         "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
-        "asOf": "2026年9月24日18:27全件再監査",
+        "asOf": "2026年9月29日07:23全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
     },
@@ -1535,7 +1557,7 @@
             "hokkaido-0820"
           ],
           "note": "8/10から約1か月、各回3人のローテーションで住家被害認定調査を実施中と公式ページで確認。 2026年8月31日14:16基準で再監査したが、同時点の実働継続を直接確認できる新しい一次情報を取得できず、予定期間内・過去CURRENTだけでは継続推定しない。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "青森県",
@@ -1544,7 +1566,7 @@
             "aomori-0821-plan"
           ],
           "note": "第3班8/22-31・現地業務8/23-30の派遣告知は確認。実働開始の直接確認がないためUNKNOWN。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "岩手県",
@@ -1553,7 +1575,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "秋田県",
@@ -1562,7 +1584,7 @@
             "kumamoto-roster-0811"
           ],
           "note": "8/24再探索で同日時点の継続・終了を直接確認できる新しい公式情報を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "additional_statuses": [],
@@ -1573,11 +1595,11 @@
         "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 4",
-        "scale": "CURRENT直接確認なし",
-        "period": "2026年9月24日18:27基準",
+        "status": "9月29日07:23全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 4",
+        "scale": "現行支援主体を直接確定できず",
+        "period": "2026年9月29日07:23基準",
         "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
-        "asOf": "2026年9月24日18:27全件再監査",
+        "asOf": "2026年9月29日07:23全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
     },
@@ -1599,7 +1621,7 @@
             "kumamoto-pharmacy-0808"
           ],
           "note": "8/8までの活動履歴は熊本県一次資料で確認済みだが、8/24時点の継続・終了を直接確定する一次情報を今回取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "福岡県薬剤師会",
@@ -1608,7 +1630,7 @@
             "kumamoto-pharmacy-0808"
           ],
           "note": "8/8までの活動履歴は熊本県一次資料で確認済みだが、8/24時点の継続・終了を直接確定する一次情報を今回取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "宮崎県薬剤師会",
@@ -1617,7 +1639,7 @@
             "kumamoto-pharmacy-0808"
           ],
           "note": "8/8までの活動履歴は熊本県一次資料で確認済みだが、8/24時点の継続・終了を直接確定する一次情報を今回取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "additional_statuses": [],
@@ -1628,11 +1650,11 @@
         "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 3",
-        "scale": "CURRENT直接確認なし",
-        "period": "2026年9月24日18:27基準",
+        "status": "9月29日07:23全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 3",
+        "scale": "現行支援主体を直接確定できず",
+        "period": "2026年9月29日07:23基準",
         "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
-        "asOf": "2026年9月24日18:27全件再監査",
+        "asOf": "2026年9月29日07:23全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
     },
@@ -1653,7 +1675,7 @@
             "kumamoto-aggregate-0819"
           ],
           "note": "中央集計は8/19の行政応援971人等が最新確認スナップショット。8/24の同一定義集計を取得できず。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         },
         {
           "name": "熊本県内市町村",
@@ -1662,7 +1684,7 @@
             "kumamoto-aggregate-0819"
           ],
           "note": "8/19集計以降の同一定義総数を取得できず。個別派遣は各レコードで確認。 8/25 14:08基準で一次情報を再探索したが、同時点の継続・終了を直接確定できる更新は取得できず。 8月26日19:26基準で一次情報を再確認したが、CURRENTへ上げる直接根拠なし。",
-          "checked_at": "2026-09-25T16:11:00+09:00"
+          "checked_at": "2026-09-29T07:23:00+09:00"
         }
       ],
       "additional_statuses": [],
@@ -1673,11 +1695,11 @@
         "2026-09-24 18:27 JST ゼロベース再監査／予定公表はCURRENTへ自動昇格しない"
       ],
       "display": {
-        "status": "9月24日18:27全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 2",
-        "scale": "CURRENT直接確認なし",
-        "period": "2026年9月24日18:27基準",
+        "status": "9月29日07:23全件再監査：CURRENT 0／PLANNED 0／HISTORICAL 0／UNKNOWN 2",
+        "scale": "現行支援主体を直接確定できず",
+        "period": "2026年9月29日07:23基準",
         "detail": "旧割当名簿は履歴として保持。CURRENTは実働・継続を一次情報で直接確認できた主体、PLANNEDは最新の派遣予定を直接確認した主体として分離し、予定期間到来だけではCURRENTへ昇格しない。",
-        "asOf": "2026年9月24日18:27全件再監査",
+        "asOf": "2026年9月29日07:23全件再監査",
         "sourceLabel": "他自治体・支援主体全件監査（一次情報優先）"
       }
     }
@@ -1685,6 +1707,6 @@
   "discovery_only_notes": [
     "モバイルファーマシーについて二次情報では8/12までに全車撤収と報じられたが、一次情報で再確認できなかったため終了確定には使用せずUNKNOWNとした。"
   ],
-  "rechecked_at": "2026-09-25T16:11:00+09:00",
+  "rechecked_at": "2026-09-29T07:23:00+09:00",
   "blocking_unresolved": []
 }
