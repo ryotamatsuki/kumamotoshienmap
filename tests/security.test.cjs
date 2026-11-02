@@ -15,9 +15,9 @@ test('calendar capacity labels are plain data and require escaping at render tim
  assert.match(source,/esc\(info\.capacity\)/);
  assert.doesNotMatch(source,/capacityText\(center\)\.replace/);
 });
-test('removed no-op string replacements in data refresh scripts',()=>{
- for(const path of ['scripts/fix-pagewide-20260813.mjs','scripts/update-pagewide-20260811.mjs']){
-  const code=fs.readFileSync(path,'utf8');
-  assert.doesNotThrow(()=>new Function(code.replace(/^import .*$/gm,'')));
- }
+test('dated refresh scripts no longer contain the two known identity replacements',()=>{
+ const a=fs.readFileSync('scripts/fix-pagewide-20260813.mjs','utf8');
+ const b=fs.readFileSync('scripts/update-pagewide-20260811.mjs','utf8');
+ assert.doesNotMatch(a,/source = source\.replace\(\s*'const currentSupportOverrides20260811='/);
+ assert.doesNotMatch(b,/updated = updated\.replace\(\/最新公表集計は2026年8月11日14時の89か所/);
 });
