@@ -188,7 +188,6 @@ updated = updated.replace("国土交通省（現地対策本部）からの報�
 updated = updated.replace("本県の支援状況について\",asOf:\"2026年8月7日12時", "本県の支援状況について\",asOf:\"2026年8月10日12時").replace("https://www.pref.ehime.jp/uploaded/attachment/187726.pdf", "https://www.pref.ehime.jp/uploaded/attachment/187761.pdf");
 
 // Correct current shelter layer labels in the map/status text, preserving the historical point count.
-updated = updated.replace(/最新公表集計は2026年8月11日14時の89か所。/g, "最新公表集計は2026年8月11日14時の89か所。");
 
 await writeFile(file, updated, "utf8");
 console.log(JSON.stringify({ file, checkedAt, municipalities: rows.length, impacts: impactRows.length, totals: { shelters: impactRows.reduce((a, b) => a + b.shelters, 0), evacuees: impactRows.reduce((a, b) => a + b.evacuees, 0) } }));
