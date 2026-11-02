@@ -173,6 +173,16 @@ function capacityText(center){
   }
   return '<span class="vol-value-partial">人数公表あり・数値要確認</span>';
 }
+// Keep calendar capacity data as plain text; never strip markup with a regex.
+function capacityPlainText(center){
+  if(center.researched===false || statusKey(center)==="unknown")return "情報未確認";
+  if(center.capacity_disclosed!==true)return "非公表";
+  if(present(center.daily_capacity))return Number(center.daily_capacity).toLocaleString("ja-JP")+String(center.capacity_unit||"人／日");
+  if(present(center.total_capacity))return Number(center.total_capacity).toLocaleString("ja-JP")+String(center.capacity_unit||"人");
+  if(Array.isArray(center.district_capacities)&&center.district_capacities.length)
+    return center.district_capacities.map(item=>String(item.district)+" "+Number(item.daily_capacity).toLocaleString("ja-JP")+String(item.capacity_unit||"人／日")).join("／");
+  return "人数公表あり・数値要確認";
+}
 function capacitySortValue(center){
   if(center.capacity_disclosed !== true) return null;
   if(present(center.daily_capacity) && Number.isFinite(Number(center.daily_capacity))) return Number(center.daily_capacity);
@@ -237,7 +247,7 @@ function dayInfo(center,date){
   if(key === "preparing" || key === "planned") return {key:key,label:STATUS_LABELS[key],countable:false};
   if(center.activity_end_date || center.activity_dates_confirmed === true){
     if(["recruiting","limited"].indexOf(key)>=0){
-      return {key:key,label:key === "limited" ? "限定募集" : "募集中",capacity:center.capacity_disclosed === true ? capacityText(center).replace(/<[^>]+>/g,"") : null,countable:true};
+      return {key:key,label:key === "limited" ? "限定募集" : "募集中",capacity:center.capacity_disclosed === true ? capacityPlainText(center) : null,countable:true};
     }
     if(key === "pending") return {key:"unknown",label:"日別条件は要確認",countable:false};
     if(key === "preparing" || key === "planned") return {key:key,label:STATUS_LABELS[key],countable:false};
