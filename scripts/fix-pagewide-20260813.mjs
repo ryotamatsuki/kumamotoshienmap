@@ -203,10 +203,6 @@ source = source.replace(
   'detail:"給水車173台、行政応援854人、TEC-FORCE累計約3,100人日等を更新。"',
   'detail:"給水車173台、行政応援854人、TEC-FORCE累計約3,100人日等を掲載した8月11日資料。"',
 );
-source = source.replace(
-  'const currentSupportOverrides20260811=',
-  'const currentSupportOverrides20260811=',
-);
 
 await writeFile(file, source, "utf8");
 console.log(JSON.stringify({ file, checkedAt, impacts: impacts.length, shelters: impacts.reduce((sum, row) => sum + row.shelters, 0), evacuees: impacts.reduce((sum, row) => sum + row.evacuees, 0), waterOutage: rows.reduce((sum, row) => sum + row.raw.waterOutage, 0) }));
