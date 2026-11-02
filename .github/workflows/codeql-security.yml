@@ -45,4 +45,3 @@ jobs:
           console.log(JSON.stringify({totalFindings:total,securityFindings:high.length,findings:high.slice(0,30)},null,2));
           if (high.length) process.exitCode=1;
           NODE
-
